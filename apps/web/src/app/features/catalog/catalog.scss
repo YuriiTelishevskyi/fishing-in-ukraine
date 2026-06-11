@@ -1,1 +1,198 @@
-/* Catalog page styles — expanded in Task 5 */
+.catalog-page {
+  padding-top: 32px;
+  padding-bottom: 64px;
+
+  &__heading {
+    margin: 16px 0 28px;
+  }
+
+  &__count {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin: 4px 0 0;
+  }
+}
+
+// Two-column layout: filters + results
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 28px;
+  align-items: start;
+
+  @media (max-width: 880px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ── Filters aside ──────────────────────────────────────────────
+.filters {
+  position: sticky;
+  top: 84px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  &__heading {
+    font: 700 0.78rem var(--font-head);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 0 0 16px;
+  }
+
+  &__section {
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+
+    &:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+
+  &__label {
+    display: block;
+    font: 600 0.72rem var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  &__select {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    font: 500 0.9rem var(--font-body);
+    color: var(--ink);
+    background: var(--surface);
+    cursor: pointer;
+    transition: border-color 0.15s;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+  }
+
+  &__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  &__chip {
+    cursor: pointer;
+    border: none;
+    transition: background 0.15s, color 0.15s, transform 0.15s;
+
+    &:hover {
+      transform: translateY(-1px);
+    }
+  }
+
+  &__radios {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  &__radio {
+    padding: 5px 13px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    font: 500 0.82rem var(--font-body);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+
+    &--active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    &:hover:not(&--active) {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    font: 500 0.9rem var(--font-body);
+    color: var(--ink);
+    background: var(--surface);
+    transition: border-color 0.15s;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    &::placeholder {
+      color: var(--muted);
+    }
+  }
+
+  &__reset {
+    margin-top: 8px;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    width: 100%;
+    justify-content: center;
+
+    &:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+  }
+}
+
+// Active chip state (toggled)
+.chip--active {
+  background: var(--primary);
+  color: #fff;
+}
+
+// ── Main results area ──────────────────────────────────────────
+.catalog-main {
+  min-height: 400px;
+}
+
+.grid--3 {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+// Empty state
+.catalog-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+  color: var(--muted);
+
+  &__icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 1.05rem;
+    margin: 0;
+  }
+}

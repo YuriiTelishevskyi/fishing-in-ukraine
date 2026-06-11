@@ -1,5 +1,157 @@
-<app-header [solid]="true" [pair]="pair" />
-<main class="container" style="padding: 48px 0">
-  <h1>{{ 'catalog.title' | transloco }}</h1>
-</main>
+<app-header [solid]="true" [pair]="pair()" />
+
+<div class="catalog-page container">
+  <app-breadcrumbs [items]="[
+    { label: 'FishMap.ua', link: locale.home() },
+    { label: regionName() ?? ('catalog.title' | transloco) }
+  ]" />
+
+  <div class="catalog-page__heading">
+    <h1>{{ regionName() ?? ('catalog.title' | transloco) }}</h1>
+    <p class="catalog-page__count">{{ 'catalog.found' | transloco: { count: store.result()?.total ?? 0 } }}</p>
+  </div>
+
+  <div class="layout">
+    <!-- ===== Filters aside ===== -->
+    <aside class="filters card">
+      <p class="filters__heading">{{ 'catalog.filters' | transloco }}</p>
+
+      <!-- Region -->
+      <div class="filters__section">
+        <span class="filters__label">{{ 'catalog.region' | transloco }}</span>
+        <select
+          class="filters__select"
+          [value]="f.region ?? ''"
+          (change)="applyRegion($any($event.target).value)"
+        >
+          <option value="">{{ 'hero.anyRegion' | transloco }}</option>
+          @for (r of regions(); track r.id) {
+            <option [value]="r.slug">{{ r.name }}</option>
+          }
+        </select>
+      </div>
+
+      <!-- Fish chips -->
+      <div class="filters__section">
+        <span class="filters__label">{{ 'catalog.fish' | transloco }}</span>
+        <div class="filters__chips">
+          @for (fi of fishList(); track fi.id) {
+            <button
+              type="button"
+              class="chip filters__chip"
+              [class.chip--active]="f.fish?.includes(fi.slug)"
+              (click)="toggle('fish', fi.slug)"
+            >{{ fi.name }}</button>
+          }
+        </div>
+      </div>
+
+      <!-- Amenities chips -->
+      <div class="filters__section">
+        <span class="filters__label">{{ 'catalog.amenities' | transloco }}</span>
+        <div class="filters__chips">
+          @for (a of amenityList(); track a.id) {
+            <button
+              type="button"
+              class="chip filters__chip"
+              [class.chip--active]="f.amenities?.includes(a.slug)"
+              (click)="toggle('amenities', a.slug)"
+            >{{ a.name }}</button>
+          }
+        </div>
+      </div>
+
+      <!-- Type -->
+      <div class="filters__section">
+        <span class="filters__label">{{ 'catalog.type' | transloco }}</span>
+        <select
+          class="filters__select"
+          [value]="f.type ?? ''"
+          (change)="apply({ type: $any($event.target).value || undefined })"
+        >
+          <option value="">{{ 'catalog.any' | transloco }}</option>
+          @for (t of types; track t) {
+            <option [value]="t">{{ typeLabels[t] }}</option>
+          }
+        </select>
+      </div>
+
+      <!-- Paid -->
+      <div class="filters__section">
+        <span class="filters__label">{{ 'catalog.paid' | transloco }}</span>
+        <div class="filters__radios">
+          <button
+            type="button"
+            class="filters__radio"
+            [class.filters__radio--active]="!f.paid"
+            (click)="apply({ paid: undefined })"
+          >{{ 'catalog.any' | transloco }}</button>
+          <button
+            type="button"
+            class="filters__radio"
+            [class.filters__radio--active]="f.paid === 'false'"
+            (click)="apply({ paid: 'false' })"
+          >{{ 'catalog.free' | transloco }}</button>
+          <button
+            type="button"
+            class="filters__radio"
+            [class.filters__radio--active]="f.paid === 'true'"
+            (click)="apply({ paid: 'true' })"
+          >{{ 'catalog.paidOnly' | transloco }}</button>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <div class="filters__section">
+        <span class="filters__label">{{ 'catalog.search' | transloco }}</span>
+        <input
+          class="filters__input"
+          type="text"
+          [(ngModel)]="searchValue"
+          [placeholder]="'catalog.search' | transloco"
+          (keyup.enter)="applySearch()"
+          (blur)="applySearch()"
+        />
+      </div>
+
+      <!-- Reset -->
+      <button type="button" class="btn btn--ghost filters__reset" (click)="reset()">
+        {{ 'catalog.reset' | transloco }}
+      </button>
+    </aside>
+
+    <!-- ===== Main results ===== -->
+    <main class="catalog-main">
+      @if (store.loading()) {
+        <div class="grid grid--3">
+          <div class="skeleton" style="aspect-ratio: 16/10"></div>
+          <div class="skeleton" style="aspect-ratio: 16/10"></div>
+          <div class="skeleton" style="aspect-ratio: 16/10"></div>
+          <div class="skeleton" style="aspect-ratio: 16/10"></div>
+          <div class="skeleton" style="aspect-ratio: 16/10"></div>
+          <div class="skeleton" style="aspect-ratio: 16/10"></div>
+        </div>
+      } @else if (store.result()?.items?.length) {
+        <div class="grid grid--3">
+          @for (w of store.result()!.items; track w.id) {
+            <app-water-card [water]="w" />
+          }
+        </div>
+      } @else {
+        <div class="catalog-empty">
+          <span class="catalog-empty__icon">🎣</span>
+          <p>{{ 'catalog.empty' | transloco }}</p>
+        </div>
+      }
+
+      <app-pager
+        [page]="store.result()?.page ?? 1"
+        [perPage]="store.result()?.perPage ?? 18"
+        [total]="store.result()?.total ?? 0"
+        (pageChange)="apply({ page: $event })"
+      />
+    </main>
+  </div>
+</div>
+
 <app-footer />

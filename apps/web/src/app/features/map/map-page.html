@@ -1,5 +1,19 @@
 <app-header [solid]="true" [pair]="pair" />
-<main class="container" style="padding: 48px 0">
-  <h1>{{ 'map.title' | transloco }}</h1>
-</main>
-<app-footer />
+<div class="mappage">
+  <div class="mappage__bar container">
+    <select [(ngModel)]="region" (change)="refresh()">
+      <option value="">{{ 'hero.anyRegion' | transloco }}</option>
+      @for (r of regions(); track r.id) { <option [value]="r.slug">{{ r.name }}</option> }
+    </select>
+    <select [(ngModel)]="fish" (change)="refresh()">
+      <option value="">{{ 'hero.anyFish' | transloco }}</option>
+      @for (f of fishList(); track f.id) { <option [value]="f.slug">{{ f.name }}</option> }
+    </select>
+    <select [(ngModel)]="paid" (change)="refresh()">
+      <option value="">{{ 'catalog.any' | transloco }}</option>
+      <option value="false">{{ 'catalog.free' | transloco }}</option>
+      <option value="true">{{ 'catalog.paidOnly' | transloco }}</option>
+    </select>
+  </div>
+  <div #map class="mappage__map"></div>
+</div>

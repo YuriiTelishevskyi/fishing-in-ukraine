@@ -120,7 +120,9 @@ export function toDetail(w: WaterFull, lang: Locale): WaterDetailDto {
 }
 
 export function toPin(
-  w: Pick<Water, 'id' | 'slug' | 'name' | 'nameEn' | 'lat' | 'lng' | 'isPaid'>,
+  w: Pick<Water, 'id' | 'slug' | 'name' | 'nameEn' | 'lat' | 'lng' | 'isPaid'> & {
+    region: { slug: string };
+  },
   lang: Locale,
 ): MapPinDto {
   return {
@@ -130,5 +132,6 @@ export function toPin(
     lat: w.lat,
     lng: w.lng,
     isPaid: w.isPaid,
+    regionSlug: w.region.slug,
   };
 }

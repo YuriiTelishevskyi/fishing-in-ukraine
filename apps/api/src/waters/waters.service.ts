@@ -61,6 +61,7 @@ export class WatersService {
         lat: true,
         lng: true,
         isPaid: true,
+        region: { select: { slug: true } },
       },
       take: 2000,
     });

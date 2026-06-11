@@ -92,6 +92,7 @@ export interface MapPinDto {
   lat: number;
   lng: number;
   isPaid: boolean;
+  regionSlug: string;
 }
 
 export interface Paginated<T> {

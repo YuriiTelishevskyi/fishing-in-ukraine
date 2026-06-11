@@ -1,7 +1,9 @@
 <app-header [solid]="true" [pair]="pair" />
-<main class="container" style="padding: 48px 0">
-  <h1>{{ 'notFound.title' | transloco }}</h1>
-  <p>{{ 'notFound.text' | transloco }}</p>
-  <a routerLink="/" class="btn btn--primary">{{ 'notFound.home' | transloco }}</a>
+<main class="nf-hero">
+  <div class="nf-hero__inner">
+    <div class="nf-hero__emoji">🎣</div>
+    <h1>{{ 'notFound.title' | transloco }}</h1>
+    <p>{{ 'notFound.text' | transloco }}</p>
+    <a [routerLink]="locale.home()" class="btn btn--accent">{{ 'notFound.home' | transloco }}</a>
+  </div>
 </main>
-<app-footer />

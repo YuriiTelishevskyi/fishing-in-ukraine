@@ -1,1 +1,31 @@
-/* Not-found styles — expanded in Task 9 */
+.nf-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, var(--hero-from), var(--hero-to));
+  color: #fff;
+  text-align: center;
+  padding: 48px 20px;
+
+  &__inner {
+    max-width: 480px;
+  }
+
+  &__emoji {
+    font-size: 5rem;
+    margin-bottom: 24px;
+    line-height: 1;
+  }
+
+  h1 {
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.1rem;
+    margin: 0 0 32px;
+  }
+}

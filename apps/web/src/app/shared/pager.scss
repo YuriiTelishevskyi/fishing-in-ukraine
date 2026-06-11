@@ -1,0 +1,35 @@
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px 0;
+
+  &__btn {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+    background: var(--card);
+    color: var(--primary);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  &__label {
+    font: 600 0.95rem var(--font-body);
+    color: var(--ink);
+    min-width: 60px;
+    text-align: center;
+  }
+}

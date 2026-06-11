@@ -1,0 +1,76 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
+import {
+  AmenityDto, FishSpeciesDto, MapPinDto, Paginated, RegionDto, WaterDetailDto, WaterListItemDto,
+} from '@fishing/shared';
+import { Observable } from 'rxjs';
+import { API_BASE } from './api-base';
+import { LocaleService } from './locale.service';
+
+export interface WatersFilter {
+  region?: string;
+  fish?: string[];
+  amenities?: string[];
+  type?: string;
+  paid?: 'true' | 'false';
+  search?: string;
+  page?: number;
+  perPage?: number;
+}
+
+@Injectable({ providedIn: 'root' })
+export class ApiService {
+  private readonly http = inject(HttpClient);
+  private readonly base = inject(API_BASE);
+  private readonly locale = inject(LocaleService);
+
+  private params(extra: Record<string, string | number | undefined> = {}): HttpParams {
+    let p = new HttpParams().set('lang', this.locale.locale());
+    for (const [k, v] of Object.entries(extra)) {
+      if (v !== undefined && v !== '') p = p.set(k, String(v));
+    }
+    return p;
+  }
+
+  regions(): Observable<RegionDto[]> {
+    return this.http.get<RegionDto[]>(`${this.base}/api/regions`, { params: this.params() });
+  }
+
+  fishSpecies(): Observable<FishSpeciesDto[]> {
+    return this.http.get<FishSpeciesDto[]>(`${this.base}/api/fish-species`, { params: this.params() });
+  }
+
+  amenities(): Observable<AmenityDto[]> {
+    return this.http.get<AmenityDto[]>(`${this.base}/api/amenities`, { params: this.params() });
+  }
+
+  waters(f: WatersFilter): Observable<Paginated<WaterListItemDto>> {
+    return this.http.get<Paginated<WaterListItemDto>>(`${this.base}/api/waters`, {
+      params: this.params({
+        region: f.region,
+        fish: f.fish?.length ? f.fish.join(',') : undefined,
+        amenities: f.amenities?.length ? f.amenities.join(',') : undefined,
+        type: f.type,
+        paid: f.paid,
+        search: f.search,
+        page: f.page,
+        perPage: f.perPage,
+      }),
+    });
+  }
+
+  mapPins(f: WatersFilter = {}): Observable<MapPinDto[]> {
+    return this.http.get<MapPinDto[]>(`${this.base}/api/waters/map`, {
+      params: this.params({
+        region: f.region,
+        fish: f.fish?.length ? f.fish.join(',') : undefined,
+        type: f.type,
+        paid: f.paid,
+      }),
+    });
+  }
+
+  water(slug: string): Observable<WaterDetailDto> {
+    return this.http.get<WaterDetailDto>(`${this.base}/api/waters/${slug}`, { params: this.params() });
+  }
+}

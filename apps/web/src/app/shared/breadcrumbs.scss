@@ -1,0 +1,28 @@
+.crumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+
+  &__item {
+    color: var(--muted);
+
+    &--current {
+      color: var(--ink);
+      font-weight: 500;
+    }
+  }
+
+  a.crumbs__item {
+    color: var(--primary);
+    &:hover { text-decoration: underline; }
+  }
+
+  &__sep {
+    color: var(--muted);
+    user-select: none;
+  }
+}

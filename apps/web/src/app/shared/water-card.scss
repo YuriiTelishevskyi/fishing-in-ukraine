@@ -1,0 +1,22 @@
+.wcard {
+  display: block; color: inherit;
+  &__media {
+    position: relative; aspect-ratio: 16/10; overflow: hidden;
+    img { object-fit: cover; transition: transform 0.4s ease-out; }
+  }
+  &:hover &__media img { transform: scale(1.05); }
+  &__placeholder {
+    height: 100%; display: grid; place-items: center; font-size: 3rem;
+    background: linear-gradient(135deg, #d7ecf1, #b8dde7);
+  }
+  &__verified { position: absolute; top: 12px; left: 12px; }
+  &__price {
+    position: absolute; bottom: 12px; right: 12px;
+    background: rgba(4, 34, 44, 0.82); color: #fff; backdrop-filter: blur(6px);
+    padding: 5px 12px; border-radius: 999px; font: 600 0.82rem var(--font-body);
+    &--free { background: rgba(22, 163, 74, 0.9); }
+  }
+  &__body { padding: 16px 18px 18px; h3 { font-size: 1.08rem; margin: 0 0 4px; } }
+  &__geo { color: var(--muted); font-size: 0.86rem; margin: 0 0 10px; }
+  &__fish { display: flex; flex-wrap: wrap; gap: 6px; }
+}

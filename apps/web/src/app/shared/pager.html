@@ -1,0 +1,17 @@
+@if (pages() > 1) {
+  <nav class="pager" aria-label="pagination">
+    <button
+      class="btn pager__btn"
+      [disabled]="page() <= 1"
+      (click)="prev()"
+    >{{ 'catalog.prev' | transloco }}</button>
+
+    <span class="pager__label">{{ page() }} / {{ pages() }}</span>
+
+    <button
+      class="btn pager__btn"
+      [disabled]="page() >= pages()"
+      (click)="next()"
+    >{{ 'catalog.next' | transloco }}</button>
+  </nav>
+}

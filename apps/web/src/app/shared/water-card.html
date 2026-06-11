@@ -1,0 +1,28 @@
+<a class="card wcard" [routerLink]="link()">
+  <div class="wcard__media">
+    @if (water().coverCardUrl) {
+      <img [ngSrc]="water().coverCardUrl!" fill [alt]="water().name" />
+    } @else {
+      <div class="wcard__placeholder">🐟</div>
+    }
+    @if (water().verified) {
+      <span class="badge-verified wcard__verified">✓ {{ 'water.verified' | transloco }}</span>
+    }
+    <span class="wcard__price" [class.wcard__price--free]="!water().isPaid">
+      @if (water().isPaid) {
+        {{ 'water.from' | transloco }} {{ water().priceFrom }} {{ 'water.uah' | transloco }}
+      } @else {
+        {{ 'water.free' | transloco }}
+      }
+    </span>
+  </div>
+  <div class="wcard__body">
+    <h3>{{ water().name }}</h3>
+    <p class="wcard__geo">📍 {{ water().regionName }}@if (water().district) {, {{ water().district }}}</p>
+    <div class="wcard__fish">
+      @for (f of topFish(); track f) {
+        <span class="chip">{{ f }}</span>
+      }
+    </div>
+  </div>
+</a>

@@ -1,0 +1,114 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum WaterType {
+  LAKE
+  POND
+  RIVER
+  RESERVOIR
+  FISHING_COMPLEX
+}
+
+enum WaterStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+model Region {
+  id     Int     @id @default(autoincrement())
+  slug   String  @unique
+  name   String
+  nameEn String
+  waters Water[]
+}
+
+model FishSpecies {
+  id     Int         @id @default(autoincrement())
+  slug   String      @unique
+  name   String
+  nameEn String
+  waters WaterFish[]
+}
+
+model Amenity {
+  id     Int            @id @default(autoincrement())
+  slug   String         @unique
+  name   String
+  nameEn String
+  icon   String?
+  waters WaterAmenity[]
+}
+
+model Water {
+  id             String         @id @default(uuid())
+  slug           String         @unique
+  name           String
+  nameEn         String?
+  description    String
+  descriptionEn  String?
+  region         Region         @relation(fields: [regionId], references: [id])
+  regionId       Int
+  district       String?
+  lat            Float
+  lng            Float
+  areaHa         Float?
+  waterType      WaterType
+  isPaid         Boolean        @default(false)
+  priceFrom      Int?
+  priceTo        Int?
+  priceNote      String?
+  priceNoteEn    String?
+  phone          String?
+  website        String?
+  rules          String?
+  rulesEn        String?
+  verified       Boolean        @default(false)
+  status         WaterStatus    @default(DRAFT)
+  seoTitle       String?
+  seoTitleEn     String?
+  seoDescription String?
+  seoDescriptionEn String?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  fish           WaterFish[]
+  amenities      WaterAmenity[]
+  media          Media[]
+
+  @@index([regionId, status])
+  @@index([status])
+}
+
+model WaterFish {
+  water   Water       @relation(fields: [waterId], references: [id], onDelete: Cascade)
+  waterId String
+  fish    FishSpecies @relation(fields: [fishId], references: [id], onDelete: Cascade)
+  fishId  Int
+
+  @@id([waterId, fishId])
+}
+
+model WaterAmenity {
+  water     Water   @relation(fields: [waterId], references: [id], onDelete: Cascade)
+  waterId   String
+  amenity   Amenity @relation(fields: [amenityId], references: [id], onDelete: Cascade)
+  amenityId Int
+
+  @@id([waterId, amenityId])
+}
+
+model Media {
+  id        String   @id @default(uuid())
+  water     Water    @relation(fields: [waterId], references: [id], onDelete: Cascade)
+  waterId   String
+  url       String
+  sortOrder Int      @default(0)
+  alt       String?
+  createdAt DateTime @default(now())
+}

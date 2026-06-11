@@ -1,0 +1,47 @@
+.ash {
+  min-height: 100vh;
+  background: var(--surface);
+
+  &__bar {
+    background: var(--hero-from);
+    color: #fff;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 600;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    button {
+      background: none;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 14px;
+      cursor: pointer;
+      font: 600 0.85rem var(--font-body);
+    }
+  }
+
+  &__logo {
+    font-family: var(--font-head);
+
+    em {
+      color: var(--accent);
+      font-style: normal;
+    }
+  }
+
+  &__main {
+    padding: 28px 20px 60px;
+  }
+}

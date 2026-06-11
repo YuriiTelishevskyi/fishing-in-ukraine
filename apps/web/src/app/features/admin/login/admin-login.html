@@ -1,0 +1,50 @@
+<div class="alog">
+  <div class="alog__card card">
+    <div class="alog__logo">🎣 FishMap<em>.ua</em></div>
+    <h1 class="alog__title">Вхід в адмінку</h1>
+
+    <form class="alog__form" (ngSubmit)="submit()" #f="ngForm">
+      <div class="alog__field">
+        <label for="login">Логін</label>
+        <input
+          id="login"
+          type="text"
+          name="login"
+          [(ngModel)]="login"
+          placeholder="admin"
+          autocomplete="username"
+          required
+        />
+      </div>
+
+      <div class="alog__field">
+        <label for="password">Пароль</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="••••••••"
+          autocomplete="current-password"
+          required
+        />
+      </div>
+
+      @if (error()) {
+        <p class="alog__error">{{ error() }}</p>
+      }
+
+      <button
+        type="submit"
+        class="btn btn--primary alog__btn"
+        [disabled]="pending()"
+      >
+        @if (pending()) {
+          Зачекайте…
+        } @else {
+          Увійти
+        }
+      </button>
+    </form>
+  </div>
+</div>

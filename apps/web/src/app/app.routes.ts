@@ -19,6 +19,10 @@ const tree = (locale: 'uk' | 'en', seg: { catalog: string; fish: string; map: st
 ];
 
 export const routes: Routes = [
+  {
+    path: 'admin',
+    loadChildren: () => import('./features/admin/admin.routes').then((m) => m.ADMIN_ROUTES),
+  },
   { path: 'en', children: tree('en', { catalog: 'waters', fish: 'fish', map: 'map' }) },
   ...tree('uk', { catalog: 'vodoymy', fish: 'ryba', map: 'karta' }),
   { path: '**', loadComponent: pages.notFound, data: { locale: 'uk' } },

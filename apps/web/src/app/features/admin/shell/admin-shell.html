@@ -1,0 +1,12 @@
+<div class="ash">
+  <header class="ash__bar">
+    <a routerLink="/admin/waters" class="ash__logo">🎣 FishMap<em>.ua</em> · Адмінка</a>
+    <nav>
+      <a routerLink="/" target="_blank">На сайт ↗</a>
+      <button type="button" (click)="logout()">Вийти</button>
+    </nav>
+  </header>
+  <main class="ash__main container">
+    <router-outlet />
+  </main>
+</div>

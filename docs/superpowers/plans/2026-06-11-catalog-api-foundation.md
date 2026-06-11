@@ -2539,3 +2539,6 @@ git commit -m "docs: update README for monorepo setup"
 - **Plan 2:** public Angular frontend — catalog, water pages, Leaflet map, SEO service, hydration, uk/en runtime i18n (Transloco) with `/en` routes and hreflang (spec §5).
 - **Plan 3:** admin UI — login, waters table, form with map picker, media management (spec §6).
 - **Plan 4:** production deploy — Dockerfiles, compose with Caddy, GitHub Actions (spec §7).
+  Hard requirements carried over from code review: pin `NODE_ENV=production` for the api
+  service; rate-limit `POST /api/admin/login` (Caddy layer or @nestjs/throttler); add helmet
+  (security headers); pin the postgres image version in the prod compose.

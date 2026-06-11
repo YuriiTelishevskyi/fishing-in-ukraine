@@ -28,6 +28,8 @@ const REGIONS: Array<[string, string, string]> = [
   ['chernivetska-oblast', 'Чернівецька область', 'Chernivtsi Oblast'],
   ['chernihivska-oblast', 'Чернігівська область', 'Chernihiv Oblast'],
   ['kyiv', 'м. Київ', 'Kyiv (city)'],
+  ['avtonomna-respublika-krym', 'Автономна Республіка Крим', 'Autonomous Republic of Crimea'],
+  ['sevastopol', 'м. Севастополь', 'Sevastopol (city)'],
 ];
 
 const FISH: Array<[string, string, string]> = [

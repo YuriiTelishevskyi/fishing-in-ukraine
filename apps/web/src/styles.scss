@@ -1,1 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --ink: #0b1b22;
+  --surface: #f6f9fa;
+  --card: #ffffff;
+  --primary: #0e7490;
+  --primary-hover: #0c657e;
+  --hero-from: #04222c;
+  --hero-to: #0a4a5c;
+  --accent: #f59e0b;
+  --success: #16a34a;
+  --muted: #5b7480;
+  --line: #e2ecef;
+  --radius: 16px;
+  --shadow: 0 1px 2px rgba(11, 27, 34, 0.06), 0 8px 24px rgba(11, 27, 34, 0.08);
+  --shadow-lift: 0 2px 4px rgba(11, 27, 34, 0.08), 0 16px 40px rgba(11, 27, 34, 0.16);
+  --font-head: 'Manrope', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; margin: 0 0 0.5em; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; }
+a { color: var(--primary); text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px; border-radius: 999px; border: 0;
+  font: 600 1rem var(--font-body); cursor: pointer;
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, background 0.18s ease-out;
+}
+.btn--primary { background: var(--primary); color: #fff; }
+.btn--primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn--accent { background: var(--accent); color: #3b2402; }
+.btn--accent:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn--ghost { background: rgba(255, 255, 255, 0.12); color: #fff; border: 1px solid rgba(255, 255, 255, 0.3); }
+.btn--ghost:hover { background: rgba(255, 255, 255, 0.2); }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px; border-radius: 999px;
+  background: #e7f3f6; color: var(--primary);
+  font: 500 0.82rem var(--font-body);
+}
+
+.badge-verified {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 999px;
+  background: #dcfce7; color: var(--success); font: 600 0.78rem var(--font-body);
+}
+
+.card {
+  background: var(--card); border-radius: var(--radius);
+  box-shadow: var(--shadow); overflow: hidden;
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
+}
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.45s ease-out, transform 0.45s ease-out; }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+.skeleton {
+  background: linear-gradient(90deg, #eef4f6 25%, #e2ecef 50%, #eef4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 8px;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .card, .btn { transition: none; }
+  .reveal { opacity: 1; transform: none; }
+  .skeleton { animation: none; }
+}

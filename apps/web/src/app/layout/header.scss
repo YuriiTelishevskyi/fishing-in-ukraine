@@ -1,0 +1,14 @@
+.hdr {
+  position: absolute; inset: 0 0 auto; z-index: 50; padding: 14px 0;
+  color: #fff;
+  &--solid { position: sticky; top: 0; background: var(--hero-from); box-shadow: var(--shadow); }
+  &__row { display: flex; align-items: center; gap: 28px; }
+  &__logo {
+    font: 800 1.3rem var(--font-head); color: #fff; display: flex; gap: 8px; align-items: center;
+    em { color: var(--accent); font-style: normal; }
+  }
+  &__nav { display: flex; gap: 20px; margin-left: auto;
+    a { color: rgba(255, 255, 255, 0.85); font-weight: 600; &:hover { color: #fff; } }
+  }
+  &__lang { display: flex; gap: 6px; }
+}

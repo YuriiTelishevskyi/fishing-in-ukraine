@@ -1,5 +1,40 @@
 <app-header [solid]="true" [pair]="pair" />
-<main class="container" style="padding: 48px 0">
-  <h1>{{ 'fishPage.waters' | transloco }}</h1>
-</main>
+
+<section class="fish-hero">
+  <div class="container">
+    <h1>{{ 'fishPage.title' | transloco: { fish: fishName() } }}</h1>
+  </div>
+</section>
+
+<div class="container fish-content">
+  @if (loading()) {
+    <div class="grid grid--3">
+      <div class="skeleton fish-skeleton"></div>
+      <div class="skeleton fish-skeleton"></div>
+      <div class="skeleton fish-skeleton"></div>
+      <div class="skeleton fish-skeleton"></div>
+      <div class="skeleton fish-skeleton"></div>
+      <div class="skeleton fish-skeleton"></div>
+    </div>
+  } @else if (items().length) {
+    <div class="grid grid--3">
+      @for (w of items(); track w.id) {
+        <app-water-card [water]="w" />
+      }
+    </div>
+  } @else {
+    <div class="fish-empty">
+      <span class="fish-empty__icon">🎣</span>
+      <p>{{ 'catalog.empty' | transloco }}</p>
+    </div>
+  }
+
+  <app-pager
+    [page]="page()"
+    [perPage]="perPage"
+    [total]="total()"
+    (pageChange)="changePage($event)"
+  />
+</div>
+
 <app-footer />

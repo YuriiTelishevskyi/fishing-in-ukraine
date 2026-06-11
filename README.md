@@ -1,59 +1,39 @@
-# FishingInUkraine
+# Fishing in Ukraine
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+Каталог водойм України для рибалок. Монорепа: Angular SSR (web) + NestJS (api) + PostgreSQL.
+Двомовний контент: українська (основна) + англійська (опційна, з фолбеком).
 
-## Development server
+## Структура
 
-To start a local development server, run:
+- `apps/web` — Angular 20 + SSR (публічний сайт і адмінка)
+- `apps/api` — NestJS + Prisma (REST API, медіа, sitemap)
+- `packages/shared` — спільні TypeScript-типи
+- `docs/superpowers/specs` — дизайн-документи, `docs/superpowers/plans` — плани реалізації
 
-```bash
-ng serve
-```
+## Локальний запуск
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Вимоги: Node ≥ 20, Docker.
 
 ```bash
-ng generate component component-name
+npm install
+cp apps/api/.env.example apps/api/.env   # заповнити JWT_SECRET і ADMIN_PASSWORD_HASH
+npm run db:up                            # PostgreSQL у Docker (хост-порт 5433)
+npm run build:shared
+cd apps/api && npx prisma migrate dev && npx prisma db seed && cd ../..
+npm run dev:api                          # API на :3000
+npm run dev:web                          # Angular на :4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Хеш пароля адміна: `node -e "console.log(require('bcryptjs').hashSync(process.argv[1], 10))" 'пароль'`
+(виконувати з кореня репо). JWT-секрет: `openssl rand -hex 32`.
 
-```bash
-ng generate --help
-```
+## API (огляд)
 
-## Building
+- Публічні: `GET /api/waters` (фільтри + пагінація), `GET /api/waters/map`, `GET /api/waters/:slug`, `GET /api/regions|fish-species|amenities` — усі приймають `?lang=uk|en`
+- Адмін (cookie-JWT): `POST /api/admin/login|logout`, CRUD `/api/admin/waters`, медіа-завантаження, створення позицій довідників
+- SEO: `GET /sitemap.xml` (двомовний, з hreflang)
 
-To build the project run:
+## Корисні команди
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- `npm run build` — збірка всіх пакетів (shared → api → web)
+- `cd apps/api && npx prisma studio` — переглянути БД

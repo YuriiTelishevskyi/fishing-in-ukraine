@@ -1,5 +1,79 @@
-<app-header [solid]="true" [pair]="pair" />
-<main class="container" style="padding: 48px 0">
-  <h1>{{ 'hero.title' | transloco }}</h1>
-</main>
+<app-header [pair]="pair" />
+<section class="hero">
+  <div class="hero__waves" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="hero__wave hero__wave--1">
+      <path d="M0,64 C240,96 480,16 720,48 C960,80 1200,32 1440,64 L1440,120 L0,120 Z" fill="rgba(255,255,255,0.06)"/>
+    </svg>
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="hero__wave hero__wave--2">
+      <path d="M0,80 C260,40 520,100 780,64 C1040,28 1240,88 1440,56 L1440,120 L0,120 Z" fill="rgba(255,255,255,0.1)"/>
+    </svg>
+  </div>
+  <div class="container hero__inner">
+    <h1>{{ 'hero.title' | transloco }}</h1>
+    <p class="hero__sub">{{ 'hero.subtitle' | transloco }}</p>
+    <div class="hero__panel">
+      <label>
+        <span>{{ 'hero.searchRegion' | transloco }}</span>
+        <select [(ngModel)]="searchRegion">
+          <option value="">{{ 'hero.anyRegion' | transloco }}</option>
+          @for (r of regions(); track r.id) {
+            <option [value]="r.slug">{{ r.name }}</option>
+          }
+        </select>
+      </label>
+      <label>
+        <span>{{ 'hero.searchFish' | transloco }}</span>
+        <select [(ngModel)]="searchFish">
+          <option value="">{{ 'hero.anyFish' | transloco }}</option>
+          @for (f of fish(); track f.id) {
+            <option [value]="f.slug">{{ f.name }}</option>
+          }
+        </select>
+      </label>
+      <button class="btn btn--accent" (click)="search()">{{ 'hero.cta' | transloco }}</button>
+    </div>
+    <a [routerLink]="locale.link('map')" class="btn btn--ghost hero__map-link">🗺 {{ 'hero.mapCta' | transloco }}</a>
+  </div>
+</section>
+
+@if (featured(); as f) {
+  @if (f.items.length) {
+    <section class="container section" appReveal>
+      <h2>{{ 'home.featured' | transloco }}</h2>
+      <div class="grid grid--3">
+        @for (w of f.items; track w.id) {
+          <app-water-card [water]="w" />
+        }
+      </div>
+    </section>
+  }
+}
+
+<section class="container section" appReveal>
+  <h2>{{ 'home.regions' | transloco }}</h2>
+  <div class="regions">
+    @for (r of regions(); track r.id) {
+      <a class="regions__item" [routerLink]="locale.link('catalog', r.slug)">{{ r.name }}</a>
+    }
+  </div>
+</section>
+
+<section class="container section" appReveal>
+  <h2>{{ 'home.fishTitle' | transloco }}</h2>
+  <div class="fishrow">
+    @for (f of fish(); track f.id) {
+      <a class="chip fishrow__chip" [routerLink]="locale.link('fish', f.slug)">{{ f.name }}</a>
+    }
+  </div>
+</section>
+
+<section class="container section" appReveal>
+  <div class="cta card">
+    <div>
+      <h2>{{ 'home.ctaTitle' | transloco }}</h2>
+      <p>{{ 'home.ctaText' | transloco }}</p>
+    </div>
+    <a class="btn btn--primary" href="mailto:hello@fishmap.ua">{{ 'home.ctaBtn' | transloco }}</a>
+  </div>
+</section>
 <app-footer />

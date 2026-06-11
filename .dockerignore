@@ -1,0 +1,40 @@
+# Version control
+.git
+.gitignore
+
+# Dependencies (will be installed in Docker)
+node_modules
+**/node_modules
+
+# Build outputs (will be built in Docker)
+dist
+**/dist
+.angular
+**/.angular
+
+# Uploaded media
+apps/api/uploads
+
+# Environment files
+.env
+.env.*
+!.env*.example
+
+# Documentation
+docs
+*.md
+!README.md
+
+# IDE / OS
+.idea
+.DS_Store
+*.log
+npm-debug.log*
+
+# Coverage / test output
+coverage
+out-tsc
+
+# Docker files themselves (not needed in context — build still works)
+docker-compose*.yml
+deploy

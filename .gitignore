@@ -9,6 +9,7 @@ coverage/
 
 # env & secrets
 .env
+.env.prod
 
 # uploaded media (api)
 apps/api/uploads/

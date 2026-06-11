@@ -1,0 +1,77 @@
+# Distinct project name: prevents container/volume collisions with the dev
+# compose (docker-compose.yml), which derives "fishing-in-ukraine" from the dir.
+name: fishing-prod
+
+services:
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+      - '8080:8080'
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    environment:
+      SITE_DOMAIN: ${SITE_DOMAIN}
+    depends_on:
+      - web
+      - api
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    restart: unless-stopped
+    environment:
+      API_URL: http://api:3000
+      SITE_ORIGIN: ${SITE_ORIGIN}
+      NG_ALLOWED_HOSTS: ${NG_ALLOWED_HOSTS:-localhost}
+      # Caddy fronts the SSR server; without this Angular SSR rejects requests
+      # carrying X-Forwarded-* and silently falls back to the CSR shell.
+      NG_TRUST_PROXY_HEADERS: 'x-forwarded-for,x-forwarded-host,x-forwarded-proto,x-forwarded-port'
+      PORT: '4000'
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env.prod
+    environment:
+      # Pin NODE_ENV=production regardless of .env.prod contents
+      NODE_ENV: production
+    volumes:
+      - uploads:/app/apps/api/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:16.6-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    # NO published ports — internal network only
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 15s
+
+volumes:
+  pgdata:
+  uploads:
+  caddy_data:
+  caddy_config:

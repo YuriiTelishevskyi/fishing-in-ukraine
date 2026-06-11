@@ -1,0 +1,19 @@
+{$SITE_DOMAIN} {
+	encode gzip zstd
+
+	handle /api/* {
+		reverse_proxy api:3000
+	}
+
+	handle /uploads/* {
+		reverse_proxy api:3000
+	}
+
+	handle /sitemap.xml {
+		reverse_proxy api:3000
+	}
+
+	handle {
+		reverse_proxy web:4000
+	}
+}

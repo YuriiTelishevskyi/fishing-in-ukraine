@@ -1662,4 +1662,4 @@ Sitemap: https://fishmap.ua/sitemap.xml
 ## What comes next (separate plans)
 
 - **Plan 3:** admin UI (login, waters table, form with map picker, media manager).
-- **Plan 4:** production deploy — see hard requirements recorded in Plan 1 doc (NODE_ENV, rate-limit, helmet, image pinning) + Caddy routing `/api`, `/uploads`, `/sitemap.xml` → api.
+- **Plan 4:** production deploy — see hard requirements recorded in Plan 1 doc (NODE_ENV, rate-limit, helmet, image pinning) + Caddy routing `/api`, `/uploads`, `/sitemap.xml` → api. Also: the Angular SSR server rejects non-allowlisted Host headers — set the production host allowlist (NG_ALLOWED_HOSTS or equivalent) for the web container.

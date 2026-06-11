@@ -1,22 +1,128 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  Injector,
+  PLATFORM_ID,
+  afterNextRender,
+  effect,
+  inject,
+  signal,
+  viewChild,
+} from '@angular/core';
+import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
+import { WaterDetailDto, WATER_TYPE_LABELS, WaterType } from '@fishing/shared';
+import { ApiService } from '../../core/api.service';
+import { SeoService } from '../../core/seo.service';
+import { usePageLocale } from '../../core/use-locale';
 import { Footer } from '../../layout/footer';
 import { Header } from '../../layout/header';
-import { usePageLocale } from '../../core/use-locale';
+import { Breadcrumbs } from '../../shared/breadcrumbs';
+
+const EN_TYPE_LABELS: Record<WaterType, string> = {
+  LAKE: 'Lake',
+  POND: 'Pond',
+  RIVER: 'River',
+  RESERVOIR: 'Reservoir',
+  FISHING_COMPLEX: 'Fishing complex',
+};
 
 @Component({
   selector: 'app-water-detail',
-  imports: [Header, Footer, TranslocoPipe],
+  imports: [Header, Footer, TranslocoPipe, Breadcrumbs, NgOptimizedImage, RouterLink],
   templateUrl: './water-detail.html',
   styleUrl: './water-detail.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WaterDetailPage {
   readonly locale = usePageLocale();
+  private readonly api = inject(ApiService);
   private readonly route = inject(ActivatedRoute);
+  private readonly seo = inject(SeoService);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  private readonly injector = inject(Injector);
+
+  readonly water = signal<WaterDetailDto | null>(null);
+  readonly notFound = signal(false);
+  readonly active = signal(0);
+  readonly mapEl = viewChild<ElementRef<HTMLDivElement>>('miniMap');
+
   readonly pair = this.locale.pathPair('catalog', [
     this.route.snapshot.paramMap.get('regionSlug')!,
     this.route.snapshot.paramMap.get('waterSlug')!,
   ]);
+
+  readonly typeLabels = WATER_TYPE_LABELS;
+  readonly enTypeLabels = EN_TYPE_LABELS;
+
+  private mounted = false;
+
+  constructor() {
+    const slug = this.route.snapshot.paramMap.get('waterSlug')!;
+    this.api.water(slug).subscribe({
+      next: (w) => {
+        this.water.set(w);
+        this.applySeo(w);
+      },
+      error: () => this.notFound.set(true),
+    });
+
+    // effect() runs whenever water() changes (SSR-safe: isBrowser guard)
+    effect(() => {
+      const w = this.water();
+      if (!w || !this.isBrowser || this.mounted) return;
+      this.mounted = true; // set BEFORE scheduling so the effect never re-enters
+      afterNextRender(() => this.mountMap(w), { injector: this.injector });
+    });
+  }
+
+  private async mountMap(w: WaterDetailDto) {
+    const el = this.mapEl()?.nativeElement;
+    if (!el) return;
+    const leaflet = await import('leaflet');
+    const L = (leaflet as any).default ?? leaflet;
+    const map = L.map(el, { scrollWheelZoom: false }).setView([w.lat, w.lng], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap',
+    }).addTo(map);
+    L.marker([w.lat, w.lng]).addTo(map);
+  }
+
+  typeLabel(type: WaterType): string {
+    if (this.locale.locale() === 'en') {
+      return this.enTypeLabels[type] ?? type;
+    }
+    return this.typeLabels[type] ?? type;
+  }
+
+  private applySeo(w: WaterDetailDto) {
+    const isEn = this.locale.locale() === 'en';
+    const name = isEn && w.nameEn ? w.nameEn : w.name;
+    const description = isEn && w.descriptionEn ? w.descriptionEn : w.description;
+    const seoTitle = isEn ? (w.seoTitleEn ?? w.seoTitle) : w.seoTitle;
+    const seoDescription = isEn ? (w.seoDescriptionEn ?? w.seoDescription) : w.seoDescription;
+
+    this.seo.apply({
+      title: seoTitle ?? `${name} — ${w.regionName} | FishMap.ua`,
+      description: seoDescription ?? description.slice(0, 155),
+      paths: this.pair,
+      locale: this.locale.locale(),
+      image: w.media[0]?.urlCard ?? null,
+      jsonLd: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          name: w.name,
+          description: w.description.slice(0, 300),
+          telephone: w.phone ?? undefined,
+          url: `https://fishmap.ua${this.pair.uk}`,
+          geo: { '@type': 'GeoCoordinates', latitude: w.lat, longitude: w.lng },
+          address: { '@type': 'PostalAddress', addressRegion: w.regionName, addressCountry: 'UA' },
+          image: w.media.map((m) => `https://fishmap.ua${m.urlFull}`),
+        },
+      ],
+    });
+  }
 }

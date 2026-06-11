@@ -1,5 +1,163 @@
 <app-header [solid]="true" [pair]="pair" />
-<main class="container" style="padding: 48px 0">
-  <h1>{{ 'water.onMap' | transloco }}</h1>
-</main>
+
+@if (notFound()) {
+  <section class="nf container">
+    <div class="nf__inner">
+      <div class="nf__emoji">🎣</div>
+      <h1>{{ 'notFound.title' | transloco }}</h1>
+      <p>{{ 'notFound.text' | transloco }}</p>
+      <a [routerLink]="locale.home()" class="btn btn--primary">{{ 'notFound.home' | transloco }}</a>
+    </div>
+  </section>
+} @else if (water(); as w) {
+  <div class="container detail-wrap">
+    <app-breadcrumbs [items]="[
+      { label: 'FishMap.ua', link: locale.home() },
+      { label: w.regionName, link: locale.link('catalog', w.regionSlug) },
+      { label: w.name }
+    ]" />
+
+    <div class="detail-grid">
+      <!-- Left column: gallery + sections -->
+      <div class="detail-main">
+
+        <!-- Gallery -->
+        <div class="gallery">
+          @if (w.media.length > 0) {
+            <div class="gallery__main">
+              <img
+                [ngSrc]="w.media[active()].urlFull"
+                fill
+                [alt]="w.media[active()].alt ?? w.name"
+                priority
+              />
+            </div>
+            @if (w.media.length > 1) {
+              <div class="gallery__thumbs">
+                @for (m of w.media; track m.id; let i = $index) {
+                  <button
+                    class="thumb"
+                    [class.thumb--on]="active() === i"
+                    (click)="active.set(i)"
+                    [attr.aria-label]="m.alt ?? w.name"
+                  >
+                    <img [ngSrc]="m.urlThumb" width="72" height="54" [alt]="m.alt ?? w.name" />
+                  </button>
+                }
+              </div>
+            }
+          } @else {
+            <div class="gallery__main gallery__main--placeholder">
+              <div class="gallery__placeholder">🐟</div>
+            </div>
+          }
+        </div>
+
+        <!-- Description -->
+        @if (w.description) {
+          <section class="detail-section">
+            <p class="pre-line">{{ w.description }}</p>
+          </section>
+        }
+
+        <!-- Fish -->
+        @if (w.fish.length > 0) {
+          <section class="detail-section">
+            <h2 class="detail-section__title">{{ 'water.fish' | transloco }}</h2>
+            <div class="chip-row">
+              @for (f of w.fish; track f.id) {
+                <a [routerLink]="locale.link('fish', f.slug)" class="chip">{{ f.name }}</a>
+              }
+            </div>
+          </section>
+        }
+
+        <!-- Amenities -->
+        @if (w.amenities.length > 0) {
+          <section class="detail-section">
+            <h2 class="detail-section__title">{{ 'water.amenities' | transloco }}</h2>
+            <div class="chip-row">
+              @for (a of w.amenities; track a.id) {
+                <span class="chip">@if (a.icon) { {{ a.icon }} } {{ a.name }}</span>
+              }
+            </div>
+          </section>
+        }
+
+        <!-- Rules -->
+        @if (w.rules) {
+          <section class="detail-section">
+            <h2 class="detail-section__title">{{ 'water.rules' | transloco }}</h2>
+            <p class="pre-line">{{ w.rules }}</p>
+          </section>
+        }
+
+        <!-- Mini-map -->
+        <section class="detail-section">
+          <h2 class="detail-section__title" id="water-map">{{ 'water.onMap' | transloco }}</h2>
+          <div #miniMap class="minimap"></div>
+        </section>
+
+      </div><!-- /detail-main -->
+
+      <!-- Right column: sticky aside card -->
+      <aside class="detail-aside">
+        <div class="aside-card card">
+
+          <!-- Price block -->
+          <div class="aside-card__price">
+            @if (w.isPaid) {
+              <div class="price-main">
+                @if (w.priceFrom && w.priceTo) {
+                  {{ w.priceFrom }}–{{ w.priceTo }} {{ 'water.uah' | transloco }}
+                } @else if (w.priceFrom) {
+                  {{ 'water.from' | transloco }} {{ w.priceFrom }} {{ 'water.uah' | transloco }}
+                }
+                @if (w.priceNote) {
+                  <small class="price-note muted">{{ w.priceNote }}</small>
+                }
+              </div>
+            } @else {
+              <div class="price-free">{{ 'water.free' | transloco }}</div>
+            }
+          </div>
+
+          <!-- Verified badge -->
+          @if (w.verified) {
+            <div class="aside-card__verified">
+              <span class="badge-verified">✓ {{ 'water.verified' | transloco }}</span>
+            </div>
+          }
+
+          <!-- Water type chip -->
+          <div class="aside-card__row">
+            <span class="chip">{{ typeLabel(w.waterType) }}</span>
+          </div>
+
+          <!-- Area -->
+          @if (w.areaHa) {
+            <div class="aside-card__row aside-card__meta">
+              <span class="muted">{{ 'water.area' | transloco }}</span>
+              <span>{{ w.areaHa }} {{ 'water.ha' | transloco }}</span>
+            </div>
+          }
+
+          <!-- Contacts -->
+          <div class="aside-card__contacts">
+            <div class="aside-card__contacts-title muted">{{ 'water.contacts' | transloco }}</div>
+            @if (w.phone) {
+              <a [href]="'tel:' + w.phone" class="aside-card__contact-link">📞 {{ w.phone }}</a>
+            }
+            @if (w.website) {
+              <a [href]="w.website" target="_blank" rel="noopener" class="aside-card__contact-link">🌐 {{ w.website }}</a>
+            }
+            <a href="#water-map" class="aside-card__contact-link">🗺 {{ 'water.onMap' | transloco }}</a>
+          </div>
+
+        </div><!-- /aside-card -->
+      </aside>
+    </div><!-- /detail-grid -->
+  </div>
+}
+
 <app-footer />

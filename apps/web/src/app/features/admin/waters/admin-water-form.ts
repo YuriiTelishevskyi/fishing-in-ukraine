@@ -4,7 +4,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { forkJoin } from 'rxjs';
-import { AmenityDto, FishSpeciesDto, RegionDto, WaterDetailDto, WATER_TYPES, WATER_TYPE_LABELS, WaterType } from '@fishing/shared';
+import { AmenityDto, FishSpeciesDto, MediaDto, RegionDto, WaterDetailDto, WATER_TYPES, WATER_TYPE_LABELS, WaterType } from '@fishing/shared';
 import { Select } from 'primeng/select';
 import { MultiSelect } from 'primeng/multiselect';
 import { ToggleSwitch } from 'primeng/toggleswitch';
@@ -14,7 +14,8 @@ import { InputNumber } from 'primeng/inputnumber';
 import { ButtonModule } from 'primeng/button';
 import { Tag } from 'primeng/tag';
 import { Toast } from 'primeng/toast';
-import { MessageService } from 'primeng/api';
+import { ConfirmDialog } from 'primeng/confirmdialog';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { AdminApiService } from '../core/admin-api.service';
 import { ApiService } from '../../../core/api.service';
 
@@ -43,8 +44,9 @@ interface WaterTypeOption {
     ButtonModule,
     Tag,
     Toast,
+    ConfirmDialog,
   ],
-  providers: [MessageService],
+  providers: [MessageService, ConfirmationService],
   templateUrl: './admin-water-form.html',
   styleUrl: './admin-water-form.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -56,12 +58,16 @@ export class AdminWaterForm {
   private readonly router = inject(Router);
   private readonly fb = inject(FormBuilder);
   private readonly toast = inject(MessageService);
+  private readonly confirmationService = inject(ConfirmationService);
   readonly mapEl = viewChild<ElementRef<HTMLDivElement>>('pickMap');
+  readonly fileInput = viewChild<ElementRef<HTMLInputElement>>('fileInput');
 
   readonly id = this.route.snapshot.paramMap.get('id');
   readonly water = signal<WaterDetailDto | null>(null);
   readonly saving = signal(false);
   readonly statusUpdating = signal(false);
+  readonly media = signal<MediaDto[]>([]);
+  readonly uploading = signal(false);
 
   readonly regions = toSignal(this.publicApi.regions(), { initialValue: [] as RegionDto[] });
   readonly fishList = toSignal(this.publicApi.fishSpecies(), { initialValue: [] as FishSpeciesDto[] });
@@ -145,6 +151,7 @@ export class AdminWaterForm {
       }).subscribe({
         next: ({ w, regions }) => {
           this.water.set(w);
+          this.media.set([...(w.media ?? [])]);
           const regionId = regions.find((r) => r.slug === w.regionSlug)?.id ?? null;
           this.form.patchValue({
             name: w.name,
@@ -324,6 +331,76 @@ export class AdminWaterForm {
       error: (err) => {
         this.statusUpdating.set(false);
         this.handleApiError(err);
+      },
+    });
+  }
+
+  triggerFileInput() {
+    this.fileInput()?.nativeElement.click();
+  }
+
+  onFile(event: Event) {
+    if (!this.id) return;
+    const input = event.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+
+    this.uploading.set(true);
+    this.adminApi.uploadMedia(this.id, file).subscribe({
+      next: (dto) => {
+        this.media.update((arr) => [...arr, dto]);
+        this.uploading.set(false);
+        input.value = '';
+        this.toast.add({ severity: 'success', summary: 'Фото завантажено', detail: dto.alt ?? file.name });
+      },
+      error: (err: unknown) => {
+        this.uploading.set(false);
+        input.value = '';
+        if (err instanceof HttpErrorResponse && err.status === 400) {
+          this.toast.add({ severity: 'error', summary: 'Помилка', detail: 'Непідтримуваний файл або зіпсоване зображення' });
+        } else {
+          this.handleApiError(err);
+        }
+      },
+    });
+  }
+
+  moveMedia(index: number, direction: -1 | 1) {
+    if (!this.id) return;
+    const arr = [...this.media()];
+    const targetIndex = index + direction;
+    if (targetIndex < 0 || targetIndex >= arr.length) return;
+    [arr[index], arr[targetIndex]] = [arr[targetIndex], arr[index]];
+    this.media.set(arr);
+
+    this.adminApi.reorderMedia(this.id, arr.map((m) => m.id)).subscribe({
+      error: () => {
+        // Revert by re-fetching
+        this.adminApi.water(this.id!).subscribe({
+          next: (w) => {
+            this.media.set([...(w.media ?? [])]);
+            this.toast.add({ severity: 'error', summary: 'Помилка', detail: 'Не вдалося змінити порядок фото' });
+          },
+        });
+      },
+    });
+  }
+
+  confirmDeleteMedia(m: MediaDto) {
+    this.confirmationService.confirm({
+      message: 'Видалити це фото? Це незворотно.',
+      header: 'Підтвердження',
+      icon: 'pi pi-exclamation-triangle',
+      acceptLabel: 'Видалити',
+      rejectLabel: 'Скасувати',
+      accept: () => {
+        this.adminApi.deleteMedia(m.id).subscribe({
+          next: () => {
+            this.media.update((arr) => arr.filter((x) => x.id !== m.id));
+            this.toast.add({ severity: 'success', summary: 'Фото видалено', detail: '' });
+          },
+          error: (err) => this.handleApiError(err),
+        });
       },
     });
   }

@@ -354,13 +354,74 @@
       </div>
     </details>
 
-    <!-- Media placeholder (Task 4) -->
-    @if (id && water()) {
-      <div class="awf__card awf__media-placeholder">
+    <!-- Media manager (edit mode only) -->
+    @if (id) {
+      <div class="awf__card">
         <h3 class="awf__section-title">Фото</h3>
-        <p class="awf__media-note">Менеджер фотографій буде доступний у наступному оновленні (Task 4).</p>
+
+        <!-- Upload -->
+        <input
+          #fileInput
+          type="file"
+          accept="image/jpeg,image/png,image/webp"
+          class="awf__file-hidden"
+          (change)="onFile($event)"
+        />
+        <p-button
+          label="Завантажити фото"
+          icon="pi pi-upload"
+          severity="secondary"
+          [loading]="uploading()"
+          [disabled]="uploading()"
+          (onClick)="triggerFileInput()"
+        />
+
+        <!-- Thumbnails grid -->
+        @if (media().length > 0) {
+          <div class="awf__media-grid">
+            @for (m of media(); track m.id; let i = $index) {
+              <div class="awf__thumb-card">
+                @if (i === 0) {
+                  <span class="awf__thumb-badge">Обкладинка</span>
+                }
+                <img
+                  [src]="m.urlThumb"
+                  [alt]="m.alt ?? ''"
+                  loading="lazy"
+                  class="awf__thumb-img"
+                />
+                <div class="awf__thumb-controls">
+                  <button
+                    type="button"
+                    class="awf__thumb-btn"
+                    title="Перемістити ліворуч"
+                    [disabled]="i === 0"
+                    (click)="moveMedia(i, -1)"
+                  >←</button>
+                  <button
+                    type="button"
+                    class="awf__thumb-btn"
+                    title="Перемістити праворуч"
+                    [disabled]="i === media().length - 1"
+                    (click)="moveMedia(i, 1)"
+                  >→</button>
+                  <button
+                    type="button"
+                    class="awf__thumb-btn awf__thumb-btn--danger"
+                    title="Видалити"
+                    (click)="confirmDeleteMedia(m)"
+                  >🗑</button>
+                </div>
+              </div>
+            }
+          </div>
+        } @else {
+          <p class="awf__media-empty">Фото ще не додані</p>
+        }
       </div>
     }
 
   </form>
 </div>
+
+<p-confirmdialog />

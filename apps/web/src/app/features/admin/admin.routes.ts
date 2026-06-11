@@ -17,7 +17,14 @@ export const ADMIN_ROUTES: Routes = [
             path: 'waters',
             loadComponent: () => import('./waters/admin-waters-list').then((m) => m.AdminWatersList),
           },
-          // 'waters/new' and 'waters/:id' land in Task 3
+          {
+            path: 'waters/new',
+            loadComponent: () => import('./waters/admin-water-form').then((m) => m.AdminWaterForm),
+          },
+          {
+            path: 'waters/:id',
+            loadComponent: () => import('./waters/admin-water-form').then((m) => m.AdminWaterForm),
+          },
         ],
       },
     ],

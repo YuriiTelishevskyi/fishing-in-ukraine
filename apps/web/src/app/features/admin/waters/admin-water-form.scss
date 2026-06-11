@@ -1,0 +1,173 @@
+.awf {
+  max-width: 900px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  &__back {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__title-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    margin: 0;
+  }
+
+  &__slug {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+
+  &__spacer {
+    flex: 1;
+  }
+
+  &__card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  }
+
+  &__section-title {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    margin: 0 0 18px 0;
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    &--mt {
+      margin-top: 16px;
+    }
+
+    @media (max-width: 860px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    &--full {
+      grid-column: 1 / -1;
+    }
+
+    &--toggle {
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  &__label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted, #6b7280);
+  }
+
+  &__req {
+    color: var(--danger, #ef4444);
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__error {
+    font-size: 0.78rem;
+    color: var(--danger, #ef4444);
+  }
+
+  &__map {
+    height: 360px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 16px;
+    border: 1px solid #e5e7eb;
+  }
+
+  &__map-hint {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.78rem;
+    color: var(--text-muted, #6b7280);
+  }
+
+  &__details {
+    cursor: default;
+
+    &-summary {
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      list-style: none;
+      user-select: none;
+      padding: 0 0 4px 0;
+      margin-bottom: 0;
+
+      &::before {
+        content: '▶ ';
+        font-size: 0.7em;
+        transition: transform 0.2s;
+      }
+    }
+  }
+
+  details[open] &__details-summary::before {
+    content: '▼ ';
+  }
+
+  &__media-placeholder {
+    color: var(--text-muted);
+  }
+
+  &__media-note {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
+
+/* Textarea pTextarea full-width fix */
+.awf__field textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+/* Ensure p-select and p-inputnumber fill the field */
+.awf__field p-select,
+.awf__field p-multiselect,
+.awf__field p-inputnumber {
+  display: block;
+  width: 100%;
+}

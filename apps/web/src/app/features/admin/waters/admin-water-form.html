@@ -1,0 +1,366 @@
+<p-toast />
+
+<div class="awf">
+  <!-- Header row -->
+  <div class="awf__header">
+    <a routerLink="/admin/waters" class="awf__back">← До списку</a>
+
+    <div class="awf__title-block">
+      @if (id && water()) {
+        <h2 class="awf__title">{{ water()!.name }}</h2>
+        <p-tag
+          [severity]="statusSeverity(water()!.status)"
+          [value]="statusLabel(water()!.status)"
+        />
+        <small class="awf__slug">{{ water()!.slug }}</small>
+      } @else {
+        <h2 class="awf__title">Нова водойма</h2>
+      }
+    </div>
+
+    <span class="awf__spacer"></span>
+
+    @if (id) {
+      @if (currentStatus === 'PUBLISHED') {
+        <p-button
+          label="У чернетку"
+          severity="secondary"
+          [loading]="statusUpdating()"
+          (onClick)="toggleStatus()"
+        />
+      } @else {
+        <p-button
+          label="Опублікувати"
+          severity="success"
+          [loading]="statusUpdating()"
+          (onClick)="toggleStatus()"
+        />
+      }
+    }
+
+    <p-button
+      label="Зберегти"
+      severity="primary"
+      [loading]="saving()"
+      (onClick)="submit()"
+    />
+  </div>
+
+  <!-- Form -->
+  <form [formGroup]="form" class="awf__form" (ngSubmit)="submit()">
+
+    <!-- Main info card -->
+    <div class="awf__card">
+      <h3 class="awf__section-title">Основна інформація</h3>
+
+      <div class="awf__grid">
+        <!-- Name -->
+        <div class="awf__field awf__field--full">
+          <label class="awf__label">Назва <span class="awf__req">*</span></label>
+          <input
+            pInputText
+            type="text"
+            formControlName="name"
+            placeholder="Назва водойми"
+            class="awf__input"
+          />
+          @if (form.controls.name.invalid && form.controls.name.touched) {
+            <small class="awf__error">
+              @if (form.controls.name.errors?.['required']) { Поле обов'язкове }
+              @else if (form.controls.name.errors?.['minlength']) { Мінімум 3 символи }
+            </small>
+          }
+        </div>
+
+        <!-- Description -->
+        <div class="awf__field awf__field--full">
+          <label class="awf__label">Опис <span class="awf__req">*</span></label>
+          <textarea
+            pTextarea
+            formControlName="description"
+            placeholder="Детальний опис водойми"
+            rows="4"
+            class="awf__input"
+          ></textarea>
+          @if (form.controls.description.invalid && form.controls.description.touched) {
+            <small class="awf__error">Поле обов'язкове</small>
+          }
+        </div>
+
+        <!-- Region -->
+        <div class="awf__field">
+          <label class="awf__label">Область <span class="awf__req">*</span></label>
+          <p-select
+            formControlName="regionId"
+            [options]="regions()"
+            optionLabel="name"
+            optionValue="id"
+            placeholder="Оберіть область"
+            [style]="{'width': '100%'}"
+          />
+          @if (form.controls.regionId.invalid && form.controls.regionId.touched) {
+            <small class="awf__error">Поле обов'язкове</small>
+          }
+        </div>
+
+        <!-- District -->
+        <div class="awf__field">
+          <label class="awf__label">Район</label>
+          <input pInputText type="text" formControlName="district" placeholder="Район" class="awf__input" />
+        </div>
+
+        <!-- Water type -->
+        <div class="awf__field">
+          <label class="awf__label">Тип водойми <span class="awf__req">*</span></label>
+          <p-select
+            formControlName="waterType"
+            [options]="waterTypeOptions"
+            optionLabel="label"
+            optionValue="value"
+            placeholder="Оберіть тип"
+            [style]="{'width': '100%'}"
+          />
+          @if (form.controls.waterType.invalid && form.controls.waterType.touched) {
+            <small class="awf__error">Поле обов'язкове</small>
+          }
+        </div>
+
+        <!-- Area -->
+        <div class="awf__field">
+          <label class="awf__label">Площа, га</label>
+          <p-inputNumber
+            formControlName="areaHa"
+            [minFractionDigits]="0"
+            [maxFractionDigits]="2"
+            placeholder="напр. 15.5"
+            [style]="{'width': '100%'}"
+          />
+        </div>
+
+        <!-- Fish species -->
+        <div class="awf__field">
+          <label class="awf__label">Риба</label>
+          <p-multiselect
+            formControlName="fishIds"
+            [options]="fishList()"
+            optionLabel="name"
+            optionValue="id"
+            placeholder="Оберіть риб"
+            [style]="{'width': '100%'}"
+            display="chip"
+          />
+        </div>
+
+        <!-- Amenities -->
+        <div class="awf__field">
+          <label class="awf__label">Зручності</label>
+          <p-multiselect
+            formControlName="amenityIds"
+            [options]="amenitiesList()"
+            optionLabel="name"
+            optionValue="id"
+            placeholder="Оберіть зручності"
+            [style]="{'width': '100%'}"
+            display="chip"
+          />
+        </div>
+
+        <!-- Verified -->
+        <div class="awf__field awf__field--toggle">
+          <label class="awf__label">Перевірена</label>
+          <p-toggleswitch formControlName="verified" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Coordinates card with map -->
+    <div class="awf__card">
+      <h3 class="awf__section-title">Координати</h3>
+
+      <div class="awf__grid">
+        <div class="awf__field">
+          <label class="awf__label">Широта <span class="awf__req">*</span></label>
+          <input
+            pInputText
+            type="number"
+            formControlName="lat"
+            placeholder="напр. 49.123456"
+            step="0.000001"
+            class="awf__input"
+          />
+          @if (form.controls.lat.invalid && form.controls.lat.touched) {
+            <small class="awf__error">Поле обов'язкове — клікніть на карту або введіть вручну</small>
+          }
+        </div>
+
+        <div class="awf__field">
+          <label class="awf__label">Довгота <span class="awf__req">*</span></label>
+          <input
+            pInputText
+            type="number"
+            formControlName="lng"
+            placeholder="напр. 31.123456"
+            step="0.000001"
+            class="awf__input"
+          />
+          @if (form.controls.lng.invalid && form.controls.lng.touched) {
+            <small class="awf__error">Поле обов'язкове — клікніть на карту або введіть вручну</small>
+          }
+        </div>
+      </div>
+
+      <div #pickMap class="awf__map"></div>
+      <small class="awf__map-hint">Клікніть на карту, щоб вибрати місце розташування</small>
+    </div>
+
+    <!-- Contacts card -->
+    <div class="awf__card">
+      <h3 class="awf__section-title">Контакти</h3>
+
+      <div class="awf__grid">
+        <div class="awf__field">
+          <label class="awf__label">Телефон</label>
+          <input pInputText type="tel" formControlName="phone" placeholder="+380..." class="awf__input" />
+        </div>
+
+        <div class="awf__field">
+          <label class="awf__label">Сайт</label>
+          <input pInputText type="url" formControlName="website" placeholder="https://..." class="awf__input" />
+          @if (form.controls.website.invalid && form.controls.website.touched) {
+            <small class="awf__error">Введіть коректну URL-адресу (https://...)</small>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Rules card -->
+    <div class="awf__card">
+      <h3 class="awf__section-title">Правила рибалки</h3>
+      <div class="awf__field awf__field--full">
+        <textarea
+          pTextarea
+          formControlName="rules"
+          placeholder="Правила та умови рибалки"
+          rows="3"
+          class="awf__input"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- Pricing card -->
+    <div class="awf__card">
+      <h3 class="awf__section-title">Ціни</h3>
+
+      <div class="awf__field awf__field--toggle">
+        <label class="awf__label">Платна рибалка</label>
+        <p-toggleswitch formControlName="isPaid" />
+      </div>
+
+      @if (isPaid) {
+        <div class="awf__grid awf__grid--mt">
+          <div class="awf__field">
+            <label class="awf__label">Ціна від, грн</label>
+            <p-inputNumber
+              formControlName="priceFrom"
+              [minFractionDigits]="0"
+              [maxFractionDigits]="2"
+              placeholder="0"
+              [style]="{'width': '100%'}"
+            />
+          </div>
+
+          <div class="awf__field">
+            <label class="awf__label">Ціна до, грн</label>
+            <p-inputNumber
+              formControlName="priceTo"
+              [minFractionDigits]="0"
+              [maxFractionDigits]="2"
+              placeholder="0"
+              [style]="{'width': '100%'}"
+            />
+          </div>
+
+          <div class="awf__field awf__field--full">
+            <label class="awf__label">Примітка до ціни</label>
+            <input pInputText type="text" formControlName="priceNote" placeholder="напр. добовий квиток" class="awf__input" />
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- English block -->
+    <details class="awf__details awf__card">
+      <summary class="awf__details-summary">English (опційно)</summary>
+
+      <div class="awf__grid awf__grid--mt">
+        <div class="awf__field awf__field--full">
+          <label class="awf__label">Name (EN)</label>
+          <input pInputText type="text" formControlName="nameEn" placeholder="Water name in English" class="awf__input" />
+        </div>
+
+        <div class="awf__field awf__field--full">
+          <label class="awf__label">Description (EN)</label>
+          <textarea
+            pTextarea
+            formControlName="descriptionEn"
+            placeholder="Description in English"
+            rows="3"
+            class="awf__input"
+          ></textarea>
+        </div>
+
+        <div class="awf__field awf__field--full">
+          <label class="awf__label">Rules (EN)</label>
+          <textarea
+            pTextarea
+            formControlName="rulesEn"
+            placeholder="Rules in English"
+            rows="2"
+            class="awf__input"
+          ></textarea>
+        </div>
+
+        <div class="awf__field">
+          <label class="awf__label">Price note (EN)</label>
+          <input pInputText type="text" formControlName="priceNoteEn" placeholder="Price note in English" class="awf__input" />
+        </div>
+
+        <div class="awf__field">
+          <label class="awf__label">SEO Title (EN)</label>
+          <input pInputText type="text" formControlName="seoTitleEn" placeholder="SEO title in English" class="awf__input" />
+        </div>
+
+        <div class="awf__field awf__field--full">
+          <label class="awf__label">SEO Description (EN)</label>
+          <input pInputText type="text" formControlName="seoDescriptionEn" placeholder="SEO description in English" class="awf__input" />
+        </div>
+      </div>
+    </details>
+
+    <!-- SEO block -->
+    <details class="awf__details awf__card">
+      <summary class="awf__details-summary">SEO (опційно)</summary>
+
+      <div class="awf__grid awf__grid--mt">
+        <div class="awf__field">
+          <label class="awf__label">SEO Заголовок</label>
+          <input pInputText type="text" formControlName="seoTitle" placeholder="SEO заголовок сторінки" class="awf__input" />
+        </div>
+
+        <div class="awf__field">
+          <label class="awf__label">SEO Опис</label>
+          <input pInputText type="text" formControlName="seoDescription" placeholder="SEO мета-опис" class="awf__input" />
+        </div>
+      </div>
+    </details>
+
+    <!-- Media placeholder (Task 4) -->
+    @if (id && water()) {
+      <div class="awf__card awf__media-placeholder">
+        <h3 class="awf__section-title">Фото</h3>
+        <p class="awf__media-note">Менеджер фотографій буде доступний у наступному оновленні (Task 4).</p>
+      </div>
+    }
+
+  </form>
+</div>

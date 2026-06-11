@@ -1,0 +1,58 @@
+{
+  "nav": { "catalog": "Catalog", "map": "Map" },
+  "hero": {
+    "title": "Find your fishing spot",
+    "subtitle": "Lakes, ponds and rivers of Ukraine — with prices, fish species and amenities",
+    "searchRegion": "Region",
+    "searchFish": "Fish",
+    "anyRegion": "All Ukraine",
+    "anyFish": "Any fish",
+    "cta": "Find waters",
+    "mapCta": "Open the map"
+  },
+  "home": {
+    "featured": "Verified waters",
+    "regions": "Waters by region",
+    "fishTitle": "What are we catching?",
+    "ctaTitle": "Own a fishing spot?",
+    "ctaText": "Add it to the catalog for free — anglers will find you.",
+    "ctaBtn": "Contact us"
+  },
+  "catalog": {
+    "title": "Waters catalog",
+    "found": "Found: {{count}}",
+    "filters": "Filters",
+    "region": "Region",
+    "fish": "Fish",
+    "amenities": "Amenities",
+    "type": "Water type",
+    "paid": "Payment",
+    "any": "Any",
+    "free": "Free",
+    "paidOnly": "Paid",
+    "search": "Search by name",
+    "reset": "Reset",
+    "empty": "Nothing found. Try different filters.",
+    "prev": "Prev",
+    "next": "Next"
+  },
+  "water": {
+    "price": "Price",
+    "free": "Free",
+    "fish": "Fish",
+    "amenities": "Amenities",
+    "rules": "Rules",
+    "contacts": "Contacts",
+    "onMap": "On the map",
+    "area": "Area",
+    "ha": "ha",
+    "from": "from",
+    "uah": "UAH",
+    "verified": "Verified",
+    "moreWaters": "More waters in this region"
+  },
+  "fishPage": { "title": "Where to catch: {{fish}}", "waters": "Waters with this fish" },
+  "map": { "title": "Waters map" },
+  "notFound": { "title": "Page not found", "text": "Maybe the water has moved.", "home": "Go home" },
+  "footer": { "tagline": "Ukrainian fishing waters catalog." }
+}

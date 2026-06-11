@@ -1,12 +1,12 @@
 <footer class="ftr">
   <div class="container ftr__row">
     <div>
-      <div class="ftr__logo">🎣 FishMap<em>.ua</em></div>
-      <p>Каталог водойм України для рибалок.</p>
+      <a class="ftr__logo" [routerLink]="loc.home()">🎣 FishMap<em>.ua</em></a>
+      <p>{{ 'footer.tagline' | transloco }}</p>
     </div>
     <nav>
-      <a routerLink="/vodoymy">Каталог водойм</a>
-      <a routerLink="/karta">Карта</a>
+      <a [routerLink]="loc.link('catalog')">{{ 'nav.catalog' | transloco }}</a>
+      <a [routerLink]="loc.link('map')">{{ 'nav.map' | transloco }}</a>
     </nav>
   </div>
   <div class="container ftr__copy">© 2026 FishMap.ua</div>

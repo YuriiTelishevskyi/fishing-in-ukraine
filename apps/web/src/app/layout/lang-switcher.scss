@@ -1,0 +1,6 @@
+:host { display: inline-flex; gap: 4px; background: rgba(255, 255, 255, 0.12); border-radius: 999px; padding: 3px; }
+.pill {
+  padding: 4px 12px; border-radius: 999px; color: rgba(255, 255, 255, 0.8);
+  font: 600 0.8rem var(--font-body);
+  &--on { background: #fff; color: var(--ink); }
+}

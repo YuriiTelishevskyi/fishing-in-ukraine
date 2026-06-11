@@ -1,10 +1,12 @@
 <header class="hdr" [class.hdr--solid]="solid()">
   <div class="container hdr__row">
-    <a routerLink="/" class="hdr__logo">🎣 <span>FishMap<em>.ua</em></span></a>
+    <a [routerLink]="loc.home()" class="hdr__logo">🎣 <span>FishMap<em>.ua</em></span></a>
     <nav class="hdr__nav">
-      <a routerLink="/vodoymy">Каталог</a>
-      <a routerLink="/karta">Карта</a>
+      <a [routerLink]="loc.link('catalog')">{{ 'nav.catalog' | transloco }}</a>
+      <a [routerLink]="loc.link('map')">{{ 'nav.map' | transloco }}</a>
     </nav>
-    <div class="hdr__lang"><!-- lang switcher lands in Task 2 --></div>
+    <div class="hdr__lang">
+      <app-lang-switcher [pair]="pair()" />
+    </div>
   </div>
 </header>

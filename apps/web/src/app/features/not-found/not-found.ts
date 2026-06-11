@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { RESPONSE_INIT } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
@@ -19,5 +20,8 @@ export class NotFoundPage {
   constructor() {
     const meta = inject(Meta);
     meta.updateTag({ name: 'robots', content: 'noindex' });
+
+    const responseInit = inject(RESPONSE_INIT, { optional: true });
+    if (responseInit) responseInit.status = 404;
   }
 }

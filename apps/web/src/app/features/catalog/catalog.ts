@@ -7,6 +7,7 @@ import { WATER_TYPES, WATER_TYPE_LABELS } from '@fishing/shared';
 import { combineLatest } from 'rxjs';
 import { ApiService, WatersFilter } from '../../core/api.service';
 import { SeoService } from '../../core/seo.service';
+import { SITE_ORIGIN } from '../../core/site-origin';
 import { usePageLocale } from '../../core/use-locale';
 import { Footer } from '../../layout/footer';
 import { Header } from '../../layout/header';
@@ -30,6 +31,7 @@ export class CatalogPage {
   private readonly router = inject(Router);
   private readonly api = inject(ApiService);
   private readonly seo = inject(SeoService);
+  private readonly siteOrigin = inject(SITE_ORIGIN);
 
   readonly regions = toSignal(this.api.regions(), { initialValue: [] });
   readonly fishList = toSignal(this.api.fishSpecies(), { initialValue: [] });
@@ -131,7 +133,7 @@ export class CatalogPage {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'FishMap.ua', item: 'https://fishmap.ua/' },
+            { '@type': 'ListItem', position: 1, name: 'FishMap.ua', item: `${this.siteOrigin}/` },
             { '@type': 'ListItem', position: 2, name: region ?? 'Каталог' },
           ],
         },

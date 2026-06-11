@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { SITE_ORIGIN } from './site-origin';
 
 export interface SeoPage {
   title: string;
@@ -12,13 +13,12 @@ export interface SeoPage {
   jsonLd?: object[];
 }
 
-const ORIGIN = 'https://fishmap.ua'; // replaced by real domain at deploy; relative canonical is invalid
-
 @Injectable({ providedIn: 'root' })
 export class SeoService {
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
   private readonly doc = inject(DOCUMENT);
+  private readonly origin = inject(SITE_ORIGIN);
 
   apply(p: SeoPage) {
     this.title.setTitle(p.title);
@@ -26,15 +26,15 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:title', content: p.title });
     this.meta.updateTag({ property: 'og:description', content: p.description });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
-    const canonical = ORIGIN + (p.locale === 'en' ? p.paths.en : p.paths.uk);
+    const canonical = this.origin + (p.locale === 'en' ? p.paths.en : p.paths.uk);
     this.meta.updateTag({ property: 'og:url', content: canonical });
-    if (p.image) this.meta.updateTag({ property: 'og:image', content: ORIGIN + p.image });
+    if (p.image) this.meta.updateTag({ property: 'og:image', content: this.origin + p.image });
     else this.meta.removeTag("property='og:image'");
 
     this.setLink('canonical', canonical);
-    this.setLink('alternate', ORIGIN + p.paths.uk, 'uk');
-    this.setLink('alternate', ORIGIN + p.paths.en, 'en');
-    this.setLink('alternate', ORIGIN + p.paths.uk, 'x-default');
+    this.setLink('alternate', this.origin + p.paths.uk, 'uk');
+    this.setLink('alternate', this.origin + p.paths.en, 'en');
+    this.setLink('alternate', this.origin + p.paths.uk, 'x-default');
 
     this.setJsonLd(p.jsonLd ?? []);
   }

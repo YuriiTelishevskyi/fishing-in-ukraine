@@ -16,6 +16,7 @@ import { TranslocoPipe } from '@jsverse/transloco';
 import { WaterDetailDto, WATER_TYPE_LABELS, WaterType } from '@fishing/shared';
 import { ApiService } from '../../core/api.service';
 import { SeoService } from '../../core/seo.service';
+import { SITE_ORIGIN } from '../../core/site-origin';
 import { usePageLocale } from '../../core/use-locale';
 import { Footer } from '../../layout/footer';
 import { Header } from '../../layout/header';
@@ -41,6 +42,7 @@ export class WaterDetailPage {
   private readonly api = inject(ApiService);
   private readonly route = inject(ActivatedRoute);
   private readonly seo = inject(SeoService);
+  private readonly siteOrigin = inject(SITE_ORIGIN);
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private readonly injector = inject(Injector);
 
@@ -117,10 +119,10 @@ export class WaterDetailPage {
           name: w.name,
           description: w.description.slice(0, 300),
           telephone: w.phone ?? undefined,
-          url: `https://fishmap.ua${this.pair.uk}`,
+          url: `${this.siteOrigin}${this.pair.uk}`,
           geo: { '@type': 'GeoCoordinates', latitude: w.lat, longitude: w.lng },
           address: { '@type': 'PostalAddress', addressRegion: w.regionName, addressCountry: 'UA' },
-          image: w.media.map((m) => `https://fishmap.ua${m.urlFull}`),
+          image: w.media.map((m) => `${this.siteOrigin}${m.urlFull}`),
         },
       ],
     });

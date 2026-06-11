@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { ApiService } from '../../core/api.service';
 import { SeoService } from '../../core/seo.service';
+import { SITE_ORIGIN } from '../../core/site-origin';
 import { usePageLocale } from '../../core/use-locale';
 import { Footer } from '../../layout/footer';
 import { Header } from '../../layout/header';
@@ -23,6 +24,7 @@ export class HomePage {
   private readonly api = inject(ApiService);
   private readonly router = inject(Router);
   private readonly seo = inject(SeoService);
+  private readonly siteOrigin = inject(SITE_ORIGIN);
 
   readonly pair = this.locale.pathPair('home');
   readonly regions = toSignal(this.api.regions(), { initialValue: [] });
@@ -48,7 +50,7 @@ export class HomePage {
           '@context': 'https://schema.org',
           '@type': 'WebSite',
           name: 'FishMap.ua',
-          url: 'https://fishmap.ua/',
+          url: `${this.siteOrigin}/`,
         },
       ],
     });

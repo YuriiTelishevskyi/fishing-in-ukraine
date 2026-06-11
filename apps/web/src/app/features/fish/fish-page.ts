@@ -5,6 +5,7 @@ import { TranslocoPipe } from '@jsverse/transloco';
 import { Paginated, WaterListItemDto } from '@fishing/shared';
 import { ApiService } from '../../core/api.service';
 import { SeoService } from '../../core/seo.service';
+import { SITE_ORIGIN } from '../../core/site-origin';
 import { usePageLocale } from '../../core/use-locale';
 import { Footer } from '../../layout/footer';
 import { Header } from '../../layout/header';
@@ -26,6 +27,7 @@ export class FishPage {
 
   readonly slug = this.route.snapshot.paramMap.get('fishSlug')!;
   readonly pair = this.locale.pathPair('fish', [this.slug]);
+  private readonly siteOrigin = inject(SITE_ORIGIN);
 
   readonly fishSpecies = toSignal(this.api.fishSpecies(), { initialValue: [] });
   readonly fishName = computed(() => this.fishSpecies().find((f) => f.slug === this.slug)?.name ?? '');
@@ -83,7 +85,7 @@ export class FishPage {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'FishMap.ua', item: 'https://fishmap.ua/' },
+            { '@type': 'ListItem', position: 1, name: 'FishMap.ua', item: `${this.siteOrigin}/` },
             { '@type': 'ListItem', position: 2, name },
           ],
         },

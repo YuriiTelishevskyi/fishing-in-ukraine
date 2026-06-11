@@ -16,4 +16,8 @@ export class StorageService {
   async delete(relPath: string): Promise<void> {
     await rm(join(UPLOADS_ROOT, relPath), { force: true });
   }
+
+  async deleteDir(relPath: string): Promise<void> {
+    await rm(join(UPLOADS_ROOT, relPath), { recursive: true, force: true });
+  }
 }

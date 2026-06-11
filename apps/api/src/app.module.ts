@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { APP_GUARD } from '@nestjs/core';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { AdminAuthModule } from './admin-auth/admin-auth.module';
 import { DictionariesModule } from './dictionaries/dictionaries.module';
 import { HealthController } from './health.controller';
@@ -13,6 +15,10 @@ import { WatersModule } from './waters/waters.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
+    // Generous global limit: behind the SSR proxy all server-rendered traffic shares
+    // the web container's IP, so per-IP buckets aggregate many users. Login has its
+    // own strict 5/min @Throttle.
+    ThrottlerModule.forRoot([{ name: 'default', ttl: 60000, limit: 1000 }]),
     ServeStaticModule.forRoot({
       rootPath: UPLOADS_ROOT,
       serveRoot: '/uploads',
@@ -27,5 +33,6 @@ import { WatersModule } from './waters/waters.module';
     SeoModule,
   ],
   controllers: [HealthController],
+  providers: [{ provide: APP_GUARD, useClass: ThrottlerGuard }],
 })
 export class AppModule {}

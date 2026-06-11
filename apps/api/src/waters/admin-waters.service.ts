@@ -2,6 +2,7 @@ import { BadRequestException, Injectable, NotFoundException } from '@nestjs/comm
 import { Paginated, WaterDetailDto } from '@fishing/shared';
 import { Prisma } from '@prisma/client';
 import { slugify } from '../common/slugify';
+import { StorageService } from '../media/storage.service';
 import { PrismaService } from '../prisma/prisma.service';
 import { AdminWatersQueryDto } from './dto/admin-waters-query.dto';
 import { CreateWaterDto } from './dto/create-water.dto';
@@ -10,7 +11,10 @@ import { FULL_INCLUDE, toDetail } from './waters.mapper';
 
 @Injectable()
 export class AdminWatersService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly storage: StorageService,
+  ) {}
 
   private assertPriceRange(priceFrom?: number | null, priceTo?: number | null) {
     if (priceFrom != null && priceTo != null && priceTo < priceFrom) {
@@ -96,6 +100,7 @@ export class AdminWatersService {
   async remove(id: string): Promise<{ ok: true }> {
     await this.byId(id);
     await this.prisma.water.delete({ where: { id } });
+    await this.storage.deleteDir(`waters/${id}`);
     return { ok: true };
   }
 }

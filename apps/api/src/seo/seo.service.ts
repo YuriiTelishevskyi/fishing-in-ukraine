@@ -1,0 +1,66 @@
+import { Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import { PrismaService } from '../prisma/prisma.service';
+
+/** A logical page in both locales; en pages live under /en with English segments. */
+interface PagePair {
+  uk: string;
+  en: string;
+  lastmod?: string;
+}
+
+@Injectable()
+export class SeoService {
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly config: ConfigService,
+  ) {}
+
+  async sitemap(): Promise<string> {
+    const base = (this.config.get<string>('SITE_BASE_URL') ?? 'http://localhost:4200').replace(
+      /\/$/,
+      '',
+    );
+
+    const [regions, waters, fish] = await Promise.all([
+      this.prisma.region.findMany({ select: { slug: true } }),
+      this.prisma.water.findMany({
+        where: { status: 'PUBLISHED' },
+        select: { slug: true, updatedAt: true, region: { select: { slug: true } } },
+      }),
+      this.prisma.fishSpecies.findMany({
+        where: { waters: { some: { water: { status: 'PUBLISHED' } } } },
+        select: { slug: true },
+      }),
+    ]);
+
+    const pages: PagePair[] = [
+      { uk: '/', en: '/en' },
+      { uk: '/vodoymy', en: '/en/waters' },
+      { uk: '/karta', en: '/en/map' },
+      ...regions.map((r) => ({ uk: `/vodoymy/${r.slug}`, en: `/en/waters/${r.slug}` })),
+      ...waters.map((w) => ({
+        uk: `/vodoymy/${w.region.slug}/${w.slug}`,
+        en: `/en/waters/${w.region.slug}/${w.slug}`,
+        lastmod: w.updatedAt.toISOString().slice(0, 10),
+      })),
+      ...fish.map((f) => ({ uk: `/ryba/${f.slug}`, en: `/en/fish/${f.slug}` })),
+    ];
+
+    const alternates = (p: PagePair) =>
+      `<xhtml:link rel="alternate" hreflang="uk" href="${base}${p.uk}"/>` +
+      `<xhtml:link rel="alternate" hreflang="en" href="${base}${p.en}"/>` +
+      `<xhtml:link rel="alternate" hreflang="x-default" href="${base}${p.uk}"/>`;
+
+    const body = pages
+      .flatMap((p) =>
+        (['uk', 'en'] as const).map((l) => {
+          const lastmod = p.lastmod ? `<lastmod>${p.lastmod}</lastmod>` : '';
+          return `  <url><loc>${base}${p[l]}</loc>${lastmod}${alternates(p)}</url>`;
+        }),
+      )
+      .join('\n');
+
+    return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${body}\n</urlset>\n`;
+  }
+}

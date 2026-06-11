@@ -7,6 +7,7 @@ import { HealthController } from './health.controller';
 import { MediaModule } from './media/media.module';
 import { UPLOADS_ROOT } from './media/storage.service';
 import { PrismaModule } from './prisma/prisma.module';
+import { SeoModule } from './seo/seo.module';
 import { WatersModule } from './waters/waters.module';
 
 @Module({
@@ -23,6 +24,7 @@ import { WatersModule } from './waters/waters.module';
     DictionariesModule,
     WatersModule,
     MediaModule,
+    SeoModule,
   ],
   controllers: [HealthController],
 })

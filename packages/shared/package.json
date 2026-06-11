@@ -1,0 +1,14 @@
+{
+  "name": "@fishing/shared",
+  "version": "0.0.1",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.2"
+  }
+}

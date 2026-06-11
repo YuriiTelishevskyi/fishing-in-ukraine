@@ -36,7 +36,8 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "allowedCommonJsDependencies": ["@fishing/shared"]
           },
           "configurations": {
             "production": {

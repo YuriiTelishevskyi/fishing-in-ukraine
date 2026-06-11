@@ -1,9 +1,49 @@
 .awl {
-  h2 {
-    margin-bottom: 12px;
+  &__toolbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   }
 
-  p {
-    color: var(--muted);
+  &__title {
+    margin: 0;
+    font-size: 1.4rem;
+    font-family: var(--font-head, sans-serif);
+    color: var(--text, #1a1a1a);
+  }
+
+  &__search {
+    width: 220px;
+  }
+
+  &__spacer {
+    flex: 1;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__slug {
+    color: var(--muted, #888);
+    font-size: 0.78rem;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  &__empty {
+    text-align: center;
+    padding: 32px 16px;
+    color: var(--muted, #888);
   }
 }

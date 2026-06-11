@@ -9,6 +9,8 @@
 «Booking для рибалок». Перший цикл — **публічний SEO-каталог водойм** із картою,
 фільтрами та мінімальною адмінкою для внесення даних. Контент стартує зі
 Львівської області (100–200 водойм вручну), але модель даних — всеукраїнська.
+Сайт двомовний: **українська** (основна) та **англійська** (EN-контент опційний,
+з фолбеком на українську).
 
 Головна метрика успіху циклу: сайт у продакшні, водойми вносяться через адмінку,
 сторінки індексуються Google (SSR, sitemap, Schema.org).
@@ -68,14 +70,15 @@ fishing-in-ukraine/
 | verified | boolean | бейдж «перевірена» |
 | status | enum | DRAFT / PUBLISHED / ARCHIVED |
 | seoTitle, seoDescription | string? | override; за замовчуванням — шаблон |
+| nameEn, descriptionEn, rulesEn, priceNoteEn, seoTitleEn, seoDescriptionEn | string? | англійські версії полів; порожні — фолбек на українську |
 | createdAt, updatedAt | datetime | |
 
 ### Довідники
 
-- **Region** — 24 області + Київ: `id`, `slug`, `name`. Сідається seed-скриптом.
-- **FishSpecies** — `id`, `slug`, `name`. Сід ~20 базових видів.
-- **Amenity** — `id`, `slug`, `name`, `icon` (альтанки, ночівля, човни, прокат,
-  парковка…). Сід ~10 позицій.
+- **Region** — 24 області + Київ: `id`, `slug`, `name`, `nameEn`. Сідається seed-скриптом.
+- **FishSpecies** — `id`, `slug`, `name`, `nameEn`. Сід ~20 базових видів.
+- **Amenity** — `id`, `slug`, `name`, `nameEn`, `icon` (альтанки, ночівля, човни,
+  прокат, парковка…). Сід ~10 позицій.
 - Join-таблиці: **WaterFish** (waterId, fishId), **WaterAmenity** (waterId, amenityId).
 
 ### Media
@@ -99,6 +102,11 @@ Prisma-міграції дешеві; схема нічого не блокує 
 | `GET /api/waters/:slug` | повні дані сторінки водойми (тільки PUBLISHED) |
 | `GET /api/regions`, `/api/fish-species`, `/api/amenities` | довідники для фільтрів |
 | `GET /sitemap.xml` | генерується з PUBLISHED-водойм, регіонів і видів риби |
+
+Усі публічні ендпоїнти приймають `lang=uk|en` (default — `uk`); локалізація
+відбувається на сервері з фолбеком на українську. Адмінські ендпоїнти повертають
+обидві мови. `sitemap.xml` містить обидві мовні версії сторінок із
+`hreflang`-альтернативами.
 
 ### Адмінські ендпоїнти (`/api/admin/*`, JWT-guard)
 
@@ -135,6 +143,11 @@ Prisma-міграції дешеві; схема нічого не блокує 
 Фільтри — у query-параметрах; canonical вказує на чистий шлях, щоб не плодити
 дублікати в індексі.
 
+**Англійська версія** — під префіксом `/en` з англійськими сегментами: `/en`,
+`/en/waters`, `/en/waters/:regionSlug`, `/en/waters/:regionSlug/:waterSlug`,
+`/en/fish/:fishSlug`, `/en/map`. Slug-и спільні для обох мов. Переклади
+інтерфейсу — runtime (Transloco), мова визначається з URL.
+
 ### Структура коду
 
 ```
@@ -164,6 +177,7 @@ apps/web/src/app/
 - `SeoService`: title/description-шаблони, canonical, OG-теги (перше фото
   водойми), JSON-LD: `LocalBusiness` (сторінка водойми), `BreadcrumbList`
   (скрізь), `ItemList` (списки).
+- `hreflang`-альтернативи (uk/en/x-default) у `<head>` кожної сторінки та в sitemap.
 - `robots.txt` — статичний, `/admin` заборонений; `sitemap.xml` проксюється на api.
 
 ## 6. Адмінка (UX)
@@ -172,6 +186,8 @@ apps/web/src/app/
 - `/admin/waters` — таблиця PrimeNG: пошук, фільтр за статусом і областю.
 - `/admin/waters/:id` — форма: основні поля, вибір координат кліком по
   Leaflet-карті, мультиселекти риби/зручностей, textarea правил, SEO-override.
+- Окремий блок «English» у формі: nameEn, descriptionEn, rulesEn, priceNoteEn,
+  seoTitleEn, seoDescriptionEn (усі опційні).
 - Блок медіа: drag-drop завантаження, перестановка порядку, видалення.
 
 ## 7. Деплой і середовища

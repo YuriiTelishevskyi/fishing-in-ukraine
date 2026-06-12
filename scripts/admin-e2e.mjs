@@ -3,8 +3,8 @@
  *
  * Usage (with both dev servers running):
  *   npm run dev:api    # in one terminal — http://localhost:3000
- *   npm run dev:web    # in another terminal — http://localhost:4200
- *   node scripts/admin-e2e.mjs
+ *   npm run dev:web    # in another terminal — http://localhost:4201
+ *   node scripts/admin-e2e.mjs            # override target: WEB_URL=http://localhost:4200 node scripts/admin-e2e.mjs
  *
  * The script drives the full admin happy path:
  *   1. Login (admin / admin12345) → /admin/waters table shows 3 rows
@@ -25,7 +25,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const WEB_URL = 'http://localhost:4200';
+const WEB_URL = process.env.WEB_URL ?? 'http://localhost:4201';
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 
 // ─── helpers ────────────────────────────────────────────────────────────────

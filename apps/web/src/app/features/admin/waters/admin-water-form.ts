@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, ElementRef, afterNextRender, inject, signal, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Injector, PLATFORM_ID, afterNextRender, effect, inject, signal, viewChild } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -59,6 +60,8 @@ export class AdminWaterForm {
   private readonly fb = inject(FormBuilder);
   private readonly toast = inject(MessageService);
   private readonly confirmationService = inject(ConfirmationService);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  private readonly injector = inject(Injector);
   readonly mapEl = viewChild<ElementRef<HTMLDivElement>>('pickMap');
   readonly fileInput = viewChild<ElementRef<HTMLInputElement>>('fileInput');
 
@@ -111,37 +114,23 @@ export class AdminWaterForm {
   private leafletMarker: any = null;
   private L: any = null;
   private mapReady = false;
+  private mapMounted = false;
   private pendingCenter: [number, number] | null = null;
 
   constructor() {
-    afterNextRender(async () => {
+    // Mount Leaflet once the #pickMap viewChild resolves to the LIVE (hydrated)
+    // DOM node. We cannot mount directly from a constructor-time afterNextRender:
+    // with SSR + client hydration, that callback runs against the server-rendered
+    // node, which hydration then discards/recreates — Leaflet would mount on a
+    // detached element and `.leaflet-container` never appears in the document.
+    // Reading mapEl() inside an effect makes this re-run when the live node is
+    // available; scheduling the actual mount via afterNextRender keeps it
+    // browser-only and post-render. Same SSR-safe pattern as home/water-detail.
+    effect(() => {
       const el = this.mapEl()?.nativeElement;
-      if (!el) return;
-
-      const leaflet = await import('leaflet');
-      const L = (leaflet as any).default ?? leaflet;
-      this.L = L;
-
-      this.leafletMap = L.map(el).setView([49.0, 31.0], 6);
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap',
-      }).addTo(this.leafletMap);
-
-      this.leafletMap.on('click', (e: any) => {
-        const lat = +e.latlng.lat.toFixed(6);
-        const lng = +e.latlng.lng.toFixed(6);
-        this.setMarker(lat, lng);
-        this.form.patchValue({ lat, lng });
-      });
-
-      this.mapReady = true;
-
-      if (this.pendingCenter) {
-        const [lat, lng] = this.pendingCenter;
-        this.leafletMap.setView([lat, lng], 13);
-        this.setMarker(lat, lng);
-        this.pendingCenter = null;
-      }
+      if (!this.isBrowser || this.mapMounted || !el) return;
+      this.mapMounted = true; // set BEFORE scheduling so the effect never re-enters
+      afterNextRender(() => this.mountMap(), { injector: this.injector });
     });
 
     if (this.id) {
@@ -193,6 +182,43 @@ export class AdminWaterForm {
           this.toast.add({ severity: 'error', summary: 'Помилка', detail: 'Водойму не знайдено' });
         },
       });
+    }
+  }
+
+  private async mountMap() {
+    const leaflet = await import('leaflet');
+    const L = (leaflet as any).default ?? leaflet;
+    this.L = L;
+
+    // IMPORTANT: re-read the viewChild element AFTER the dynamic import resolves.
+    // Under SSR + client hydration, the await above yields control long enough for
+    // Angular to run another hydration pass that detaches the original #pickMap
+    // node and inserts a fresh one. Capturing the element before the await (or in
+    // the constructor) mounts Leaflet on the now-detached node, so .leaflet-container
+    // never appears in the document. Reading the live node here mounts on the
+    // element actually in the DOM.
+    const el = this.mapEl()?.nativeElement;
+    if (!el) return;
+
+    this.leafletMap = L.map(el).setView([49.0, 31.0], 6);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap',
+    }).addTo(this.leafletMap);
+
+    this.leafletMap.on('click', (e: any) => {
+      const lat = +e.latlng.lat.toFixed(6);
+      const lng = +e.latlng.lng.toFixed(6);
+      this.setMarker(lat, lng);
+      this.form.patchValue({ lat, lng });
+    });
+
+    this.mapReady = true;
+
+    if (this.pendingCenter) {
+      const [lat, lng] = this.pendingCenter;
+      this.leafletMap.setView([lat, lng], 13);
+      this.setMarker(lat, lng);
+      this.pendingCenter = null;
     }
   }
 

@@ -60,6 +60,16 @@ export interface WaterListItemDto {
   fishNames: string[];
   coverThumbUrl: string | null;
   coverCardUrl: string | null;
+  ratingAvg: number | null;
+  ratingCount: number;
+}
+
+export interface ReviewDto {
+  id: string;
+  authorName: string;
+  rating: number;
+  text: string;
+  createdAt: string;
 }
 
 export interface WaterDetailDto extends WaterListItemDto {

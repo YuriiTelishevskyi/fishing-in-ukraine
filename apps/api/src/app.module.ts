@@ -10,6 +10,7 @@ import { HealthController } from './health.controller';
 import { MediaModule } from './media/media.module';
 import { UPLOADS_ROOT } from './media/storage.service';
 import { PrismaModule } from './prisma/prisma.module';
+import { ReviewsModule } from './reviews/reviews.module';
 import { SeoModule } from './seo/seo.module';
 import { WatersModule } from './waters/waters.module';
 
@@ -32,6 +33,7 @@ import { WatersModule } from './waters/waters.module';
     WatersModule,
     MediaModule,
     ArticlesModule,
+    ReviewsModule,
     SeoModule,
   ],
   controllers: [HealthController],

@@ -81,6 +81,8 @@ export function toListItem(w: WaterListRow, lang: Locale): WaterListItemDto {
     fishNames: w.fish.map((f) => loc(lang, f.fish.name, f.fish.nameEn)),
     coverThumbUrl: cover ? variant(cover.url, 'thumb') : null,
     coverCardUrl: cover ? variant(cover.url, 'card') : null,
+    ratingAvg: w.ratingAvg,
+    ratingCount: w.ratingCount,
   };
 }
 

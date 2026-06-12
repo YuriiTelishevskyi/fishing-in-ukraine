@@ -47,41 +47,64 @@ model Amenity {
 }
 
 model Water {
-  id             String         @id @default(uuid())
-  slug           String         @unique
-  name           String
-  nameEn         String?
-  description    String
-  descriptionEn  String?
-  region         Region         @relation(fields: [regionId], references: [id])
-  regionId       Int
-  district       String?
-  lat            Float
-  lng            Float
-  areaHa         Float?
-  waterType      WaterType
-  isPaid         Boolean        @default(false)
-  priceFrom      Int?
-  priceTo        Int?
-  priceNote      String?
-  priceNoteEn    String?
-  phone          String?
-  website        String?
-  rules          String?
-  rulesEn        String?
-  verified       Boolean        @default(false)
-  status         WaterStatus    @default(DRAFT)
-  seoTitle       String?
-  seoTitleEn     String?
-  seoDescription String?
+  id               String         @id @default(uuid())
+  slug             String         @unique
+  name             String
+  nameEn           String?
+  description      String
+  descriptionEn    String?
+  region           Region         @relation(fields: [regionId], references: [id])
+  regionId         Int
+  district         String?
+  lat              Float
+  lng              Float
+  areaHa           Float?
+  waterType        WaterType
+  isPaid           Boolean        @default(false)
+  priceFrom        Int?
+  priceTo          Int?
+  priceNote        String?
+  priceNoteEn      String?
+  phone            String?
+  website          String?
+  rules            String?
+  rulesEn          String?
+  verified         Boolean        @default(false)
+  status           WaterStatus    @default(DRAFT)
+  seoTitle         String?
+  seoTitleEn       String?
+  seoDescription   String?
   seoDescriptionEn String?
-  createdAt      DateTime       @default(now())
-  updatedAt      DateTime       @updatedAt
-  fish           WaterFish[]
-  amenities      WaterAmenity[]
-  media          Media[]
+  ratingAvg        Float?
+  ratingCount      Int            @default(0)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  fish             WaterFish[]
+  amenities        WaterAmenity[]
+  media            Media[]
+  reviews          Review[]
 
   @@index([regionId, status])
+  @@index([status])
+}
+
+enum ReviewStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model Review {
+  id         String       @id @default(uuid())
+  water      Water        @relation(fields: [waterId], references: [id], onDelete: Cascade)
+  waterId    String
+  authorName String
+  rating     Int
+  text       String
+  status     ReviewStatus @default(PENDING)
+  createdAt  DateTime     @default(now())
+
+  @@index([waterId, status])
   @@index([status])
 }
 

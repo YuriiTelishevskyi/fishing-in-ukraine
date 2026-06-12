@@ -261,11 +261,70 @@ Good preparation is half the battle — tight lines!`,
   });
 }
 
+async function seedDemoReviews() {
+  const navariia = await prisma.water.findUniqueOrThrow({ where: { slug: 'ozero-navariia' } });
+  const murovane = await prisma.water.findUniqueOrThrow({ where: { slug: 'stav-murovane' } });
+
+  // Idempotent: delete existing reviews for these waters first, then recreate
+  await prisma.review.deleteMany({ where: { waterId: { in: [navariia.id, murovane.id] } } });
+
+  await prisma.review.createMany({
+    data: [
+      {
+        waterId: navariia.id,
+        authorName: 'Олег',
+        rating: 5,
+        text: 'Чудове місце для риболовлі — короп клює від ранку до вечора. Інфраструктура на висоті, альтанки чисті та зручні.',
+        status: 'APPROVED',
+      },
+      {
+        waterId: navariia.id,
+        authorName: 'Ірина',
+        rating: 4,
+        text: 'Гарний ставок, приємна атмосфера. Щука добре береться на блешню, карась — на тісто. Ціна цілком виправдана.',
+        status: 'APPROVED',
+      },
+      {
+        waterId: murovane.id,
+        authorName: 'Максим',
+        rating: 5,
+        text: 'Тихий став, ідеальний для фідерної риболовлі. Короп великий, місця багато. Обов\'язково повернусь!',
+        status: 'PENDING',
+      },
+    ],
+  });
+
+  // Recompute aggregates for navariia (2 APPROVED: avg 4.5, count 2)
+  const navariiaAgg = await prisma.review.aggregate({
+    where: { waterId: navariia.id, status: 'APPROVED' },
+    _avg: { rating: true },
+    _count: { rating: true },
+  });
+  await prisma.water.update({
+    where: { id: navariia.id },
+    data: {
+      ratingAvg: navariiaAgg._avg.rating != null
+        ? Math.round(navariiaAgg._avg.rating * 10) / 10
+        : null,
+      ratingCount: navariiaAgg._count.rating,
+    },
+  });
+
+  // stav-murovane has no APPROVED reviews — reset aggregates
+  await prisma.water.update({
+    where: { id: murovane.id },
+    data: { ratingAvg: null, ratingCount: 0 },
+  });
+
+  console.log('Demo reviews seeded.');
+}
+
 async function main() {
   await seedDictionaries();
   if (process.env.SEED_DEMO === '1') {
     await seedDemoWaters();
     await seedDemoArticles();
+    await seedDemoReviews();
   }
   const counts = {
     regions: await prisma.region.count(),
@@ -273,6 +332,7 @@ async function main() {
     amenities: await prisma.amenity.count(),
     waters: await prisma.water.count(),
     articles: await prisma.article.count(),
+    reviews: await prisma.review.count(),
   };
   console.log('Seed done:', counts);
 }

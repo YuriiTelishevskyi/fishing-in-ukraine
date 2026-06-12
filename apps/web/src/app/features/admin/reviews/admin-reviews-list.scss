@@ -1,33 +1,72 @@
 .arl {
-  &__toolbar {
+  // ── Page header row ───────────────────────────────────────────────────────
+  &__page-header {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
     gap: 12px;
     margin-bottom: 20px;
-    padding: 16px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    flex-wrap: wrap;
   }
 
-  &__title {
-    margin: 0;
+  &__page-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__page-title {
+    font-family: var(--font-head);
     font-size: 1.4rem;
-    font-family: var(--font-head, sans-serif);
-    color: var(--text, #1a1a1a);
+    font-weight: 800;
+    color: var(--ink);
+    margin: 0;
   }
 
-  &__spacer {
-    flex: 1;
+  &__page-subtitle {
+    font-size: 0.8rem;
+    color: var(--muted);
   }
 
+  // ── Panel card ────────────────────────────────────────────────────────────
+  &__panel {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 14px 16px;
+    margin-bottom: 20px;
+
+    &--flush {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    &--scroll {
+      overflow-x: auto;
+
+      :host ::ng-deep p-table table,
+      ::ng-deep p-table table {
+        min-width: 680px;
+      }
+    }
+  }
+
+  // ── Filters row ───────────────────────────────────────────────────────────
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  // ── Table cells ───────────────────────────────────────────────────────────
   &__water-name {
     font-weight: 600;
+    color: var(--ink);
   }
 
   &__water-slug {
-    color: var(--muted, #888);
+    color: var(--muted);
     font-size: 0.78rem;
   }
 
@@ -38,7 +77,7 @@
   }
 
   &__text {
-    max-width: 320px;
+    max-width: 280px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -52,11 +91,36 @@
     gap: 4px;
     white-space: nowrap;
     flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
   &__empty {
     text-align: center;
     padding: 32px 16px;
-    color: var(--muted, #888);
+    color: var(--muted);
+  }
+
+  // ── Mobile stacking ───────────────────────────────────────────────────────
+  @media (max-width: 600px) {
+    &__page-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__filters {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}
+
+:host ::ng-deep {
+  .p-datatable .p-datatable-tbody > tr:hover > td {
+    background: #f4f9fa;
+  }
+
+  .p-datatable .p-datatable-tbody > tr > td {
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 }

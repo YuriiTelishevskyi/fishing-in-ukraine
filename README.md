@@ -33,6 +33,10 @@ npm run dev:web                          # Angular на :4200
 - Адмін (cookie-JWT): `POST /api/admin/login|logout`, CRUD `/api/admin/waters`, медіа-завантаження, створення позицій довідників
 - SEO: `GET /sitemap.xml` (двомовний, з hreflang)
 
+## Деплой
+
+Див. [docs/DEPLOY.md](docs/DEPLOY.md).
+
 ## Корисні команди
 
 - `npm run build` — збірка всіх пакетів (shared → api → web)

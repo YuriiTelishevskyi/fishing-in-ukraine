@@ -175,4 +175,36 @@ export class AdminApiService {
     fd.append('file', file);
     return this.http.post<AdminArticle>(`/api/admin/articles/${id}/cover`, fd);
   }
+
+  // ── Reviews ───────────────────────────────────────────────────────────────
+
+  adminReviews(q: { status?: string; page?: number; perPage?: number }): Observable<Paginated<AdminReview>> {
+    let params = new HttpParams();
+    for (const [k, v] of Object.entries(q)) {
+      if (v !== undefined && v !== '') params = params.set(k, String(v));
+    }
+    return this.http.get<Paginated<AdminReview>>('/api/admin/reviews', { params });
+  }
+
+  moderateReview(id: string, status: 'APPROVED' | 'REJECTED'): Observable<AdminReview> {
+    return this.http.patch<AdminReview>(`/api/admin/reviews/${id}`, { status });
+  }
+
+  deleteReview(id: string): Observable<{ ok: true }> {
+    return this.http.delete<{ ok: true }>(`/api/admin/reviews/${id}`);
+  }
+}
+
+export interface AdminReview {
+  id: string;
+  waterId: string;
+  authorName: string;
+  rating: number;
+  text: string;
+  status: 'PENDING' | 'APPROVED' | 'REJECTED';
+  createdAt: string;
+  water: {
+    slug: string;
+    name: string;
+  };
 }

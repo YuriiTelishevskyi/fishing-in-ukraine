@@ -37,6 +37,10 @@ export const ADMIN_ROUTES: Routes = [
             path: 'articles/:id',
             loadComponent: () => import('./articles/admin-article-form').then((m) => m.AdminArticleForm),
           },
+          {
+            path: 'reviews',
+            loadComponent: () => import('./reviews/admin-reviews-list').then((m) => m.AdminReviewsList),
+          },
         ],
       },
     ],

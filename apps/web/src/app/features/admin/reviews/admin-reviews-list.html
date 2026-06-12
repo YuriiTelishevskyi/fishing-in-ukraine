@@ -1,0 +1,115 @@
+<div class="arl">
+  <div class="arl__toolbar">
+    <h2 class="arl__title">Відгуки</h2>
+
+    <p-select
+      [(ngModel)]="status"
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+      (onChange)="onStatusChange()"
+      placeholder="Статус"
+    />
+
+    <span class="arl__spacer"></span>
+  </div>
+
+  <p-table
+    [value]="rows()"
+    [lazy]="true"
+    [paginator]="true"
+    [rows]="20"
+    [totalRecords]="total()"
+    [loading]="loading()"
+    (onLazyLoad)="onLazy($event)"
+    dataKey="id"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Водойма</th>
+        @if (showStatusColumn()) {
+          <th>Статус</th>
+        }
+        <th>Автор</th>
+        <th>Оцінка</th>
+        <th>Текст</th>
+        <th>Дата</th>
+        <th>Дії</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-r>
+      <tr>
+        <td>
+          <span class="arl__water-name">{{ r.water.name }}</span>
+          <br />
+          <small class="arl__water-slug">{{ r.water.slug }}</small>
+        </td>
+        @if (showStatusColumn()) {
+          <td>
+            <p-tag
+              [severity]="statusSeverity(r.status)"
+              [value]="statusLabel(r.status)"
+            />
+          </td>
+        }
+        <td>{{ r.authorName }}</td>
+        <td class="arl__rating">{{ stars(r.rating) }}</td>
+        <td>
+          <div class="arl__text" [title]="r.text">{{ r.text }}</div>
+        </td>
+        <td>{{ r.createdAt | date:'dd.MM.yyyy HH:mm' }}</td>
+        <td class="arl__actions">
+          @if (r.status === 'PENDING') {
+            <p-button
+              label="✓ Схвалити"
+              severity="success"
+              [text]="true"
+              (onClick)="approve(r)"
+            />
+            <p-button
+              label="✕ Відхилити"
+              severity="warn"
+              [text]="true"
+              (onClick)="reject(r)"
+            />
+          } @else if (r.status === 'REJECTED') {
+            <p-button
+              label="✓ Схвалити"
+              severity="success"
+              [text]="true"
+              (onClick)="approve(r)"
+            />
+            <p-button
+              icon="pi pi-trash"
+              severity="danger"
+              [text]="true"
+              (onClick)="confirmDelete(r)"
+            />
+          } @else if (r.status === 'APPROVED') {
+            <p-button
+              label="✕ Відхилити"
+              severity="warn"
+              [text]="true"
+              (onClick)="reject(r)"
+            />
+            <p-button
+              icon="pi pi-trash"
+              severity="danger"
+              [text]="true"
+              (onClick)="confirmDelete(r)"
+            />
+          }
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td [attr.colspan]="showStatusColumn() ? 7 : 6" class="arl__empty">Немає відгуків у цьому фільтрі</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<p-confirmdialog />

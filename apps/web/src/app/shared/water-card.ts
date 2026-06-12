@@ -15,6 +15,8 @@ import { LocaleService } from '../core/locale.service';
 export class WaterCard {
   private readonly locale = inject(LocaleService);
   water = input.required<WaterListItemDto>();
+  /** Set on the above-the-fold card so NgOptimizedImage marks it as the LCP image. */
+  priority = input(false);
   readonly link = computed(() =>
     this.locale.link('catalog', this.water().regionSlug, this.water().slug),
   );

@@ -11,4 +11,13 @@
     a { color: rgba(255, 255, 255, 0.85); font-weight: 600; &:hover { color: #fff; } }
   }
   &__lang { display: flex; gap: 6px; }
+
+  @media (max-width: 480px) {
+    &__row { gap: 14px; }
+    &__logo { font-size: 1.05rem; }
+    &__nav { gap: 12px; a { font-size: 0.9rem; } }
+  }
+  @media (max-width: 374px) {
+    &__nav { display: none; }
+  }
 }

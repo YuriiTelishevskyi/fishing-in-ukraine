@@ -50,8 +50,10 @@ export class MapPage {
       await import('leaflet.markercluster');
 
       this.map = L.map(this.mapEl().nativeElement).setView([49.0, 31.0], 6);
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap',
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 20,
       }).addTo(this.map);
       await this.refresh();
     });

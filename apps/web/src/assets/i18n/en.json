@@ -16,7 +16,13 @@
     "fishTitle": "What are we catching?",
     "ctaTitle": "Own a fishing spot?",
     "ctaText": "Add it to the catalog for free — anglers will find you.",
-    "ctaBtn": "Contact us"
+    "ctaBtn": "Contact us",
+    "mapTitle": "Fishing spots map",
+    "mapSub": "All catalog waters on one map",
+    "mapGo": "Open",
+    "statWaters": "waters",
+    "statRegions": "regions",
+    "statFish": "fish species"
   },
   "catalog": {
     "title": "Waters catalog",

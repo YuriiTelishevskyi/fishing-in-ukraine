@@ -60,6 +60,48 @@ img { max-width: 100%; display: block; }
   background: #dcfce7; color: var(--success); font: 600 0.78rem var(--font-body);
 }
 
+// Pulsing fish-pin marker (used in Leaflet divIcon — must be global)
+.fish-pin {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+  }
+
+  &__pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    animation: pin-pulse 2s ease-out infinite;
+    z-index: 1;
+  }
+}
+
+@keyframes pin-pulse {
+  0%   { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fish-pin__pulse { animation: none; display: none; }
+}
+
 .card {
   background: var(--card); border-radius: var(--radius);
   box-shadow: var(--shadow); overflow: hidden;

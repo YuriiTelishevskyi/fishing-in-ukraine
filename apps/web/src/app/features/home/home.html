@@ -36,18 +36,48 @@
   </div>
 </section>
 
+<section class="stats-section">
+  <div class="container">
+    <div class="stats">
+      <div class="stats__item card">
+        <span class="stats__num" [appCountUp]="pins().length">{{ pins().length }}</span>
+        <span class="stats__label">{{ 'home.statWaters' | transloco }}</span>
+      </div>
+      <div class="stats__item card">
+        <span class="stats__num" [appCountUp]="regions().length">{{ regions().length }}</span>
+        <span class="stats__label">{{ 'home.statRegions' | transloco }}</span>
+      </div>
+      <div class="stats__item card">
+        <span class="stats__num" [appCountUp]="fish().length">{{ fish().length }}</span>
+        <span class="stats__label">{{ 'home.statFish' | transloco }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 @if (featured(); as f) {
   @if (f.items.length) {
     <section class="container section" appReveal>
       <h2>{{ 'home.featured' | transloco }}</h2>
       <div class="grid grid--3">
         @for (w of f.items; track w.id) {
-          <app-water-card [water]="w" />
+          <app-water-card [water]="w" [priority]="$first" />
         }
       </div>
     </section>
   }
 }
+
+<section class="container section" appReveal>
+  <h2>{{ 'home.mapTitle' | transloco }}</h2>
+  <p class="section__sub">{{ 'home.mapSub' | transloco }}</p>
+  <div class="homemap">
+    <div #homeMap class="homemap__canvas"></div>
+    <a [routerLink]="locale.link('map')" class="btn btn--primary btn--sm homemap__cta">
+      {{ 'hero.mapCta' | transloco }} →
+    </a>
+  </div>
+</section>
 
 <section class="container section" appReveal>
   <h2>{{ 'home.regions' | transloco }}</h2>

@@ -1,7 +1,7 @@
 <a class="card wcard" [routerLink]="link()">
   <div class="wcard__media">
     @if (water().coverCardUrl) {
-      <img [ngSrc]="water().coverCardUrl!" fill [alt]="water().name" />
+      <img [ngSrc]="water().coverCardUrl!" fill [alt]="water().name" [priority]="priority()" />
     } @else {
       <div class="wcard__placeholder">🐟</div>
     }

@@ -1,49 +1,48 @@
 <p-toast />
 
 <div class="aaf">
-  <!-- Header row -->
-  <div class="aaf__header">
-    <a routerLink="/admin/articles" class="aaf__back">← До списку</a>
-
-    <div class="aaf__title-block">
-      @if (id && article()) {
-        <h2 class="aaf__title">{{ article()!.title }}</h2>
-        <p-tag
-          [severity]="statusSeverity(article()!.status)"
-          [value]="statusLabel(article()!.status)"
-        />
-        <small class="aaf__slug">{{ article()!.slug }}</small>
-      } @else {
-        <h2 class="aaf__title">Нова стаття</h2>
-      }
+  <!-- Sticky action bar -->
+  <div class="aaf__action-bar">
+    <div class="aaf__action-bar-left">
+      <a routerLink="/admin/articles" class="aaf__back">← До списку</a>
+      <div class="aaf__title-block">
+        @if (id && article()) {
+          <h1 class="aaf__title">{{ article()!.title }}</h1>
+          <p-tag
+            [severity]="statusSeverity(article()!.status)"
+            [value]="statusLabel(article()!.status)"
+          />
+          <small class="aaf__slug">{{ article()!.slug }}</small>
+        } @else {
+          <h1 class="aaf__title">Нова стаття</h1>
+        }
+      </div>
     </div>
-
-    <span class="aaf__spacer"></span>
-
-    @if (id) {
-      @if (currentStatus === 'PUBLISHED') {
-        <p-button
-          label="У чернетку"
-          severity="secondary"
-          [loading]="statusUpdating()"
-          (onClick)="toggleStatus()"
-        />
-      } @else {
-        <p-button
-          label="Опублікувати"
-          severity="success"
-          [loading]="statusUpdating()"
-          (onClick)="toggleStatus()"
-        />
+    <div class="aaf__action-bar-btns">
+      @if (id) {
+        @if (currentStatus === 'PUBLISHED') {
+          <p-button
+            label="У чернетку"
+            severity="secondary"
+            [loading]="statusUpdating()"
+            (onClick)="toggleStatus()"
+          />
+        } @else {
+          <p-button
+            label="Опублікувати"
+            severity="success"
+            [loading]="statusUpdating()"
+            (onClick)="toggleStatus()"
+          />
+        }
       }
-    }
-
-    <p-button
-      label="Зберегти"
-      severity="primary"
-      [loading]="saving()"
-      (onClick)="submit()"
-    />
+      <p-button
+        label="Зберегти"
+        severity="primary"
+        [loading]="saving()"
+        (onClick)="submit()"
+      />
+    </div>
   </div>
 
   <!-- Form -->
@@ -167,7 +166,17 @@
     <!-- Cover block (edit mode only) -->
     @if (id) {
       <div class="aaf__card">
-        <h3 class="aaf__section-title">Обкладинка</h3>
+        <div class="aaf__section-header">
+          <h3 class="aaf__section-title">Обкладинка</h3>
+          <p-button
+            label="Завантажити обкладинку"
+            icon="pi pi-upload"
+            severity="secondary"
+            [loading]="uploading()"
+            [disabled]="uploading()"
+            (onClick)="triggerCoverInput()"
+          />
+        </div>
 
         @if (coverCardUrl) {
           <img
@@ -186,15 +195,6 @@
           accept="image/jpeg,image/png,image/webp"
           class="aaf__file-hidden"
           (change)="onCoverFile($event)"
-        />
-        <p-button
-          label="Завантажити обкладинку"
-          icon="pi pi-upload"
-          severity="secondary"
-          [loading]="uploading()"
-          [disabled]="uploading()"
-          (onClick)="triggerCoverInput()"
-          styleClass="aaf__cover-btn"
         />
       </div>
     }

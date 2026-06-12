@@ -22,6 +22,7 @@ import { usePageLocale } from '../../core/use-locale';
 import { Footer } from '../../layout/footer';
 import { Header } from '../../layout/header';
 import { Breadcrumbs } from '../../shared/breadcrumbs';
+import { createMapPin } from '../../shared/map-pin';
 import { Pager } from '../../shared/pager';
 import { StarRating } from '../../shared/star-rating';
 
@@ -168,7 +169,7 @@ export class WaterDetailPage {
       subdomains: 'abcd',
       maxZoom: 20,
     }).addTo(map);
-    L.marker([w.lat, w.lng]).addTo(map);
+    L.marker([w.lat, w.lng], { icon: createMapPin(L) }).addTo(map);
   }
 
   typeLabel(type: WaterType): string {

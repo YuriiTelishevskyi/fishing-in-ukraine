@@ -132,6 +132,25 @@ img { max-width: 100%; display: block; }
   outline-offset: 3px;
 }
 
+.brand-pin {
+  filter: drop-shadow(0 3px 4px rgba(11, 27, 34, 0.35));
+  svg { display: block; }
+}
+
+/* Marker cluster brand colors */
+.marker-cluster-small div,
+.marker-cluster-medium div {
+  background-color: rgba(14, 116, 144, 1) !important;
+}
+.marker-cluster-small,
+.marker-cluster-medium {
+  background-color: rgba(14, 116, 144, 0.85) !important;
+}
+.marker-cluster div span {
+  color: white !important;
+  font-weight: bold !important;
+}
+
 // ── Prose typography (blog articles) ─────────────────────────────────────────
 .prose {
   max-width: 720px;

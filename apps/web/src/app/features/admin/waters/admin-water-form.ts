@@ -19,6 +19,7 @@ import { ConfirmDialog } from 'primeng/confirmdialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AdminApiService } from '../core/admin-api.service';
 import { ApiService } from '../../../core/api.service';
+import { createMapPin } from '../../../shared/map-pin';
 
 function websiteValidator(control: AbstractControl) {
   const v = control.value as string;
@@ -227,7 +228,7 @@ export class AdminWaterForm {
     if (this.leafletMarker) {
       this.leafletMarker.remove();
     }
-    this.leafletMarker = this.L.marker([lat, lng]).addTo(this.leafletMap);
+    this.leafletMarker = this.L.marker([lat, lng], { icon: createMapPin(this.L, 'accent') }).addTo(this.leafletMap);
   }
 
   get isPaid() {

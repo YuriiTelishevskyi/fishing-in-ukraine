@@ -8,6 +8,7 @@ import { ApiService } from '../../core/api.service';
 import { SeoService } from '../../core/seo.service';
 import { usePageLocale } from '../../core/use-locale';
 import { Header } from '../../layout/header';
+import { createMapPin } from '../../shared/map-pin';
 
 @Component({
   selector: 'app-map-page',
@@ -73,7 +74,7 @@ export class MapPage {
     }
     this.cluster = (this.L as any).markerClusterGroup();
     for (const p of pins) {
-      const m = this.L.marker([p.lat, p.lng]);
+      const m = this.L.marker([p.lat, p.lng], { icon: createMapPin(this.L) });
       m.bindPopup(this.popupHtml(p));
       this.cluster.addLayer(m);
     }

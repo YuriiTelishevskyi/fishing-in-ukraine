@@ -23,6 +23,11 @@
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 .blog-skeleton {

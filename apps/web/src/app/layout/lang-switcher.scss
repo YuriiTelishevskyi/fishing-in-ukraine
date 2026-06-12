@@ -4,3 +4,8 @@
   font: 600 0.8rem var(--font-body);
   &--on { background: #fff; color: var(--ink); }
 }
+
+@media (max-width: 390px) {
+  :host { padding: 2px; gap: 2px; }
+  .pill { padding: 3px 8px; font-size: 0.72rem; }
+}

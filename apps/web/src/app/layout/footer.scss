@@ -5,4 +5,10 @@
   &__logo { font: 800 1.2rem var(--font-head); color: #fff; em { color: var(--accent); font-style: normal; } }
   nav { display: flex; flex-direction: column; gap: 8px; a { color: rgba(255, 255, 255, 0.75); } }
   &__copy { margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 0.85rem; }
+
+  @media (max-width: 560px) {
+    padding: 36px 0 20px;
+    &__row { flex-direction: column; gap: 24px; }
+    nav { flex-direction: column; }
+  }
 }

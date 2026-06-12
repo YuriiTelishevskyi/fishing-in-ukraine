@@ -34,6 +34,11 @@
   flex-direction: column;
   gap: 0;
 
+  @media (max-width: 880px) {
+    position: static;
+    top: auto;
+  }
+
   &__heading {
     font: 700 0.78rem var(--font-head);
     text-transform: uppercase;
@@ -174,6 +179,11 @@
   display: grid;
   gap: 22px;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 // Empty state

@@ -45,6 +45,13 @@
     gap: 8px;
     margin-top: 10px;
     flex-wrap: wrap;
+
+    @media (max-width: 640px) {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 6px;
+    }
   }
 }
 
@@ -106,12 +113,21 @@
   border-radius: var(--radius);
   overflow: hidden;
   background: #e2ecef;
+
+  @media (max-width: 640px) {
+    height: 240px;
+  }
 }
 
 // Aside card
 .detail-aside {
   position: sticky;
   top: 84px;
+
+  @media (max-width: 920px) {
+    position: static;
+    top: auto;
+  }
 }
 
 .aside-card {

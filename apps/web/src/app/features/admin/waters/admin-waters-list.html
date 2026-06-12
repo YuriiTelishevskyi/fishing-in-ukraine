@@ -1,7 +1,19 @@
 <div class="awl">
-  <div class="awl__toolbar">
-    <h2 class="awl__title">Водойми</h2>
+  <!-- Page header row -->
+  <div class="awl__page-header">
+    <div class="awl__page-title-group">
+      <h1 class="awl__page-title">Водойми</h1>
+      <span class="awl__page-subtitle">{{ total() }} записів</span>
+    </div>
+    <p-button
+      label="+ Нова водойма"
+      [routerLink]="['/admin/waters/new']"
+      severity="primary"
+    />
+  </div>
 
+  <!-- Filters panel -->
+  <div class="awl__panel awl__filters">
     <p-select
       [(ngModel)]="status"
       [options]="statusOptions"
@@ -20,80 +32,75 @@
       (keyup.enter)="onSearchEnterOrBlur()"
       (blur)="onSearchEnterOrBlur()"
     />
-
-    <span class="awl__spacer"></span>
-
-    <p-button
-      label="+ Нова водойма"
-      [routerLink]="['/admin/waters/new']"
-      severity="primary"
-    />
   </div>
 
-  <p-table
-    [value]="rows()"
-    [lazy]="true"
-    [paginator]="true"
-    [rows]="20"
-    [totalRecords]="total()"
-    [loading]="loading()"
-    (onLazyLoad)="onLazy($event)"
-    dataKey="id"
-  >
-    <ng-template pTemplate="header">
-      <tr>
-        <th>Назва</th>
-        <th>Область</th>
-        <th>Статус</th>
-        <th>Перевірена</th>
-        <th>Фото</th>
-        <th>Оновлено</th>
-        <th>Дії</th>
-      </tr>
-    </ng-template>
+  <!-- Table panel -->
+  <div class="awl__panel awl__panel--flush awl__panel--scroll">
+    <p-table
+      [value]="rows()"
+      [lazy]="true"
+      [paginator]="true"
+      [rows]="20"
+      [totalRecords]="total()"
+      [loading]="loading()"
+      (onLazyLoad)="onLazy($event)"
+      dataKey="id"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Назва</th>
+          <th>Область</th>
+          <th>Статус</th>
+          <th>Перевірена</th>
+          <th>Фото</th>
+          <th>Оновлено</th>
+          <th>Дії</th>
+        </tr>
+      </ng-template>
 
-    <ng-template pTemplate="body" let-w>
-      <tr>
-        <td>
-          <span class="awl__name">{{ w.name }}</span>
-          <br />
-          <small class="awl__slug">{{ w.slug }}</small>
-        </td>
-        <td>{{ w.regionName }}</td>
-        <td>
-          <p-tag
-            [severity]="statusSeverity(w.status)"
-            [value]="statusLabel(w.status)"
-          />
-        </td>
-        <td>{{ w.verified ? '✓' : '—' }}</td>
-        <td>{{ w.media.length }}</td>
-        <td>{{ w.updatedAt | date:'dd.MM.yyyy HH:mm' }}</td>
-        <td class="awl__actions">
-          <p-button
-            icon="pi pi-pencil"
-            severity="secondary"
-            [text]="true"
-            [routerLink]="['/admin/waters', w.id]"
-            pTooltip="Редагувати"
-          />
-          <p-button
-            icon="pi pi-trash"
-            severity="danger"
-            [text]="true"
-            (onClick)="confirmDelete(w)"
-            pTooltip="Видалити"
-          />
-        </td>
-      </tr>
-    </ng-template>
+      <ng-template pTemplate="body" let-w>
+        <tr>
+          <td>
+            <span class="awl__name">{{ w.name }}</span>
+            <br />
+            <small class="awl__slug">{{ w.slug }}</small>
+          </td>
+          <td>{{ w.regionName }}</td>
+          <td>
+            <p-tag
+              [severity]="statusSeverity(w.status)"
+              [value]="statusLabel(w.status)"
+            />
+          </td>
+          <td>{{ w.verified ? '✓' : '—' }}</td>
+          <td>{{ w.media.length }}</td>
+          <td>{{ w.updatedAt | date:'dd.MM.yyyy HH:mm' }}</td>
+          <td class="awl__actions">
+            <p-button
+              icon="pi pi-pencil"
+              severity="secondary"
+              [text]="true"
+              [routerLink]="['/admin/waters', w.id]"
+              pTooltip="Редагувати"
+            />
+            <p-button
+              icon="pi pi-trash"
+              severity="danger"
+              [text]="true"
+              (onClick)="confirmDelete(w)"
+              pTooltip="Видалити"
+            />
+          </td>
+        </tr>
+      </ng-template>
 
-    <ng-template pTemplate="emptymessage">
-      <tr>
-        <td colspan="7" class="awl__empty">Нічого не знайдено</td>
-      </tr>
-    </ng-template>
-  </p-table>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="7" class="awl__empty">Нічого не знайдено</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
 </div>
 
 <p-confirmdialog />

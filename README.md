@@ -20,9 +20,14 @@ cp apps/api/.env.example apps/api/.env   # заповнити JWT_SECRET і ADMI
 npm run db:up                            # PostgreSQL у Docker (хост-порт 5433)
 npm run build:shared
 cd apps/api && npx prisma migrate dev && npx prisma db seed && cd ../..
-npm run dev:api                          # API на :3000
-npm run dev:web                          # Angular на :4200
+npm run dev                              # API (:3000) + Angular (:4200) разом
 ```
+
+Сайт: http://localhost:4200 · Адмінка: http://localhost:4200/admin
+
+`npm run dev:api` / `npm run dev:web` — окремо в двох терміналах, якщо потрібно.
+Увага: `dev:api` і `dev:web` — watch-процеси, вони не завершуються, тож НЕ
+зʼєднуйте їх через `&&`.
 
 Хеш пароля адміна: `node -e "console.log(require('bcryptjs').hashSync(process.argv[1], 10))" 'пароль'`
 (виконувати з кореня репо). JWT-секрет: `openssl rand -hex 32`.

@@ -2,7 +2,10 @@
   "name": "fishing-in-ukraine",
   "version": "0.0.0",
   "private": true,
-  "workspaces": ["apps/*", "packages/*"],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "build:shared": "npm run build -w packages/shared",
     "build:api": "npm run build -w apps/api",
@@ -10,6 +13,7 @@
     "build": "npm run build:shared && npm run build:api && npm run build:web",
     "dev:api": "npm run start:dev -w apps/api",
     "dev:web": "npm run start -w apps/web",
+    "dev": "concurrently -n api,web -c blue,green \"npm:dev:api\" \"npm:dev:web\"",
     "db:up": "docker compose up -d postgres"
   },
   "prettier": {
@@ -23,5 +27,8 @@
         }
       }
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
   }
 }

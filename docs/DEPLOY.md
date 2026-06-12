@@ -140,13 +140,13 @@ docker compose -f docker-compose.prod.yml --env-file .env.prod \
 ```bash
 # Архівування volume uploads
 docker run --rm \
-  -v fishing-in-ukraine_uploads:/data \
+  -v fishing-prod_uploads:/data \
   -v $(pwd):/backup \
   alpine tar czf /backup/uploads_$(date +%Y%m%d_%H%M%S).tar.gz -C /data .
 
 # Відновлення
 docker run --rm \
-  -v fishing-in-ukraine_uploads:/data \
+  -v fishing-prod_uploads:/data \
   -v $(pwd):/backup \
   alpine tar xzf /backup/uploads_YYYYMMDD_HHMMSS.tar.gz -C /data
 ```
@@ -184,4 +184,4 @@ docker compose -f docker-compose.prod.yml logs -f postgres
 - **Кука адміна `Secure`** — авторизація в адмінці працює лише через HTTPS. Caddy автоматично забезпечує TLS у продакшені.
 - **Rate-limit логіна** — 5 спроб за хвилину з однієї IP-адреси. При перевищенні — HTTP 429.
 - **Демо-дані вимкнені** — `SEED_DEMO=0` у `.env.prod`. Щоб увімкнути демо-водойми (лише для стейджингу), змініть на `1` і запустіть seed повторно.
-- **Angular SSR і заголовок `Host`** — Caddy є єдиною точкою входу; Angular SSR-сервер не перевіряє `Host` напряму (ця перевірка відбувається на рівні Caddy). `NG_ALLOWED_HOSTS` документується для можливого майбутнього використання.
+- **Angular SSR і заголовок `Host`** — SSR-сервер активно перевіряє `Host`: запити з хостом, якого немає в `NG_ALLOWED_HOSTS`, тихо деградують до клієнтського рендерингу (без SSR/SEO). Обовʼязково вкажіть свій домен у `NG_ALLOWED_HOSTS` в `.env.prod`. Заголовки `X-Forwarded-*` від Caddy вже довірені через `NG_TRUST_PROXY_HEADERS` у compose.

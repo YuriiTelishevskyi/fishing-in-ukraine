@@ -98,6 +98,120 @@
           <div #miniMap class="minimap"></div>
         </section>
 
+        <!-- Reviews -->
+        <section class="detail-section reviews-section">
+          <h2 class="detail-section__title">{{ 'reviews.title' | transloco }}</h2>
+
+          <!-- Aggregate summary row -->
+          @if (w.ratingCount > 0) {
+            <div class="reviews-summary">
+              <span class="reviews-summary__avg">{{ w.ratingAvg }}</span>
+              <app-star-rating [value]="w.ratingAvg ?? 0" />
+              <span class="muted reviews-summary__count">({{ w.ratingCount }})</span>
+            </div>
+          }
+
+          <!-- Reviews list -->
+          @if (reviews(); as rv) {
+            @if (rv.items.length === 0) {
+              <p class="reviews-empty muted">{{ 'reviews.empty' | transloco }}</p>
+            } @else {
+              <div class="reviews-list">
+                @for (r of rv.items; track r.id) {
+                  <div class="review card">
+                    <div class="review__header">
+                      <strong class="review__author">{{ r.authorName }}</strong>
+                      <span class="review__date muted">{{ formatDate(r.createdAt) }}</span>
+                    </div>
+                    <app-star-rating [value]="r.rating" />
+                    <p class="review__text pre-line">{{ r.text }}</p>
+                  </div>
+                }
+              </div>
+              <app-pager
+                [page]="reviewsPage()"
+                [perPage]="10"
+                [total]="rv.total"
+                (pageChange)="onReviewPageChange($event)"
+              />
+            }
+          }
+
+          <!-- Review form -->
+          @if (!formSuccess()) {
+            <div class="review-form card">
+              <h3 class="review-form__title">{{ 'reviews.formTitle' | transloco }}</h3>
+
+              <div class="review-form__field">
+                <label class="review-form__label" for="review-name">{{ 'reviews.name' | transloco }}</label>
+                <input
+                  id="review-name"
+                  class="review-form__input"
+                  type="text"
+                  [placeholder]="'reviews.name' | transloco"
+                  [value]="formName()"
+                  (input)="formName.set($any($event.target).value)"
+                  maxlength="40"
+                  autocomplete="name"
+                />
+              </div>
+
+              <div class="review-form__field">
+                <label class="review-form__label">{{ 'reviews.outOf' | transloco }}</label>
+                <app-star-rating
+                  [value]="formRating()"
+                  [interactive]="true"
+                  (valueChange)="onStarChange($event)"
+                />
+                @if (formRating() === 0) {
+                  <span class="review-form__hint muted">Оберіть оцінку</span>
+                }
+              </div>
+
+              <div class="review-form__field">
+                <label class="review-form__label" for="review-text">{{ 'reviews.text' | transloco }}</label>
+                <textarea
+                  id="review-text"
+                  class="review-form__textarea"
+                  [placeholder]="'reviews.text' | transloco"
+                  [value]="formText()"
+                  (input)="formText.set($any($event.target).value)"
+                  rows="4"
+                  maxlength="2000"
+                ></textarea>
+                <span class="review-form__hint muted">10–2000 символів</span>
+              </div>
+
+              <!-- Honeypot -->
+              <input
+                class="hp"
+                type="text"
+                name="website"
+                [value]="hpValue()"
+                (input)="hpValue.set($any($event.target).value)"
+                autocomplete="off"
+                tabindex="-1"
+                aria-hidden="true"
+              />
+
+              @if (formError()) {
+                <p class="review-form__error">{{ 'reviews.error' | transloco }}</p>
+              }
+
+              <button
+                class="btn btn--primary review-form__submit"
+                type="button"
+                [disabled]="!formValid || formPending()"
+                (click)="submitReview()"
+              >{{ 'reviews.submit' | transloco }}</button>
+            </div>
+          } @else {
+            <div class="review-success card">
+              <p>{{ 'reviews.thanks' | transloco }}</p>
+            </div>
+          }
+        </section>
+
       </div><!-- /detail-main -->
 
       <!-- Right column: sticky aside card -->

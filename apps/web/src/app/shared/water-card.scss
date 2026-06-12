@@ -18,5 +18,11 @@
   }
   &__body { padding: 16px 18px 18px; h3 { font-size: 1.08rem; margin: 0 0 4px; } }
   &__geo { color: var(--muted); font-size: 0.86rem; margin: 0 0 10px; }
+  &__rating {
+    display: inline-block;
+    margin-left: 8px;
+    color: var(--primary, #f59e0b);
+    font: 600 0.85rem var(--font-body);
+  }
   &__fish { display: flex; flex-wrap: wrap; gap: 6px; }
 }

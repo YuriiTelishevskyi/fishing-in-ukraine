@@ -65,5 +65,16 @@
     "sub": "Tips, spots and experience",
     "empty": "No articles yet"
   },
-  "footer": { "tagline": "Ukrainian fishing waters catalog." }
+  "footer": { "tagline": "Ukrainian fishing waters catalog." },
+  "reviews": {
+    "title": "Reviews",
+    "empty": "No reviews yet — be the first!",
+    "formTitle": "Leave a review",
+    "name": "Your name",
+    "text": "Your review",
+    "submit": "Submit",
+    "thanks": "Thank you! Your review will appear after moderation.",
+    "error": "Could not submit. Try again later.",
+    "outOf": "of 5"
+  }
 }

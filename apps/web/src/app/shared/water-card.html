@@ -18,7 +18,11 @@
   </div>
   <div class="wcard__body">
     <h3>{{ water().name }}</h3>
-    <p class="wcard__geo">📍 {{ water().regionName }}@if (water().district) {, {{ water().district }}}</p>
+    <p class="wcard__geo">📍 {{ water().regionName }}@if (water().district) {, {{ water().district }}}
+      @if (water().ratingCount > 0) {
+        <span class="wcard__rating">★ {{ water().ratingAvg }} · {{ water().ratingCount }}</span>
+      }
+    </p>
     <div class="wcard__fish">
       @for (f of topFish(); track f) {
         <span class="chip">{{ f }}</span>

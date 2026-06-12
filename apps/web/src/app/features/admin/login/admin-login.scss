@@ -8,7 +8,7 @@
 
   &__card {
     width: 100%;
-    max-width: 400px;
+    max-width: 380px;
     padding: 40px 36px 36px;
     border-radius: var(--radius);
     box-shadow: var(--shadow-lift);
@@ -16,7 +16,7 @@
 
   &__logo {
     font-family: var(--font-head);
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 800;
     color: var(--primary);
     text-align: center;
@@ -93,6 +93,14 @@
       opacity: 0.65;
       cursor: not-allowed;
       transform: none;
+    }
+  }
+
+  @media (max-width: 440px) {
+    padding: 12px;
+
+    &__card {
+      padding: 28px 20px 24px;
     }
   }
 }

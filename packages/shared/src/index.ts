@@ -101,3 +101,21 @@ export interface Paginated<T> {
   page: number;
   perPage: number;
 }
+
+export interface ArticleListItemDto {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  coverThumbUrl: string | null;
+  coverCardUrl: string | null;
+  publishedAt: string | null;
+}
+
+export interface ArticleDetailDto extends ArticleListItemDto {
+  contentHtml: string;
+  seoTitle: string | null;
+  seoDescription: string | null;
+  coverFullUrl: string | null;
+  updatedAt: string;
+}

@@ -22,7 +22,7 @@ export class SeoService {
       '',
     );
 
-    const [regions, waters, fish] = await Promise.all([
+    const [regions, waters, fish, articles] = await Promise.all([
       this.prisma.region.findMany({ select: { slug: true } }),
       this.prisma.water.findMany({
         where: { status: 'PUBLISHED' },
@@ -32,12 +32,17 @@ export class SeoService {
         where: { waters: { some: { water: { status: 'PUBLISHED' } } } },
         select: { slug: true },
       }),
+      this.prisma.article.findMany({
+        where: { status: 'PUBLISHED' },
+        select: { slug: true, updatedAt: true },
+      }),
     ]);
 
     const pages: PagePair[] = [
       { uk: '/', en: '/en' },
       { uk: '/vodoymy', en: '/en/waters' },
       { uk: '/karta', en: '/en/map' },
+      { uk: '/blog', en: '/en/blog' },
       ...regions.map((r) => ({ uk: `/vodoymy/${r.slug}`, en: `/en/waters/${r.slug}` })),
       ...waters.map((w) => ({
         uk: `/vodoymy/${w.region.slug}/${w.slug}`,
@@ -45,6 +50,11 @@ export class SeoService {
         lastmod: w.updatedAt.toISOString().slice(0, 10),
       })),
       ...fish.map((f) => ({ uk: `/ryba/${f.slug}`, en: `/en/fish/${f.slug}` })),
+      ...articles.map((a) => ({
+        uk: `/blog/${a.slug}`,
+        en: `/en/blog/${a.slug}`,
+        lastmod: a.updatedAt.toISOString().slice(0, 10),
+      })),
     ];
 
     const alternates = (p: PagePair) =>

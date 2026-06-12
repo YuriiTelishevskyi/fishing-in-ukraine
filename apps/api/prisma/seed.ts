@@ -174,16 +174,105 @@ async function seedDemoWaters() {
   }
 }
 
+async function seedDemoArticles() {
+  const slug = 'yak-vybraty-platnu-vodoymu-7-porad';
+  await prisma.article.upsert({
+    where: { slug },
+    update: {},
+    create: {
+      slug,
+      title: 'Як вибрати платну водойму: 7 порад',
+      titleEn: 'How to choose a paid fishing lake: 7 tips',
+      excerpt: 'Не знаєш, яку водойму обрати для риболовлі? Ось 7 ключових критеріїв, які допоможуть зробити правильний вибір.',
+      excerptEn: 'Not sure which paid fishing lake to pick? Here are 7 key criteria to help you choose wisely.',
+      content: `Вибір платної водойми — важливе рішення для кожного рибалки. Від правильного вибору залежить не лише ваш улов, а й загальне задоволення від відпочинку.
+
+## 1. Оцініть видовий склад риби
+
+Перш за все дізнайтеся, яка риба водиться у водоймі. **Короп, карась, щука, судак** — кожен вид потребує різного спорядження та підходу. Зверніть увагу на свіжі повідомлення про улови від інших рибалок.
+
+## 2. Перевірте ціни та умови
+
+Порівняйте ціни на денну та добову рибалку. Деякі водойми пропонують **сезонні абонементи** або знижки для постійних відвідувачів.
+
+## 3. Оцініть інфраструктуру
+
+Наявність:
+- Альтанок та навісів
+- Парковки поруч
+- Туалету і душу
+- Кафе або магазину
+
+## 4. Дізнайтеся правила ловлі
+
+Кожна водойма має свої **правила**: ліміт улову, дозволені снасті, час ловлі. Ознайомтеся з ними заздалегідь, щоб уникнути непорозумінь.
+
+## 5. Зверніть увагу на розміри водойми
+
+Велика водойма дає більше свободи для вибору місця та зменшує конкуренцію між рибалками. Маленькі стави часто більш **зарибнені** і підходять для початківців.
+
+## 6. Читайте відгуки
+
+Перед поїздкою перегляньте відгуки інших рибалок. Звертайте увагу на свіжість інформації — умови на водоймі можуть змінюватися сезонно.
+
+## 7. Враховуйте відстань та доступність
+
+Найкраща водойма — та, до якої зручно дістатися. **Оцініть якість дороги** і наявність громадського транспорту, якщо не маєте власного автомобіля.
+
+Пам'ятайте: хороша підготовка — половина успіху! Вдалої риболовлі!`,
+      contentEn: `Choosing a paid fishing lake is an important decision for any angler. The right choice determines not just your catch, but also your overall enjoyment.
+
+## 1. Assess the fish species
+
+Find out which fish are stocked in the lake. **Carp, crucian carp, pike, zander** — each species requires different tackle and technique.
+
+## 2. Check prices and conditions
+
+Compare day and overnight fishing fees. Some lakes offer **seasonal passes** or discounts for regular visitors.
+
+## 3. Evaluate the infrastructure
+
+Look for:
+- Gazebos and shelters
+- Nearby parking
+- Toilet and shower facilities
+- Café or shop on site
+
+## 4. Learn the fishing rules
+
+Every lake has its own **rules**: catch limits, permitted tackle, fishing hours. Review them in advance to avoid misunderstandings.
+
+## 5. Consider the lake size
+
+A larger lake gives more freedom to choose your spot and reduces competition. Small ponds are often **well-stocked** and great for beginners.
+
+## 6. Read reviews
+
+Before your trip, check recent reviews from other anglers. Pay attention to how current the information is — conditions can change seasonally.
+
+## 7. Factor in distance and accessibility
+
+The best lake is one that is easy to reach. **Assess the road quality** and public transport options if you do not have a car.
+
+Good preparation is half the battle — tight lines!`,
+      status: 'PUBLISHED',
+      publishedAt: new Date(),
+    },
+  });
+}
+
 async function main() {
   await seedDictionaries();
   if (process.env.SEED_DEMO === '1') {
     await seedDemoWaters();
+    await seedDemoArticles();
   }
   const counts = {
     regions: await prisma.region.count(),
     fish: await prisma.fishSpecies.count(),
     amenities: await prisma.amenity.count(),
     waters: await prisma.water.count(),
+    articles: await prisma.article.count(),
   };
   console.log('Seed done:', counts);
 }

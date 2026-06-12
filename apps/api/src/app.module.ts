@@ -4,6 +4,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { AdminAuthModule } from './admin-auth/admin-auth.module';
+import { ArticlesModule } from './articles/articles.module';
 import { DictionariesModule } from './dictionaries/dictionaries.module';
 import { HealthController } from './health.controller';
 import { MediaModule } from './media/media.module';
@@ -30,6 +31,7 @@ import { WatersModule } from './waters/waters.module';
     DictionariesModule,
     WatersModule,
     MediaModule,
+    ArticlesModule,
     SeoModule,
   ],
   controllers: [HealthController],

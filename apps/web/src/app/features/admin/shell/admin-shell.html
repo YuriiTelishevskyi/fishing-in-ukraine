@@ -1,27 +1,71 @@
-<div class="ash">
-  <header class="ash__bar">
-    <a routerLink="/admin/waters" class="ash__logo">🎣 FishMap<em>.ua</em> · Адмінка</a>
+<!-- Sidebar overlay backdrop (mobile) -->
+@if (sidebarOpen()) {
+  <div class="ash__backdrop" (click)="closeSidebar()"></div>
+}
+
+<div class="ash" [class.ash--sidebar-open]="sidebarOpen()">
+  <!-- ── Sidebar ── -->
+  <aside class="ash__sidebar ash__bar">
+    <div class="ash__sidebar-header">
+      <a routerLink="/admin/waters" class="ash__logo" (click)="closeSidebar()">
+        🎣 <span class="ash__logo-text">FishMap<em>.ua</em></span>
+      </a>
+      <span class="ash__logo-label">Адмінка</span>
+    </div>
+
     <nav class="ash__nav">
       <a
         routerLink="/admin/waters"
         routerLinkActive="ash__nav-link--active"
         class="ash__nav-link"
-      >Водойми</a>
+        (click)="closeSidebar()"
+      >
+        <span class="ash__nav-icon">💧</span>
+        <span>Водойми</span>
+      </a>
       <a
         routerLink="/admin/articles"
         routerLinkActive="ash__nav-link--active"
         class="ash__nav-link"
-      >Статті</a>
+        (click)="closeSidebar()"
+      >
+        <span class="ash__nav-icon">📝</span>
+        <span>Статті</span>
+      </a>
       <a
         routerLink="/admin/reviews"
         routerLinkActive="ash__nav-link--active"
         class="ash__nav-link"
-      >Відгуки</a>
-      <a routerLink="/" target="_blank">На сайт ↗</a>
-      <button type="button" (click)="logout()">Вийти</button>
+        (click)="closeSidebar()"
+      >
+        <span class="ash__nav-icon">⭐</span>
+        <span>Відгуки</span>
+      </a>
     </nav>
-  </header>
-  <main class="ash__main container">
-    <router-outlet />
-  </main>
+
+    <div class="ash__sidebar-footer">
+      <a href="/" target="_blank" class="ash__footer-link">
+        <span>На сайт</span> <span class="ash__footer-arrow">↗</span>
+      </a>
+      <button type="button" class="ash__logout-btn" (click)="logout()">Вийти</button>
+    </div>
+  </aside>
+
+  <!-- ── Main content ── -->
+  <div class="ash__body">
+    <!-- Mobile top bar -->
+    <header class="ash__topbar">
+      <button
+        type="button"
+        class="ash__burger"
+        (click)="toggleSidebar()"
+        aria-label="Меню"
+      >☰</button>
+      <a routerLink="/admin/waters" class="ash__topbar-logo">🎣 FishMap<em>.ua</em></a>
+    </header>
+
+    <main class="ash__main">
+      <router-outlet />
+    </main>
+  </div>
 </div>

@@ -1,0 +1,62 @@
+<app-header [solid]="true" [pair]="pair" />
+
+<section class="blog-hero">
+  <div class="container">
+    <h1>{{ 'blog.title' | transloco }}</h1>
+    <p class="blog-hero__sub muted">{{ 'blog.sub' | transloco }}</p>
+  </div>
+</section>
+
+<div class="container blog-content">
+  @if (loading()) {
+    <div class="blog-grid">
+      <div class="skeleton blog-skeleton"></div>
+      <div class="skeleton blog-skeleton"></div>
+      <div class="skeleton blog-skeleton"></div>
+      <div class="skeleton blog-skeleton"></div>
+      <div class="skeleton blog-skeleton"></div>
+      <div class="skeleton blog-skeleton"></div>
+    </div>
+  } @else if (items().length) {
+    <div class="blog-grid">
+      @for (a of items(); track a.id) {
+        <a
+          class="article-card card"
+          [routerLink]="locale.link('blog', a.slug)"
+          aria-label="{{ a.title }}"
+        >
+          <div class="article-card__cover">
+            @if (a.coverCardUrl) {
+              <img [src]="a.coverCardUrl" [alt]="a.title" loading="lazy" />
+            } @else {
+              <div class="article-card__cover-placeholder">📝</div>
+            }
+          </div>
+          <div class="article-card__body">
+            @if (a.publishedAt) {
+              <time class="article-card__date muted" [attr.datetime]="a.publishedAt">
+                {{ a.publishedAt | date:'dd.MM.yyyy' }}
+              </time>
+            }
+            <h3 class="article-card__title">{{ a.title }}</h3>
+            <p class="article-card__excerpt muted">{{ a.excerpt }}</p>
+          </div>
+        </a>
+      }
+    </div>
+  } @else {
+    <div class="blog-empty">
+      <span class="blog-empty__icon">📝</span>
+      <p>{{ 'blog.empty' | transloco }}</p>
+    </div>
+  }
+
+  <app-pager
+    [page]="page()"
+    [perPage]="perPage"
+    [total]="total()"
+    (pageChange)="changePage($event)"
+  />
+</div>
+
+<app-footer />

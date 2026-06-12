@@ -1,0 +1,47 @@
+<app-header [solid]="true" [pair]="pair" />
+
+@if (notFound()) {
+  <section class="nf container">
+    <div class="nf__inner">
+      <div class="nf__emoji">📝</div>
+      <h1>{{ 'notFound.title' | transloco }}</h1>
+      <p>{{ 'notFound.text' | transloco }}</p>
+      <a [routerLink]="locale.home()" class="btn btn--primary">{{ 'notFound.home' | transloco }}</a>
+    </div>
+  </section>
+} @else if (article(); as a) {
+  <div class="container article-wrap">
+    <app-breadcrumbs [items]="[
+      { label: 'FishMap.ua', link: locale.home() },
+      { label: ('blog.title' | transloco), link: locale.link('blog') },
+      { label: a.title }
+    ]" />
+
+    <article class="article">
+      <header class="article__header">
+        <h1 class="article__title">{{ a.title }}</h1>
+        @if (a.publishedAt) {
+          <time class="article__date muted" [attr.datetime]="a.publishedAt">
+            {{ a.publishedAt | date:'dd.MM.yyyy' }}
+          </time>
+        }
+      </header>
+
+      @if (a.coverFullUrl) {
+        <div class="article__cover">
+          <img
+            [src]="a.coverFullUrl"
+            [alt]="a.title"
+            loading="eager"
+            width="1200"
+            height="675"
+          />
+        </div>
+      }
+
+      <div class="prose" [innerHTML]="a.contentHtml"></div>
+    </article>
+  </div>
+}
+
+<app-footer />

@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  AmenityDto, FishSpeciesDto, MapPinDto, Paginated, RegionDto, WaterDetailDto, WaterListItemDto,
+  AmenityDto, ArticleDetailDto, ArticleListItemDto, FishSpeciesDto, MapPinDto, Paginated, RegionDto, WaterDetailDto, WaterListItemDto,
 } from '@fishing/shared';
 import { Observable } from 'rxjs';
 import { API_BASE } from './api-base';
@@ -72,5 +72,15 @@ export class ApiService {
 
   water(slug: string): Observable<WaterDetailDto> {
     return this.http.get<WaterDetailDto>(`${this.base}/api/waters/${slug}`, { params: this.params() });
+  }
+
+  articles(page = 1): Observable<Paginated<ArticleListItemDto>> {
+    return this.http.get<Paginated<ArticleListItemDto>>(`${this.base}/api/articles`, {
+      params: this.params({ page, perPage: 12 }),
+    });
+  }
+
+  article(slug: string): Observable<ArticleDetailDto> {
+    return this.http.get<ArticleDetailDto>(`${this.base}/api/articles/${slug}`, { params: this.params() });
   }
 }

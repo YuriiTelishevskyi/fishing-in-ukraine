@@ -4,6 +4,7 @@
     <nav class="hdr__nav">
       <a [routerLink]="loc.link('catalog')">{{ 'nav.catalog' | transloco }}</a>
       <a [routerLink]="loc.link('map')">{{ 'nav.map' | transloco }}</a>
+      <a [routerLink]="loc.link('blog')">{{ 'nav.blog' | transloco }}</a>
     </nav>
     <div class="hdr__lang">
       <app-lang-switcher [pair]="pair()" />

@@ -1,5 +1,5 @@
 {
-  "nav": { "catalog": "Catalog", "map": "Map" },
+  "nav": { "catalog": "Catalog", "map": "Map", "blog": "Blog" },
   "hero": {
     "title": "Find your fishing spot",
     "subtitle": "Lakes, ponds and rivers of Ukraine — with prices, fish species and amenities",
@@ -60,5 +60,10 @@
   "fishPage": { "title": "Where to catch: {{fish}}", "waters": "Waters with this fish" },
   "map": { "title": "Waters map" },
   "notFound": { "title": "Page not found", "text": "Maybe the water has moved.", "home": "Go home" },
+  "blog": {
+    "title": "Fishing blog",
+    "sub": "Tips, spots and experience",
+    "empty": "No articles yet"
+  },
   "footer": { "tagline": "Ukrainian fishing waters catalog." }
 }

@@ -1,49 +1,48 @@
 <p-toast />
 
 <div class="awf">
-  <!-- Header row -->
-  <div class="awf__header">
-    <a routerLink="/admin/waters" class="awf__back">← До списку</a>
-
-    <div class="awf__title-block">
-      @if (id && water()) {
-        <h2 class="awf__title">{{ water()!.name }}</h2>
-        <p-tag
-          [severity]="statusSeverity(water()!.status)"
-          [value]="statusLabel(water()!.status)"
-        />
-        <small class="awf__slug">{{ water()!.slug }}</small>
-      } @else {
-        <h2 class="awf__title">Нова водойма</h2>
-      }
+  <!-- Sticky action bar -->
+  <div class="awf__action-bar">
+    <div class="awf__action-bar-left">
+      <a routerLink="/admin/waters" class="awf__back">← До списку</a>
+      <div class="awf__title-block">
+        @if (id && water()) {
+          <h1 class="awf__title">{{ water()!.name }}</h1>
+          <p-tag
+            [severity]="statusSeverity(water()!.status)"
+            [value]="statusLabel(water()!.status)"
+          />
+          <small class="awf__slug">{{ water()!.slug }}</small>
+        } @else {
+          <h1 class="awf__title">Нова водойма</h1>
+        }
+      </div>
     </div>
-
-    <span class="awf__spacer"></span>
-
-    @if (id) {
-      @if (currentStatus === 'PUBLISHED') {
-        <p-button
-          label="У чернетку"
-          severity="secondary"
-          [loading]="statusUpdating()"
-          (onClick)="toggleStatus()"
-        />
-      } @else {
-        <p-button
-          label="Опублікувати"
-          severity="success"
-          [loading]="statusUpdating()"
-          (onClick)="toggleStatus()"
-        />
+    <div class="awf__action-bar-btns">
+      @if (id) {
+        @if (currentStatus === 'PUBLISHED') {
+          <p-button
+            label="У чернетку"
+            severity="secondary"
+            [loading]="statusUpdating()"
+            (onClick)="toggleStatus()"
+          />
+        } @else {
+          <p-button
+            label="Опублікувати"
+            severity="success"
+            [loading]="statusUpdating()"
+            (onClick)="toggleStatus()"
+          />
+        }
       }
-    }
-
-    <p-button
-      label="Зберегти"
-      severity="primary"
-      [loading]="saving()"
-      (onClick)="submit()"
-    />
+      <p-button
+        label="Зберегти"
+        severity="primary"
+        [loading]="saving()"
+        (onClick)="submit()"
+      />
+    </div>
   </div>
 
   <!-- Form -->
@@ -357,9 +356,18 @@
     <!-- Media manager (edit mode only) -->
     @if (id) {
       <div class="awf__card">
-        <h3 class="awf__section-title">Фото</h3>
+        <div class="awf__section-header">
+          <h3 class="awf__section-title">Фото</h3>
+          <p-button
+            label="Завантажити фото"
+            icon="pi pi-upload"
+            severity="secondary"
+            [loading]="uploading()"
+            [disabled]="uploading()"
+            (onClick)="triggerFileInput()"
+          />
+        </div>
 
-        <!-- Upload -->
         <input
           #fileInput
           type="file"
@@ -367,16 +375,7 @@
           class="awf__file-hidden"
           (change)="onFile($event)"
         />
-        <p-button
-          label="Завантажити фото"
-          icon="pi pi-upload"
-          severity="secondary"
-          [loading]="uploading()"
-          [disabled]="uploading()"
-          (onClick)="triggerFileInput()"
-        />
 
-        <!-- Thumbnails grid -->
         @if (media().length > 0) {
           <div class="awf__media-grid">
             @for (m of media(); track m.id; let i = $index) {

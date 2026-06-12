@@ -25,6 +25,18 @@ export const ADMIN_ROUTES: Routes = [
             path: 'waters/:id',
             loadComponent: () => import('./waters/admin-water-form').then((m) => m.AdminWaterForm),
           },
+          {
+            path: 'articles',
+            loadComponent: () => import('./articles/admin-articles-list').then((m) => m.AdminArticlesList),
+          },
+          {
+            path: 'articles/new',
+            loadComponent: () => import('./articles/admin-article-form').then((m) => m.AdminArticleForm),
+          },
+          {
+            path: 'articles/:id',
+            loadComponent: () => import('./articles/admin-article-form').then((m) => m.AdminArticleForm),
+          },
         ],
       },
     ],

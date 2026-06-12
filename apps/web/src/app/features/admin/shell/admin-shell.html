@@ -1,7 +1,17 @@
 <div class="ash">
   <header class="ash__bar">
     <a routerLink="/admin/waters" class="ash__logo">🎣 FishMap<em>.ua</em> · Адмінка</a>
-    <nav>
+    <nav class="ash__nav">
+      <a
+        routerLink="/admin/waters"
+        routerLinkActive="ash__nav-link--active"
+        class="ash__nav-link"
+      >Водойми</a>
+      <a
+        routerLink="/admin/articles"
+        routerLinkActive="ash__nav-link--active"
+        class="ash__nav-link"
+      >Статті</a>
       <a routerLink="/" target="_blank">На сайт ↗</a>
       <button type="button" (click)="logout()">Вийти</button>
     </nav>

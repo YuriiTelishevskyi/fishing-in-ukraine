@@ -3,6 +3,50 @@ import { Injectable, inject } from '@angular/core';
 import { MediaDto, Paginated, WaterDetailDto, WaterStatus } from '@fishing/shared';
 import { Observable } from 'rxjs';
 
+export type ArticleStatus = 'DRAFT' | 'PUBLISHED';
+
+export interface AdminArticlesQuery {
+  status?: ArticleStatus;
+  search?: string;
+  page?: number;
+  perPage?: number;
+}
+
+/** Raw shape returned by the admin API (Prisma row — not the public DTO). */
+export interface AdminArticle {
+  id: string;
+  slug: string;
+  title: string;
+  titleEn: string | null;
+  excerpt: string;
+  excerptEn: string | null;
+  content: string;
+  contentEn: string | null;
+  coverUrl: string | null;
+  status: ArticleStatus;
+  publishedAt: string | null;
+  seoTitle: string | null;
+  seoTitleEn: string | null;
+  seoDescription: string | null;
+  seoDescriptionEn: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface ArticlePayload {
+  title?: string;
+  titleEn?: string;
+  excerpt?: string;
+  excerptEn?: string;
+  content?: string;
+  contentEn?: string;
+  seoTitle?: string;
+  seoTitleEn?: string;
+  seoDescription?: string;
+  seoDescriptionEn?: string;
+  status?: ArticleStatus;
+}
+
 export interface AdminWatersQuery {
   status?: WaterStatus;
   region?: string;
@@ -98,5 +142,37 @@ export class AdminApiService {
 
   createAmenity(name: string, nameEn?: string) {
     return this.http.post('/api/admin/amenities', { name, nameEn });
+  }
+
+  // ── Articles ──────────────────────────────────────────────────────────────
+
+  adminArticles(q: AdminArticlesQuery): Observable<Paginated<AdminArticle>> {
+    let params = new HttpParams();
+    for (const [k, v] of Object.entries(q)) {
+      if (v !== undefined && v !== '') params = params.set(k, String(v));
+    }
+    return this.http.get<Paginated<AdminArticle>>('/api/admin/articles', { params });
+  }
+
+  adminArticle(id: string): Observable<AdminArticle> {
+    return this.http.get<AdminArticle>(`/api/admin/articles/${id}`);
+  }
+
+  createArticle(payload: ArticlePayload): Observable<AdminArticle> {
+    return this.http.post<AdminArticle>('/api/admin/articles', payload);
+  }
+
+  updateArticle(id: string, payload: ArticlePayload): Observable<AdminArticle> {
+    return this.http.patch<AdminArticle>(`/api/admin/articles/${id}`, payload);
+  }
+
+  deleteArticle(id: string): Observable<{ ok: true }> {
+    return this.http.delete<{ ok: true }>(`/api/admin/articles/${id}`);
+  }
+
+  uploadArticleCover(id: string, file: File): Observable<AdminArticle> {
+    const fd = new FormData();
+    fd.append('file', file);
+    return this.http.post<AdminArticle>(`/api/admin/articles/${id}/cover`, fd);
   }
 }

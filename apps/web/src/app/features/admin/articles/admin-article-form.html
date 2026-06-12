@@ -1,0 +1,203 @@
+<p-toast />
+
+<div class="aaf">
+  <!-- Header row -->
+  <div class="aaf__header">
+    <a routerLink="/admin/articles" class="aaf__back">← До списку</a>
+
+    <div class="aaf__title-block">
+      @if (id && article()) {
+        <h2 class="aaf__title">{{ article()!.title }}</h2>
+        <p-tag
+          [severity]="statusSeverity(article()!.status)"
+          [value]="statusLabel(article()!.status)"
+        />
+        <small class="aaf__slug">{{ article()!.slug }}</small>
+      } @else {
+        <h2 class="aaf__title">Нова стаття</h2>
+      }
+    </div>
+
+    <span class="aaf__spacer"></span>
+
+    @if (id) {
+      @if (currentStatus === 'PUBLISHED') {
+        <p-button
+          label="У чернетку"
+          severity="secondary"
+          [loading]="statusUpdating()"
+          (onClick)="toggleStatus()"
+        />
+      } @else {
+        <p-button
+          label="Опублікувати"
+          severity="success"
+          [loading]="statusUpdating()"
+          (onClick)="toggleStatus()"
+        />
+      }
+    }
+
+    <p-button
+      label="Зберегти"
+      severity="primary"
+      [loading]="saving()"
+      (onClick)="submit()"
+    />
+  </div>
+
+  <!-- Form -->
+  <form [formGroup]="form" class="aaf__form" (ngSubmit)="submit()">
+
+    <!-- Main card -->
+    <div class="aaf__card">
+      <h3 class="aaf__section-title">Основна інформація</h3>
+
+      <!-- Title -->
+      <div class="aaf__field">
+        <label class="aaf__label">Заголовок <span class="aaf__req">*</span></label>
+        <input
+          pInputText
+          type="text"
+          formControlName="title"
+          placeholder="Заголовок статті"
+          class="aaf__input"
+        />
+        @if (form.controls.title.invalid && form.controls.title.touched) {
+          <small class="aaf__error">
+            @if (form.controls.title.errors?.['required']) { Поле обов'язкове }
+            @else if (form.controls.title.errors?.['minlength']) { Мінімум 3 символи }
+          </small>
+        }
+      </div>
+
+      <!-- Excerpt -->
+      <div class="aaf__field">
+        <label class="aaf__label">Короткий опис <span class="aaf__req">*</span></label>
+        <textarea
+          pTextarea
+          formControlName="excerpt"
+          placeholder="Короткий опис статті (для списків та SEO)"
+          rows="2"
+          class="aaf__input"
+        ></textarea>
+        @if (form.controls.excerpt.invalid && form.controls.excerpt.touched) {
+          <small class="aaf__error">Поле обов'язкове</small>
+        }
+      </div>
+
+      <!-- Content -->
+      <div class="aaf__field">
+        <label class="aaf__label">Текст (Markdown) <span class="aaf__req">*</span></label>
+        <textarea
+          pTextarea
+          formControlName="content"
+          placeholder="# Заголовок&#10;&#10;Текст статті у форматі Markdown..."
+          class="aaf__input editor"
+        ></textarea>
+        @if (form.controls.content.invalid && form.controls.content.touched) {
+          <small class="aaf__error">
+            @if (form.controls.content.errors?.['required']) { Поле обов'язкове }
+            @else if (form.controls.content.errors?.['minlength']) { Мінімум 50 символів }
+          </small>
+        }
+      </div>
+    </div>
+
+    <!-- English block -->
+    <details class="aaf__details aaf__card">
+      <summary class="aaf__details-summary">English (опційно)</summary>
+
+      <div class="aaf__grid aaf__grid--mt">
+        <div class="aaf__field aaf__field--full">
+          <label class="aaf__label">Title (EN)</label>
+          <input pInputText type="text" formControlName="titleEn" placeholder="Article title in English" class="aaf__input" />
+        </div>
+
+        <div class="aaf__field aaf__field--full">
+          <label class="aaf__label">Excerpt (EN)</label>
+          <textarea
+            pTextarea
+            formControlName="excerptEn"
+            placeholder="Short description in English"
+            rows="2"
+            class="aaf__input"
+          ></textarea>
+        </div>
+
+        <div class="aaf__field aaf__field--full">
+          <label class="aaf__label">Content (EN, Markdown)</label>
+          <textarea
+            pTextarea
+            formControlName="contentEn"
+            placeholder="# Heading&#10;&#10;Article content in English..."
+            class="aaf__input editor"
+          ></textarea>
+        </div>
+      </div>
+    </details>
+
+    <!-- SEO block -->
+    <details class="aaf__details aaf__card">
+      <summary class="aaf__details-summary">SEO (опційно)</summary>
+
+      <div class="aaf__grid aaf__grid--mt">
+        <div class="aaf__field">
+          <label class="aaf__label">SEO Заголовок</label>
+          <input pInputText type="text" formControlName="seoTitle" placeholder="SEO заголовок сторінки" class="aaf__input" />
+        </div>
+
+        <div class="aaf__field">
+          <label class="aaf__label">SEO Опис</label>
+          <input pInputText type="text" formControlName="seoDescription" placeholder="SEO мета-опис" class="aaf__input" />
+        </div>
+
+        <div class="aaf__field">
+          <label class="aaf__label">SEO Title (EN)</label>
+          <input pInputText type="text" formControlName="seoTitleEn" placeholder="SEO title in English" class="aaf__input" />
+        </div>
+
+        <div class="aaf__field">
+          <label class="aaf__label">SEO Description (EN)</label>
+          <input pInputText type="text" formControlName="seoDescriptionEn" placeholder="SEO description in English" class="aaf__input" />
+        </div>
+      </div>
+    </details>
+
+    <!-- Cover block (edit mode only) -->
+    @if (id) {
+      <div class="aaf__card">
+        <h3 class="aaf__section-title">Обкладинка</h3>
+
+        @if (coverCardUrl) {
+          <img
+            [src]="coverCardUrl"
+            alt="Обкладинка статті"
+            class="aaf__cover-preview"
+            loading="lazy"
+          />
+        } @else {
+          <div class="aaf__cover-placeholder">Обкладинку ще не завантажено</div>
+        }
+
+        <input
+          #coverInput
+          type="file"
+          accept="image/jpeg,image/png,image/webp"
+          class="aaf__file-hidden"
+          (change)="onCoverFile($event)"
+        />
+        <p-button
+          label="Завантажити обкладинку"
+          icon="pi pi-upload"
+          severity="secondary"
+          [loading]="uploading()"
+          [disabled]="uploading()"
+          (onClick)="triggerCoverInput()"
+          styleClass="aaf__cover-btn"
+        />
+      </div>
+    }
+
+  </form>
+</div>

@@ -20,6 +20,41 @@
       gap: 18px;
       align-items: center;
     }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  }
+
+  &__nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 500;
+    font-size: 0.92rem;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
+
+    &:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    &--active {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.18);
+      font-weight: 700;
+    }
+
+    // Undo the .ash__bar a styles for these links
+    &.ash__nav-link {
+      color: rgba(255, 255, 255, 0.75);
+    }
+    &.ash__nav-link--active {
+      color: #fff;
+    }
 
     button {
       background: none;

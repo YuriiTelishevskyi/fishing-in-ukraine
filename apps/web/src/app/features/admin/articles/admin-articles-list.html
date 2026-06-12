@@ -1,0 +1,95 @@
+<div class="aal">
+  <div class="aal__toolbar">
+    <h2 class="aal__title">Статті</h2>
+
+    <p-select
+      [(ngModel)]="status"
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+      (onChange)="onStatusChange()"
+      placeholder="Статус"
+    />
+
+    <input
+      pInputText
+      type="text"
+      [(ngModel)]="search"
+      placeholder="Пошук…"
+      class="aal__search"
+      (keyup.enter)="onSearchEnterOrBlur()"
+      (blur)="onSearchEnterOrBlur()"
+    />
+
+    <span class="aal__spacer"></span>
+
+    <p-button
+      label="+ Нова стаття"
+      [routerLink]="['/admin/articles/new']"
+      severity="primary"
+    />
+  </div>
+
+  <p-table
+    [value]="rows()"
+    [lazy]="true"
+    [paginator]="true"
+    [rows]="20"
+    [totalRecords]="total()"
+    [loading]="loading()"
+    (onLazyLoad)="onLazy($event)"
+    dataKey="id"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Заголовок</th>
+        <th>Статус</th>
+        <th>Опубліковано</th>
+        <th>Оновлено</th>
+        <th>Дії</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-a>
+      <tr>
+        <td>
+          <span class="aal__name">{{ a.title }}</span>
+          <br />
+          <small class="aal__slug">{{ a.slug }}</small>
+        </td>
+        <td>
+          <p-tag
+            [severity]="statusSeverity(a.status)"
+            [value]="statusLabel(a.status)"
+          />
+        </td>
+        <td>{{ a.publishedAt ? (a.publishedAt | date:'dd.MM.yyyy') : '—' }}</td>
+        <td>{{ a.updatedAt | date:'dd.MM.yyyy HH:mm' }}</td>
+        <td class="aal__actions">
+          <p-button
+            icon="pi pi-pencil"
+            severity="secondary"
+            [text]="true"
+            [routerLink]="['/admin/articles', a.id]"
+            pTooltip="Редагувати"
+          />
+          <p-button
+            icon="pi pi-trash"
+            severity="danger"
+            [text]="true"
+            (onClick)="confirmDelete(a)"
+            pTooltip="Видалити"
+          />
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="5" class="aal__empty">Нічого не знайдено</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<p-confirmdialog />

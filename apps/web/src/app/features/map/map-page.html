@@ -14,6 +14,99 @@
       <option value="false">{{ 'catalog.free' | transloco }}</option>
       <option value="true">{{ 'catalog.paidOnly' | transloco }}</option>
     </select>
+    <button class="mappage__add-btn" [class.mappage__add-btn--active]="adding()" (click)="toggleAdding()">
+      + {{ 'spots.add' | transloco }}
+    </button>
+    @if (adding()) {
+      <button class="mappage__loc-btn" (click)="useMyLocation()">
+        📍 {{ 'spots.myLocation' | transloco }}
+      </button>
+    }
   </div>
-  <div #map class="mappage__map"></div>
+
+  @if (hintVisible()) {
+    <div class="mappage__hint">
+      {{ 'spots.placeHint' | transloco }}
+    </div>
+  }
+
+  @if (formError() === 'geo') {
+    <div class="mappage__hint mappage__hint--error">
+      {{ 'spots.geoDenied' | transloco }}
+    </div>
+  }
+
+  <div #map class="mappage__map" [class.mappage__map--adding]="adding()"></div>
+
+  @if (formSuccess()) {
+    <div class="mappage__panel">
+      <div class="mappage__success">
+        <p>{{ 'spots.thanks' | transloco }}</p>
+        <button class="mappage__cancel-btn" (click)="cancelAdding()">✕</button>
+      </div>
+    </div>
+  }
+
+  @if (adding() && picked() && !formSuccess()) {
+    <div class="mappage__panel">
+      <div class="mappage__form-header">
+        <h3>{{ 'spots.formTitle' | transloco }}</h3>
+        <button class="mappage__cancel-btn" (click)="cancelAdding()">✕</button>
+      </div>
+
+      @if (formError() === 'err' || formError() === 'rate') {
+        <div class="mappage__form-error">
+          {{ 'spots.error' | transloco }}
+        </div>
+      }
+
+      <form (ngSubmit)="submitSpot()" #spotForm="ngForm" novalidate>
+        <!-- Honeypot — off-screen, never filled by real users -->
+        <input class="hp" type="text" name="website" [(ngModel)]="formWebsite" autocomplete="off" tabindex="-1" aria-hidden="true">
+
+        <label>
+          {{ 'spots.name' | transloco }} *
+          <input type="text" name="authorName" [(ngModel)]="formName" required minlength="2" maxlength="40" autocomplete="name">
+        </label>
+
+        <label>
+          {{ 'spots.email' | transloco }}
+          <input type="email" name="authorEmail" [(ngModel)]="formEmail" autocomplete="email">
+        </label>
+
+        <label>
+          {{ 'spots.title' | transloco }}
+          <input type="text" name="title" [(ngModel)]="formTitle" maxlength="80">
+        </label>
+
+        <label>
+          {{ 'spots.comment' | transloco }} *
+          <textarea name="comment" [(ngModel)]="formComment" required minlength="10" maxlength="1000" rows="3"></textarea>
+        </label>
+
+        <label>
+          {{ 'spots.fish' | transloco }}
+          <input type="text" name="fishNote" [(ngModel)]="formFishNote" maxlength="120">
+        </label>
+
+        <label>
+          {{ 'spots.photo' | transloco }}
+          <input type="file" name="photo" accept="image/jpeg,image/png,image/webp" (change)="onPhotoChange($event)">
+        </label>
+
+        @if (photoPreviewUrl) {
+          <img class="mappage__photo-preview" [src]="photoPreviewUrl" alt="preview">
+        }
+
+        <div class="mappage__form-actions">
+          <button type="submit" class="mappage__submit-btn" [disabled]="!formValid || formPending()">
+            {{ 'spots.submit' | transloco }}
+          </button>
+          <button type="button" class="mappage__cancel-link" (click)="cancelAdding()">
+            {{ 'spots.cancel' | transloco }}
+          </button>
+        </div>
+      </form>
+    </div>
+  }
 </div>

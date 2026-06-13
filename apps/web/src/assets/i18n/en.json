@@ -76,5 +76,22 @@
     "thanks": "Thank you! Your review will appear after moderation.",
     "error": "Could not submit. Try again later.",
     "outOf": "of 5"
+  },
+  "spots": {
+    "add": "Add a point",
+    "placeHint": "Click on the map where your spot is",
+    "myLocation": "My location",
+    "geoDenied": "Could not get your location",
+    "formTitle": "New fishing spot",
+    "name": "Your name",
+    "email": "Email (optional)",
+    "photo": "Photo (optional)",
+    "comment": "Describe the spot, what you caught",
+    "fish": "What fish (optional)",
+    "title": "Place name (optional)",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "thanks": "Thanks! Your point will appear after review.",
+    "error": "Could not submit. Try again later."
   }
 }

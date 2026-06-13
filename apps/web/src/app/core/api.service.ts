@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  AmenityDto, ArticleDetailDto, ArticleListItemDto, FishSpeciesDto, MapPinDto, Paginated, RegionDto, ReviewDto, WaterDetailDto, WaterListItemDto,
+  AmenityDto, ArticleDetailDto, ArticleListItemDto, FishSpeciesDto, MapPinDto, Paginated, RegionDto, ReviewDto, SpotDto, WaterDetailDto, WaterListItemDto,
 } from '@fishing/shared';
 import { Observable } from 'rxjs';
 import { API_BASE } from './api-base';
@@ -92,5 +92,13 @@ export class ApiService {
 
   postReview(slug: string, payload: { authorName: string; rating: number; text: string; website?: string }): Observable<{ ok: boolean }> {
     return this.http.post<{ ok: boolean }>(`${this.base}/api/waters/${slug}/reviews`, payload);
+  }
+
+  spots(): Observable<SpotDto[]> {
+    return this.http.get<SpotDto[]>(`${this.base}/api/spots`, { params: this.params() });
+  }
+
+  submitSpot(fd: FormData): Observable<{ ok: true }> {
+    return this.http.post<{ ok: true }>(`${this.base}/api/spots`, fd);
   }
 }

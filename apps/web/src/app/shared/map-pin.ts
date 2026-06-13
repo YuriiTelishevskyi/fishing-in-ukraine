@@ -1,6 +1,6 @@
 import type * as Leaflet from 'leaflet';
 
-export type PinVariant = 'primary' | 'accent';
+export type PinVariant = 'primary' | 'accent' | 'community';
 
 export function createMapPin(L: typeof Leaflet, variant: PinVariant = 'primary'): Leaflet.DivIcon {
   const gradientId = `pin-grad-${variant}`;
@@ -8,7 +8,9 @@ export function createMapPin(L: typeof Leaflet, variant: PinVariant = 'primary')
 
   const colors = variant === 'primary'
     ? { from: '#0E7490', to: '#0A4A5C' }
-    : { from: '#F59E0B', to: '#D97706' };
+    : variant === 'accent'
+    ? { from: '#F59E0B', to: '#D97706' }
+    : { from: '#16A34A', to: '#0E7A35' };
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="34" height="46" viewBox="0 0 34 46">
   <defs>

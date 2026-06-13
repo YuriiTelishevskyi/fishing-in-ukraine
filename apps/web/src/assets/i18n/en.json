@@ -12,7 +12,6 @@
   },
   "premium": { "badge": "Premium" },
   "home": {
-    "featured": "Verified waters",
     "recommended": "Recommended",
     "regions": "Waters by region",
     "fishTitle": "What are we catching?",

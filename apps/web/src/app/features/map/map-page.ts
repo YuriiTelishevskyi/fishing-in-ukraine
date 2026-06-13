@@ -113,7 +113,10 @@ export class MapPage {
     }
     this.cluster = (this.L as any).markerClusterGroup();
     for (const p of pins) {
-      const m = this.L.marker([p.lat, p.lng], { icon: createMapPin(this.L) });
+      const pinVariant = p.isPremium ? 'premium' : 'primary';
+      const markerOpts: Record<string, unknown> = { icon: createMapPin(this.L, pinVariant) };
+      if (p.isPremium) markerOpts['zIndexOffset'] = 1000;
+      const m = this.L.marker([p.lat, p.lng], markerOpts);
       m.bindPopup(this.popupHtml(p));
       this.cluster.addLayer(m);
     }

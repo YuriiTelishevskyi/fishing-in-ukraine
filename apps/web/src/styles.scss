@@ -61,6 +61,18 @@ iframe { max-width: 100%; }
   background: #dcfce7; color: var(--success); font: 600 0.78rem var(--font-body);
 }
 
+.badge-premium {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 999px;
+  background: linear-gradient(90deg, #F59E0B, #D97706);
+  color: #fff; font: 600 0.78rem var(--font-body);
+  white-space: nowrap;
+}
+
+.brand-pin--premium {
+  filter: drop-shadow(0 4px 6px rgba(180, 83, 9, 0.45));
+}
+
 // Pulsing fish-pin marker (used in Leaflet divIcon — must be global)
 .fish-pin {
   position: relative;

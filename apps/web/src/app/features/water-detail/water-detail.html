@@ -17,6 +17,13 @@
       { label: w.name }
     ]" />
 
+    <div class="detail-title">
+      <h1 class="detail-title__name">{{ w.name }}</h1>
+      @if (w.isPremium) {
+        <span class="badge-premium detail-title__premium">⭐ {{ 'premium.badge' | transloco }}</span>
+      }
+    </div>
+
     <div class="detail-grid">
       <!-- Left column: gallery + sections -->
       <div class="detail-main">

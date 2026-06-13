@@ -10,8 +10,10 @@
     "cta": "Find waters",
     "mapCta": "Open the map"
   },
+  "premium": { "badge": "Premium" },
   "home": {
     "featured": "Verified waters",
+    "recommended": "Recommended",
     "regions": "Waters by region",
     "fishTitle": "What are we catching?",
     "ctaTitle": "Own a fishing spot?",

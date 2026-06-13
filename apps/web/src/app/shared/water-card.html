@@ -1,9 +1,12 @@
-<a class="card wcard" [routerLink]="link()">
+<a class="card wcard" [class.wcard--premium]="water().isPremium" [routerLink]="link()">
   <div class="wcard__media">
     @if (water().coverCardUrl) {
       <img [ngSrc]="water().coverCardUrl!" fill [alt]="water().name" [priority]="priority()" />
     } @else {
       <div class="wcard__placeholder">🐟</div>
+    }
+    @if (water().isPremium) {
+      <span class="badge-premium wcard__premium">⭐ {{ 'premium.badge' | transloco }}</span>
     }
     @if (water().verified) {
       <span class="badge-verified wcard__verified">✓ {{ 'water.verified' | transloco }}</span>

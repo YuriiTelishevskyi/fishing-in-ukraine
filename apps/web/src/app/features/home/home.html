@@ -58,7 +58,7 @@
 @if (featured(); as f) {
   @if (f.items.length) {
     <section class="container section" appReveal>
-      <h2>{{ 'home.featured' | transloco }}</h2>
+      <h2>{{ 'home.recommended' | transloco }}</h2>
       <div class="grid grid--3">
         @for (w of f.items; track w.id) {
           <app-water-card [water]="w" [priority]="$first" />

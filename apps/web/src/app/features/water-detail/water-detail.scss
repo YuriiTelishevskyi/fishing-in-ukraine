@@ -2,6 +2,25 @@
   padding: 24px 20px 64px;
 }
 
+.detail-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0 0;
+
+  &__name {
+    margin: 0;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+  }
+
+  &__premium {
+    flex-shrink: 0;
+  }
+}
+
 .detail-grid {
   display: grid;
   grid-template-columns: 1fr 340px;

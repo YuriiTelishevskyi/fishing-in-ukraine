@@ -9,7 +9,8 @@
     height: 100%; display: grid; place-items: center; font-size: 3rem;
     background: linear-gradient(135deg, #d7ecf1, #b8dde7);
   }
-  &__verified { position: absolute; top: 12px; left: 12px; }
+  &__premium { position: absolute; top: 12px; left: 12px; max-width: calc(100% - 24px); }
+  &__verified { position: absolute; top: 12px; right: 12px; max-width: calc(50% - 18px); }
   &__price {
     position: absolute; bottom: 12px; right: 12px;
     background: rgba(4, 34, 44, 0.82); color: #fff; backdrop-filter: blur(6px);
@@ -25,4 +26,13 @@
     font: 600 0.85rem var(--font-body);
   }
   &__fish { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  // Premium golden card treatment
+  &--premium {
+    box-shadow: 0 0 0 1.5px #F2B705, 0 2px 8px rgba(242, 183, 5, 0.18), 0 8px 24px rgba(11, 27, 34, 0.08);
+    &:hover {
+      box-shadow: 0 0 0 1.5px #F2B705, 0 4px 16px rgba(242, 183, 5, 0.28), 0 16px 40px rgba(11, 27, 34, 0.16);
+    }
+  }
 }
+

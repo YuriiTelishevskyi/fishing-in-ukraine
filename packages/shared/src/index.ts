@@ -129,3 +129,19 @@ export interface ArticleDetailDto extends ArticleListItemDto {
   coverFullUrl: string | null;
   updatedAt: string;
 }
+
+export interface SpotDto {
+  id: string;
+  lat: number;
+  lng: number;
+  authorName: string;
+  title: string | null;
+  comment: string;
+  fishNote: string | null;
+  photoThumbUrl: string | null;
+  photoCardUrl: string | null;
+  createdAt: string;
+}
+
+export type SpotStatus = 'PENDING' | 'APPROVED' | 'REJECTED';
+export const SPOT_STATUSES: SpotStatus[] = ['PENDING', 'APPROVED', 'REJECTED'];

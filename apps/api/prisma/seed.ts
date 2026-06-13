@@ -319,12 +319,51 @@ async function seedDemoReviews() {
   console.log('Demo reviews seeded.');
 }
 
+async function seedDemoSpots() {
+  // Idempotent: delete existing demo spots, then recreate
+  await prisma.spot.deleteMany({
+    where: { authorName: { in: ['Тарас', 'Богдан', 'Степан'] } },
+  });
+
+  await prisma.spot.createMany({
+    data: [
+      {
+        lat: 49.8397,
+        lng: 24.0297,
+        authorName: 'Тарас',
+        comment: 'Відмінне місце для риболовлі поблизу Львова. Тут добре ловиться карась і щука вранці.',
+        fishNote: 'карась, щука',
+        status: 'APPROVED',
+      },
+      {
+        lat: 49.7665,
+        lng: 23.9571,
+        authorName: 'Богдан',
+        comment: 'Тихе озеро з чистою водою. Короп добре бере на кукурудзу після дощу. Рекомендую фідер.',
+        fishNote: 'короп, лящ',
+        status: 'APPROVED',
+      },
+      {
+        lat: 50.4547,
+        lng: 30.5238,
+        authorName: 'Степан',
+        comment: 'Гарне місце на Дніпрі. Ловив судака та окуня. Зручний берег, є де поставити намет.',
+        fishNote: 'судак, окунь',
+        status: 'PENDING',
+      },
+    ],
+  });
+
+  console.log('Demo spots seeded.');
+}
+
 async function main() {
   await seedDictionaries();
   if (process.env.SEED_DEMO === '1') {
     await seedDemoWaters();
     await seedDemoArticles();
     await seedDemoReviews();
+    await seedDemoSpots();
   }
   const counts = {
     regions: await prisma.region.count(),
@@ -333,6 +372,7 @@ async function main() {
     waters: await prisma.water.count(),
     articles: await prisma.article.count(),
     reviews: await prisma.review.count(),
+    spots: await prisma.spot.count(),
   };
   console.log('Seed done:', counts);
 }

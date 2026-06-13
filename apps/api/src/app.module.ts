@@ -12,6 +12,7 @@ import { UPLOADS_ROOT } from './media/storage.service';
 import { PrismaModule } from './prisma/prisma.module';
 import { ReviewsModule } from './reviews/reviews.module';
 import { SeoModule } from './seo/seo.module';
+import { SpotsModule } from './spots/spots.module';
 import { WatersModule } from './waters/waters.module';
 
 @Module({
@@ -34,6 +35,7 @@ import { WatersModule } from './waters/waters.module';
     MediaModule,
     ArticlesModule,
     ReviewsModule,
+    SpotsModule,
     SeoModule,
   ],
   controllers: [HealthController],

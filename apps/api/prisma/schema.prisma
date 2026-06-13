@@ -162,3 +162,25 @@ model Article {
 
   @@index([status, publishedAt])
 }
+
+enum SpotStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model Spot {
+  id         String     @id @default(uuid())
+  lat        Float
+  lng        Float
+  authorName String
+  authorEmail String?
+  title      String?
+  comment    String
+  fishNote   String?
+  photoUrl   String?
+  status     SpotStatus @default(PENDING)
+  createdAt  DateTime   @default(now())
+
+  @@index([status])
+}

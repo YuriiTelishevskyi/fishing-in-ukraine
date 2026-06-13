@@ -161,12 +161,15 @@ async function seedDemoWaters() {
     const amenityIds = await Promise.all(
       amenitySlugs.map((s) => amenityBySlug(s).then((a) => a.id)),
     );
+    const isPremiumSeed = data.slug === 'ozero-navariia';
     await prisma.water.upsert({
       where: { slug: data.slug },
-      // idempotent: never overwrite manually-edited data on re-runs
-      update: {},
+      // idempotent: update premium flag so re-runs keep navariia premium
+      update: isPremiumSeed ? { isPremium: true, premiumUntil: null } : {},
       create: {
         ...data,
+        isPremium: isPremiumSeed,
+        premiumUntil: null,
         fish: { create: fishIds.map((fishId) => ({ fishId })) },
         amenities: { create: amenityIds.map((amenityId) => ({ amenityId })) },
       },

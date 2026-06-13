@@ -37,7 +37,7 @@ export class WatersService {
       this.prisma.water.findMany({
         where,
         include: LIST_INCLUDE,
-        orderBy: [{ verified: 'desc' }, { createdAt: 'desc' }],
+        orderBy: [{ isPremium: 'desc' }, { verified: 'desc' }, { createdAt: 'desc' }],
         skip: (q.page - 1) * q.perPage,
         take: q.perPage,
       }),
@@ -61,6 +61,8 @@ export class WatersService {
         lat: true,
         lng: true,
         isPaid: true,
+        isPremium: true,
+        premiumUntil: true,
         region: { select: { slug: true } },
       },
       take: 2000,

@@ -56,6 +56,7 @@ export interface WaterListItemDto {
   isPaid: boolean;
   priceFrom: number | null;
   priceTo: number | null;
+  isPremium: boolean;
   verified: boolean;
   fishNames: string[];
   coverThumbUrl: string | null;
@@ -73,6 +74,7 @@ export interface ReviewDto {
 }
 
 export interface WaterDetailDto extends WaterListItemDto {
+  premiumUntil: string | null;
   description: string;
   areaHa: number | null;
   priceNote: string | null;
@@ -102,6 +104,7 @@ export interface MapPinDto {
   lat: number;
   lng: number;
   isPaid: boolean;
+  isPremium: boolean;
   regionSlug: string;
 }
 

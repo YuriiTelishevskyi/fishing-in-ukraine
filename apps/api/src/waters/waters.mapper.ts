@@ -48,6 +48,10 @@ const variant = (fullUrl: string, v: 'thumb' | 'card') =>
   fullUrl.replace('-full.webp', `-${v}.webp`);
 
 const loc = (lang: Locale, uk: string, en: string | null) => (lang === 'en' && en ? en : uk);
+
+/** Effective premium: isPremium flag is on AND (no expiry OR expiry is in the future). */
+const effectivePremium = (w: { isPremium: boolean; premiumUntil: Date | null }): boolean =>
+  w.isPremium && (!w.premiumUntil || w.premiumUntil > new Date());
 const locN = (lang: Locale, uk: string | null, en: string | null) =>
   lang === 'en' && en ? en : uk;
 
@@ -74,6 +78,7 @@ export function toListItem(w: WaterListRow, lang: Locale): WaterListItemDto {
     lat: w.lat,
     lng: w.lng,
     waterType: w.waterType as WaterType,
+    isPremium: effectivePremium(w),
     isPaid: w.isPaid,
     priceFrom: w.priceFrom,
     priceTo: w.priceTo,
@@ -89,6 +94,7 @@ export function toListItem(w: WaterListRow, lang: Locale): WaterListItemDto {
 export function toDetail(w: WaterFull, lang: Locale): WaterDetailDto {
   return {
     ...toListItem(w, lang),
+    premiumUntil: w.premiumUntil ? w.premiumUntil.toISOString() : null,
     description: loc(lang, w.description, w.descriptionEn),
     areaHa: w.areaHa,
     priceNote: locN(lang, w.priceNote, w.priceNoteEn),
@@ -122,7 +128,7 @@ export function toDetail(w: WaterFull, lang: Locale): WaterDetailDto {
 }
 
 export function toPin(
-  w: Pick<Water, 'id' | 'slug' | 'name' | 'nameEn' | 'lat' | 'lng' | 'isPaid'> & {
+  w: Pick<Water, 'id' | 'slug' | 'name' | 'nameEn' | 'lat' | 'lng' | 'isPaid' | 'isPremium' | 'premiumUntil'> & {
     region: { slug: string };
   },
   lang: Locale,
@@ -134,6 +140,7 @@ export function toPin(
     lat: w.lat,
     lng: w.lng,
     isPaid: w.isPaid,
+    isPremium: effectivePremium(w),
     regionSlug: w.region.slug,
   };
 }

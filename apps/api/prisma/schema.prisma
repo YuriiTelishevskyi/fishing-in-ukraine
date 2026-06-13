@@ -69,6 +69,8 @@ model Water {
   website          String?
   rules            String?
   rulesEn          String?
+  isPremium        Boolean        @default(false)
+  premiumUntil     DateTime?
   verified         Boolean        @default(false)
   status           WaterStatus    @default(DRAFT)
   seoTitle         String?

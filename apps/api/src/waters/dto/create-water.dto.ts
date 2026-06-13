@@ -2,6 +2,7 @@ import { WATER_TYPES, WaterType } from '@fishing/shared';
 import {
   IsArray,
   IsBoolean,
+  IsDateString,
   IsIn,
   IsInt,
   IsNumber,
@@ -45,6 +46,14 @@ export class CreateWaterDto {
 
   @IsIn(WATER_TYPES)
   waterType: WaterType;
+
+  @IsOptional()
+  @IsBoolean()
+  isPremium?: boolean;
+
+  @IsOptional()
+  @IsDateString()
+  premiumUntil?: string;
 
   @IsOptional()
   @IsBoolean()

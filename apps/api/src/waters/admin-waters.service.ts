@@ -49,7 +49,7 @@ export class AdminWatersService {
       }),
     ]);
     return {
-      items: rows.map((w) => toDetail(w, 'uk')),
+      items: rows.map((w) => ({ ...toDetail(w, 'uk'), isPremium: w.isPremium })),
       total,
       page: q.page,
       perPage: q.perPage,
@@ -59,28 +59,33 @@ export class AdminWatersService {
   async byId(id: string): Promise<WaterDetailDto> {
     const water = await this.prisma.water.findUnique({ where: { id }, include: FULL_INCLUDE });
     if (!water) throw new NotFoundException(`Water ${id} not found`);
-    return toDetail(water, 'uk');
+    return { ...toDetail(water, 'uk'), isPremium: water.isPremium };
   }
 
   async create(dto: CreateWaterDto): Promise<WaterDetailDto> {
-    const { fishIds = [], amenityIds = [], ...data } = dto;
+    const { fishIds = [], amenityIds = [], premiumUntil, ...data } = dto;
     this.assertPriceRange(dto.priceFrom, dto.priceTo);
     const water = await this.prisma.water.create({
       data: {
         ...data,
+        isPremium: dto.isPremium ?? false,
+        premiumUntil: premiumUntil ? new Date(premiumUntil) : null,
         slug: await this.uniqueSlug(dto.name),
         fish: { create: fishIds.map((fishId) => ({ fishId })) },
         amenities: { create: amenityIds.map((amenityId) => ({ amenityId })) },
       },
       include: FULL_INCLUDE,
     });
-    return toDetail(water, 'uk');
+    return { ...toDetail(water, 'uk'), isPremium: water.isPremium };
   }
 
   async update(id: string, dto: UpdateWaterDto): Promise<WaterDetailDto> {
     const current = await this.byId(id);
-    const { fishIds, amenityIds, ...data } = dto;
+    const { fishIds, amenityIds, premiumUntil, ...data } = dto;
     this.assertPriceRange(dto.priceFrom ?? current.priceFrom, dto.priceTo ?? current.priceTo);
+    const premiumUntilValue = 'premiumUntil' in dto
+      ? (premiumUntil ? new Date(premiumUntil) : null)
+      : undefined;
     const water = await this.prisma.$transaction(async (tx) => {
       if (fishIds) {
         await tx.waterFish.deleteMany({ where: { waterId: id } });
@@ -92,9 +97,16 @@ export class AdminWatersService {
           data: amenityIds.map((amenityId) => ({ waterId: id, amenityId })),
         });
       }
-      return tx.water.update({ where: { id }, data, include: FULL_INCLUDE });
+      return tx.water.update({
+        where: { id },
+        data: {
+          ...data,
+          ...(premiumUntilValue !== undefined ? { premiumUntil: premiumUntilValue } : {}),
+        },
+        include: FULL_INCLUDE,
+      });
     });
-    return toDetail(water, 'uk');
+    return { ...toDetail(water, 'uk'), isPremium: water.isPremium };
   }
 
   async remove(id: string): Promise<{ ok: true }> {

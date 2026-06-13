@@ -9,6 +9,7 @@ import { AmenityDto, FishSpeciesDto, MediaDto, RegionDto, WaterDetailDto, WATER_
 import { Select } from 'primeng/select';
 import { MultiSelect } from 'primeng/multiselect';
 import { ToggleSwitch } from 'primeng/toggleswitch';
+import { DatePicker } from 'primeng/datepicker';
 import { InputText } from 'primeng/inputtext';
 import { Textarea } from 'primeng/textarea';
 import { InputNumber } from 'primeng/inputnumber';
@@ -40,6 +41,7 @@ interface WaterTypeOption {
     Select,
     MultiSelect,
     ToggleSwitch,
+    DatePicker,
     InputText,
     Textarea,
     InputNumber,
@@ -99,6 +101,8 @@ export class AdminWaterForm {
     website: ['', websiteValidator],
     rules: [''],
     verified: [false],
+    isPremium: [false],
+    premiumUntil: [null as Date | null],
     fishIds: [[] as number[]],
     amenityIds: [[] as number[]],
     nameEn: [''],
@@ -160,6 +164,8 @@ export class AdminWaterForm {
             website: w.website ?? '',
             rules: w.rules ?? '',
             verified: w.verified,
+            isPremium: w.isPremium,
+            premiumUntil: w.premiumUntil ? new Date(w.premiumUntil) : null,
             fishIds: w.fish.map((f) => f.id),
             amenityIds: w.amenities.map((a) => a.id),
             nameEn: w.nameEn ?? '',
@@ -235,6 +241,10 @@ export class AdminWaterForm {
     return this.form.controls.isPaid.value;
   }
 
+  get isPremium() {
+    return this.form.controls.isPremium.value;
+  }
+
   get currentStatus() {
     return this.water()?.status ?? 'DRAFT';
   }
@@ -269,6 +279,8 @@ export class AdminWaterForm {
       lng: v.lng!,
       isPaid: v.isPaid,
       verified: v.verified,
+      isPremium: v.isPremium,
+      premiumUntil: v.isPremium && v.premiumUntil ? (v.premiumUntil as Date).toISOString() : null,
       fishIds: v.fishIds,
       amenityIds: v.amenityIds,
     };

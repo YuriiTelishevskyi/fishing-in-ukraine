@@ -84,6 +84,8 @@ export interface WaterPayload {
   fishIds?: number[];
   amenityIds?: number[];
   status?: WaterStatus;
+  isPremium?: boolean;
+  premiumUntil?: string | null;
 }
 
 @Injectable({ providedIn: 'root' })

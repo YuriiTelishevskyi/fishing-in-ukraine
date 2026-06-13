@@ -52,6 +52,7 @@
           <th>Область</th>
           <th>Статус</th>
           <th>Перевірена</th>
+          <th>Преміум</th>
           <th>Фото</th>
           <th>Оновлено</th>
           <th>Дії</th>
@@ -73,6 +74,13 @@
             />
           </td>
           <td>{{ w.verified ? '✓' : '—' }}</td>
+          <td>
+            @if (w.isPremium) {
+              <p-tag severity="warn" [value]="'⭐ ' + (w.premiumUntil ? 'до ' + (w.premiumUntil | date:'dd.MM.yyyy') : '∞')" />
+            } @else {
+              <span class="awl__muted">—</span>
+            }
+          </td>
           <td>{{ w.media.length }}</td>
           <td>{{ w.updatedAt | date:'dd.MM.yyyy HH:mm' }}</td>
           <td class="awl__actions">
@@ -96,7 +104,7 @@
 
       <ng-template pTemplate="emptymessage">
         <tr>
-          <td colspan="7" class="awl__empty">Нічого не знайдено</td>
+          <td colspan="8" class="awl__empty">Нічого не знайдено</td>
         </tr>
       </ng-template>
     </p-table>

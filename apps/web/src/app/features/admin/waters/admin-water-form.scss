@@ -179,6 +179,11 @@
     color: var(--muted);
   }
 
+  &__hint {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
   // ── Details (collapsible sections) ───────────────────────────────────────
   &__details {
     cursor: default;
@@ -349,7 +354,8 @@
 
 .awf__field p-select,
 .awf__field p-multiselect,
-.awf__field p-inputnumber {
+.awf__field p-inputnumber,
+.awf__field p-datepicker {
   display: block;
   width: 100%;
 }

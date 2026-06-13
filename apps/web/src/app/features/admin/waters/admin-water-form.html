@@ -287,6 +287,32 @@
       }
     </div>
 
+    <!-- Premium card -->
+    <div class="awf__card">
+      <h3 class="awf__section-title">Преміум</h3>
+
+      <div class="awf__field awf__field--toggle">
+        <label class="awf__label">Преміум водойма</label>
+        <p-toggleswitch formControlName="isPremium" />
+      </div>
+
+      @if (isPremium) {
+        <div class="awf__grid awf__grid--mt">
+          <div class="awf__field">
+            <label class="awf__label">Діє до</label>
+            <p-datepicker
+              formControlName="premiumUntil"
+              dateFormat="dd.mm.yy"
+              [showButtonBar]="true"
+              [style]="{'width': '100%'}"
+              placeholder="Безстроково"
+            />
+            <small class="awf__hint">Порожньо = безстроково</small>
+          </div>
+        </div>
+      }
+    </div>
+
     <!-- English block -->
     <details class="awf__details awf__card">
       <summary class="awf__details-summary">English (опційно)</summary>

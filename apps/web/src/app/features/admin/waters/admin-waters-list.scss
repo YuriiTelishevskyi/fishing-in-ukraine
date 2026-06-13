@@ -92,6 +92,10 @@
     color: var(--muted);
   }
 
+  &__muted {
+    color: var(--muted);
+  }
+
   // ── Mobile stacking ───────────────────────────────────────────────────────
   @media (max-width: 600px) {
     &__page-header {

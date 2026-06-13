@@ -193,6 +193,24 @@ export class AdminApiService {
   deleteReview(id: string): Observable<{ ok: true }> {
     return this.http.delete<{ ok: true }>(`/api/admin/reviews/${id}`);
   }
+
+  // ── Spots ─────────────────────────────────────────────────────────────────
+
+  adminSpots(q: { status?: string; page?: number; perPage?: number }): Observable<Paginated<AdminSpot>> {
+    let params = new HttpParams();
+    for (const [k, v] of Object.entries(q)) {
+      if (v !== undefined && v !== '') params = params.set(k, String(v));
+    }
+    return this.http.get<Paginated<AdminSpot>>('/api/admin/spots', { params });
+  }
+
+  moderateSpot(id: string, status: 'APPROVED' | 'REJECTED'): Observable<AdminSpot> {
+    return this.http.patch<AdminSpot>(`/api/admin/spots/${id}`, { status });
+  }
+
+  deleteSpot(id: string): Observable<{ ok: true }> {
+    return this.http.delete<{ ok: true }>(`/api/admin/spots/${id}`);
+  }
 }
 
 export interface AdminReview {
@@ -207,4 +225,18 @@ export interface AdminReview {
     slug: string;
     name: string;
   };
+}
+
+export interface AdminSpot {
+  id: string;
+  lat: number;
+  lng: number;
+  authorName: string;
+  authorEmail: string | null;
+  title: string | null;
+  comment: string;
+  fishNote: string | null;
+  photoUrl: string | null;
+  status: 'PENDING' | 'APPROVED' | 'REJECTED';
+  createdAt: string;
 }

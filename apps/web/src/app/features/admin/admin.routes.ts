@@ -41,6 +41,10 @@ export const ADMIN_ROUTES: Routes = [
             path: 'reviews',
             loadComponent: () => import('./reviews/admin-reviews-list').then((m) => m.AdminReviewsList),
           },
+          {
+            path: 'spots',
+            loadComponent: () => import('./spots/admin-spots-list').then((m) => m.AdminSpotsList),
+          },
         ],
       },
     ],

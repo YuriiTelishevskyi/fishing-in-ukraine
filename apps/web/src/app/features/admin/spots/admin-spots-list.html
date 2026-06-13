@@ -1,0 +1,165 @@
+<div class="asl">
+  <!-- Page header row -->
+  <div class="asl__page-header">
+    <div class="asl__page-title-group">
+      <h1 class="asl__page-title">Точки</h1>
+      <span class="asl__page-subtitle">{{ total() }} записів</span>
+    </div>
+  </div>
+
+  <!-- Filters panel -->
+  <div class="asl__panel asl__filters">
+    <p-select
+      [(ngModel)]="status"
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+      (onChange)="onStatusChange()"
+      placeholder="Статус"
+    />
+  </div>
+
+  <!-- Table panel -->
+  <div class="asl__panel asl__panel--flush asl__panel--scroll">
+    <p-table
+      [value]="rows()"
+      [lazy]="true"
+      [paginator]="true"
+      [rows]="20"
+      [totalRecords]="total()"
+      [loading]="loading()"
+      (onLazyLoad)="onLazy($event)"
+      dataKey="id"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width: 3rem"></th>
+          <th style="width: 72px">Фото</th>
+          <th>Заголовок / коментар</th>
+          <th>Автор</th>
+          <th>Координати</th>
+          <th>Дата</th>
+          @if (showStatusColumn()) {
+            <th>Статус</th>
+          }
+          <th>Дії</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-spot>
+        <!-- Data row -->
+        <tr>
+          <td>
+            <button
+              type="button"
+              class="asl__toggler"
+              (click)="toggleRow(spot)"
+              [attr.aria-label]="isExpanded(spot) ? 'Згорнути' : 'Розгорнути'"
+            >
+              <i [class]="isExpanded(spot) ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+            </button>
+          </td>
+          <td class="asl__photo-cell">
+            @if (spot.photoUrl) {
+              <img
+                [src]="thumbUrl(spot.photoUrl)"
+                class="asl__photo"
+                alt="фото"
+                loading="lazy"
+              />
+            } @else {
+              <span class="asl__no-photo">—</span>
+            }
+          </td>
+          <td>
+            @if (spot.title) {
+              <strong class="asl__title">{{ spot.title }}</strong>
+              <br />
+            }
+            <div class="asl__comment">{{ spot.comment }}</div>
+            @if (spot.fishNote) {
+              <small class="asl__fish-note">🐟 {{ spot.fishNote }}</small>
+            }
+          </td>
+          <td>
+            <span class="asl__author-name">{{ spot.authorName }}</span>
+            @if (spot.authorEmail) {
+              <br />
+              <small class="asl__author-email">{{ spot.authorEmail }}</small>
+            }
+          </td>
+          <td class="asl__coords">
+            {{ spot.lat | number:'1.4-4' }}, {{ spot.lng | number:'1.4-4' }}
+          </td>
+          <td>{{ spot.createdAt | date:'dd.MM.yyyy HH:mm' }}</td>
+          @if (showStatusColumn()) {
+            <td>
+              <p-tag
+                [severity]="statusSeverity(spot.status)"
+                [value]="statusLabel(spot.status)"
+              />
+            </td>
+          }
+          <td class="asl__actions">
+            @if (spot.status === 'PENDING') {
+              <p-button
+                label="✓ Схвалити"
+                severity="success"
+                [text]="true"
+                (onClick)="approve(spot)"
+              />
+              <p-button
+                label="✕ Відхилити"
+                severity="warn"
+                [text]="true"
+                (onClick)="reject(spot)"
+              />
+            } @else if (spot.status === 'REJECTED') {
+              <p-button
+                label="✓ Схвалити"
+                severity="success"
+                [text]="true"
+                (onClick)="approve(spot)"
+              />
+              <p-button
+                icon="pi pi-trash"
+                severity="danger"
+                [text]="true"
+                (onClick)="confirmDelete(spot)"
+              />
+            } @else if (spot.status === 'APPROVED') {
+              <p-button
+                label="✕ Відхилити"
+                severity="warn"
+                [text]="true"
+                (onClick)="reject(spot)"
+              />
+              <p-button
+                icon="pi pi-trash"
+                severity="danger"
+                [text]="true"
+                (onClick)="confirmDelete(spot)"
+              />
+            }
+          </td>
+        </tr>
+        <!-- Inline expansion row — always in DOM, shown/hidden via signal -->
+        <tr class="asl__expansion-row" [class.asl__expansion-row--visible]="isExpanded(spot)">
+          <td [attr.colspan]="showStatusColumn() ? 8 : 7" style="padding: 0">
+            <div class="asl__expansion">
+              <div [id]="'spot-map-' + spot.id" class="asl__spot-map"></div>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td [attr.colspan]="showStatusColumn() ? 8 : 7" class="asl__empty">Немає точок у цьому фільтрі</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+<p-confirmdialog />

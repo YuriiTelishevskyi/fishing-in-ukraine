@@ -7,7 +7,7 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import { DatePipe, DecimalPipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
 import { Select } from 'primeng/select';
@@ -29,7 +29,6 @@ interface StatusOption {
   imports: [
     FormsModule,
     DatePipe,
-    DecimalPipe,
     TableModule,
     Select,
     ButtonModule,

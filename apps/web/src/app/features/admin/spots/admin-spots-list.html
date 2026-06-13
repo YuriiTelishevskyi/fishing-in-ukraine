@@ -89,7 +89,7 @@
             }
           </td>
           <td class="asl__coords">
-            {{ spot.lat | number:'1.4-4' }}, {{ spot.lng | number:'1.4-4' }}
+            {{ spot.lat.toFixed(4) }}, {{ spot.lng.toFixed(4) }}
           </td>
           <td>{{ spot.createdAt | date:'dd.MM.yyyy HH:mm' }}</td>
           @if (showStatusColumn()) {

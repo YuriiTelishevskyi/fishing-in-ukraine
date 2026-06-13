@@ -2,9 +2,10 @@ import { IsIn, IsInt, IsOptional, Max, Min } from 'class-validator';
 import { ReviewStatus } from '@prisma/client';
 
 export class AdminReviewsQueryDto {
+  // Optional with no default: omitted → all statuses (the "Всі" filter).
   @IsOptional()
   @IsIn(['PENDING', 'APPROVED', 'REJECTED'])
-  status: ReviewStatus = 'PENDING';
+  status?: ReviewStatus;
 
   @IsOptional()
   @IsInt()

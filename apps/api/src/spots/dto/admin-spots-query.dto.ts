@@ -2,9 +2,10 @@ import { IsIn, IsInt, IsOptional, Max, Min } from 'class-validator';
 import { SpotStatus } from '@fishing/shared';
 
 export class AdminSpotsQueryDto {
+  // Optional with no default: omitted → all statuses (the "Всі" filter).
   @IsOptional()
   @IsIn(['PENDING', 'APPROVED', 'REJECTED'])
-  status: SpotStatus = 'PENDING';
+  status?: SpotStatus;
 
   @IsOptional()
   @IsInt()

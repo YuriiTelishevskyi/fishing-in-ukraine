@@ -92,7 +92,7 @@ export class ReviewsService {
   // ── Admin ────────────────────────────────────────────────────────────────────
 
   async adminList(q: AdminReviewsQueryDto) {
-    const where = { status: q.status };
+    const where = q.status ? { status: q.status } : {};
     const [total, rows] = await this.prisma.$transaction([
       this.prisma.review.count({ where }),
       this.prisma.review.findMany({

@@ -94,7 +94,7 @@ export class SpotsService {
   // ── Admin ────────────────────────────────────────────────────────────────────
 
   async adminList(q: AdminSpotsQueryDto) {
-    const where = { status: q.status as SpotStatus };
+    const where = q.status ? { status: q.status as SpotStatus } : {};
     const [total, rows] = await this.prisma.$transaction([
       this.prisma.spot.count({ where }),
       this.prisma.spot.findMany({

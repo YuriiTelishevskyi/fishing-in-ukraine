@@ -45,6 +45,10 @@ export const ADMIN_ROUTES: Routes = [
             path: 'spots',
             loadComponent: () => import('./spots/admin-spots-list').then((m) => m.AdminSpotsList),
           },
+          {
+            path: 'catch-reports',
+            loadComponent: () => import('./catch-reports/admin-catch-reports-list').then((m) => m.AdminCatchReportsList),
+          },
         ],
       },
     ],

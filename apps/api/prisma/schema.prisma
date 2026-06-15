@@ -30,11 +30,12 @@ model Region {
 }
 
 model FishSpecies {
-  id     Int         @id @default(autoincrement())
-  slug   String      @unique
-  name   String
-  nameEn String
-  waters WaterFish[]
+  id           Int           @id @default(autoincrement())
+  slug         String        @unique
+  name         String
+  nameEn       String
+  waters       WaterFish[]
+  catchReports CatchReport[]
 }
 
 model Amenity {
@@ -85,6 +86,7 @@ model Water {
   amenities        WaterAmenity[]
   media            Media[]
   reviews          Review[]
+  catchReports     CatchReport[]
 
   @@index([regionId, status])
   @@index([status])
@@ -172,17 +174,41 @@ enum SpotStatus {
 }
 
 model Spot {
-  id         String     @id @default(uuid())
-  lat        Float
-  lng        Float
-  authorName String
+  id          String     @id @default(uuid())
+  lat         Float
+  lng         Float
+  authorName  String
   authorEmail String?
-  title      String?
-  comment    String
-  fishNote   String?
-  photoUrl   String?
-  status     SpotStatus @default(PENDING)
-  createdAt  DateTime   @default(now())
+  title       String?
+  comment     String
+  fishNote    String?
+  photoUrl    String?
+  status      SpotStatus @default(PENDING)
+  createdAt   DateTime   @default(now())
 
+  @@index([status])
+}
+
+enum CatchReportStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model CatchReport {
+  id          String            @id @default(uuid())
+  water       Water             @relation(fields: [waterId], references: [id], onDelete: Cascade)
+  waterId     String
+  fish        FishSpecies       @relation(fields: [fishId], references: [id])
+  fishId      Int
+  caughtAt    DateTime          @db.Date
+  comment     String?
+  photoUrl    String?
+  authorName  String
+  authorEmail String?
+  status      CatchReportStatus @default(PENDING)
+  createdAt   DateTime          @default(now())
+
+  @@index([waterId, status, caughtAt])
   @@index([status])
 }

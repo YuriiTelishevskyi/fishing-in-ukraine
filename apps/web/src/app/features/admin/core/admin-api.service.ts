@@ -213,6 +213,23 @@ export class AdminApiService {
   deleteSpot(id: string): Observable<{ ok: true }> {
     return this.http.delete<{ ok: true }>(`/api/admin/spots/${id}`);
   }
+
+  // ── Catch reports ───────────────────────────────────────────────────────────
+  adminCatchReports(q: { status?: string; page?: number; perPage?: number }): Observable<Paginated<AdminCatchReport>> {
+    let params = new HttpParams();
+    for (const [k, v] of Object.entries(q)) {
+      if (v !== undefined && v !== '') params = params.set(k, String(v));
+    }
+    return this.http.get<Paginated<AdminCatchReport>>('/api/admin/catch-reports', { params });
+  }
+
+  moderateCatchReport(id: string, status: 'APPROVED' | 'REJECTED'): Observable<AdminCatchReport> {
+    return this.http.patch<AdminCatchReport>(`/api/admin/catch-reports/${id}`, { status });
+  }
+
+  deleteCatchReport(id: string): Observable<{ ok: true }> {
+    return this.http.delete<{ ok: true }>(`/api/admin/catch-reports/${id}`);
+  }
 }
 
 export interface AdminReview {
@@ -241,4 +258,19 @@ export interface AdminSpot {
   photoUrl: string | null;
   status: 'PENDING' | 'APPROVED' | 'REJECTED';
   createdAt: string;
+}
+
+export interface AdminCatchReport {
+  id: string;
+  waterId: string;
+  fishId: number;
+  caughtAt: string;
+  comment: string | null;
+  photoUrl: string | null;
+  authorName: string;
+  authorEmail: string | null;
+  status: 'PENDING' | 'APPROVED' | 'REJECTED';
+  createdAt: string;
+  fish: { name: string };
+  water: { slug: string; name: string };
 }

@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  AmenityDto, ArticleDetailDto, ArticleListItemDto, BiteForecastDto, FishSpeciesDto, MapPinDto, NearbyWaterDto, Paginated, RegionDto, ReviewDto, SpotDto, WaterDetailDto, WaterListItemDto, WeatherDto,
+  AmenityDto, ArticleDetailDto, ArticleListItemDto, BiteForecastDto, CatchReportDto, FishSpeciesDto, MapPinDto, NearbyWaterDto, Paginated, RegionDto, ReviewDto, SpotDto, WaterDetailDto, WaterListItemDto, WeatherDto,
 } from '@fishing/shared';
 import { Observable } from 'rxjs';
 import { API_BASE } from './api-base';
@@ -92,6 +92,16 @@ export class ApiService {
 
   postReview(slug: string, payload: { authorName: string; rating: number; text: string; website?: string }): Observable<{ ok: boolean }> {
     return this.http.post<{ ok: boolean }>(`${this.base}/api/waters/${slug}/reviews`, payload);
+  }
+
+  waterCatchReports(slug: string, page = 1): Observable<Paginated<CatchReportDto>> {
+    return this.http.get<Paginated<CatchReportDto>>(`${this.base}/api/waters/${slug}/catch-reports`, {
+      params: this.params({ page }),
+    });
+  }
+
+  submitCatchReport(slug: string, fd: FormData): Observable<{ ok: true }> {
+    return this.http.post<{ ok: true }>(`${this.base}/api/waters/${slug}/catch-reports`, fd);
   }
 
   spots(): Observable<SpotDto[]> {

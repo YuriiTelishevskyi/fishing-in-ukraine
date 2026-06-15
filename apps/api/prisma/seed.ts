@@ -360,6 +360,41 @@ async function seedDemoSpots() {
   console.log('Demo spots seeded.');
 }
 
+async function seedDemoCatchReports() {
+  const navariia = await prisma.water.findUniqueOrThrow({ where: { slug: 'ozero-navariia' } });
+  const korop = await prisma.fishSpecies.findUniqueOrThrow({ where: { slug: 'korop' } });
+  const shchuka = await prisma.fishSpecies.findUniqueOrThrow({ where: { slug: 'shchuka' } });
+
+  // Idempotent: clear all catch reports for the demo water, then recreate (same
+  // reset pattern as seedDemoReviews/seedDemoSpots).
+  await prisma.catchReport.deleteMany({ where: { waterId: navariia.id } });
+
+  // photoUrl left null: the seed does not copy demo images to the uploads dir
+  // (same as reviews/spots), so a real photoUrl would render as a broken image.
+  await prisma.catchReport.createMany({
+    data: [
+      {
+        waterId: navariia.id,
+        fishId: korop.id,
+        caughtAt: new Date('2026-06-13'),
+        comment: 'Зловив гарного коропа на кукурудзу зранку. Боровся хвилин п\'ять — справжній трофей!',
+        authorName: 'Андрій',
+        status: 'APPROVED',
+      },
+      {
+        waterId: navariia.id,
+        fishId: shchuka.id,
+        caughtAt: new Date('2026-06-14'),
+        comment: 'Щука взяла на блешню біля очерету під вечір. Перший виїзд цього сезону вдалий.',
+        authorName: 'Василь',
+        status: 'PENDING',
+      },
+    ],
+  });
+
+  console.log('Demo catch reports seeded.');
+}
+
 async function main() {
   await seedDictionaries();
   if (process.env.SEED_DEMO === '1') {
@@ -367,6 +402,7 @@ async function main() {
     await seedDemoArticles();
     await seedDemoReviews();
     await seedDemoSpots();
+    await seedDemoCatchReports();
   }
   const counts = {
     regions: await prisma.region.count(),
@@ -376,6 +412,7 @@ async function main() {
     articles: await prisma.article.count(),
     reviews: await prisma.review.count(),
     spots: await prisma.spot.count(),
+    catchReports: await prisma.catchReport.count(),
   };
   console.log('Seed done:', counts);
 }

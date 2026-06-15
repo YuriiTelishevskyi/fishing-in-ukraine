@@ -30,6 +30,10 @@ export class WatersQueryDto extends LangQueryDto {
   search?: string;
 
   @IsOptional()
+  @IsString()
+  river?: string;
+
+  @IsOptional()
   @IsIn(['popular'])
   sort?: string;
 

@@ -88,7 +88,25 @@ async function seedDictionaries() {
       create: { slug, name, nameEn },
     });
   }
+  for (const [slug, name, nameEn] of RIVERS) {
+    await prisma.river.upsert({
+      where: { slug },
+      update: { name, nameEn },
+      create: { slug, name, nameEn },
+    });
+  }
+  console.log(`Rivers seeded: ${RIVERS.length}.`);
 }
+
+const RIVERS: Array<[string, string, string]> = [
+  ['dnister', 'Дністер', 'Dniester'],
+  ['stryi', 'Стрий', 'Stryi'],
+  ['zakhidnyi-buh', 'Західний Буг', 'Western Bug'],
+  ['vereshchytsia', 'Верещиця', 'Vereshchytsia'],
+  ['svicha', 'Свіча', 'Svicha'],
+  ['luh', 'Луг', 'Luh'],
+  ['stryvihor', 'Стривігор', 'Stryvihor'],
+];
 
 type WaterTypeLiteral = 'LAKE' | 'POND' | 'RIVER' | 'RESERVOIR' | 'FISHING_COMPLEX';
 
@@ -107,6 +125,7 @@ interface RealWater {
   priceNoteEn: string;
   fishSlugs: string[];
   amenitySlugs: string[];
+  riverSlug?: string;
 }
 
 // Verified real Lviv-oblast waters (research workflow 2026-06-15). Copied
@@ -432,6 +451,144 @@ const REAL_LVIV_WATERS: RealWater[] = [
   },
 ];
 
+// Verified real Lviv-oblast river fishing stretches (research workflow 2026-06-16).
+// Copied verbatim from docs/superpowers/data/lviv-rivers.json (sans _note/sourceUrl).
+const REAL_LVIV_RIVER_WATERS: RealWater[] = [
+  {
+    slug: 'richka-dnister-rozvadiv',
+    riverSlug: 'dnister',
+    name: 'Річка Дністер (Розвадів)',
+    nameEn: 'Dniester River (Rozvadiv)',
+    description:
+      'Ділянка річки Дністер біля села Розвадів (Стрийський район), на лівому березі поблизу підвісного пішохідного мосту. Розвадів — популярна стартова точка сплавів по Дністру; тут ловлять жереха, судака, щуку, сома, окуня, головня, плітку та ляща. Рибалка вільна.',
+    descriptionEn:
+      'A stretch of the Dniester near the village of Rozvadiv (Stryi district), on the left bank by a pedestrian suspension bridge. Rozvadiv is a popular Dniester rafting start; anglers catch asp, zander, pike, catfish, perch, chub, roach and bream. Fishing is free.',
+    district: 'Стрийський район',
+    lat: 49.5061,
+    lng: 23.9522,
+    waterType: 'RIVER',
+    isPaid: false,
+    priceNote: 'Вільна риболовля',
+    priceNoteEn: 'Free fishing',
+    fishSlugs: ['zherekh', 'sudak', 'shchuka', 'som', 'okun', 'holoven', 'plitka', 'lyashch'],
+    amenitySlugs: [],
+  },
+  {
+    slug: 'richka-stryi-rybnyk',
+    riverSlug: 'stryi',
+    name: 'Річка Стрий (Рибник)',
+    nameEn: 'Stryi River (Rybnyk)',
+    description:
+      'Звивиста (меандрова) ділянка річки Стрий біля села Рибник Дрогобицького району, де річка Рибник впадає у Стрий. Гірсько-передгірна частина течії з чистою холодною водою; ловлять форель, головня, жереха, щуку, окуня та ляща.',
+    descriptionEn:
+      'A winding (meander) stretch of the Stryi near the village of Rybnyk in Drohobych district, where the Rybnyk joins the Stryi. A mountain-foothill section with clean, cold water; anglers catch trout, chub, asp, pike, perch and bream.',
+    district: 'Дрогобицький район',
+    lat: 49.181,
+    lng: 23.301,
+    waterType: 'RIVER',
+    isPaid: false,
+    priceNote: 'Вільна риболовля',
+    priceNoteEn: 'Free fishing',
+    fishSlugs: ['forel', 'holoven', 'zherekh', 'shchuka', 'okun', 'lyashch'],
+    amenitySlugs: [],
+  },
+  {
+    slug: 'richka-zakhidnyi-buh-kamianka',
+    riverSlug: 'zakhidnyi-buh',
+    name: "Річка Західний Буг (Кам'янка-Бузька)",
+    nameEn: 'Western Bug River (Kamianka-Buzka)',
+    description:
+      "Західний Буг протікає через місто Кам'янка-Бузька (Львівський район), де у нього впадає річка Кам'янка. Рівнинна річка зі звивистим річищем, заплавою та старицями, придатна для береговою риболовлі. Ловлять щуку, ляща, плітку, головня, жереха, окуня, судака, краснопірку та йоржа.",
+    descriptionEn:
+      'The Western Bug flows through the town of Kamianka-Buzka (Lviv district), where the Kamianka joins it. A lowland river with a meandering channel, floodplain and oxbows, good for bank fishing. Anglers catch pike, bream, roach, chub, asp, perch, zander, rudd and ruffe.',
+    district: 'Львівський район',
+    lat: 50.1022,
+    lng: 24.3481,
+    waterType: 'RIVER',
+    isPaid: false,
+    priceNote: 'Вільна риболовля',
+    priceNoteEn: 'Free fishing',
+    fishSlugs: ['shchuka', 'lyashch', 'plitka', 'holoven', 'zherekh', 'okun', 'sudak', 'som', 'yorzh', 'krasnopirka'],
+    amenitySlugs: [],
+  },
+  {
+    slug: 'richka-vereshchytsia-horodok',
+    riverSlug: 'vereshchytsia',
+    name: 'Річка Верещиця (Городок)',
+    nameEn: 'Vereshchytsia River (Horodok)',
+    description:
+      'Верещиця — ліва притока Дністра завдовжки 92 км, протікає Яворівським та Львівським районами, зокрема поблизу Городка та Великого Любеня. На річці та ставках уздовж неї ловлять окуня, плітку, щуку, коропа, карася, лина та ляща. Рибалка вільна, цілодобова.',
+    descriptionEn:
+      'The Vereshchytsia is a 92 km left tributary of the Dniester flowing through Yavoriv and Lviv districts, notably near Horodok and Velykyi Liubin. In the river and its ponds anglers catch perch, roach, pike, carp, crucian carp, tench and bream. Fishing is free and around the clock.',
+    district: 'Львівський район',
+    lat: 49.8285,
+    lng: 23.6396,
+    waterType: 'RIVER',
+    isPaid: false,
+    priceNote: 'Вільна риболовля',
+    priceNoteEn: 'Free fishing',
+    fishSlugs: ['okun', 'plitka', 'shchuka', 'korop', 'karas', 'lyn', 'lyashch'],
+    amenitySlugs: [],
+  },
+  {
+    slug: 'richka-svicha-zhuravno',
+    riverSlug: 'svicha',
+    name: 'Річка Свіча (Журавно)',
+    nameEn: 'Svicha River (Zhuravno)',
+    description:
+      'Свіча — права притока Дністра; у Стрийському районі протікає рівнинною ділянкою з поміркованою течією і впадає у Дністер південно-східніше смт Журавно. У нижній течії біля Журавна ловлять головня, окуня, щуку, ляща та плітку (гірські верхів\'я під охороною).',
+    descriptionEn:
+      "The Svicha is a right tributary of the Dniester; in Stryi district it runs as a lowland stretch with moderate flow and joins the Dniester southeast of Zhuravno. In the lower reaches near Zhuravno anglers catch chub, perch, pike, bream and roach (the mountain headwaters are protected).",
+    district: 'Стрийський район',
+    lat: 49.2522,
+    lng: 24.3142,
+    waterType: 'RIVER',
+    isPaid: false,
+    priceNote: 'Вільна риболовля',
+    priceNoteEn: 'Free fishing',
+    fishSlugs: ['holoven', 'okun', 'shchuka', 'lyashch', 'plitka'],
+    amenitySlugs: [],
+  },
+  {
+    slug: 'richka-luh-khodoriv',
+    riverSlug: 'luh',
+    name: 'Річка Луг (Ходорів)',
+    nameEn: 'Luh River (Khodoriv)',
+    description:
+      'Луг — ліва притока Дністра завдовжки близько 25 км у Стрийському районі; протікає через місто Ходорів і впадає в Дністер біля села Буковина. На річці та в пониззі ловлять щуку, окуня, плітку, карася, лина, ляща й коропа. Рибалка безкоштовна.',
+    descriptionEn:
+      'The Luh is a left tributary of the Dniester, about 25 km long, in Stryi district; it flows through Khodoriv and joins the Dniester near Bukovyna. Anglers catch pike, perch, roach, crucian carp, tench, bream and carp. Fishing is free.',
+    district: 'Стрийський район',
+    lat: 49.3331,
+    lng: 24.2569,
+    waterType: 'RIVER',
+    isPaid: false,
+    priceNote: 'Вільна риболовля',
+    priceNoteEn: 'Free fishing',
+    fishSlugs: ['shchuka', 'okun', 'plitka', 'karas', 'lyn', 'lyashch', 'korop'],
+    amenitySlugs: [],
+  },
+  {
+    slug: 'richka-stryvihor-khyriv',
+    riverSlug: 'stryvihor',
+    name: 'Річка Стривігор (Хирів)',
+    nameEn: 'Stryvihor River (Khyriv)',
+    description:
+      'Стривігор (Стрв\'яж) — ліва притока Дністра, протікає Самбірським районом через місто Хирів. Передгірська річка завширшки 10–20 м; трапляються головень, плітка, окунь, а в чистіших верхів\'ях — форель. Рибалка вільна.',
+    descriptionEn:
+      "The Stryvihor (Strvyazh) is a left tributary of the Dniester flowing through Sambir district, including the town of Khyriv. A foothill river 10–20 m wide; chub, roach and perch occur, with trout in the cleaner upper reaches. Fishing is free.",
+    district: 'Самбірський район',
+    lat: 49.5356,
+    lng: 22.8544,
+    waterType: 'RIVER',
+    isPaid: false,
+    priceNote: 'Вільна риболовля',
+    priceNoteEn: 'Free fishing',
+    fishSlugs: ['holoven', 'plitka', 'okun', 'forel'],
+    amenitySlugs: [],
+  },
+];
+
 async function seedRealWaters() {
   const lviv = await prisma.region.findUnique({ where: { slug: 'lvivska-oblast' } });
   if (!lviv) {
@@ -440,10 +597,14 @@ async function seedRealWaters() {
 
   const fishSpecies = await prisma.fishSpecies.findMany();
   const amenities = await prisma.amenity.findMany();
+  const rivers = await prisma.river.findMany();
   const fishIdBySlug = new Map(fishSpecies.map((f) => [f.slug, f.id]));
   const amenityIdBySlug = new Map(amenities.map((a) => [a.slug, a.id]));
+  const riverIdBySlug = new Map(rivers.map((r) => [r.slug, r.id]));
 
-  for (const water of REAL_LVIV_WATERS) {
+  const allWaters = [...REAL_LVIV_WATERS, ...REAL_LVIV_RIVER_WATERS];
+
+  for (const water of allWaters) {
     const fishIds: number[] = [];
     for (const slug of water.fishSlugs) {
       const id = fishIdBySlug.get(slug);
@@ -462,6 +623,16 @@ async function seedRealWaters() {
         continue;
       }
       amenityIds.push(id);
+    }
+
+    let riverId: number | null = null;
+    if (water.riverSlug) {
+      const rid = riverIdBySlug.get(water.riverSlug);
+      if (rid == null) {
+        console.warn(`[seedRealWaters] ${water.slug}: unknown riverSlug "${water.riverSlug}" — riverId set to null`);
+      } else {
+        riverId = rid;
+      }
     }
 
     const scalar = {
@@ -484,6 +655,7 @@ async function seedRealWaters() {
       status: 'PUBLISHED' as const,
       verified: true,
       isPremium: false,
+      riverId,
     };
 
     await prisma.water.upsert({
@@ -503,7 +675,7 @@ async function seedRealWaters() {
     });
   }
 
-  console.log(`Real Lviv waters seeded: ${REAL_LVIV_WATERS.length}.`);
+  console.log(`Real Lviv waters seeded: ${allWaters.length} (${REAL_LVIV_WATERS.length} lakes/ponds/complexes + ${REAL_LVIV_RIVER_WATERS.length} river stretches).`);
 }
 
 async function seedDemoArticles() {

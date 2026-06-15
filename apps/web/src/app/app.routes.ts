@@ -7,6 +7,7 @@ const pages = {
   map: () => import('./features/map/map-page').then((m) => m.MapPage),
   fish: () => import('./features/fish/fish-page').then((m) => m.FishPage),
   fishRegion: () => import('./features/fish/fish-region-page').then((m) => m.FishRegionPage),
+  river: () => import('./features/rivers/river-page').then((m) => m.RiverPage),
   blogList: () => import('./features/blog/blog-list').then((m) => m.BlogListPage),
   articlePage: () => import('./features/blog/article-page').then((m) => m.ArticlePage),
   biteCalendar: () => import('./features/bite-calendar/bite-calendar').then((m) => m.BiteCalendarPage),
@@ -14,11 +15,12 @@ const pages = {
   notFound: () => import('./features/not-found/not-found').then((m) => m.NotFoundPage),
 };
 
-const tree = (locale: 'uk' | 'en', seg: { catalog: string; fish: string; map: string; blog: string; biteCalendar: string; nearby: string }): Routes => [
+const tree = (locale: 'uk' | 'en', seg: { catalog: string; rivers: string; fish: string; map: string; blog: string; biteCalendar: string; nearby: string }): Routes => [
   { path: '', loadComponent: pages.home, data: { locale } },
   { path: seg.catalog, loadComponent: pages.catalog, data: { locale } },
   { path: `${seg.catalog}/:regionSlug`, loadComponent: pages.catalog, data: { locale } },
   { path: `${seg.catalog}/:regionSlug/:waterSlug`, loadComponent: pages.detail, data: { locale } },
+  { path: `${seg.rivers}/:riverSlug`, loadComponent: pages.river, data: { locale } },
   { path: seg.map, loadComponent: pages.map, data: { locale } },
   { path: `${seg.fish}/:fishSlug`, loadComponent: pages.fish, data: { locale } },
   { path: `${seg.fish}/:fishSlug/:regionSlug`, loadComponent: pages.fishRegion, data: { locale } },
@@ -33,7 +35,7 @@ export const routes: Routes = [
     path: 'admin',
     loadChildren: () => import('./features/admin/admin.routes').then((m) => m.ADMIN_ROUTES),
   },
-  { path: 'en', children: tree('en', { catalog: 'waters', fish: 'fish', map: 'map', blog: 'blog', biteCalendar: 'bite-calendar', nearby: 'nearby' }) },
-  ...tree('uk', { catalog: 'vodoymy', fish: 'ryba', map: 'karta', blog: 'blog', biteCalendar: 'kalendar-klyovu', nearby: 'poruch' }),
+  { path: 'en', children: tree('en', { catalog: 'waters', rivers: 'rivers', fish: 'fish', map: 'map', blog: 'blog', biteCalendar: 'bite-calendar', nearby: 'nearby' }) },
+  ...tree('uk', { catalog: 'vodoymy', rivers: 'richky', fish: 'ryba', map: 'karta', blog: 'blog', biteCalendar: 'kalendar-klyovu', nearby: 'poruch' }),
   { path: '**', loadComponent: pages.notFound, data: { locale: 'uk' } },
 ];

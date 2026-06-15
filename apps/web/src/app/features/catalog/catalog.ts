@@ -34,6 +34,7 @@ export class CatalogPage {
   private readonly siteOrigin = inject(SITE_ORIGIN);
 
   readonly regions = toSignal(this.api.regions(), { initialValue: [] });
+  readonly rivers = toSignal(this.api.rivers(), { initialValue: [] });
   readonly fishList = toSignal(this.api.fishSpecies(), { initialValue: [] });
   readonly amenityList = toSignal(this.api.amenities(), { initialValue: [] });
   readonly types = WATER_TYPES;
@@ -70,6 +71,7 @@ export class CatalogPage {
     const q = this.route.snapshot.queryParamMap;
     this.f = {
       region,
+      river: q.get('river') ?? undefined,
       fish: q.get('fish')?.split(',').filter(Boolean) ?? [],
       amenities: q.get('amenities')?.split(',').filter(Boolean) ?? [],
       type: q.get('type') ?? undefined,
@@ -87,6 +89,7 @@ export class CatalogPage {
     const f = { ...this.f, ...patch, page: patch.page ?? 1 };
     this.router.navigate([this.locale.link('catalog', ...(f.region ? [f.region] : []))], {
       queryParams: {
+        river: f.river || null,
         fish: f.fish?.length ? f.fish.join(',') : null,
         amenities: f.amenities?.length ? f.amenities.join(',') : null,
         type: f.type || null,

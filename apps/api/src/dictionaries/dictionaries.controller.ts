@@ -21,6 +21,11 @@ export class DictionariesController {
     return this.dictionaries.fishSpeciesRegions(slug, q.lang);
   }
 
+  @Get('rivers')
+  rivers(@Query() q: LangQueryDto) {
+    return this.dictionaries.rivers(q.lang);
+  }
+
   @Get('amenities')
   amenities(@Query() q: LangQueryDto) {
     return this.dictionaries.amenities(q.lang);

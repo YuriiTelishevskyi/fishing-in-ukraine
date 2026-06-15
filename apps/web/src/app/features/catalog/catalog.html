@@ -31,6 +31,21 @@
         </select>
       </div>
 
+      <!-- River -->
+      <div class="filters__section">
+        <span class="filters__label">{{ 'catalog.riverFilter' | transloco }}</span>
+        <select
+          class="filters__select"
+          [value]="f.river ?? ''"
+          (change)="apply({ river: $any($event.target).value || undefined })"
+        >
+          <option value="">{{ 'catalog.allRivers' | transloco }}</option>
+          @for (rv of rivers(); track rv.id) {
+            <option [value]="rv.slug">{{ rv.name }}</option>
+          }
+        </select>
+      </div>
+
       <!-- Fish chips -->
       <div class="filters__section">
         <span class="filters__label">{{ 'catalog.fish' | transloco }}</span>

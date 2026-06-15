@@ -29,6 +29,14 @@ model Region {
   waters Water[]
 }
 
+model River {
+  id     Int     @id @default(autoincrement())
+  slug   String  @unique
+  name   String
+  nameEn String
+  waters Water[]
+}
+
 model FishSpecies {
   id           Int           @id @default(autoincrement())
   slug         String        @unique
@@ -83,6 +91,8 @@ model Water {
   viewCount        Int            @default(0)
   createdAt        DateTime       @default(now())
   updatedAt        DateTime       @updatedAt
+  river            River?         @relation(fields: [riverId], references: [id], onDelete: SetNull)
+  riverId          Int?
   fish             WaterFish[]
   amenities        WaterAmenity[]
   media            Media[]

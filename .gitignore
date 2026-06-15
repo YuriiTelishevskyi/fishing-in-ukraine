@@ -21,3 +21,6 @@ apps/api/uploads/
 # logs
 *.log
 npm-debug.log*
+
+# Agent worktrees (accidental gitlinks)
+.claude/

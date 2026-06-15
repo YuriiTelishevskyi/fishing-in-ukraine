@@ -58,12 +58,17 @@ export class CatchReportsService {
     const fish = await this.prisma.fishSpecies.findUnique({ where: { id: dto.fishId }, select: { id: true } });
     if (!fish) throw new BadRequestException('Невідомий вид риби');
 
-    const caught = new Date(dto.caughtAt);
+    // caughtAt is DTO-restricted to yyyy-mm-dd; build a UTC-midnight instant so the
+    // @db.Date column and the mapper's toISOString().slice(0,10) round-trip stay stable.
+    const caught = new Date(`${dto.caughtAt}T00:00:00.000Z`);
     if (Number.isNaN(caught.getTime())) throw new BadRequestException('Невірна дата вилову');
-    const now = new Date();
-    if (caught.getTime() > now.getTime()) throw new BadRequestException('Дата вилову не може бути в майбутньому');
-    const yearAgo = new Date(now.getTime() - 366 * 24 * 3600 * 1000);
-    if (caught.getTime() < yearAgo.getTime()) throw new BadRequestException('Дата вилову задавня');
+    // Compare at calendar-date granularity (UTC, lexicographic on yyyy-mm-dd). Allow up to
+    // "tomorrow UTC" so a catch logged late in a timezone ahead of UTC isn't wrongly rejected.
+    const nowMs = Date.now();
+    const maxDate = new Date(nowMs + 24 * 3600 * 1000).toISOString().slice(0, 10);
+    const minDate = new Date(nowMs - 366 * 24 * 3600 * 1000).toISOString().slice(0, 10);
+    if (dto.caughtAt > maxDate) throw new BadRequestException('Дата вилову не може бути в майбутньому');
+    if (dto.caughtAt < minDate) throw new BadRequestException('Дата вилову занадто давня');
 
     const hasComment = !!dto.comment && dto.comment.trim().length > 0;
     if (!file && !hasComment) throw new BadRequestException('Додайте фото або коментар');
@@ -90,19 +95,25 @@ export class CatchReportsService {
       photoUrl = `/uploads/catch-reports/${id}/${id}-full.webp`;
     }
 
-    await this.prisma.catchReport.create({
-      data: {
-        id,
-        waterId: water.id,
-        fishId: dto.fishId,
-        caughtAt: caught,
-        comment: hasComment ? dto.comment : null,
-        photoUrl,
-        authorName: dto.authorName,
-        authorEmail: dto.authorEmail,
-        status: 'PENDING',
-      },
-    });
+    try {
+      await this.prisma.catchReport.create({
+        data: {
+          id,
+          waterId: water.id,
+          fishId: dto.fishId,
+          caughtAt: caught,
+          comment: hasComment ? dto.comment : null,
+          photoUrl,
+          authorName: dto.authorName,
+          authorEmail: dto.authorEmail,
+          status: 'PENDING',
+        },
+      });
+    } catch (e) {
+      // Avoid orphaned image files if the row never lands (e.g. FK race / DB error).
+      if (photoUrl) await this.storage.deleteDir(`catch-reports/${id}`);
+      throw e;
+    }
     return { ok: true };
   }
 

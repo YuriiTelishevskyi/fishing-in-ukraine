@@ -1,5 +1,5 @@
 import { Transform } from 'class-transformer';
-import { IsDateString, IsEmail, IsInt, IsOptional, IsString, MaxLength, MinLength } from 'class-validator';
+import { IsEmail, IsInt, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 
 export class CreateCatchReportDto {
   @IsString()
@@ -15,7 +15,10 @@ export class CreateCatchReportDto {
   @IsInt()
   fishId!: number;
 
-  @IsDateString()
+  // Date-only (yyyy-mm-dd). Restricting the format keeps the @db.Date column and the
+  // mapper's toISOString().slice(0,10) round-trip stable, and makes the range check
+  // in the service a sound calendar-date comparison rather than an instant comparison.
+  @Matches(/^\d{4}-\d{2}-\d{2}$/, { message: 'Дата вилову має бути у форматі РРРР-ММ-ДД' })
   caughtAt!: string;
 
   @IsOptional()

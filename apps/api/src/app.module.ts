@@ -15,6 +15,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { ReviewsModule } from './reviews/reviews.module';
 import { SeoModule } from './seo/seo.module';
 import { SpotsModule } from './spots/spots.module';
+import { WaterNewsModule } from './water-news/water-news.module';
 import { WatersModule } from './waters/waters.module';
 import { WeatherModule } from './weather/weather.module';
 
@@ -43,6 +44,7 @@ import { WeatherModule } from './weather/weather.module';
     WeatherModule,
     BiteModule,
     CatchReportsModule,
+    WaterNewsModule,
   ],
   controllers: [HealthController],
   providers: [{ provide: APP_GUARD, useClass: ThrottlerGuard }],

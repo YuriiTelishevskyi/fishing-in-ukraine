@@ -235,3 +235,15 @@ export interface FishRegionCountDto {
   regionName: string;
   count: number;
 }
+
+export type WaterNewsType = 'STOCKING' | 'NEWS';
+export const WATER_NEWS_TYPES: WaterNewsType[] = ['STOCKING', 'NEWS'];
+
+export interface WaterNewsDto {
+  id: string;
+  type: WaterNewsType;
+  title: string;       // localized
+  body: string | null; // localized
+  date: string;        // yyyy-mm-dd
+  createdAt: string;
+}

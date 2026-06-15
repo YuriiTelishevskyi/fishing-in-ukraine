@@ -1,7 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Locale, MapPinDto, Paginated, WaterDetailDto, WaterListItemDto } from '@fishing/shared';
+import { Locale, MapPinDto, NearbyWaterDto, Paginated, WaterDetailDto, WaterListItemDto } from '@fishing/shared';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
+import { haversineKm } from '../common/haversine';
+import { NearbyQueryDto } from './dto/nearby-query.dto';
 import { WatersQueryDto } from './dto/waters-query.dto';
 import { FULL_INCLUDE, LIST_INCLUDE, toDetail, toListItem, toPin } from './waters.mapper';
 
@@ -68,6 +70,21 @@ export class WatersService {
       take: 2000,
     });
     return rows.map((w) => toPin(w, q.lang));
+  }
+
+  async nearby(q: NearbyQueryDto): Promise<NearbyWaterDto[]> {
+    const rows = await this.prisma.water.findMany({
+      where: { status: 'PUBLISHED' },
+      include: LIST_INCLUDE,
+    });
+    return rows
+      .map((w) => ({
+        ...toListItem(w, q.lang),
+        distanceKm: Math.round(haversineKm(q.lat, q.lng, w.lat, w.lng) * 10) / 10,
+      }))
+      .filter((w) => w.distanceKm <= q.radiusKm)
+      .sort((a, b) => a.distanceKm - b.distanceKm)
+      .slice(0, q.limit);
   }
 
   async bySlug(slug: string, lang: Locale): Promise<WaterDetailDto> {

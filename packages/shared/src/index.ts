@@ -97,6 +97,10 @@ export interface WaterDetailDto extends WaterListItemDto {
   updatedAt: string;
 }
 
+export interface NearbyWaterDto extends WaterListItemDto {
+  distanceKm: number;
+}
+
 export interface MapPinDto {
   id: string;
   slug: string;

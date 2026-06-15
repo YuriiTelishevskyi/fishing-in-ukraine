@@ -149,6 +149,34 @@ export interface SpotDto {
 export type SpotStatus = 'PENDING' | 'APPROVED' | 'REJECTED';
 export const SPOT_STATUSES: SpotStatus[] = ['PENDING', 'APPROVED', 'REJECTED'];
 
+export interface MoonPhaseDto {
+  phase: number; // 0..1
+  illumination: number; // 0..1
+  nameKey: string; // moon.new|waxingCrescent|firstQuarter|waxingGibbous|full|waningGibbous|lastQuarter|waningCrescent
+}
+
+export interface BiteFactors {
+  pressure: number; // 0..1
+  wind: number; // 0..1
+  temp: number; // 0..1
+  precip: number; // 0..1
+  moon: number; // 0..1
+}
+
+export interface BiteDayDto {
+  date: string;
+  score: number; // 0..5 int
+  factors: BiteFactors;
+  moon: MoonPhaseDto;
+  reasonKey: string; // bite.reason.poor|fair|good|great
+}
+
+export interface BiteForecastDto {
+  available: boolean;
+  days: BiteDayDto[];
+  updatedAt: string | null;
+}
+
 export type PressureTrend = 'rising' | 'falling' | 'steady';
 export type WindDir = 'N' | 'NE' | 'E' | 'SE' | 'S' | 'SW' | 'W' | 'NW';
 

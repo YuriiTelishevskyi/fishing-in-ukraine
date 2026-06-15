@@ -5,6 +5,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { AdminAuthModule } from './admin-auth/admin-auth.module';
 import { ArticlesModule } from './articles/articles.module';
+import { BiteModule } from './bite/bite.module';
 import { DictionariesModule } from './dictionaries/dictionaries.module';
 import { HealthController } from './health.controller';
 import { MediaModule } from './media/media.module';
@@ -39,6 +40,7 @@ import { WeatherModule } from './weather/weather.module';
     SpotsModule,
     SeoModule,
     WeatherModule,
+    BiteModule,
   ],
   controllers: [HealthController],
   providers: [{ provide: APP_GUARD, useClass: ThrottlerGuard }],

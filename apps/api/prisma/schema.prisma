@@ -88,6 +88,7 @@ model Water {
   media            Media[]
   reviews          Review[]
   catchReports     CatchReport[]
+  news             WaterNews[]
 
   @@index([regionId, status])
   @@index([status])
@@ -212,4 +213,24 @@ model CatchReport {
 
   @@index([waterId, status, caughtAt])
   @@index([status])
+}
+
+enum WaterNewsType {
+  STOCKING
+  NEWS
+}
+
+model WaterNews {
+  id        String        @id @default(uuid())
+  water     Water         @relation(fields: [waterId], references: [id], onDelete: Cascade)
+  waterId   String
+  type      WaterNewsType @default(NEWS)
+  title     String
+  titleEn   String?
+  body      String?
+  bodyEn    String?
+  date      DateTime      @db.Date
+  createdAt DateTime      @default(now())
+
+  @@index([waterId, date])
 }

@@ -1,0 +1,96 @@
+.awnl {
+  // ── Page header row ───────────────────────────────────────────────────────
+  &__page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  &__page-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__page-title {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  &__page-subtitle {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  // ── Panel card ────────────────────────────────────────────────────────────
+  &__panel {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 14px 16px;
+    margin-bottom: 20px;
+
+    &--flush {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    &--scroll {
+      overflow-x: auto;
+
+      :host ::ng-deep p-table table,
+      ::ng-deep p-table table {
+        min-width: 640px;
+      }
+    }
+  }
+
+  // ── Table cells ───────────────────────────────────────────────────────────
+  &__title {
+    font-weight: 600;
+    color: var(--ink);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: 340px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 4px;
+    white-space: nowrap;
+    justify-content: flex-end;
+  }
+
+  &__empty {
+    text-align: center;
+    padding: 32px 16px;
+    color: var(--muted);
+  }
+
+  // ── Mobile stacking ───────────────────────────────────────────────────────
+  @media (max-width: 600px) {
+    &__page-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+:host ::ng-deep {
+  .p-datatable .p-datatable-tbody > tr:hover > td {
+    background: #f4f9fa;
+  }
+
+  .p-datatable .p-datatable-tbody > tr > td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}

@@ -180,6 +180,11 @@
     "thanks": "Thanks! Your point will appear after review.",
     "error": "Could not submit. Try again later."
   },
+  "waterNews": {
+    "title": "News & stocking",
+    "stocking": "🐟 Stocking",
+    "news": "📢 News"
+  },
   "nearby": {
     "cta": "Near me",
     "title": "Fishing spots near you",

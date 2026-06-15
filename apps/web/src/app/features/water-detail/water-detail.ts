@@ -14,7 +14,7 @@ import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
-import { BiteForecastDto, CatchReportDto, FishSpeciesDto, Paginated, ReviewDto, WaterDetailDto, WATER_TYPE_LABELS, WaterType, WeatherDto } from '@fishing/shared';
+import { BiteForecastDto, CatchReportDto, FishSpeciesDto, Paginated, ReviewDto, WaterDetailDto, WATER_TYPE_LABELS, WaterNewsDto, WaterType, WeatherDto } from '@fishing/shared';
 import { ApiService } from '../../core/api.service';
 import { SeoService } from '../../core/seo.service';
 import { SITE_ORIGIN } from '../../core/site-origin';
@@ -73,6 +73,9 @@ export class WaterDetailPage {
   readonly formSuccess = signal(false);
   readonly formError = signal<string | null>(null);
 
+  // News & stocking state
+  readonly news = signal<WaterNewsDto[]>([]);
+
   // Catch reports state
   readonly catches = signal<Paginated<CatchReportDto> | null>(null);
   readonly catchesPage = signal(1);
@@ -118,6 +121,7 @@ export class WaterDetailPage {
         this.applySeo(w);
         this.loadReviews(1);
         this.loadCatches(1);
+        this.api.waterNews(this.slug).subscribe((n) => this.news.set(n));
         this.api.fishSpecies().subscribe((f) => this.fishOptions.set(f));
         this.api.weather(w.lat, w.lng).subscribe({
           next: (wx) => this.weather.set(wx),

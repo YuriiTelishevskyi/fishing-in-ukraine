@@ -237,6 +237,27 @@
           }
         </section>
 
+        <!-- News & stocking -->
+        @if (news().length) {
+          <section class="wnews-section detail-section">
+            <h2 class="wnews-section__title detail-section__title">{{ 'waterNews.title' | transloco }}</h2>
+            <ul class="wnews-list">
+              @for (n of news(); track n.id) {
+                <li class="wnews-item card" [class.wnews-item--stocking]="n.type === 'STOCKING'">
+                  <div class="wnews-item__head">
+                    <span class="wnews-badge" [class.wnews-badge--stocking]="n.type === 'STOCKING'">
+                      {{ (n.type === 'STOCKING' ? 'waterNews.stocking' : 'waterNews.news') | transloco }}
+                    </span>
+                    <span class="wnews-item__date muted">{{ formatDate(n.date) }}</span>
+                  </div>
+                  <h3 class="wnews-item__title">{{ n.title }}</h3>
+                  @if (n.body) { <p class="wnews-item__body">{{ n.body }}</p> }
+                </li>
+              }
+            </ul>
+          </section>
+        }
+
         <!-- Catch reports -->
         <section class="detail-section">
           <h2 class="detail-section__title">{{ 'catchReport.title' | transloco }}</h2>

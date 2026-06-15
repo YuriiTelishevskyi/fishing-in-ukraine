@@ -1,0 +1,223 @@
+.awnf {
+  max-width: 900px;
+
+  // ── Action bar ────────────────────────────────────────────────────────────
+  &__action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--surface);
+    padding: 12px 0;
+    margin-left: -4px;
+    margin-right: -4px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  &__action-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__action-bar-btns {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  &__back {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__title-block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+
+  &__title {
+    font-family: var(--font-head);
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__slug {
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  // ── Section cards ────────────────────────────────────────────────────────
+  &__card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+
+  &__section-title {
+    font-family: var(--font-head);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    margin: 0 0 18px 0;
+  }
+
+  // ── Grid ─────────────────────────────────────────────────────────────────
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 4px;
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // ── Fields ───────────────────────────────────────────────────────────────
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+
+    &--mt {
+      margin-top: 16px;
+    }
+  }
+
+  &__label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__req {
+    color: #ef4444;
+    text-transform: none;
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__error {
+    font-size: 0.78rem;
+    color: #ef4444;
+  }
+
+  // ── Details (collapsible) ─────────────────────────────────────────────────
+  &__details {
+    cursor: default;
+
+    &-summary {
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      list-style: none;
+      user-select: none;
+      padding: 0 0 4px 0;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      &::before {
+        content: '▶';
+        font-size: 0.65em;
+        transition: transform 0.2s;
+        display: inline-block;
+      }
+    }
+  }
+
+  details[open] &__details-summary::before {
+    transform: rotate(90deg);
+  }
+
+  // ── Mobile action bar → fixed bottom bar ──────────────────────────────────
+  @media (max-width: 700px) {
+    &__action-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: auto;
+      z-index: 300;
+      background: var(--card);
+      border-top: 1px solid var(--line);
+      padding: 12px 16px;
+      padding-bottom: calc(12px + env(safe-area-inset-bottom));
+      margin: 0;
+      box-shadow: 0 -2px 12px rgba(11, 27, 34, 0.1);
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    &__action-bar-left {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__action-bar-btns {
+      width: 100%;
+
+      p-button {
+        flex: 1;
+      }
+
+      ::ng-deep .p-button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    &__form {
+      padding-bottom: 120px;
+    }
+  }
+}
+
+/* Full-width controls */
+.awnf__field textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+:host ::ng-deep .awnf__input.p-select {
+  width: 100%;
+}

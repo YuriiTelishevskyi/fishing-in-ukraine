@@ -1,5 +1,4 @@
-import { IsOptional, IsString } from 'class-validator';
-import { Type } from 'class-transformer';
+import { IsInt, IsOptional, IsString, Max, Min } from 'class-validator';
 
 export class AdminWaterNewsQueryDto {
   @IsOptional()
@@ -7,10 +6,13 @@ export class AdminWaterNewsQueryDto {
   waterId?: string;
 
   @IsOptional()
-  @Type(() => Number)
-  page?: number = 1;
+  @IsInt()
+  @Min(1)
+  page: number = 1;
 
   @IsOptional()
-  @Type(() => Number)
-  perPage?: number = 20;
+  @IsInt()
+  @Min(1)
+  @Max(100)
+  perPage: number = 20;
 }

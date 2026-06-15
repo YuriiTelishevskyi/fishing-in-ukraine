@@ -8,6 +8,7 @@ const SEGMENTS: Record<string, { uk: string; en: string }> = {
   fish: { uk: 'ryba', en: 'fish' },
   map: { uk: 'karta', en: 'map' },
   blog: { uk: 'blog', en: 'blog' },
+  biteCalendar: { uk: 'kalendar-klyovu', en: 'bite-calendar' },
 };
 
 @Injectable({ providedIn: 'root' })

@@ -1,0 +1,90 @@
+<app-header [solid]="true" [pair]="pair" />
+
+<section class="bite-hero">
+  <div class="container">
+    <app-breadcrumbs [items]="[
+      { label: 'FishMap.ua', link: locale.home() },
+      { label: ('bite.title' | transloco) }
+    ]" />
+    <h1>{{ 'bite.title' | transloco }}</h1>
+    <p class="bite-hero__intro muted">{{ 'bite.intro' | transloco }}</p>
+  </div>
+</section>
+
+<div class="container bite-content">
+
+  <!-- Location selector -->
+  <div class="bite-picker card">
+    <div class="bite-picker__row">
+      <div class="bite-picker__select-wrap">
+        <label class="bite-picker__label" for="water-select">{{ 'bite.pickWater' | transloco }}</label>
+        @if (watersList(); as list) {
+          <select
+            id="water-select"
+            class="bite-picker__select"
+            [value]="selectedIndex()"
+            (change)="onWaterChange($event)"
+          >
+            @for (opt of waterOptions; track $index) {
+              <option [value]="$index">{{ opt.name }}</option>
+            }
+          </select>
+        } @else {
+          <select id="water-select" class="bite-picker__select" disabled>
+            <option>...</option>
+          </select>
+        }
+      </div>
+
+      <button class="btn btn--ghost bite-picker__geo" type="button" (click)="useMyLocation()">
+        📍 {{ 'bite.useLocation' | transloco }}
+      </button>
+    </div>
+
+    @if (geoError()) {
+      <p class="bite-picker__error">{{ geoError()! | transloco }}</p>
+    }
+  </div>
+
+  <!-- Forecast strip -->
+  @if (loadingForecast()) {
+    <div class="bite-loading">
+      <div class="skeleton bite-skeleton"></div>
+    </div>
+  } @else if (forecast(); as fc) {
+    <div class="bite-forecast card">
+      <app-bite-strip [forecast]="fc" [compact]="false" />
+    </div>
+  }
+
+  <!-- Factor explanations (SEO content) -->
+  <section class="bite-factors">
+    <h2 class="bite-factors__title">{{ 'bite.factorsTitle' | transloco }}</h2>
+    <div class="bite-factors__list">
+      <div class="bite-factor card">
+        <div class="bite-factor__icon">🌡️</div>
+        <p class="bite-factor__text">{{ 'bite.factor.temp' | transloco }}</p>
+      </div>
+      <div class="bite-factor card">
+        <div class="bite-factor__icon">💨</div>
+        <p class="bite-factor__text">{{ 'bite.factor.wind' | transloco }}</p>
+      </div>
+      <div class="bite-factor card">
+        <div class="bite-factor__icon">🌡</div>
+        <p class="bite-factor__text">{{ 'bite.factor.pressure' | transloco }}</p>
+      </div>
+      <div class="bite-factor card">
+        <div class="bite-factor__icon">🌧️</div>
+        <p class="bite-factor__text">{{ 'bite.factor.precip' | transloco }}</p>
+      </div>
+      <div class="bite-factor card">
+        <div class="bite-factor__icon">🌕</div>
+        <p class="bite-factor__text">{{ 'bite.factor.moon' | transloco }}</p>
+      </div>
+    </div>
+    <p class="bite-disclaimer muted">⚠️ {{ 'bite.disclaimer' | transloco }}</p>
+  </section>
+
+</div>
+
+<app-footer />

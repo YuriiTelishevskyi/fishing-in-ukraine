@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  AmenityDto, ArticleDetailDto, ArticleListItemDto, FishSpeciesDto, MapPinDto, Paginated, RegionDto, ReviewDto, SpotDto, WaterDetailDto, WaterListItemDto, WeatherDto,
+  AmenityDto, ArticleDetailDto, ArticleListItemDto, BiteForecastDto, FishSpeciesDto, MapPinDto, Paginated, RegionDto, ReviewDto, SpotDto, WaterDetailDto, WaterListItemDto, WeatherDto,
 } from '@fishing/shared';
 import { Observable } from 'rxjs';
 import { API_BASE } from './api-base';
@@ -104,6 +104,12 @@ export class ApiService {
 
   weather(lat: number, lng: number): Observable<WeatherDto> {
     return this.http.get<WeatherDto>(`${this.base}/api/weather`, {
+      params: new HttpParams().set('lat', String(lat)).set('lng', String(lng)),
+    });
+  }
+
+  biteForecast(lat: number, lng: number): Observable<BiteForecastDto> {
+    return this.http.get<BiteForecastDto>(`${this.base}/api/bite-forecast`, {
       params: new HttpParams().set('lat', String(lat)).set('lng', String(lng)),
     });
   }

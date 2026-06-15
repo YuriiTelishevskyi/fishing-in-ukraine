@@ -1,5 +1,5 @@
 {
-  "nav": { "catalog": "Catalog", "map": "Map", "blog": "Blog" },
+  "nav": { "catalog": "Catalog", "map": "Map", "blog": "Blog", "biteCalendar": "Bite calendar" },
   "hero": {
     "title": "Find your fishing spot",
     "subtitle": "Lakes, ponds and rivers of Ukraine — with prices, fish species and amenities",
@@ -110,6 +110,39 @@
     "SW": "SW",
     "W": "W",
     "NW": "NW"
+  },
+  "bite": {
+    "title": "Fishing bite calendar",
+    "intro": "7-day estimated fish-activity forecast",
+    "useLocation": "My location",
+    "pickWater": "Choose a water",
+    "widgetTitle": "Bite forecast",
+    "full": "Full calendar",
+    "factorsTitle": "What the forecast considers",
+    "factor": {
+      "pressure": "Atmospheric pressure — stable pressure improves biting; sharp changes reduce it.",
+      "wind": "Wind — light winds under 15 km/h are optimal for fishing.",
+      "temp": "Temperature — the comfortable range of 12–20°C is best for fish activity.",
+      "precip": "Precipitation — light cloud cover or drizzle activates fish; thunderstorms do not.",
+      "moon": "Moon — new and full moons are traditionally considered the best time for biting."
+    },
+    "disclaimer": "This is an estimate, not a guarantee. Actual fish activity depends on many factors.",
+    "reason": {
+      "poor": "Poor",
+      "fair": "Fair",
+      "good": "Good",
+      "great": "Great"
+    }
+  },
+  "moon": {
+    "new": "New moon",
+    "waxingCrescent": "Waxing crescent",
+    "firstQuarter": "First quarter",
+    "waxingGibbous": "Waxing gibbous",
+    "full": "Full moon",
+    "waningGibbous": "Waning gibbous",
+    "lastQuarter": "Last quarter",
+    "waningCrescent": "Waning crescent"
   },
   "spots": {
     "add": "Add a point",

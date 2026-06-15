@@ -14,13 +14,14 @@ import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
-import { Paginated, ReviewDto, WaterDetailDto, WATER_TYPE_LABELS, WaterType, WeatherDto } from '@fishing/shared';
+import { BiteForecastDto, Paginated, ReviewDto, WaterDetailDto, WATER_TYPE_LABELS, WaterType, WeatherDto } from '@fishing/shared';
 import { ApiService } from '../../core/api.service';
 import { SeoService } from '../../core/seo.service';
 import { SITE_ORIGIN } from '../../core/site-origin';
 import { usePageLocale } from '../../core/use-locale';
 import { Footer } from '../../layout/footer';
 import { Header } from '../../layout/header';
+import { BiteStrip } from '../../shared/bite-strip';
 import { Breadcrumbs } from '../../shared/breadcrumbs';
 import { createMapPin } from '../../shared/map-pin';
 import { Pager } from '../../shared/pager';
@@ -37,7 +38,7 @@ const EN_TYPE_LABELS: Record<WaterType, string> = {
 
 @Component({
   selector: 'app-water-detail',
-  imports: [Header, Footer, TranslocoPipe, Breadcrumbs, NgOptimizedImage, RouterLink, FormsModule, Pager, StarRating, WeatherCard],
+  imports: [Header, Footer, TranslocoPipe, Breadcrumbs, NgOptimizedImage, RouterLink, FormsModule, Pager, StarRating, WeatherCard, BiteStrip],
   templateUrl: './water-detail.html',
   styleUrl: './water-detail.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -53,6 +54,7 @@ export class WaterDetailPage {
 
   readonly water = signal<WaterDetailDto | null>(null);
   readonly weather = signal<WeatherDto | null>(null);
+  readonly bite = signal<BiteForecastDto | null>(null);
   readonly notFound = signal(false);
   readonly active = signal(0);
   readonly mapEl = viewChild<ElementRef<HTMLDivElement>>('miniMap');
@@ -91,6 +93,10 @@ export class WaterDetailPage {
         this.api.weather(w.lat, w.lng).subscribe({
           next: (wx) => this.weather.set(wx),
           error: () => this.weather.set({ available: false, current: null, daily: [], updatedAt: null }),
+        });
+        this.api.biteForecast(w.lat, w.lng).subscribe({
+          next: (b) => this.bite.set(b),
+          error: () => this.bite.set({ available: false, days: [], updatedAt: null }),
         });
       },
       error: () => this.notFound.set(true),

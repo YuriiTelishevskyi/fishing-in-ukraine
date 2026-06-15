@@ -72,6 +72,19 @@
           <app-weather-card [weather]="wx" />
         }
 
+        <!-- Bite forecast strip -->
+        @if (bite()?.available) {
+          <section class="detail-section">
+            <h2 class="detail-section__title">{{ 'bite.widgetTitle' | transloco }}</h2>
+            <app-bite-strip [forecast]="bite()!" [compact]="true" />
+            <a
+              [routerLink]="locale.link('biteCalendar')"
+              [queryParams]="{ lat: w.lat, lng: w.lng }"
+              class="bite-full-link"
+            >{{ 'bite.full' | transloco }} →</a>
+          </section>
+        }
+
         <!-- Fish -->
         @if (w.fish.length > 0) {
           <section class="detail-section">

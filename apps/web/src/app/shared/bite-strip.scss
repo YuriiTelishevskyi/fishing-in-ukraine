@@ -1,0 +1,111 @@
+.bite-strip {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.25rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+
+  &::-webkit-scrollbar { height: 4px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
+
+  &--compact {
+    .bite-day {
+      min-width: 56px;
+      padding: 0.35rem 0.4rem;
+    }
+
+    .bite-fish {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.bite-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 72px;
+  padding: 0.5rem 0.6rem;
+  border-radius: calc(var(--radius) / 2);
+  background: var(--surface);
+  flex-shrink: 0;
+  text-align: center;
+
+  &--great {
+    background: color-mix(in srgb, var(--success) 12%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--success) 30%, transparent);
+  }
+
+  &--good {
+    background: color-mix(in srgb, #f59e0b 10%, var(--surface));
+    border: 1px solid color-mix(in srgb, #f59e0b 25%, transparent);
+  }
+
+  &--muted {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    opacity: 0.8;
+  }
+
+  &__weekday {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: capitalize;
+    white-space: nowrap;
+  }
+
+  &__score {
+    display: flex;
+    gap: 1px;
+    flex-wrap: nowrap;
+  }
+
+  &__moon {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  &__reason {
+    font-size: 0.7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+}
+
+.bite-fish {
+  font-size: 0.85rem;
+  line-height: 1;
+  transition: opacity 0.15s;
+
+  &--filled {
+    opacity: 1;
+  }
+
+  &:not(.bite-fish--filled) {
+    opacity: 0.2;
+    filter: grayscale(1);
+  }
+}
+
+.bite-strip-unavailable {
+  padding: 0.75rem 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .bite-strip {
+    gap: 0.35rem;
+  }
+
+  .bite-day {
+    min-width: 60px;
+    padding: 0.4rem 0.45rem;
+  }
+}

@@ -1,0 +1,22 @@
+@if (forecast().available) {
+  <div class="bite-strip" [class.bite-strip--compact]="compact()">
+    @for (day of forecast().days; track day.date) {
+      <div class="bite-day" [class]="scoreClass(day.score)">
+        <div class="bite-day__weekday">{{ weekday(day.date) }}</div>
+        <div class="bite-day__score">
+          @for (i of scoreArray(day.score); track i) {
+            <span class="bite-fish" [class.bite-fish--filled]="i < day.score">🐟</span>
+          }
+        </div>
+        <div class="bite-day__moon" [title]="day.moon.nameKey | transloco">{{ moonIcon(day.moon.nameKey) }}</div>
+        @if (!compact()) {
+          <div class="bite-day__reason muted">{{ day.reasonKey | transloco }}</div>
+        }
+      </div>
+    }
+  </div>
+} @else {
+  <div class="bite-strip-unavailable muted">
+    <p>{{ 'weather.unavailable' | transloco }}</p>
+  </div>
+}

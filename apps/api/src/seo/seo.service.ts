@@ -43,6 +43,7 @@ export class SeoService {
       { uk: '/vodoymy', en: '/en/waters' },
       { uk: '/karta', en: '/en/map' },
       { uk: '/blog', en: '/en/blog' },
+      { uk: '/kalendar-klyovu', en: '/en/bite-calendar' },
       ...regions.map((r) => ({ uk: `/vodoymy/${r.slug}`, en: `/en/waters/${r.slug}` })),
       ...waters.map((w) => ({
         uk: `/vodoymy/${w.region.slug}/${w.slug}`,

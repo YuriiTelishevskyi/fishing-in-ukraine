@@ -1,0 +1,163 @@
+.bite-hero {
+  background: linear-gradient(135deg, var(--accent) 0%, #1e3a5f 100%);
+  color: #fff;
+  padding: 3rem 0 2rem;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-family: var(--font-head);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+
+  &__intro {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+  }
+}
+
+.bite-content {
+  padding-bottom: 3rem;
+}
+
+/* Picker card */
+.bite-picker {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+
+  &__row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+
+  &__select-wrap {
+    flex: 1 1 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  &__label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__select {
+    appearance: none;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius) / 2);
+    padding: 0.55rem 0.75rem;
+    font-size: 0.95rem;
+    color: var(--text);
+    cursor: pointer;
+    width: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2rem;
+
+    &:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+  }
+
+  &__geo {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  &__error {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #dc2626;
+  }
+}
+
+/* Forecast card */
+.bite-forecast {
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.bite-loading {
+  margin-bottom: 2rem;
+}
+
+.bite-skeleton {
+  height: 120px;
+  border-radius: var(--radius);
+}
+
+/* Factors */
+.bite-factors {
+  margin-top: 1rem;
+
+  &__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.bite-factor {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 1rem 1.1rem;
+
+  &__icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  &__text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--muted);
+  }
+}
+
+.bite-disclaimer {
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .bite-hero {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .bite-picker__row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bite-picker__geo {
+    text-align: center;
+  }
+
+  .bite-factors__list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { MediaDto, Paginated, WaterDetailDto, WaterStatus } from '@fishing/shared';
+import { MediaDto, Paginated, WaterDetailDto, WaterNewsType, WaterStatus } from '@fishing/shared';
 import { Observable } from 'rxjs';
 
 export type ArticleStatus = 'DRAFT' | 'PUBLISHED';
@@ -230,6 +230,25 @@ export class AdminApiService {
   deleteCatchReport(id: string): Observable<{ ok: true }> {
     return this.http.delete<{ ok: true }>(`/api/admin/catch-reports/${id}`);
   }
+
+  // ── Water news ──────────────────────────────────────────────────────────────
+  adminWaterNews(q: { waterId?: string; page?: number; perPage?: number }): Observable<Paginated<AdminWaterNews>> {
+    let params = new HttpParams();
+    for (const [k, v] of Object.entries(q)) { if (v !== undefined && v !== '') params = params.set(k, String(v)); }
+    return this.http.get<Paginated<AdminWaterNews>>('/api/admin/water-news', { params });
+  }
+  waterNewsById(id: string): Observable<AdminWaterNews> {
+    return this.http.get<AdminWaterNews>(`/api/admin/water-news/${id}`);
+  }
+  createWaterNews(dto: WaterNewsInput): Observable<AdminWaterNews> {
+    return this.http.post<AdminWaterNews>('/api/admin/water-news', dto);
+  }
+  updateWaterNews(id: string, dto: Partial<WaterNewsInput>): Observable<AdminWaterNews> {
+    return this.http.patch<AdminWaterNews>(`/api/admin/water-news/${id}`, dto);
+  }
+  deleteWaterNews(id: string): Observable<{ ok: true }> {
+    return this.http.delete<{ ok: true }>(`/api/admin/water-news/${id}`);
+  }
 }
 
 export interface AdminReview {
@@ -272,5 +291,21 @@ export interface AdminCatchReport {
   status: 'PENDING' | 'APPROVED' | 'REJECTED';
   createdAt: string;
   fish: { name: string };
+  water: { slug: string; name: string };
+}
+
+export interface WaterNewsInput {
+  waterId: string;
+  type: WaterNewsType;
+  title: string;
+  titleEn?: string;
+  body?: string;
+  bodyEn?: string;
+  date: string; // yyyy-mm-dd
+}
+
+export interface AdminWaterNews extends WaterNewsInput {
+  id: string;
+  createdAt: string;
   water: { slug: string; name: string };
 }

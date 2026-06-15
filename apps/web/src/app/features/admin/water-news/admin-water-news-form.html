@@ -1,0 +1,135 @@
+<p-toast />
+
+<div class="awnf">
+  <!-- Sticky action bar -->
+  <div class="awnf__action-bar">
+    <div class="awnf__action-bar-left">
+      <a routerLink="/admin/water-news" class="awnf__back">← До списку</a>
+      <div class="awnf__title-block">
+        @if (id && news()) {
+          <h1 class="awnf__title">{{ news()!.title }}</h1>
+          <small class="awnf__slug">{{ news()!.water.name }}</small>
+        } @else {
+          <h1 class="awnf__title">Нова новина</h1>
+        }
+      </div>
+    </div>
+    <div class="awnf__action-bar-btns">
+      <p-button
+        label="Зберегти"
+        severity="primary"
+        [loading]="saving()"
+        (onClick)="submit()"
+      />
+    </div>
+  </div>
+
+  <!-- Form -->
+  <form [formGroup]="form" class="awnf__form" (ngSubmit)="submit()">
+
+    <!-- Main card -->
+    <div class="awnf__card">
+      <h3 class="awnf__section-title">Основна інформація</h3>
+
+      <div class="awnf__grid">
+        <!-- Water -->
+        <div class="awnf__field">
+          <label class="awnf__label">Водойма <span class="awnf__req">*</span></label>
+          <p-select
+            formControlName="waterId"
+            [options]="waterOptions()"
+            optionLabel="label"
+            optionValue="value"
+            placeholder="Оберіть водойму"
+            [filter]="true"
+            filterBy="label"
+            appendTo="body"
+            styleClass="awnf__input"
+          />
+          @if (form.controls.waterId.invalid && form.controls.waterId.touched) {
+            <small class="awnf__error">Поле обов'язкове</small>
+          }
+        </div>
+
+        <!-- Type -->
+        <div class="awnf__field">
+          <label class="awnf__label">Тип <span class="awnf__req">*</span></label>
+          <p-select
+            formControlName="type"
+            [options]="typeOptions"
+            optionLabel="label"
+            optionValue="value"
+            appendTo="body"
+            styleClass="awnf__input"
+          />
+        </div>
+
+        <!-- Date -->
+        <div class="awnf__field">
+          <label class="awnf__label">Дата <span class="awnf__req">*</span></label>
+          <input
+            pInputText
+            type="date"
+            formControlName="date"
+            class="awnf__input"
+          />
+          @if (form.controls.date.invalid && form.controls.date.touched) {
+            <small class="awnf__error">Поле обов'язкове</small>
+          }
+        </div>
+      </div>
+
+      <!-- Title -->
+      <div class="awnf__field">
+        <label class="awnf__label">Заголовок (укр) <span class="awnf__req">*</span></label>
+        <input
+          pInputText
+          type="text"
+          formControlName="title"
+          placeholder="Заголовок новини"
+          class="awnf__input"
+        />
+        @if (form.controls.title.invalid && form.controls.title.touched) {
+          <small class="awnf__error">
+            @if (form.controls.title.errors?.['required']) { Поле обов'язкове }
+            @else if (form.controls.title.errors?.['minlength']) { Мінімум 3 символи }
+          </small>
+        }
+      </div>
+
+      <!-- Body -->
+      <div class="awnf__field">
+        <label class="awnf__label">Текст (укр)</label>
+        <textarea
+          pTextarea
+          formControlName="body"
+          placeholder="Текст новини…"
+          rows="4"
+          class="awnf__input"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- English block -->
+    <details class="awnf__details awnf__card">
+      <summary class="awnf__details-summary">English (опційно)</summary>
+
+      <div class="awnf__field awnf__field--mt">
+        <label class="awnf__label">Заголовок (en)</label>
+        <input pInputText type="text" formControlName="titleEn" placeholder="Title in English" class="awnf__input" />
+      </div>
+
+      <div class="awnf__field">
+        <label class="awnf__label">Текст (en)</label>
+        <textarea
+          pTextarea
+          formControlName="bodyEn"
+          placeholder="Text in English…"
+          rows="4"
+          class="awnf__input"
+        ></textarea>
+      </div>
+    </details>
+
+  </form>
+</div>

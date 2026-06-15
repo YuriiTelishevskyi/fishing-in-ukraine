@@ -49,6 +49,18 @@ export const ADMIN_ROUTES: Routes = [
             path: 'catch-reports',
             loadComponent: () => import('./catch-reports/admin-catch-reports-list').then((m) => m.AdminCatchReportsList),
           },
+          {
+            path: 'water-news',
+            loadComponent: () => import('./water-news/admin-water-news-list').then((m) => m.AdminWaterNewsList),
+          },
+          {
+            path: 'water-news/new',
+            loadComponent: () => import('./water-news/admin-water-news-form').then((m) => m.AdminWaterNewsForm),
+          },
+          {
+            path: 'water-news/:id',
+            loadComponent: () => import('./water-news/admin-water-news-form').then((m) => m.AdminWaterNewsForm),
+          },
         ],
       },
     ],

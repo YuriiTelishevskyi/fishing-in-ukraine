@@ -26,6 +26,7 @@
     font: 600 0.85rem var(--font-body);
   }
   &__fish { display: flex; flex-wrap: wrap; gap: 6px; }
+  &__distance { color: var(--primary, #0ea5e9); font-size: 0.82rem; margin: 0 0 8px; font-weight: 600; }
 
   // Premium golden card treatment
   &--premium {

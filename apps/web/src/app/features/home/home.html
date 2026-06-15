@@ -33,6 +33,7 @@
       <button class="btn btn--accent" (click)="search()">{{ 'hero.cta' | transloco }}</button>
     </div>
     <a [routerLink]="locale.link('map')" class="btn btn--ghost hero__map-link">🗺 {{ 'hero.mapCta' | transloco }}</a>
+    <a [routerLink]="locale.link('nearby')" class="btn btn--ghost hero__map-link">📍 {{ 'nearby.cta' | transloco }}</a>
   </div>
 </section>
 

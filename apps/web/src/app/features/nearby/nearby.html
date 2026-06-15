@@ -1,0 +1,42 @@
+<app-header [pair]="pair" [solid]="true" />
+
+<section class="nearby-hero">
+  <div class="container">
+    <h1>{{ 'nearby.title' | transloco }}</h1>
+  </div>
+</section>
+
+<div class="container nearby-content">
+  @switch (status()) {
+    @case ('locating') {
+      <div class="nearby-state">
+        <span class="nearby-state__icon">📍</span>
+        <p>{{ 'nearby.locating' | transloco }}</p>
+      </div>
+    }
+    @case ('ready') {
+      <div class="grid grid--3">
+        @for (w of waters(); track w.id) {
+          <app-water-card [water]="w" [distanceKm]="w.distanceKm" />
+        }
+      </div>
+    }
+    @case ('empty') {
+      <div class="nearby-state">
+        <span class="nearby-state__icon">🎣</span>
+        <p>{{ 'nearby.empty' | transloco }}</p>
+        <a [routerLink]="locale.link('catalog')" class="btn btn--primary">{{ 'nearby.browseCatalog' | transloco }}</a>
+      </div>
+    }
+    @case ('denied') {
+      <div class="nearby-state">
+        <span class="nearby-state__icon">🔒</span>
+        <p>{{ 'nearby.denied' | transloco }}</p>
+        <button class="btn btn--accent" (click)="retry()">{{ 'nearby.retry' | transloco }}</button>
+        <a [routerLink]="locale.link('catalog')" class="btn btn--ghost">{{ 'nearby.browseCatalog' | transloco }}</a>
+      </div>
+    }
+  }
+</div>
+
+<app-footer />

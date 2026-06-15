@@ -9,10 +9,11 @@ const pages = {
   blogList: () => import('./features/blog/blog-list').then((m) => m.BlogListPage),
   articlePage: () => import('./features/blog/article-page').then((m) => m.ArticlePage),
   biteCalendar: () => import('./features/bite-calendar/bite-calendar').then((m) => m.BiteCalendarPage),
+  nearby: () => import('./features/nearby/nearby').then((m) => m.NearbyPage),
   notFound: () => import('./features/not-found/not-found').then((m) => m.NotFoundPage),
 };
 
-const tree = (locale: 'uk' | 'en', seg: { catalog: string; fish: string; map: string; blog: string; biteCalendar: string }): Routes => [
+const tree = (locale: 'uk' | 'en', seg: { catalog: string; fish: string; map: string; blog: string; biteCalendar: string; nearby: string }): Routes => [
   { path: '', loadComponent: pages.home, data: { locale } },
   { path: seg.catalog, loadComponent: pages.catalog, data: { locale } },
   { path: `${seg.catalog}/:regionSlug`, loadComponent: pages.catalog, data: { locale } },
@@ -22,6 +23,7 @@ const tree = (locale: 'uk' | 'en', seg: { catalog: string; fish: string; map: st
   { path: seg.blog, loadComponent: pages.blogList, data: { locale } },
   { path: `${seg.blog}/:articleSlug`, loadComponent: pages.articlePage, data: { locale } },
   { path: seg.biteCalendar, loadComponent: pages.biteCalendar, data: { locale } },
+  { path: seg.nearby, loadComponent: pages.nearby, data: { locale } },
 ];
 
 export const routes: Routes = [
@@ -29,7 +31,7 @@ export const routes: Routes = [
     path: 'admin',
     loadChildren: () => import('./features/admin/admin.routes').then((m) => m.ADMIN_ROUTES),
   },
-  { path: 'en', children: tree('en', { catalog: 'waters', fish: 'fish', map: 'map', blog: 'blog', biteCalendar: 'bite-calendar' }) },
-  ...tree('uk', { catalog: 'vodoymy', fish: 'ryba', map: 'karta', blog: 'blog', biteCalendar: 'kalendar-klyovu' }),
+  { path: 'en', children: tree('en', { catalog: 'waters', fish: 'fish', map: 'map', blog: 'blog', biteCalendar: 'bite-calendar', nearby: 'nearby' }) },
+  ...tree('uk', { catalog: 'vodoymy', fish: 'ryba', map: 'karta', blog: 'blog', biteCalendar: 'kalendar-klyovu', nearby: 'poruch' }),
   { path: '**', loadComponent: pages.notFound, data: { locale: 'uk' } },
 ];

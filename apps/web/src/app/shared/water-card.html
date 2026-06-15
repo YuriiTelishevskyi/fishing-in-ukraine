@@ -26,6 +26,9 @@
         <span class="wcard__rating">★ {{ water().ratingAvg }} · {{ water().ratingCount }}</span>
       }
     </p>
+    @if (distanceKm() != null) {
+      <p class="wcard__distance">📍 {{ distanceKm() }} {{ 'nearby.distance' | transloco }}</p>
+    }
     <div class="wcard__fish">
       @for (f of topFish(); track f) {
         <span class="chip">{{ f }}</span>

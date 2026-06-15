@@ -160,5 +160,15 @@
     "cancel": "Cancel",
     "thanks": "Thanks! Your point will appear after review.",
     "error": "Could not submit. Try again later."
+  },
+  "nearby": {
+    "cta": "Near me",
+    "title": "Fishing spots near you",
+    "locating": "Locating you…",
+    "empty": "No waters found nearby. Browse the catalog.",
+    "denied": "Location access denied. Allow access or browse the catalog.",
+    "retry": "Try again",
+    "distance": "km",
+    "browseCatalog": "Browse catalog"
   }
 }

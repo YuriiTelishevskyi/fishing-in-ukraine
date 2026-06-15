@@ -25,6 +25,9 @@
       @if (water().ratingCount > 0) {
         <span class="wcard__rating">★ {{ water().ratingAvg }} · {{ water().ratingCount }}</span>
       }
+      @if (water().viewCount > 0) {
+        <span class="wcard__views">👁 {{ water().viewCount }}</span>
+      }
     </p>
     @if (distanceKm() != null) {
       <p class="wcard__distance">📍 {{ distanceKm() }} {{ 'nearby.distance' | transloco }}</p>

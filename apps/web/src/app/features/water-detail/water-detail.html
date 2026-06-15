@@ -347,6 +347,13 @@
             </div>
           }
 
+          <!-- View count -->
+          @if (w.viewCount > 0) {
+            <div class="aside-card__row aside-card__meta">
+              <span>👁 {{ w.viewCount }} {{ 'water.views' | transloco }}</span>
+            </div>
+          }
+
           <!-- Water type chip -->
           <div class="aside-card__row">
             <span class="chip">{{ typeLabel(w.waterType) }}</span>

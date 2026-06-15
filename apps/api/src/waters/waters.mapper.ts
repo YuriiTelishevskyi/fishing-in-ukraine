@@ -88,6 +88,7 @@ export function toListItem(w: WaterListRow, lang: Locale): WaterListItemDto {
     coverCardUrl: cover ? variant(cover.url, 'card') : null,
     ratingAvg: w.ratingAvg,
     ratingCount: w.ratingCount,
+    viewCount: w.viewCount,
   };
 }
 

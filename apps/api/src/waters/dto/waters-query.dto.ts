@@ -30,6 +30,10 @@ export class WatersQueryDto extends LangQueryDto {
   search?: string;
 
   @IsOptional()
+  @IsIn(['popular'])
+  sort?: string;
+
+  @IsOptional()
   @IsInt()
   @Min(1)
   page: number = 1;

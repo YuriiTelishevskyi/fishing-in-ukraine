@@ -76,6 +76,7 @@ export class CatalogPage {
       paid: (q.get('paid') as 'true' | 'false') ?? undefined,
       search: q.get('search') ?? undefined,
       page: Number(q.get('page')) || 1,
+      sort: (q.get('sort') as 'popular' | null) ?? undefined,
     };
     this.searchValue = this.f.search ?? '';
     this.store.load(this.f);
@@ -92,6 +93,7 @@ export class CatalogPage {
         paid: f.paid || null,
         search: f.search || null,
         page: f.page && f.page > 1 ? f.page : null,
+        sort: f.sort || null,
       },
       queryParamsHandling: 'merge',
     });

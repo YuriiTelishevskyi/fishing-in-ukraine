@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { Locale, MapPinDto, NearbyWaterDto, Paginated, WaterDetailDto, WaterListItemDto } from '@fishing/shared';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
@@ -9,6 +9,8 @@ import { FULL_INCLUDE, LIST_INCLUDE, toDetail, toListItem, toPin } from './water
 
 @Injectable()
 export class WatersService {
+  private readonly logger = new Logger(WatersService.name);
+
   constructor(private readonly prisma: PrismaService) {}
 
   private buildWhere(q: WatersQueryDto): Prisma.WaterWhereInput {
@@ -34,12 +36,16 @@ export class WatersService {
 
   async list(q: WatersQueryDto): Promise<Paginated<WaterListItemDto>> {
     const where = this.buildWhere(q);
+    const orderBy: Prisma.WaterOrderByWithRelationInput[] =
+      q.sort === 'popular'
+        ? [{ isPremium: 'desc' }, { viewCount: 'desc' }, { createdAt: 'desc' }]
+        : [{ isPremium: 'desc' }, { verified: 'desc' }, { createdAt: 'desc' }];
     const [total, rows] = await this.prisma.$transaction([
       this.prisma.water.count({ where }),
       this.prisma.water.findMany({
         where,
         include: LIST_INCLUDE,
-        orderBy: [{ isPremium: 'desc' }, { verified: 'desc' }, { createdAt: 'desc' }],
+        orderBy,
         skip: (q.page - 1) * q.perPage,
         take: q.perPage,
       }),
@@ -93,6 +99,7 @@ export class WatersService {
       include: FULL_INCLUDE,
     });
     if (!water) throw new NotFoundException(`Water "${slug}" not found`);
+    void this.prisma.water.update({ where: { id: water.id }, data: { viewCount: { increment: 1 } } }).catch((err) => this.logger.warn('viewCount increment failed', err));
     return toDetail(water, lang);
   }
 }

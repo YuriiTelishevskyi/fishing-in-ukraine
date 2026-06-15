@@ -475,6 +475,10 @@ async function seedRealWaters() {
       lng: water.lng,
       waterType: water.waterType,
       isPaid: water.isPaid,
+      // Real waters express pricing as free-text notes; null the numeric range so a
+      // re-seed over the old demo Наварія (which set priceFrom/To) can't leave stale numbers.
+      priceFrom: null,
+      priceTo: null,
       priceNote: water.priceNote,
       priceNoteEn: water.priceNoteEn,
       status: 'PUBLISHED' as const,

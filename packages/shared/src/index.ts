@@ -213,3 +213,18 @@ export interface WeatherDto {
   daily: WeatherDailyDto[];
   updatedAt: string | null;
 }
+
+export interface CatchReportDto {
+  id: string;
+  fishName: string;
+  fishSlug: string;
+  caughtAt: string;            // yyyy-mm-dd
+  comment: string | null;
+  photoThumbUrl: string | null;
+  photoCardUrl: string | null;
+  authorName: string;
+  createdAt: string;
+}
+
+export type CatchReportStatus = 'PENDING' | 'APPROVED' | 'REJECTED';
+export const CATCH_REPORT_STATUSES: CatchReportStatus[] = ['PENDING', 'APPROVED', 'REJECTED'];

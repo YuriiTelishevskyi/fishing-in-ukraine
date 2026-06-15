@@ -117,7 +117,7 @@ export class CatchReportsService {
     return { ok: true };
   }
 
-  // ── Admin (used in Task 2; keep here so the service is complete) ──────────
+  // ── Admin ─────────────────────────────────────────────────────────────────
   async adminList(q: AdminCatchReportsQueryDto) {
     const where = q.status ? { status: q.status as CatchReportStatus } : {};
     const [total, rows] = await this.prisma.$transaction([

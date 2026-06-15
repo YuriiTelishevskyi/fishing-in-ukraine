@@ -1,14 +1,41 @@
 <header class="hdr" [class.hdr--solid]="solid()">
   <div class="container hdr__row">
     <a [routerLink]="loc.home()" class="hdr__logo">🎣 <span>FishMap<em>.ua</em></span></a>
+
+    <!-- Desktop nav (hidden on mobile) -->
     <nav class="hdr__nav">
-      <a [routerLink]="loc.link('catalog')">{{ 'nav.catalog' | transloco }}</a>
-      <a [routerLink]="loc.link('map')">{{ 'nav.map' | transloco }}</a>
-      <a [routerLink]="loc.link('blog')">{{ 'nav.blog' | transloco }}</a>
-      <a [routerLink]="loc.link('biteCalendar')">{{ 'nav.biteCalendar' | transloco }}</a>
-      <a [routerLink]="loc.link('nearby')">{{ 'nearby.cta' | transloco }}</a>
+      <a [routerLink]="loc.link('catalog')" (click)="closeMenu()">{{ 'nav.catalog' | transloco }}</a>
+      <a [routerLink]="loc.link('map')" (click)="closeMenu()">{{ 'nav.map' | transloco }}</a>
+      <a [routerLink]="loc.link('blog')" (click)="closeMenu()">{{ 'nav.blog' | transloco }}</a>
+      <a [routerLink]="loc.link('biteCalendar')" (click)="closeMenu()">{{ 'nav.biteCalendar' | transloco }}</a>
+      <a [routerLink]="loc.link('nearby')" (click)="closeMenu()">{{ 'nearby.cta' | transloco }}</a>
     </nav>
-    <div class="hdr__lang">
+
+    <div class="hdr__lang hdr__lang--desktop">
+      <app-lang-switcher [pair]="pair()" />
+    </div>
+
+    <!-- Mobile burger button (hidden on desktop) -->
+    <button
+      type="button"
+      class="hdr__burger"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Меню"
+      (click)="toggleMenu()"
+    >☰</button>
+  </div>
+
+  <!-- Mobile dropdown menu: visibility toggled by the menuOpen signal -->
+  <div class="hdr__backdrop" [class.hdr__backdrop--visible]="menuOpen()" (click)="closeMenu()"></div>
+  <div class="hdr__menu" [class.hdr__menu--open]="menuOpen()" role="navigation" aria-label="Мобільне меню">
+    <nav class="hdr__menu-nav">
+      <a [routerLink]="loc.link('catalog')" (click)="closeMenu()">{{ 'nav.catalog' | transloco }}</a>
+      <a [routerLink]="loc.link('map')" (click)="closeMenu()">{{ 'nav.map' | transloco }}</a>
+      <a [routerLink]="loc.link('blog')" (click)="closeMenu()">{{ 'nav.blog' | transloco }}</a>
+      <a [routerLink]="loc.link('biteCalendar')" (click)="closeMenu()">{{ 'nav.biteCalendar' | transloco }}</a>
+      <a [routerLink]="loc.link('nearby')" (click)="closeMenu()">{{ 'nearby.cta' | transloco }}</a>
+    </nav>
+    <div class="hdr__menu-lang">
       <app-lang-switcher [pair]="pair()" />
     </div>
   </div>

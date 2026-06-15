@@ -17,7 +17,7 @@
     @case ('ready') {
       <div class="grid grid--3">
         @for (w of waters(); track w.id) {
-          <app-water-card [water]="w" [distanceKm]="w.distanceKm" />
+          <app-water-card [water]="w" [distanceKm]="w.distanceKm" [priority]="$first" />
         }
       </div>
     }

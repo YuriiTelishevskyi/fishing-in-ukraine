@@ -1,0 +1,46 @@
+<app-header [solid]="true" [pair]="pair" />
+
+<section class="fish-hero">
+  <div class="container">
+    <h1>{{ 'riverPage.title' | transloco: { river: riverName() } }}</h1>
+  </div>
+</section>
+
+<div class="container fish-content">
+  <app-breadcrumbs [items]="crumbs()" />
+
+  <p class="fish-intro">
+    {{ 'riverPage.intro' | transloco: { river: riverName(), count: total() } }}
+  </p>
+
+  @if (loading()) {
+    <div class="grid grid--3">
+      <div class="skeleton fish-skeleton"></div>
+      <div class="skeleton fish-skeleton"></div>
+      <div class="skeleton fish-skeleton"></div>
+      <div class="skeleton fish-skeleton"></div>
+      <div class="skeleton fish-skeleton"></div>
+      <div class="skeleton fish-skeleton"></div>
+    </div>
+  } @else if (items().length) {
+    <div class="grid grid--3">
+      @for (w of items(); track w.id) {
+        <app-water-card [water]="w" />
+      }
+    </div>
+  } @else {
+    <div class="fish-empty">
+      <span class="fish-empty__icon">🎣</span>
+      <p>{{ 'riverPage.empty' | transloco }}</p>
+    </div>
+  }
+
+  <app-pager
+    [page]="page()"
+    [perPage]="perPage"
+    [total]="total()"
+    (pageChange)="changePage($event)"
+  />
+</div>
+
+<app-footer />

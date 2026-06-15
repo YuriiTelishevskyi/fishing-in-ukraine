@@ -1,0 +1,56 @@
+.fish-hero {
+  background: linear-gradient(160deg, var(--hero-from), var(--hero-to));
+  color: #fff;
+  padding: 64px 0 48px;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.fish-content {
+  padding-top: 28px;
+  padding-bottom: 64px;
+}
+
+.fish-intro {
+  margin: 0 0 28px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 70ch;
+}
+
+.grid--3 {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+  > * {
+    min-width: 0;
+  }
+}
+
+.fish-skeleton {
+  aspect-ratio: 16/10;
+  border-radius: var(--radius);
+}
+
+.fish-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+  color: var(--muted);
+
+  &__icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 1.05rem;
+    margin: 0;
+  }
+}

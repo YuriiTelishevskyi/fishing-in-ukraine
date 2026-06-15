@@ -5,6 +5,7 @@ import { Locale } from '@fishing/shared';
 
 const SEGMENTS: Record<string, { uk: string; en: string }> = {
   catalog: { uk: 'vodoymy', en: 'waters' },
+  rivers: { uk: 'richky', en: 'rivers' },
   fish: { uk: 'ryba', en: 'fish' },
   map: { uk: 'karta', en: 'map' },
   blog: { uk: 'blog', en: 'blog' },

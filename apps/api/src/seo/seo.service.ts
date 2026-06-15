@@ -22,7 +22,7 @@ export class SeoService {
       '',
     );
 
-    const [regions, waters, fish, articles, fishRegionRows] = await Promise.all([
+    const [regions, waters, fish, articles, fishRegionRows, riverRows] = await Promise.all([
       this.prisma.region.findMany({ select: { slug: true } }),
       this.prisma.water.findMany({
         where: { status: 'PUBLISHED' },
@@ -40,6 +40,10 @@ export class SeoService {
         where: { water: { status: 'PUBLISHED' } },
         select: { fish: { select: { slug: true } }, water: { select: { region: { select: { slug: true } } } } },
       }),
+      this.prisma.water.findMany({
+        where: { status: 'PUBLISHED', riverId: { not: null } },
+        select: { river: { select: { slug: true } } },
+      }),
     ]);
 
     const seen = new Set<string>();
@@ -53,6 +57,12 @@ export class SeoService {
         fishRegionCombos.push({ fish: f, region: r });
       }
     }
+
+    const riverSlugSet = new Set<string>();
+    for (const w of riverRows) {
+      if (w.river?.slug) riverSlugSet.add(w.river.slug);
+    }
+    const riverSlugs = [...riverSlugSet];
 
     const pages: PagePair[] = [
       { uk: '/', en: '/en' },
@@ -68,6 +78,7 @@ export class SeoService {
       })),
       ...fish.map((f) => ({ uk: `/ryba/${f.slug}`, en: `/en/fish/${f.slug}` })),
       ...fishRegionCombos.map((c) => ({ uk: `/ryba/${c.fish}/${c.region}`, en: `/en/fish/${c.fish}/${c.region}` })),
+      ...riverSlugs.map((slug) => ({ uk: `/richky/${slug}`, en: `/en/rivers/${slug}` })),
       ...articles.map((a) => ({
         uk: `/blog/${a.slug}`,
         en: `/en/blog/${a.slug}`,

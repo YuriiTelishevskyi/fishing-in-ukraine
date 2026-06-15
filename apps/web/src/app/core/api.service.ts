@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  AmenityDto, ArticleDetailDto, ArticleListItemDto, BiteForecastDto, CatchReportDto, FishRegionCountDto, FishSpeciesDto, MapPinDto, NearbyWaterDto, Paginated, RegionDto, ReviewDto, SpotDto, WaterDetailDto, WaterListItemDto, WaterNewsDto, WeatherDto,
+  AmenityDto, ArticleDetailDto, ArticleListItemDto, BiteForecastDto, CatchReportDto, FishRegionCountDto, FishSpeciesDto, MapPinDto, NearbyWaterDto, Paginated, RegionDto, ReviewDto, RiverDto, SpotDto, WaterDetailDto, WaterListItemDto, WaterNewsDto, WeatherDto,
 } from '@fishing/shared';
 import { Observable } from 'rxjs';
 import { API_BASE } from './api-base';
@@ -9,6 +9,7 @@ import { LocaleService } from './locale.service';
 
 export interface WatersFilter {
   region?: string;
+  river?: string;
   fish?: string[];
   amenities?: string[];
   type?: string;
@@ -37,6 +38,10 @@ export class ApiService {
     return this.http.get<RegionDto[]>(`${this.base}/api/regions`, { params: this.params() });
   }
 
+  rivers(): Observable<RiverDto[]> {
+    return this.http.get<RiverDto[]>(`${this.base}/api/rivers`, { params: this.params() });
+  }
+
   fishSpecies(): Observable<FishSpeciesDto[]> {
     return this.http.get<FishSpeciesDto[]>(`${this.base}/api/fish-species`, { params: this.params() });
   }
@@ -53,6 +58,7 @@ export class ApiService {
     return this.http.get<Paginated<WaterListItemDto>>(`${this.base}/api/waters`, {
       params: this.params({
         region: f.region,
+        river: f.river,
         fish: f.fish?.length ? f.fish.join(',') : undefined,
         amenities: f.amenities?.length ? f.amenities.join(',') : undefined,
         type: f.type,

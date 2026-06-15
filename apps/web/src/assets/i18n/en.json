@@ -78,6 +78,20 @@
     "error": "Could not submit. Try again later.",
     "outOf": "of 5"
   },
+  "catchReport": {
+    "title": "Recent catch reports",
+    "add": "Add a catch report",
+    "empty": "No reports yet — be the first!",
+    "fish": "Fish",
+    "fishPlaceholder": "Choose a fish",
+    "date": "Date of catch",
+    "photo": "Photo (optional)",
+    "comment": "Comment",
+    "name": "Your name",
+    "email": "Email (optional)",
+    "submit": "Submit report",
+    "success": "Thank you! Your report will appear after moderation."
+  },
   "weather": {
     "title": "Weather",
     "unavailable": "Weather temporarily unavailable",

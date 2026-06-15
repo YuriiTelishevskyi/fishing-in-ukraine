@@ -14,7 +14,7 @@ import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
-import { BiteForecastDto, Paginated, ReviewDto, WaterDetailDto, WATER_TYPE_LABELS, WaterType, WeatherDto } from '@fishing/shared';
+import { BiteForecastDto, CatchReportDto, FishSpeciesDto, Paginated, ReviewDto, WaterDetailDto, WATER_TYPE_LABELS, WaterType, WeatherDto } from '@fishing/shared';
 import { ApiService } from '../../core/api.service';
 import { SeoService } from '../../core/seo.service';
 import { SITE_ORIGIN } from '../../core/site-origin';
@@ -73,6 +73,31 @@ export class WaterDetailPage {
   readonly formSuccess = signal(false);
   readonly formError = signal<string | null>(null);
 
+  // Catch reports state
+  readonly catches = signal<Paginated<CatchReportDto> | null>(null);
+  readonly catchesPage = signal(1);
+  readonly catchesLoading = signal(false);
+  readonly fishOptions = signal<FishSpeciesDto[]>([]);
+  readonly crFormOpen = signal(false);
+
+  readonly crName = signal('');
+  readonly crEmail = signal('');
+  readonly crFishId = signal<number | null>(null);
+  readonly crDate = signal(this.todayStr());
+  readonly crComment = signal('');
+  readonly crFile = signal<File | null>(null);
+  readonly crHp = signal('');
+  readonly crPending = signal(false);
+  readonly crSuccess = signal(false);
+  readonly crError = signal<string | null>(null);
+
+  private todayStr(): string {
+    const d = new Date();
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    return `${d.getFullYear()}-${mm}-${dd}`;
+  }
+
   readonly pair = this.locale.pathPair('catalog', [
     this.route.snapshot.paramMap.get('regionSlug')!,
     this.route.snapshot.paramMap.get('waterSlug')!,
@@ -90,6 +115,8 @@ export class WaterDetailPage {
         this.water.set(w);
         this.applySeo(w);
         this.loadReviews(1);
+        this.loadCatches(1);
+        this.api.fishSpecies().subscribe((f) => this.fishOptions.set(f));
         this.api.weather(w.lat, w.lng).subscribe({
           next: (wx) => this.weather.set(wx),
           error: () => this.weather.set({ available: false, current: null, daily: [], updatedAt: null }),
@@ -125,6 +152,49 @@ export class WaterDetailPage {
 
   onReviewPageChange(page: number): void {
     this.loadReviews(page);
+  }
+
+  private loadCatches(page: number): void {
+    this.catchesLoading.set(true);
+    this.api.waterCatchReports(this.slug, page).subscribe({
+      next: (r) => { this.catches.set(r); this.catchesPage.set(page); this.catchesLoading.set(false); },
+      error: () => this.catchesLoading.set(false),
+    });
+  }
+
+  onCatchesPageChange(page: number): void { this.loadCatches(page); }
+
+  onCrFile(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    this.crFile.set(input.files?.[0] ?? null);
+  }
+
+  get crValid(): boolean {
+    const hasComment = this.crComment().trim().length > 0;
+    const hasPhoto = !!this.crFile();
+    return this.crName().trim().length >= 2 && this.crFishId() != null && !!this.crDate() && (hasComment || hasPhoto);
+  }
+
+  submitCatch(): void {
+    if (!this.crValid || this.crPending()) return;
+    this.crPending.set(true);
+    this.crError.set(null);
+    const fd = new FormData();
+    fd.append('authorName', this.crName().trim());
+    if (this.crEmail().trim()) fd.append('authorEmail', this.crEmail().trim());
+    fd.append('fishId', String(this.crFishId()));
+    fd.append('caughtAt', this.crDate());
+    if (this.crComment().trim()) fd.append('comment', this.crComment().trim());
+    if (this.crFile()) fd.append('photo', this.crFile() as File);
+    if (this.crHp()) fd.append('website', this.crHp());
+    this.api.submitCatchReport(this.slug, fd).subscribe({
+      next: () => { this.crPending.set(false); this.crSuccess.set(true); },
+      error: (err) => {
+        this.crPending.set(false);
+        const msg = err?.error?.message;
+        this.crError.set(typeof msg === 'string' ? msg : (Array.isArray(msg) ? msg.join(', ') : null));
+      },
+    });
   }
 
   onStarChange(rating: number): void {

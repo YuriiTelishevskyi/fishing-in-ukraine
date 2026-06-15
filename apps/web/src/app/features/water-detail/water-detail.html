@@ -237,6 +237,85 @@
           }
         </section>
 
+        <!-- Catch reports -->
+        <section class="detail-section">
+          <h2 class="detail-section__title">{{ 'catchReport.title' | transloco }}</h2>
+
+          @if (catches(); as c) {
+            @if (c.items.length) {
+              <div class="cr-grid">
+                @for (r of c.items; track r.id) {
+                  <article class="cr-card">
+                    @if (r.photoCardUrl) {
+                      <img class="cr-card__photo" [src]="r.photoCardUrl" [alt]="r.fishName" loading="lazy" />
+                    } @else {
+                      <div class="cr-card__photo cr-card__photo--placeholder">🎣</div>
+                    }
+                    <div class="cr-card__body">
+                      <span class="cr-card__fish">{{ r.fishName }}</span>
+                      <span class="cr-card__date">{{ formatDate(r.caughtAt) }}</span>
+                      @if (r.comment) { <p class="cr-card__comment">{{ r.comment }}</p> }
+                      <span class="cr-card__author">{{ r.authorName }}</span>
+                    </div>
+                  </article>
+                }
+              </div>
+              <app-pager [page]="catchesPage()" [total]="c.total" [perPage]="c.perPage" (pageChange)="onCatchesPageChange($event)" />
+            } @else {
+              <p class="cr-empty">{{ 'catchReport.empty' | transloco }}</p>
+            }
+          }
+
+          @if (!crSuccess()) {
+            <button type="button" class="btn btn--primary cr-toggle" (click)="crFormOpen.set(!crFormOpen())">
+              {{ 'catchReport.add' | transloco }}
+            </button>
+          }
+
+          @if (crFormOpen() && !crSuccess()) {
+            <form class="cr-form" (ngSubmit)="submitCatch()">
+              <label class="cr-form__field">
+                <span>{{ 'catchReport.fish' | transloco }}</span>
+                <select [ngModel]="crFishId()" (ngModelChange)="crFishId.set($event)" name="fishId" required>
+                  <option [ngValue]="null" disabled>{{ 'catchReport.fishPlaceholder' | transloco }}</option>
+                  @for (f of fishOptions(); track f.id) {
+                    <option [ngValue]="f.id">{{ f.name }}</option>
+                  }
+                </select>
+              </label>
+              <label class="cr-form__field">
+                <span>{{ 'catchReport.date' | transloco }}</span>
+                <input type="date" [ngModel]="crDate()" (ngModelChange)="crDate.set($event)" name="caughtAt" [max]="crDate()" required />
+              </label>
+              <label class="cr-form__field">
+                <span>{{ 'catchReport.photo' | transloco }}</span>
+                <input type="file" accept="image/*" (change)="onCrFile($event)" name="photo" />
+              </label>
+              <label class="cr-form__field">
+                <span>{{ 'catchReport.comment' | transloco }}</span>
+                <textarea [ngModel]="crComment()" (ngModelChange)="crComment.set($event)" name="comment" maxlength="1000" rows="3"></textarea>
+              </label>
+              <label class="cr-form__field">
+                <span>{{ 'catchReport.name' | transloco }}</span>
+                <input type="text" [ngModel]="crName()" (ngModelChange)="crName.set($event)" name="authorName" minlength="2" maxlength="40" required />
+              </label>
+              <label class="cr-form__field">
+                <span>{{ 'catchReport.email' | transloco }}</span>
+                <input type="email" [ngModel]="crEmail()" (ngModelChange)="crEmail.set($event)" name="authorEmail" />
+              </label>
+              <input type="text" class="cr-form__hp" tabindex="-1" autocomplete="off" [ngModel]="crHp()" (ngModelChange)="crHp.set($event)" name="website" />
+              @if (crError()) { <p class="cr-form__error">{{ crError() }}</p> }
+              <button type="submit" class="btn btn--primary cr-form__submit" [disabled]="!crValid || crPending()">
+                {{ 'catchReport.submit' | transloco }}
+              </button>
+            </form>
+          }
+
+          @if (crSuccess()) {
+            <p class="cr-form__success">{{ 'catchReport.success' | transloco }}</p>
+          }
+        </section>
+
       </div><!-- /detail-main -->
 
       <!-- Right column: sticky aside card -->

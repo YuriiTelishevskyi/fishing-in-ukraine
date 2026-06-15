@@ -1,0 +1,156 @@
+.acr {
+  // ── Page header row ───────────────────────────────────────────────────────
+  &__page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  &__page-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__page-title {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  &__page-subtitle {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  // ── Panel card ────────────────────────────────────────────────────────────
+  &__panel {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 14px 16px;
+    margin-bottom: 20px;
+
+    &--flush {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    &--scroll {
+      overflow-x: auto;
+
+      :host ::ng-deep p-table table,
+      ::ng-deep p-table table {
+        min-width: 760px;
+      }
+    }
+  }
+
+  // ── Filters row ───────────────────────────────────────────────────────────
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  // ── Photo cell ────────────────────────────────────────────────────────────
+  &__photo-cell {
+    text-align: center;
+  }
+
+  &__photo {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+  }
+
+  &__no-photo {
+    color: var(--muted);
+    font-size: 1.2rem;
+  }
+
+  // ── Table cells ───────────────────────────────────────────────────────────
+  &__fish-name {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  &__water-name {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  &__comment {
+    max-width: 280px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: pre-line;
+    font-size: 0.9rem;
+    color: var(--ink);
+  }
+
+  &__no-comment {
+    color: var(--muted);
+  }
+
+  // ── Author ────────────────────────────────────────────────────────────────
+  &__author-name {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 0.9rem;
+  }
+
+  &__author-email {
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+
+  // ── Actions ───────────────────────────────────────────────────────────────
+  &__actions {
+    display: flex;
+    gap: 4px;
+    white-space: nowrap;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  &__empty {
+    text-align: center;
+    padding: 32px 16px;
+    color: var(--muted);
+  }
+
+  // ── Mobile stacking ───────────────────────────────────────────────────────
+  @media (max-width: 600px) {
+    &__page-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__filters {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}
+
+:host ::ng-deep {
+  .p-datatable .p-datatable-tbody > tr:hover > td {
+    background: #f4f9fa;
+  }
+
+  .p-datatable .p-datatable-tbody > tr > td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}

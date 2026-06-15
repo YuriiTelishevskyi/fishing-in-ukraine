@@ -1,0 +1,146 @@
+<div class="acr">
+  <!-- Page header row -->
+  <div class="acr__page-header">
+    <div class="acr__page-title-group">
+      <h1 class="acr__page-title">Звіти про вилов</h1>
+      <span class="acr__page-subtitle">{{ total() }} записів</span>
+    </div>
+  </div>
+
+  <!-- Filters panel -->
+  <div class="acr__panel acr__filters">
+    <p-select
+      [(ngModel)]="status"
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+      (onChange)="onStatusChange()"
+      placeholder="Статус"
+    />
+  </div>
+
+  <!-- Table panel -->
+  <div class="acr__panel acr__panel--flush acr__panel--scroll">
+    <p-table
+      [value]="rows()"
+      [lazy]="true"
+      [paginator]="true"
+      [rows]="20"
+      [totalRecords]="total()"
+      [loading]="loading()"
+      (onLazyLoad)="onLazy($event)"
+      dataKey="id"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width: 72px">Фото</th>
+          <th>Риба</th>
+          <th>Дата вилову</th>
+          <th>Коментар</th>
+          <th>Водойма</th>
+          <th>Автор</th>
+          @if (showStatusColumn()) {
+            <th>Статус</th>
+          }
+          <th>Дії</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-r>
+        <tr>
+          <td class="acr__photo-cell">
+            @if (r.photoUrl) {
+              <img
+                [src]="thumbUrl(r.photoUrl)"
+                class="acr__photo"
+                alt="фото"
+                loading="lazy"
+              />
+            } @else {
+              <span class="acr__no-photo">🎣</span>
+            }
+          </td>
+          <td>
+            <span class="acr__fish-name">{{ r.fish.name }}</span>
+          </td>
+          <td>{{ r.caughtAt | date:'dd.MM.yyyy' }}</td>
+          <td>
+            @if (r.comment) {
+              <div class="acr__comment" [title]="r.comment">{{ r.comment }}</div>
+            } @else {
+              <span class="acr__no-comment">—</span>
+            }
+          </td>
+          <td>
+            <span class="acr__water-name">{{ r.water.name }}</span>
+          </td>
+          <td>
+            <span class="acr__author-name">{{ r.authorName }}</span>
+            @if (r.authorEmail) {
+              <br />
+              <small class="acr__author-email">{{ r.authorEmail }}</small>
+            }
+          </td>
+          @if (showStatusColumn()) {
+            <td>
+              <p-tag
+                [severity]="statusSeverity(r.status)"
+                [value]="statusLabel(r.status)"
+              />
+            </td>
+          }
+          <td class="acr__actions">
+            @if (r.status === 'PENDING') {
+              <p-button
+                label="✓ Схвалити"
+                severity="success"
+                [text]="true"
+                (onClick)="approve(r)"
+              />
+              <p-button
+                label="✕ Відхилити"
+                severity="warn"
+                [text]="true"
+                (onClick)="reject(r)"
+              />
+            } @else if (r.status === 'REJECTED') {
+              <p-button
+                label="✓ Схвалити"
+                severity="success"
+                [text]="true"
+                (onClick)="approve(r)"
+              />
+              <p-button
+                icon="pi pi-trash"
+                severity="danger"
+                [text]="true"
+                (onClick)="confirmDelete(r)"
+              />
+            } @else if (r.status === 'APPROVED') {
+              <p-button
+                label="✕ Відхилити"
+                severity="warn"
+                [text]="true"
+                (onClick)="reject(r)"
+              />
+              <p-button
+                icon="pi pi-trash"
+                severity="danger"
+                [text]="true"
+                (onClick)="confirmDelete(r)"
+              />
+            }
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td [attr.colspan]="showStatusColumn() ? 8 : 7" class="acr__empty">Немає звітів у цьому фільтрі</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+<p-confirmdialog />

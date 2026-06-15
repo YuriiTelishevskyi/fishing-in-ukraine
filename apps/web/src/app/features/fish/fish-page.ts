@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, computed, effect, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
-import { Paginated, WaterListItemDto } from '@fishing/shared';
+import { FishRegionCountDto, Paginated, WaterListItemDto } from '@fishing/shared';
 import { ApiService } from '../../core/api.service';
 import { SeoService } from '../../core/seo.service';
 import { SITE_ORIGIN } from '../../core/site-origin';
@@ -14,7 +14,7 @@ import { WaterCard } from '../../shared/water-card';
 
 @Component({
   selector: 'app-fish-page',
-  imports: [Header, Footer, TranslocoPipe, WaterCard, Pager],
+  imports: [Header, Footer, TranslocoPipe, WaterCard, Pager, RouterLink],
   templateUrl: './fish-page.html',
   styleUrl: './fish-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -31,6 +31,7 @@ export class FishPage {
 
   readonly fishSpecies = toSignal(this.api.fishSpecies(), { initialValue: [] });
   readonly fishName = computed(() => this.fishSpecies().find((f) => f.slug === this.slug)?.name ?? '');
+  readonly regions = signal<FishRegionCountDto[]>([]);
 
   readonly page = signal(1);
   readonly loading = signal(true);
@@ -40,10 +41,12 @@ export class FishPage {
 
   constructor() {
     this.loadPage(1);
+    this.api.fishSpeciesRegions(this.slug).subscribe((r) => this.regions.set(r));
 
     // Re-apply SEO once fish name resolves (same pattern as catalog/regions)
     effect(() => {
       const name = this.fishName();
+      this.items();
       if (name) this.applySeo(name);
     });
   }
@@ -88,6 +91,16 @@ export class FishPage {
             { '@type': 'ListItem', position: 1, name: 'FishMap.ua', item: `${this.siteOrigin}/` },
             { '@type': 'ListItem', position: 2, name },
           ],
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          itemListElement: this.items().map((w, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: w.name,
+            url: `${this.siteOrigin}${this.locale.link('catalog', w.regionSlug, w.slug)}`,
+          })),
         },
       ],
     });

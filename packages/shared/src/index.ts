@@ -228,3 +228,9 @@ export interface CatchReportDto {
 
 export type CatchReportStatus = 'PENDING' | 'APPROVED' | 'REJECTED';
 export const CATCH_REPORT_STATUSES: CatchReportStatus[] = ['PENDING', 'APPROVED', 'REJECTED'];
+
+export interface FishRegionCountDto {
+  regionSlug: string;
+  regionName: string;
+  count: number;
+}

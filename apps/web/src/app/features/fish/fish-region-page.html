@@ -2,26 +2,16 @@
 
 <section class="fish-hero">
   <div class="container">
-    <h1>{{ 'fishPage.title' | transloco: { fish: fishName() } }}</h1>
-    <p class="fish-intro">{{ 'fishPage.intro' | transloco: { fish: fishName(), count: total() } }}</p>
+    <h1>{{ 'fishRegion.title' | transloco: { fish: fishName(), region: regionName() } }}</h1>
   </div>
 </section>
 
 <div class="container fish-content">
-  @if (regions().length) {
-    <section class="fish-regions">
-      <h2 class="fish-regions__title">{{ 'fishPage.byRegion' | transloco }}</h2>
-      <ul class="fish-regions__list">
-        @for (r of regions(); track r.regionSlug) {
-          <li>
-            <a [routerLink]="locale.link('fish', slug, r.regionSlug)" class="fish-regions__link">
-              {{ r.regionName }} ({{ r.count }})
-            </a>
-          </li>
-        }
-      </ul>
-    </section>
-  }
+  <app-breadcrumbs [items]="crumbs()" />
+
+  <p class="fish-intro">
+    {{ 'fishRegion.intro' | transloco: { fish: fishName(), region: regionName(), count: total() } }}
+  </p>
 
   @if (loading()) {
     <div class="grid grid--3">
@@ -41,7 +31,7 @@
   } @else {
     <div class="fish-empty">
       <span class="fish-empty__icon">🎣</span>
-      <p>{{ 'catalog.empty' | transloco }}</p>
+      <p>{{ 'fishRegion.empty' | transloco }}</p>
     </div>
   }
 

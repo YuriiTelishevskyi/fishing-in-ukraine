@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  AmenityDto, ArticleDetailDto, ArticleListItemDto, BiteForecastDto, CatchReportDto, FishSpeciesDto, MapPinDto, NearbyWaterDto, Paginated, RegionDto, ReviewDto, SpotDto, WaterDetailDto, WaterListItemDto, WeatherDto,
+  AmenityDto, ArticleDetailDto, ArticleListItemDto, BiteForecastDto, CatchReportDto, FishRegionCountDto, FishSpeciesDto, MapPinDto, NearbyWaterDto, Paginated, RegionDto, ReviewDto, SpotDto, WaterDetailDto, WaterListItemDto, WeatherDto,
 } from '@fishing/shared';
 import { Observable } from 'rxjs';
 import { API_BASE } from './api-base';
@@ -42,6 +42,10 @@ export class ApiService {
 
   amenities(): Observable<AmenityDto[]> {
     return this.http.get<AmenityDto[]>(`${this.base}/api/amenities`, { params: this.params() });
+  }
+
+  fishSpeciesRegions(slug: string): Observable<FishRegionCountDto[]> {
+    return this.http.get<FishRegionCountDto[]>(`${this.base}/api/fish-species/${slug}/regions`, { params: this.params() });
   }
 
   waters(f: WatersFilter): Observable<Paginated<WaterListItemDto>> {

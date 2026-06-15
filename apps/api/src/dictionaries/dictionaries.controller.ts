@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { LangQueryDto } from '../common/lang-query.dto';
 import { DictionariesService } from './dictionaries.service';
 
@@ -14,6 +14,11 @@ export class DictionariesController {
   @Get('fish-species')
   fishSpecies(@Query() q: LangQueryDto) {
     return this.dictionaries.fishSpecies(q.lang);
+  }
+
+  @Get('fish-species/:slug/regions')
+  fishSpeciesRegions(@Param('slug') slug: string, @Query() q: LangQueryDto) {
+    return this.dictionaries.fishSpeciesRegions(slug, q.lang);
   }
 
   @Get('amenities')

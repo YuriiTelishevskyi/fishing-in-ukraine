@@ -58,7 +58,8 @@
     "verified": "Verified",
     "moreWaters": "More waters in this region"
   },
-  "fishPage": { "title": "Where to catch: {{fish}}", "waters": "Waters with this fish" },
+  "fishPage": { "title": "Where to catch: {{fish}}", "waters": "Waters with this fish", "intro": "{{count}} verified Ukrainian waters where you can catch {{fish}} — prices, fish, map, reviews.", "byRegion": "By region" },
+  "fishRegion": { "title": "Where to catch {{fish}} in {{region}}", "intro": "{{count}} waters in {{region}} where you can catch {{fish}}.", "empty": "No waters with this fish in this region yet.", "crumbCatalog": "Catalog" },
   "map": { "title": "Waters map" },
   "notFound": { "title": "Page not found", "text": "Maybe the water has moved.", "home": "Go home" },
   "blog": {

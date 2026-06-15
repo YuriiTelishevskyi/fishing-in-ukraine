@@ -8,50 +8,16 @@
   }
 }
 
-.fish-intro {
-  margin: 14px 0 0;
-  max-width: 70ch;
-  opacity: 0.92;
-  font-size: 1.05rem;
-}
-
 .fish-content {
-  padding-top: 40px;
+  padding-top: 28px;
   padding-bottom: 64px;
 }
 
-.fish-regions {
-  margin-bottom: 36px;
-
-  &__title {
-    margin: 0 0 14px;
-    font-size: 1.15rem;
-  }
-
-  &__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  &__link {
-    display: inline-block;
-    padding: 7px 14px;
-    border-radius: 999px;
-    background: var(--surface, #f1f5f9);
-    color: var(--ink);
-    font-size: 0.92rem;
-    text-decoration: none;
-    transition: background 0.15s;
-
-    &:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-  }
+.fish-intro {
+  margin: 0 0 28px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 70ch;
 }
 
 .grid--3 {

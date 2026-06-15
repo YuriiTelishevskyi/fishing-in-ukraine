@@ -14,6 +14,7 @@ import { ReviewsModule } from './reviews/reviews.module';
 import { SeoModule } from './seo/seo.module';
 import { SpotsModule } from './spots/spots.module';
 import { WatersModule } from './waters/waters.module';
+import { WeatherModule } from './weather/weather.module';
 
 @Module({
   imports: [
@@ -37,6 +38,7 @@ import { WatersModule } from './waters/waters.module';
     ReviewsModule,
     SpotsModule,
     SeoModule,
+    WeatherModule,
   ],
   controllers: [HealthController],
   providers: [{ provide: APP_GUARD, useClass: ThrottlerGuard }],

@@ -148,3 +148,36 @@ export interface SpotDto {
 
 export type SpotStatus = 'PENDING' | 'APPROVED' | 'REJECTED';
 export const SPOT_STATUSES: SpotStatus[] = ['PENDING', 'APPROVED', 'REJECTED'];
+
+export type PressureTrend = 'rising' | 'falling' | 'steady';
+export type WindDir = 'N' | 'NE' | 'E' | 'SE' | 'S' | 'SW' | 'W' | 'NW';
+
+export interface WeatherCurrentDto {
+  tempC: number;
+  feelsC: number;
+  humidity: number;
+  precipMm: number;
+  weatherCode: number;
+  pressureHpa: number;
+  pressureMmHg: number;
+  pressureTrend: PressureTrend;
+  windKmh: number;
+  windDeg: number;
+  windDir: WindDir;
+}
+
+export interface WeatherDailyDto {
+  date: string;
+  weatherCode: number;
+  tMax: number;
+  tMin: number;
+  sunrise: string;
+  sunset: string;
+}
+
+export interface WeatherDto {
+  available: boolean;
+  current: WeatherCurrentDto | null;
+  daily: WeatherDailyDto[];
+  updatedAt: string | null;
+}

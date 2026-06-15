@@ -76,6 +76,19 @@
         </select>
       </div>
 
+      <!-- Sort -->
+      <div class="filters__section">
+        <span class="filters__label">{{ 'catalog.sortLabel' | transloco }}</span>
+        <select
+          class="filters__select"
+          [value]="f.sort ?? ''"
+          (change)="apply({ sort: $any($event.target).value || undefined })"
+        >
+          <option value="">{{ 'catalog.sortDefault' | transloco }}</option>
+          <option value="popular">{{ 'catalog.sortPopular' | transloco }}</option>
+        </select>
+      </div>
+
       <!-- Paid -->
       <div class="filters__section">
         <span class="filters__label">{{ 'catalog.paid' | transloco }}</span>

@@ -63,6 +63,7 @@ export interface WaterListItemDto {
   coverCardUrl: string | null;
   ratingAvg: number | null;
   ratingCount: number;
+  viewCount: number;
 }
 
 export interface ReviewDto {

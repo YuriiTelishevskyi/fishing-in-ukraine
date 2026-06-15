@@ -16,6 +16,7 @@ export interface WatersFilter {
   search?: string;
   page?: number;
   perPage?: number;
+  sort?: 'popular';
 }
 
 @Injectable({ providedIn: 'root' })
@@ -59,6 +60,7 @@ export class ApiService {
         search: f.search,
         page: f.page,
         perPage: f.perPage,
+        sort: f.sort,
       }),
     });
   }

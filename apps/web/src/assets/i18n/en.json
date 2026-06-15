@@ -41,7 +41,10 @@
     "reset": "Reset",
     "empty": "Nothing found. Try different filters.",
     "prev": "Prev",
-    "next": "Next"
+    "next": "Next",
+    "sortLabel": "Sort",
+    "sortDefault": "Default",
+    "sortPopular": "Popular"
   },
   "water": {
     "price": "Price",
@@ -56,7 +59,8 @@
     "from": "from",
     "uah": "UAH",
     "verified": "Verified",
-    "moreWaters": "More waters in this region"
+    "moreWaters": "More waters in this region",
+    "views": "views"
   },
   "fishPage": { "title": "Where to catch: {{fish}}", "waters": "Waters with this fish", "intro": "{{count}} verified Ukrainian waters where you can catch {{fish}} — prices, fish, map, reviews.", "byRegion": "By region" },
   "fishRegion": { "title": "Where to catch {{fish}} in {{region}}", "intro": "{{count}} waters in {{region}} where you can catch {{fish}}.", "empty": "No waters with this fish in this region yet.", "crumbCatalog": "Catalog" },

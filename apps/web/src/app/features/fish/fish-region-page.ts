@@ -101,7 +101,7 @@ export class FishRegionPage {
 
     this.seo.apply({
       title: uk
-        ? `Де ловити ${fish} на ${region} — FishMap.ua`
+        ? `Де ловити: ${fish} — ${region} — FishMap.ua`
         : `Where to catch ${fish} in ${region} — FishMap.ua`,
       description: uk
         ? `${this.total()} водойм у регіоні ${region}, де водиться ${fish}. Ціни, умови, карта.`

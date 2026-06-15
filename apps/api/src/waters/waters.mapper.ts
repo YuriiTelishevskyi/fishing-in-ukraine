@@ -13,6 +13,7 @@ import {
   Media,
   Prisma,
   Region,
+  River,
   Water,
   WaterAmenity,
   WaterFish,
@@ -20,12 +21,14 @@ import {
 
 export const LIST_INCLUDE = {
   region: true,
+  river: true,
   fish: { include: { fish: true } },
   media: { orderBy: { sortOrder: 'asc' as const }, take: 1 },
 } satisfies Prisma.WaterInclude;
 
 export const FULL_INCLUDE = {
   region: true,
+  river: true,
   fish: { include: { fish: true } },
   amenities: { include: { amenity: true } },
   media: { orderBy: { sortOrder: 'asc' as const } },
@@ -34,6 +37,7 @@ export const FULL_INCLUDE = {
 /** Narrow row shape for list cards — region, fish, cover media only. */
 export type WaterListRow = Water & {
   region: Region;
+  river: River | null;
   fish: (WaterFish & { fish: FishSpecies })[];
   media: Media[];
 };
@@ -89,6 +93,8 @@ export function toListItem(w: WaterListRow, lang: Locale): WaterListItemDto {
     ratingAvg: w.ratingAvg,
     ratingCount: w.ratingCount,
     viewCount: w.viewCount,
+    riverSlug: w.river?.slug ?? null,
+    riverName: w.river ? loc(lang, w.river.name, w.river.nameEn) : null,
   };
 }
 

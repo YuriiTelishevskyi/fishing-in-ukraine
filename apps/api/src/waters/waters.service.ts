@@ -17,6 +17,7 @@ export class WatersService {
     const and: Prisma.WaterWhereInput[] = [{ status: 'PUBLISHED' }];
 
     if (q.region) and.push({ region: { slug: q.region } });
+    if (q.river) and.push({ river: { slug: q.river } });
     if (q.type) and.push({ waterType: q.type });
     if (q.paid !== undefined) and.push({ isPaid: q.paid === 'true' });
     // TODO: also search nameEn when lang === 'en'

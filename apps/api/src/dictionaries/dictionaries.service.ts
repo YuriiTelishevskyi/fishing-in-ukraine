@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { AmenityDto, FishRegionCountDto, FishSpeciesDto, Locale, RegionDto } from '@fishing/shared';
+import { AmenityDto, FishRegionCountDto, FishSpeciesDto, Locale, RegionDto, RiverDto } from '@fishing/shared';
 import { PrismaService } from '../prisma/prisma.service';
 
 const loc = (lang: Locale, uk: string, en: string) => (lang === 'en' && en ? en : uk);
@@ -35,6 +35,11 @@ export class DictionariesService {
     return [...map.entries()]
       .map(([regionSlug, e]) => ({ regionSlug, regionName: loc(lang, e.name, e.nameEn), count: e.count }))
       .sort((a, b) => b.count - a.count);
+  }
+
+  async rivers(lang: Locale): Promise<RiverDto[]> {
+    const rows = await this.prisma.river.findMany({ orderBy: lang === 'en' ? { nameEn: 'asc' as const } : { name: 'asc' as const } });
+    return rows.map((r) => ({ id: r.id, slug: r.slug, name: loc(lang, r.name, r.nameEn) }));
   }
 
   async amenities(lang: Locale): Promise<AmenityDto[]> {

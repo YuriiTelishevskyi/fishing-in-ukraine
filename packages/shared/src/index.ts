@@ -21,6 +21,12 @@ export interface RegionDto {
   name: string;
 }
 
+export interface RiverDto {
+  id: number;
+  slug: string;
+  name: string;
+}
+
 export interface FishSpeciesDto {
   id: number;
   slug: string;
@@ -64,6 +70,8 @@ export interface WaterListItemDto {
   ratingAvg: number | null;
   ratingCount: number;
   viewCount: number;
+  riverSlug: string | null;
+  riverName: string | null;
 }
 
 export interface ReviewDto {

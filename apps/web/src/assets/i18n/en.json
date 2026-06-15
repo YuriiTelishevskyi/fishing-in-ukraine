@@ -78,6 +78,39 @@
     "error": "Could not submit. Try again later.",
     "outOf": "of 5"
   },
+  "weather": {
+    "title": "Weather",
+    "unavailable": "Weather temporarily unavailable",
+    "feels": "feels like",
+    "pressure": "Pressure",
+    "mmHg": "mmHg",
+    "wind": "Wind",
+    "kmh": "km/h",
+    "humidity": "Humidity",
+    "precip": "Precipitation",
+    "mm": "mm",
+    "forecast": "7-day forecast"
+  },
+  "wmo": {
+    "clear": "Clear",
+    "partly": "Partly cloudy",
+    "cloudy": "Cloudy",
+    "fog": "Fog",
+    "rain": "Rain",
+    "snow": "Snow",
+    "showers": "Showers",
+    "thunder": "Thunderstorm"
+  },
+  "winddir": {
+    "N": "N",
+    "NE": "NE",
+    "E": "E",
+    "SE": "SE",
+    "S": "S",
+    "SW": "SW",
+    "W": "W",
+    "NW": "NW"
+  },
   "spots": {
     "add": "Add a point",
     "placeHint": "Click on the map where your spot is",

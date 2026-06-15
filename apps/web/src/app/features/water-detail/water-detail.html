@@ -67,6 +67,11 @@
           </section>
         }
 
+        <!-- Weather -->
+        @if (weather(); as wx) {
+          <app-weather-card [weather]="wx" />
+        }
+
         <!-- Fish -->
         @if (w.fish.length > 0) {
           <section class="detail-section">

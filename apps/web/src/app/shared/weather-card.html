@@ -1,0 +1,67 @@
+@if (weather().available && weather().current; as c) {
+  <div class="weather-card">
+    <h2 class="weather-card__title">{{ 'weather.title' | transloco }}</h2>
+
+    <!-- Current conditions -->
+    <div class="weather-current">
+      <div class="weather-current__main">
+        <span class="weather-current__temp">{{ c.tempC }}°</span>
+        <span class="weather-current__icon">{{ wmoIcon(c.weatherCode) }}</span>
+      </div>
+      <div class="weather-current__label">{{ wmoLabelKey(c.weatherCode) | transloco }}</div>
+      <div class="weather-current__feels muted">{{ 'weather.feels' | transloco }} {{ c.feelsC }}°</div>
+    </div>
+
+    <!-- Metrics grid -->
+    <div class="weather-metrics">
+      <!-- Pressure -->
+      <div class="weather-metric">
+        <div class="weather-metric__label muted">{{ 'weather.pressure' | transloco }}</div>
+        <div class="weather-metric__value">
+          {{ c.pressureMmHg }} {{ 'weather.mmHg' | transloco }}
+          <span class="trend" [class]="trendClass(c.pressureTrend)">{{ trendArrow(c.pressureTrend) }}</span>
+        </div>
+        <div class="weather-metric__sub muted">{{ c.pressureHpa }} hPa</div>
+      </div>
+
+      <!-- Wind -->
+      <div class="weather-metric">
+        <div class="weather-metric__label muted">{{ 'weather.wind' | transloco }}</div>
+        <div class="weather-metric__value">
+          {{ c.windKmh }} {{ 'weather.kmh' | transloco }}
+          {{ windDirKey(c.windDir) | transloco }}
+        </div>
+      </div>
+
+      <!-- Humidity -->
+      <div class="weather-metric">
+        <div class="weather-metric__label muted">{{ 'weather.humidity' | transloco }}</div>
+        <div class="weather-metric__value">{{ c.humidity }}%</div>
+      </div>
+
+      <!-- Precipitation -->
+      <div class="weather-metric">
+        <div class="weather-metric__label muted">{{ 'weather.precip' | transloco }}</div>
+        <div class="weather-metric__value">{{ c.precipMm }} {{ 'weather.mm' | transloco }}</div>
+      </div>
+    </div>
+
+    <!-- 7-day forecast -->
+    <div class="weather-forecast">
+      <div class="weather-forecast__title muted">{{ 'weather.forecast' | transloco }}</div>
+      <div class="weather-forecast__strip">
+        @for (d of weather().daily; track d.date) {
+          <div class="weather-day">
+            <div class="weather-day__weekday">{{ weekday(d.date) }}</div>
+            <div class="weather-day__icon">{{ wmoIcon(d.weatherCode) }}</div>
+            <div class="weather-day__temp">{{ d.tMax }}°/{{ d.tMin }}°</div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="weather-card weather-card--unavailable">
+    <p class="muted">{{ 'weather.unavailable' | transloco }}</p>
+  </div>
+}

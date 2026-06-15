@@ -1,0 +1,162 @@
+.weather-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+
+  &--unavailable {
+    padding: 1rem 1.5rem;
+  }
+
+  &__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Current conditions */
+.weather-current {
+  margin-bottom: 1.25rem;
+
+  &__main {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__temp {
+    font-family: var(--font-head);
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  &__icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  &__label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+
+  &__feels {
+    font-size: 0.875rem;
+  }
+}
+
+/* Metrics grid */
+.weather-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+
+  @media (max-width: 520px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.weather-metric {
+  &__label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.25rem;
+  }
+
+  &__value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  &__sub {
+    font-size: 0.78rem;
+    margin-top: 0.15rem;
+  }
+}
+
+/* Trend arrow colors */
+.trend {
+  font-weight: 700;
+
+  &--rising { color: var(--success); }
+  &--falling { color: #dc2626; }
+  &--steady { color: var(--muted); }
+}
+
+/* 7-day forecast */
+.weather-forecast {
+  &__title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+  }
+
+  &__strip {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.25rem;
+
+    /* Hide scrollbar on desktop but keep functionality */
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
+
+    &::-webkit-scrollbar { height: 4px; }
+    &::-webkit-scrollbar-track { background: transparent; }
+    &::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
+  }
+}
+
+.weather-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 64px;
+  padding: 0.4rem 0.5rem;
+  border-radius: calc(var(--radius) / 2);
+  background: var(--surface);
+  flex-shrink: 0;
+
+  &__weekday {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: capitalize;
+  }
+
+  &__icon {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  &__temp {
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .weather-forecast__strip {
+    gap: 0.35rem;
+  }
+
+  .weather-day {
+    min-width: 56px;
+    padding: 0.35rem 0.4rem;
+  }
+}

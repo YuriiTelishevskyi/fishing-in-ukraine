@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  AmenityDto, ArticleDetailDto, ArticleListItemDto, FishSpeciesDto, MapPinDto, Paginated, RegionDto, ReviewDto, SpotDto, WaterDetailDto, WaterListItemDto,
+  AmenityDto, ArticleDetailDto, ArticleListItemDto, FishSpeciesDto, MapPinDto, Paginated, RegionDto, ReviewDto, SpotDto, WaterDetailDto, WaterListItemDto, WeatherDto,
 } from '@fishing/shared';
 import { Observable } from 'rxjs';
 import { API_BASE } from './api-base';
@@ -100,5 +100,11 @@ export class ApiService {
 
   submitSpot(fd: FormData): Observable<{ ok: true }> {
     return this.http.post<{ ok: true }>(`${this.base}/api/spots`, fd);
+  }
+
+  weather(lat: number, lng: number): Observable<WeatherDto> {
+    return this.http.get<WeatherDto>(`${this.base}/api/weather`, {
+      params: new HttpParams().set('lat', String(lat)).set('lng', String(lng)),
+    });
   }
 }

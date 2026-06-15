@@ -33,6 +33,13 @@
   }
 }
 
+// Grid items must allow shrinking below content width, otherwise the weather
+// 7-day strip's intrinsic width blows out the 1fr track and overflows the page.
+.detail-main,
+.detail-aside {
+  min-width: 0;
+}
+
 // Gallery
 .gallery {
   margin-bottom: 32px;

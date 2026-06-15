@@ -84,6 +84,8 @@ export class WaterDetailPage {
   readonly crEmail = signal('');
   readonly crFishId = signal<number | null>(null);
   readonly crDate = signal(this.todayStr());
+  // Cap the date picker at today, computed once (the field value must not move the max).
+  readonly crMaxDate = this.todayStr();
   readonly crComment = signal('');
   readonly crFile = signal<File | null>(null);
   readonly crHp = signal('');

@@ -267,7 +267,7 @@
           }
 
           @if (!crSuccess()) {
-            <button type="button" class="btn btn--primary cr-toggle" (click)="crFormOpen.set(!crFormOpen())">
+            <button type="button" class="btn btn--primary" (click)="crFormOpen.set(!crFormOpen())">
               {{ 'catchReport.add' | transloco }}
             </button>
           }
@@ -285,7 +285,7 @@
               </label>
               <label class="cr-form__field">
                 <span>{{ 'catchReport.date' | transloco }}</span>
-                <input type="date" [ngModel]="crDate()" (ngModelChange)="crDate.set($event)" name="caughtAt" [max]="crDate()" required />
+                <input type="date" [ngModel]="crDate()" (ngModelChange)="crDate.set($event)" name="caughtAt" [max]="crMaxDate" required />
               </label>
               <label class="cr-form__field">
                 <span>{{ 'catchReport.photo' | transloco }}</span>

@@ -77,19 +77,19 @@
   </div>
 </section>
 
-@if (featured(); as f) {
-  @if (f.items.length) {
-    <section class="container section" appReveal>
-      <h2>{{ 'home.recommended' | transloco }}</h2>
-      <div class="grid grid--3">
-        @for (w of f.items; track w.id; let i = $index) {
-          <div [appReveal]="i * 70">
-            <app-water-card [water]="w" [priority]="$first" />
-          </div>
-        }
-      </div>
-    </section>
-  }
+@if (featured().length) {
+  <section class="container section" appReveal>
+    <h2>{{ recHeading() | transloco }}</h2>
+    <div class="grid grid--3">
+      @for (w of featured(); track w.id; let i = $index) {
+        <div [appReveal]="i * 70">
+          <!-- `priority` follows the first card through any geolocation swap so
+               NgOptimizedImage never flags an unprioritized late LCP image. -->
+          <app-water-card [water]="w" [distanceKm]="w.distanceKm ?? null" [priority]="$first" />
+        </div>
+      }
+    </div>
+  </section>
 }
 
 <section class="container section" appReveal>

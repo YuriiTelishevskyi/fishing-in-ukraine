@@ -18,6 +18,7 @@
   "premium": { "badge": "Premium" },
   "home": {
     "recommended": "Recommended",
+    "recommendedNear": "Near you",
     "regions": "Waters by region",
     "fishTitle": "What are we catching?",
     "ctaTitle": "Own a fishing spot?",

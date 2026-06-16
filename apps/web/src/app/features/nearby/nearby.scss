@@ -1,5 +1,11 @@
 .nearby-hero {
-  background: linear-gradient(135deg, #0b1b22 0%, #04222c 100%);
+  position: relative;
+  // Solid DARK brand gradient (matches catalog/fish heroes) so the white
+  // sticky header (logo + nav) stays legible above it. Layered radial accents
+  // mirror the home hero; the base linear gradient guarantees a dark fallback.
+  background:
+    radial-gradient(900px 380px at 80% -20%, rgba(14, 116, 144, 0.45), transparent 60%),
+    linear-gradient(135deg, #0b1b22 0%, var(--hero-from, #04222c) 55%, var(--hero-to, #0a4a5c) 100%);
   color: #fff;
   padding: 64px 0 48px;
   h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 0; }

@@ -18,6 +18,7 @@
   "premium": { "badge": "Преміум" },
   "home": {
     "recommended": "Рекомендовані",
+    "recommendedNear": "Поряд з вами",
     "regions": "Водойми за областями",
     "fishTitle": "Кого ловимо?",
     "ctaTitle": "Маєш власну водойму?",

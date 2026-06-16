@@ -152,17 +152,26 @@
     <main class="catalog-main">
       @if (store.loading()) {
         <div class="grid grid--3">
-          <div class="skeleton" style="aspect-ratio: 16/10"></div>
-          <div class="skeleton" style="aspect-ratio: 16/10"></div>
-          <div class="skeleton" style="aspect-ratio: 16/10"></div>
-          <div class="skeleton" style="aspect-ratio: 16/10"></div>
-          <div class="skeleton" style="aspect-ratio: 16/10"></div>
-          <div class="skeleton" style="aspect-ratio: 16/10"></div>
+          @for (n of skeletonSlots; track n) {
+            <div class="skeleton-card" aria-hidden="true">
+              <div class="skeleton skeleton-card__media"></div>
+              <div class="skeleton-card__body">
+                <div class="skeleton skeleton-card__line skeleton-card__line--title"></div>
+                <div class="skeleton skeleton-card__line skeleton-card__line--sub"></div>
+                <div class="skeleton-card__chips">
+                  <div class="skeleton skeleton-card__chip"></div>
+                  <div class="skeleton skeleton-card__chip"></div>
+                </div>
+              </div>
+            </div>
+          }
         </div>
       } @else if (store.result()?.items?.length) {
         <div class="grid grid--3">
-          @for (w of store.result()!.items; track w.id) {
-            <app-water-card [water]="w" />
+          @for (w of store.result()!.items; track w.id; let i = $index) {
+            <div [appReveal]="i * 50">
+              <app-water-card [water]="w" />
+            </div>
           }
         </div>
       } @else {

@@ -3,7 +3,11 @@
     @if (water().coverCardUrl) {
       <img [ngSrc]="water().coverCardUrl!" fill [alt]="water().name" [priority]="priority()" />
     } @else {
-      <div class="wcard__placeholder">🐟</div>
+      <app-water-placeholder
+        class="wcard__placeholder"
+        [type]="water().waterType"
+        [seed]="water().slug"
+      />
     }
     @if (water().isPremium) {
       <span class="badge-premium wcard__premium">⭐ {{ 'premium.badge' | transloco }}</span>

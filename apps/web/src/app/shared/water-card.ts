@@ -4,10 +4,11 @@ import { RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { WaterListItemDto } from '@fishing/shared';
 import { LocaleService } from '../core/locale.service';
+import { WaterPlaceholder } from './water-placeholder';
 
 @Component({
   selector: 'app-water-card',
-  imports: [RouterLink, NgOptimizedImage, TranslocoPipe],
+  imports: [RouterLink, NgOptimizedImage, TranslocoPipe, WaterPlaceholder],
   templateUrl: './water-card.html',
   styleUrl: './water-card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

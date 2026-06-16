@@ -14,11 +14,12 @@ import { Header } from '../../layout/header';
 import { Breadcrumbs } from '../../shared/breadcrumbs';
 import { Pager } from '../../shared/pager';
 import { WaterCard } from '../../shared/water-card';
+import { RevealDirective } from '../../shared/reveal.directive';
 import { CatalogStore } from './catalog.store';
 
 @Component({
   selector: 'app-catalog',
-  imports: [Header, Footer, TranslocoPipe, WaterCard, Pager, Breadcrumbs, FormsModule],
+  imports: [Header, Footer, TranslocoPipe, WaterCard, Pager, Breadcrumbs, FormsModule, RevealDirective],
   providers: [CatalogStore],
   templateUrl: './catalog.html',
   styleUrl: './catalog.scss',
@@ -39,6 +40,8 @@ export class CatalogPage {
   readonly amenityList = toSignal(this.api.amenities(), { initialValue: [] });
   readonly types = WATER_TYPES;
   readonly typeLabels = WATER_TYPE_LABELS;
+  /** Placeholder slots for the loading skeleton grid. */
+  readonly skeletonSlots = [0, 1, 2, 3, 4, 5];
 
   readonly pair = computed(() => {
     const slug = this.route.snapshot.paramMap.get('regionSlug');

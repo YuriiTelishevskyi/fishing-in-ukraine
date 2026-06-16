@@ -50,21 +50,23 @@
     border-radius: var(--radius);
     overflow: hidden;
     background: linear-gradient(135deg, #d7ecf1, #b8dde7);
+    box-shadow: var(--shadow-md);
 
     img {
       object-fit: cover;
     }
 
     &--placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: none;
+
+      app-water-placeholder {
+        position: absolute;
+        inset: 0;
+      }
     }
   }
 
-  &__placeholder {
-    font-size: 4rem;
-  }
+  // &__overlay / &__region styles live in global styles.scss (budget).
 
   &__thumbs {
     display: flex;
@@ -108,16 +110,11 @@
   }
 }
 
-// Content sections
+// Content sections — header/icon/prose styles live in global styles.scss
+// (moved there to keep this component under its SCSS budget).
 .detail-section {
-  margin-bottom: 32px;
-
-  &__title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: var(--ink);
-  }
+  margin-bottom: 36px;
+  &--prose { margin-bottom: 28px; }
 }
 
 .pre-line {
@@ -156,71 +153,7 @@
   }
 }
 
-.aside-card {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
-  &__price {
-    .price-main {
-      font: 700 1.6rem var(--font-head);
-      color: var(--ink);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .price-free {
-      font: 700 1.8rem var(--font-head);
-      color: var(--success);
-    }
-
-    .price-note {
-      font: 400 0.85rem var(--font-body);
-    }
-  }
-
-  &__verified {
-    display: flex;
-  }
-
-  &__row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  &__meta {
-    justify-content: space-between;
-    font-size: 0.9rem;
-  }
-
-  &__contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    border-top: 1px solid var(--line);
-    padding-top: 16px;
-  }
-
-  &__contacts-title {
-    font: 600 0.78rem var(--font-body);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 4px;
-  }
-
-  &__contact-link {
-    color: var(--primary);
-    font-size: 0.92rem;
-    word-break: break-all;
-
-    &:hover {
-      color: var(--primary-hover);
-    }
-  }
-}
+// .aside-card styles live in global styles.scss (kept this component under budget).
 
 // Reviews
 .reviews-summary { display: flex; align-items: center; gap: 10px; margin-bottom: 20px;

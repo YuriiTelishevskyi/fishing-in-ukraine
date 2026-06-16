@@ -1,4 +1,6 @@
 import { PrismaClient } from '@prisma/client';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 const prisma = new PrismaClient();
 
@@ -678,6 +680,105 @@ async function seedRealWaters() {
   console.log(`Real Lviv waters seeded: ${allWaters.length} (${REAL_LVIV_WATERS.length} lakes/ponds/complexes + ${REAL_LVIV_RIVER_WATERS.length} river stretches).`);
 }
 
+interface RegionWater {
+  slug: string;
+  regionSlug: string;
+  name: string;
+  nameEn: string;
+  description: string;
+  descriptionEn: string;
+  district: string;
+  lat: number;
+  lng: number;
+  waterType: WaterTypeLiteral;
+  isPaid: boolean;
+  priceNote: string | null;
+  priceNoteEn: string | null;
+  fishSlugs: string[];
+  amenitySlugs: string[];
+}
+
+async function seedRegionWaters() {
+  const raw = readFileSync(join(__dirname, 'data', 'regions-waters.json'), 'utf8');
+  const data = JSON.parse(raw) as { waters: RegionWater[] };
+
+  const regions = await prisma.region.findMany();
+  const fishSpecies = await prisma.fishSpecies.findMany();
+  const amenities = await prisma.amenity.findMany();
+
+  const regionIdBySlug = new Map(regions.map((r) => [r.slug, r.id]));
+  const fishIdBySlug = new Map(fishSpecies.map((f) => [f.slug, f.id]));
+  const amenityIdBySlug = new Map(amenities.map((a) => [a.slug, a.id]));
+
+  let count = 0;
+  for (const w of data.waters) {
+    const regionId = regionIdBySlug.get(w.regionSlug);
+    if (regionId == null) {
+      console.warn(`[seedRegionWaters] ${w.slug}: unknown regionSlug "${w.regionSlug}" — skipped`);
+      continue;
+    }
+
+    const fishIds: number[] = [];
+    for (const slug of w.fishSlugs) {
+      const id = fishIdBySlug.get(slug);
+      if (id == null) {
+        console.warn(`[seedRegionWaters] ${w.slug}: unknown fish slug "${slug}" — skipped`);
+        continue;
+      }
+      fishIds.push(id);
+    }
+
+    const amenityIds: number[] = [];
+    for (const slug of w.amenitySlugs) {
+      const id = amenityIdBySlug.get(slug);
+      if (id == null) {
+        console.warn(`[seedRegionWaters] ${w.slug}: unknown amenity slug "${slug}" — skipped`);
+        continue;
+      }
+      amenityIds.push(id);
+    }
+
+    const scalar = {
+      name: w.name,
+      nameEn: w.nameEn,
+      description: w.description,
+      descriptionEn: w.descriptionEn,
+      regionId,
+      district: w.district ?? null,
+      lat: w.lat,
+      lng: w.lng,
+      waterType: w.waterType,
+      isPaid: w.isPaid,
+      priceFrom: null,
+      priceTo: null,
+      priceNote: w.priceNote ?? null,
+      priceNoteEn: w.priceNoteEn ?? null,
+      status: 'PUBLISHED' as const,
+      verified: true,
+      isPremium: false,
+      riverId: null,
+    };
+
+    await prisma.water.upsert({
+      where: { slug: w.slug },
+      update: {
+        ...scalar,
+        fish: { deleteMany: {}, create: fishIds.map((fishId) => ({ fishId })) },
+        amenities: { deleteMany: {}, create: amenityIds.map((amenityId) => ({ amenityId })) },
+      },
+      create: {
+        slug: w.slug,
+        ...scalar,
+        fish: { create: fishIds.map((fishId) => ({ fishId })) },
+        amenities: { create: amenityIds.map((amenityId) => ({ amenityId })) },
+      },
+    });
+    count++;
+  }
+
+  console.log(`Region waters seeded: ${count}.`);
+}
+
 async function seedDemoArticles() {
   const slug = 'yak-vybraty-platnu-vodoymu-7-porad';
   await prisma.article.upsert({
@@ -893,6 +994,8 @@ async function main() {
   await seedDictionaries();
   // Always-on base data: real verified Lviv-oblast waters.
   await seedRealWaters();
+  // Always-on base data: 87 verified waters across 22 other oblasts.
+  await seedRegionWaters();
   if (process.env.SEED_DEMO === '1') {
     await seedDemoArticles();
     await seedDemoReviews();

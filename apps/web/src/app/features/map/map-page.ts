@@ -171,7 +171,10 @@ export class MapPage {
     }
 
     // ── Region bubbles (one per oblast, shown when zoomed out) ──
-    const regionNames = new Map(this.regions().map((r) => [r.slug, r.name]));
+    // If the regions signal hasn't resolved yet (cold load), await the fetch so a
+    // bubble never briefly shows a raw slug instead of the localized oblast name.
+    const regionList = this.regions().length ? this.regions() : await firstValueFrom(this.api.regions());
+    const regionNames = new Map(regionList.map((r) => [r.slug, r.name]));
     const groups = this.groupByRegion(pins, regionNames);
     this.bubbleLayer = L.layerGroup();
     for (const g of groups) {

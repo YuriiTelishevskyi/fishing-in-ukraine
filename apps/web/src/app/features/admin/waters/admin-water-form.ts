@@ -3,8 +3,8 @@ import { isPlatformBrowser } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { forkJoin } from 'rxjs';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
+import { Subject, catchError, debounceTime, distinctUntilChanged, forkJoin, from, of, switchMap } from 'rxjs';
 import { AmenityDto, FishSpeciesDto, MediaDto, RegionDto, WaterDetailDto, WATER_TYPES, WATER_TYPE_LABELS, WaterType } from '@fishing/shared';
 import { Select } from 'primeng/select';
 import { MultiSelect } from 'primeng/multiselect';
@@ -21,6 +21,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { AdminApiService } from '../core/admin-api.service';
 import { ApiService } from '../../../core/api.service';
 import { createMapPin } from '../../../shared/map-pin';
+import { GeoResult, geocodePlaces } from '../../../shared/geocode';
 
 function websiteValidator(control: AbstractControl) {
   const v = control.value as string;
@@ -74,6 +75,13 @@ export class AdminWaterForm {
   readonly statusUpdating = signal(false);
   readonly media = signal<MediaDto[]>([]);
   readonly uploading = signal(false);
+
+  // Place-search (geocoding) signals
+  readonly searchQuery = signal('');
+  readonly searchResults = signal<GeoResult[]>([]);
+  readonly searching = signal(false);
+  readonly searchOpen = signal(false);
+  private readonly searchInput$ = new Subject<string>();
 
   readonly regions = toSignal(this.publicApi.regions(), { initialValue: [] as RegionDto[] });
   readonly fishList = toSignal(this.publicApi.fishSpecies(), { initialValue: [] as FishSpeciesDto[] });
@@ -137,6 +145,30 @@ export class AdminWaterForm {
       this.mapMounted = true; // set BEFORE scheduling so the effect never re-enters
       afterNextRender(() => this.mountMap(), { injector: this.injector });
     });
+
+    // Debounced place-search. The Subject only emits on user input, so this
+    // never fires during SSR/construction; geocodePlaces runs browser-only.
+    // Admin UI is UA-only, so we always geocode in Ukrainian.
+    this.searchInput$
+      .pipe(
+        debounceTime(450),
+        distinctUntilChanged(),
+        switchMap((q) => {
+          if (q.trim().length < 3) {
+            this.searchResults.set([]);
+            this.searching.set(false);
+            return of([] as GeoResult[]);
+          }
+          this.searching.set(true);
+          return from(geocodePlaces(q, 'uk')).pipe(catchError(() => of([] as GeoResult[])));
+        }),
+        takeUntilDestroyed(),
+      )
+      .subscribe((results) => {
+        this.searchResults.set(results);
+        this.searching.set(false);
+        this.searchOpen.set(true);
+      });
 
     if (this.id) {
       forkJoin({
@@ -235,6 +267,24 @@ export class AdminWaterForm {
       this.leafletMarker.remove();
     }
     this.leafletMarker = this.L.marker([lat, lng], { icon: createMapPin(this.L, 'accent') }).addTo(this.leafletMap);
+  }
+
+  // --- Place search (geocoding) ---
+
+  onSearchInput(value: string) {
+    this.searchQuery.set(value);
+    this.searchInput$.next(value);
+  }
+
+  chooseResult(r: GeoResult) {
+    this.leafletMap?.setView([r.lat, r.lng], 13);
+    const lat = +r.lat.toFixed(6);
+    const lng = +r.lng.toFixed(6);
+    this.setMarker(lat, lng);
+    this.form.patchValue({ lat, lng });
+    this.searchOpen.set(false);
+    this.searchResults.set([]);
+    this.searchQuery.set(r.label);
   }
 
   get isPaid() {

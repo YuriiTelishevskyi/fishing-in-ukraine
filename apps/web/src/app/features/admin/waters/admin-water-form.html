@@ -208,6 +208,30 @@
         </div>
       </div>
 
+      <div class="awf__search">
+        <input
+          pInputText
+          type="text"
+          class="awf__input"
+          [value]="searchQuery()"
+          (input)="onSearchInput($any($event.target).value)"
+          placeholder="Пошук місця (село, місто…)"
+          autocomplete="off"
+        />
+        @if (searching()) {
+          <div class="awf__search-status">Пошук…</div>
+        } @else if (searchOpen() && searchResults().length) {
+          <ul class="awf__search-results">
+            @for (r of searchResults(); track r.lat + ',' + r.lng) {
+              <li><button type="button" (click)="chooseResult(r)">{{ r.label }}</button></li>
+            }
+          </ul>
+        } @else if (searchOpen() && !searching() && searchQuery().trim().length >= 3 && !searchResults().length) {
+          <div class="awf__search-status">Нічого не знайдено</div>
+        }
+        <small class="awf__map-hint">Пошук: OpenStreetMap</small>
+      </div>
+
       <div #pickMap class="awf__map"></div>
       <small class="awf__map-hint">Клікніть на карту, щоб вибрати місце розташування</small>
     </div>

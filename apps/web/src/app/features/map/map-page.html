@@ -36,7 +36,32 @@
     </div>
   }
 
-  <div #map class="mappage__map" [class.mappage__map--adding]="adding()"></div>
+  <div class="mappage__map-wrap">
+    <div class="mappage__search">
+      <input
+        type="text"
+        class="mappage__search-input"
+        [value]="searchQuery()"
+        (input)="onSearchInput($any($event.target).value)"
+        [placeholder]="'spots.searchPlaceholder' | transloco"
+        autocomplete="off"
+      >
+      @if (searching()) {
+        <div class="mappage__search-status">{{ 'spots.searching' | transloco }}</div>
+      } @else if (searchOpen() && searchResults().length) {
+        <ul class="mappage__search-results">
+          @for (r of searchResults(); track r.lat + ',' + r.lng) {
+            <li><button type="button" (click)="chooseResult(r)">{{ r.label }}</button></li>
+          }
+        </ul>
+      } @else if (searchOpen() && !searching() && searchQuery().trim().length >= 3 && !searchResults().length) {
+        <div class="mappage__search-status">{{ 'spots.noResults' | transloco }}</div>
+      }
+      <div class="mappage__search-attr">OpenStreetMap</div>
+    </div>
+
+    <div #map class="mappage__map" [class.mappage__map--adding]="adding()"></div>
+  </div>
 
   @if (formSuccess()) {
     <div class="mappage__panel">

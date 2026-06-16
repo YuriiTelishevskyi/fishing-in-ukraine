@@ -17,20 +17,16 @@
   <div class="bite-picker card">
     <div class="bite-picker__row">
       <div class="bite-picker__select-wrap">
-        <label class="bite-picker__label" for="water-select">{{ 'bite.pickWater' | transloco }}</label>
+        <label class="bite-picker__label" id="water-select-label">{{ 'bite.pickWater' | transloco }}</label>
         @if (watersList(); as list) {
-          <select
-            id="water-select"
-            class="bite-picker__select"
+          <app-searchable-select
+            [options]="waterSelectOptions"
             [value]="selectedIndex()"
-            (change)="onWaterChange($event)"
-          >
-            @for (opt of waterOptions; track $index) {
-              <option [value]="$index">{{ opt.name }}</option>
-            }
-          </select>
+            [placeholder]="'bite.searchWater' | transloco"
+            (valueChange)="onWaterPicked($event)"
+          />
         } @else {
-          <select id="water-select" class="bite-picker__select" disabled>
+          <select class="bite-picker__select" disabled>
             <option>...</option>
           </select>
         }

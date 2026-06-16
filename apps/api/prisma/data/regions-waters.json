@@ -1,0 +1,2229 @@
+{
+  "_note": "75 verified waters across 22 oblasts (research workflow 2026-06-16). Seeded by seedRealWaters() merge. Coords in-bounds; fish/amenity slugs validated.",
+  "waters": [
+    {
+      "slug": "ladyzhynske-vodoskhovyshche",
+      "regionSlug": "vinnytska-oblast",
+      "name": "Ладижинське водосховище",
+      "nameEn": "Ladyzhyn Reservoir",
+      "description": "Найбільше водосховище на річці Південний Буг, створене 1964 року як водойма-охолоджувач Ладижинської ТЕС. Площа близько 20,8 км², довжина 45 км, максимальна глибина біля греблі сягає 17,8 м. Іхтіофауна налічує понад 50 видів риб; рибалка вільна (безкоштовна).",
+      "descriptionEn": "The largest reservoir on the Southern Bug River, created in 1964 as a cooling pond for the Ladyzhyn Thermal Power Station. It covers about 20.8 km², is 45 km long, and reaches a maximum depth of 17.8 m near the dam. Its ichthyofauna includes over 50 fish species, and fishing here is free.",
+      "district": "Гайсинський / Тульчинський район",
+      "lat": 48.7255,
+      "lng": 29.1364,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "som",
+        "sudak",
+        "lyashch",
+        "okun"
+      ],
+      "amenitySlugs": [
+        "chovny",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "pivdennyi-buh-sabarivske-vodoskhovyshche-vinnytsia",
+      "regionSlug": "vinnytska-oblast",
+      "name": "Південний Буг (Сабарівське водосховище, Вінниця)",
+      "nameEn": "Southern Bug River (Sabariv Reservoir, Vinnytsia)",
+      "description": "Ділянка річки Південний Буг у межах міста Вінниця в районі Сабарівського водосховища. Глибини сягають близько 5 м, дно кам'янисте з порожистими мілинами, що приваблює спінінгистів. Популярне міське місце вільної риболовлі на судака, окуня, щуку та головня.",
+      "descriptionEn": "A stretch of the Southern Bug River within the city of Vinnytsia near the Sabariv Reservoir. Depths reach about 5 m with a rocky bottom and shallows, making it attractive for spin anglers. It is a popular free urban fishing spot for zander, perch, pike and chub.",
+      "district": "Вінницький район",
+      "lat": 49.2161,
+      "lng": 28.4685,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "sudak",
+        "okun",
+        "shchuka",
+        "holoven",
+        "lyashch"
+      ],
+      "amenitySlugs": [
+        "chovny",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "klub-sportyvnoho-rybalstva-akvamaryn-nekrasove",
+      "regionSlug": "vinnytska-oblast",
+      "name": "Клуб спортивного рибальства «Аквамарин» (Некрасове)",
+      "nameEn": "Aquamarine Sport Fishing Club (Nekrasove)",
+      "description": "Платний клуб спортивної риболовлі біля села Некрасове під Вінницею, що спеціалізується на ловлі форелі та осетра. Форель ловлять у холодний сезон (жовтень–квітень), осетра — влітку (травень–вересень). На території є альтанки, прокат снастей і мангалів, місця для відпочинку родиною та проведення турнірів.",
+      "descriptionEn": "A paid sport-fishing club near the village of Nekrasove outside Vinnytsia, specializing in trout and sturgeon angling. Trout is caught in the cold season (October-April) and sturgeon in summer (May-September). The site offers gazebos, tackle and grill rental, and areas for family outings and tournaments.",
+      "district": "Вінницький район",
+      "lat": 49.1932,
+      "lng": 28.2112,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Форелева спортивна рибалка ~800 грн/день; щука/короп ~250 грн/добу; діти та жінки ~150 грн. Викуп улову: форель 250 грн/кг, короп 150 грн/кг, осетер 400 грн/кг.",
+      "priceNoteEn": "Trout sport fishing ~800 UAH/day; pike/carp ~250 UAH/day; children and women ~150 UAH. Catch buy-out: trout 250 UAH/kg, carp 150 UAH/kg, sturgeon 400 UAH/kg.",
+      "fishSlugs": [
+        "forel",
+        "korop",
+        "shchuka",
+        "osetr",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "prokat-snastei",
+        "nochivlia",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "dnister-bilia-mohyleva-podilskoho",
+      "regionSlug": "vinnytska-oblast",
+      "name": "Дністер біля Могилева-Подільського",
+      "nameEn": "Dniester River near Mohyliv-Podilskyi",
+      "description": "Ділянка річки Дністер у районі міста Могилів-Подільський, що утворює південну межу Вінницької області. Середня течія Дністра багата на рибу: тут водяться судак, сом, головень, жерех, підуст, рибець та лящ. Одна з найчистіших і найживописніших річок України з різноманітним рельєфом дна, зручним для спінінгу та фідера.",
+      "descriptionEn": "A stretch of the Dniester River around the city of Mohyliv-Podilskyi, which forms the southern border of Vinnytsia Oblast. The middle Dniester is rich in fish, including zander, catfish, chub, asp, nase, vimba and bream. It is one of Ukraine's cleanest and most scenic rivers, with a varied bottom relief suited to spin and feeder fishing.",
+      "district": "Могилів-Подільський район",
+      "lat": 48.455,
+      "lng": 27.8081,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "sudak",
+        "som",
+        "holoven",
+        "zherekh",
+        "lyashch"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "ozero-svitiaz",
+      "regionSlug": "volynska-oblast",
+      "name": "Озеро Світязь",
+      "nameEn": "Lake Svitiaz",
+      "description": "Найбільше і найглибше природне озеро України (площа близько 2622 га, максимальна глибина 58,4 м), розташоване в межах Шацького національного природного парку. Озеро карстового походження з прозорою водою; іхтіофауна включає ляща, коропа, сома, окуня, плітку, лина та вугра. Риболовля безкоштовна, ловити можна цілодобово.",
+      "descriptionEn": "Ukraine's largest and deepest natural lake (about 2,622 hectares, max depth 58.4 m), located within Shatsk National Nature Park. A karst-origin lake with clear water; its fish fauna includes bream, carp, catfish, perch, roach, tench and eel. Fishing is free and available around the clock.",
+      "district": "Шацька громада, Ковельський район",
+      "lat": 51.4324,
+      "lng": 23.819,
+      "waterType": "LAKE",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "lyashch",
+        "korop",
+        "som",
+        "okun",
+        "plitka"
+      ],
+      "amenitySlugs": [
+        "nochivlia",
+        "chovny",
+        "parkovka",
+        "kafe"
+      ]
+    },
+    {
+      "slug": "ozero-pulemetske",
+      "regionSlug": "volynska-oblast",
+      "name": "Озеро Пулемецьке",
+      "nameEn": "Lake Pulemetske",
+      "description": "Велике карстове озеро Шацької групи (площа близько 1568 га, максимальна глибина 19,2 м), розташоване на північний захід від Світязя між селами Пульмо і Пулемець. В озері мешкає понад 20 видів риб, серед яких щука, лящ, судак, карась, плітка, краснопірка та лин. Риболовля безкоштовна.",
+      "descriptionEn": "A large karst lake of the Shatsk group (about 1,568 hectares, max depth 19.2 m), located northwest of Svitiaz between the villages of Pulmo and Pulemets. The lake holds over 20 fish species, including pike, bream, zander, crucian carp, roach, rudd and tench. Fishing is free.",
+      "district": "Шацька громада, Ковельський район",
+      "lat": 51.5993,
+      "lng": 23.7401,
+      "waterType": "LAKE",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "lyashch",
+        "sudak",
+        "karas",
+        "plitka"
+      ],
+      "amenitySlugs": [
+        "nochivlia",
+        "chovny",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "zatoka-richky-styr-lutsk",
+      "regionSlug": "volynska-oblast",
+      "name": "Затока річки Стир (Луцьк)",
+      "nameEn": "Styr River Bay (Lutsk)",
+      "description": "Затока річки Стир у межах міста Луцьк, популярне серед місцевих рибалок місце. Тут ловлять щуку, судака та окуня, переважно на спінінг; влітку затока сильно заростає і міліє. Риболовля безкоштовна.",
+      "descriptionEn": "A bay of the Styr River within the city of Lutsk, a popular spot among local anglers. Pike, zander and perch are caught here, mostly by spinning; in summer the bay becomes heavily overgrown and shallow. Fishing is free.",
+      "district": "Луцький район",
+      "lat": 50.7476,
+      "lng": 25.3053,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "okun",
+        "plitka",
+        "lyashch"
+      ],
+      "amenitySlugs": [
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "stavok-u-boholiubakh-u-svitlany",
+      "regionSlug": "volynska-oblast",
+      "name": "Ставок у Боголюбах (у Світлани)",
+      "nameEn": "Boholyuby Pond (Svitlana's)",
+      "description": "Платний ставок площею близько 24 га біля села Боголюби, за приблизно 10 км від Луцька, відомий серед рибалок як ставок «у Світлани». Зариблений коропом, білим амуром, товстолобом, карасем та лящем; облаштовані альтанки, є прокат снастей і човнів. Риболовля платна за добовими тарифами.",
+      "descriptionEn": "A paid pond of about 24 hectares near the village of Boholyuby, roughly 10 km from Lutsk, known among anglers as 'Svitlana's pond'. Stocked with carp, grass carp, silver carp, crucian carp and bream; it has gazebos and offers tackle and boat rental. Fishing is paid by daily rates.",
+      "district": "Луцький район",
+      "lat": 50.7612,
+      "lng": 25.2421,
+      "waterType": "POND",
+      "isPaid": true,
+      "priceNote": "Світла пора доби 150 грн, доба 280 грн, нічна риболовля 180 грн; норма вилову 6 кг, до 3 вудок",
+      "priceNoteEn": "Daytime 150 UAH, full day 280 UAH, night fishing 180 UAH; catch limit 6 kg, up to 3 rods",
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur",
+        "karas",
+        "lyashch",
+        "tovstolob"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "chovny",
+        "prokat-snastei",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "dniprovske-vodoskhovyshche",
+      "regionSlug": "dnipropetrovska-oblast",
+      "name": "Дніпровське водосховище",
+      "nameEn": "Dniprovske Reservoir",
+      "description": "Велике водосховище на Дніпрі, утворене греблею Дніпровської ГЕС у 1932 році; площа близько 410 км², середня глибина 8,2 м. Верхня (річкова) частина проходить через Дніпропетровську область від Кам'янського до міста Дніпро. Популярне місце аматорської риболовлі, де ловлять коропа, щуку, судака, сома та ляща.",
+      "descriptionEn": "A large reservoir on the Dnipro River, formed by the Dnipro HPP dam in 1932; area about 410 km² with an average depth of 8.2 m. Its upper (river) section runs through Dnipropetrovsk Oblast from Kamianske down to the city of Dnipro. A popular amateur fishing spot for carp, pike, zander, catfish and bream.",
+      "district": "Дніпровський район",
+      "lat": 48.3843,
+      "lng": 35.1432,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "korop",
+        "shchuka",
+        "sudak",
+        "som",
+        "lyashch"
+      ],
+      "amenitySlugs": [
+        "chovny",
+        "parkovka",
+        "nochivlia"
+      ]
+    },
+    {
+      "slug": "kamianske-vodoskhovyshche",
+      "regionSlug": "dnipropetrovska-oblast",
+      "name": "Кам'янське водосховище",
+      "nameEn": "Kamianske Reservoir",
+      "description": "Водосховище у каскаді Дніпра, створене у 1963–1964 роках греблею Середньодніпровської ГЕС; площа близько 567 км², максимальна глибина до 14 м. Розташоване на межі Кіровоградської, Полтавської та Дніпропетровської областей. У водоймі мешкає близько 30 видів риб, серед них лящ, щука, судак, сом та плітка.",
+      "descriptionEn": "A reservoir in the Dnipro cascade, created in 1963–1964 by the Seredniodniprovska HPP dam; area about 567 km² with a maximum depth of up to 14 m. It spans the borders of Kirovohrad, Poltava and Dnipropetrovsk oblasts. The water holds around 30 fish species, including bream, pike, zander, catfish and roach.",
+      "district": "Кам'янський район",
+      "lat": 48.8,
+      "lng": 34.1,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "lyashch",
+        "shchuka",
+        "sudak",
+        "som",
+        "plitka"
+      ],
+      "amenitySlugs": [
+        "chovny",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "richka-samara",
+      "regionSlug": "dnipropetrovska-oblast",
+      "name": "Річка Самара",
+      "nameEn": "Samara River",
+      "description": "Ліва притока Дніпра завдовжки понад 300 км, що тече через Новомосковський та Павлоградський райони й впадає в Дніпровське водосховище у межах міста Дніпро. Багата на рибу: добре ловляться короп, карась, плітка, краснопірка, щука та окунь, рідше — сом, судак і лящ.",
+      "descriptionEn": "A left tributary of the Dnipro over 300 km long, flowing through Novomoskovsk and Pavlohrad districts and emptying into the Dnipro Reservoir within the city of Dnipro. Rich in fish: carp, crucian carp, roach, rudd, pike and perch bite well, with catfish, zander and bream less common.",
+      "district": "Новомосковський район",
+      "lat": 48.4808,
+      "lng": 35.1536,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "shchuka",
+        "okun",
+        "lyashch"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "karpova-zaplava",
+      "regionSlug": "dnipropetrovska-oblast",
+      "name": "Карпова заплава",
+      "nameEn": "Karpova Zaplava",
+      "description": "Платний рибальський ставок площею близько 12 га і глибиною до 5 м поблизу Верхівцевого. У водоймі водяться короп, карась, білий амур, товстолоб та лящ; риболовля доступна цілодобово. На території є альтанки, місця для кемпінгу, мангали та паркування.",
+      "descriptionEn": "A paid fishing pond of about 12 ha and up to 5 m deep near Verkhivtseve. The water holds carp, crucian carp, grass carp, silver carp and bream; fishing is available around the clock. The site offers pavilions, camping spots, BBQ areas and parking.",
+      "district": "Кам'янський район",
+      "lat": 48.4657,
+      "lng": 34.2525,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Денна путівка від 200 грн (включає 2 кг живої риби); понад норму короп/карась 25 грн/кг. Альтанки 100–200 грн/добу.",
+      "priceNoteEn": "Day permit from 200 UAH (includes 2 kg of live fish); carp/crucian over the limit charged at 25 UAH/kg. Pavilions 100–200 UAH/day.",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "bilyi-amur",
+        "tovstolob",
+        "lyashch"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "parkovka",
+        "nochivlia"
+      ]
+    },
+    {
+      "slug": "denyshivske-vodoskhovyshche-teterivske",
+      "regionSlug": "zhytomyrska-oblast",
+      "name": "Денишівське водосховище (Тетерівське)",
+      "nameEn": "Denyshi Reservoir (Teteriv)",
+      "description": "Водосховище площею близько 255 га на річці Тетерів біля села Дениші, утворене дамбою заввишки близько 25 м серед мальовничих скелястих берегів. Популярне місце для риболовлі з берега та човна; ловляться щука, окунь, плітка, лящ і лин. Розташоване приблизно за 20 км від Житомира.",
+      "descriptionEn": "A reservoir of about 255 ha on the Teteriv River near the village of Denyshi, formed by a dam roughly 25 m high amid scenic rocky banks. A popular spot for shore and boat fishing, with pike, perch, roach, bream and tench. Located about 20 km from Zhytomyr.",
+      "district": "Житомирський район",
+      "lat": 50.2153,
+      "lng": 28.4078,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "okun",
+        "plitka",
+        "lyashch",
+        "lyn"
+      ],
+      "amenitySlugs": [
+        "chovny",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "richka-teteriv-zhytomyr",
+      "regionSlug": "zhytomyrska-oblast",
+      "name": "Річка Тетерів (Житомир)",
+      "nameEn": "Teteriv River (Zhytomyr)",
+      "description": "Тетерів — найбільша водна артерія Житомира і права притока Дніпра завдовжки близько 385 км. У межах міста та поблизу нього річка має скелясті береги, перекати й глибокі ділянки, що приваблюють рибалок як з берега, так і з човна. Безкоштовна риболовля на щуку, окуня, ляща, коропа та білу рибу.",
+      "descriptionEn": "The Teteriv is Zhytomyr's largest river and a right tributary of the Dnipro, about 385 km long. In and near the city it has rocky banks, rapids and deeper stretches that attract anglers fishing both from shore and by boat. Free fishing for pike, perch, bream, carp and other white fish.",
+      "district": "Житомирський район",
+      "lat": 50.2327,
+      "lng": 28.6067,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "okun",
+        "lyashch",
+        "korop",
+        "plitka"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "tsariv-khutir",
+      "regionSlug": "zhytomyrska-oblast",
+      "name": "Царів Хутір",
+      "nameEn": "Tsariv Khutir",
+      "description": "Комплекс сімейного відпочинку з платними ставками біля села Царівка на 92 км траси Київ–Чоп. Облаштовані дерев'яні вимостки-сектори для риболовлі; у воді короп, щука, судак, білий амур, товстолоб, лин та інші види. На базі є будиночки, еко-намети з електрикою, кафе, басейн, прокат снастей і човнів, душ і туалети.",
+      "descriptionEn": "A family recreation complex with paid ponds near the village of Tsarivka at the 92 km mark of the Kyiv-Chop highway. Wooden fishing platforms equip each sector; the water holds carp, pike, zander, grass carp, silver carp, tench and other species. The base offers cottages, eco-tents with electricity, a cafe, a swimming pool, tackle and boat rental, showers and toilets.",
+      "district": "Коростишівський район",
+      "lat": 50.3211,
+      "lng": 29.2675,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Риболовля від 200 грн (день) до 500-650 грн/доба; гостям 50 грн. Діє принцип спіймав-відпустив.",
+      "priceNoteEn": "Fishing from 200 UAH (daytime) up to 500-650 UAH per 24 hours; guests 50 UAH. Catch-and-release principle applies.",
+      "fishSlugs": [
+        "korop",
+        "shchuka",
+        "sudak",
+        "bilyi-amur",
+        "tovstolob"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "chovny",
+        "parkovka",
+        "kafe",
+        "prokat-snastei",
+        "tualet",
+        "dush",
+        "elektryka"
+      ]
+    },
+    {
+      "slug": "teteriv-bilia-korchaka",
+      "regionSlug": "zhytomyrska-oblast",
+      "name": "Тетерів біля Корчака",
+      "nameEn": "Teteriv River near Korchak",
+      "description": "Ділянка річки Тетерів біля села Корчак приблизно за 15 км на південний захід від Житомира. Середні глибини близько 3 м роблять місце зручним для донної та поплавцевої ловлі коропа, карася, щуки, окуня й лина. Легкодоступне з траси Н-03 Житомир–Чернівці, риболовля безкоштовна.",
+      "descriptionEn": "A stretch of the Teteriv River near the village of Korchak, about 15 km southwest of Zhytomyr. Average depths of around 3 m make it suitable for bottom and float fishing for carp, crucian carp, pike, perch and tench. Easily reached from the H-03 Zhytomyr-Chernivtsi highway; fishing is free.",
+      "district": "Житомирський район",
+      "lat": 50.117,
+      "lng": 28.301,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "shchuka",
+        "okun",
+        "lyn"
+      ],
+      "amenitySlugs": [
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "ozero-horbok",
+      "regionSlug": "zakarpatska-oblast",
+      "name": "Озеро Горбок",
+      "nameEn": "Lake Horbok",
+      "description": "Велике рівнинне озеро площею близько 100-170 га біля села Дунковиця, одне з найбільших риболовних водойм Закарпаття. Водойму зарибнюють коропом, білим амуром, карасем і товстолобом; ловлять переважно з берега на донні, поплавкові та фідерні снасті. Риболовля платна.",
+      "descriptionEn": "A large lowland lake of roughly 100-170 hectares near the village of Dunkovytsia, one of the biggest fishing waters in Zakarpattia. It is stocked with carp, grass carp, crucian carp and silver carp, and is fished mostly from the bank with bottom, float and feeder rigs. Fishing is paid.",
+      "district": "Хустський район (Іршавщина, с. Дунковиця)",
+      "lat": 48.3942,
+      "lng": 22.8574,
+      "waterType": "LAKE",
+      "isPaid": true,
+      "priceNote": "Платна аматорська риболовля, орієнтовно близько 100 грн/день",
+      "priceNoteEn": "Paid amateur fishing, roughly around 100 UAH per day",
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur",
+        "karas",
+        "tovstolob",
+        "plitka"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "vilshanske-tereble-ritske-vodoskhovyshche",
+      "regionSlug": "zakarpatska-oblast",
+      "name": "Вільшанське (Теребле-Ріцьке) водосховище",
+      "nameEn": "Vilshanske (Tereble-Ritske) Reservoir",
+      "description": "Гірське водосховище Теребле-Ріцької ГЕС біля села Вільшани, утворене на річці Теребля; протяжність понад 8-10 км, площа близько 80-160 га, глибина до 8 м. Чиста холодна вода придатна для форелі та іншої річкової риби; риболовля вільна, інфраструктура майже відсутня, доступ з боку Колочави та Вільшан.",
+      "descriptionEn": "A mountain reservoir of the Tereble-Ritska hydroelectric plant near the village of Vilshany, formed on the Tereblya River; it stretches over 8-10 km with an area of about 80-160 hectares and depths up to 8 m. The clear cold water suits trout and other river fish; fishing is free with almost no infrastructure, accessed from the Kolochava and Vilshany side.",
+      "district": "Хустський район (с. Вільшани, поблизу Колочави)",
+      "lat": 48.3821,
+      "lng": 23.6367,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "forel",
+        "plitka",
+        "okun",
+        "holoven"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "richka-tysa-irshavsko-khustskyi-vidtynok",
+      "regionSlug": "zakarpatska-oblast",
+      "name": "Річка Тиса (Іршавсько-Хустський відтинок)",
+      "nameEn": "Tysa River (Irshava-Khust stretch)",
+      "description": "Найбільша річка Закарпаття на рівнинному відтинку між Іршавою та Хустом, де русло уповільнюється й утворює затоки та старі рукави. У цих місцях ловлять щуку, судака, головня, карася та іншу білу рибу; риболовля вільна, на берегах трапляються облаштовані місця та альтанки.",
+      "descriptionEn": "The largest river of Zakarpattia on its lowland stretch between Irshava and Khust, where the channel slows and forms backwaters and old side-arms. These spots hold pike, zander, chub, crucian carp and other whitefish; fishing is free, with some prepared spots and gazebos along the banks.",
+      "district": "Хустський район",
+      "lat": 48.398,
+      "lng": 23.0136,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "holoven",
+        "karas",
+        "yorzh"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "kafe"
+      ]
+    },
+    {
+      "slug": "ozero-vita-khashchovanske",
+      "regionSlug": "zakarpatska-oblast",
+      "name": "Озеро Віта (Хащованське)",
+      "nameEn": "Lake Vita (Khashchovanske)",
+      "description": "Невелике гірське озеро (близько 5000 кв.м, глибина до 15 м) на висоті близько 800 м біля села Нижній Студений, в межах туристичного комплексу «Озеро Віта». У воді розводять райдужну форель, осетра й коропа; на території працюють готель, ресторан карпатської кухні, басейни, альтанки з мангалами та прокат. Доступ та риболовля платні.",
+      "descriptionEn": "A small mountain lake (about 5000 sq m, up to 15 m deep) at roughly 800 m elevation near the village of Nyzhnyi Studenyi, within the Lake Vita resort complex. It is stocked with rainbow trout, sturgeon and carp; the grounds include a hotel, a Carpathian-cuisine restaurant, pools, grill gazebos and rentals. Access and fishing are paid.",
+      "district": "Хустський район (с. Нижній Студений)",
+      "lat": 48.724,
+      "lng": 23.4009,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Платний вхід для негостей бази; риболовля в межах туристичного комплексу",
+      "priceNoteEn": "Paid entry for non-resort guests; fishing within the resort complex",
+      "fishSlugs": [
+        "forel",
+        "korop",
+        "osetr"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "kafe",
+        "parkovka",
+        "prokat-snastei",
+        "dush"
+      ]
+    },
+    {
+      "slug": "dniprovske-vodoskhovyshche-bilia-khortytsi",
+      "regionSlug": "zaporizka-oblast",
+      "name": "Дніпровське водосховище (біля Хортиці)",
+      "nameEn": "Dnipro Reservoir (near Khortytsia)",
+      "description": "Велике водосховище на Дніпрі (площа близько 410 км²), утворене Дніпровською ГЕС, простягається територією Запорізької та Дніпропетровської областей. Ділянка біля острова Хортиця — популярне місце спінінгової ловлі хижака (судак, щука, окунь); восени, коли вода остигає, кльов хижих риб особливо активний. У водоймі налічують близько 11 видів риби, серед них окунь, карась, лящ, плітка, судак, сом і щука.",
+      "descriptionEn": "A large reservoir on the Dnipro River (about 410 km²), created by the Dnipro Hydroelectric Dam, stretching across Zaporizhzhia and Dnipropetrovsk oblasts. The stretch near Khortytsia Island is a popular spot for spinning for predatory fish (zander, pike, perch); the bite peaks in autumn as the water cools. Around 11 fish species are recorded, including perch, crucian carp, bream, roach, zander, catfish and pike.",
+      "district": "Запорізький район",
+      "lat": 47.8694,
+      "lng": 35.0861,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "sudak",
+        "shchuka",
+        "okun",
+        "som",
+        "lyashch"
+      ],
+      "amenitySlugs": [
+        "chovny",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "richka-kinska-konka",
+      "regionSlug": "zaporizka-oblast",
+      "name": "Річка Кінська (Конка)",
+      "nameEn": "Kinska (Konka) River",
+      "description": "Кінська (також Конка, Кінка) — ліва притока Дніпра завдовжки близько 149 км, що протікає Пологівським та Запорізьким районами Запорізької області й впадає у Дніпро поблизу Каховського водосховища. Річка частково судноплавна та використовується для рибогосподарських потреб; типовий улов — щука, окунь, карась, лящ і плітка.",
+      "descriptionEn": "The Kinska (also Konka, Kinka) is a left tributary of the Dnipro about 149 km long, flowing through the Pology and Zaporizhzhia districts of Zaporizhzhia Oblast and joining the Dnipro near the Kakhovka Reservoir. The river is partly navigable and used for fishery needs; typical catches include pike, perch, crucian carp, bream and roach.",
+      "district": "Запорізький район",
+      "lat": 47.6308,
+      "lng": 35.2669,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "okun",
+        "karas",
+        "lyashch",
+        "plitka"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "foreleva-ferma-s-komyshuvakha",
+      "regionSlug": "zaporizka-oblast",
+      "name": "Форелева ферма (с. Комишуваха)",
+      "nameEn": "Trout Farm (Komyshuvakha village)",
+      "description": "Платний риболовний комплекс і форелеве господарство біля села Комишуваха, де зариблюють струмкову, райдужну та золоту форель, а також коропа, дзеркального коропа, білого амура й осетра. На території є альтанки, кафе, парковка, можливість оренди снастей та мангали; виловлену рибу можна придбати за вагою.",
+      "descriptionEn": "A paid fishing complex and trout farm near Komyshuvakha village, stocked with river, rainbow and golden trout as well as carp, mirror carp, grass carp and sturgeon. The site offers gazebos, a cafe, parking, tackle rental and grilling facilities; the catch can be purchased by weight.",
+      "district": "Запорізький район",
+      "lat": 47.7184,
+      "lng": 35.4696,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Вхід 50 грн/особа; виловлена риба за вагою: короп 80 грн/кг, білий амур 40 грн/кг, осетер 330 грн/кг, форель/інша риба 230 грн/кг, карась безкоштовно. Альтанки 50 грн/особа.",
+      "priceNoteEn": "Entry 50 UAH/person; caught fish by weight: carp 80 UAH/kg, grass carp 40 UAH/kg, sturgeon 330 UAH/kg, trout/other 230 UAH/kg, crucian carp free. Gazebos 50 UAH/person.",
+      "fishSlugs": [
+        "forel",
+        "korop",
+        "bilyi-amur",
+        "osetr",
+        "karas"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "kafe",
+        "parkovka",
+        "prokat-snastei"
+      ]
+    },
+    {
+      "slug": "richka-molochna-bilia-melitopolia",
+      "regionSlug": "zaporizka-oblast",
+      "name": "Річка Молочна (біля Мелітополя)",
+      "nameEn": "Molochna River (near Melitopol)",
+      "description": "Молочна — річка завдовжки близько 197 км, що протікає Чернігівським, Токмацьким і Мелітопольським районами Запорізької області та впадає у Молочний лиман (басейн Азовського моря). У річці мешкає до 24 видів риб, серед яких щука, судак, короп, золотий і сріблястий карась, лин, лящ, плітка, окунь і краснопірка; на її берегах розташовані Мелітополь, Молочанськ і Токмак.",
+      "descriptionEn": "The Molochna is a river about 197 km long flowing through the Chernihivka, Tokmak and Melitopol districts of Zaporizhzhia Oblast and emptying into the Molochnyi Lyman (Sea of Azov basin). It hosts up to 24 fish species, including pike, zander, carp, golden and silver crucian carp, tench, bream, roach, perch and rudd; the cities of Melitopol, Molochansk and Tokmak lie on its banks.",
+      "district": "Мелітопольський район",
+      "lat": 46.8489,
+      "lng": 35.3653,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "korop",
+        "karas",
+        "lyn"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "burshtynske-vodoskhovyshche",
+      "regionSlug": "ivano-frankivska-oblast",
+      "name": "Бурштинське водосховище",
+      "nameEn": "Burshtyn Reservoir",
+      "description": "Водосховище-охолоджувач Бурштинської ТЕС, створене 1965 року на річці Гнила Липа; площа близько 12,6 км², середня глибина 3,5 м, максимальна 8 м. Завдяки теплій воді рибалити можна цілорічно; у водоймі водяться короп, лящ, судак, окунь, щука та карась.",
+      "descriptionEn": "A cooling reservoir for the Burshtyn thermal power plant, built in 1965 on the Hnyla Lypa River; area about 12.6 km², average depth 3.5 m, maximum 8 m. The warm water allows year-round fishing, with carp, bream, zander, perch, pike and crucian carp present.",
+      "district": "Івано-Франківський район (кол. Галицький)",
+      "lat": 49.2333,
+      "lng": 24.6583,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": "Лівобережна ділянка біля с. Коростовичі (~3 км берега, 200 м углиб) виділена для безкоштовного любительського рибальства; на решті акваторії діють обмеження.",
+      "priceNoteEn": "The left-bank stretch near Korostovychi village (~3 km of shoreline, 200 m wide) is designated for free amateur fishing; restrictions apply on the rest of the water.",
+      "fishSlugs": [
+        "korop",
+        "sudak",
+        "okun",
+        "shchuka",
+        "lyashch"
+      ],
+      "amenitySlugs": [
+        "parkovka",
+        "altanky"
+      ]
+    },
+    {
+      "slug": "rybne-hospodarstvo-tysmenytsia-khomiakivka",
+      "regionSlug": "ivano-frankivska-oblast",
+      "name": "Рибне господарство «Тисмениця» (Хом'яківка)",
+      "nameEn": "Tysmenytsia Fish Farm (Khomyakivka)",
+      "description": "Великий комплекс ставків (близько 40 га) біля села Хом'яківка за ~16 км від Івано-Франківська, який експлуатує рибне господарство «Тисмениця». Тиха й чиста водойма з зарибленням коропом, карасем, щукою, окунем та лином; берег обладнаний альтанками та місцями для відпочинку.",
+      "descriptionEn": "A large pond complex (about 40 ha) near Khomyakivka village, some 16 km from Ivano-Frankivsk, operated by the Tysmenytsia fish farm. A quiet, clean water stocked with carp, crucian carp, pike, perch and tench; the shore is equipped with gazebos and rest areas.",
+      "district": "Івано-Франківський район (кол. Тисменицький)",
+      "lat": 48.8675,
+      "lng": 24.8307,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Близько 150 грн за світловий день; парковка +20 грн. Ловля лише вдень, бажане попереднє бронювання.",
+      "priceNoteEn": "About 150 UAH per daylight day; parking +20 UAH. Daytime fishing only, advance booking recommended.",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "shchuka",
+        "okun",
+        "lyn"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "chovny",
+        "nochivlia",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "richka-dnister-bilia-s-dibrova",
+      "regionSlug": "ivano-frankivska-oblast",
+      "name": "Річка Дністер біля с. Діброва",
+      "nameEn": "Dniester River near Dibrova",
+      "description": "Ділянка річки Дністер біля села Діброва у Тлумацькому краї — популярне місце для аматорської риболовлі цілодобово. Тут ловлять судака, сома, щуку, жереха та окуня; узбережжя пропонує мальовничу природу, місця для кемпінгу та оренду човнів.",
+      "descriptionEn": "A stretch of the Dniester River near Dibrova village in the Tlumach area, a popular spot for round-the-clock amateur fishing. Anglers target zander, catfish, pike, asp and perch; the bank offers scenic nature, camping spots and boat rental.",
+      "district": "Івано-Франківський район (кол. Тлумацький)",
+      "lat": 48.9605,
+      "lng": 25.095,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "sudak",
+        "som",
+        "shchuka",
+        "zherekh",
+        "okun"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "chovny",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "richka-prut-bilia-iaremche",
+      "regionSlug": "ivano-frankivska-oblast",
+      "name": "Річка Прут біля Яремче",
+      "nameEn": "Prut River near Yaremche",
+      "description": "Гірська ділянка річки Прут у межах міста Яремче поблизу водоспаду Пробій у Карпатському національному природному парку. Чиста швидка вода верхньої течії приваблює рибалок струмковою фореллю та головенем, нижче трапляються окунь і плітка; через статус НПП слід уточнювати правила лову.",
+      "descriptionEn": "A mountain stretch of the Prut River within the town of Yaremche near the Probiy waterfall in the Carpathian National Nature Park. The clean, fast upper-course water draws anglers for brook trout and chub, with perch and roach lower down; given the national-park status, local fishing rules should be checked.",
+      "district": "Надвірнянський район (Яремчанська ОТГ)",
+      "lat": 48.4392,
+      "lng": 24.5397,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "forel",
+        "holoven",
+        "okun",
+        "plitka"
+      ],
+      "amenitySlugs": [
+        "parkovka",
+        "kafe"
+      ]
+    },
+    {
+      "slug": "kyivske-vodoskhovyshche",
+      "regionSlug": "kyivska-oblast",
+      "name": "Київське водосховище",
+      "nameEn": "Kyiv Reservoir",
+      "description": "Київське водосховище — найвище у каскаді дніпровських водосховищ, створене у 1964–1966 рр. вище Вишгорода; площа близько 922 км², максимальна глибина до 15 м біля греблі. Велика відкрита водойма популярна серед рибалок: тут ловлять судака, щуку, окуня, ляща та сома. Водойма безкоштовна для любительської риболовлі.",
+      "descriptionEn": "The Kyiv Reservoir is the uppermost in the cascade of Dnieper reservoirs, created in 1964–1966 above Vyshhorod; it covers about 922 km² with a maximum depth of up to 15 m near the dam. This vast open water is popular among anglers, who catch zander, pike, perch, bream and catfish. Free for amateur fishing.",
+      "district": "Вишгородський район",
+      "lat": 50.9064,
+      "lng": 30.4994,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "sudak",
+        "shchuka",
+        "okun",
+        "lyashch",
+        "som"
+      ],
+      "amenitySlugs": [
+        "chovny",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "richka-desna-bilia-litok",
+      "regionSlug": "kyivska-oblast",
+      "name": "Річка Десна біля Літок",
+      "nameEn": "Desna River near Litky",
+      "description": "Ділянка лівої притоки Дніпра — річки Десна — біля села Літки Броварського району, за 55 км від Києва. Десна та її протока Любич утворюють тут найбільший в Україні річковий острів Любичів площею понад 4500 га. На цій ділянці ловлять щуку, судака, окуня, ляща, плітку та карася; риболовля безкоштовна.",
+      "descriptionEn": "A stretch of the Desna, a left tributary of the Dnieper, near the village of Litky in Brovary Raion, about 55 km from Kyiv. Here the Desna and its branch Lubych form Ukraine's largest river island, Lubychiv, covering over 4,500 ha. Anglers catch pike, zander, perch, bream, roach and crucian carp; fishing is free.",
+      "district": "Броварський район",
+      "lat": 50.7028,
+      "lng": 30.7461,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "okun",
+        "lyashch",
+        "plitka"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "ozero-ulianyky",
+      "regionSlug": "kyivska-oblast",
+      "name": "Озеро Уляники",
+      "nameEn": "Lake Ulyanyky",
+      "description": "Озеро Уляники — платна водойма для спортивної риболовлі біля села Уляники Обухівського району (колишній Кагарлицький район), площею близько 36 га з глибинами 1,5–5 м. Водойма зариблена коропом, білим амуром, сазаном, сомом, лином та іншими видами; регулярно проводяться спортивні турніри. На території є альтанки з мангалами, душ і туалет.",
+      "descriptionEn": "Lake Ulyanyky is a paid sport-fishing water near the village of Ulyanyky in Obukhiv Raion (formerly Kaharlyk Raion), about 36 ha with depths of 1.5–5 m. It is stocked with carp, grass carp, wild carp, catfish, tench and other species, and regularly hosts sport-fishing tournaments. The grounds offer gazebos with grills, showers and toilets.",
+      "district": "Обухівський район",
+      "lat": 49.9404,
+      "lng": 31.1088,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Спортивна риболовля: сектори №2–23 — 2200 грн/день, сектор №1 — 2700 грн/день (за даними офіційного сайту); оренда альтанок 800–1200 грн/день",
+      "priceNoteEn": "Sport fishing: sectors #2–23 — 2,200 UAH/day, sector #1 — 2,700 UAH/day (per official site); gazebo rental 800–1,200 UAH/day",
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur",
+        "sazan",
+        "som",
+        "lyn"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "parkovka",
+        "tualet",
+        "dush",
+        "prokat-snastei"
+      ]
+    },
+    {
+      "slug": "ranger-quadro-park-kolonshchyna",
+      "regionSlug": "kyivska-oblast",
+      "name": "Ranger Quadro Park (Колонщина)",
+      "nameEn": "Ranger Quadro Park (Kolonshchyna)",
+      "description": "Платний рибальський комплекс на базі Ranger Quadro Park біля села Колонщина Бучанського району, приблизно за 15 хв їзди від станції метро «Житомирська». У водоймі водяться короп, карась, білий амур, щука, окунь і плітка. Для відвідувачів облаштовані альтанки з мангалами, душ, туалет, човни та паркінг.",
+      "descriptionEn": "A paid fishing complex at Ranger Quadro Park near the village of Kolonshchyna in Bucha Raion, about a 15-minute drive from Zhytomyrska metro station. The water holds carp, crucian carp, grass carp, pike, perch and roach. Visitors have gazebos with grills, showers, toilets, boats and parking.",
+      "district": "Бучанський район",
+      "lat": 50.4408,
+      "lng": 29.9598,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Від 600 грн/день (3 снасті, до 3 кг вилову включно); понад ліміт — 200 грн/кг",
+      "priceNoteEn": "From 600 UAH/day (3 rigs, up to 3 kg catch included); over the limit — 200 UAH/kg",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "bilyi-amur",
+        "shchuka",
+        "okun"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "parkovka",
+        "tualet",
+        "dush",
+        "chovny"
+      ]
+    },
+    {
+      "slug": "kremenchutske-vodoskhovyshche-svitlovodsk",
+      "regionSlug": "kirovohradska-oblast",
+      "name": "Кременчуцьке водосховище (Світловодськ)",
+      "nameEn": "Kremenchuk Reservoir (Svitlovodsk)",
+      "description": "Кременчуцьке водосховище — найбільше за площею водосховище України (близько 2250 км²) на річці Дніпро, частина якого омиває береги Кіровоградщини біля міста Світловодськ. Тут водиться близько 50 видів риб, серед яких лящ, судак, короп, сом і плітка; мирну рибу ловлять переважно донними снастями з човна. Безкоштовна риболовля з берега та човна, популярний напрямок для спінінгу й фідера.",
+      "descriptionEn": "Kremenchuk Reservoir is Ukraine's largest reservoir by area (about 2250 km²) on the Dnipro River, with a stretch washing the Kirovohrad Oblast shore near the town of Svitlovodsk. Around 50 fish species live here, including bream, zander, carp, catfish and roach, with peaceful fish usually caught on bottom rigs from a boat. Free shore and boat fishing, a popular spot for spinning and feeder.",
+      "district": "Олександрійський район",
+      "lat": 49.275,
+      "lng": 32.6828,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "sudak",
+        "lyashch",
+        "korop",
+        "som",
+        "plitka"
+      ],
+      "amenitySlugs": [
+        "chovny",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "iskrivske-vodoskhovyshche",
+      "regionSlug": "kirovohradska-oblast",
+      "name": "Іскрівське водосховище",
+      "nameEn": "Iskrivske Reservoir",
+      "description": "Іскрівське водосховище споруджене 1958 року на річці Інгулець у межах Олександрійського району; його площа близько 11,2 км², довжина до 35 км, максимальна глибина 14,5 м. Водойма використовується для питного водопостачання Жовтих Вод, тож рибалити можна безкоштовно лише з берега. У водосховищі ловляться щука, судак, лящ, карась, сом, окунь і плітка, є зручні місця для спінінгової ловлі з берега.",
+      "descriptionEn": "Iskrivske Reservoir was built in 1958 on the Inhulets River within Oleksandriiskyi district; it covers about 11.2 km², runs up to 35 km long and reaches 14.5 m at its deepest. The waterbody supplies drinking water to Zhovti Vody, so free fishing is allowed only from the shore. Pike, zander, bream, crucian, catfish, perch and roach are caught here, with convenient spots for shore spinning.",
+      "district": "Олександрійський район",
+      "lat": 48.2081,
+      "lng": 33.375,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "lyashch",
+        "karas",
+        "som"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "richka-inhul-kompaniivka",
+      "regionSlug": "kirovohradska-oblast",
+      "name": "Річка Інгул (Компаніївка)",
+      "nameEn": "Inhul River (Kompaniivka)",
+      "description": "Інгул — найбільша притока Південного Бугу завдовжки 354 км, що бере початок біля села Бровкове на півночі Кіровоградщини та тече на південь через область. На ділянці поблизу Компаніївки річка приваблює рибалок мирною та хижою рибою: у Інгулі трапляються щука, карась, лин, плітка, окунь і головень. Риболовля з берега безкоштовна.",
+      "descriptionEn": "The Inhul is the largest tributary of the Southern Buh, 354 km long, rising near the village of Brovkove in northern Kirovohrad Oblast and flowing south across the region. On the stretch near Kompaniivka the river draws anglers for both peaceful and predatory fish: pike, crucian, tench, roach, perch and chub are found in the Inhul. Shore fishing is free.",
+      "district": "Кропивницький район",
+      "lat": 48.1681,
+      "lng": 32.3921,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "karas",
+        "lyn",
+        "plitka",
+        "okun"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "baza-vidpochynku-ta-rybolovli-zolotyi-karas",
+      "regionSlug": "kirovohradska-oblast",
+      "name": "База відпочинку та риболовлі \"Золотий карась\"",
+      "nameEn": "Zolotyi Karas Fishing Base",
+      "description": "Платна база відпочинку та риболовлі \"Золотий карась\" розташована в селі Володимирівка (Балеєво) Кропивницького району на березі великого водоймища площею близько 1,5 га. У водоймі ловляться судак, окунь, сом, карась, короп, білий амур і товстолоб. На території є сауна, лазня, спортивний і дитячий майданчики, пляж, котеджі, прокат човнів і катамаранів, нічне освітлення та парковка.",
+      "descriptionEn": "The paid Zolotyi Karas recreation and fishing base is located in the village of Volodymyrivka (Baleevo), Kropyvnytskyi district, on the shore of a large pond covering about 1.5 hectares. Zander, perch, catfish, crucian, carp, grass carp and silver carp are caught here. The grounds offer a sauna, bathhouse, sports and children's playgrounds, a beach, cottages, boat and catamaran rentals, night lighting and parking.",
+      "district": "Кропивницький район",
+      "lat": 48.632,
+      "lng": 31.982,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Від 200 грн з берега поза базою; 300 грн на території бази (доба, з альтанкою та мангалом). Дозволено до 5 снастей.",
+      "priceNoteEn": "From 200 UAH for shore fishing outside the base; 300 UAH inside the base (per day, includes gazebo and grill). Up to 5 rigs allowed.",
+      "fishSlugs": [
+        "sudak",
+        "okun",
+        "som",
+        "korop",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "chovny",
+        "parkovka",
+        "kafe",
+        "prokat-snastei",
+        "dush",
+        "elektryka"
+      ]
+    },
+    {
+      "slug": "tashlytske-vodoskhovyshche",
+      "regionSlug": "mykolaivska-oblast",
+      "name": "Ташлицьке водосховище",
+      "nameEn": "Tashlyk Reservoir",
+      "description": "Ташлицьке водосховище споруджене у 1979-1982 роках на схід від Південноукраїнська і слугує водоймою-охолоджувачем Південноукраїнської АЕС у складі гідроакумулюючого комплексу. Площа близько 8,6 км², максимальна глибина сягає 46 м; через теплі скиди вода біля каналу прогрівається понад +40 °C. У водоймі водяться щука, жерех, лящ, краснопірка, плітка, карась та окунь.",
+      "descriptionEn": "Tashlyk Reservoir, built in 1979-1982 east of Pivdennoukrainsk, serves as the cooling pond for the South Ukraine Nuclear Power Plant within a pumped-storage complex. It covers about 8.6 km² with a maximum depth of 46 m, and warm discharges heat the water near the outlet to over +40 °C. The reservoir holds pike, asp, bream, rudd, roach, crucian carp and perch.",
+      "district": "Вознесенський район",
+      "lat": 47.837,
+      "lng": 31.221,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "lyashch",
+        "karas",
+        "okun",
+        "zherekh"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "oleksandrivske-vodoskhovyshche",
+      "regionSlug": "mykolaivska-oblast",
+      "name": "Олександрівське водосховище",
+      "nameEn": "Oleksandrivske Reservoir",
+      "description": "Олександрівське водосховище створене на річці Південний Буг між містом Південноукраїнськ і смт Олександрівка, де розташована Олександрівська ГЕС і нижній б'єф Ташлицької ГАЕС. Площа близько 13 тис. га, максимальна глибина до 20 м; риболовля безкоштовна цілодобово. Серед видів риб - короп, лящ, судак, окунь, сом, товстолоб і білий амур, частину акваторії з багатою іхтіофауною оголошено іхтіологічним заказником.",
+      "descriptionEn": "Oleksandrivske Reservoir was created on the Southern Bug River between Pivdennoukrainsk and the village of Oleksandrivka, where the Oleksandrivka hydroelectric station and the lower basin of the Tashlyk pumped-storage plant are located. It spans about 13,000 hectares with depths up to 20 m, and fishing is free around the clock. Species include carp, bream, zander, perch, catfish, silver carp and grass carp, with part of the species-rich waters declared an ichthyological reserve.",
+      "district": "Вознесенський район",
+      "lat": 47.692,
+      "lng": 31.269,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "korop",
+        "lyashch",
+        "sudak",
+        "som",
+        "tovstolob"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "pivdennyi-buh-bilia-myhii-myhiiski-porohy",
+      "regionSlug": "mykolaivska-oblast",
+      "name": "Південний Буг біля Мигії (Мигійські пороги)",
+      "nameEn": "Southern Bug River near Mygiya (Mygiya Rapids)",
+      "description": "Біля села Мигія Південний Буг утворює мальовничі Мигійські пороги в межах регіонального ландшафтного парку «Гранітно-Степове Побужжя», де річка тече скелястим каньйоном. Кам'янисті перекати й ділянки з течією приваблюють рибалок на головня, жереха, окуня, плітку та щуку. Місцевість також відома сплавами та водним туризмом.",
+      "descriptionEn": "Near the village of Mygiya the Southern Bug forms the scenic Mygiya Rapids within the Granite-Steppe Southern Bug regional landscape park, where the river runs through a rocky canyon. Rocky riffles and flowing stretches attract anglers targeting chub, asp, perch, roach and pike. The area is also well known for rafting and water tourism.",
+      "district": "Первомайський район",
+      "lat": 48.04,
+      "lng": 30.947,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "holoven",
+        "zherekh",
+        "okun",
+        "plitka",
+        "shchuka"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "rybalskyi-kompleks-u-matviivtsi",
+      "regionSlug": "mykolaivska-oblast",
+      "name": "Рибальський комплекс у Матвіївці",
+      "nameEn": "Matviivka Fishing Complex",
+      "description": "У мікрорайоні Матвіївка на лівому березі Південного Бугу в межах Миколаєва діє платний рибальський комплекс із трьох ставків. Риболовля доступна цілодобово, у водоймах водяться короп, карась, сом і щука. На території облаштовані альтанки з мангалами.",
+      "descriptionEn": "In the Matviivka neighbourhood on the left bank of the Southern Bug within the city of Mykolaiv there is a paid fishing complex of three ponds. Fishing is available around the clock, and the ponds hold carp, crucian carp, catfish and pike. The grounds have gazebos equipped with barbecue grills.",
+      "district": "Миколаїв (Центральний район)",
+      "lat": 47.019,
+      "lng": 31.93,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Платно, орієнтовно від 100 грн з особи; альтанки оплачуються окремо.",
+      "priceNoteEn": "Paid, roughly from 100 UAH per person; gazebos charged separately.",
+      "fishSlugs": [
+        "korop",
+        "som",
+        "karas",
+        "shchuka"
+      ],
+      "amenitySlugs": [
+        "altanky"
+      ]
+    },
+    {
+      "slug": "khadzhybeiskyi-lyman",
+      "regionSlug": "odeska-oblast",
+      "name": "Хаджибейський лиман",
+      "nameEn": "Khadzhybeiskyi Liman",
+      "description": "Великий лиман-озеро площею близько 112 км² на північний захід від Одеси, відділений від Чорного моря вузькою смугою суходолу. Водойма має різноманітну іхтіофауну: тут водяться судак, окунь, карась, короп та товстолоб; ведеться рибогосподарська діяльність із цілеспрямованим формуванням іхтіофауни. Лиман простягається територією Одеського, Роздільнянського та Березівського районів.",
+      "descriptionEn": "A large estuarine lake of about 112 km² northwest of Odesa, separated from the Black Sea by a narrow strip of land. It supports a diverse fish community including zander, perch, crucian carp, carp and silver carp, with active fishery management forming the ichthyofauna. The liman spans the Odesa, Rozdilna and Berezivka districts.",
+      "district": "Одеський район",
+      "lat": 46.617,
+      "lng": 30.6,
+      "waterType": "LAKE",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "sudak",
+        "okun",
+        "karas",
+        "korop",
+        "tovstolob"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "dnistrovskyi-lyman",
+      "regionSlug": "odeska-oblast",
+      "name": "Дністровський лиман",
+      "nameEn": "Dniester Liman",
+      "description": "Великий приморський лиман площею близько 360 км² у пониззі Дністра, біля Білгорода-Дністровського, з'єднаний із Чорним морем. У лимані налічують близько 70 прісноводних видів риб, серед яких судак, лящ, сом, щука та короп; під час нересту заходять прохідні види. Популярне місце як для берегової, так і для човнової риболовлі.",
+      "descriptionEn": "A large coastal liman of about 360 km² in the lower Dniester near Bilhorod-Dnistrovskyi, connected to the Black Sea. The liman hosts roughly 70 freshwater fish species including zander, bream, catfish, pike and carp, with migratory species entering during spawning. It is a popular spot for both shore and boat fishing.",
+      "district": "Білгород-Дністровський район",
+      "lat": 46.233,
+      "lng": 30.35,
+      "waterType": "LAKE",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "sudak",
+        "lyashch",
+        "som",
+        "shchuka",
+        "korop"
+      ],
+      "amenitySlugs": [
+        "chovny"
+      ]
+    },
+    {
+      "slug": "kuchurhanske-vodoskhovyshche",
+      "regionSlug": "odeska-oblast",
+      "name": "Кучурганське водосховище",
+      "nameEn": "Kuchurhan Reservoir",
+      "description": "Водосховище площею близько 2730 га на річці Кучурган, створене 1967 року на базі Кучурганського лиману і розташоване на кордоні Одеської області з Придністров'ям. Слугує водоймою-охолоджувачем та об'єктом рибного господарства; регулярно зариблюється коропом і товстолобом, у теплій воді трапляються сом, судак та окунь. Українська частина активно використовується для промислового та аматорського лову.",
+      "descriptionEn": "A reservoir of about 2,730 hectares on the Kuchurhan River, created in 1967 on the basis of the Kuchurhan Liman, lying on the border between Odesa Oblast and Transnistria. It serves as a power-plant cooling reservoir and a fishery, regularly stocked with carp and silver carp, while its warm water also holds catfish, zander and perch. The Ukrainian side is actively used for both commercial and amateur fishing.",
+      "district": "Роздільнянський район",
+      "lat": 46.6,
+      "lng": 29.9667,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "korop",
+        "tovstolob",
+        "som",
+        "sudak",
+        "okun"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "ozero-dzherelne-dobroslavskyi-stavok",
+      "regionSlug": "odeska-oblast",
+      "name": "Озеро Джерельне (Доброславський ставок)",
+      "nameEn": "Lake Dzherelne (Dobroslav Pond)",
+      "description": "Платний рибальський комплекс на ставку біля смт Доброслав, приблизно за 25 км від Одеси, з бетонованими під'їздами та зручним доступом до води з усіх берегів. У водоймі ловлять коропа, білого амура, судака, лина, карася та товстолоба за встановленими лімітами вилову. На території є будиночки для ночівлі, альтанки з мангалами, магазин зі снастями, парковка та СПА-зона.",
+      "descriptionEn": "A paid fishing complex on a pond near the village of Dobroslav, about 25 km from Odesa, with paved access roads and convenient bankside access on all shores. Anglers target carp, grass carp, zander, tench, crucian carp and silver carp under set catch limits. The site offers overnight cabins, gazebos with grills, a tackle shop, parking and a spa area.",
+      "district": "Одеський район",
+      "lat": 46.8186,
+      "lng": 30.9464,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Денна риболовля (5:30–20:00) від 600 грн за 1–3 вудки; нічна — 700 грн (з орендою будиночка); доба — 1000 грн. Додаткова вудка 150 грн.",
+      "priceNoteEn": "Daytime fishing (5:30–20:00) from 600 UAH for 1–3 rods; night 700 UAH (with cabin rental); full day 1000 UAH. Additional rod 150 UAH.",
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur",
+        "sudak",
+        "lyn",
+        "karas"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "parkovka",
+        "mahazyn",
+        "tualet",
+        "dush",
+        "elektryka"
+      ]
+    },
+    {
+      "slug": "richka-vorskla-poltava",
+      "regionSlug": "poltavska-oblast",
+      "name": "Річка Ворскла (Полтава)",
+      "nameEn": "Vorskla River (Poltava)",
+      "description": "Ворскла — ліва притока Дніпра, що протікає через місто Полтава. Течія спокійна, дно піщане, на розливах мулисте; популярна для ловлі спінінгом на щуку та окуня, а у глибоких закоряжених ямах нижче за течією трапляється сом. Риболовля безкоштовна, цілодобово.",
+      "descriptionEn": "The Vorskla, a left tributary of the Dnipro, flows through the city of Poltava. The current is gentle with a sandy bottom (muddy on the floodplains); it is popular for spin fishing for pike and perch, while catfish hold in deeper snag-filled holes downstream. Fishing is free and available around the clock.",
+      "district": "Полтавський район",
+      "lat": 49.5607,
+      "lng": 34.5383,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "okun",
+        "plitka",
+        "lyashch",
+        "som"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "rybalska-baza-ivashky",
+      "regionSlug": "poltavska-oblast",
+      "name": "Рибальська база Івашки",
+      "nameEn": "Ivashki Fishing Base",
+      "description": "Приватна рибальська база відпочинку за ~7 км від центру Полтави біля села Івашки. Кілька ставків зі спортивною ловлею мирної риби (короп, дзеркальний короп, білий амур, карась) за принципом «спіймав-відпустив», а також лов хижака. На території є альтанки з мангалами, помости, паркінг, будиночки та геодоми для ночівлі, прокат рибальського спорядження.",
+      "descriptionEn": "A private fishing recreation base about 7 km from central Poltava near the village of Ivashki. Several ponds offer catch-and-release sport fishing for peaceful fish (carp, mirror carp, grass carp, crucian) plus predator fishing. The grounds have gazebos with grills, docks, parking, cabins and geodomes for overnight stays, and gear rental.",
+      "district": "Полтавський район",
+      "lat": 49.5851,
+      "lng": 34.3973,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Спортивна риболовля (спіймав-відпустив) від 400 грн/пів дня, 500 грн/день, 700 грн/добу; з виловом від 500 грн. Альтанки 500–800 грн/день.",
+      "priceNoteEn": "Sport (catch-and-release) fishing from 400 UAH/half-day, 500 UAH/day, 700 UAH/24h; with harvest from 500 UAH. Gazebos 500–800 UAH/day.",
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur",
+        "karas",
+        "shchuka",
+        "okun"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "chovny",
+        "parkovka",
+        "prokat-snastei"
+      ]
+    },
+    {
+      "slug": "kremenchutske-vodoskhovyshche-hradyzk",
+      "regionSlug": "poltavska-oblast",
+      "name": "Кременчуцьке водосховище (Градизьк)",
+      "nameEn": "Kremenchuk Reservoir (Hradyzk)",
+      "description": "Кременчуцьке водосховище на Дніпрі — найбільше за площею в Україні (≈2250 км²), розкинулося на межі Полтавської, Черкаської та Кіровоградської областей. Біля смт Градизьк (полтавський берег) — популярне місце літньої та зимової риболовлі, де ловлять ляща, судака, коропа, плітку та сома. Риболовля безкоштовна.",
+      "descriptionEn": "The Kremenchuk Reservoir on the Dnipro is Ukraine's largest by area (≈2,250 km²), spanning the Poltava, Cherkasy and Kirovohrad oblasts. By the town of Hradyzk on the Poltava bank it is a popular spot for summer and winter fishing for bream, zander, carp, roach and catfish. Fishing is free.",
+      "district": "Кременчуцький район",
+      "lat": 49.2325,
+      "lng": 33.1286,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "lyashch",
+        "sudak",
+        "korop",
+        "plitka",
+        "som"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "richka-sula-plekhiv",
+      "regionSlug": "poltavska-oblast",
+      "name": "Річка Сула (Плехів)",
+      "nameEn": "Sula River (Plekhiv)",
+      "description": "Ділянка річки Сула біля села Плехів у Лубенському районі, у межах Плехівського гідрологічного заказника (≈500 га заплавних угідь). Глибини переважно 2–4 м, на ямах глибше; ловляться щука, судак, окунь, сом, карась і короп. Риболовля безкоштовна.",
+      "descriptionEn": "A stretch of the Sula River near the village of Plekhiv in Lubny district, within the Plekhivsky hydrological reserve (≈500 ha of floodplain). Depths are mostly 2–4 m, deeper in the holes; anglers catch pike, zander, perch, catfish, crucian and carp. Fishing is free.",
+      "district": "Лубенський район",
+      "lat": 49.7464,
+      "lng": 32.7767,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "som",
+        "karas",
+        "korop"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "khrinnytske-vodoskhovyshche",
+      "regionSlug": "rivnenska-oblast",
+      "name": "Хрінницьке водосховище",
+      "nameEn": "Khrinnyky Reservoir",
+      "description": "Хрінницьке водосховище на річці Стир створене 1957 року для Хрінницької ГЕС; площа близько 1830 га, глибина 2-6 м, місцями більше в руслі та ямах. Одна з найбільших водойм Рівненщини з усім видовим складом риб регіону, риболовля цілодобова та безкоштовна.",
+      "descriptionEn": "Khrinnyky Reservoir on the Styr River was created in 1957 for the Khrinnyky hydroelectric station; it covers about 1,830 ha with depths of 2-6 m, deeper in the old channel and holes. One of the largest waters in Rivne Oblast, it holds the region's full range of species, and fishing is free and available around the clock.",
+      "district": "Дубенський район",
+      "lat": 50.4249,
+      "lng": 25.1657,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "okun",
+        "lyashch",
+        "som"
+      ],
+      "amenitySlugs": [
+        "chovny",
+        "nochivlia",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "ozero-bile",
+      "regionSlug": "rivnenska-oblast",
+      "name": "Озеро Біле",
+      "nameEn": "Lake Bile",
+      "description": "Біле озеро карстового походження у басейні Стиру - друге за площею озеро Рівненщини (близько 453 га) із середньою глибиною 10 м і максимальною до 34 м. Вода прозора, з підвищеним вмістом гліцерину; зафіксовано 22 види риб, рибалка безкоштовна та цілодобова.",
+      "descriptionEn": "Lake Bile is a karst lake in the Styr basin and the second-largest lake in Rivne Oblast (about 453 ha), with an average depth of 10 m and a maximum of 34 m. The water is clear with an unusually high glycerin content; 22 fish species have been recorded, and fishing is free and available around the clock.",
+      "district": "Вараський район",
+      "lat": 51.4525,
+      "lng": 25.7825,
+      "waterType": "LAKE",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "okun",
+        "plitka",
+        "shchuka",
+        "lyn",
+        "karas"
+      ],
+      "amenitySlugs": [
+        "chovny",
+        "kafe",
+        "nochivlia"
+      ]
+    },
+    {
+      "slug": "richka-horyn-bilia-oleksandrii",
+      "regionSlug": "rivnenska-oblast",
+      "name": "Річка Горинь біля Олександрії",
+      "nameEn": "Horyn River near Oleksandriia",
+      "description": "Ділянка річки Горинь біля села Олександрія - популярне серед рівненських рибалок місце з численними поворотами, добрими глибинами та цікавим рельєфом дна. Береги місцями підмиті, високі й круті, тож доступ до води буває складним; рибалка вільна та цілодобова.",
+      "descriptionEn": "This stretch of the Horyn River near the village of Oleksandriia is popular with Rivne anglers, with many bends, good depths and varied bottom relief. The banks are undercut, high and steep in places, so access to the water can be tricky; fishing is free and available around the clock.",
+      "district": "Рівненський район",
+      "lat": 50.742,
+      "lng": 26.3319,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "som",
+        "lyashch",
+        "holoven",
+        "lyn"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "rybalskyi-kompleks-ostriv",
+      "regionSlug": "rivnenska-oblast",
+      "name": "Рибальський комплекс Острів",
+      "nameEn": "Ostriv Fishing Complex",
+      "description": "Платний рибальський комплекс біля села Острів - водойма близько 14 га з максимальною глибиною 3 м і 17 риболовними секторами. Ловлять коропа, білого амура, товстолоба, карася та щуку; до послуг гостей будиночки на 2-5 місць, альтанки, мангали з дровами, освітлення секторів, паркування та прокат снастей.",
+      "descriptionEn": "Ostriv is a paid fishing complex near the village of Ostriv with a water body of about 14 ha, a maximum depth of 3 m and 17 fishing sectors. Anglers catch carp, grass carp, silver carp, crucian carp and pike; guests have cottages for 2-5 people, gazebos, barbecue areas with firewood, sector lighting, parking and tackle rental.",
+      "district": "Дубенський район",
+      "lat": 50.4972,
+      "lng": 26.0141,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Сектор без альтанки - 700 грн/добу, сектор з альтанкою - 1000 грн/добу; оренда будиночка - 1900-2300 грн/добу.",
+      "priceNoteEn": "Sector without gazebo - 700 UAH/day, sector with gazebo - 1000 UAH/day; cottage rental - 1900-2300 UAH/day.",
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur",
+        "tovstolob",
+        "karas",
+        "shchuka"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "parkovka",
+        "prokat-snastei",
+        "elektryka"
+      ]
+    },
+    {
+      "slug": "kosivshchynske-vodoskhovyshche",
+      "regionSlug": "sumska-oblast",
+      "name": "Косівщинське водосховище",
+      "nameEn": "Kosivshchyna Reservoir",
+      "description": "Косівщинське водосховище, яке місцеві називають «Сумським морем», розташоване на річці Сумка між селами Степанівка та Косівщина поблизу Сум. Площа водойми близько 132 га, глибина 1–4 м, тут водяться короп, білий амур, карась, плітка, лящ, щука та окунь. Одне з чотирьох найбільших водосховищ області, створене у 1960-х роках.",
+      "descriptionEn": "Kosivshchyna Reservoir, locally nicknamed the \"Sumy Sea\", lies on the Sumka River between the villages of Stepanivka and Kosivshchyna near Sumy. Covering about 132 ha with depths of 1–4 m, it holds carp, grass carp, crucian carp, roach, bream, pike and perch. It is one of the four largest reservoirs in the oblast, built in the 1960s.",
+      "district": "Сумський район",
+      "lat": 50.9194,
+      "lng": 34.7315,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur",
+        "karas",
+        "shchuka",
+        "okun"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "ozero-chekha",
+      "regionSlug": "sumska-oblast",
+      "name": "Озеро Чеха",
+      "nameEn": "Lake Chekha",
+      "description": "Озеро Чеха — мальовниче озеро у Зарічному районі міста Суми площею близько 37 га з максимальною глибиною до 14 метрів та об'ємом понад 2 млн м³. У водоймі зафіксовано 15 видів риб, а також численні земноводні, птахи та ссавці. Озеро з прилеглим парком є одним з улюблених місць відпочинку містян.",
+      "descriptionEn": "Lake Chekha is a picturesque lake in the Zarichnyi district of Sumy, covering about 37 ha with a maximum depth of up to 14 metres and a volume of over 2 million m³. It is home to 15 fish species along with numerous amphibians, birds and mammals. The lake and its surrounding park are among the favourite recreation spots for city residents.",
+      "district": "Сумський район",
+      "lat": 50.9033,
+      "lng": 34.8269,
+      "waterType": "LAKE",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "okun",
+        "plitka",
+        "lyn"
+      ],
+      "amenitySlugs": [
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "richka-psel-u-mezhakh-m-sumy",
+      "regionSlug": "sumska-oblast",
+      "name": "Річка Псел (у межах м. Суми)",
+      "nameEn": "Psel River (within Sumy city)",
+      "description": "Псел протікає через центральну частину Сум по всій довжині міста і є одним з найпопулярніших місць для риболовлі у регіоні. Береги порослі рослинністю, зручні місця трапляються кожні 30–50 метрів; ловлять спінінгом, фідером та поплавцем. У річці водяться короп, щука, сом, судак, лящ, окунь і плітка; риболовля безкоштовна та цілодобова.",
+      "descriptionEn": "The Psel flows through the central part of Sumy along the entire length of the city and is one of the most popular fishing spots in the region. Its overgrown banks offer convenient spots every 30–50 metres, fished with spinning, feeder and float tackle. The river holds carp, pike, catfish, zander, bream, perch and roach; fishing is free and available around the clock.",
+      "district": "Сумський район",
+      "lat": 50.9076,
+      "lng": 34.8073,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "korop",
+        "shchuka",
+        "som",
+        "sudak",
+        "lyashch"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "baza-vidpochynku-rybalskyi-stan",
+      "regionSlug": "sumska-oblast",
+      "name": "База відпочинку «Рибальський стан»",
+      "nameEn": "Rybalskyy Stan Recreation Base",
+      "description": "База відпочинку «Рибальський стан» розташована у селі Нова Слобода (колишній Путивльський, нині Конотопський район), приблизно за 20 км від Путивля. Влітку поплавцем і фідером ловлять трофейні екземпляри коропа, білого амура та карася; риболовля доступна цілодобово протягом року. На базі є житло, дерев'яні альтанки, рибальські помости, прокат снастей та парковка.",
+      "descriptionEn": "The Rybalskyy Stan recreation base is located in the village of Nova Sloboda (formerly Putyvl, now Konotop district), about 20 km from the town of Putyvl. In summer anglers land trophy carp, grass carp and crucian carp on float and feeder tackle; fishing is available 24/7 year-round. The base offers lodging, wooden gazebos, fishing platforms, tackle rental and parking.",
+      "district": "Конотопський район",
+      "lat": 51.3768,
+      "lng": 34.1135,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Від 150 грн",
+      "priceNoteEn": "From 150 UAH",
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur",
+        "karas",
+        "shchuka",
+        "lyashch"
+      ],
+      "amenitySlugs": [
+        "nochivlia",
+        "altanky",
+        "prokat-snastei",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "ternopilskyi-stav",
+      "regionSlug": "ternopilska-oblast",
+      "name": "Тернопільський став",
+      "nameEn": "Ternopil Pond (Ternopil Reservoir)",
+      "description": "Велике штучне водосховище площею близько 300 га у самому центрі Тернополя, створене на річці Серет. Максимальна глибина сягає 21 м; берегова лінія близько 10 км. У водоймі водяться сом, судак, щука, лящ, окунь, карась, краснопірка та товстолоб; доступ до берега вільний і риболовля безкоштовна.",
+      "descriptionEn": "A large artificial reservoir of about 300 ha in the very center of Ternopil, created on the Seret River. Maximum depth reaches 21 m and the shoreline is around 10 km long. It holds catfish, zander, pike, bream, perch, crucian carp, rudd and silver carp; bank access is open and fishing is free.",
+      "district": "Тернопільський район",
+      "lat": 49.5644,
+      "lng": 25.5808,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "som",
+        "lyashch",
+        "karas"
+      ],
+      "amenitySlugs": [
+        "kafe",
+        "parkovka",
+        "chovny"
+      ]
+    },
+    {
+      "slug": "kasperivske-vodoskhovyshche",
+      "regionSlug": "ternopilska-oblast",
+      "name": "Касперівське водосховище",
+      "nameEn": "Kasperivske Reservoir",
+      "description": "Руслове водосховище на річці Серет поблизу села Касперівці площею близько 286 га, створене 1964 року біля Касперівської ГЕС. Завдовжки близько 12 км, максимальна глибина до 24 м. У водоймі ловлять коропа, ляща, плітку, окуня, щуку, карася та верховодку; риболовля вільна.",
+      "descriptionEn": "A channel-type reservoir on the Seret River near the village of Kasperivtsi, about 286 ha in area, built in 1964 beside the Kasperivtsi hydroelectric station. It is roughly 12 km long with a maximum depth of up to 24 m. Anglers catch carp, bream, roach, perch, pike, crucian carp and bleak; fishing is free.",
+      "district": "Чортківський район",
+      "lat": 48.6722,
+      "lng": 25.8567,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "korop",
+        "lyashch",
+        "okun",
+        "plitka"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "richka-dnister-bilia-zalishchykiv",
+      "regionSlug": "ternopilska-oblast",
+      "name": "Річка Дністер (біля Заліщиків)",
+      "nameEn": "Dniester River (near Zalishchyky)",
+      "description": "Ділянка річки Дністер уздовж південного кордону області біля міста Заліщики, відомого мальовничою петлею-меандром річки. Глибокі ями та сильна течія роблять цей відтинок перспективним для лову великого сома й судака; також ловлять головня, жереха, сазана, щуку та ляща. Риболовля вільна.",
+      "descriptionEn": "A stretch of the Dniester River along the southern border of the oblast near the town of Zalishchyky, famous for the river's scenic meander loop. Deep holes and a strong current make this reach productive for large catfish and zander; chub, asp, wild carp, pike and bream are also caught. Fishing is free.",
+      "district": "Чортківський район",
+      "lat": 48.65,
+      "lng": 25.735,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "som",
+        "sudak",
+        "holoven",
+        "zherekh",
+        "sazan"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "baza-vidpochynku-lisova-skomorokhy",
+      "regionSlug": "ternopilska-oblast",
+      "name": "База відпочинку «Лісова» (Скоморохи)",
+      "nameEn": "Lisova Recreation Base (Skomorokhy)",
+      "description": "Платна рибальська водойма при базі відпочинку «Лісова» у селі Скоморохи на річці Стрипа (ліва притока Дністра). Невеликий зариблений ставок площею близько 1 га й глибиною до 2 м, дно порівняно чисте. Ловлять коропа, білого амура, щуку, товстолоба, окуня та карася; на території є кафе та магазин.",
+      "descriptionEn": "A paid fishing pond at the Lisova recreation base in the village of Skomorokhy on the Strypa River (a left tributary of the Dniester). A small stocked pond of about 1 ha and up to 2 m deep with a relatively clean bottom. Carp, grass carp, pike, silver carp, perch and crucian carp are caught; a cafe and shop are on site.",
+      "district": "Чортківський район",
+      "lat": 48.9222,
+      "lng": 25.3814,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Платна риболовля; зариблений ставок (~1 га, глибина ~2 м). Із вилову дозволено забирати лише карася.",
+      "priceNoteEn": "Paid fishing; a stocked pond (~1 ha, ~2 m deep). Only crucian carp may be kept from the catch.",
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur",
+        "shchuka",
+        "tovstolob",
+        "karas"
+      ],
+      "amenitySlugs": [
+        "kafe",
+        "mahazyn"
+      ]
+    },
+    {
+      "slug": "pechenizke-vodoskhovyshche",
+      "regionSlug": "kharkivska-oblast",
+      "name": "Печенізьке водосховище",
+      "nameEn": "Pechenizke Reservoir",
+      "description": "Велике руслове водосховище на Сіверському Донці площею близько 86 км², яке харків'яни називають «Салтівським морем». Слугує джерелом водопостачання Харкова та популярним рибальським місцем; ловлять судака, щуку, окуня, ляща та коропа. Береги переважно лісисті, по лівому берегу майже всюди можна під'їхати до води автомобілем.",
+      "descriptionEn": "A large channel-type reservoir on the Siverskyi Donets river, roughly 86 km² in area, locally nicknamed the 'Saltiv Sea'. It supplies water to Kharkiv and is a popular year-round fishing spot for zander, pike, perch, bream and carp. The shores are largely forested, with vehicle access to the water along most of the left bank.",
+      "district": "Чугуївський район",
+      "lat": 50.0011,
+      "lng": 36.8626,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "sudak",
+        "shchuka",
+        "okun",
+        "lyashch",
+        "korop"
+      ],
+      "amenitySlugs": [
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "chervonooskilske-vodoskhovyshche",
+      "regionSlug": "kharkivska-oblast",
+      "name": "Червонооскільське водосховище",
+      "nameEn": "Chervonooskilske Reservoir",
+      "description": "Найбільше водосховище Харківщини на річці Оскіл, що простягається на десятки кілометрів у Борівському, Ізюмському та Куп'янському районах. Риболовля безкоштовна та дозволена цілодобово; у водоймі водяться щука, окунь, лящ, плітка та сріблястий карась. Середня глибина близько 3 м, максимальна — до 8 м.",
+      "descriptionEn": "The largest reservoir in Kharkiv Oblast, on the Oskil river, stretching for dozens of kilometres across the Borova, Izium and Kupiansk districts. Fishing is free and permitted around the clock, with pike, perch, bream, roach and silver crucian carp present. Average depth is about 3 m, with a maximum of around 8 m.",
+      "district": "Ізюмський район",
+      "lat": 49.1768,
+      "lng": 37.4506,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "okun",
+        "lyashch",
+        "plitka",
+        "karas"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "siverskyi-donets-zmiivska-dilianka",
+      "regionSlug": "kharkivska-oblast",
+      "name": "Сіверський Донець (Зміївська ділянка)",
+      "nameEn": "Siverskyi Donets (Zmiiv stretch)",
+      "description": "Ділянка найбільшої річки східної України поблизу Задонецького у Зміївському районі, приблизно за 55 км від Харкова. Вільна риболовля з великим видовим різноманіттям: трапляються сом, судак, щука, лящ та окунь. Район є важливим нерестовищем для багатьох видів риби.",
+      "descriptionEn": "A stretch of the largest river in eastern Ukraine near Zadonetske in the Zmiiv district, about 55 km from Kharkiv. Fishing is free, with a wide variety of species including catfish, zander, pike, bream and perch. The area serves as an important spawning ground for many fish species.",
+      "district": "Зміївський район",
+      "lat": 49.6758,
+      "lng": 36.3781,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "som",
+        "sudak",
+        "shchuka",
+        "lyashch",
+        "okun"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "stavok-chervonyi-prapor",
+      "regionSlug": "kharkivska-oblast",
+      "name": "Ставок «Червоний прапор»",
+      "nameEn": "Chervonyi Prapor Pond",
+      "description": "Зариблений платний ставок площею близько 27 га поблизу Високопілля, приблизно за 80 км від Харкова в напрямку Люботина. Вважається одним з найкращих коропових водойм області; зариблений коропом, білим амуром, товстолобом, лящем та окунем. На базі є охорона, адміністрація, зона для купання та прокат інвентарю.",
+      "descriptionEn": "A stocked paid pond of about 27 ha near Vysokopillia, roughly 80 km from Kharkiv toward Liubotyn. Considered one of the best carp waters in the region, stocked with carp, grass carp, silver carp, bream and perch. The facility has security, administration, a swimming area and equipment rental.",
+      "district": "Богодухівський район",
+      "lat": 49.9671,
+      "lng": 35.3729,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Риболовля платна: 1-й день — 250 грн, 2-й — 200 грн, 3-й — 100 грн, 4-й — безкоштовно; денна риболовля — 200 грн. Прокат мангала 25 грн, дров 25 грн.",
+      "priceNoteEn": "Paid fishing: day 1 — 250 UAH, day 2 — 200 UAH, day 3 — 100 UAH, day 4 — free; daytime fishing — 200 UAH. Barbecue rental 25 UAH, firewood 25 UAH.",
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur",
+        "tovstolob",
+        "lyashch",
+        "okun"
+      ],
+      "amenitySlugs": [
+        "prokat-snastei",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "bile-ozero",
+      "regionSlug": "khersonska-oblast",
+      "name": "Біле озеро",
+      "nameEn": "Bile Lake (White Lake)",
+      "description": "Біле озеро — велике заплавне озеро лиманного походження в дельті Дніпра на межі Корабельного району Херсона та Білозерського району. Площа близько 4,92 км², довжина до 4 км, глибина до 2 м. Озеро є нерестовищем промислових видів риби — ляща, судака, коропа; береги вкриті очеретом та рогозом.",
+      "descriptionEn": "Bile Lake is a large floodplain lake of liman origin in the Dnipro delta, on the border of Korabelnyi district of Kherson and Bilozerskyi district. Its area is about 4.92 km2, up to 4 km long and up to 2 m deep. The lake serves as a spawning ground for commercial fish such as bream, zander and carp; the shores are covered with reeds and cattails.",
+      "district": "Білозерський район",
+      "lat": 46.6209,
+      "lng": 32.4596,
+      "waterType": "LAKE",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "lyashch",
+        "sudak",
+        "korop",
+        "shchuka",
+        "plitka"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "richka-inhulets-ponyzzia",
+      "regionSlug": "khersonska-oblast",
+      "name": "Річка Інгулець (пониззя)",
+      "nameEn": "Inhulets River (lower course)",
+      "description": "Інгулець — права притока Дніпра; її гирло розташоване приблизно за 40 км від Херсона. У пониззі річки на території Херсонщини поширена аматорська риболовля, де ловляться судак, щука, сом, лящ, плітка, краснопірка та жерех. Вода у нижній течії повільна, з ділянками очерету та піщано-мулистим дном.",
+      "descriptionEn": "The Inhulets is a right tributary of the Dnipro; its mouth lies about 40 km from Kherson. Amateur fishing is widespread in the lower course within Kherson Oblast, where zander, pike, catfish, bream, roach, rudd and asp are caught. The lower stretch has slow water with reed beds and a sandy-silty bottom.",
+      "district": "Херсонський район",
+      "lat": 46.684,
+      "lng": 32.8125,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "sudak",
+        "shchuka",
+        "som",
+        "lyashch",
+        "plitka"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "kompleks-rybolovli-ta-vidpochynku-delta-dnipra",
+      "regionSlug": "khersonska-oblast",
+      "name": "Комплекс риболовлі та відпочинку «Дельта Дніпра»",
+      "nameEn": "Delta Dnipra Fishing and Recreation Complex",
+      "description": "«Дельта Дніпра» — комплекс риболовлі та відпочинку, заснований 2007 року в селі Дніпровське Білозерського району, у дельті Дніпра приблизно за 23 км від Херсона. На території працюють міні-готель на 36 місць, котеджі, ресторан, прокат човнів і рибальських снастей. У водоймах ловляться тарань, краснопірка, карась, лящ і товстолобик.",
+      "descriptionEn": "Delta Dnipra is a fishing and recreation complex founded in 2007 in the village of Dniprovske, Bilozerskyi district, in the Dnipro delta about 23 km from Kherson. It offers a 36-bed mini-hotel, cottages, a restaurant, and boat and tackle rental. The waters hold roach, rudd, crucian carp, bream and silver carp.",
+      "district": "Білозерський район",
+      "lat": 46.5878,
+      "lng": 32.4661,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Безкоштовна та платна риболовля «під ключ»; проживання в міні-готелі та котеджах, прокат човнів і снастей — за окрему плату.",
+      "priceNoteEn": "Free fishing plus organised all-inclusive paid fishing; accommodation in mini-hotel and cottages, boat and tackle rental for an extra fee.",
+      "fishSlugs": [
+        "karas",
+        "lyashch",
+        "tovstolob",
+        "krasnopirka",
+        "plitka"
+      ],
+      "amenitySlugs": [
+        "nochivlia",
+        "chovny",
+        "kafe",
+        "prokat-snastei",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "shchedrivske-vodoskhovyshche",
+      "regionSlug": "khmelnytska-oblast",
+      "name": "Щедрівське водосховище",
+      "nameEn": "Shchedrivske Reservoir",
+      "description": "Щедрівське водосховище створене 1958 року на річці Південний Буг біля смт Летичів унаслідок будівництва малої ГЕС. Площа водного дзеркала близько 1331 га — це одна з найбільших водойм, що повністю розташовані в Хмельницькій області. У водосховищі водяться карась, щука, окунь, лящ, а товстолобика запускають штучно.",
+      "descriptionEn": "Shchedrivske Reservoir was created in 1958 on the Southern Bug River near the town of Letychiv following the construction of a small hydroelectric plant. With a water surface of about 1,331 hectares it is one of the largest waters located entirely within Khmelnytskyi Oblast. Anglers catch crucian carp, pike, perch and bream, while silver carp is stocked artificially.",
+      "district": "Хмельницький район",
+      "lat": 49.4121,
+      "lng": 27.6299,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "karas",
+        "okun",
+        "lyashch",
+        "tovstolob"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "ozero-za-khmelnytskym-aeroportom",
+      "regionSlug": "khmelnytska-oblast",
+      "name": "Озеро за Хмельницьким аеропортом",
+      "nameEn": "Lake behind Khmelnytskyi Airport",
+      "description": "Платний ставок площею близько 5 га (середня глибина 2 м, максимальна 3 м) розташований приблизно за 11 км від центру Хмельницького поблизу об'їзної дороги на Тернопіль, проїзд через село Россоша. Водойма багата на білу рибу: короп, карась, білий амур, плітка, краснопірка, лящ, трапляються також щука, окунь і судак. Риболовля лише вдень, з ночівлею заборонено.",
+      "descriptionEn": "A paid pond of about 5 hectares (average depth 2 m, maximum 3 m) located roughly 11 km from the centre of Khmelnytskyi near the Ternopil bypass, accessed via the village of Rossosh. The water holds plenty of white fish — carp, crucian carp, grass carp, roach, rudd and bream — as well as pike, perch and zander. Daytime fishing only; overnight stays are not allowed.",
+      "district": "Хмельницький район",
+      "lat": 49.368,
+      "lng": 26.995,
+      "waterType": "POND",
+      "isPaid": true,
+      "priceNote": "Близько 150 грн за світловий день; нічна риболовля заборонена, дозволено до 4 спінінгів і 1 поплавкову вудку.",
+      "priceNoteEn": "Around 150 UAH per daylight session; night fishing prohibited, up to 4 spinning rods and 1 float rod allowed.",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "bilyi-amur",
+        "plitka",
+        "shchuka"
+      ],
+      "amenitySlugs": [
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "richka-zbruch-bilia-satanova",
+      "regionSlug": "khmelnytska-oblast",
+      "name": "Річка Збруч біля Сатанова",
+      "nameEn": "Zbruch River near Sataniv",
+      "description": "Збруч — ліва притока Дністра, що тече вздовж межі Хмельницької та Тернопільської областей; популярна для риболовлі ділянка проходить через смт Сатанів на лівому березі річки в межах національного парку «Подільські Товтри». Тут діє стара Сатанівська ГЕС, а у чистій воді ловлять щуку, окуня, головеня, жереха, плітку та коропа. Риболовля безкоштовна.",
+      "descriptionEn": "The Zbruch is a left tributary of the Dniester flowing along the border of Khmelnytskyi and Ternopil oblasts; a popular fishing stretch runs through the town of Sataniv on the river's left bank within the Podilski Tovtry National Park. The old Sataniv hydro plant sits here, and the clear water yields pike, perch, chub, asp, roach and carp. Fishing is free.",
+      "district": "Хмельницький район",
+      "lat": 49.25,
+      "lng": 26.2667,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "okun",
+        "holoven",
+        "zherekh",
+        "plitka"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "baza-vidpochynku-dyka-ryba",
+      "regionSlug": "khmelnytska-oblast",
+      "name": "База відпочинку «Дика Риба»",
+      "nameEn": "Wild Fish Recreation Base",
+      "description": "Приватна база відпочинку «Дика Риба» розташована біля мальовничого зарибленого озера в селі Голосків поблизу Меджибожа. Ставок спеціально зарибнений щукою, коропом, товстолобом, карасем і лином, риболовля у форматі трофейної спортивної ловлі «зловив-відпустив». На березі облаштовані панорамні будиночки над водою, лазня, гарячі чани, кухні й тераси.",
+      "descriptionEn": "The private Wild Fish recreation base sits beside a scenic stocked lake in the village of Holoskiv near Medzhybizh. The pond is specially stocked with pike, carp, silver carp, crucian carp and tench, and fishing follows a trophy catch-and-release format. The shore features panoramic cabins over the water, a sauna, hot tubs, kitchens and terraces.",
+      "district": "Хмельницький район",
+      "lat": 49.3808,
+      "lng": 27.3431,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Трофейна спортивна риболовля у форматі «зловив-відпустив»; вартість входить у вартість оренди будиночків (ціни за запитом).",
+      "priceNoteEn": "Trophy sport fishing in a catch-and-release format; cost is included in cabin rental (prices on request).",
+      "fishSlugs": [
+        "shchuka",
+        "korop",
+        "tovstolob",
+        "karas",
+        "lyn"
+      ],
+      "amenitySlugs": [
+        "nochivlia",
+        "altanky",
+        "kafe",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "kremenchutske-vodoskhovyshche",
+      "regionSlug": "cherkaska-oblast",
+      "name": "Кременчуцьке водосховище",
+      "nameEn": "Kremenchuk Reservoir",
+      "description": "Найбільше за площею водосховище України (2250 км²), створене на Дніпрі, частина якого лежить у межах Черкаської області. У водоймі мешкає близько 50 видів риб, серед яких лящ, судак, щука, короп та плітка. Рибалка з берега та човна вільна й популярна цілорічно.",
+      "descriptionEn": "The largest reservoir in Ukraine by area (2250 km²), created on the Dnieper, with a major part lying within Cherkasy Oblast. About 50 fish species inhabit it, including bream, zander, pike, carp and roach. Shore and boat fishing is free and popular year-round.",
+      "district": "Черкаський район",
+      "lat": 49.2667,
+      "lng": 32.6333,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "lyashch",
+        "sudak",
+        "shchuka",
+        "korop",
+        "plitka"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "baza-vidpochynku-ta-rybolovli-delta-rosi",
+      "regionSlug": "cherkaska-oblast",
+      "name": "База відпочинку та риболовлі «Дельта Росі»",
+      "nameEn": "Delta Rosi Fishing & Recreation Base",
+      "description": "Рибальсько-туристична база на березі річки Рось у селі Хрещатик, у місці впадіння Росі в Дніпро (Канівське водосховище). Тут ловлять щуку, судака, сома, жереха, головня, ляща, плітку та інших. Основна риболовля — з човна; є проживання, прокат човнів та піщаний пляж.",
+      "descriptionEn": "A fishing and tourism base on the bank of the Ros River in Khreshchatyk village, where the Ros flows into the Dnieper (Kaniv Reservoir). Anglers catch pike, zander, catfish, asp, chub, bream, roach and more. Fishing is mostly from boats; lodging, boat rental and a sandy beach are available.",
+      "district": "Черкаський район",
+      "lat": 49.6325,
+      "lng": 31.6118,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Прокат веслового човна від 300 грн/день, моторного — від 1000 грн/день + пальне; проживання 500–1000 грн/ніч",
+      "priceNoteEn": "Rowing boat rental from 300 UAH/day, motorboat from 1000 UAH/day + fuel; accommodation 500–1000 UAH/night",
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "som",
+        "zherekh",
+        "lyashch"
+      ],
+      "amenitySlugs": [
+        "nochivlia",
+        "chovny",
+        "prokat-snastei",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "rybalska-baza-dolyna-kvitiv",
+      "regionSlug": "cherkaska-oblast",
+      "name": "Рибальська база «Долина квітів»",
+      "nameEn": "Dolyna Kvitiv (Valley of Flowers) Fishing Base",
+      "description": "База відпочинку за 7 км від міста Сміла з трьома озерами, рибалка дозволена на одному з них (максимальна глибина близько 4 м). У водоймі ловляться сом, карась, короп і товстолоб. Для гостей є альтанки з мангалами, гостьовий будинок, баня та безкоштовна парковка.",
+      "descriptionEn": "A recreation base 7 km from the town of Smila with three lakes, fishing permitted on one of them (max depth about 4 m). The water holds catfish, crucian carp, common carp and silver carp. Guests have gazebos with grills, a guesthouse, a sauna and free parking.",
+      "district": "Черкаський район",
+      "lat": 49.179,
+      "lng": 31.9713,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Денна рибалка 200 грн, доба — 250 грн",
+      "priceNoteEn": "Daytime fishing 200 UAH, 24 hours 250 UAH",
+      "fishSlugs": [
+        "som",
+        "karas",
+        "korop",
+        "tovstolob"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "parkovka",
+        "kafe",
+        "dush",
+        "tualet"
+      ]
+    },
+    {
+      "slug": "richka-ros-poblyzu-smt-stebliv",
+      "regionSlug": "cherkaska-oblast",
+      "name": "Річка Рось (поблизу смт Стеблів)",
+      "nameEn": "Ros River (near Stebliv)",
+      "description": "Мальовнича ділянка річки Рось біля смт Стеблів, де річка тече серед гранітних берегів Придніпровської височини нижче місцевої ГЕС. Тут популярна берегова та спінінгова риболовля на окуня, щуку, ляща, плітку й головня. Біля Стеблева на Росі діє Стеблівський заказник, тож слід дотримуватися правил вилову.",
+      "descriptionEn": "A scenic stretch of the Ros River near the town of Stebliv, where the river runs among granite banks of the Dnieper Upland below the local hydro dam. Shore and spinning fishing for perch, pike, bream, roach and chub is popular here. The Stebliv nature reserve lies on the Ros nearby, so fishing rules should be observed.",
+      "district": "Звенигородський район",
+      "lat": 49.3997,
+      "lng": 31.0925,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "okun",
+        "shchuka",
+        "lyashch",
+        "plitka",
+        "holoven"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "dnistrovske-vodoskhovyshche-bilia-novodnistrovska",
+      "regionSlug": "chernivetska-oblast",
+      "name": "Дністровське водосховище (біля Новодністровська)",
+      "nameEn": "Dniester Reservoir (near Novodnistrovsk)",
+      "description": "Велике водосховище на річці Дністер, утворене Дністровською ГЕС; чернівецька частина прилягає до міста Новодністровськ. Площа близько 142 км², глибини до 50 м, відоме як популярне місце спінінгової та фідерної ловлі. У водосховищі водяться судак, щука, окунь, лящ, короп, плітка та жерех.",
+      "descriptionEn": "A large reservoir on the Dniester River formed by the Dniester hydroelectric station; the Chernivtsi-side waters adjoin the town of Novodnistrovsk. With an area of roughly 142 km² and depths up to 50 m, it is a well-known venue for spinning and feeder fishing. Species include zander, pike, perch, bream, carp, roach and asp.",
+      "district": "Дністровський район",
+      "lat": 48.6105,
+      "lng": 27.2664,
+      "waterType": "RESERVOIR",
+      "isPaid": true,
+      "priceNote": "Платно (за домовленістю з місцевими орендарями/базами); умови залежать від ділянки",
+      "priceNoteEn": "Paid (varies by lessee/base along the shore); conditions depend on the section",
+      "fishSlugs": [
+        "sudak",
+        "shchuka",
+        "okun",
+        "lyashch",
+        "korop"
+      ],
+      "amenitySlugs": [
+        "chovny",
+        "parkovka",
+        "nochivlia"
+      ]
+    },
+    {
+      "slug": "sadyba-rybachok-ozero-lukavtsi",
+      "regionSlug": "chernivetska-oblast",
+      "name": "Садиба Рибачок (озеро, Лукавці)",
+      "nameEn": "Sadyba Rybachok (lake, Lukavtsi)",
+      "description": "Приватна рибальська садиба біля села Лукавці у передгір'ї Карпат з мальовничим озером площею близько 8-10 га. На території є котеджі, альтанки з мангалами, сауна, дитячий майданчик, прокат човнів; кожен будиночок має власний пірс. Ловлять переважно коропа, карася, щуку та окуня, дозволена й зимова риболовля.",
+      "descriptionEn": "A private fishing homestead near the village of Lukavtsi in the Carpathian foothills, set around a scenic lake of about 8-10 hectares. The grounds offer cottages, gazebos with grills, a sauna, a children's playground and boat rental, with a private pier at each cottage. Anglers mainly target carp, crucian carp, pike and perch, and winter fishing is permitted.",
+      "district": "Вижницький район",
+      "lat": 48.2472,
+      "lng": 25.4611,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Риболовля 200 грн за 1 вудку (включно із зимовою); прокат човнів та снастей оплачується окремо",
+      "priceNoteEn": "Fishing 200 UAH per rod (winter fishing included); boat and tackle rental charged separately",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "shchuka",
+        "okun"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "chovny",
+        "parkovka",
+        "dush",
+        "prokat-snastei"
+      ]
+    },
+    {
+      "slug": "richka-prut-bilia-chernivtsiv",
+      "regionSlug": "chernivetska-oblast",
+      "name": "Річка Прут (біля Чернівців)",
+      "nameEn": "Prut River (near Chernivtsi)",
+      "description": "Прут — найбільша річка, що протікає через місто Чернівці; у середній течії русло стає рівнинним і звивистим, із міським пляжем у межах міста. Тут ловлять головня, жереха, щуку, окуня, ляща, коропа, а в заплавних водоймах — карася та лина. Риболовля безкоштовна та доступна цілодобово.",
+      "descriptionEn": "The Prut is the largest river flowing through the city of Chernivtsi; in its middle course the channel becomes flat and meandering, with a municipal beach inside the city. Anglers catch chub, asp, pike, perch, bream and carp here, with crucian carp and tench in floodplain backwaters. Fishing is free and available around the clock.",
+      "district": "Чернівецький район",
+      "lat": 48.278,
+      "lng": 25.95,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "holoven",
+        "zherekh",
+        "shchuka",
+        "korop",
+        "okun"
+      ],
+      "amenitySlugs": [
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "ozero-bahno-kolinkivtsi",
+      "regionSlug": "chernivetska-oblast",
+      "name": "Озеро Багно (Колінківці)",
+      "nameEn": "Lake Bahno (Kolinkivtsi)",
+      "description": "Платна водойма площею близько 40 га біля села Колінківці на півночі області. Ловлять коропа, карася, щуку, окуня та плітку; риболовля дозволена цілодобово. Інфраструктура для відпочинку обмежена, під'їзні дороги місцями погані.",
+      "descriptionEn": "A paid lake of about 40 hectares near the village of Kolinkivtsi in the north of the region. Anglers catch carp, crucian carp, pike, perch and roach, with fishing allowed around the clock. Leisure amenities are limited and the access roads are reportedly poor in places.",
+      "district": "Дністровський район",
+      "lat": 48.4075,
+      "lng": 26.1292,
+      "waterType": "LAKE",
+      "isPaid": true,
+      "priceNote": "250 грн за добу або 200 грн за світлу пору доби; ловля цілодобово",
+      "priceNoteEn": "250 UAH per day or 200 UAH for daytime; fishing available 24/7",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "shchuka",
+        "okun",
+        "plitka"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "mahistratske-ozero",
+      "regionSlug": "chernihivska-oblast",
+      "name": "Магістратське озеро",
+      "nameEn": "Magistratske Lake",
+      "description": "Заплавне озеро в межах міста Чернігів на лівому березі Десни, площею близько 63 га та довжиною до 2 км. З 1964 року є гідрологічною пам'яткою природи місцевого значення; у водоймі водяться карась, окунь, щука, лин і плітка, місцями вона поступово замулюється.",
+      "descriptionEn": "A floodplain lake within the city limits of Chernihiv on the left bank of the Desna, about 63 ha in area and up to 2 km long. A local hydrological nature monument since 1964; the lake holds crucian carp, perch, pike, tench and roach, though it is gradually silting up in places.",
+      "district": "Чернігівський район",
+      "lat": 51.4747,
+      "lng": 31.3375,
+      "waterType": "LAKE",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "karas",
+        "okun",
+        "shchuka",
+        "lyn",
+        "plitka"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "desna-bilia-chernihova-zolotyi-bereh",
+      "regionSlug": "chernihivska-oblast",
+      "name": "Десна біля Чернігова (Золотий берег)",
+      "nameEn": "Desna River at Chernihiv (Zolotyi Bereh)",
+      "description": "Ділянка річки Десна в межах Чернігова поблизу міського пляжу «Золотий берег» і Красного мосту — одне з найпопулярніших місць рибалки в місті. Тут трапляються глибокі ями (до 12 м), де ловлять сома, судака, ляща, плітку та окуня; повідомляли про сома вагою близько 22 кг.",
+      "descriptionEn": "A stretch of the Desna River within Chernihiv near the city beach Zolotyi Bereh and the Red Bridge, one of the most popular fishing spots in town. It features deep holes (up to 12 m) where catfish, zander, bream, roach and perch are caught; a catfish of about 22 kg has been reported here.",
+      "district": "Чернігівський район",
+      "lat": 51.4866,
+      "lng": 31.324,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "som",
+        "sudak",
+        "lyashch",
+        "plitka",
+        "okun"
+      ],
+      "amenitySlugs": [
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "plavbaza-neptun-sorokoshychi",
+      "regionSlug": "chernihivska-oblast",
+      "name": "Плавбаза «Нептун» (Сорокошичі)",
+      "nameEn": "Neptun Floating Base (Sorokoshychi)",
+      "description": "База відпочинку та платної риболовлі на острові в зоні Київського водосховища і Дніпра поблизу села Сорокошичі Чернігівського району. Пропонує рибалку з гідом, готель на воді, кафе-бар, лазню, прокат човнів і альтанки; у водоймі трапляються щука, судак, сом, лящ і короп.",
+      "descriptionEn": "A recreation and paid-fishing base on an island in the Kyiv Reservoir and Dnipr zone near the village of Sorokoshychi in Chernihiv district. It offers guided fishing, a hotel on the water, a cafe-bar, a sauna, boat rental and gazebos; pike, zander, catfish, bream and carp are present.",
+      "district": "Чернігівський район",
+      "lat": 51.2031,
+      "lng": 30.5317,
+      "waterType": "RESERVOIR",
+      "isPaid": true,
+      "priceNote": "Платна риболовля з гідом від 15000 грн (10 год); прокат човна 1000 грн/добу, мотора 3200–6800 грн/добу, вудок 150–700 грн/добу; проживання 1000–6500 грн/добу. Тимчасово не працює до завершення воєнного стану.",
+      "priceNoteEn": "Paid guided fishing from UAH 15,000 (10 h); boat rental UAH 1,000/day, motor UAH 3,200–6,800/day, rods UAH 150–700/day; accommodation UAH 1,000–6,500/night. Temporarily closed until the end of martial law.",
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "som",
+        "lyashch",
+        "korop"
+      ],
+      "amenitySlugs": [
+        "nochivlia",
+        "chovny",
+        "prokat-snastei",
+        "kafe",
+        "dush",
+        "altanky"
+      ]
+    },
+    {
+      "slug": "ozero-zanky",
+      "regionSlug": "chernihivska-oblast",
+      "name": "Озеро Заньки",
+      "nameEn": "Zanky Lake",
+      "description": "Платне рибальське озеро з облаштованою зоною відпочинку біля села Заньки Ніжинського району, приблизно за 23 км від Ніжина. У водоймі водяться карась, короп, білий амур, товстолоб, лин, щука та судак; є пляж і місця для відпочинку.",
+      "descriptionEn": "A paid fishing lake with an equipped recreation area near the village of Zanky in Nizhyn district, about 23 km from Nizhyn. The water holds crucian carp, carp, grass carp, silver carp, tench, pike and zander; there is a beach and rest areas.",
+      "district": "Ніжинський район",
+      "lat": 51.1983,
+      "lng": 31.9723,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Платна риболовля та відпочинок; ціни уточнюються за контактами власника. Облаштовані місця для відпочинку та пляж.",
+      "priceNoteEn": "Paid fishing and recreation; prices to be confirmed with the owner. Equipped rest areas and a beach on site.",
+      "fishSlugs": [
+        "karas",
+        "korop",
+        "bilyi-amur",
+        "tovstolob",
+        "shchuka"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "ozero-telbin",
+      "regionSlug": "kyiv",
+      "name": "Озеро Тельбін",
+      "nameEn": "Lake Telbin",
+      "description": "Озеро Тельбін на Березняках (лівий берег Києва) має форму бумерангу, площу близько 2 га і глибину до 7 м. У водоймі водяться окунь, плітка, лящ, щука, карась та інша риба; риболовля безкоштовна й доступна цілий рік. Поруч облаштований пляж із чистим піском і зони відпочинку.",
+      "descriptionEn": "Lake Telbin in the Bereznyaky neighbourhood on Kyiv's left bank is boomerang-shaped, covers about 2 ha and reaches depths of up to 7 m. It holds perch, roach, bream, pike, crucian carp and other species, with free fishing available year-round. A sandy beach and recreation zones sit along its shores.",
+      "district": "Дніпровський район",
+      "lat": 50.428,
+      "lng": 30.6072,
+      "waterType": "LAKE",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "okun",
+        "plitka",
+        "lyashch",
+        "shchuka",
+        "karas"
+      ],
+      "amenitySlugs": [
+        "parkovka"
+      ]
+    },
+    {
+      "slug": "ozero-vyrlytsia",
+      "regionSlug": "kyiv",
+      "name": "Озеро Вирлиця",
+      "nameEn": "Lake Vyrlytsia",
+      "description": "Вирлиця — одне з найбільших і найглибших озер Києва (площа близько 98 га, глибина до 28 м) у Дарницькому районі між проспектом Миколи Бажана та вулицею Ревуцького. Завдяки глибині й чистій воді тут водяться карась, щука, судак, окунь, сом, плітка та лящ; риболовля з берега й човна безкоштовна.",
+      "descriptionEn": "Vyrlytsia is one of Kyiv's largest and deepest lakes (about 98 ha, up to 28 m deep) in the Darnytskyi district between Mykoly Bazhana Avenue and Revutskoho Street. Its depth and clean water support crucian carp, pike, zander, perch, catfish, roach and bream, with free fishing from shore or boat.",
+      "district": "Дарницький район",
+      "lat": 50.3943,
+      "lng": 30.6598,
+      "waterType": "LAKE",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "karas",
+        "shchuka",
+        "sudak",
+        "okun",
+        "som"
+      ],
+      "amenitySlugs": [
+        "chovny"
+      ]
+    },
+    {
+      "slug": "ozero-verbne",
+      "regionSlug": "kyiv",
+      "name": "Озеро Вербне",
+      "nameEn": "Lake Verbne",
+      "description": "Вербне — штучне озеро на Оболоні (колишній піщаний кар'єр, площа близько 16 га), оголошене іхтіолого-ботанічним заказником. У ньому водяться карась, короп, щука, окунь, плітка, краснопірка та лящ; вода живиться підземними джерелами й вирізняється чистотою. Як природоохоронна територія, лов може бути обмежений правилами заказника.",
+      "descriptionEn": "Verbne is an artificial lake in the Obolon district (a former sand quarry, about 16 ha) designated as an ichthyological-botanical reserve. It is home to crucian carp, carp, pike, perch, roach, rudd and bream, and is fed by clean groundwater springs. As a protected area, fishing may be subject to reserve regulations.",
+      "district": "Оболонський район",
+      "lat": 50.4901,
+      "lng": 30.5178,
+      "waterType": "LAKE",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "karas",
+        "korop",
+        "shchuka",
+        "okun",
+        "plitka"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "tsentr-simeinoi-rybolovli-bili-kameni",
+      "regionSlug": "kyiv",
+      "name": "Центр сімейної риболовлі «Білі камені»",
+      "nameEn": "White Stones Family Fishing Center",
+      "description": "«Білі камені» — платний центр сімейної риболовлі на Корчуватому (вул. Промислова, 4) в межах Києва, всього за кілька хвилин від метро Видубичі. Комплекс має кілька зариблених озер з коропом, фореллю, осетром, сомом, щукою, судаком та білим амуром, а також альтанки, кафе, прокат снастей і дитячий ставок.",
+      "descriptionEn": "White Stones is a paid family fishing center in Korchuvate (Promyslova St. 4) within Kyiv, minutes from Vydubychi metro. The complex has several stocked lakes with carp, trout, sturgeon, catfish, pike, zander and grass carp, plus gazebos, a cafe, tackle rental and a children's pond.",
+      "district": "Голосіївський район",
+      "lat": 50.3728,
+      "lng": 30.5677,
+      "waterType": "FISHING_COMPLEX",
+      "isPaid": true,
+      "priceNote": "Платний лов від ~250 грн; вихідні/свята близько 400 грн з лімітом вилову форелі. Адреса: вул. Промислова, 4 (Корчувате, біля м. Видубичі).",
+      "priceNoteEn": "Paid fishing from ~250 UAH; weekends/holidays about 400 UAH with a trout catch limit. Address: Promyslova St. 4 (Korchuvate, near Vydubychi metro).",
+      "fishSlugs": [
+        "korop",
+        "forel",
+        "osetr",
+        "som",
+        "shchuka"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "kafe",
+        "prokat-snastei",
+        "parkovka",
+        "tualet"
+      ]
+    }
+  ]
+}

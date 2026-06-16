@@ -179,6 +179,56 @@
     color: var(--muted);
   }
 
+  // ── Place search ─────────────────────────────────────────────────────────
+  &__search {
+    position: relative;
+    margin-bottom: 4px;
+  }
+
+  &__search-status {
+    margin-top: 6px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  &__search-results {
+    list-style: none;
+    margin: 6px 0 0;
+    padding: 4px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    max-height: 260px;
+    overflow-y: auto;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+    li {
+      margin: 0;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 8px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--text, #374151);
+      line-height: 1.3;
+
+      &:hover {
+        background: #f3f4f6;
+      }
+    }
+  }
+
   &__hint {
     font-size: 0.78rem;
     color: var(--muted);

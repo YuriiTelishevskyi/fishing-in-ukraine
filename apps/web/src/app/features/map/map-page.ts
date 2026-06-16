@@ -1,14 +1,15 @@
 import { ChangeDetectionStrategy, Component, ElementRef, Signal, afterNextRender, inject, signal, viewChild } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { MapPinDto, SpotDto } from '@fishing/shared';
-import { firstValueFrom } from 'rxjs';
+import { Subject, catchError, debounceTime, distinctUntilChanged, firstValueFrom, from, of, switchMap } from 'rxjs';
 import { ApiService } from '../../core/api.service';
 import { SeoService } from '../../core/seo.service';
 import { usePageLocale } from '../../core/use-locale';
 import { Header } from '../../layout/header';
 import { createMapPin } from '../../shared/map-pin';
+import { GeoResult, geocodePlaces } from '../../shared/geocode';
 
 function escapeHtml(s: string): string {
   return s
@@ -39,6 +40,13 @@ export class MapPage {
   fish = '';
   paid = '';
 
+  // Place-search (geocoding) signals
+  readonly searchQuery = signal('');
+  readonly searchResults = signal<GeoResult[]>([]);
+  readonly searching = signal(false);
+  readonly searchOpen = signal(false);
+  private readonly searchInput$ = new Subject<string>();
+
   // Add-point mode signals
   readonly adding = signal(false);
   readonly picked = signal<{ lat: number; lng: number } | null>(null);
@@ -67,6 +75,29 @@ export class MapPage {
   private spotsData = signal<SpotDto[]>([]);
 
   constructor() {
+    // Debounced place-search. The Subject only emits on user input, so this
+    // never fires during SSR/construction; geocodePlaces runs browser-only.
+    this.searchInput$
+      .pipe(
+        debounceTime(450),
+        distinctUntilChanged(),
+        switchMap((q) => {
+          if (q.trim().length < 3) {
+            this.searchResults.set([]);
+            this.searching.set(false);
+            return of([] as GeoResult[]);
+          }
+          this.searching.set(true);
+          return from(geocodePlaces(q, this.locale.locale())).pipe(catchError(() => of([] as GeoResult[])));
+        }),
+        takeUntilDestroyed(),
+      )
+      .subscribe((results) => {
+        this.searchResults.set(results);
+        this.searching.set(false);
+        this.searchOpen.set(true);
+      });
+
     const uk = this.locale.locale() === 'uk';
     this.seo.apply({
       title: uk ? 'Карта водойм України — FishMap.ua' : 'Fishing waters map — FishMap.ua',
@@ -165,6 +196,21 @@ export class MapPage {
     }
     html += `<small>— ${escapeHtml(s.authorName)}, ${date}</small>`;
     return html;
+  }
+
+  // --- Place search (geocoding) ---
+
+  onSearchInput(value: string) {
+    this.searchQuery.set(value);
+    this.searchInput$.next(value);
+  }
+
+  chooseResult(r: GeoResult) {
+    if (this.map) this.map.setView([r.lat, r.lng], 13);
+    if (this.adding()) this.placeMarker(r.lat, r.lng);
+    this.searchOpen.set(false);
+    this.searchResults.set([]);
+    this.searchQuery.set(r.label);
   }
 
   // --- Add-point mode ---

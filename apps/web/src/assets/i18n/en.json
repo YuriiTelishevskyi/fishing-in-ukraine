@@ -181,7 +181,10 @@
     "submit": "Submit",
     "cancel": "Cancel",
     "thanks": "Thanks! Your point will appear after review.",
-    "error": "Could not submit. Try again later."
+    "error": "Could not submit. Try again later.",
+    "searchPlaceholder": "Search a place (village, town…)",
+    "searching": "Searching…",
+    "noResults": "Nothing found"
   },
   "waterNews": {
     "title": "News & stocking",

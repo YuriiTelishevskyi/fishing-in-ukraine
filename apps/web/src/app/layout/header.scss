@@ -1,9 +1,11 @@
 $mobile-bp: 720px;
 
 .hdr {
-  position: absolute; inset: 0 0 auto; z-index: 50; padding: 14px 0;
+  // z-index 1100 sits above the Leaflet map (panes 200–700, controls 1000) so the
+  // header is never painted over on /karta or water-detail pages.
+  position: absolute; inset: 0 0 auto; z-index: 1100; padding: 14px 0;
   color: #fff;
-  &--solid { position: sticky; top: 0; background: var(--hero-from); box-shadow: var(--shadow); }
+  &--solid { position: sticky; top: 0; z-index: 1100; background: var(--hero-from); box-shadow: var(--shadow); }
   &__row { display: flex; align-items: center; gap: 28px; }
   &__logo {
     font: 800 1.3rem var(--font-head); color: #fff; display: flex; gap: 8px; align-items: center;
@@ -14,7 +16,26 @@ $mobile-bp: 720px;
   // ── Desktop nav (hidden on mobile) ─────────────────────────────────────────
   &__nav {
     display: flex; gap: 20px; margin-left: auto;
-    a { color: rgba(255, 255, 255, 0.85); font-weight: 600; &:hover { color: #fff; } }
+    a {
+      position: relative;
+      color: rgba(255, 255, 255, 0.85); font-weight: 600;
+      padding-bottom: 4px;
+      &:hover { color: #fff; }
+    }
+
+    // Active-link highlight (desktop): full-opacity white + accent underline bar.
+    // Nested under `&__nav` so it out-specifies the `.hdr__nav a` rule above.
+    .hdr__nav-link--active {
+      color: #fff;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0; right: 0; bottom: -2px;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--accent);
+      }
+    }
   }
   &__lang--desktop { display: flex; gap: 6px; flex-shrink: 0; }
 
@@ -39,7 +60,7 @@ $mobile-bp: 720px;
       display: block;
       position: fixed;
       inset: 0;
-      z-index: 49;
+      z-index: 1150;
     }
   }
 
@@ -52,7 +73,7 @@ $mobile-bp: 720px;
       top: 100%;
       left: 0;
       right: 0;
-      z-index: 100;
+      z-index: 1200;
       background: var(--hero-from);
       padding: 16px 24px 20px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
@@ -67,11 +88,20 @@ $mobile-bp: 720px;
       color: rgba(255, 255, 255, 0.85);
       font-weight: 600;
       font-size: 1rem;
-      padding: 10px 0;
+      padding: 10px 0 10px 12px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-left: 3px solid transparent;
       display: block;
       &:hover { color: #fff; }
       &:last-child { border-bottom: none; }
+    }
+
+    // Mobile active highlight: full-opacity white + accent left bar.
+    // Overrides the shared desktop underline rule (no ::after bar in the menu).
+    .hdr__nav-link--active {
+      color: #fff;
+      border-left-color: var(--accent);
+      &::after { content: none; }
     }
   }
 
@@ -79,6 +109,19 @@ $mobile-bp: 720px;
     margin-top: 16px;
     display: flex;
     gap: 6px;
+  }
+
+  // ── Scroll-aware hide (DESKTOP only) ────────────────────────────────────────
+  // On mobile the header never slides away (the burger handles navigation), so
+  // the translateY is gated behind the desktop media query below — `.hdr--hidden`
+  // is a no-op on small screens even though the JS may toggle it.
+  @media (min-width: #{$mobile-bp + 1px}) {
+    transition: transform 0.3s ease;
+    &.hdr--hidden { transform: translateY(-100%); }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none; // still hides/shows, just instantly
+    }
   }
 
   // ── Mobile breakpoint ───────────────────────────────────────────────────────

@@ -1,14 +1,12 @@
 .ftr {
   margin-top: 80px; background: var(--hero-from); color: rgba(255, 255, 255, 0.6);
   padding: 48px 0 24px;
-  &__row { display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  &__row { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
   &__logo { font: 800 1.2rem var(--font-head); color: #fff; em { color: var(--accent); font-style: normal; } }
-  nav { display: flex; flex-direction: column; gap: 8px; a { color: rgba(255, 255, 255, 0.75); } }
   &__copy { margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 0.85rem; }
 
   @media (max-width: 560px) {
     padding: 36px 0 20px;
-    &__row { flex-direction: column; gap: 24px; }
-    nav { flex-direction: column; }
+    &__row { flex-direction: column; align-items: flex-start; gap: 24px; }
   }
 }

@@ -93,6 +93,34 @@
           </section>
         }
 
+        <!-- Recommended fishing days — derived from bite() forecast -->
+        @if (recommendedDays().length) {
+          <section class="detail-section recdays" appReveal>
+            <h2 class="detail-section__title"><span class="detail-section__icon">🏆</span>{{ 'recDays.title' | transloco }}</h2>
+            <p class="recdays__intro muted">{{ 'recDays.intro' | transloco }}</p>
+            <div class="recdays__grid">
+              @for (r of recommendedDays(); track r.day.date) {
+                <article class="recday" [class.recday--best]="r.best">
+                  @if (r.best) {
+                    <span class="recday__badge">⭐ {{ 'recDays.best' | transloco }}</span>
+                  }
+                  <div class="recday__date">{{ recDayLabel(r.day.date) }}</div>
+                  <div class="recday__score" [attr.aria-label]="(r.day.reasonKey | transloco) + ' ' + r.day.score + '/5'">
+                    @for (i of scoreSlots(); track i) {
+                      <span class="recday__fish" [class.recday__fish--on]="i < r.day.score">🐟</span>
+                    }
+                  </div>
+                  <div class="recday__reason">{{ r.day.reasonKey | transloco }}</div>
+                  <div class="recday__moon">
+                    <span class="recday__moon-icon">{{ moonIcon(r.day.moon.nameKey) }}</span>
+                    <span class="recday__moon-name muted">{{ r.day.moon.nameKey | transloco }}</span>
+                  </div>
+                </article>
+              }
+            </div>
+          </section>
+        }
+
         <!-- Fish -->
         @if (w.fish.length > 0) {
           <section class="detail-section" appReveal>
@@ -129,6 +157,9 @@
         <section class="detail-section" appReveal>
           <h2 class="detail-section__title" id="water-map"><span class="detail-section__icon">🗺</span>{{ 'water.onMap' | transloco }}</h2>
           <div #miniMap class="minimap"></div>
+          @if (directionsUrl(); as dir) {
+            <a class="directions-link" [href]="dir" target="_blank" rel="noopener">🧭 {{ 'water.directions' | transloco }}</a>
+          }
         </section>
 
         <!-- Reviews -->
@@ -314,12 +345,23 @@
               </label>
               <label class="cr-form__field">
                 <span>{{ 'catchReport.date' | transloco }}</span>
-                <input type="date" [ngModel]="crDate()" (ngModelChange)="crDate.set($event)" name="caughtAt" [max]="crMaxDate" required />
+                <input class="cr-date" type="date" [ngModel]="crDate()" (ngModelChange)="crDate.set($event)" name="caughtAt" [max]="crMaxDate" required />
               </label>
-              <label class="cr-form__field">
+              <div class="cr-form__field">
                 <span>{{ 'catchReport.photo' | transloco }}</span>
-                <input type="file" accept="image/*" (change)="onCrFile($event)" name="photo" />
-              </label>
+                <div class="cr-file">
+                  <label class="cr-file__btn">
+                    📷 {{ 'catchReport.choosePhoto' | transloco }}
+                    <input class="hp" type="file" accept="image/*" (change)="onCrFile($event)" name="photo" />
+                  </label>
+                  @if (crFilePreview(); as preview) {
+                    <img class="cr-file__thumb" [src]="preview" alt="" />
+                  }
+                  <span class="cr-file__name" [class.cr-file__name--empty]="!crFile()">
+                    {{ crFile()?.name ?? ('catchReport.noFile' | transloco) }}
+                  </span>
+                </div>
+              </div>
               <label class="cr-form__field">
                 <span>{{ 'catchReport.comment' | transloco }}</span>
                 <textarea [ngModel]="crComment()" (ngModelChange)="crComment.set($event)" name="comment" maxlength="1000" rows="3"></textarea>
@@ -406,6 +448,9 @@
               <a [href]="w.website" target="_blank" rel="noopener" class="aside-card__contact-link">🌐 {{ w.website }}</a>
             }
             <a href="#water-map" class="aside-card__contact-link">🗺 {{ 'water.onMap' | transloco }}</a>
+            @if (directionsUrl(); as dir) {
+              <a [href]="dir" target="_blank" rel="noopener" class="aside-card__contact-link">🧭 {{ 'water.directions' | transloco }}</a>
+            }
           </div>
 
         </div><!-- /aside-card -->

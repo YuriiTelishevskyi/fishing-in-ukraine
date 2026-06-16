@@ -142,6 +142,15 @@
   }
 }
 
+// "Get directions" link below the mini-map
+.directions-link {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 14px;
+  padding: 9px 16px; border-radius: var(--radius-sm, 8px);
+  border: 1px solid var(--primary); color: var(--primary); background: #e7f3f6;
+  font: 600 0.9rem var(--font-body); transition: background 0.15s, transform 0.15s;
+  &:hover { background: #d6ecf1; transform: translateY(-1px); }
+}
+
 // Aside card
 .detail-aside {
   position: sticky;
@@ -210,6 +219,23 @@
   &__field { display: flex; flex-direction: column; gap: 6px; }
   &__field textarea { min-height: 80px; }
   &__submit { align-self: flex-start; &:disabled { opacity: 0.55; cursor: not-allowed; } }
+}
+
+// Polished native date input — obviously clickable, brand-tinted picker icon.
+.cr-date {
+  cursor: pointer;
+  // Progressive enhancement: style the calendar picker indicator (WebKit/Blink).
+  &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding: 4px;
+    margin-left: 4px;
+    border-radius: 6px;
+    opacity: 0.85;
+    // Tint the (black) glyph toward brand teal.
+    filter: invert(35%) sepia(60%) saturate(900%) hue-rotate(150deg);
+    transition: background 0.15s, opacity 0.15s;
+  }
+  &::-webkit-calendar-picker-indicator:hover { opacity: 1; background: #d6ecf1; }
 }
 
 

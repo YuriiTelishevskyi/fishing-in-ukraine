@@ -446,3 +446,140 @@ a { transition: color 0.18s ease-out; }
     }
   }
 }
+
+// ── Water-detail: "Best fishing days" recommended cards ──────────────────────
+// (kept global so the water-detail component SCSS stays under its 6kB budget)
+.recdays {
+  &__intro {
+    margin: -4px 0 16px;
+    font-size: 0.92rem;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+  }
+}
+
+.recday {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 16px 16px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--card);
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(2, 18, 24, 0.06));
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  // Stand-out treatment for the single best day.
+  &--best {
+    border: 2px solid var(--accent);
+    background:
+      linear-gradient(150deg, color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%),
+      linear-gradient(0deg, color-mix(in srgb, var(--success) 8%, transparent), transparent 70%),
+      var(--card);
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--accent) 22%, transparent);
+  }
+
+  &__badge {
+    position: absolute;
+    top: -11px;
+    left: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font: 700 0.72rem var(--font-body);
+    color: #5a3b00;
+    background: linear-gradient(90deg, var(--accent), #fbbf24);
+    box-shadow: 0 2px 6px color-mix(in srgb, var(--accent) 35%, transparent);
+    white-space: nowrap;
+  }
+
+  &__date {
+    font: 800 1.02rem var(--font-head);
+    color: var(--ink);
+    text-transform: capitalize;
+  }
+
+  &__score {
+    display: flex;
+    gap: 2px;
+  }
+  &__fish {
+    font-size: 1.05rem;
+    line-height: 1;
+    opacity: 0.22;
+    filter: grayscale(1);
+    &--on {
+      opacity: 1;
+      filter: none;
+    }
+  }
+
+  &__reason {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--ink);
+  }
+
+  &__moon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+  }
+  &__moon-icon { font-size: 1.1rem; line-height: 1; }
+  &__moon-name { font-size: 0.82rem; }
+}
+
+// ── Water-detail: styled custom file picker (catch-report photo) ─────────────
+.cr-file {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 9px 16px;
+    border-radius: var(--radius-sm, 8px);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background: #e7f3f6;
+    font: 600 0.9rem var(--font-body);
+    transition: background 0.15s ease-out, transform 0.15s ease-out;
+    &:hover { background: #d6ecf1; transform: translateY(-1px); }
+  }
+
+  &__thumb {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    flex-shrink: 0;
+  }
+
+  &__name {
+    font-size: 0.88rem;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+    min-width: 0;
+    &--empty { color: var(--muted); }
+  }
+}

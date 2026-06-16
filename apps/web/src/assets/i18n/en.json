@@ -61,6 +61,7 @@
     "rules": "Rules",
     "contacts": "Contacts",
     "onMap": "On the map",
+    "directions": "Get directions",
     "area": "Area",
     "ha": "ha",
     "from": "from",
@@ -102,6 +103,8 @@
     "comment": "Comment",
     "name": "Your name",
     "email": "Email (optional)",
+    "choosePhoto": "Choose photo",
+    "noFile": "No file chosen",
     "submit": "Submit report",
     "success": "Thank you! Your report will appear after moderation."
   },
@@ -160,6 +163,11 @@
       "good": "Good",
       "great": "Great"
     }
+  },
+  "recDays": {
+    "title": "Best days to fish",
+    "intro": "Curated from the bite forecast for the upcoming week.",
+    "best": "Best day"
   },
   "moon": {
     "new": "New moon",

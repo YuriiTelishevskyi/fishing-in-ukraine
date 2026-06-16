@@ -779,6 +779,57 @@ async function seedRegionWaters() {
   console.log(`Region waters seeded: ${count}.`);
 }
 
+interface RealArticle {
+  slug: string;
+  title: string;
+  titleEn?: string;
+  excerpt: string;
+  excerptEn?: string;
+  content: string;
+  contentEn?: string;
+  status?: 'DRAFT' | 'PUBLISHED';
+  publishedAtOffsetDays: number;
+  seoTitle?: string;
+  seoTitleEn?: string;
+  seoDescription?: string;
+  seoDescriptionEn?: string;
+}
+
+// Always-on: real, useful bilingual fishing articles read at runtime from
+// prisma/data/articles.json (same fs-read pattern as seedRegionWaters()).
+async function seedRealArticles() {
+  const raw = readFileSync(join(__dirname, 'data', 'articles.json'), 'utf8');
+  const data = JSON.parse(raw) as { articles: RealArticle[] };
+
+  let count = 0;
+  for (const a of data.articles) {
+    const publishedAt = new Date(Date.now() - a.publishedAtOffsetDays * 86400000);
+    const scalar = {
+      title: a.title,
+      titleEn: a.titleEn ?? null,
+      excerpt: a.excerpt,
+      excerptEn: a.excerptEn ?? null,
+      content: a.content,
+      contentEn: a.contentEn ?? null,
+      status: (a.status ?? 'PUBLISHED') as 'DRAFT' | 'PUBLISHED',
+      publishedAt,
+      seoTitle: a.seoTitle ?? null,
+      seoTitleEn: a.seoTitleEn ?? null,
+      seoDescription: a.seoDescription ?? null,
+      seoDescriptionEn: a.seoDescriptionEn ?? null,
+    };
+
+    await prisma.article.upsert({
+      where: { slug: a.slug },
+      update: { ...scalar },
+      create: { slug: a.slug, ...scalar },
+    });
+    count++;
+  }
+
+  console.log(`Real articles seeded: ${count}.`);
+}
+
 async function seedDemoArticles() {
   const slug = 'yak-vybraty-platnu-vodoymu-7-porad';
   await prisma.article.upsert({
@@ -996,6 +1047,8 @@ async function main() {
   await seedRealWaters();
   // Always-on base data: 87 verified waters across 22 other oblasts.
   await seedRegionWaters();
+  // Always-on base data: real bilingual blog articles.
+  await seedRealArticles();
   if (process.env.SEED_DEMO === '1') {
     await seedDemoArticles();
     await seedDemoReviews();

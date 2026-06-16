@@ -5,6 +5,7 @@ import {
   Injector,
   PLATFORM_ID,
   afterNextRender,
+  computed,
   effect,
   inject,
   signal,
@@ -14,7 +15,7 @@ import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
-import { BiteForecastDto, CatchReportDto, FishSpeciesDto, Paginated, ReviewDto, WaterDetailDto, WATER_TYPE_LABELS, WaterNewsDto, WaterType, WeatherDto } from '@fishing/shared';
+import { BiteDayDto, BiteForecastDto, CatchReportDto, FishSpeciesDto, Paginated, ReviewDto, WaterDetailDto, WATER_TYPE_LABELS, WaterNewsDto, WaterType, WeatherDto } from '@fishing/shared';
 import { ApiService } from '../../core/api.service';
 import { SeoService } from '../../core/seo.service';
 import { SITE_ORIGIN } from '../../core/site-origin';
@@ -29,6 +30,11 @@ import { StarRating } from '../../shared/star-rating';
 import { RevealDirective } from '../../shared/reveal.directive';
 import { WaterPlaceholder } from '../../shared/water-placeholder';
 import { WeatherCard } from '../../shared/weather-card';
+
+interface RecommendedDay {
+  day: BiteDayDto;
+  best: boolean;
+}
 
 const EN_TYPE_LABELS: Record<WaterType, string> = {
   LAKE: 'Lake',
@@ -60,6 +66,31 @@ export class WaterDetailPage {
   readonly notFound = signal(false);
   readonly active = signal(0);
   readonly mapEl = viewChild<ElementRef<HTMLDivElement>>('miniMap');
+
+  // Best fishing days — derived purely from the already-loaded bite() forecast.
+  // We surface the top-scoring upcoming days (score >= 4, capped at 3; if none
+  // reach 4 we fall back to the single best day so the section still feels useful).
+  // The highest-scoring day is flagged `best` for the accent treatment.
+  readonly recommendedDays = computed<RecommendedDay[]>(() => {
+    const b = this.bite();
+    if (!b?.available || !b.days.length) return [];
+    const ranked = [...b.days].sort((a, c) => c.score - a.score);
+    const top = ranked.filter((d) => d.score >= 4).slice(0, 3);
+    const picked = (top.length ? top : ranked.slice(0, 1));
+    const bestScore = picked[0]?.score ?? 0;
+    // Show them back in chronological order so the week reads naturally.
+    return picked
+      .slice()
+      .sort((a, c) => a.date.localeCompare(c.date))
+      .map((d) => ({ day: d, best: d.score === bestScore }));
+  });
+
+  // Google Maps directions to the water (opened in a new tab).
+  readonly directionsUrl = computed(() => {
+    const w = this.water();
+    if (!w) return null;
+    return `https://www.google.com/maps/dir/?api=1&destination=${w.lat},${w.lng}`;
+  });
 
   // Reviews state
   readonly reviews = signal<Paginated<ReviewDto> | null>(null);
@@ -93,6 +124,7 @@ export class WaterDetailPage {
   readonly crMaxDate = this.todayStr();
   readonly crComment = signal('');
   readonly crFile = signal<File | null>(null);
+  readonly crFilePreview = signal<string | null>(null);
   readonly crHp = signal('');
   readonly crPending = signal(false);
   readonly crSuccess = signal(false);
@@ -174,7 +206,42 @@ export class WaterDetailPage {
 
   onCrFile(event: Event): void {
     const input = event.target as HTMLInputElement;
-    this.crFile.set(input.files?.[0] ?? null);
+    const file = input.files?.[0] ?? null;
+    this.crFile.set(file);
+    // Thumbnail preview — browser-only (FileReader is undefined in SSR).
+    if (file && this.isBrowser && typeof FileReader !== 'undefined') {
+      const reader = new FileReader();
+      reader.onload = (e) => this.crFilePreview.set((e.target?.result as string) ?? null);
+      reader.readAsDataURL(file);
+    } else {
+      this.crFilePreview.set(null);
+    }
+  }
+
+  // Map a moon nameKey to an emoji (mirrors BiteStrip.moonIcon).
+  moonIcon(nameKey: string): string {
+    const map: Record<string, string> = {
+      'moon.new': '🌑',
+      'moon.waxingCrescent': '🌒',
+      'moon.firstQuarter': '🌓',
+      'moon.waxingGibbous': '🌔',
+      'moon.full': '🌕',
+      'moon.waningGibbous': '🌖',
+      'moon.lastQuarter': '🌗',
+      'moon.waningCrescent': '🌘',
+    };
+    return map[nameKey] ?? '🌙';
+  }
+
+  // Weekday + day/month label for a recommended-day card.
+  recDayLabel(dateStr: string): string {
+    const localeStr = this.locale.locale() === 'en' ? 'en-US' : 'uk-UA';
+    return new Date(dateStr).toLocaleDateString(localeStr, { weekday: 'short', day: 'numeric', month: 'short' });
+  }
+
+  // 0..5 score → array of 5 slots for the fish-score visualisation.
+  scoreSlots(): number[] {
+    return [0, 1, 2, 3, 4];
   }
 
   get crValid(): boolean {
@@ -253,7 +320,12 @@ export class WaterDetailPage {
     if (!el) return;
     const leaflet = await import('leaflet');
     const L = (leaflet as any).default ?? leaflet;
-    const map = L.map(el, { scrollWheelZoom: false }).setView([w.lat, w.lng], 13);
+    const map = L.map(el, {
+      scrollWheelZoom: true,
+      touchZoom: true,
+      zoomSnap: 0.5,
+      wheelPxPerZoomLevel: 80,
+    }).setView([w.lat, w.lng], 13);
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
       subdomains: 'abcd',

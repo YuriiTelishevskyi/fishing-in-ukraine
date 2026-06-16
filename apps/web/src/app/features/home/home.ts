@@ -1,19 +1,24 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  DestroyRef,
   ElementRef,
   Injector,
+  NgZone,
   PLATFORM_ID,
   afterNextRender,
+  computed,
   effect,
   inject,
+  signal,
   viewChild,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { toSignal, takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { TranslocoPipe } from '@jsverse/transloco';
+import { NearbyWaterDto, WaterListItemDto } from '@fishing/shared';
 import { ApiService } from '../../core/api.service';
 import { SeoService } from '../../core/seo.service';
 import { SITE_ORIGIN } from '../../core/site-origin';
@@ -40,11 +45,21 @@ export class HomePage {
   private readonly siteOrigin = inject(SITE_ORIGIN);
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private readonly injector = inject(Injector);
+  private readonly destroyRef = inject(DestroyRef);
+  private readonly zone = inject(NgZone);
 
   readonly pair = this.locale.pathPair('home');
   readonly regions = toSignal(this.api.regions(), { initialValue: [] });
   readonly fish = toSignal(this.api.fishSpecies(), { initialValue: [] });
-  readonly featured = toSignal(this.api.waters({ perPage: 6 }), { initialValue: null });
+  // Recommended row. SSR + initial render show a varied fallback set (distinct
+  // regions); the browser may upgrade this to geolocated «nearby» waters.
+  readonly featured = signal<(WaterListItemDto & { distanceKm?: number })[]>([]);
+  // Heading is DERIVED from the same `featured` signal (so it can never diverge
+  // from the cards): geolocated rows carry `distanceKm` → «Near you».
+  readonly geolocated = signal(false);
+  readonly recHeading = computed<'home.recommended' | 'home.recommendedNear'>(() =>
+    this.geolocated() ? 'home.recommendedNear' : 'home.recommended',
+  );
   readonly pins = toSignal(this.api.mapPins(), { initialValue: [] });
   readonly homeMapEl = viewChild<ElementRef<HTMLDivElement>>('homeMap');
 
@@ -77,6 +92,26 @@ export class HomePage {
       ],
     });
 
+    // Recommended row: fetch a larger page and pick up to 6 waters from
+    // DISTINCT regions so the fallback isn't all one oblast. Runs on SSR + the
+    // browser so there's content immediately (no blank section / layout shift).
+    this.api
+      .waters({ perPage: 40 })
+      .pipe(takeUntilDestroyed())
+      .subscribe((res) => {
+        // Only seed the fallback if geolocation hasn't already populated the row.
+        if (!this.geolocated()) {
+          this.featured.set(this.pickVaried(res.items, 6));
+        }
+      });
+
+    // Browser-only: try the visitor's location once to recommend NEARBY waters.
+    // On success we replace the fallback with the nearest waters + a «Near you»
+    // heading. On denial / no-geo / timeout we silently keep the varied set.
+    if (this.isBrowser) {
+      afterNextRender(() => this.tryGeolocate(), { injector: this.injector });
+    }
+
     // Mount Leaflet map once in the browser — follow the exact same
     // SSR-safe pattern used by water-detail.ts:
     // Set the guard flag BEFORE scheduling afterNextRender so the effect
@@ -100,6 +135,58 @@ export class HomePage {
     });
   }
 
+  /** Pick up to `limit` waters from DISTINCT regions (dedupe by regionSlug). */
+  private pickVaried(items: WaterListItemDto[], limit: number): WaterListItemDto[] {
+    const seen = new Set<string>();
+    const picked: WaterListItemDto[] = [];
+    for (const w of items) {
+      if (seen.has(w.regionSlug)) continue;
+      seen.add(w.regionSlug);
+      picked.push(w);
+      if (picked.length >= limit) break;
+    }
+    // If fewer distinct regions than `limit`, top up with remaining items.
+    if (picked.length < limit) {
+      for (const w of items) {
+        if (picked.includes(w)) continue;
+        picked.push(w);
+        if (picked.length >= limit) break;
+      }
+    }
+    return picked;
+  }
+
+  /** Browser-only: a single getCurrentPosition; on success → nearby waters. */
+  private tryGeolocate() {
+    if (typeof navigator === 'undefined' || !navigator.geolocation) return;
+    // The geolocation callback can fire OUTSIDE Angular's zone, so signal
+    // writes there wouldn't schedule change detection. Re-enter the zone before
+    // kicking off the request so the resulting signal updates render.
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        this.zone.run(() => {
+          this.api
+            .watersNearby(pos.coords.latitude, pos.coords.longitude, 200, 6)
+            .pipe(takeUntilDestroyed(this.destroyRef))
+            .subscribe({
+              next: (ws: NearbyWaterDto[]) => {
+                if (ws.length) {
+                  this.featured.set(ws);
+                  this.geolocated.set(true);
+                }
+                // Empty result → keep the existing varied fallback + heading.
+              },
+              // Network error → keep the varied fallback.
+              error: () => {},
+            });
+        });
+      },
+      // Denied / unavailable / timeout → keep the varied fallback.
+      () => {},
+      { timeout: 8000, maximumAge: 600_000 },
+    );
+  }
+
   private async mountMap() {
     const el = this.homeMapEl()?.nativeElement;
     if (!el) return;
@@ -108,7 +195,9 @@ export class HomePage {
     this.leafletL = L;
 
     this.leafletMap = L.map(el, {
+      // Teaser: don't hijack page scroll with wheel zoom, but keep pinch zoom.
       scrollWheelZoom: false,
+      touchZoom: true,
       zoomControl: true,
       attributionControl: true,
     }).setView([48.6, 31.2], 6);
@@ -119,12 +208,69 @@ export class HomePage {
       maxZoom: 20,
     }).addTo(this.leafletMap);
 
+    // Spotlight Ukraine (teal border + dim mask), non-interactive, below markers.
+    this.addUkraineHighlight(L);
+
     // If pins arrived before map was ready, add them now
     const currentPins = this.pins();
     if (currentPins.length > 0 && !this.markersAdded) {
       this.markersAdded = true;
       this.addMarkers(currentPins, L);
     }
+  }
+
+  /**
+   * Fetch the simplified Ukraine boundary and render a teal border + a dim mask
+   * (world polygon with Ukraine as a hole) below the markers. Non-interactive so
+   * region-bubble clicks pass through. Decorative — failures are ignored.
+   */
+  private async addUkraineHighlight(L: any) {
+    if (!this.leafletMap) return;
+    try {
+      const res = await fetch('/geo/ukraine.geojson');
+      if (!res.ok) return;
+      const geo = await res.json();
+
+      const worldRing: [number, number][] = [
+        [-90, -180],
+        [90, -180],
+        [90, 180],
+        [-90, 180],
+      ];
+      const holes = this.extractRings(geo).map((ring) =>
+        ring.map(([lng, lat]: [number, number]) => [lat, lng] as [number, number]),
+      );
+      L.polygon([worldRing, ...holes], {
+        stroke: false,
+        fillColor: '#04222C',
+        fillOpacity: 0.28,
+        interactive: false,
+      }).addTo(this.leafletMap);
+
+      L.geoJSON(geo, {
+        style: { color: '#0E7490', weight: 2, opacity: 0.9, fill: false },
+        interactive: false,
+      }).addTo(this.leafletMap);
+    } catch {
+      // ignore — highlight is decorative
+    }
+  }
+
+  private extractRings(geo: any): [number, number][][] {
+    const rings: [number, number][][] = [];
+    const features = geo?.type === 'FeatureCollection' ? geo.features : [geo];
+    for (const f of features ?? []) {
+      const g = f?.geometry ?? f;
+      if (!g) continue;
+      if (g.type === 'Polygon') {
+        if (g.coordinates?.[0]) rings.push(g.coordinates[0]);
+      } else if (g.type === 'MultiPolygon') {
+        for (const poly of g.coordinates ?? []) {
+          if (poly?.[0]) rings.push(poly[0]);
+        }
+      }
+    }
+    return rings;
   }
 
   private addMarkers(pinList: any[], L: any) {

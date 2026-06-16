@@ -17,6 +17,7 @@ import { Footer } from '../../layout/footer';
 import { Header } from '../../layout/header';
 import { BiteStrip } from '../../shared/bite-strip';
 import { Breadcrumbs } from '../../shared/breadcrumbs';
+import { SearchableSelect, SelectOption } from '../../shared/searchable-select';
 
 interface WaterOption {
   name: string;
@@ -26,7 +27,7 @@ interface WaterOption {
 
 @Component({
   selector: 'app-bite-calendar',
-  imports: [Header, Footer, TranslocoPipe, BiteStrip, Breadcrumbs],
+  imports: [Header, Footer, TranslocoPipe, BiteStrip, Breadcrumbs, SearchableSelect],
   templateUrl: './bite-calendar.html',
   styleUrl: './bite-calendar.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -79,10 +80,13 @@ export class BiteCalendarPage {
     return list.items.map((w: WaterListItemDto) => ({ name: w.name, lat: w.lat, lng: w.lng }));
   }
 
-  onWaterChange(event: Event): void {
-    const idx = parseInt((event.target as HTMLSelectElement).value, 10);
-    this.selectedIndex.set(idx);
-    const opt = this.waterOptions[idx];
+  get waterSelectOptions(): SelectOption[] {
+    return this.waterOptions.map((w, index) => ({ label: w.name, value: index }));
+  }
+
+  onWaterPicked(index: number): void {
+    this.selectedIndex.set(index);
+    const opt = this.waterOptions[index];
     if (opt) {
       this.loadForecast(opt.lat, opt.lng);
     }

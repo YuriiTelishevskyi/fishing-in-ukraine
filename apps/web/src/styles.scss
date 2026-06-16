@@ -79,6 +79,72 @@ iframe { max-width: 100%; }
   filter: drop-shadow(0 4px 6px rgba(180, 83, 9, 0.45));
 }
 
+// ── Premium water-card treatment (global so it wins over `.card` + renders
+// regardless of component view encapsulation) ───────────────────────────────
+// `.wcard.wcard--premium` (2 classes) out-specifies the global `.card` shadow.
+.wcard.wcard--premium {
+  position: relative;
+  border: 2px solid #f2b705;
+  box-shadow:
+    0 0 0 1px rgba(245, 158, 11, 0.35),
+    0 6px 18px rgba(217, 119, 6, 0.24),
+    0 10px 28px rgba(11, 27, 34, 0.1);
+
+  // Faint gold corner ribbon (top-right) — decorative.
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 64px;
+    height: 64px;
+    pointer-events: none;
+    background: linear-gradient(225deg, rgba(245, 158, 11, 0.9) 0%, rgba(245, 158, 11, 0) 58%);
+    border-top-right-radius: var(--radius);
+  }
+
+  &:hover {
+    box-shadow:
+      0 0 0 1px rgba(245, 158, 11, 0.55),
+      0 10px 26px rgba(217, 119, 6, 0.36),
+      0 18px 44px rgba(11, 27, 34, 0.18);
+  }
+
+  // More prominent badge: gold gradient pill, bold uppercase label, soft glow.
+  .wcard__premium {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 55%, #d97706 100%);
+    color: #3b2402;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    box-shadow: 0 3px 10px rgba(217, 119, 6, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+  }
+
+  // Gentle one-shot shine sweep across the media on hover (decorative only).
+  &:hover .wcard__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.28) 50%, transparent 65%);
+    transform: translateX(-120%);
+    animation: wcard-shine 0.9s ease-out forwards;
+  }
+}
+
+@keyframes wcard-shine {
+  to { transform: translateX(120%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  // Shine carries no information — disable under reduced-motion.
+  .wcard.wcard--premium:hover .wcard__media::after { animation: none; display: none; }
+}
+
 // Pulsing fish-pin marker (used in Leaflet divIcon — must be global)
 .fish-pin {
   position: relative;
@@ -189,6 +255,64 @@ a { transition: color 0.18s ease-out; }
 @media (prefers-reduced-motion: reduce) {
   .region-bubble { transition: none; }
   .region-bubble:hover { transform: none; }
+}
+
+// ── Stats strip (home + any page) ────────────────────────────────────────────
+// Global (not component-scoped) so the stats block renders correctly anywhere
+// it is used; view-encapsulated SCSS would not reach other templates.
+.stats-section {
+  position: relative;
+  z-index: 2;
+  margin-top: -36px;
+  padding-bottom: 0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  &__item {
+    padding: 24px 20px;
+    text-align: center;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lift);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__num {
+    font: 800 2.4rem var(--font-head);
+    color: var(--primary);
+    line-height: 1;
+  }
+
+  &__label {
+    font-size: 0.88rem;
+    color: var(--muted);
+    text-transform: lowercase;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    &__num { font-size: 1.4rem; }
+    &__item { padding: 12px 8px; }
+    &__label { font-size: 0.78rem; }
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    gap: 6px;
+    &__num { font-size: 1.3rem; }
+    &__item { padding: 10px 6px; }
+  }
 }
 
 // ── Prose typography (blog articles) ─────────────────────────────────────────
@@ -444,5 +568,142 @@ a { transition: color 0.18s ease-out; }
       background: #e7f3f6;
       transform: translateY(-1px);
     }
+  }
+}
+
+// ── Water-detail: "Best fishing days" recommended cards ──────────────────────
+// (kept global so the water-detail component SCSS stays under its 6kB budget)
+.recdays {
+  &__intro {
+    margin: -4px 0 16px;
+    font-size: 0.92rem;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+  }
+}
+
+.recday {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 16px 16px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--card);
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(2, 18, 24, 0.06));
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  // Stand-out treatment for the single best day.
+  &--best {
+    border: 2px solid var(--accent);
+    background:
+      linear-gradient(150deg, color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%),
+      linear-gradient(0deg, color-mix(in srgb, var(--success) 8%, transparent), transparent 70%),
+      var(--card);
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--accent) 22%, transparent);
+  }
+
+  &__badge {
+    position: absolute;
+    top: -11px;
+    left: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font: 700 0.72rem var(--font-body);
+    color: #5a3b00;
+    background: linear-gradient(90deg, var(--accent), #fbbf24);
+    box-shadow: 0 2px 6px color-mix(in srgb, var(--accent) 35%, transparent);
+    white-space: nowrap;
+  }
+
+  &__date {
+    font: 800 1.02rem var(--font-head);
+    color: var(--ink);
+    text-transform: capitalize;
+  }
+
+  &__score {
+    display: flex;
+    gap: 2px;
+  }
+  &__fish {
+    font-size: 1.05rem;
+    line-height: 1;
+    opacity: 0.22;
+    filter: grayscale(1);
+    &--on {
+      opacity: 1;
+      filter: none;
+    }
+  }
+
+  &__reason {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--ink);
+  }
+
+  &__moon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+  }
+  &__moon-icon { font-size: 1.1rem; line-height: 1; }
+  &__moon-name { font-size: 0.82rem; }
+}
+
+// ── Water-detail: styled custom file picker (catch-report photo) ─────────────
+.cr-file {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 9px 16px;
+    border-radius: var(--radius-sm, 8px);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background: #e7f3f6;
+    font: 600 0.9rem var(--font-body);
+    transition: background 0.15s ease-out, transform 0.15s ease-out;
+    &:hover { background: #d6ecf1; transform: translateY(-1px); }
+  }
+
+  &__thumb {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    flex-shrink: 0;
+  }
+
+  &__name {
+    font-size: 0.88rem;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+    min-width: 0;
+    &--empty { color: var(--muted); }
   }
 }

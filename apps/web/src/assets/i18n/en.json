@@ -18,6 +18,7 @@
   "premium": { "badge": "Premium" },
   "home": {
     "recommended": "Recommended",
+    "recommendedNear": "Near you",
     "regions": "Waters by region",
     "fishTitle": "What are we catching?",
     "ctaTitle": "Own a fishing spot?",
@@ -61,6 +62,7 @@
     "rules": "Rules",
     "contacts": "Contacts",
     "onMap": "On the map",
+    "directions": "Get directions",
     "area": "Area",
     "ha": "ha",
     "from": "from",
@@ -102,6 +104,8 @@
     "comment": "Comment",
     "name": "Your name",
     "email": "Email (optional)",
+    "choosePhoto": "Choose photo",
+    "noFile": "No file chosen",
     "submit": "Submit report",
     "success": "Thank you! Your report will appear after moderation."
   },
@@ -143,6 +147,7 @@
     "intro": "7-day estimated fish-activity forecast",
     "useLocation": "My location",
     "pickWater": "Choose a water",
+    "searchWater": "Search a water…",
     "widgetTitle": "Bite forecast",
     "full": "Full calendar",
     "factorsTitle": "What the forecast considers",
@@ -160,6 +165,11 @@
       "good": "Good",
       "great": "Great"
     }
+  },
+  "recDays": {
+    "title": "Best days to fish",
+    "intro": "Curated from the bite forecast for the upcoming week.",
+    "best": "Best day"
   },
   "moon": {
     "new": "New moon",
@@ -189,7 +199,11 @@
     "error": "Could not submit. Try again later.",
     "searchPlaceholder": "Search a place (village, town…)",
     "searching": "Searching…",
-    "noResults": "Nothing found"
+    "noResults": "Nothing found",
+    "dragHint": "Drag the marker to refine the place",
+    "pickedAt": "Picked point:",
+    "changePoint": "📍 Change point on the map",
+    "rePickHint": "Click a new point or drag the marker"
   },
   "waterNews": {
     "title": "News & stocking",

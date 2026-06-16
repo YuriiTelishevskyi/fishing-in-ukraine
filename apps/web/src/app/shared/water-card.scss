@@ -33,13 +33,10 @@
     font-size: 0.8rem;
   }
 
-  // Premium golden card treatment
-  &--premium {
-    box-shadow: 0 0 0 1.5px #F2B705, 0 2px 8px rgba(242, 183, 5, 0.18), 0 8px 24px rgba(11, 27, 34, 0.08);
-    &:hover {
-      box-shadow: 0 0 0 1.5px #F2B705, 0 4px 16px rgba(242, 183, 5, 0.28), 0 16px 40px rgba(11, 27, 34, 0.16);
-    }
-  }
+  // NOTE: the `.wcard--premium` GOLD treatment (ring, glow, corner ribbon,
+  // badge, hover shine) lives in GLOBAL `styles.scss` so it wins over the global
+  // `.card` shadow regardless of view encapsulation and renders anywhere a
+  // premium card appears.
 }
 
 @media (prefers-reduced-motion: reduce) {

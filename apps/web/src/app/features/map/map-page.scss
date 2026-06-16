@@ -72,10 +72,7 @@
 
     &--adding {
       cursor: crosshair !important;
-
-      * {
-        cursor: crosshair !important;
-      }
+      * { cursor: crosshair !important; }
     }
   }
 
@@ -159,19 +156,29 @@
     pointer-events: none;
   }
 
-  // Side panel (desktop) / bottom sheet (mobile)
-  &__panel {
+  // Dim backdrop behind the add-point modal. Sits above the header (1200)
+  // because the modal is its own overlay; clicking it cancels.
+  &__backdrop {
     position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 380px;
-    max-height: 80vh;
+    inset: 0;
+    background: rgba(4, 34, 44, 0.45);
+    z-index: 1290;
+  }
+
+  // Centered modal (desktop) / bottom-sheet (mobile). Re-houses the spot form.
+  &__modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(420px, calc(100vw - 32px));
+    max-height: 88vh;
     overflow-y: auto;
     background: #fff;
-    border-radius: 16px 0 0 0;
-    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
-    padding: 20px;
-    z-index: 1000;
+    border-radius: 16px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+    padding: 22px;
+    z-index: 1300;
     box-sizing: border-box;
 
     form {
@@ -206,13 +213,8 @@
       }
     }
 
-    textarea {
-      resize: vertical;
-    }
-
-    input[type="file"] {
-      font: 400 0.85rem var(--font-body);
-    }
+    textarea { resize: vertical; }
+    input[type="file"] { font: 400 0.85rem var(--font-body); }
   }
 
   &__form-header {
@@ -221,11 +223,7 @@
     align-items: center;
     margin-bottom: 12px;
 
-    h3 {
-      margin: 0;
-      font: 700 1.05rem var(--font-body);
-      color: #111827;
-    }
+    h3 { margin: 0; font: 700 1.05rem var(--font-body); color: #111827; }
   }
 
   &__cancel-btn {
@@ -237,9 +235,7 @@
     padding: 4px 8px;
     border-radius: 6px;
 
-    &:hover {
-      background: #F3F4F6;
-    }
+    &:hover { background: #F3F4F6; }
   }
 
   &__form-error {
@@ -270,10 +266,7 @@
     cursor: pointer;
     transition: opacity 0.15s;
 
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
+    &:disabled { opacity: 0.5; cursor: not-allowed; }
   }
 
   &__cancel-link {
@@ -301,11 +294,49 @@
     gap: 12px;
     padding: 4px 0;
 
-    p {
-      margin: 0;
-      font: 500 0.95rem var(--font-body);
-      color: #16A34A;
-    }
+    p { margin: 0; font: 500 0.95rem var(--font-body); color: #16A34A; }
+  }
+
+  // Picked-point block inside the modal: coords + edit-on-map controls
+  &__picked {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: #F0FDF4;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+  }
+
+  &__picked-coords { font: 600 0.82rem monospace; color: #166534; }
+  &__drag-hint { font: 400 0.78rem var(--font-body); color: #6B7280; }
+
+  &__change-btn {
+    align-self: flex-start;
+    padding: 7px 12px;
+    border-radius: 8px;
+    border: 1.5px solid #0E7490;
+    background: #fff;
+    color: #0E7490;
+    font: 600 0.84rem var(--font-body);
+    cursor: pointer;
+
+    &:hover { background: #0E7490; color: #fff; }
+  }
+
+  // Floating hint shown when the modal is minimized for re-picking the point
+  &__repick-hint {
+    position: fixed;
+    top: 84px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #16A34A;
+    color: #fff;
+    padding: 9px 18px;
+    border-radius: 999px;
+    font: 600 0.9rem var(--font-body);
+    box-shadow: var(--shadow);
+    z-index: 1290;
   }
 
   // Honeypot: visually hidden, off-screen
@@ -317,7 +348,6 @@
     height: 1px;
     opacity: 0;
     pointer-events: none;
-    tab-index: -1;
   }
 
   @media (max-width: 640px) {
@@ -344,13 +374,17 @@
       top: 8px;
     }
 
-    &__panel {
-      width: 100%;
-      max-height: 70vh;
-      border-radius: 16px 16px 0 0;
-      right: 0;
-      left: 0;
+    // Modal becomes a bottom-sheet on small screens.
+    &__modal {
+      top: auto;
       bottom: 0;
+      left: 0;
+      transform: none;
+      width: 100%;
+      max-width: 100%;
+      max-height: 82vh;
+      border-radius: 16px 16px 0 0;
+      padding: 18px 16px calc(18px + env(safe-area-inset-bottom, 0px));
     }
   }
 }

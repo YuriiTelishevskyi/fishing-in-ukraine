@@ -2224,6 +2224,118 @@
         "parkovka",
         "tualet"
       ]
+    },
+    {
+      "slug": "chornorichenske-vodoskhovyshche",
+      "regionSlug": "sevastopol",
+      "name": "Чорноріченське водосховище",
+      "nameEn": "Chornorichenske Reservoir",
+      "description": "Найбільше за об'ємом водосховище Криму, споруджене 1956 року на річці Чорна в Байдарській долині поблизу Севастополя. Площа близько 6 км², середня глибина 10,7 м, максимальна — 31,7 м, об'єм 64,2 млн м³. Слугує основним джерелом водопостачання Севастополя.",
+      "descriptionEn": "The largest reservoir in Crimea by volume, built in 1956 on the Chorna River in the Baydar Valley near Sevastopol. It covers about 6 km², with an average depth of 10.7 m, a maximum of 31.7 m, and a volume of 64.2 million m³. It serves as the main water supply for Sevastopol.",
+      "district": "Балаклавський район",
+      "lat": 44.475,
+      "lng": 33.8167,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "okun",
+        "plitka"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "simferopolske-vodoskhovyshche",
+      "regionSlug": "avtonomna-respublika-krym",
+      "name": "Сімферопольське водосховище",
+      "nameEn": "Simferopol Reservoir",
+      "description": "Водосховище на річці Салгир, створене 1954 року для водопостачання та зрошення міста Сімферополь. Має близько 7 км завдовжки і 1,5 км завширшки, максимальну глибину до 38 м та об'єм близько 36 млн м³. Іхтіофауна включає щуку, окуня, судака, плітку, карася, коропа, ляща та головня.",
+      "descriptionEn": "A reservoir on the Salhyr River, created in 1954 for the water supply and irrigation of Simferopol. It is about 7 km long and 1.5 km wide, with a maximum depth of up to 38 m and a volume of around 36 million m³. Its fish fauna includes pike, perch, zander, roach, crucian carp, carp, bream and chub.",
+      "district": "Сімферопольський район",
+      "lat": 44.92,
+      "lng": 34.155,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "okun",
+        "sudak",
+        "korop",
+        "lyashch"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "taihanske-vodoskhovyshche",
+      "regionSlug": "avtonomna-respublika-krym",
+      "name": "Тайганське водосховище",
+      "nameEn": "Taihan Reservoir",
+      "description": "Штучна прісна водойма поблизу міста Білогірськ, споруджена 1934–1938 років на лівій притоці річки Біюк-Карасу для зрошення та рибного господарства. Площа близько 200 га, максимальна глибина 16,5 м, об'єм 13,8 млн м³. Водосховище зариблене: поширені щука, окунь, судак та білий амур.",
+      "descriptionEn": "An artificial freshwater reservoir near the town of Bilohirsk, built in 1934-1938 on a left tributary of the Biyuk-Karasu River for irrigation and fish farming. It covers about 200 hectares, with a maximum depth of 16.5 m and a volume of 13.8 million m³. The reservoir is stocked, and pike, perch, zander and grass carp are common.",
+      "district": "Білогірський район",
+      "lat": 45.033,
+      "lng": 34.583,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "shchuka",
+        "okun",
+        "sudak",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "bilohirske-vodoskhovyshche",
+      "regionSlug": "avtonomna-respublika-krym",
+      "name": "Білогірське водосховище",
+      "nameEn": "Bilohirsk Reservoir",
+      "description": "Водосховище на річці Біюк-Карасу поблизу Білогірська, споруджене 1970 року. Площа близько 2,25 км² (225 га), максимальна глибина 29 м, довжина 4,6 км, об'єм 23,3 млн м³. Слугує для зрошення та водопостачання південно-східного Криму; у водоймі водяться короп, карась, щука, судак, окунь, плітка та лящ.",
+      "descriptionEn": "A reservoir on the Biyuk-Karasu River near Bilohirsk, built in 1970. It covers about 2.25 km² (225 hectares), with a maximum depth of 29 m, a length of 4.6 km and a volume of 23.3 million m³. It serves irrigation and water supply for south-eastern Crimea; the reservoir holds carp, crucian carp, pike, zander, perch, roach and bream.",
+      "district": "Білогірський район",
+      "lat": 45.017,
+      "lng": 34.583,
+      "waterType": "RESERVOIR",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "shchuka",
+        "sudak",
+        "plitka"
+      ],
+      "amenitySlugs": []
+    },
+    {
+      "slug": "richka-salhyr-symferopol",
+      "regionSlug": "avtonomna-respublika-krym",
+      "name": "Річка Салгир (Сімферополь)",
+      "nameEn": "Salhyr River (Simferopol)",
+      "description": "Найдовша річка Криму (близько 232 км), що бере початок на північних схилах Кримських гір і протікає через Сімферополь до затоки Сиваш. У межах міста облаштована набережна — популярна зона відпочинку. У басейні річки водяться плітка, карась, окунь і головень.",
+      "descriptionEn": "The longest river in Crimea (about 232 km), rising on the northern slopes of the Crimean Mountains and flowing through Simferopol toward the Syvash bay. Within the city it has a landscaped embankment that is a popular recreation area. The river basin holds roach, crucian carp, perch and chub.",
+      "district": "Сімферопольський район",
+      "lat": 44.952,
+      "lng": 34.104,
+      "waterType": "RIVER",
+      "isPaid": false,
+      "priceNote": null,
+      "priceNoteEn": null,
+      "fishSlugs": [
+        "plitka",
+        "karas",
+        "okun",
+        "holoven"
+      ],
+      "amenitySlugs": []
     }
   ]
 }

@@ -65,6 +65,9 @@ export class MapPage {
   readonly formSuccess = signal(false);
   readonly formError = signal<string | null>(null);
   readonly hintVisible = signal(false);
+  // When true the add-point modal is temporarily hidden so the user can
+  // re-click the map to re-place the picked marker.
+  readonly modalMinimized = signal(false);
 
   // Form fields
   formName = '';
@@ -123,12 +126,25 @@ export class MapPage {
       const L = (leaflet as any).default ?? leaflet;
       this.L = L;
 
-      this.map = L.map(this.mapEl().nativeElement).setView([49.0, 31.0], 6);
+      this.map = L.map(this.mapEl().nativeElement, {
+        zoomControl: true,
+        // Smooth trackpad/wheel + pinch zoom. zoomSnap 0.5 + a higher
+        // wheelPxPerZoomLevel make trackpad scroll-zoom feel gradual.
+        scrollWheelZoom: true,
+        touchZoom: true,
+        zoomSnap: 0.5,
+        wheelPxPerZoomLevel: 80,
+      }).setView([49.0, 31.0], 6);
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 20,
       }).addTo(this.map);
+
+      // Spotlight Ukraine: teal border + dim mask over everything outside the
+      // country. Added before markers so they paint on top, non-interactive so
+      // pin/bubble clicks pass through.
+      this.addUkraineHighlight();
 
       // Map click handler for add-point mode
       this.map.on('click', (e: any) => {
@@ -240,6 +256,69 @@ export class MapPage {
     this.spotsLayer.addTo(this.map);
   }
 
+  /**
+   * Fetch the simplified Ukraine boundary and render two non-interactive layers
+   * below the markers: a teal border outline and a dim mask covering the world
+   * with Ukraine punched out as a hole. Browser-only (called from
+   * afterNextRender). Failures are swallowed — the map still works without it.
+   */
+  private async addUkraineHighlight() {
+    if (!this.L || !this.map) return;
+    try {
+      const res = await fetch('/geo/ukraine.geojson');
+      if (!res.ok) return;
+      const geo = await res.json();
+      const L = this.L;
+
+      // Dim mask: world polygon (lat/lng) with each Ukraine ring as a hole.
+      // Leaflet polygons use [lat, lng]; GeoJSON is [lng, lat] → swap.
+      const worldRing: [number, number][] = [
+        [-90, -180],
+        [90, -180],
+        [90, 180],
+        [-90, 180],
+      ];
+      const holes = this.extractRings(geo).map((ring) =>
+        ring.map(([lng, lat]) => [lat, lng] as [number, number]),
+      );
+      const mask = L.polygon([worldRing, ...holes], {
+        stroke: false,
+        fillColor: '#04222C',
+        fillOpacity: 0.28,
+        interactive: false,
+      });
+      mask.addTo(this.map);
+
+      // Teal border outline.
+      const border = L.geoJSON(geo, {
+        style: { color: '#0E7490', weight: 2, opacity: 0.9, fill: false },
+        interactive: false,
+      });
+      border.addTo(this.map);
+    } catch {
+      // ignore — highlight is purely decorative
+    }
+  }
+
+  /** Flatten a (Multi)Polygon GeoJSON feature collection into a list of outer rings ([lng,lat][]). */
+  private extractRings(geo: any): [number, number][][] {
+    const rings: [number, number][][] = [];
+    const features = geo?.type === 'FeatureCollection' ? geo.features : [geo];
+    for (const f of features ?? []) {
+      const g = f?.geometry ?? f;
+      if (!g) continue;
+      if (g.type === 'Polygon') {
+        // outer ring only (index 0) — inner holes of the country itself are ignored
+        if (g.coordinates?.[0]) rings.push(g.coordinates[0]);
+      } else if (g.type === 'MultiPolygon') {
+        for (const poly of g.coordinates ?? []) {
+          if (poly?.[0]) rings.push(poly[0]);
+        }
+      }
+    }
+    return rings;
+  }
+
   private popupHtml(p: MapPinDto): string {
     const isEn = this.locale.locale() === 'en';
     const seg = isEn ? '/en/waters' : '/vodoymy';
@@ -296,6 +375,7 @@ export class MapPage {
   cancelAdding() {
     this.adding.set(false);
     this.hintVisible.set(false);
+    this.modalMinimized.set(false);
     this.picked.set(null);
     this.formSuccess.set(false);
     this.formError.set(null);
@@ -339,6 +419,18 @@ export class MapPage {
     this.tempMarker.addTo(this.map);
     this.picked.set({ lat, lng });
     this.hintVisible.set(false);
+    // Re-clicking the map after «Змінити точку» restores the modal with the
+    // freshly-picked coordinates.
+    this.modalMinimized.set(false);
+  }
+
+  /**
+   * Temporarily hide the modal so the user can click a new point on the map.
+   * The next map click (placeMarker) re-opens the modal with updated coords.
+   */
+  changePoint() {
+    this.modalMinimized.set(true);
+    this.hintVisible.set(true);
   }
 
   onPhotoChange(event: Event) {

@@ -11,8 +11,13 @@
   --muted: #5b7480;
   --line: #e2ecef;
   --radius: 16px;
-  --shadow: 0 1px 2px rgba(11, 27, 34, 0.06), 0 8px 24px rgba(11, 27, 34, 0.08);
-  --shadow-lift: 0 2px 4px rgba(11, 27, 34, 0.08), 0 16px 40px rgba(11, 27, 34, 0.16);
+  --radius-sm: 12px;
+  --shadow-sm: 0 1px 2px rgba(11, 27, 34, 0.06), 0 2px 6px rgba(11, 27, 34, 0.06);
+  --shadow-md: 0 1px 2px rgba(11, 27, 34, 0.06), 0 8px 24px rgba(11, 27, 34, 0.08);
+  --shadow-lg: 0 4px 10px rgba(11, 27, 34, 0.1), 0 18px 44px rgba(11, 27, 34, 0.18);
+  // Back-compat aliases (used widely across the app)
+  --shadow: var(--shadow-md);
+  --shadow-lift: var(--shadow-lg);
   --font-head: 'Manrope', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 }
@@ -53,6 +58,7 @@ iframe { max-width: 100%; }
   padding: 4px 12px; border-radius: 999px;
   background: #e7f3f6; color: var(--primary);
   font: 500 0.82rem var(--font-body);
+  transition: transform 0.18s ease-out, background 0.18s ease-out, color 0.18s ease-out;
 }
 
 .badge-verified {
@@ -117,10 +123,10 @@ iframe { max-width: 100%; }
 
 .card {
   background: var(--card); border-radius: var(--radius);
-  box-shadow: var(--shadow); overflow: hidden;
-  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
+  box-shadow: var(--shadow-md); overflow: hidden;
+  transition: transform 0.22s ease-out, box-shadow 0.22s ease-out;
 }
-.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.45s ease-out, transform 0.45s ease-out; }
 .reveal.is-visible { opacity: 1; transform: none; }
@@ -135,14 +141,18 @@ iframe { max-width: 100%; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal, .card, .btn { transition: none; }
+  .reveal, .card, .btn, .chip, a { transition: none; }
   .reveal { opacity: 1; transform: none; }
+  .card:hover { transform: none; }
   .skeleton { animation: none; }
 }
 
-.btn:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible {
-  outline: 2px solid var(--accent);
+a { transition: color 0.18s ease-out; }
+
+:where(.btn, a, select, input, textarea, button, .chip, [tabindex]):focus-visible {
+  outline: 2px solid var(--primary);
   outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .brand-pin {

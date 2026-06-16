@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.wph {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  // soft vignette on top of the themed gradient for depth
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 90% at 30% 15%, rgba(255, 255, 255, 0.18), transparent 55%);
+    pointer-events: none;
+  }
+
+  &__waves {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+  }
+
+  &__glyph {
+    position: relative;
+    z-index: 1;
+    font-size: 2.6rem;
+    line-height: 1;
+    opacity: 0.92;
+    filter: drop-shadow(0 2px 6px rgba(4, 34, 44, 0.35));
+  }
+}

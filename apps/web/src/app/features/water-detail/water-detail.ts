@@ -26,6 +26,7 @@ import { Breadcrumbs } from '../../shared/breadcrumbs';
 import { createMapPin } from '../../shared/map-pin';
 import { Pager } from '../../shared/pager';
 import { StarRating } from '../../shared/star-rating';
+import { WaterPlaceholder } from '../../shared/water-placeholder';
 import { WeatherCard } from '../../shared/weather-card';
 
 const EN_TYPE_LABELS: Record<WaterType, string> = {
@@ -38,7 +39,7 @@ const EN_TYPE_LABELS: Record<WaterType, string> = {
 
 @Component({
   selector: 'app-water-detail',
-  imports: [Header, Footer, TranslocoPipe, Breadcrumbs, NgOptimizedImage, RouterLink, FormsModule, Pager, StarRating, WeatherCard, BiteStrip],
+  imports: [Header, Footer, TranslocoPipe, Breadcrumbs, NgOptimizedImage, RouterLink, FormsModule, Pager, StarRating, WeatherCard, BiteStrip, WaterPlaceholder],
   templateUrl: './water-detail.html',
   styleUrl: './water-detail.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

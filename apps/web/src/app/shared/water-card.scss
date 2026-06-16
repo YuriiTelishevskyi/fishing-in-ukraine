@@ -2,13 +2,12 @@
   display: block; color: inherit;
   &__media {
     position: relative; aspect-ratio: 16/10; overflow: hidden;
-    img { object-fit: cover; transition: transform 0.4s ease-out; }
+    img, .wcard__placeholder { transition: transform 0.5s ease-out; will-change: transform; }
+    img { object-fit: cover; }
   }
-  &:hover &__media img { transform: scale(1.05); }
-  &__placeholder {
-    height: 100%; display: grid; place-items: center; font-size: 3rem;
-    background: linear-gradient(135deg, #d7ecf1, #b8dde7);
-  }
+  &:hover &__media img,
+  &:hover &__media .wcard__placeholder { transform: scale(1.05); }
+  &__placeholder { position: absolute; inset: 0; height: 100%; }
   &__premium { position: absolute; top: 12px; left: 12px; max-width: calc(100% - 24px); }
   &__verified { position: absolute; top: 12px; right: 12px; max-width: calc(50% - 18px); }
   &__price {
@@ -41,5 +40,12 @@
       box-shadow: 0 0 0 1.5px #F2B705, 0 4px 16px rgba(242, 183, 5, 0.28), 0 16px 40px rgba(11, 27, 34, 0.16);
     }
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wcard__media img,
+  .wcard__media .wcard__placeholder { transition: none; }
+  .wcard:hover .wcard__media img,
+  .wcard:hover .wcard__media .wcard__placeholder { transform: none; }
 }
 

@@ -56,14 +56,13 @@
     }
 
     &--placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
+      background: none;
 
-  &__placeholder {
-    font-size: 4rem;
+      app-water-placeholder {
+        position: absolute;
+        inset: 0;
+      }
+    }
   }
 
   &__thumbs {

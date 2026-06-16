@@ -50,3 +50,17 @@ export function createMapPin(L: typeof Leaflet, variant: PinVariant = 'primary')
     popupAnchor: isPremium ? [0, -46] : [0, -40],
   });
 }
+
+export function createRegionBubble(L: typeof Leaflet, count: number): Leaflet.DivIcon {
+  // Size scales gently with count (clamped). Brand teal gradient circle with the count.
+  const size = Math.max(38, Math.min(64, 34 + count * 2));
+  const html = `<div class="region-bubble" style="width:${size}px;height:${size}px">
+    <span class="region-bubble__count">${count}</span>
+  </div>`;
+  return L.divIcon({
+    className: 'region-bubble-wrap',
+    html,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+  });
+}

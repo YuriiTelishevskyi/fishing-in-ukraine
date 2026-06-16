@@ -23,6 +23,7 @@ import { Header } from '../../layout/header';
 import { RevealDirective } from '../../shared/reveal.directive';
 import { WaterCard } from '../../shared/water-card';
 import { CountUpDirective } from '../../shared/count-up.directive';
+import { createRegionBubble } from '../../shared/map-pin';
 
 @Component({
   selector: 'app-home',
@@ -128,27 +129,46 @@ export class HomePage {
 
   private addMarkers(pinList: any[], L: any) {
     if (!this.leafletMap || !L) return;
-    const isEn = this.locale.locale() === 'en';
-    const seg = isEn ? '/en/waters' : '/vodoymy';
-    const goLabel = isEn ? 'Open' : 'Перейти';
-    const icon = L.divIcon({
-      className: 'fish-pin',
-      html: '<span class="fish-pin__dot"></span><span class="fish-pin__pulse"></span>',
-      iconSize: [18, 18],
-      iconAnchor: [9, 9],
-    });
+    // The home map is a Ukraine-scale teaser, so we always render one region
+    // bubble per oblast (count of waters) instead of individual pins. Clicking
+    // a bubble navigates to that region's catalog.
+    const regionNames = new Map(this.regions().map((r) => [r.slug, r.name]));
+    const groups = this.groupByRegion(pinList, regionNames);
     const bounds: [number, number][] = [];
-    for (const p of pinList) {
-      const marker = L.marker([p.lat, p.lng], { icon });
-      const detailUrl = `${seg}/${p.regionSlug}/${p.slug}`;
-      marker.bindPopup(`<strong>${p.name}</strong><br><a href="${detailUrl}">→ ${goLabel}</a>`);
+    for (const g of groups) {
+      const marker = L.marker([g.lat, g.lng], { icon: createRegionBubble(L, g.count) });
+      marker.bindTooltip(`${g.name} (${g.count})`, { direction: 'top', offset: [0, -8] });
+      marker.on('click', () => {
+        this.router.navigate([this.locale.link('catalog', g.slug)]);
+      });
       marker.addTo(this.leafletMap);
-      bounds.push([p.lat, p.lng]);
+      bounds.push([g.lat, g.lng]);
     }
     const boundsObj = L.latLngBounds(bounds);
     if (boundsObj.isValid()) {
       this.leafletMap.fitBounds(boundsObj.pad(0.2), { maxZoom: 7 });
     }
+  }
+
+  private groupByRegion(
+    pins: any[],
+    names: Map<string, string>,
+  ): { slug: string; name: string; count: number; lat: number; lng: number }[] {
+    const acc = new Map<string, { count: number; latSum: number; lngSum: number }>();
+    for (const p of pins) {
+      const cur = acc.get(p.regionSlug) ?? { count: 0, latSum: 0, lngSum: 0 };
+      cur.count += 1;
+      cur.latSum += p.lat;
+      cur.lngSum += p.lng;
+      acc.set(p.regionSlug, cur);
+    }
+    return Array.from(acc, ([slug, v]) => ({
+      slug,
+      name: names.get(slug) ?? slug,
+      count: v.count,
+      lat: v.latSum / v.count,
+      lng: v.lngSum / v.count,
+    }));
   }
 
   search() {

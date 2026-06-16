@@ -1,5 +1,10 @@
 {
   "nav": { "catalog": "Catalog", "map": "Map", "blog": "Blog", "biteCalendar": "Bite calendar" },
+  "consent": {
+    "text": "We use cookies for analytics to improve the site.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
   "hero": {
     "title": "Find your fishing spot",
     "subtitle": "Lakes, ponds and rivers of Ukraine — with prices, fish species and amenities",

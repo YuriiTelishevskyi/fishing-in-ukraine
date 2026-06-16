@@ -30,7 +30,13 @@ import { WeatherModule } from './weather/weather.module';
       rootPath: UPLOADS_ROOT,
       serveRoot: '/uploads',
       exclude: ['/uploads/{*any}'],
-      serveStaticOptions: { index: false },
+      // Upload filenames are content-addressed by uuid, so the bytes behind a
+      // given URL never change — serve them as long-lived immutable assets.
+      serveStaticOptions: {
+        index: false,
+        immutable: true,
+        maxAge: '365d',
+      },
     }),
     PrismaModule,
     AdminAuthModule,

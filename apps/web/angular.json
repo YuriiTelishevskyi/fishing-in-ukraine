@@ -31,16 +31,14 @@
             ],
             "styles": [
               "src/styles.scss",
-              "../../node_modules/leaflet/dist/leaflet.css",
-              "../../node_modules/leaflet.markercluster/dist/MarkerCluster.css",
-              "../../node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css"
+              "../../node_modules/leaflet/dist/leaflet.css"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
             },
-            "allowedCommonJsDependencies": ["@fishing/shared", "leaflet", "leaflet.markercluster"]
+            "allowedCommonJsDependencies": ["@fishing/shared", "leaflet"]
           },
           "configurations": {
             "production": {

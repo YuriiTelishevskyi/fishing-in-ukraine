@@ -8,8 +8,19 @@ import { ApiService } from '../../core/api.service';
 import { SeoService } from '../../core/seo.service';
 import { usePageLocale } from '../../core/use-locale';
 import { Header } from '../../layout/header';
-import { createMapPin } from '../../shared/map-pin';
+import { createMapPin, createRegionBubble } from '../../shared/map-pin';
 import { GeoResult, geocodePlaces } from '../../shared/geocode';
+
+/** Below this zoom level the map shows one bubble per oblast; at/above it, individual pins. */
+const ZOOM_THRESHOLD = 8;
+
+interface RegionGroup {
+  slug: string;
+  name: string;
+  count: number;
+  lat: number;
+  lng: number;
+}
 
 function escapeHtml(s: string): string {
   return s
@@ -66,8 +77,9 @@ export class MapPage {
   photoPreviewUrl: string | null = null;
 
   private map: any = null;
-  private cluster: any = null;
   private L: any = null;
+  private bubbleLayer: any = null;
+  private pinLayer: any = null;
   private spotsLayer: any = null;
   private tempMarker: any = null;
 
@@ -110,7 +122,6 @@ export class MapPage {
       const leaflet = await import('leaflet');
       const L = (leaflet as any).default ?? leaflet;
       this.L = L;
-      await import('leaflet.markercluster');
 
       this.map = L.map(this.mapEl().nativeElement).setView([49.0, 31.0], 6);
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -124,6 +135,9 @@ export class MapPage {
         if (!this.adding()) return;
         this.placeMarker(e.latlng.lat, e.latlng.lng);
       });
+
+      // Toggle between region bubbles (low zoom) and individual pins (high zoom).
+      this.map.on('zoomend', () => this.renderWaterLayer());
 
       await this.refresh();
       await this.refreshSpots();
@@ -139,19 +153,74 @@ export class MapPage {
         paid: (this.paid as 'true' | 'false') || undefined,
       }),
     );
-    if (this.cluster) {
-      this.cluster.remove();
-    }
-    this.cluster = (this.L as any).markerClusterGroup();
+    const L = this.L;
+
+    // Drop any previous layers (e.g. on filter change).
+    if (this.bubbleLayer) this.bubbleLayer.remove();
+    if (this.pinLayer) this.pinLayer.remove();
+
+    // ── Individual water pins (shown when zoomed in) ──
+    this.pinLayer = L.layerGroup();
     for (const p of pins) {
       const pinVariant = p.isPremium ? 'premium' : 'primary';
-      const markerOpts: Record<string, unknown> = { icon: createMapPin(this.L, pinVariant) };
+      const markerOpts: Record<string, unknown> = { icon: createMapPin(L, pinVariant) };
       if (p.isPremium) markerOpts['zIndexOffset'] = 1000;
-      const m = this.L.marker([p.lat, p.lng], markerOpts);
+      const m = L.marker([p.lat, p.lng], markerOpts);
       m.bindPopup(this.popupHtml(p));
-      this.cluster.addLayer(m);
+      this.pinLayer.addLayer(m);
     }
-    this.map.addLayer(this.cluster);
+
+    // ── Region bubbles (one per oblast, shown when zoomed out) ──
+    // If the regions signal hasn't resolved yet (cold load), await the fetch so a
+    // bubble never briefly shows a raw slug instead of the localized oblast name.
+    const regionList = this.regions().length ? this.regions() : await firstValueFrom(this.api.regions());
+    const regionNames = new Map(regionList.map((r) => [r.slug, r.name]));
+    const groups = this.groupByRegion(pins, regionNames);
+    this.bubbleLayer = L.layerGroup();
+    for (const g of groups) {
+      const m = L.marker([g.lat, g.lng], { icon: createRegionBubble(L, g.count) });
+      m.bindTooltip(`${g.name} (${g.count})`, { direction: 'top', offset: [0, -8] });
+      m.on('click', () => this.map.flyTo([g.lat, g.lng], ZOOM_THRESHOLD + 1));
+      this.bubbleLayer.addLayer(m);
+    }
+
+    this.renderWaterLayer();
+  }
+
+  /** Group water pins by region slug into centroids (average lat/lng). */
+  private groupByRegion(pins: MapPinDto[], names: Map<string, string>): RegionGroup[] {
+    const acc = new Map<string, { count: number; latSum: number; lngSum: number }>();
+    for (const p of pins) {
+      const cur = acc.get(p.regionSlug) ?? { count: 0, latSum: 0, lngSum: 0 };
+      cur.count += 1;
+      cur.latSum += p.lat;
+      cur.lngSum += p.lng;
+      acc.set(p.regionSlug, cur);
+    }
+    const groups: RegionGroup[] = [];
+    for (const [slug, v] of acc) {
+      groups.push({
+        slug,
+        name: names.get(slug) ?? slug,
+        count: v.count,
+        lat: v.latSum / v.count,
+        lng: v.lngSum / v.count,
+      });
+    }
+    return groups;
+  }
+
+  /** Show region bubbles below the zoom threshold; individual pins at/above it. */
+  private renderWaterLayer() {
+    if (!this.map || !this.bubbleLayer || !this.pinLayer) return;
+    const zoomedOut = this.map.getZoom() < ZOOM_THRESHOLD;
+    if (zoomedOut) {
+      if (this.map.hasLayer(this.pinLayer)) this.map.removeLayer(this.pinLayer);
+      if (!this.map.hasLayer(this.bubbleLayer)) this.map.addLayer(this.bubbleLayer);
+    } else {
+      if (this.map.hasLayer(this.bubbleLayer)) this.map.removeLayer(this.bubbleLayer);
+      if (!this.map.hasLayer(this.pinLayer)) this.map.addLayer(this.pinLayer);
+    }
   }
 
   async refreshSpots() {

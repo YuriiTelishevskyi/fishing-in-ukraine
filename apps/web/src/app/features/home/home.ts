@@ -108,7 +108,9 @@ export class HomePage {
     this.leafletL = L;
 
     this.leafletMap = L.map(el, {
+      // Teaser: don't hijack page scroll with wheel zoom, but keep pinch zoom.
       scrollWheelZoom: false,
+      touchZoom: true,
       zoomControl: true,
       attributionControl: true,
     }).setView([48.6, 31.2], 6);
@@ -119,12 +121,69 @@ export class HomePage {
       maxZoom: 20,
     }).addTo(this.leafletMap);
 
+    // Spotlight Ukraine (teal border + dim mask), non-interactive, below markers.
+    this.addUkraineHighlight(L);
+
     // If pins arrived before map was ready, add them now
     const currentPins = this.pins();
     if (currentPins.length > 0 && !this.markersAdded) {
       this.markersAdded = true;
       this.addMarkers(currentPins, L);
     }
+  }
+
+  /**
+   * Fetch the simplified Ukraine boundary and render a teal border + a dim mask
+   * (world polygon with Ukraine as a hole) below the markers. Non-interactive so
+   * region-bubble clicks pass through. Decorative — failures are ignored.
+   */
+  private async addUkraineHighlight(L: any) {
+    if (!this.leafletMap) return;
+    try {
+      const res = await fetch('/geo/ukraine.geojson');
+      if (!res.ok) return;
+      const geo = await res.json();
+
+      const worldRing: [number, number][] = [
+        [-90, -180],
+        [90, -180],
+        [90, 180],
+        [-90, 180],
+      ];
+      const holes = this.extractRings(geo).map((ring) =>
+        ring.map(([lng, lat]: [number, number]) => [lat, lng] as [number, number]),
+      );
+      L.polygon([worldRing, ...holes], {
+        stroke: false,
+        fillColor: '#04222C',
+        fillOpacity: 0.28,
+        interactive: false,
+      }).addTo(this.leafletMap);
+
+      L.geoJSON(geo, {
+        style: { color: '#0E7490', weight: 2, opacity: 0.9, fill: false },
+        interactive: false,
+      }).addTo(this.leafletMap);
+    } catch {
+      // ignore — highlight is decorative
+    }
+  }
+
+  private extractRings(geo: any): [number, number][][] {
+    const rings: [number, number][][] = [];
+    const features = geo?.type === 'FeatureCollection' ? geo.features : [geo];
+    for (const f of features ?? []) {
+      const g = f?.geometry ?? f;
+      if (!g) continue;
+      if (g.type === 'Polygon') {
+        if (g.coordinates?.[0]) rings.push(g.coordinates[0]);
+      } else if (g.type === 'MultiPolygon') {
+        for (const poly of g.coordinates ?? []) {
+          if (poly?.[0]) rings.push(poly[0]);
+        }
+      }
+    }
+    return rings;
   }
 
   private addMarkers(pinList: any[], L: any) {

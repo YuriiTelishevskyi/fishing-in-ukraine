@@ -64,19 +64,26 @@
   </div>
 
   @if (formSuccess()) {
-    <div class="mappage__panel">
+    <div class="mappage__backdrop" (click)="cancelAdding()"></div>
+    <div class="mappage__modal" role="dialog" aria-modal="true">
       <div class="mappage__success">
         <p>{{ 'spots.thanks' | transloco }}</p>
-        <button class="mappage__cancel-btn" (click)="cancelAdding()">✕</button>
+        <button class="mappage__cancel-btn" (click)="cancelAdding()" aria-label="✕">✕</button>
       </div>
     </div>
   }
 
-  @if (adding() && picked() && !formSuccess()) {
-    <div class="mappage__panel">
+  <!-- Floating hint while the user re-picks the point (modal minimized) -->
+  @if (modalMinimized()) {
+    <div class="mappage__repick-hint">{{ 'spots.rePickHint' | transloco }}</div>
+  }
+
+  @if (adding() && picked() && !formSuccess() && !modalMinimized()) {
+    <div class="mappage__backdrop" (click)="cancelAdding()"></div>
+    <div class="mappage__modal" role="dialog" aria-modal="true">
       <div class="mappage__form-header">
         <h3>{{ 'spots.formTitle' | transloco }}</h3>
-        <button class="mappage__cancel-btn" (click)="cancelAdding()">✕</button>
+        <button class="mappage__cancel-btn" (click)="cancelAdding()" aria-label="✕">✕</button>
       </div>
 
       @if (formError() === 'err' || formError() === 'rate') {
@@ -84,6 +91,18 @@
           {{ 'spots.error' | transloco }}
         </div>
       }
+
+      <!-- Picked point coords + edit-on-map controls -->
+      <div class="mappage__picked">
+        <span class="mappage__picked-coords">
+          {{ 'spots.pickedAt' | transloco }}
+          {{ picked()!.lat.toFixed(5) }}, {{ picked()!.lng.toFixed(5) }}
+        </span>
+        <button type="button" class="mappage__change-btn" (click)="changePoint()">
+          {{ 'spots.changePoint' | transloco }}
+        </button>
+        <span class="mappage__drag-hint">{{ 'spots.dragHint' | transloco }}</span>
+      </div>
 
       <form (ngSubmit)="submitSpot()" #spotForm="ngForm" novalidate>
         <!-- Honeypot — off-screen, never filled by real users -->

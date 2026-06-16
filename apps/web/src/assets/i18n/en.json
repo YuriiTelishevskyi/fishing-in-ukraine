@@ -189,7 +189,11 @@
     "error": "Could not submit. Try again later.",
     "searchPlaceholder": "Search a place (village, town…)",
     "searching": "Searching…",
-    "noResults": "Nothing found"
+    "noResults": "Nothing found",
+    "dragHint": "Drag the marker to refine the place",
+    "pickedAt": "Picked point:",
+    "changePoint": "📍 Change point on the map",
+    "rePickHint": "Click a new point or drag the marker"
   },
   "waterNews": {
     "title": "News & stocking",

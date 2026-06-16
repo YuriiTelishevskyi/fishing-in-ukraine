@@ -29,6 +29,8 @@ services:
     environment:
       API_URL: http://api:3000
       SITE_ORIGIN: ${SITE_ORIGIN}
+      # GA4 measurement id; consent-gated client-side, empty disables analytics.
+      GA_MEASUREMENT_ID: ${GA_MEASUREMENT_ID:-}
       NG_ALLOWED_HOSTS: ${NG_ALLOWED_HOSTS:-localhost}
       # Caddy fronts the SSR server; without this Angular SSR rejects requests
       # carrying X-Forwarded-* and silently falls back to the CSR shell.

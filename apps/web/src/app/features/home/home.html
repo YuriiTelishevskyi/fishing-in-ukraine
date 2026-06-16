@@ -1,5 +1,24 @@
 <app-header [pair]="pair" />
 <section class="hero">
+  <!-- Decorative topographic / ripple layer (low-opacity, brand-tinted, SVG only) -->
+  <div class="hero__topo" aria-hidden="true">
+    <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" class="hero__topo-svg">
+      <g fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1.5">
+        <path d="M-50,120 C260,60 520,180 800,110 C1080,40 1280,160 1500,100"/>
+        <path d="M-50,190 C260,130 520,250 800,180 C1080,110 1280,230 1500,170"/>
+        <path d="M-50,270 C260,210 520,330 800,260 C1080,190 1280,310 1500,250"/>
+        <path d="M-50,360 C260,300 520,420 800,350 C1080,280 1280,400 1500,340"/>
+        <path d="M-50,460 C260,400 520,520 800,450 C1080,380 1280,500 1500,440"/>
+      </g>
+      <g fill="rgba(14,116,144,0.18)">
+        <circle cx="220" cy="150" r="3"/>
+        <circle cx="1180" cy="110" r="2.5"/>
+        <circle cx="960" cy="380" r="3.5"/>
+        <circle cx="380" cy="430" r="2.5"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero__glow" aria-hidden="true"></div>
   <div class="hero__waves" aria-hidden="true">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="hero__wave hero__wave--1">
       <path d="M0,64 C240,96 480,16 720,48 C960,80 1200,32 1440,64 L1440,120 L0,120 Z" fill="rgba(255,255,255,0.06)"/>
@@ -9,9 +28,9 @@
     </svg>
   </div>
   <div class="container hero__inner">
-    <h1>{{ 'hero.title' | transloco }}</h1>
-    <p class="hero__sub">{{ 'hero.subtitle' | transloco }}</p>
-    <div class="hero__panel">
+    <h1 class="hero__enter hero__enter--1">{{ 'hero.title' | transloco }}</h1>
+    <p class="hero__sub hero__enter hero__enter--2">{{ 'hero.subtitle' | transloco }}</p>
+    <div class="hero__panel hero__enter hero__enter--3">
       <label>
         <span>{{ 'hero.searchRegion' | transloco }}</span>
         <select [(ngModel)]="searchRegion">
@@ -32,23 +51,25 @@
       </label>
       <button class="btn btn--accent" (click)="search()">{{ 'hero.cta' | transloco }}</button>
     </div>
-    <a [routerLink]="locale.link('map')" class="btn btn--ghost hero__map-link">🗺 {{ 'hero.mapCta' | transloco }}</a>
-    <a [routerLink]="locale.link('nearby')" class="btn btn--ghost hero__map-link">📍 {{ 'nearby.cta' | transloco }}</a>
+    <div class="hero__links hero__enter hero__enter--4">
+      <a [routerLink]="locale.link('map')" class="btn btn--ghost hero__map-link">🗺 {{ 'hero.mapCta' | transloco }}</a>
+      <a [routerLink]="locale.link('nearby')" class="btn btn--ghost hero__map-link">📍 {{ 'nearby.cta' | transloco }}</a>
+    </div>
   </div>
 </section>
 
 <section class="stats-section">
   <div class="container">
     <div class="stats">
-      <div class="stats__item card">
+      <div class="stats__item card" appReveal>
         <span class="stats__num" [appCountUp]="pins().length">{{ pins().length }}</span>
         <span class="stats__label">{{ 'home.statWaters' | transloco }}</span>
       </div>
-      <div class="stats__item card">
+      <div class="stats__item card" [appReveal]="80">
         <span class="stats__num" [appCountUp]="regions().length">{{ regions().length }}</span>
         <span class="stats__label">{{ 'home.statRegions' | transloco }}</span>
       </div>
-      <div class="stats__item card">
+      <div class="stats__item card" [appReveal]="160">
         <span class="stats__num" [appCountUp]="fish().length">{{ fish().length }}</span>
         <span class="stats__label">{{ 'home.statFish' | transloco }}</span>
       </div>
@@ -61,8 +82,10 @@
     <section class="container section" appReveal>
       <h2>{{ 'home.recommended' | transloco }}</h2>
       <div class="grid grid--3">
-        @for (w of f.items; track w.id) {
-          <app-water-card [water]="w" [priority]="$first" />
+        @for (w of f.items; track w.id; let i = $index) {
+          <div [appReveal]="i * 70">
+            <app-water-card [water]="w" [priority]="$first" />
+          </div>
         }
       </div>
     </section>

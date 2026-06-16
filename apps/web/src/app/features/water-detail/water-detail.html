@@ -38,6 +38,9 @@
                 [alt]="w.media[active()].alt ?? w.name"
                 priority
               />
+              <div class="gallery__overlay">
+                <span class="gallery__region">📍 {{ w.regionName }}</span>
+              </div>
             </div>
             @if (w.media.length > 1) {
               <div class="gallery__thumbs">
@@ -56,26 +59,31 @@
           } @else {
             <div class="gallery__main gallery__main--placeholder">
               <app-water-placeholder [type]="w.waterType" [seed]="w.slug" />
+              <div class="gallery__overlay">
+                <span class="gallery__region">📍 {{ w.regionName }}</span>
+              </div>
             </div>
           }
         </div>
 
         <!-- Description -->
         @if (w.description) {
-          <section class="detail-section">
-            <p class="pre-line">{{ w.description }}</p>
+          <section class="detail-section detail-section--prose" appReveal>
+            <p class="pre-line detail-prose">{{ w.description }}</p>
           </section>
         }
 
         <!-- Weather -->
         @if (weather(); as wx) {
-          <app-weather-card [weather]="wx" />
+          <div appReveal>
+            <app-weather-card [weather]="wx" />
+          </div>
         }
 
         <!-- Bite forecast strip -->
         @if (bite()?.available) {
-          <section class="detail-section">
-            <h2 class="detail-section__title">{{ 'bite.widgetTitle' | transloco }}</h2>
+          <section class="detail-section" appReveal>
+            <h2 class="detail-section__title"><span class="detail-section__icon">🐟</span>{{ 'bite.widgetTitle' | transloco }}</h2>
             <app-bite-strip [forecast]="bite()!" [compact]="true" />
             <a
               [routerLink]="locale.link('biteCalendar')"
@@ -87,8 +95,8 @@
 
         <!-- Fish -->
         @if (w.fish.length > 0) {
-          <section class="detail-section">
-            <h2 class="detail-section__title">{{ 'water.fish' | transloco }}</h2>
+          <section class="detail-section" appReveal>
+            <h2 class="detail-section__title"><span class="detail-section__icon">🎣</span>{{ 'water.fish' | transloco }}</h2>
             <div class="chip-row">
               @for (f of w.fish; track f.id) {
                 <a [routerLink]="locale.link('fish', f.slug)" class="chip">{{ f.name }}</a>
@@ -99,8 +107,8 @@
 
         <!-- Amenities -->
         @if (w.amenities.length > 0) {
-          <section class="detail-section">
-            <h2 class="detail-section__title">{{ 'water.amenities' | transloco }}</h2>
+          <section class="detail-section" appReveal>
+            <h2 class="detail-section__title"><span class="detail-section__icon">🏕</span>{{ 'water.amenities' | transloco }}</h2>
             <div class="chip-row">
               @for (a of w.amenities; track a.id) {
                 <span class="chip">@if (a.icon) { {{ a.icon }} } {{ a.name }}</span>
@@ -111,21 +119,21 @@
 
         <!-- Rules -->
         @if (w.rules) {
-          <section class="detail-section">
-            <h2 class="detail-section__title">{{ 'water.rules' | transloco }}</h2>
-            <p class="pre-line">{{ w.rules }}</p>
+          <section class="detail-section" appReveal>
+            <h2 class="detail-section__title"><span class="detail-section__icon">📋</span>{{ 'water.rules' | transloco }}</h2>
+            <p class="pre-line detail-prose">{{ w.rules }}</p>
           </section>
         }
 
         <!-- Mini-map -->
-        <section class="detail-section">
-          <h2 class="detail-section__title" id="water-map">{{ 'water.onMap' | transloco }}</h2>
+        <section class="detail-section" appReveal>
+          <h2 class="detail-section__title" id="water-map"><span class="detail-section__icon">🗺</span>{{ 'water.onMap' | transloco }}</h2>
           <div #miniMap class="minimap"></div>
         </section>
 
         <!-- Reviews -->
-        <section class="detail-section reviews-section">
-          <h2 class="detail-section__title">{{ 'reviews.title' | transloco }}</h2>
+        <section class="detail-section reviews-section" appReveal>
+          <h2 class="detail-section__title"><span class="detail-section__icon">💬</span>{{ 'reviews.title' | transloco }}</h2>
 
           <!-- Aggregate summary row -->
           @if (w.ratingCount > 0) {
@@ -239,8 +247,8 @@
 
         <!-- News & stocking -->
         @if (news().length) {
-          <section class="wnews-section detail-section">
-            <h2 class="wnews-section__title detail-section__title">{{ 'waterNews.title' | transloco }}</h2>
+          <section class="wnews-section detail-section" appReveal>
+            <h2 class="wnews-section__title detail-section__title"><span class="detail-section__icon">📰</span>{{ 'waterNews.title' | transloco }}</h2>
             <ul class="wnews-list">
               @for (n of news(); track n.id) {
                 <li class="wnews-item card" [class.wnews-item--stocking]="n.type === 'STOCKING'">
@@ -259,8 +267,8 @@
         }
 
         <!-- Catch reports -->
-        <section class="detail-section">
-          <h2 class="detail-section__title">{{ 'catchReport.title' | transloco }}</h2>
+        <section class="detail-section" appReveal>
+          <h2 class="detail-section__title"><span class="detail-section__icon">📸</span>{{ 'catchReport.title' | transloco }}</h2>
 
           @if (catches(); as c) {
             @if (c.items.length) {
@@ -348,16 +356,16 @@
             @if (w.isPaid) {
               <div class="price-main">
                 @if (w.priceFrom && w.priceTo) {
-                  {{ w.priceFrom }}–{{ w.priceTo }} {{ 'water.uah' | transloco }}
+                  <span class="price-main__amount">💳 {{ w.priceFrom }}–{{ w.priceTo }} {{ 'water.uah' | transloco }}</span>
                 } @else if (w.priceFrom) {
-                  {{ 'water.from' | transloco }} {{ w.priceFrom }} {{ 'water.uah' | transloco }}
+                  <span class="price-main__amount">💳 {{ 'water.from' | transloco }} {{ w.priceFrom }} {{ 'water.uah' | transloco }}</span>
                 }
                 @if (w.priceNote) {
                   <small class="price-note muted">{{ w.priceNote }}</small>
                 }
               </div>
             } @else {
-              <div class="price-free">{{ 'water.free' | transloco }}</div>
+              <div class="price-free">✓ {{ 'water.free' | transloco }}</div>
             }
           </div>
 

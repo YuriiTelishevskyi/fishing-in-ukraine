@@ -710,7 +710,9 @@ a { transition: color 0.18s ease-out; }
 
 /* Admin (PrimeNG) — ensure a gap between a button's icon and its label
    (the teal Aura preset renders icon+label flush, e.g. "✓Зберегти"). PrimeNG
-   components only render in the lazy admin area, so this is admin-scoped in practice. */
-:where(.p-button) {
+   components only render in the lazy admin area, so this is admin-scoped in practice.
+   `:not(.p-button-icon-only)` gives specificity (0,2,0) to beat PrimeNG's own
+   `.p-button{gap:…}` (0,1,0), and correctly skips icon-only buttons. */
+.p-button:not(.p-button-icon-only) {
   gap: 0.5rem;
 }

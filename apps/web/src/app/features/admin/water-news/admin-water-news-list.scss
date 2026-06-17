@@ -104,10 +104,5 @@
     }
   }
 
-  // Styled paginator (subtle, brand-tinted active page).
-  .p-paginator {
-    background: var(--card);
-    border-top: 1px solid var(--line);
-    padding: 10px 14px;
-  }
+  // Paginator styling is now global — see `.p-paginator` in apps/web/src/styles.scss.
 }

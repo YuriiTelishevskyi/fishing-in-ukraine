@@ -90,9 +90,12 @@
   }
 
   // ── Actions ───────────────────────────────────────────────────────────────
+  // The cell spans the full (2-line) row height; flex with `align-items: center`
+  // vertically centres the icon buttons instead of pinning them to the top.
   &__actions {
     display: flex;
-    gap: 6px;
+    align-items: center;
+    gap: 8px;
     white-space: nowrap;
     flex-wrap: nowrap;
     justify-content: flex-end;
@@ -160,10 +163,5 @@
     }
   }
 
-  // Styled paginator (subtle, brand-tinted active page).
-  .p-paginator {
-    background: var(--card);
-    border-top: 1px solid var(--line);
-    padding: 10px 14px;
-  }
+  // Paginator styling is now global — see `.p-paginator` in apps/web/src/styles.scss.
 }

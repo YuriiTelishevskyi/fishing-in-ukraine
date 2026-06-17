@@ -338,7 +338,8 @@ export class MapPage {
     if (s.title) {
       html += `<strong>${escapeHtml(s.title)}</strong><br>`;
     }
-    html += `${escapeHtml(s.comment)}<br>`;
+    // Note: the free-text comment (read as a "відгук") is intentionally NOT shown
+    // on the map popup — reviews/comments live on the water page, not the map.
     if (s.fishNote) {
       html += `🐟 ${escapeHtml(s.fishNote)}<br>`;
     }

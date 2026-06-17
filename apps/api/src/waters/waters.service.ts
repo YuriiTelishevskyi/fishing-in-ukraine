@@ -74,7 +74,7 @@ export class WatersService {
         premiumUntil: true,
         region: { select: { slug: true } },
       },
-      take: 2000,
+      take: 6000,
     });
     return rows.map((w) => toPin(w, q.lang));
   }

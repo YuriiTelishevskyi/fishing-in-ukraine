@@ -1,5 +1,7 @@
-$sidebar-w: 240px;
+$sidebar-w: 244px;
 $mobile-bp: 900px;
+$teal: #0e7490;
+$teal-light: #22c2dc;
 
 .ash {
   min-height: 100vh;
@@ -12,16 +14,18 @@ $mobile-bp: 900px;
     left: 0;
     width: $sidebar-w;
     height: 100vh;
-    background: var(--hero-from);
+    // Subtle deep-teal gradient (deep navy-teal → teal) for depth.
+    background: linear-gradient(180deg, var(--hero-from) 0%, #06303d 100%);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
     flex-direction: column;
     z-index: 200;
     overflow-y: auto;
-    transition: transform 0.25s ease;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &__sidebar-header {
-    padding: 24px 20px 16px;
+    padding: 26px 20px 18px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
@@ -64,24 +68,33 @@ $mobile-bp: 900px;
   &__nav-link {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 12px;
-    border-radius: 8px;
-    color: rgba(255, 255, 255, 0.7);
+    gap: 11px;
+    padding: 10px 14px;
+    border-radius: 9px;
+    color: rgba(255, 255, 255, 0.66);
     font: 500 0.92rem var(--font-body);
     text-decoration: none;
-    transition: background 0.15s, color 0.15s;
+    transition: background 0.16s ease, color 0.16s ease, transform 0.16s ease;
     position: relative;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.07);
       color: #fff;
     }
 
     &--active {
-      background: rgba(255, 255, 255, 0.12);
+      // Teal-tinted active background + brighter teal accent bar.
+      background: linear-gradient(
+        90deg,
+        rgba(34, 194, 220, 0.18) 0%,
+        rgba(34, 194, 220, 0.05) 100%
+      );
       color: #fff;
       font-weight: 700;
+
+      .ash__nav-icon {
+        transform: scale(1.05);
+      }
 
       &::before {
         content: '';
@@ -90,9 +103,10 @@ $mobile-bp: 900px;
         top: 50%;
         transform: translateY(-50%);
         width: 3px;
-        height: 60%;
-        background: var(--accent);
+        height: 62%;
+        background: $teal-light;
         border-radius: 0 3px 3px 0;
+        box-shadow: 0 0 10px rgba(34, 194, 220, 0.6);
       }
     }
   }
@@ -103,6 +117,7 @@ $mobile-bp: 900px;
     width: 20px;
     text-align: center;
     flex-shrink: 0;
+    transition: transform 0.16s ease;
   }
 
   // ── Sidebar footer ────────────────────────────────────────────────────────
@@ -136,19 +151,20 @@ $mobile-bp: 900px;
   }
 
   &__logout-btn {
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    padding: 8px 12px;
+    background: rgba(34, 194, 220, 0.1);
+    border: 1px solid rgba(34, 194, 220, 0.28);
+    color: rgba(255, 255, 255, 0.85);
+    border-radius: 9px;
+    padding: 9px 14px;
     cursor: pointer;
     font: 600 0.88rem var(--font-body);
     text-align: left;
-    transition: background 0.15s, color 0.15s;
+    transition: background 0.16s ease, color 0.16s ease, border-color 0.16s ease;
     width: 100%;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.14);
+      background: rgba(34, 194, 220, 0.2);
+      border-color: rgba(34, 194, 220, 0.45);
       color: #fff;
     }
   }
@@ -163,9 +179,10 @@ $mobile-bp: 900px;
   }
 
   &__main {
-    padding: 28px 32px 60px;
-    max-width: 1280px;
+    padding: 30px 36px 64px;
+    max-width: 1240px;
     width: 100%;
+    margin: 0 auto; // center the content column for readability on wide screens
     flex: 1;
   }
 

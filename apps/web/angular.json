@@ -31,14 +31,22 @@
             ],
             "styles": [
               "src/styles.scss",
-              "../../node_modules/leaflet/dist/leaflet.css"
+              "../../node_modules/leaflet/dist/leaflet.css",
+              {
+                "input": "../../node_modules/primeicons/primeicons.css",
+                "inject": false,
+                "bundleName": "primeicons"
+              }
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
             },
-            "allowedCommonJsDependencies": ["@fishing/shared", "leaflet"]
+            "allowedCommonJsDependencies": [
+              "@fishing/shared",
+              "leaflet"
+            ]
           },
           "configurations": {
             "production": {

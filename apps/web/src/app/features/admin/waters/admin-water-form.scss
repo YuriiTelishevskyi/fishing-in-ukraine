@@ -402,10 +402,16 @@
   resize: vertical;
 }
 
+// PrimeNG hosts (p-select/p-multiselect) carry the `.p-select`/`.p-multiselect`
+// class on the SAME element. Those classes set `display: inline-flex` so the
+// inner `.p-select-label { flex: 1 1 auto; width: 1% }` can flex to fill. Forcing
+// `display: block` here collapsed the label to ~4px and clipped the selected text
+// to a single sliver («(»). Keep them flex (full-width, block-level) so the label
+// fills and the real option label / placeholder shows.
 .awf__field p-select,
 .awf__field p-multiselect,
 .awf__field p-inputnumber,
 .awf__field p-datepicker {
-  display: block;
+  display: flex;
   width: 100%;
 }

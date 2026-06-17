@@ -1,0 +1,187 @@
+{
+  "_note": "Open-web enrichment overlay for osm-waters.json, keyed by slug. Original descriptions written from found facts (facts only, no fabrication); photos are CC/Wikimedia only. Merged onto OSM stubs at seed time by seedRegionWaters(...enrichmentFile). Source: enrich-waters workflow.",
+  "enrichment": {
+    "shulhivski-stavky": {
+      "description": "Два ставки загальною площею близько 7,7 га поблизу села Шульгівка в Петриківському районі Дніпропетровської області. Платна цілодобова риболовля (близько 50 грн за добу); у водоймах водяться карась, товстолобик, щука та короп, трапляються трофейні екземпляри, найкраще клює вночі.",
+      "fishSlugs": [
+        "karas",
+        "tovstolob",
+        "shchuka",
+        "korop"
+      ],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://goldfishnet.in.ua/places/2795",
+        "https://uk.wikipedia.org/wiki/Шульгівка_(Петриківська_селищна_громада)"
+      ]
+    },
+    "dnistrovske-vodoskhovyshche": {
+      "description": "Дністровське водосховище — велике (близько 142 км²) водосховище на річці Дністер, створене у 1980-х роках і розташоване на межі Чернівецької, Хмельницької та Вінницької областей. Серед риби, що тут водиться, рибалки називають судака, сома, дикого коропа, щуку, головня, плітку, краснопірку, лина, карася, окуня та ляща.",
+      "fishSlugs": [
+        "sudak",
+        "som",
+        "korop",
+        "shchuka",
+        "holoven",
+        "plitka",
+        "krasnopirka",
+        "lyn",
+        "karas",
+        "okun",
+        "lyashch"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/%D0%94%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5_%D0%9A%D0%B0%D0%BB%D1%8E%D1%81.JPG",
+        "alt": "Дністровське водосховище — фото з Wikimedia Commons (CC)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/Дністровське_водосховище",
+        "https://sites.google.com/view/fisherman-navigation/Maps/%D1%80%D1%96%D1%87%D0%BA%D0%B8/Dniester/Dniester-Reservoir",
+        "https://commons.wikimedia.org/wiki/File:Дністровське_водосховище_Калюс.JPG"
+      ]
+    },
+    "sandratske-vodoskhovyshche": {
+      "description": "Сандрацьке водосховище створене 1961 року на річці Південний Буг біля села Широка Гребля Хмільницького району Вінницької області; його площа становить близько 498 га при середній глибині близько 1,5 м, а територія входить до загальнозоологічного заказника місцевого значення «Сандрацький». У водосховищі водяться сом, щука, судак, білизна (жерех), головень, окунь, короп, карась, лин, товстолобик, білий амур та плітка.",
+      "fishSlugs": [
+        "som",
+        "shchuka",
+        "zherekh",
+        "sudak",
+        "holoven",
+        "okun",
+        "korop",
+        "karas",
+        "lyn",
+        "tovstolob",
+        "bilyi-amur",
+        "plitka"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Сандрацьке_водосховище_1.jpg",
+        "alt": "Сандрацьке водосховище — фото з Wikimedia Commons (CC)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/Сандрацький_заказник",
+        "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B0%D0%BD%D0%B4%D1%80%D0%B0%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5_1.jpg"
+      ]
+    },
+    "vodoskhovyshche-dnistrovskoi-hes-2": {
+      "description": "Буферне водосховище Дністровської ГЕС-2 розташоване на Дністрі за 20 км нижче Дністровської ГЕС-1, біля села Нагоряни на Вінниччині; має близько 19,8 км завдовжки, площу водного дзеркала майже 6,4 км² та глибини до 21 м. Водойма призначена для вирівнювання добових і тижневих попусків з головного Дністровського водосховища і водночас слугує нижньою водоймою для Дністровської ГАЕС.",
+      "fishSlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/Дністровське_водосховище",
+        "https://uhe.gov.ua/filiyi/dnistrovska_hes"
+      ]
+    },
+    "vyshenske-ozero": {
+      "description": "Вишенське озеро — безкоштовна водойма у Вінниці, утворена на річці Вишня в районі мікрорайону Вишенька; популярна серед рибалок і відпочивальників. У водоймі ловлять карася, сазана, ляща та коропа (трапляються трофейні екземпляри понад 8 кг), а останнім часом з'явився канальний сом; ловлять фідером, поплавцем та коропово.",
+      "fishSlugs": [
+        "karas",
+        "sazan",
+        "lyashch",
+        "korop",
+        "som"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://rubalka.top/fishing_places/2-vyshenske-ozero/",
+        "https://24tv.ua/agro24/ribolovlya-vinnitsi-oblasti-de-naykrashhe-loviti-ribu_n2872923",
+        "https://uk.wikipedia.org/wiki/Вишенський_парк",
+        "https://vn.20minut.ua/Reviews/top-10-klovih-mists-abo-yaki-vodoymi-naybilshe-polyublyayut-vinnitski--11957023.html"
+      ]
+    },
+    "kachatnyk": {
+      "description": "Качатник — ставок у межах міста Вінниці, утворений на річці Вишня та є верхньою ланкою каскаду Вишенських озер (Качатник, Озеро нижнє та Вишенське озеро). Свою назву отримав через сусідство з невеликою птахофабрикою, що колись була на околиці міста; від сусіднього Нижнього озера відокремлений тонким ґрунтовим насипом, насипаним для так і не добудованої дитячої залізниці.",
+      "fishSlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%B8%D1%88%D0%BD%D1%8F_(%D0%BF%D1%80%D0%B8%D1%82%D0%BE%D0%BA%D0%B0_%D0%9F%D1%96%D0%B2%D0%B4%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D0%91%D1%83%D0%B3%D1%83)",
+        "https://www.facebook.com/groups/525023164754508/posts/1779967849260027/",
+        "https://vinnytsia.city/vyshenske-ozero/"
+      ]
+    },
+    "hushchenetskyi": {
+      "description": "Платна водойма площею близько 11 га поблизу села Гущинці Калинівського району Вінницької області, де водяться короп, карась і лин. Риболовля цілодобова (близько 150 грн за добу), на території є будиночки та альтанки для відпочинку.",
+      "fishSlugs": [
+        "karas",
+        "lyn",
+        "korop"
+      ],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": "+380 96 050 68 90",
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://goldfishnet.in.ua/places/3433",
+        "https://goldfishnet.in.ua/map/place-info/2957"
+      ]
+    },
+    "zatyshne-ozero": {
+      "description": "Озеро Затишне — штучна водойма в межах міста Вінниця, при якій облаштовано базу відпочинку з будиночками, катамаранами, мангалами та лазнею. Серед риби, яку згадують для цього озера, — карась, щука, сом, лящ та окунь; рибалити можна з берега або з човна.",
+      "fishSlugs": [
+        "karas",
+        "shchuka",
+        "som",
+        "lyashch",
+        "okun"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": "+380 68 282 02 38",
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://goldfishnet.in.ua/places/3429",
+        "https://fishub.info/ozero-zatisne-idiliia-dlia-vidpocinku-ta-ribnoyi-lovli",
+        "https://blog.blablacar.com.ua/ozero-zatyshne/",
+        "https://www.vinnitsa.info/news/lito-u-velikomu-misti-ozera-vinnitsi-de-pokupatis-progulyatis-ta-poribaliti-foto.html"
+      ]
+    },
+    "cherepashynetskyi-kar-ier": {
+      "description": "Затоплений гранітний кар'єр у селі Черепашинці Калинівського району Вінницької області, відомий бірюзовим кольором води та глибиною до 100 метрів (прозваний \"вінницькими Мальдівами\"). Окрім пляжного відпочинку, водойма приваблює рибалок — тут ловлять карася й окуня, риболовля безкоштовна.",
+      "fishSlugs": [
+        "karas",
+        "okun"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Quarry_in_Cherepashyntsi_2021_G15.jpg",
+        "alt": "Черепашинецький кар'єр — фото з Wikimedia Commons (CC)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%B5%D0%BF%D0%B0%D1%88%D0%B8%D0%BD%D0%B5%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D1%80%27%D1%94%D1%80",
+        "https://goldfishnet.in.ua/places/3243",
+        "https://commons.wikimedia.org/wiki/File:Quarry_in_Cherepashyntsi_2021_G15.jpg"
+      ]
+    }
+  }
+}

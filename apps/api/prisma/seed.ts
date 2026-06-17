@@ -699,9 +699,33 @@ interface RegionWater {
   verified?: boolean;
 }
 
-async function seedRegionWaters(fileName = 'regions-waters.json', label = 'Region waters') {
+// Open-web enrichment overlay (see prisma/data/osm-enrichment.json). Keyed by
+// water slug; merged onto OSM stubs at seed time. Original descriptions written
+// from found facts; photos are CC/Wikimedia only.
+interface WaterEnrichment {
+  description?: string;
+  fishSlugs?: string[];
+  isPaid?: boolean;
+  priceNote?: string | null;
+  phone?: string | null;
+  website?: string | null;
+  photo?: { url: string; alt?: string } | null;
+}
+
+async function seedRegionWaters(
+  fileName = 'regions-waters.json',
+  label = 'Region waters',
+  enrichmentFile?: string,
+) {
   const raw = readFileSync(join(__dirname, 'data', fileName), 'utf8');
   const data = JSON.parse(raw) as { waters: RegionWater[] };
+
+  const enrichmentBySlug = new Map<string, WaterEnrichment>();
+  if (enrichmentFile) {
+    const eraw = readFileSync(join(__dirname, 'data', enrichmentFile), 'utf8');
+    const edata = JSON.parse(eraw) as { enrichment: Record<string, WaterEnrichment> };
+    for (const [slug, e] of Object.entries(edata.enrichment)) enrichmentBySlug.set(slug, e);
+  }
 
   const regions = await prisma.region.findMany();
   const fishSpecies = await prisma.fishSpecies.findMany();
@@ -712,6 +736,7 @@ async function seedRegionWaters(fileName = 'regions-waters.json', label = 'Regio
   const amenityIdBySlug = new Map(amenities.map((a) => [a.slug, a.id]));
 
   let count = 0;
+  let enrichedCount = 0;
   for (const w of data.waters) {
     const regionId = regionIdBySlug.get(w.regionSlug);
     if (regionId == null) {
@@ -719,8 +744,13 @@ async function seedRegionWaters(fileName = 'regions-waters.json', label = 'Regio
       continue;
     }
 
+    const e = enrichmentBySlug.get(w.slug);
+    if (e) enrichedCount++;
+
+    // Enrichment overrides the stub fish list only when it actually found species.
+    const effFishSlugs = e?.fishSlugs?.length ? e.fishSlugs : w.fishSlugs;
     const fishIds: number[] = [];
-    for (const slug of w.fishSlugs) {
+    for (const slug of effFishSlugs) {
       const id = fishIdBySlug.get(slug);
       if (id == null) {
         console.warn(`[seedRegionWaters] ${w.slug}: unknown fish slug "${slug}" — skipped`);
@@ -742,23 +772,33 @@ async function seedRegionWaters(fileName = 'regions-waters.json', label = 'Regio
     const scalar = {
       name: w.name,
       nameEn: w.nameEn,
-      description: w.description,
+      description: e?.description?.trim() ? e.description.trim() : w.description,
       descriptionEn: w.descriptionEn,
       regionId,
       district: w.district ?? null,
       lat: w.lat,
       lng: w.lng,
       waterType: w.waterType,
-      isPaid: w.isPaid,
+      isPaid: e ? (e.isPaid ?? w.isPaid) : w.isPaid,
       priceFrom: null,
       priceTo: null,
-      priceNote: w.priceNote ?? null,
+      priceNote: e?.priceNote ?? w.priceNote ?? null,
       priceNoteEn: w.priceNoteEn ?? null,
+      phone: e?.phone ?? null,
+      website: e?.website ?? null,
       status: 'PUBLISHED' as const,
-      verified: w.verified ?? true,
+      // Web-confirmed waters earn the verified badge; un-enriched stubs stay false.
+      verified: e ? true : (w.verified ?? true),
       isPremium: false,
       riverId: null,
     };
+
+    // Only manage media when enrichment carries a CC photo, so re-seeds don't wipe
+    // admin/community-uploaded images on un-enriched waters.
+    const photoUrl = e?.photo?.url?.trim();
+    const mediaWrite = photoUrl
+      ? { deleteMany: {}, create: [{ url: photoUrl, alt: e?.photo?.alt ?? w.name, sortOrder: 0 }] }
+      : undefined;
 
     await prisma.water.upsert({
       where: { slug: w.slug },
@@ -766,18 +806,21 @@ async function seedRegionWaters(fileName = 'regions-waters.json', label = 'Regio
         ...scalar,
         fish: { deleteMany: {}, create: fishIds.map((fishId) => ({ fishId })) },
         amenities: { deleteMany: {}, create: amenityIds.map((amenityId) => ({ amenityId })) },
+        ...(mediaWrite ? { media: mediaWrite } : {}),
       },
       create: {
         slug: w.slug,
         ...scalar,
         fish: { create: fishIds.map((fishId) => ({ fishId })) },
         amenities: { create: amenityIds.map((amenityId) => ({ amenityId })) },
+        ...(photoUrl ? { media: { create: [{ url: photoUrl, alt: e?.photo?.alt ?? w.name, sortOrder: 0 }] } } : {}),
       },
     });
     count++;
   }
 
-  console.log(`${label} seeded: ${count}.`);
+  const suffix = enrichmentFile ? ` (${enrichedCount} enriched)` : '';
+  console.log(`${label} seeded: ${count}${suffix}.`);
 }
 
 interface RealArticle {
@@ -1049,8 +1092,9 @@ async function main() {
   // Always-on base data: 87 verified waters across 22 other oblasts.
   await seedRegionWaters();
   // Always-on base data: ~1.7k named waters auto-imported from OpenStreetMap
-  // (verified:false — stub entries to enrich via admin/community over time).
-  await seedRegionWaters('osm-waters.json', 'OSM waters');
+  // (verified:false stubs), with an open-web enrichment overlay applied by slug
+  // (original descriptions, fish, prices/phones, CC photos) where found.
+  await seedRegionWaters('osm-waters.json', 'OSM waters', 'osm-enrichment.json');
   // Always-on base data: real bilingual blog articles.
   await seedRealArticles();
   if (process.env.SEED_DEMO === '1') {

@@ -24,3 +24,6 @@ npm-debug.log*
 
 # Agent worktrees (accidental gitlinks)
 .claude/
+
+# Generated enrichment batch scripts (embed transient data; regenerate from osm-waters.json)
+scripts/enrich-batch*.wf.js

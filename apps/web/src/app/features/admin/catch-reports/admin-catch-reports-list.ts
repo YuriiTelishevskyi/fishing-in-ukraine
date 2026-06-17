@@ -5,9 +5,11 @@ import { TableLazyLoadEvent, TableModule } from 'primeng/table';
 import { Select } from 'primeng/select';
 import { ButtonModule } from 'primeng/button';
 import { Tag } from 'primeng/tag';
+import { Tooltip } from 'primeng/tooltip';
 import { ConfirmDialog } from 'primeng/confirmdialog';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { AdminApiService, AdminCatchReport } from '../core/admin-api.service';
+import { AdminPageHeader } from '../shared/admin-page-header';
 import { Paginated } from '@fishing/shared';
 
 interface StatusOption {
@@ -24,7 +26,9 @@ interface StatusOption {
     Select,
     ButtonModule,
     Tag,
+    Tooltip,
     ConfirmDialog,
+    AdminPageHeader,
   ],
   providers: [ConfirmationService],
   templateUrl: './admin-catch-reports-list.html',
@@ -34,6 +38,8 @@ interface StatusOption {
 export class AdminCatchReportsList implements OnInit {
   private readonly adminApi = inject(AdminApiService);
   private readonly confirmationService = inject(ConfirmationService);
+  // Shared shell-provided MessageService → toasts render in the shell's <p-toast>.
+  private readonly messages = inject(MessageService);
 
   readonly rows = signal<AdminCatchReport[]>([]);
   readonly total = signal(0);
@@ -92,13 +98,21 @@ export class AdminCatchReportsList implements OnInit {
 
   approve(report: AdminCatchReport): void {
     this.adminApi.moderateCatchReport(report.id, 'APPROVED').subscribe({
-      next: () => this.load(),
+      next: () => {
+        this.messages.add({ severity: 'success', summary: 'Схвалено', detail: report.authorName });
+        this.load();
+      },
+      error: () => this.messages.add({ severity: 'error', summary: 'Помилка', detail: 'Не вдалося схвалити звіт' }),
     });
   }
 
   reject(report: AdminCatchReport): void {
     this.adminApi.moderateCatchReport(report.id, 'REJECTED').subscribe({
-      next: () => this.load(),
+      next: () => {
+        this.messages.add({ severity: 'warn', summary: 'Відхилено', detail: report.authorName });
+        this.load();
+      },
+      error: () => this.messages.add({ severity: 'error', summary: 'Помилка', detail: 'Не вдалося відхилити звіт' }),
     });
   }
 
@@ -111,7 +125,11 @@ export class AdminCatchReportsList implements OnInit {
       rejectLabel: 'Скасувати',
       accept: () => {
         this.adminApi.deleteCatchReport(report.id).subscribe({
-          next: () => this.load(),
+          next: () => {
+            this.messages.add({ severity: 'success', summary: 'Видалено', detail: report.authorName });
+            this.load();
+          },
+          error: () => this.messages.add({ severity: 'error', summary: 'Помилка', detail: 'Не вдалося видалити звіт' }),
         });
       },
     });

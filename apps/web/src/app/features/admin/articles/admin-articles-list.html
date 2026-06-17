@@ -1,19 +1,6 @@
 <div class="aal">
-  <!-- Page header row -->
-  <div class="aal__page-header">
-    <div class="aal__page-title-group">
-      <h1 class="aal__page-title">Статті</h1>
-      <span class="aal__page-subtitle">{{ total() }} записів</span>
-    </div>
-    <p-button
-      label="+ Нова стаття"
-      [routerLink]="['/admin/articles/new']"
-      severity="primary"
-    />
-  </div>
-
-  <!-- Filters panel -->
-  <div class="aal__panel aal__filters">
+  <!-- Shared page header (canonical admin top) with filters + primary action -->
+  <app-admin-page-header title="Статті" [subtitle]="total() + ' записів'">
     <p-select
       [(ngModel)]="status"
       [options]="statusOptions"
@@ -21,8 +8,8 @@
       optionValue="value"
       (onChange)="onStatusChange()"
       placeholder="Статус"
+      [style]="{ minWidth: '12rem' }"
     />
-
     <input
       pInputText
       type="text"
@@ -32,7 +19,12 @@
       (keyup.enter)="onSearchEnterOrBlur()"
       (blur)="onSearchEnterOrBlur()"
     />
-  </div>
+    <p-button
+      label="+ Нова стаття"
+      [routerLink]="['/admin/articles/new']"
+      severity="primary"
+    />
+  </app-admin-page-header>
 
   <!-- Table panel -->
   <div class="aal__panel aal__panel--flush aal__panel--scroll">
@@ -67,6 +59,7 @@
             <p-tag
               [severity]="statusSeverity(a.status)"
               [value]="statusLabel(a.status)"
+              [rounded]="true"
             />
           </td>
           <td>{{ a.publishedAt ? (a.publishedAt | date:'dd.MM.yyyy') : '—' }}</td>
@@ -75,16 +68,21 @@
             <p-button
               icon="pi pi-pencil"
               severity="secondary"
-              [text]="true"
+              rounded
+              size="small"
               [routerLink]="['/admin/articles', a.id]"
               pTooltip="Редагувати"
+              tooltipPosition="top"
             />
             <p-button
               icon="pi pi-trash"
               severity="danger"
-              [text]="true"
+              text
+              rounded
+              size="small"
               (onClick)="confirmDelete(a)"
               pTooltip="Видалити"
+              tooltipPosition="top"
             />
           </td>
         </tr>
@@ -92,7 +90,13 @@
 
       <ng-template pTemplate="emptymessage">
         <tr>
-          <td colspan="5" class="aal__empty">Нічого не знайдено</td>
+          <td colspan="5">
+            <div class="aal__empty">
+              <span class="aal__empty-icon">📰</span>
+              <p class="aal__empty-title">Нічого не знайдено</p>
+              <p class="aal__empty-sub">У цьому фільтрі поки що порожньо.</p>
+            </div>
+          </td>
         </tr>
       </ng-template>
     </p-table>

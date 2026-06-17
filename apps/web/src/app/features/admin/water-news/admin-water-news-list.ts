@@ -5,9 +5,10 @@ import { TableLazyLoadEvent, TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { Tag } from 'primeng/tag';
 import { ConfirmDialog } from 'primeng/confirmdialog';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { Tooltip } from 'primeng/tooltip';
 import { AdminApiService, AdminWaterNews } from '../core/admin-api.service';
+import { AdminPageHeader } from '../shared/admin-page-header';
 
 @Component({
   selector: 'app-admin-water-news-list',
@@ -19,6 +20,7 @@ import { AdminApiService, AdminWaterNews } from '../core/admin-api.service';
     Tag,
     ConfirmDialog,
     Tooltip,
+    AdminPageHeader,
   ],
   providers: [ConfirmationService],
   templateUrl: './admin-water-news-list.html',
@@ -28,6 +30,8 @@ import { AdminApiService, AdminWaterNews } from '../core/admin-api.service';
 export class AdminWaterNewsList implements OnInit {
   private readonly adminApi = inject(AdminApiService);
   private readonly confirmationService = inject(ConfirmationService);
+  // Shared shell-provided MessageService → toasts render in the shell's <p-toast>.
+  private readonly messages = inject(MessageService);
 
   readonly rows = signal<AdminWaterNews[]>([]);
   readonly total = signal(0);
@@ -79,8 +83,8 @@ export class AdminWaterNewsList implements OnInit {
 
   typeLabel(type: string): string {
     switch (type) {
-      case 'STOCKING': return 'Зариблення';
-      case 'NEWS': return 'Новина';
+      case 'STOCKING': return '🐟 Зариблення';
+      case 'NEWS': return '📢 Новина';
       default: return type;
     }
   }
@@ -94,7 +98,11 @@ export class AdminWaterNewsList implements OnInit {
       rejectLabel: 'Скасувати',
       accept: () => {
         this.adminApi.deleteWaterNews(n.id).subscribe({
-          next: () => this.load(),
+          next: () => {
+            this.messages.add({ severity: 'success', summary: 'Видалено', detail: n.title });
+            this.load();
+          },
+          error: () => this.messages.add({ severity: 'error', summary: 'Помилка', detail: 'Не вдалося видалити новину' }),
         });
       },
     });

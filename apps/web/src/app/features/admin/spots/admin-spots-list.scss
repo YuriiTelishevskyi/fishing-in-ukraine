@@ -120,6 +120,10 @@
     white-space: nowrap;
     flex-wrap: nowrap;
     justify-content: flex-end;
+    // Pin to the column width so the rightmost button aligns across rows
+    // (a display:flex <td> otherwise shrinks to content → uneven right edge).
+    width: 9rem;
+    box-sizing: border-box;
   }
 
   // ── Row expansion map ─────────────────────────────────────────────────────

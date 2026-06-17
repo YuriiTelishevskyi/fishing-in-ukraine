@@ -130,6 +130,9 @@
                 <a [routerLink]="locale.link('fish', f.slug)" class="chip">{{ f.name }}</a>
               }
             </div>
+            @if (!w.verified) {
+              <p class="fish-approx">ⓘ {{ 'water.fishApprox' | transloco }}</p>
+            }
           </section>
         }
 

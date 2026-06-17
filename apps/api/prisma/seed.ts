@@ -713,6 +713,54 @@ interface WaterEnrichment {
   photo?: { url: string; alt?: string } | null;
 }
 
+// Deterministic, no-fabrication fallback for un-enriched OSM stubs (verified=false):
+// the species you'd TYPICALLY expect in this kind of Ukrainian water. NOT confirmed
+// for the specific water — the UI shows an "орієнтовно / не підтверджено" disclaimer
+// (gated on water.verified === false). Keeps the catalog from looking empty without
+// claiming verified facts.
+const TYPICAL_FISH_BY_TYPE: Record<string, string[]> = {
+  LAKE: ['karas', 'korop', 'okun', 'plitka', 'shchuka'],
+  POND: ['karas', 'korop', 'okun', 'lyn', 'plitka'],
+  RESERVOIR: ['plitka', 'okun', 'shchuka', 'lyashch', 'korop'],
+  RIVER: ['plitka', 'okun', 'shchuka', 'holoven', 'lyashch'],
+  FISHING_COMPLEX: ['korop', 'karas', 'bilyi-amur', 'tovstolob', 'okun'],
+};
+
+// Small deterministic hash → stable per-slug template choice (varies copy without RNG).
+function slugHash(s: string): number {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+
+// Rewrites the bare OSM template ("… Дані з OpenStreetMap; уточнюйте умови …") into a
+// varied, honest 2-sentence description. Reuses the stub's already-correctly-declined
+// "{name} — {type} у {область}" first clause, then appends a varied invite-to-contribute
+// sentence. No fabricated facts.
+function describeStub(desc: string, slug: string): string {
+  const head = (desc.split('.')[0] || '').trim();
+  if (!head) return desc;
+  const tails = [
+    'Одна з водойм регіону, цікавих для аматорської риболовлі — точні умови (доступ, ціни) уточнюйте на місці.',
+    'Природна водойма для відпочинку з вудкою; деталі та свіжі звіти про вилов додають користувачі.',
+    'Місцина для риболовлі у цьому районі — якщо ловили тут, поділіться видами риби й умовами у звіті про вилов.',
+    'Ще одна водойма області для риболовлі; інформацію про неї поступово уточнюємо та доповнюємо.',
+  ];
+  return `${head}. ${tails[slugHash(slug) % tails.length]}`;
+}
+
+function describeStubEn(descEn: string, slug: string): string {
+  const head = (descEn.split('.')[0] || '').trim();
+  if (!head) return descEn;
+  const tails = [
+    'One of the region’s waters of interest to amateur anglers — check access and conditions locally.',
+    'A natural water for a relaxed day of fishing; details and fresh catch reports are added by users.',
+    'A fishing spot in this area — if you have fished here, share the species and conditions in a catch report.',
+    'Another of the region’s fishing waters; information about it is being refined and expanded over time.',
+  ];
+  return `${head}. ${tails[slugHash(slug) % tails.length]}`;
+}
+
 async function seedRegionWaters(
   fileName = 'regions-waters.json',
   label = 'Region waters',
@@ -748,8 +796,16 @@ async function seedRegionWaters(
     const e = enrichmentBySlug.get(w.slug);
     if (e) enrichedCount++;
 
+    // Un-enriched OSM stub: no web data, imported with verified:false. Gets the
+    // deterministic "typical fish" + varied-description fallback below.
+    const isStub = !e && !(w.verified ?? true);
+
     // Enrichment overrides the stub fish list only when it actually found species.
-    const effFishSlugs = e?.fishSlugs?.length ? e.fishSlugs : w.fishSlugs;
+    // For bare stubs (no found + no stub fish) fall back to type-typical species.
+    let effFishSlugs = e?.fishSlugs?.length ? e.fishSlugs : w.fishSlugs;
+    if (isStub && effFishSlugs.length === 0) {
+      effFishSlugs = TYPICAL_FISH_BY_TYPE[w.waterType] ?? [];
+    }
     const fishIds: number[] = [];
     for (const slug of effFishSlugs) {
       const id = fishIdBySlug.get(slug);
@@ -775,8 +831,12 @@ async function seedRegionWaters(
     const scalar = {
       name: w.name,
       nameEn: w.nameEn,
-      description: e?.description?.trim() ? e.description.trim() : w.description,
-      descriptionEn: w.descriptionEn,
+      description: e?.description?.trim()
+        ? e.description.trim()
+        : isStub
+          ? describeStub(w.description, w.slug)
+          : w.description,
+      descriptionEn: isStub ? describeStubEn(w.descriptionEn, w.slug) : w.descriptionEn,
       regionId,
       district: w.district ?? null,
       lat: w.lat,

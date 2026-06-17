@@ -8,10 +8,11 @@ import { Select } from 'primeng/select';
 import { ButtonModule } from 'primeng/button';
 import { Tag } from 'primeng/tag';
 import { ConfirmDialog } from 'primeng/confirmdialog';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { InputText } from 'primeng/inputtext';
 import { Tooltip } from 'primeng/tooltip';
 import { AdminApiService } from '../core/admin-api.service';
+import { AdminPageHeader } from '../shared/admin-page-header';
 
 interface StatusOption {
   label: string;
@@ -31,6 +32,7 @@ interface StatusOption {
     ConfirmDialog,
     InputText,
     Tooltip,
+    AdminPageHeader,
   ],
   providers: [ConfirmationService],
   templateUrl: './admin-waters-list.html',
@@ -40,6 +42,8 @@ interface StatusOption {
 export class AdminWatersList implements OnInit {
   private readonly adminApi = inject(AdminApiService);
   private readonly confirmationService = inject(ConfirmationService);
+  // Shared shell-provided MessageService → toasts render in the shell's <p-toast>.
+  private readonly messages = inject(MessageService);
 
   readonly rows = signal<WaterDetailDto[]>([]);
   readonly total = signal(0);
@@ -128,7 +132,11 @@ export class AdminWatersList implements OnInit {
       rejectLabel: 'Скасувати',
       accept: () => {
         this.adminApi.remove(w.id).subscribe({
-          next: () => this.load(),
+          next: () => {
+            this.messages.add({ severity: 'success', summary: 'Видалено', detail: w.name });
+            this.load();
+          },
+          error: () => this.messages.add({ severity: 'error', summary: 'Помилка', detail: 'Не вдалося видалити водойму' }),
         });
       },
     });

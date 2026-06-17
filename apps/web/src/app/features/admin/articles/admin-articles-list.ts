@@ -7,10 +7,11 @@ import { Select } from 'primeng/select';
 import { ButtonModule } from 'primeng/button';
 import { Tag } from 'primeng/tag';
 import { ConfirmDialog } from 'primeng/confirmdialog';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { InputText } from 'primeng/inputtext';
 import { Tooltip } from 'primeng/tooltip';
 import { AdminApiService, AdminArticle, ArticleStatus } from '../core/admin-api.service';
+import { AdminPageHeader } from '../shared/admin-page-header';
 
 interface StatusOption {
   label: string;
@@ -30,6 +31,7 @@ interface StatusOption {
     ConfirmDialog,
     InputText,
     Tooltip,
+    AdminPageHeader,
   ],
   providers: [ConfirmationService],
   templateUrl: './admin-articles-list.html',
@@ -39,6 +41,8 @@ interface StatusOption {
 export class AdminArticlesList implements OnInit {
   private readonly adminApi = inject(AdminApiService);
   private readonly confirmationService = inject(ConfirmationService);
+  // Shared shell-provided MessageService → toasts render in the shell's <p-toast>.
+  private readonly messages = inject(MessageService);
 
   readonly rows = signal<AdminArticle[]>([]);
   readonly total = signal(0);
@@ -126,7 +130,11 @@ export class AdminArticlesList implements OnInit {
       rejectLabel: 'Скасувати',
       accept: () => {
         this.adminApi.deleteArticle(a.id).subscribe({
-          next: () => this.load(),
+          next: () => {
+            this.messages.add({ severity: 'success', summary: 'Видалено', detail: a.title });
+            this.load();
+          },
+          error: () => this.messages.add({ severity: 'error', summary: 'Помилка', detail: 'Не вдалося видалити статтю' }),
         });
       },
     });

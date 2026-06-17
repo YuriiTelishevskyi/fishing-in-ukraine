@@ -13,9 +13,11 @@ import { TableLazyLoadEvent, TableModule } from 'primeng/table';
 import { Select } from 'primeng/select';
 import { ButtonModule } from 'primeng/button';
 import { Tag } from 'primeng/tag';
+import { Tooltip } from 'primeng/tooltip';
 import { ConfirmDialog } from 'primeng/confirmdialog';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { AdminApiService, AdminSpot } from '../core/admin-api.service';
+import { AdminPageHeader } from '../shared/admin-page-header';
 import { Paginated } from '@fishing/shared';
 import { createMapPin } from '../../../shared/map-pin';
 
@@ -33,7 +35,9 @@ interface StatusOption {
     Select,
     ButtonModule,
     Tag,
+    Tooltip,
     ConfirmDialog,
+    AdminPageHeader,
   ],
   providers: [ConfirmationService],
   templateUrl: './admin-spots-list.html',
@@ -43,6 +47,8 @@ interface StatusOption {
 export class AdminSpotsList implements OnInit {
   private readonly adminApi = inject(AdminApiService);
   private readonly confirmationService = inject(ConfirmationService);
+  // Shared shell-provided MessageService → toasts render in the shell's <p-toast>.
+  private readonly messages = inject(MessageService);
   private readonly injector = inject(Injector);
 
   readonly rows = signal<AdminSpot[]>([]);
@@ -111,13 +117,21 @@ export class AdminSpotsList implements OnInit {
 
   approve(spot: AdminSpot): void {
     this.adminApi.moderateSpot(spot.id, 'APPROVED').subscribe({
-      next: () => this.load(),
+      next: () => {
+        this.messages.add({ severity: 'success', summary: 'Схвалено', detail: spot.authorName });
+        this.load();
+      },
+      error: () => this.messages.add({ severity: 'error', summary: 'Помилка', detail: 'Не вдалося схвалити точку' }),
     });
   }
 
   reject(spot: AdminSpot): void {
     this.adminApi.moderateSpot(spot.id, 'REJECTED').subscribe({
-      next: () => this.load(),
+      next: () => {
+        this.messages.add({ severity: 'warn', summary: 'Відхилено', detail: spot.authorName });
+        this.load();
+      },
+      error: () => this.messages.add({ severity: 'error', summary: 'Помилка', detail: 'Не вдалося відхилити точку' }),
     });
   }
 
@@ -132,8 +146,10 @@ export class AdminSpotsList implements OnInit {
         this.adminApi.deleteSpot(spot.id).subscribe({
           next: () => {
             this.mountedMaps.delete(spot.id);
+            this.messages.add({ severity: 'success', summary: 'Видалено', detail: spot.authorName });
             this.load();
           },
+          error: () => this.messages.add({ severity: 'error', summary: 'Помилка', detail: 'Не вдалося видалити точку' }),
         });
       },
     });

@@ -1,75 +1,18 @@
 .awnf {
   max-width: 900px;
 
-  // ── Action bar ────────────────────────────────────────────────────────────
-  &__action-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
+  // ── Sticky header bar (wraps the shared AdminPageHeader) ───────────────────
+  &__header-bar {
     position: sticky;
     top: 0;
     z-index: 50;
     background: var(--surface);
-    padding: 12px 0;
-    margin-left: -4px;
-    margin-right: -4px;
-    padding-left: 4px;
-    padding-right: 4px;
-  }
+    padding: 12px 4px 0;
+    margin: 0 -4px;
 
-  &__action-bar-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    flex: 1;
-    min-width: 0;
-  }
-
-  &__action-bar-btns {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    flex-shrink: 0;
-  }
-
-  &__back {
-    color: var(--accent);
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-decoration: none;
-    white-space: nowrap;
-    flex-shrink: 0;
-
-    &:hover {
-      text-decoration: underline;
+    app-admin-page-header {
+      display: block;
     }
-  }
-
-  &__title-block {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    min-width: 0;
-  }
-
-  &__title {
-    font-family: var(--font-head);
-    font-size: 1.3rem;
-    font-weight: 800;
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  &__slug {
-    color: var(--muted);
-    font-size: 0.8rem;
   }
 
   // ── Section cards ────────────────────────────────────────────────────────
@@ -169,45 +112,25 @@
     transform: rotate(90deg);
   }
 
-  // ── Mobile action bar → fixed bottom bar ──────────────────────────────────
+  // ── Mobile header bar → static, full-width action buttons ──────────────────
   @media (max-width: 700px) {
-    &__action-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      top: auto;
-      z-index: 300;
-      background: var(--card);
-      border-top: 1px solid var(--line);
-      padding: 12px 16px;
-      padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    &__header-bar {
+      position: static;
+      padding: 0;
       margin: 0;
-      box-shadow: 0 -2px 12px rgba(11, 27, 34, 0.1);
-      flex-direction: column;
-      align-items: stretch;
     }
 
-    &__action-bar-left {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    &__action-bar-btns {
+    ::ng-deep .aph__actions {
       width: 100%;
 
       p-button {
-        flex: 1;
+        flex: 1 1 auto;
       }
 
-      ::ng-deep .p-button {
+      .p-button {
         width: 100%;
         justify-content: center;
       }
-    }
-
-    &__form {
-      padding-bottom: 120px;
     }
   }
 }
@@ -219,5 +142,11 @@
 }
 
 :host ::ng-deep .awnf__input.p-select {
+  width: 100%;
+}
+
+/* Full-width DatePicker */
+.awnf__field p-datepicker {
+  display: flex;
   width: 100%;
 }

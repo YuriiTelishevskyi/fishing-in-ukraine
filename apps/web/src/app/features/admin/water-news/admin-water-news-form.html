@@ -1,27 +1,24 @@
-<p-toast />
-
 <div class="awnf">
-  <!-- Sticky action bar -->
-  <div class="awnf__action-bar">
-    <div class="awnf__action-bar-left">
-      <a routerLink="/admin/water-news" class="awnf__back">← До списку</a>
-      <div class="awnf__title-block">
-        @if (id && news()) {
-          <h1 class="awnf__title">{{ news()!.title }}</h1>
-          <small class="awnf__slug">{{ news()!.water.name }}</small>
-        } @else {
-          <h1 class="awnf__title">Нова новина</h1>
-        }
-      </div>
-    </div>
-    <div class="awnf__action-bar-btns">
+  <!-- Sticky page header with primary actions -->
+  <div class="awnf__header-bar">
+    <app-admin-page-header
+      [title]="id && news() ? news()!.title : 'Нова новина'"
+      [subtitle]="id && news() ? news()!.water.name : 'Новини та зариблення'"
+    >
+      <p-button
+        label="← До списку"
+        severity="secondary"
+        [text]="true"
+        routerLink="/admin/water-news"
+      />
       <p-button
         label="Зберегти"
         severity="primary"
+        icon="pi pi-check"
         [loading]="saving()"
         (onClick)="submit()"
       />
-    </div>
+    </app-admin-page-header>
   </div>
 
   <!-- Form -->
@@ -67,11 +64,13 @@
         <!-- Date -->
         <div class="awnf__field">
           <label class="awnf__label">Дата <span class="awnf__req">*</span></label>
-          <input
-            pInputText
-            type="date"
+          <p-datepicker
             formControlName="date"
-            class="awnf__input"
+            dateFormat="dd.mm.yy"
+            [showButtonBar]="true"
+            [showIcon]="true"
+            placeholder="Оберіть дату"
+            [style]="{ width: '100%' }"
           />
           @if (form.controls.date.invalid && form.controls.date.touched) {
             <small class="awnf__error">Поле обов'язкове</small>

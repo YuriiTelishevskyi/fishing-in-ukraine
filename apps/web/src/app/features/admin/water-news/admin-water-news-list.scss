@@ -1,38 +1,10 @@
 .awnl {
-  // ── Page header row ───────────────────────────────────────────────────────
-  &__page-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-  }
-
-  &__page-title-group {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  &__page-title {
-    font-family: var(--font-head);
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: var(--ink);
-    margin: 0;
-  }
-
-  &__page-subtitle {
-    font-size: 0.8rem;
-    color: var(--muted);
-  }
-
-  // ── Panel card ────────────────────────────────────────────────────────────
+  // ── Panel card (table container) ──────────────────────────────────────────
   &__panel {
     background: var(--card);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    border: 1px solid var(--line);
     padding: 14px 16px;
     margin-bottom: 20px;
 
@@ -46,7 +18,7 @@
 
       :host ::ng-deep p-table table,
       ::ng-deep p-table table {
-        min-width: 640px;
+        min-width: 680px;
       }
     }
   }
@@ -64,33 +36,78 @@
 
   &__actions {
     display: flex;
-    gap: 4px;
+    gap: 6px;
     white-space: nowrap;
+    flex-wrap: nowrap;
     justify-content: flex-end;
   }
 
+  // ── Friendly empty state ──────────────────────────────────────────────────
   &__empty {
     text-align: center;
-    padding: 32px 16px;
+    padding: 44px 16px;
     color: var(--muted);
+
+    &-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 8px;
+      opacity: 0.7;
+    }
+
+    &-title {
+      font: 700 1rem var(--font-head);
+      color: var(--ink);
+      margin: 0 0 4px;
+    }
+
+    &-sub {
+      font-size: 0.86rem;
+      margin: 0;
+    }
   }
 
-  // ── Mobile stacking ───────────────────────────────────────────────────────
   @media (max-width: 600px) {
-    &__page-header {
-      flex-direction: column;
-      align-items: flex-start;
+    &__actions {
+      flex-wrap: wrap;
     }
   }
 }
 
+// ── PrimeNG table polish (rounded container, comfy rows, hover, paginator) ───
 :host ::ng-deep {
-  .p-datatable .p-datatable-tbody > tr:hover > td {
+  .p-datatable {
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .p-datatable .p-datatable-thead > tr > th {
     background: #f4f9fa;
+    color: var(--muted);
+    font: 700 0.74rem var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line);
   }
 
   .p-datatable .p-datatable-tbody > tr > td {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .p-datatable .p-datatable-tbody > tr {
+    transition: background 0.14s ease;
+
+    &:hover > td {
+      background: #f0f8fa;
+    }
+  }
+
+  // Styled paginator (subtle, brand-tinted active page).
+  .p-paginator {
+    background: var(--card);
+    border-top: 1px solid var(--line);
+    padding: 10px 14px;
   }
 }

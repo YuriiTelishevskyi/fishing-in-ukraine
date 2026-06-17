@@ -5,10 +5,11 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { InputText } from 'primeng/inputtext';
 import { Textarea } from 'primeng/textarea';
 import { Select } from 'primeng/select';
+import { DatePicker } from 'primeng/datepicker';
 import { ButtonModule } from 'primeng/button';
-import { Toast } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { AdminApiService, AdminWaterNews, WaterNewsInput } from '../core/admin-api.service';
+import { AdminPageHeader } from '../shared/admin-page-header';
 
 interface WaterOption {
   label: string;
@@ -20,8 +21,8 @@ interface TypeOption {
   value: 'STOCKING' | 'NEWS';
 }
 
-function todayIso(): string {
-  const d = new Date();
+/** Format a Date as a local `yyyy-MM-dd` string (no timezone shift). */
+function toIsoDate(d: Date): string {
   const mm = String(d.getMonth() + 1).padStart(2, '0');
   const dd = String(d.getDate()).padStart(2, '0');
   return `${d.getFullYear()}-${mm}-${dd}`;
@@ -35,10 +36,10 @@ function todayIso(): string {
     InputText,
     Textarea,
     Select,
+    DatePicker,
     ButtonModule,
-    Toast,
+    AdminPageHeader,
   ],
-  providers: [MessageService],
   templateUrl: './admin-water-news-form.html',
   styleUrl: './admin-water-news-form.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -63,7 +64,7 @@ export class AdminWaterNewsForm {
   readonly form = this.fb.nonNullable.group({
     waterId: ['', Validators.required],
     type: ['NEWS' as 'STOCKING' | 'NEWS', Validators.required],
-    date: [todayIso(), Validators.required],
+    date: [new Date() as Date | null, Validators.required],
     title: ['', [Validators.required, Validators.minLength(3)]],
     titleEn: [''],
     body: [''],
@@ -84,7 +85,7 @@ export class AdminWaterNewsForm {
           this.form.patchValue({
             waterId: n.waterId,
             type: n.type,
-            date: n.date?.slice(0, 10) ?? todayIso(),
+            date: n.date ? new Date(n.date) : new Date(),
             title: n.title,
             titleEn: n.titleEn ?? '',
             body: n.body ?? '',
@@ -107,7 +108,7 @@ export class AdminWaterNewsForm {
     return {
       waterId: v.waterId,
       type: v.type,
-      date: v.date,
+      date: v.date ? toIsoDate(v.date) : toIsoDate(new Date()),
       title: v.title,
       titleEn: this.orUndef(v.titleEn),
       body: this.orUndef(v.body),
@@ -136,6 +137,7 @@ export class AdminWaterNewsForm {
       this.adminApi.updateWaterNews(this.id, payload).subscribe({
         next: () => {
           this.saving.set(false);
+          this.toast.add({ severity: 'success', summary: 'Збережено', detail: payload.title });
           this.router.navigate(['/admin/water-news']);
         },
         error: (err) => {
@@ -147,6 +149,7 @@ export class AdminWaterNewsForm {
       this.adminApi.createWaterNews(payload).subscribe({
         next: () => {
           this.saving.set(false);
+          this.toast.add({ severity: 'success', summary: 'Збережено', detail: payload.title });
           this.router.navigate(['/admin/water-news']);
         },
         error: (err) => {

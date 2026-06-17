@@ -705,6 +705,7 @@ interface RegionWater {
 interface WaterEnrichment {
   description?: string;
   fishSlugs?: string[];
+  amenitySlugs?: string[];
   isPaid?: boolean;
   priceNote?: string | null;
   phone?: string | null;
@@ -759,8 +760,10 @@ async function seedRegionWaters(
       fishIds.push(id);
     }
 
+    // Enrichment overrides the stub amenity list only when it actually found some.
+    const effAmenitySlugs = e?.amenitySlugs?.length ? e.amenitySlugs : w.amenitySlugs;
     const amenityIds: number[] = [];
-    for (const slug of w.amenitySlugs) {
+    for (const slug of effAmenitySlugs) {
       const id = amenityIdBySlug.get(slug);
       if (id == null) {
         console.warn(`[seedRegionWaters] ${w.slug}: unknown amenity slug "${slug}" — skipped`);

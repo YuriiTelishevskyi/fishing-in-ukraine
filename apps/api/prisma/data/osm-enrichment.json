@@ -1,5 +1,5 @@
 {
-  "_note": "Open-web enrichment overlay for osm-waters.json, keyed by slug. Original descriptions written from found facts (facts only, no fabrication); photos are CC/Wikimedia only. Merged onto OSM stubs at seed time by seedRegionWaters(...enrichmentFile). Source: enrich-waters workflow.",
+  "_note": "Open-web enrichment overlay for osm-waters.json, keyed by slug. Original descriptions written from found facts (facts only, no fabrication); photos are CC/Wikimedia only with attribution in alt. Merged onto OSM stubs at seed time by seedRegionWaters(...enrichmentFile).",
   "enrichment": {
     "shulhivski-stavky": {
       "description": "Два ставки загальною площею близько 7,7 га поблизу села Шульгівка в Петриківському районі Дніпропетровської області. Платна цілодобова риболовля (близько 50 грн за добу); у водоймах водяться карась, товстолобик, щука та короп, трапляються трофейні екземпляри, найкраще клює вночі.",
@@ -20,32 +20,35 @@
       ]
     },
     "dnistrovske-vodoskhovyshche": {
-      "description": "Дністровське водосховище — велике (близько 142 км²) водосховище на річці Дністер, створене у 1980-х роках і розташоване на межі Чернівецької, Хмельницької та Вінницької областей. Серед риби, що тут водиться, рибалки називають судака, сома, дикого коропа, щуку, головня, плітку, краснопірку, лина, карася, окуня та ляща.",
+      "description": "Дністровське водосховище — велике штучне водосховище на річці Дністер, що охоплює Вінницьку, Хмельницьку та Чернівецьку області; довжина перевищує 200 км. У водосховищі мешкає понад 40 видів риб, серед яких судак, щука, сом, короп, лящ, плітка, краснопірка, лин, карась та окунь. Рибалка на водосховищі є безкоштовною та популярна як серед любителів спінінгу, так і донної ловлі.",
       "fishSlugs": [
         "sudak",
+        "shchuka",
         "som",
         "korop",
-        "shchuka",
-        "holoven",
+        "lyashch",
         "plitka",
         "krasnopirka",
         "lyn",
         "karas",
         "okun",
-        "lyashch"
+        "holoven"
       ],
+      "amenitySlugs": [],
       "isPaid": false,
       "priceNote": null,
       "phone": null,
       "website": null,
       "photo": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/%D0%94%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5_%D0%9A%D0%B0%D0%BB%D1%8E%D1%81.JPG",
-        "alt": "Дністровське водосховище — фото з Wikimedia Commons (CC)"
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/%D0%94%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.JPG",
+        "alt": "Дністровське водосховище — фото: Michaila vnuk, CC BY-SA 4.0 (Wikimedia Commons)"
       },
       "sources": [
-        "https://uk.wikipedia.org/wiki/Дністровське_водосховище",
+        "https://uk.wikipedia.org/wiki/%D0%94%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
         "https://sites.google.com/view/fisherman-navigation/Maps/%D1%80%D1%96%D1%87%D0%BA%D0%B8/Dniester/Dniester-Reservoir",
-        "https://commons.wikimedia.org/wiki/File:Дністровське_водосховище_Калюс.JPG"
+        "https://kokl.ua/dnistrovske-vodoshovyshhe-istoriya-geografiya-ta-turyzm/",
+        "https://www.myvin.com.ua/ua/news/events/9503.html",
+        "https://uk.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%94%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.JPG"
       ]
     },
     "sandratske-vodoskhovyshche": {
@@ -78,37 +81,40 @@
       ]
     },
     "vodoskhovyshche-dnistrovskoi-hes-2": {
-      "description": "Буферне водосховище Дністровської ГЕС-2 розташоване на Дністрі за 20 км нижче Дністровської ГЕС-1, біля села Нагоряни на Вінниччині; має близько 19,8 км завдовжки, площу водного дзеркала майже 6,4 км² та глибини до 21 м. Водойма призначена для вирівнювання добових і тижневих попусків з головного Дністровського водосховища і водночас слугує нижньою водоймою для Дністровської ГАЕС.",
+      "description": "Буферне водосховище Дністровської ГЕС-2 (Нижньодністровської ГЕС) розташоване на річці Дністер біля села Нагоряни Могилів-Подільського району Вінницької області. Водосховище завдовжки 19 км утворилося внаслідок будівництва ГЕС, яка запрацювала у 1999–2002 роках та має встановлену потужність 40,8 МВт. Водойма одночасно є нижнім басейном Дністровської ГАЕС.",
       "fishSlugs": [],
+      "amenitySlugs": [],
       "isPaid": false,
       "priceNote": null,
       "phone": null,
-      "website": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%9D%D0%B8%D0%B6%D0%BD%D1%8C%D0%BE%D0%B4%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B0_%D0%93%D0%95%D0%A1",
       "photo": null,
       "sources": [
-        "https://uk.wikipedia.org/wiki/Дністровське_водосховище",
-        "https://uhe.gov.ua/filiyi/dnistrovska_hes"
+        "https://uk.wikipedia.org/wiki/%D0%9D%D0%B8%D0%B6%D0%BD%D1%8C%D0%BE%D0%B4%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B0_%D0%93%D0%95%D0%A1",
+        "https://uk.wikipedia.org/wiki/%D0%94%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B0_%D0%93%D0%95%D0%A1-2",
+        "https://esu.com.ua/article-70858"
       ]
     },
     "vyshenske-ozero": {
-      "description": "Вишенське озеро — безкоштовна водойма у Вінниці, утворена на річці Вишня в районі мікрорайону Вишенька; популярна серед рибалок і відпочивальників. У водоймі ловлять карася, сазана, ляща та коропа (трапляються трофейні екземпляри понад 8 кг), а останнім часом з'явився канальний сом; ловлять фідером, поплавцем та коропово.",
+      "description": "Вишенське озеро розташоване у Вінниці та є популярним місцем відпочинку й рибалки. Водойма безкоштовна, у ній водяться карась, сазан, лящ та канальний сомик. Рибалки практикують фідерну, поплавцеву та карпову ловлю, найкращий клів — вранці, ввечері та вночі.",
       "fishSlugs": [
         "karas",
         "sazan",
         "lyashch",
-        "korop",
         "som"
+      ],
+      "amenitySlugs": [
+        "chovny"
       ],
       "isPaid": false,
       "priceNote": null,
       "phone": null,
-      "website": null,
+      "website": "https://rubalka.top/fishing_places/2-vyshenske-ozero/",
       "photo": null,
       "sources": [
         "https://rubalka.top/fishing_places/2-vyshenske-ozero/",
-        "https://24tv.ua/agro24/ribolovlya-vinnitsi-oblasti-de-naykrashhe-loviti-ribu_n2872923",
-        "https://uk.wikipedia.org/wiki/Вишенський_парк",
-        "https://vn.20minut.ua/Reviews/top-10-klovih-mists-abo-yaki-vodoymi-naybilshe-polyublyayut-vinnitski--11957023.html"
+        "https://vinnitsa.info/tags/visenske-ozero",
+        "https://news.telegraf.com.ua/ukr/obshhestvo/2025-07-17/5915127-ozero"
       ]
     },
     "kachatnyk": {
@@ -143,44 +149,3050 @@
       ]
     },
     "zatyshne-ozero": {
-      "description": "Озеро Затишне — штучна водойма в межах міста Вінниця, при якій облаштовано базу відпочинку з будиночками, катамаранами, мангалами та лазнею. Серед риби, яку згадують для цього озера, — карась, щука, сом, лящ та окунь; рибалити можна з берега або з човна.",
+      "description": "Озеро Затишне — платна база відпочинку у Вінниці (вул. Будівельників, 15), розташована на Старому місті за 5 хвилин від центру. На водоймі облаштовано 17 альтанок, гостьові будинки, кафе з мангалом, сауну та прокат катамаранів. Серед риб, які водяться в озері, відзначають карася, коропа, щуку, окуня, сома та ляща.",
       "fishSlugs": [
         "karas",
+        "korop",
         "shchuka",
+        "okun",
         "som",
-        "lyashch",
-        "okun"
+        "lyashch"
       ],
-      "isPaid": false,
-      "priceNote": null,
-      "phone": "+380 68 282 02 38",
-      "website": null,
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "chovny",
+        "parkovka",
+        "kafe",
+        "tualet"
+      ],
+      "isPaid": true,
+      "priceNote": "альтанки від 700 грн, сауна 850 грн/год, катамаран 200 грн/30 хв",
+      "phone": "+380682820238",
+      "website": "https://map.vn.ua/uk/info/4675",
       "photo": null,
       "sources": [
         "https://goldfishnet.in.ua/places/3429",
-        "https://fishub.info/ozero-zatisne-idiliia-dlia-vidpocinku-ta-ribnoyi-lovli",
-        "https://blog.blablacar.com.ua/ozero-zatyshne/",
-        "https://www.vinnitsa.info/news/lito-u-velikomu-misti-ozera-vinnitsi-de-pokupatis-progulyatis-ta-poribaliti-foto.html"
+        "https://top20.ua/vn/turizm-puteshestvie/bazyi-otdyiha/ozero-zatishne-1.html",
+        "https://map.vn.ua/uk/info/4675",
+        "https://fishub.info/ozero-zatisne-idiliia-dlia-vidpocinku-ta-ribnoyi-lovli"
       ]
     },
     "cherepashynetskyi-kar-ier": {
-      "description": "Затоплений гранітний кар'єр у селі Черепашинці Калинівського району Вінницької області, відомий бірюзовим кольором води та глибиною до 100 метрів (прозваний \"вінницькими Мальдівами\"). Окрім пляжного відпочинку, водойма приваблює рибалок — тут ловлять карася й окуня, риболовля безкоштовна.",
+      "description": "Черепашинецький кар'єр — колишній гранітний кар'єр у с. Черепашинці Калинівського району Вінницької області, затоплений підземними джерелами після припинення видобутку у 1990-х роках. Водойма відома блакитним кольором прозорої води та глибиною до 100 метрів, що принесло їй назву «Вінницькі Мальдіви». Рибалки зустрічають тут карася й окуня; вхід на водойму безкоштовний, на березі є альтанки та кафе.",
       "fishSlugs": [
         "karas",
         "okun"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "kafe"
       ],
       "isPaid": false,
       "priceNote": null,
       "phone": null,
       "website": null,
+      "photo": null,
+      "sources": [
+        "https://goldfishnet.in.ua/map/place-info/3243",
+        "https://uk.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%B5%D0%BF%D0%B0%D1%88%D0%B8%D0%BD%D0%B5%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D1%80%27%D1%94%D1%80",
+        "https://inside-ua.com/places/cherepashynetskyi-karier"
+      ]
+    },
+    "polum-ianske-vodoskhovyshche": {
+      "description": "Полум'янське водосховище розташоване на річці Сугоклія в Бобринецькому районі Кіровоградської області та було збудоване у 1988 році для зрошення сільськогосподарських угідь. При повному наповненні площа водойми становить близько 100 гектарів, а загальний об'єм — 4,5 млн кубометрів. Нині водосховище також слугує джерелом питного водопостачання для мешканців Бобринця, проте гідротехнічна споруда перебуває в незадовільному технічному стані.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://suspilne.media/kropyvnytskiy/932819-na-kirovogradsini-rujnuetsa-damba-vodoshovisa-pricini-ta-mozlivi-naslidki/",
+        "https://www.youtube.com/watch?v=QPzt6fqUSkA"
+      ]
+    },
+    "nerushaiske-vodoskhovyshche": {
+      "description": "Нерушайське водосховище розташоване на річці Нерушай в Ізмаїльському районі Одеської області та використовується переважно для зрошення сільськогосподарських угідь. У жовтні 2022 року водойму зарибили понад 10 тисячами мальків коропа, білого та строкатого товстолобика в рамках програми біомеліорації.",
+      "fishSlugs": [
+        "korop",
+        "tovstolob"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://bessarabiainform.com/2022/10/nerushayske-vodoshovische-zaribili-desyatyu-tisyachami-malkiv/",
+        "https://kmuvg.org.ua/%D1%80%D1%96%D1%87%D0%BA%D0%B8/"
+      ]
+    },
+    "verkhnemohabynskoe-vodokhranylyshche": {
+      "description": "Верхньомогабинське водосховище розташоване біля села Виноградне в передмісті Ялти, поруч з горою Могабі. Водойма є основним джерелом прісної води для Ялти та живиться водами водоспаду Учан-Су. Територія ретельно охороняється, вхід і риболовля суворо заборонені.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://krymania.ru/mogabinskie-ozera-v-yalte/",
+      "photo": null,
+      "sources": [
+        "https://krymania.ru/mogabinskie-ozera-v-yalte/",
+        "https://region82.su/mogabinskie-ozera/",
+        "https://crimea-news.com/society/2026/06/05/1974708.html"
+      ]
+    },
+    "bam-2": {
+      "description": "Ставок БАМ розташований в Алушті поблизу повороту на село Ізобільне і є платним рибальським водоймищем. Водойма регулярно зариблюється і вирізняється трофейними коропами, білим амуром, товстолобом та сомом. На берегах є альтанки для відпочинку.",
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur",
+        "tovstolob",
+        "som",
+        "karas"
+      ],
+      "amenitySlugs": [
+        "altanky"
+      ],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://rutube.ru/video/36dd5aa9c080484f8fefb26a246c61d2/",
+        "https://www.youtube.com/watch?v=gNKFScb9QOk",
+        "https://www.youtube.com/watch?v=xLXojhJujFU",
+        "http://wikimapia.org/16879051/ru/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE-%D0%91%D0%90%D0%9C"
+      ]
+    },
+    "ozero-lukove": {
+      "description": "Озеро Лукове — залишок заплавного озера на Оболоні у Києві, розташоване на північ від затоки Верблюд поблизу Дніпра. У прозорій воді видно рибу, а на поверхні цвітуть жовті латаття; береги вкриті унікальним для міста поєднанням дубів та сосен. Добратися до водойми складно — громадський транспорт поруч не курсує.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "http://wikimapia.org/8265557/uk/%D0%9B%D1%83%D0%BA%D0%BE%D0%B2%D0%B5-%D0%BE%D0%B7%D0%B5%D1%80%D0%BE",
+        "https://www.myslenedrevo.com.ua/uk/Sci/Kyiv/Islands/Nature/Structure/Gallery/Lukowe_2012.html",
+        "https://www.interesniy.kiev.ua/vodniy-fundament-stolitsi/",
+        "https://www.zhyteli.org/post/obolonski-ozera"
+      ]
+    },
+    "hidrolohichnyi-zakaznyk-mistsevoho-znachennia-vodohrai": {
+      "description": "Гідрологічний заказник місцевого значення «Водограй» — охоронювана природна територія площею 34 га, розташована на ставку в руслі річки Немія на східній околиці смт Копайгород Барського району Вінницької області. Заказник створений рішенням Вінницької облради у 2013 році з метою збереження водно-болотної рослинності (очерет, рогіз, стрілолист) та прибережних угідь.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D0%B3%D1%80%D0%B0%D0%B9_(%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BD%D0%B8%D0%BA)",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D0%B3%D1%80%D0%B0%D0%B9_(%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BD%D0%B8%D0%BA)"
+      ]
+    },
+    "nedilchynske-vodoskhovyshche": {
+      "description": "Недільчинське водосховище розташоване на річці Недільчина (басейн Західного Бугу) у селі Зашків Жовківського району Львівської області, має площу 0,44 км² та максимальну глибину 5 м. Водосховище використовується для організації любительського та спортивного рибальства, є платним об'єктом. Проводиться регулярне зариблення: зокрема, у водойму випускали товстолоба, коропа та білого амура.",
+      "fishSlugs": [
+        "korop",
+        "tovstolob",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": [],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9D%D0%B5%D0%B4%D1%96%D0%BB%D1%8C%D1%87%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://lv.darg.gov.ua/_u_nediljchinsjke_0_0_0_639_1.html",
+        "http://lv.darg.gov.ua/_u_nediljchinsjke_0_0_0_636_1.html",
+        "https://varianty.lviv.ua/publikatsiyi/na-lvivshchyni-sklaly-perelik-vodoim-de-mozhna-lovyty-rybu-v-nerestovyi-period"
+      ]
+    },
+    "irshanske-vodoskhovyshche": {
+      "description": "Іршанське водосховище — найбільше водосховище Житомирської області, розташоване на річці Ірша між селами Валки та Старий Бобрик Хорошівського району. Утворене у 1963 році, має площу дзеркала близько 691 га, максимальну глибину 12,5 м та середню глибину 4,4 м. Риболовля безкоштовна, доступна цілодобово з берега або човна; у водосховищі водяться щука, карась, короп, окунь, лящ, плітка, краснопірка та в'язь.",
+      "fishSlugs": [
+        "shchuka",
+        "karas",
+        "korop",
+        "okun",
+        "lyashch",
+        "plitka",
+        "krasnopirka"
+      ],
+      "amenitySlugs": [
+        "chovny"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://naribe.pp.ua/waters/irshanske-vodoskhovyshche/",
+      "photo": null,
+      "sources": [
+        "https://naribe.pp.ua/waters/irshanske-vodoskhovyshche/",
+        "https://goldfishnet.in.ua/places/2509",
+        "https://polissya.today/rybalka-na-irshanskomu-vodoskhovyshchi-vse-shcho-potribno-znaty"
+      ]
+    },
+    "kurakhivske-vodoskhovyshche": {
+      "description": "Курахівське водосховище розташоване на річці Вовчій у Покровському районі Донецької області, площа водного дзеркала — 15,32 км², довжина — 40 км. Водосховище складається з трьох з'єднаних між собою частин, перша з яких — «тепле» водосховище-охолоджувач Курахівської ТЕС, де температура води була на 8–10°C вища за інші. У мирний час тут мешкали щука, лящ, короп, сом, судак, товстолоб, карась, окунь, краснопірка та інші види; у 2020 році в водойму було зарибнено понад 168 тисяч екземплярів коропа, товстолоба та білого амура.",
+      "fishSlugs": [
+        "shchuka",
+        "lyashch",
+        "korop",
+        "som",
+        "sudak",
+        "tovstolob",
+        "karas",
+        "okun",
+        "krasnopirka",
+        "lyn",
+        "plitka",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
       "photo": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Quarry_in_Cherepashyntsi_2021_G15.jpg",
-        "alt": "Черепашинецький кар'єр — фото з Wikimedia Commons (CC)"
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/%D0%9A%D1%83%D1%80%D0%B0%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_-_panoramio.jpg",
+        "alt": "Курахівське водосховище — фото: Валерий Дед (Valery Ded) / Panoramio, CC BY 3.0 (Wikimedia Commons)"
       },
       "sources": [
-        "https://uk.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%B5%D0%BF%D0%B0%D1%88%D0%B8%D0%BD%D0%B5%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D1%80%27%D1%94%D1%80",
-        "https://goldfishnet.in.ua/places/3243",
-        "https://commons.wikimedia.org/wiki/File:Quarry_in_Cherepashyntsi_2021_G15.jpg"
+        "https://uk.wikipedia.org/wiki/%D0%9A%D1%83%D1%80%D0%B0%D1%85%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://dn.darg.gov.ua/_u_kurahivsjke_vodoshovishche_0_0_0_1005_1.html",
+        "https://darg.gov.ua/_u_kurahivsjke_vodoshovishche_0_0_0_7613_1.html",
+        "https://kp.ua/ua/incidents/a700193-shcho-vidomo-pro-kurakhivske-vodoskhovishche-i-chomu-voroh-rujnuje-joho-dambu",
+        "https://commons.wikimedia.org/wiki/Category:Kurakhove_Reservoir"
+      ]
+    },
+    "starokr-mskoe-vodokhranylyshche": {
+      "description": "Старокримське водосховище розташоване в Кримських передгір'ях на висоті 220 м над рівнем моря поблизу міста Старий Крим, збудоване у 1957 році на злитті річки Чурюк-Су та балки Монастирська. Площа водного дзеркала становить 0,43 км², довжина берегової лінії — 3,7 км. Водосховище є популярним місцем для рибалки, зокрема ловлі щуки.",
+      "fishSlugs": [
+        "shchuka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D1%80%D0%BE%D0%BA%D1%80%D1%8B%D0%BC%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_(%D0%9A%D1%80%D1%8B%D0%BC)",
+        "https://www.youtube.com/watch?v=BuxoUXBaUoI",
+        "https://www.youtube.com/watch?v=AixH-HDsPgo",
+        "https://waterresources.ru/vodohranilische/starokrymskoe-vodohranilische-krym/"
+      ]
+    },
+    "husynske-vodoskhovyshche": {
+      "description": "Гусинське водосховище розташоване на річці Гусинка (притока Великого Бурлука) у Харківській області. Площа водного дзеркала становить 0,60 км², повний об'єм — 2,11 млн м³. Водосховище використовується для зрошення, риборозведення та рекреації, перебуває в управлінні Харківського облводресурсів.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%A5%D0%B0%D1%80%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96"
+      ]
+    },
+    "mezhhornoe-vodokhranylyshche": {
+      "description": "Межгорне водосховище — одне з найбільших у Криму штучних водойм, розташоване в Сакському районі поблизу села Скворцово. Водосховище завдовжки близько 4 км, із максимальною глибиною 33 м та площею дзеркала води 400 га, населене лящем, плоткою, карасем, окунем, судаком, карпом, товстолобом та білим амуром. Доступ до водойми здійснюється через контрольно-пропускний пункт, оскільки об'єкт є режимним; берегова риболовля дозволена.",
+      "fishSlugs": [
+        "lyashch",
+        "plitka",
+        "karas",
+        "okun",
+        "sudak",
+        "korop",
+        "tovstolob",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://gotonature.ru/181-rybalka-na-mezhgornom-vodohranilische.html",
+        "https://fishmapia.com/place/3290/%D0%9C%D0%B5%D0%B6%D0%B3%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%92%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5",
+        "https://krymania.ru/mezhgornoe-vodohranilishche-v-krymu/",
+        "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B6%D0%B3%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5"
+      ]
+    },
+    "kupil-2": {
+      "description": "Озеро Купель — штучна водойма в Крюківщині поблизу Києва, обладнана дерев'яними помостами для рибалок та альтанками з мангалом. На озері водяться окунь, карась, білий амур та щука. Риболовля платна — 300 грн на день, діє бонусна система (кожна п'ята рибалка безкоштовна).",
+      "fishSlugs": [
+        "okun",
+        "karas",
+        "bilyi-amur",
+        "shchuka"
+      ],
+      "amenitySlugs": [
+        "altanky"
+      ],
+      "isPaid": true,
+      "priceNote": "~300 грн/день",
+      "phone": "+38(098) 733 3592",
+      "website": "http://ozero-kupel.com.ua/",
+      "photo": null,
+      "sources": [
+        "https://rybolov.org.ua/organization/41",
+        "https://fishmapia.com/uk/place/4790/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%9A%D1%83%D0%BF%D0%B5%D0%BB%D1%8C"
+      ]
+    },
+    "vdskh-im-ivana-franka": {
+      "description": "Водосховище імені Івана Франка (також відоме як Дрогобицьке озеро) розташоване на заході Дрогобича у Львівській області. Створене на початку 1970-х років (офіційно 1972 р.) на місці трьох потоків, що живили річку Побук (Серет). Середня глибина становить близько 4 метрів; водойма невелика за розміром.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D1%96%D0%BC%D0%B5%D0%BD%D1%96_%D0%86%D0%B2%D0%B0%D0%BD%D0%B0_%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D0%B0",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D1%96%D0%BC%D0%B5%D0%BD%D1%96_%D0%86%D0%B2%D0%B0%D0%BD%D0%B0_%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D0%B0",
+        "https://goldfishnet.in.ua/map/places-region/lviv",
+        "https://ua.fishermap.org/region/lvivska-oblast/"
+      ]
+    },
+    "dofinivskyi-lyman": {
+      "description": "Дофінівський лиман (інша назва — Великий Аджалицький лиман) — солонуватий прибережний лиман на узбережжі Чорного моря, розташований приблизно за 12 км на схід від Одеси. Довжина водойми близько 8 км, ширина до 1,5 км, максимальна глибина лише 1,2 м — це найдрібніший лиман Північно-Західного Причорномор'я. Лиман відокремлений від моря вузьким піщаним пересипом; з 2001 року має обмежений зв'язок із морем через трубу.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B8%D0%B9_%D0%90%D0%B4%D0%B6%D0%B0%D0%BB%D0%B8%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BB%D0%B8%D0%BC%D0%B0%D0%BD",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Dofinivka_liman1.JPG",
+        "alt": "Дофінівський лиман — фото: Yuriy Kvach, CC BY-SA 3.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B8%D0%B9_%D0%90%D0%B4%D0%B6%D0%B0%D0%BB%D0%B8%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BB%D0%B8%D0%BC%D0%B0%D0%BD",
+        "https://esu.com.ua/article-32722",
+        "https://commons.wikimedia.org/wiki/File:Dofinivka_liman1.JPG"
+      ]
+    },
+    "malynske-vodoskhovyshche": {
+      "description": "Малинське водосховище розташоване на річці Ірша біля міста Малин і є складовою ландшафтного заказника місцевого значення «Гамарня». Водойма безкоштовна для рибалки, береги місцями заросли очеретом; активісти зарибнили водосховище товстолобиком, білим амуром, коропом та осетрами. Тут ловлять щуку, ляща, карася, сома, коропа, ліня, краснопірку, плітку та окуня.",
+      "fishSlugs": [
+        "shchuka",
+        "lyashch",
+        "karas",
+        "som",
+        "korop",
+        "lyn",
+        "krasnopirka",
+        "plitka",
+        "okun",
+        "tovstolob",
+        "bilyi-amur",
+        "osetr"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "parkovka",
+        "tualet",
+        "kafe",
+        "chovny"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://polissya.today/malynske-vodoskhovyshche-rybolovlya-vydy-ryb-ta-vidpochynok-na-vodi",
+      "photo": null,
+      "sources": [
+        "https://polissya.today/malynske-vodoskhovyshche-rybolovlya-vydy-ryb-ta-vidpochynok-na-vodi",
+        "https://goldfishnet.in.ua/places/3069",
+        "https://www.0412.ua/news/2949971/u-malinske-vodoshovise-zapustili-osetriv",
+        "https://subota.online/na-malynskomu-vodoskhovyshchi-rybalka-vytiahnuv-shchuku-vahoiu-ponad-8-kh/",
+        "https://dei.zt.ua/novyny/378-malynske-vodoskhovyshche-pryrodnii-ob-iekt-z-osoblyvym-statusom"
+      ]
+    },
+    "starobeshivske-vodoskhovyshche": {
+      "description": "Старобешівське водосховище розташоване на річці Кальміус біля селища Новий Світ Старобешівського району Донецької області, площа водойми становить 895 га, повний об'єм — 44 млн м³. Водосховище не замерзає взимку, що дозволяє рибалити цілий рік; серед видів риби відзначають ляща, карася, короп, судака, окуня та сома. Риболовля є платною — потрібно придбати путівку.",
+      "fishSlugs": [
+        "lyashch",
+        "karas",
+        "korop",
+        "sudak",
+        "okun",
+        "som"
+      ],
+      "amenitySlugs": [],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%94%D0%BE%D0%BD%D0%B5%D1%86%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96",
+        "https://fishmapia.com/place/5070/%D0%A1%D1%82%D0%B0%D1%80%D0%BE%D0%B1%D0%B5%D1%88%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_%D0%BF_%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%A1%D0%B2%D0%B5%D1%82",
+        "https://uk.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D1%8C%D0%BC%D1%96%D1%83%D1%81"
+      ]
+    },
+    "taihanskoe-vodokhranylyshche": {
+      "description": "Тайганське водосховище — штучна водойма поблизу міста Білогірськ у Криму, побудована в 1934–1938 роках на лівій притоці річки Біюк-Карасу. Площа дзеркала становить близько 2 км², максимальна глибина — 16,5 м. Водосховище вважається одним із кращих місць для рибалки в Криму, де водяться щука, судак, окунь, лящ, короп, товстолоб і білий амур.",
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "okun",
+        "lyashch",
+        "korop",
+        "tovstolob",
+        "bilyi-amur",
+        "plitka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://krymania.ru/tayganskoe-vodohranilishhe-kryimskiy-ray-dlya-ryibakov/",
+      "photo": null,
+      "sources": [
+        "https://krymania.ru/tayganskoe-vodohranilishhe-kryimskiy-ray-dlya-ryibakov/",
+        "https://region82.su/tajganskoe-vodohranilishhe/",
+        "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%B9%D0%B3%D0%B0%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5",
+        "https://en.wikipedia.org/wiki/Taigan_Reservoir"
+      ]
+    },
+    "zbruch-3": {
+      "description": "Водосховище Збруч (Мартинківське водосховище) розташоване на річці Збруч поблизу села Мартинківці в Городоцькому районі Хмельницької області. У водоймі водяться щука, короп, карась, окунь, плітка та головень. Доступ до водосховища вільний і цілодобовий.",
+      "fishSlugs": [
+        "shchuka",
+        "korop",
+        "karas",
+        "okun",
+        "plitka",
+        "holoven"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://goldfishnet.in.ua/places/303",
+      "photo": null,
+      "sources": [
+        "https://goldfishnet.in.ua/places/303",
+        "https://goldfishnet.in.ua/places/?river=zbruch",
+        "https://rivnefish.com/places/1151",
+        "https://map.fishergo.com.ua/khmelnitskaya/942-vodokhranilishche-zbruch-v-khmelnitskoj-oblasti.html"
+      ]
+    },
+    "bobovyshchanske-vodoskhovyshche": {
+      "description": "Бобовищанське водосховище розташоване в селі Бобовище Мукачівського району Закарпатської області та має площу водного дзеркала близько 30 гектарів. Водойма перебуває в управлінні Мукачівського міжрайонного управління водного господарства і виконує меліоративні та протиповеневі функції в регіоні.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://buvrtysa.gov.ua/newsite/?page_id=185",
+        "https://map.fishergo.com.ua/zakarpatskaya-oblast/32-rybalka-na-vodojome-v-bobovishchakh-zakarpatskoj-oblasti.html",
+        "https://guide.in.ua/business/480891/%D0%B1%D0%BE%D0%B1%D0%BE%D0%B2%D0%B8%D1%89%D0%B5%D0%BD%D1%81%D1%8C%D0%BA%D0%B5-%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5-%D1%83%D0%B6%D0%B3%D0%BE%D1%80%D0%BE%D0%B4",
+        "https://rybalka-karpaty.org.ua/platni-miscya-dlya-ribolovli-na-zakarpatti/"
+      ]
+    },
+    "karachunivske-vodoskhovyshche": {
+      "description": "Карачунівське водосховище розташоване на річці Інгулець поблизу Кривого Рогу, має площу понад 26 км² та довжину 35 км. Рибалка тут безкоштовна і доступна цілодобово протягом усього року — водойма популярна серед мешканців міста завдяки зручному під'їзду та мальовничим залісненим берегам. У водосховищі водяться карась, короп, окунь, плітка, лящ, судак, щука, товстолоб, сом та лин.",
+      "fishSlugs": [
+        "karas",
+        "korop",
+        "okun",
+        "plitka",
+        "lyashch",
+        "sudak",
+        "shchuka",
+        "tovstolob",
+        "som",
+        "lyn"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://fish-place.com.ua/uk/ukraina/dnipropetrovska-oblast/ribalka-na-karachunivskomu-vodoshovishhi.html",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/%D0%9A%D0%B0%D1%80%D0%B0%D1%87%D1%83%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.JPG",
+        "alt": "Карачунівське водосховище — фото: DmitrOst, CC BY-SA 3.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D0%B0%D1%87%D1%83%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://fish-place.com.ua/uk/ukraina/dnipropetrovska-oblast/ribalka-na-karachunivskomu-vodoshovishhi.html",
+        "https://goldfishnet.in.ua/places/3577",
+        "https://dnp.darg.gov.ua/_karachunivsjke_vodoshovishche_0_0_0_788_1.html",
+        "https://commons.wikimedia.org/wiki/Category:Karachunivka_Reservoir"
+      ]
+    },
+    "novokostiantynivske-vodoskhovyshche": {
+      "description": "Новокостянтинівське водосховище розташоване на річці Південний Буг поблизу села Новокостянтинів у Хмельницькому районі, біля однойменної ГЕС. Рибалка тут безкоштовна та доступна цілодобово. У водоймі водяться щука, судак, лящ, короп, карась, окунь та плітка.",
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "lyashch",
+        "korop",
+        "karas",
+        "okun",
+        "plitka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://goldfishnet.in.ua/places/3586",
+      "photo": null,
+      "sources": [
+        "https://goldfishnet.in.ua/places/3586",
+        "https://vsim.ua/Podii/iz-1-kvitnya-pochinaetsya-nerest-de-i-yak-mozhna-ribaliti-na-hmelnichc-11957388.html",
+        "https://ye.ua/syspilstvo/71667_Na_Hmelnichchini_z_listopada_zaboronili_loviti_ribu_na_zimuvalnih_yamah.html"
+      ]
+    },
+    "stavok-v-roslavychakh": {
+      "description": "У селі Рославичі Васильківського району Київської області розташоване приватне озеро для трофейної риболовлі. Рибалити можна цілого року, зокрема взимку з-під льоду. В озері водяться короп, великий карась, товстолоб, білий амур, щука та окунь.",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "tovstolob",
+        "bilyi-amur",
+        "shchuka",
+        "okun"
+      ],
+      "amenitySlugs": [],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": "+380665070505",
+      "website": "https://roslavychi.ua/infrastructure/",
+      "photo": null,
+      "sources": [
+        "https://roslavychi.ua/infrastructure/"
+      ]
+    },
+    "prat-chernihivrybhosp": {
+      "description": "ПрАТ «Чернігіврибгосп» — повносистемне рибогосподарське підприємство у с. Жавинка Чернігівського району, що надає послуги платної риболовлі на водоймах загальною площею понад 50 га. Підприємство займається інкубацією та вирощуванням товарної риби, зарибненням водойм, а також організовує відпочинок рибалок із можливістю ночівлі та оренди човнів. На водоймах господарства водяться короп, карась, товстолоб, сом, щука, окунь, лящ, плітка та лин.",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "tovstolob",
+        "som",
+        "shchuka",
+        "okun",
+        "lyashch",
+        "plitka",
+        "lyn"
+      ],
+      "amenitySlugs": [
+        "nochivlia",
+        "chovny"
+      ],
+      "isPaid": true,
+      "priceNote": "короп ~39 грн/кг, карась ~25 грн/кг, товстолоб ~38 грн/кг, сом ~180 грн/кг",
+      "phone": "+38(0462)93-74-93",
+      "website": "https://cherfish.com.ua/",
+      "photo": null,
+      "sources": [
+        "https://cherfish.com.ua/",
+        "https://cherfish.com.ua/ua/about_company/",
+        "https://www.chernihiv-oblast.gov.ua/company/192",
+        "https://www.ua-region.com.ua/00476820",
+        "https://clarity-project.info/edr/00476820"
+      ]
+    },
+    "schastlyvenskoe-vodokhranylyshche": {
+      "description": "Щасливенське водосховище розташоване в Бахчисарайському районі АР Крим на річці Мангатора, збудоване у 1959–1964 роках для водопостачання Великої Ялти. Площа водойми становить близько 0,67 км², максимальна глибина — 53 м. Риболовля на водосховищі офіційно заборонена цілий рік, оскільки воно є джерелом питного водопостачання, а доступ контролюється поліцейськими постами.",
+      "fishSlugs": [
+        "sudak",
+        "okun",
+        "holoven",
+        "karas",
+        "plitka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://krymania.ru/schastlivenskoe-vodohranilische-v-krymu/",
+      "photo": null,
+      "sources": [
+        "https://ru.wikipedia.org/wiki/%D0%A1%D1%87%D0%B0%D1%81%D1%82%D0%BB%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5",
+        "https://krymania.ru/schastlivenskoe-vodohranilische-v-krymu/",
+        "https://gotonature.ru/535-schastlivenskoe-vodohranilische.html",
+        "https://gotonature.ru/536-rybalka-na-schastlivenskom-vodohranilische.html"
+      ]
+    },
+    "velykoburlutske-vodoskhovyshche": {
+      "description": "Великобурлуцьке водосховище розташоване на річці Великий Бурлук у Великобурлуцькому районі Харківської області, збудоване 1979 року. Площа водної поверхні — 4,1 км², об'єм — 14,2 млн м³, середня глибина — 3,5 м. Водосховище використовується для зрошення, риборозведення та рекреації.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%A5%D0%B0%D1%80%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96",
+        "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B1%D1%83%D1%80%D0%BB%D1%83%D0%BA%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5",
+        "https://waterresources.ru/vodohranilische/velikoburlukskoe-vodohranilische/",
+        "https://ru.advisor.travel/poi/Velikoburlukskoe-vodohranilishche-2666",
+        "http://www.spinning.kharkov.ua/phpbb/viewtopic.php?f=21&t=41454"
+      ]
+    },
+    "rohozianske-vodoskhovyshche": {
+      "description": "Рогозянське водосховище — руслове водосховище на річці Уда у Золочівському районі Харківської області, збудоване у 1985 році. Площа поверхні становить близько 602 га, максимальна глибина — 5,3 м. Водосховище використовується для рибного господарства (ТОВ «Екосвіт») та відпочинку; рибалка на ньому дозволена цілодобово.",
+      "fishSlugs": [
+        "karas",
+        "korop",
+        "plitka",
+        "lyashch",
+        "okun",
+        "sudak",
+        "shchuka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://goldfishnet.in.ua/places/1339",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%A0%D0%BE%D0%B3%D0%BE%D0%B7%D1%8F%D0%BD%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://goldfishnet.in.ua/places/1339"
+      ]
+    },
+    "buchanske-vodoskhovyshche": {
+      "description": "Бучанське водосховище розташоване біля села Михайлівка-Рубежівка на Київщині та займає площу понад 80 гектарів. Водойма є державною власністю і призначена для зрошення та регулювання водних ресурсів, зволожуючи близько 740 га торфовищ у заплаві річки Буча. Офіційне рибогосподарське використання водосховища не передбачено.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://mykyivregion.com.ua/news/u-bucanskomu-vodosxovishhi-nezakonno-viroshhuyut-ribu-prokuratura-pocala-rozsliduvannya",
+        "https://kyivschina24.com/news/na-buchanskomu-vodoshovyshhi-pryvatne-tovarystvo-nezakonno-vyroshhuye-ta-vylovlyuye-rybu-detali/",
+        "https://maps.fishdeeper.com/en-ww/water/%D0%B1%D1%83%D1%87%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B5-%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5/64651296"
+      ]
+    },
+    "vodoima-chervonyi-kut": {
+      "description": "Водойма «Червоний Кут» площею 30 га та максимальною глибиною 7 м розташована у Кропивницькому районі Кіровоградської області. Водойма є платною, добре доглянутою та щільно зарибленою — власник розводить рибу на продаж, тому рибопродуктивність висока. На березі є альтанки, мангали та столи для відпочинку.",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "bilyi-amur",
+        "shchuka",
+        "tovstolob",
+        "sudak",
+        "som",
+        "okun",
+        "plitka"
+      ],
+      "amenitySlugs": [
+        "altanky"
+      ],
+      "isPaid": true,
+      "priceNote": "~200 грн/особа",
+      "phone": "+380 50 570 04 67",
+      "website": "https://goldfishnet.in.ua/map/place-info/3335",
+      "photo": null,
+      "sources": [
+        "https://goldfishnet.in.ua/map/place-info/3335",
+        "https://goldfishnet.in.ua/places/3335"
+      ]
+    },
+    "dubovske-vodoskhovyshche": {
+      "description": "Дубівське водосховище (також відоме як Дубово-1) розташоване фактично в межах міста Хмельницький і займає площу близько 53 га. Водойма перебуває в управлінні УТМР, рибалка дозволена лише з берегу з боку міста, денний внесок складає 100 грн. Водосховище зарибнюється коропом і щукою, а вилов обмежено 5 кг на добу.",
+      "fishSlugs": [
+        "karas",
+        "korop",
+        "shchuka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": true,
+      "priceNote": "~100 грн/доба",
+      "phone": "+380673829123",
+      "website": "https://rivnefish.com/places/206",
+      "photo": null,
+      "sources": [
+        "https://rivnefish.com/places/206",
+        "https://map.fishergo.com.ua/khmelnitskaya/963-dubovskoe-vodokhranilishche-v-khmelnitskom.html",
+        "https://ye.ua/syspilstvo/31229_De_naykraschi_miscya_dlya_ribolovli_na_Hmelnichchini___poradi_buvalih_ribalok.html"
+      ]
+    },
+    "isakivske-vodoskhovyshche": {
+      "description": "Ісаківське водосховище — найбільше водосховище Луганської області, розташоване біля села Михайлівка Перевальського району, збудоване на річці Біла (права притока Луганської). Площа дзеркала становить 293 га, повний об'єм — 20,4 млн м³. Внаслідок бойових дій та закриття шахт водосховище суттєво обміліло й перебуває в критичному екологічному стані.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%9B%D1%83%D0%B3%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96",
+        "https://vchasnoua.com/donbass/67552-pustelia-pasichnyka-cherez-zakryttia-shakht-boiovykamy-znyklo-naibilshe-vodoskhovyshche-luhanshchyny"
+      ]
+    },
+    "berkhivske-vodoskhovyshche": {
+      "description": "Артемівське (Берхівське) водосховище розташоване в басейні річки Бахмутка на території Краснянської сільської ради Бахмутського району Донецької області. У 2019 році водойму зарибили понад 45 тисячами екземплярів молоді риби: 40 000 цьоголіток товстолоба та 5 000 цьоголіток коропа загальною масою понад 1 125 кг. Водосховище перебуває в зоні активних бойових дій, а його гребля була зруйнована.",
+      "fishSlugs": [
+        "tovstolob",
+        "korop"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://dn.darg.gov.ua/_u_artemivsjke_berhivsjke_0_0_0_572_1.html",
+        "https://dn.darg.gov.ua/index.php?lang_id=1&content_id=572&lp=6"
+      ]
+    },
+    "almynskoe-vodokhranylyshche": {
+      "description": "Альминське водосховище — найстаріше водосховище Криму, збудоване в 1925–1934 роках на балці Базар-Джилга біля села Поштове Бахчисарайського району. Площа дзеркала близько 87 га, максимальна глибина — до 14 м. Риболовля безкоштовна; найкращий клів навесні та восени, влітку риба тримається на глибині.",
+      "fishSlugs": [
+        "karas",
+        "plitka",
+        "krasnopirka",
+        "sazan",
+        "korop",
+        "shchuka",
+        "sudak",
+        "okun",
+        "yorzh"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://krymania.ru/alminskoe-vodohranilische-v-pochtovom/",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Bazar_Djilga_1.jpg",
+        "alt": "Альминское водохранилище — фото: Kosun / Весь Крым 1920–1925, Public Domain (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://krymania.ru/alminskoe-vodohranilische-v-pochtovom/",
+        "https://bike-crimea.com/blog/2012/al-minskoe-vodohranilishhe/",
+        "https://commons.wikimedia.org/wiki/Category:Alma_Reservoir",
+        "https://commons.wikimedia.org/wiki/File:Bazar_Djilga_1.jpg"
+      ]
+    },
+    "krasnodonskyi-karer": {
+      "description": "Краснодонський кар'єр — затоплений колишній кам'яний кар'єр у Луганській області поблизу міста Краснодон (Сорокіно), що перетворився на місце відпочинку місцевих мешканців. Водойма відома чистою прозорою водою, проте офіційно рибальство та купання на ній заборонені. Незважаючи на заборони, кар'єр залишається популярним місцем відпочинку для жителів Краснодона та сусідніх міст.",
+      "fishSlugs": [],
+      "amenitySlugs": [
+        "tualet"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": "+380506278888",
+      "website": "https://ua.plaso.pro/place/85785",
+      "photo": null,
+      "sources": [
+        "https://ua.plaso.pro/place/85785",
+        "https://959.xn--p1ai/news/provereno-959/34049",
+        "https://твойгород.com/2020/06/krasnodonskij-karer-mesto-otdyha-ili-byvshaya-promploshhadka/"
+      ]
+    },
+    "ozero-mulovskoe": {
+      "description": "Муловське озеро — мальовниче гірське озеро в Байдарській долині Балаклавського району Севастополя, поблизу села Передове. На березі облаштовані туристичні стоянки з альтанками, столиками, місцями для вогнищ та туалетом. Рибалка на озері є платною, правила та ціни змінюються щороку.",
+      "fishSlugs": [],
+      "amenitySlugs": [
+        "altanky",
+        "tualet"
+      ],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://krymania.ru/ozero-mulovskoe/",
+        "http://ru.esosedi.org/RU/SEV/2224559/turstoyanka_mulovskoe_ozero_/",
+        "http://wikimapia.org/1808007/ru/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE-%D0%9C%D1%83%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5"
+      ]
+    },
+    "shchyretske-vodoskhovyshche": {
+      "description": "Щирецьке водосховище (місцева назва — озеро Наварія) розташоване поблизу села Наварія Львівського району, збудоване 1949 року на річці Щирка. Водойма площею 115 га та максимальною глибиною 7,8 м є популярним місцем любительської рибалки, де водяться карась, короп, лящ, плітка, окунь, сом та щука. Риболовля платна, рибалки відзначають, що риба обережна і краще клює рано-вранці після прикормлення.",
+      "fishSlugs": [
+        "karas",
+        "korop",
+        "lyashch",
+        "plitka",
+        "okun",
+        "som",
+        "shchuka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": true,
+      "priceNote": "~40 грн/доба",
+      "phone": "+380677369397",
+      "website": "https://rivnefish.com/places/387",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Navaria_Lake.jpg",
+        "alt": "Щирецьке водосховище — фото: Mykola Swarnyk, CC BY-SA 3.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%A9%D0%B8%D1%80%D0%B5%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://rivnefish.com/places/387",
+        "https://commons.wikimedia.org/wiki/File:Navaria_Lake.jpg"
+      ]
+    },
+    "solokiiske-vodoskhovyshche": {
+      "description": "Солокійське водосховище розташоване у селі Корчів Сокальського району Львівської області на річці Солокія, побудоване у 1981 році. Площа становить близько 164 га, максимальна глибина — 5,2 м, тип — заплавне. Водосховище використовується для риборозведення; тут водяться щука, короп, карась, окунь та сом.",
+      "fishSlugs": [
+        "shchuka",
+        "korop",
+        "karas",
+        "okun",
+        "som"
+      ],
+      "amenitySlugs": [],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": "+380976008832",
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BB%D0%BE%D0%BA%D1%96%D0%B9%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://rivnefish.com/places/293/korchiv",
+        "https://goldfishnet.in.ua/map/place-info/832"
+      ]
+    },
+    "liuboven": {
+      "description": "Озеро Любовень (також відоме як Годинь) розташоване біля однойменного села у Волинській області. Площа водойми становить близько 0,87 км², середня глибина — 1,8 м, максимальна — до 6 м; береги низькі, торф'янисті, порослі очеретом та осокою. Рибалка безкоштовна, риби багато, однак для ловлі рекомендується човен; відвідувачів тут дуже мало.",
+      "fishSlugs": [
+        "korop",
+        "lyn",
+        "lyashch",
+        "karas",
+        "bilyi-amur",
+        "plitka",
+        "sudak",
+        "shchuka",
+        "zherekh",
+        "sazan"
+      ],
+      "amenitySlugs": [
+        "chovny"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://rivnefish.com/places/1370",
+      "photo": null,
+      "sources": [
+        "https://rivnefish.com/places/1370"
+      ]
+    },
+    "donetske-more": {
+      "description": "Донецьке море — штучне водосховище площею 206 га у південній частині міста Донецька, утворене на річці Широкій. Максимальна глибина водойми сягає 17 метрів, а загальний об'єм становить близько 7 км³. Водосховище є популярним місцем для неорганізованого відпочинку, хоча купання заборонене через незадовільну якість води.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%94%D0%BE%D0%BD%D0%B5%D1%86%D1%8C%D0%BA%D0%B5_%D0%BC%D0%BE%D1%80%D0%B5",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%94%D0%BE%D0%BD%D0%B5%D1%86%D1%8C%D0%BA%D0%B5_%D0%BC%D0%BE%D1%80%D0%B5",
+        "https://en.wikipedia.org/wiki/Donetsk_Sea"
+      ]
+    },
+    "rohizne-ozero": {
+      "description": "Рогізне озеро розташоване в Любешівському районі Волинської області, поблизу сіл Мукошин і Ветли, та займає площу 105 га при середній глибині 1,5 м. Береги частково заболочені, заросли деревами та водною рослинністю, тому дістатися до місць ловлі пішки практично неможливо — рекомендується човен, який можна взяти в оренду у місцевих жителів. Основний об'єкт лову — карась (100–800 г), також трапляються окунь і щука.",
+      "fishSlugs": [
+        "karas",
+        "okun",
+        "shchuka",
+        "korop"
+      ],
+      "amenitySlugs": [
+        "chovny"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://rivnefish.com/places/444",
+      "photo": null,
+      "sources": [
+        "https://rivnefish.com/places/444",
+        "https://goldfishnet.in.ua/places/694"
+      ]
+    },
+    "belohorskoe-vodokhranylyshche": {
+      "description": "Білогірське водосховище — одне з найбільших прісноводних водосховищ Криму, розташоване за 4 км на південь від міста Білогірськ і наповнене у 1970 році. Площа дзеркала — 225 га, максимальна глибина — 29 м, довжина — 4,6 км. Рибалка безкоштовна; у водоймі водяться короп, карась, щука, товстолоб, судак, окунь, плітка, лящ та головень.",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "shchuka",
+        "tovstolob",
+        "sudak",
+        "okun",
+        "plitka",
+        "lyashch",
+        "holoven"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/%D0%91%D0%B5%D0%BB%D0%BE%D0%B3%D0%BE%D1%80%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5.jpg",
+        "alt": "Белогорское водохранилище — фото: Alexshoni, CC BY-SA 3.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%BE%D0%B3%D0%BE%D1%80%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5",
+        "https://krymania.ru/belogorskoe-vodohranilishche/",
+        "https://gotonature.ru/153-rybalka-na-belogorskom-vodohranilische.html",
+        "https://commons.wikimedia.org/wiki/File:%D0%91%D0%B5%D0%BB%D0%BE%D0%B3%D0%BE%D1%80%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5.jpg"
+      ]
+    },
+    "v-ialivske-vodoskhovyshche": {
+      "description": "В'ялівське водосховище — невелике руслове водосховище на річці В'ялий у Харківському районі Харківської області, збудоване в 1932 році як резервне джерело водопостачання Харкова та реконструйоване в 1968 році. Площа водного дзеркала становить 1,74 км², об'єм — 10 млн м³, максимальна глибина — 12,2 м. Перебуває на балансі КП «Харківводоканал» та використовується для технічного водопостачання, рекреації та риборозведення.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%92%27%D1%8F%D0%BB%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%A5%D0%B0%D1%80%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96",
+        "https://uk.advisor.travel/poi/V-yalivske-vodoshovishche-2667"
+      ]
+    },
+    "yzobylnenskoe-vodokhranylyshche": {
+      "description": "Ізобільненське водосховище розташоване поблизу Алушти (АР Крим) на річці Улу-Узень і є найглибшим водосховищем Криму — до 70 м глибини. Збудоване у 1979 році для водопостачання Великої Алушти, воно перебуває у санітарній охоронній зоні з суворо обмеженим доступом. Рибальство офіційно заборонено, територія огороджена та охороняється.",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "plitka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://ru.wikipedia.org/wiki/%D0%98%D0%B7%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5",
+      "photo": null,
+      "sources": [
+        "https://ru.wikipedia.org/wiki/%D0%98%D0%B7%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5",
+        "https://krymania.ru/izobilnenskoe-vodohranilishche/",
+        "https://www.krym4you.com/otdyh/ozera-kryma/izobilnenskoe-vodohranilische/"
+      ]
+    },
+    "pavlopilske-vodoskhovyshche": {
+      "description": "Павлопільське водосховище розташоване у селі Павлопіль Новоазовського району Донецької області і утворене греблею на річці Кальміус. Площа водосховища становить 865 га, загальний об'єм — 64,2 млн м³. Нижче дамби береги річки обрамлені мальовничими скелями заввишки до 20–30 м, що є одним із найпівденніших виходів Українського кристалічного щита в Приазов'ї.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%BF%D1%96%D0%BB%D1%8C",
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%94%D0%BE%D0%BD%D0%B5%D1%86%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96"
+      ]
+    },
+    "hlybochanske-vodoskhovyshche": {
+      "description": "Глибочанське водосховище розташоване біля села Глибочок Гайсинського (Тростянецького) району Вінницької області на річці Південний Буг. Площа водосховища становить 338 гектарів, повний об'єм — 10,7 млн м³, корисний об'єм — 4,2 млн м³. Це одне з трьох найбільших водосховищ Вінницької області за об'ємом.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%92%D1%96%D0%BD%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96",
+        "https://uk.wikipedia.org/wiki/%D0%93%D0%BB%D0%B8%D0%B1%D0%BE%D1%87%D0%BE%D0%BA_(%D0%93%D0%B0%D0%B9%D1%81%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD)",
+        "https://vinnitsa.info/article/na-vinnichchini-zaboronili-vilov-ribi-perelik-richok-ozer-ta-vodoshovishch"
+      ]
+    },
+    "dnistrovske-vodoskhovyshche-3": {
+      "description": "Дністровське водосховище (відоме також як «Галицьке море») — велике штучне водоймище на річці Дністер у межах Чернівецької, Хмельницької та Вінницької областей, утворене у 1981–1987 роках при будівництві Дністровської ГЕС біля м. Новодністровська. Водосховище має площу 142 км², максимальну глибину 54 м і є одним із найперспективніших місць для лову трофейного сома та судака. Тут мешкає понад 54 види риб, а рибалки мають доступ як до офіційних зон відпочинку, так і до безкоштовних «диких» місць.",
+      "fishSlugs": [
+        "shchuka",
+        "korop",
+        "karas",
+        "sudak",
+        "okun",
+        "som",
+        "lyn",
+        "lyashch",
+        "plitka",
+        "krasnopirka",
+        "tovstolob",
+        "zherekh",
+        "holoven"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://bukowina.org.ua/turism/dnistrovske-vodoshovyshhe/",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/%D0%94%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.JPG",
+        "alt": "Дністровське водосховище — фото: Michaila vnuk, CC BY-SA 4.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://bukowina.org.ua/turism/dnistrovske-vodoshovyshhe/",
+        "https://uk.wikipedia.org/wiki/%D0%94%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://chnv.darg.gov.ua/_ihtiofauna_richki_dnister_ta_0_0_0_535_1.html",
+        "https://www.korop-karas.com/najkrashchi-mistsia-dlia-rybolovli-na-dnistri/",
+        "https://sites.google.com/view/fisherman-navigation/Maps/%D1%80%D1%96%D1%87%D0%BA%D0%B8/Dniester/Dniester-Reservoir",
+        "https://commons.wikimedia.org/wiki/File:%D0%94%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.JPG"
+      ]
+    },
+    "fynaros-ii": {
+      "description": "Финарос II — другий ставок на річці Финарос у Бахчисарайському районі АР Крим, розташований у лісовій долині поблизу села Верхоріччя. Водойма входить до рекреаційної зони під управлінням Бахчисарайського лісового господарства та є популярним місцем для риболовлі та відпочинку на природі. Поряд з водоймою розташована туристична стоянка «Финарос-2» з облаштованою інфраструктурою для відпочинку.",
+      "fishSlugs": [
+        "korop",
+        "shchuka",
+        "bilyi-amur",
+        "karas",
+        "tovstolob"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "chovny",
+        "nochivlia",
+        "parkovka"
+      ],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": "+7 978 977-76-00",
+      "website": "https://bahleshoz.ru/uslugi/rekreaciya-finaros/",
+      "photo": null,
+      "sources": [
+        "https://bahleshoz.ru/uslugi/rekreaciya-finaros/",
+        "https://ru.wikipedia.org/wiki/%D0%A4%D0%B8%D0%BD%D0%B0%D1%80%D0%BE%D1%81",
+        "http://wikimapia.org/16548579/ru/%D0%A4%D0%B8%D0%BD%D0%B0%D1%80%D0%BE%D1%81-2-%D0%B9-%D0%BF%D1%80%D1%83%D0%B4",
+        "https://mysuntime.ru/sight_item.php?id=647"
+      ]
+    },
+    "sofiivske-vodoskhovyshche-2": {
+      "description": "Софіївське водосховище розташоване на річці Інгул у Баштанському районі Миколаївської області та є другим за величиною водосховищем регіону — площа водного дзеркала становить близько 470 га, максимальна глибина сягає 19,5 м. Водойма є гідрологічним заказником місцевого значення та входить до складу РЛП «Приінгульський». Тут мешкають короп, карась, щука, окунь, сом, лящ, товстолоб, краснопірка, йорж та інші види риб.",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "shchuka",
+        "okun",
+        "som",
+        "lyashch",
+        "tovstolob",
+        "krasnopirka",
+        "yorzh"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://map.fishergo.com.ua/nikolaevskaya-oblast/250-sofievskoe-vodokhranilishche-v-nikolaevskoj-oblasti.html",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/%D0%A1%D0%BE%D1%84%D1%96%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5_01.JPG",
+        "alt": "Софіївське водосховище — фото: Pamani, CC BY-SA 3.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D1%84%D1%96%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://mykolaiv.name/uk/eternal-2933-sofiyivske-vodoshovyshhe-unikalne-miscze-dlya-nezabutnogo-vidpochynku",
+        "https://map.fishergo.com.ua/nikolaevskaya-oblast/250-sofievskoe-vodokhranilishche-v-nikolaevskoj-oblasti.html",
+        "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%BE%D1%84%D1%96%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5_01.JPG"
+      ]
+    },
+    "lacul-de-acumulare-cuciurgan-kuchurhanske-vodoskhovyshche": {
+      "description": "Кучурганське водосховище — штучна водойма на річці Кучурган, розташована на кордоні між Одеською областю України та Придністров'ям. Площа поверхні становить близько 2 730 гектарів, середня глибина — 3,5 м. Українська сторона використовує водосховище як рибогосподарський об'єкт: у 2021 році проводилося зариблення коропом та білим амуром, загальний обсяг якого склав 0,622 млн штук.",
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Cuciurgan_Reservoir.jpg",
+        "alt": "Lacul de acumulare Cuciurgan / Кучурганське водосховище — фото: Yuriy Kvach, CC BY-SA 3.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9A%D1%83%D1%87%D1%83%D1%80%D0%B3%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://chrm.darg.gov.ua/_zaversheno_zariblennja_0_0_0_1137_1.html",
+        "https://od.darg.gov.ua/_kuchurgansjke_vodoshovishche_0_0_0_557_1.html",
+        "https://dspace.onu.edu.ua/items/4375f868-6bd0-484e-ac11-d7e8a536cdb5",
+        "https://commons.wikimedia.org/wiki/File:Cuciurgan_Reservoir.jpg"
+      ]
+    },
+    "spyrtzavodovskyi-stavok": {
+      "description": "Спиртзаводовський ставок розташований у селі Мартинівці Вінницької області. Водойма перебуває під опікою пожежників та керівництва місцевого спиртзаводу. Рибалка тут безкоштовна, що робить ставок популярним місцем для місцевих рибалок.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://www.vinnitsa.info/news/ribni-mistsya-vinnichchini-spetsproekt-lito-dlya-lyubiteliv-ribalki.html"
+      ]
+    },
+    "horlynskoe-vodokhranylyshche": {
+      "description": "Горлинське водосховище розташоване у Білогорському районі АР Крим, приблизно за 20 км на південний схід від Білогорська, поблизу села Горлинка; утворене на річці Кучук-Карасу. Водойма має довжину близько 1 км, ширину до 300 м і максимальну глибину 29 м з крутими берегами, вкритими деревами та чагарниками. Рибалка дозволена з берега та дамби; туристична інфраструктура відсутня.",
+      "fishSlugs": [
+        "karas",
+        "lyashch",
+        "shchuka",
+        "okun",
+        "holoven"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://krymania.ru/gorlinskoe-vodohranilishche-belogorsk/",
+      "photo": null,
+      "sources": [
+        "https://krymania.ru/gorlinskoe-vodohranilishche-belogorsk/"
+      ]
+    },
+    "otynevytske-vodoskhovyshche": {
+      "description": "Отиневицьке водосховище розташоване в селі Отиневичі Жидачівського району Львівської області та було побудоване в 1960–1961 роках. Площа водного дзеркала становить 1,97 км², максимальна глибина — 1,5 м; водойму живлять річки Луг та Боберка. Водосховище використовується для організації любительського та спортивного рибальства і перебуває в управлінні ВАТ «Львівоблрибокомбінат».",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%9E%D1%82%D0%B8%D0%BD%D0%B5%D0%B2%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9E%D1%82%D0%B8%D0%BD%D0%B5%D0%B2%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://deplv.gov.ua/vodoshovyshha/",
+        "https://rivnefish.com/places/469"
+      ]
+    },
+    "staryky": {
+      "description": "Осницьке водосховище поблизу села Старики розташоване на річці Лва в Рівненській області та має площу близько 156 га при середній глибині 2 м і максимальній 7 м. Водойма оточена лісом і є безкоштовною для риболовлі цілодобово. У водосховищі водяться щука, короп, карась, лин, окунь та краснопірка, однак береги здебільшого заросли очеретом, що ускладнює доступ до води.",
+      "fishSlugs": [
+        "shchuka",
+        "korop",
+        "karas",
+        "lyn",
+        "okun",
+        "krasnopirka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://rivnefish.com/places/611/staryky",
+      "photo": null,
+      "sources": [
+        "https://rivnefish.com/places/611/staryky",
+        "http://rokitnekraj.at.ua/index/osnicke_vodoskhovishhe/0-21"
+      ]
+    },
+    "hrebnyi-kanal": {
+      "description": "Гребний канал — штучна водойма в Південному житловому масиві Запоріжжя, розташована поблизу Дніпра. Попри занедбаний стан, канал користується значним попитом як місце для риболовлі та відпочинку серед місцевих жителів. Водойма традиційно використовувалась для тренувань з академічного веслування та змагань Запорізької обласної федерації веслувального спорту.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9F%D1%96%D0%B2%D0%B4%D0%B5%D0%BD%D0%BD%D0%B8%D0%B9_(%D0%B6%D0%B8%D1%82%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9_%D0%BC%D0%B0%D1%81%D0%B8%D0%B2,_%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D1%96%D0%B6%D0%B6%D1%8F)",
+        "https://zr.zp.ua/2021/11/01/u-zaporizhzhi-planuiut-oblashtuvaty-hrebnyi-kanal-dlia-zaniat-sportom/",
+        "https://www.ukr.net/news/details/zaporizhzhya/87945252.html"
+      ]
+    },
+    "hrushevoe-ozero": {
+      "description": "Грушевое озеро — штучний водоймище поблизу Сімферополя (с. Клинівка, Сімферопольський район), облаштоване під платну рибалку та відпочинок. У водоймі водяться форель, білий амур, товстолоб, короп, карась та сом. На базі відпочинку «Грушевое озеро» діють беседки, котеджі, рибальські будиночки, кафе та ресторан.",
+      "fishSlugs": [
+        "forel",
+        "bilyi-amur",
+        "tovstolob",
+        "korop",
+        "karas",
+        "som"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "kafe",
+        "tualet"
+      ],
+      "isPaid": true,
+      "priceNote": "~1200 руб/день (до 3 вудок)",
+      "phone": "+7 978 724 84 66",
+      "website": "https://grushevoe.ru/",
+      "photo": null,
+      "sources": [
+        "https://grushevoe.ru/",
+        "https://grushevoe.ru/rybalka/",
+        "https://your-crimea.com/articles/ozyera-kryma/grushevoe-ozero-v-krymu",
+        "https://touristam.com/grushevoe-ozero-simferopol.html"
+      ]
+    },
+    "zelenodolske-vodoskhovyshche": {
+      "description": "Зеленодольське водосховище розташоване на південному сході Криворізького району Дніпропетровської області, площа водної поверхні — 1576 га, максимальна глибина — 15 м. Водойма створена для охолодження Криворізької ТЕС-2. Рибалка безкоштовна та цілодобова; у водосховищі водяться щука, карась, короп, окунь, плітка, а також вселений товстолоб.",
+      "fishSlugs": [
+        "shchuka",
+        "karas",
+        "korop",
+        "okun",
+        "plitka",
+        "tovstolob"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://goldfishnet.in.ua/places/2899",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%97%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B4%D0%BE%D0%BB%D1%8C%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://goldfishnet.in.ua/places/2899",
+        "https://rudana.com.ua/videos/milyon-bilyh-tovstolobykiv-v-zelenodolske-vodoshovyshche-vypustyly-malka"
+      ]
+    },
+    "aianskoe-vodokhranylyshche": {
+      "description": "Аянське водосховище розташоване на річці Аян у Сімферопольському районі Криму на висоті 404 м над рівнем моря; об'єм — 3,9 млн м³, максимальна глибина — 24,5 м. Водосховище побудоване в 1928–1929 роках для водопостачання Сімферополя і є стратегічним об'єктом. Рибалки приїжджають сюди за щукою, окунем, головнем і струмковою фореллю, однак риболовля поблизу дамби заборонена, а туристична інфраструктура на берегах практично відсутня.",
+      "fishSlugs": [
+        "shchuka",
+        "okun",
+        "holoven",
+        "forel"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Ayan_reservoir_and_Zarichne_village.jpg",
+        "alt": "Аянское водохранилище — фото: Mevo (Павел Можаев), CC BY-SA 3.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://krymania.ru/ayanskoe-vodohranilishche-v-krymu/",
+        "https://of-crimea.ru/dostoprimechatelnosti/ayanskoe-vodoxranilishhe.html",
+        "https://uk.wikipedia.org/wiki/%D0%90%D1%8F%D0%BD%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://ru.wikipedia.org/wiki/%D0%90%D1%8F%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5",
+        "https://commons.wikimedia.org/wiki/File:Ayan_reservoir_and_Zarichne_village.jpg"
+      ]
+    },
+    "vodoskhovyshche-tashlytskoi-haes": {
+      "description": "Ташлицьке водосховище розташоване на схід від Південноукраїнська у Вознесенському районі Миколаївської області та є верхнім басейном Ташлицької ГАЕС, що входить до складу Південноукраїнського енергокомплексу. Площа водойми — 8,6 км², довжина — 10 км, максимальна глибина — 46 м. У водосховищі водяться щука, короп, карась, лин, лящ, плітка, краснопірка, головень, йорж та інші види, однак рибальство та купання тут офіційно заборонені через підвищений вміст радіоактивних речовин у воді.",
+      "fishSlugs": [
+        "shchuka",
+        "korop",
+        "karas",
+        "lyn",
+        "lyashch",
+        "plitka",
+        "krasnopirka",
+        "holoven",
+        "yorzh",
+        "zherekh"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%A2%D0%B0%D1%88%D0%BB%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://mykolaiv.name/uk/eternal-2110-top-5-mykolayivskyh-vodoshovyshh",
+        "https://uk.wikipedia.org/wiki/%D0%A2%D0%B0%D1%88%D0%BB%D0%B8%D1%86%D1%8C%D0%BA%D0%B0_%D0%93%D0%90%D0%95%D0%A1"
+      ]
+    },
+    "ushytsia": {
+      "description": "Водосховище на річці Ушиця біля с. Соколівка Хмельницького району, відоме місцевим як «БАМ» — штучна водойма площею близько 40 га, створена у 1980-х роках. Рибалка платна, лише вдень (4:00–22:00), без човнів; ліміт улову — 6 кг на людину. У водоймі водяться короп, щука, судак, товстолоб, білий амур, карась, окунь та плітка.",
+      "fishSlugs": [
+        "korop",
+        "shchuka",
+        "sudak",
+        "tovstolob",
+        "bilyi-amur",
+        "karas",
+        "okun",
+        "plitka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": true,
+      "priceNote": "~150 грн/день (4:00–22:00)",
+      "phone": "+380679116307",
+      "website": "https://rivnefish.com/places/16",
+      "photo": null,
+      "sources": [
+        "https://rivnefish.com/places/16",
+        "https://goldfishnet.in.ua/map/place-info/268",
+        "https://goldfishnet.in.ua/places/?region=hmeln"
+      ]
+    },
+    "sotski-ozera": {
+      "description": "Соцькі озера — це два міських водоймища у Вінниці (мікрорайон Корея): озеро Соцького та озеро Гуральня, розділені лісовою смугою. Навколо озера Соцького розташовані дерев'яні альтанки з мангалами, є прокат катамаранів, а також прибережні доріжки для велосипедистів та прогулянок. Риболовля на озерах дозволена, водойми оточені міським лісом і є популярним місцем відпочинку вінничан.",
+      "fishSlugs": [],
+      "amenitySlugs": [
+        "altanky",
+        "chovny"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://vinnitsa.info/article/blakytni-lahuny-ta-zatyshnyy-vikend-ozera-vinnytskoyi-oblasti-dlya-vidpochynku",
+        "https://vinnitsa.info/article/lito-u-velikomu-misti-ozera-vinnitsi-de-pokupatis-progulyatis-ta-poribaliti-foto",
+        "https://moemisto.ua/vn/blog/mistsya-dlya-piknikiv-u-vinnitsi-ta-poblizu-mista-1087.html"
+      ]
+    },
+    "konstantynovskoe": {
+      "description": "Константиновське — платний рибальський водойм (пруди) у Перовському сільському поселенні Сімферопольського району АР Крим. Водойм зарибнений коропом, сазаном, товстолобом, білим амуром, плітвою та окунем; денна рибалка доступна з 6:00 до 20:00, також є нічна та добова. Діє норма вилову: до 4 кг на денну сесію та до 5 кг на добову.",
+      "fishSlugs": [
+        "korop",
+        "sazan",
+        "tovstolob",
+        "bilyi-amur",
+        "plitka",
+        "okun",
+        "karas"
+      ],
+      "amenitySlugs": [
+        "prokat-snastei",
+        "elektryka",
+        "parkovka"
+      ],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": "+7 (978) 135-93-24",
+      "website": "https://rybalka-simf.orgs.biz/",
+      "photo": null,
+      "sources": [
+        "https://rybalka-simf.orgs.biz/",
+        "https://fish-club.net/reservoirs/crimea/1281/",
+        "https://simferopol.spravker.ru/ohotnichi-i-rybolovnye-magaziny/rybalka-v-konstantinovke-simferopolskii-raion.htm"
+      ]
+    },
+    "zacharovane-ozero": {
+      "description": "База відпочинку «Зачароване озеро» розташована за 10 км від Вінниці на Київському шосе у смт Стрижавка, у змішаному лісі серед дубів і сосен. Комплекс пропонує розміщення в котеджах і номерах, відкриті басейни, сауни, альтанки з мангалами та ресторан. За даними на 2025 рік, риболовля на об'єкті не передбачена.",
+      "fishSlugs": [],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "parkovka",
+        "kafe",
+        "dush"
+      ],
+      "isPaid": true,
+      "priceNote": "від 1500 грн/ніч (номер), вхід у басейн 300–400 грн/особу",
+      "phone": "+380660002222",
+      "website": "https://zacharovane.vn.ua/",
+      "photo": null,
+      "sources": [
+        "https://zacharovane.vn.ua/",
+        "https://zacharovane.at.ua/",
+        "https://funtime.com.ua/relaxation-and-recreation/zacharovane-ozero-resort",
+        "https://top20.ua/vn/turizm-puteshestvie/bazyi-otdyiha/zakoldovannoe-ozero.html"
+      ]
+    },
+    "shcherbakivskyi-kar-ier": {
+      "description": "Щербаківський кар'єр — затоплений гранітний кар'єр площею близько 2,6 га поблизу села Щербаки Білоцерківського району Київської області, оточений сосновим лісом. Водойма утворилася після завершення видобутку граніту та відома чистою прозорою водою. Місце безкоштовне та без інфраструктури, але популярне серед місцевих рибалок і відпочивальників.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://funtime.com.ua/nature/shcherbakivskyi-karyer",
+      "photo": null,
+      "sources": [
+        "https://funtime.com.ua/nature/shcherbakivskyi-karyer",
+        "https://ukrainaincognita.com/kar039ery/shcherbaky-zatoplenyi-karer",
+        "https://uk.wikipedia.org/wiki/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%B8_(%D0%BF%D0%B0%D0%BC%27%D1%8F%D1%82%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B8)"
+      ]
+    },
+    "tiazhylivske-ozero": {
+      "description": "Тяжилівське озеро розташоване у мікрорайоні Тяжилів на північному сході міста Вінниця. Водойма є рекреаційною зоною, де облаштовано пірс та проводилось зариблення; тут дозволено рибальство та купання. Озеро користується популярністю серед мешканців мікрорайону для відпочинку біля води.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://www.vinnitsa.info/news/lito-u-velikomu-misti-ozera-vinnitsi-de-pokupatis-progulyatis-ta-poribaliti-foto.html",
+        "https://uk.wikipedia.org/wiki/%D0%A2%D1%8F%D0%B6%D0%B8%D0%BB%D1%96%D0%B2",
+        "https://vinnitsa.info/article/blakytni-lahuny-ta-zatyshnyy-vikend-ozera-vinnytskoyi-oblasti-dlya-vidpochynku"
+      ]
+    },
+    "kosivske-vodoskhovyshche": {
+      "description": "Косівське водосховище розташоване на річці Рось у Білоцерківському районі Київської області і займає близько 378 га. Водойма використовувалася для рибогосподарської діяльності: у різні роки до неї вселяли товстолоба, білого амура та коропа загальною кількістю понад 85 тис. мальків. Навколо водосховища тривав судовий спір щодо законності рибогосподарської експлуатації та повернення об'єкта державі.",
+      "fishSlugs": [
+        "tovstolob",
+        "bilyi-amur",
+        "korop"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://agrotimes.ua/tvarinnitstvo/kosivske-vodoshovyshhe-na-kyyivshhyni-zarybyly-majzhe-7-tonnamy-odnorichok/",
+        "https://mykyivregion.com.ua/news/blizko-7-tonn-ribi-vipustili-u-kosivske-vdosxovishhe-na-bilocerkivshhini",
+        "https://kyivvlada.com.ua/news/prokuratura-cherez-sud-vimagae-vid-tovaristva-pripiniti-ribogospodarsku-diyalnist-na-kosivskomu-vodoshovishhi/",
+        "https://darg.gov.ua/_u_kosivsjke_vodoshovishche_na_0_0_0_12966_1.html"
+      ]
+    },
+    "novoarkhanhelske-vodoskhovyshche": {
+      "description": "Новоархангельське водосховище розташоване на річці Синюха (притока Південного Бугу) біля смт Новоархангельськ у Кіровоградській області. Площа водойми становить 457 га, повний об'єм — 14,8 млн м³. Водосховище входить до каскаду на р. Синюха та використовується переважно для водопостачання міста Первомайськ.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%9A%D1%96%D1%80%D0%BE%D0%B2%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96",
+        "https://mk-vodres.davr.gov.ua/2012-09-18-07-57-47"
+      ]
+    },
+    "vuhlehirske-vodoskhovyshche": {
+      "description": "Вуглегірське водосховище розташоване в Бахмутському районі Донецької області на річці Лугань (притока Сіверського Дінця) і створене для охолодження Вуглегірської ТЕС. Площа дзеркала — 1 510 га, максимальна глибина — 30–40 м, що робить його одним із найглибших водосховищ Донбасу. Влітку та восени тут спостерігаються великі зграї окуня, а водосховище є одним із небагатьох місць на лівобережжі, де трапляється вугор.",
+      "fishSlugs": [
+        "okun",
+        "yorzh"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/%D0%92%D1%83%D0%B3%D0%BB%D0%B5%D0%B3%D1%96%D1%80%D1%81%D1%8C%D0%BA%D0%B0_%D0%A2%D0%95%D0%A1_%D1%82%D0%B0_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.jpg",
+        "alt": "Вуглегірське водосховище — фото: Alkanus / Wildvepr (Wikimedia Commons), CC0 1.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%92%D1%83%D0%B3%D0%BB%D0%B5%D0%B3%D1%96%D1%80%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://commons.wikimedia.org/wiki/File:%D0%92%D1%83%D0%B3%D0%BB%D0%B5%D0%B3%D1%96%D1%80%D1%81%D1%8C%D0%BA%D0%B0_%D0%A2%D0%95%D0%A1_%D1%82%D0%B0_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.jpg",
+        "https://commons.wikimedia.org/wiki/Category:Vuhlehirsk_power_plant"
+      ]
+    },
+    "mar-ivske-vodoskhovyshche": {
+      "description": "Мар'ївське водосховище площею близько 73 га розташоване в Олександрівському районі Донецької області на межі з Харківською та Дніпропетровською областями. Водойма є спортивним ставом Донецького коропового клубу «Сармат» і належить до найвідоміших місць для карпфішингу в Україні: дно піщане, риба зариблена трофейним коропом та білим амуром до 20 кг. На берегах обладнано тіньові сектори, душові кабіни, туалети та зона Wi-Fi.",
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur",
+        "karas",
+        "okun",
+        "som"
+      ],
+      "amenitySlugs": [
+        "dush",
+        "tualet"
+      ],
+      "isPaid": true,
+      "priceNote": "~300 грн/доба",
+      "phone": "+380 96 155 52 72",
+      "website": "https://rivnefish.com/places/1039/marevka",
+      "photo": null,
+      "sources": [
+        "https://rivnefish.com/places/1039/marevka",
+        "https://goldfishnet.in.ua/map/place-info/2722",
+        "https://fishub.info/misce/1528"
+      ]
+    },
+    "martonoshske-vodoskhovyshche": {
+      "description": "Водосховище розташоване біля села Мартоноша Новомиргородського району Кіровоградської області. Водойма є платною для риболовлі: один берег має облаштовану зону відпочинку з альтанками та підстриженою травою, протилежний — лісистий і крутий. Серед трофейних видів — товстолоб вагою 10–20 кг.",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "plitka",
+        "lyn",
+        "tovstolob",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "parkovka"
+      ],
+      "isPaid": true,
+      "priceNote": "~350 грн/12 год",
+      "phone": "+380969946304",
+      "website": "https://nameste.com.ua/uk/mesto/martonosha",
+      "photo": null,
+      "sources": [
+        "https://nameste.com.ua/uk/mesto/martonosha",
+        "https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%82%D0%BE%D0%BD%D0%BE%D1%88%D0%B0",
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%9A%D1%96%D1%80%D0%BE%D0%B2%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96"
+      ]
+    },
+    "lisne-ozero": {
+      "description": "Озеро Лісне площею 5,3 га розташоване у колишньому Любомльському районі Волинської області поблизу села Сильне, серед соснового лісу та пагорбів. Максимальна глибина водойми — близько 4 метрів. Риболовля на озері безкоштовна та дозволена цілодобово.",
+      "fishSlugs": [
+        "okun",
+        "plitka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://rivnefish.com/places/1289",
+      "photo": null,
+      "sources": [
+        "https://rivnefish.com/places/1289",
+        "http://www.active.lviv.ua/topic-t7877.html",
+        "http://kniazhyigrad.com.ua/2019/08/08/lisne-ozero-nepodalik-volodymyra-peretvorylosya-na-brudnu-kalyuzhu-foto/"
+      ]
+    },
+    "voronivske-vodoskhovyshche": {
+      "description": "Воронівське водосховище (відоме також як Чорний Ташлик) розташоване на однойменній річці біля с. Воронівка Новоукраїнського району Кіровоградської області. Площа водойми становить близько 80 га; водосховище створене для зрошення та є популярним місцем рибалки. Тут ловляться як хижі, так і мирні види риби.",
+      "fishSlugs": [
+        "plitka",
+        "okun",
+        "sudak",
+        "shchuka",
+        "karas",
+        "korop",
+        "som",
+        "tovstolob",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://goldfishnet.in.ua/map/place-info/1891",
+      "photo": null,
+      "sources": [
+        "https://goldfishnet.in.ua/map/place-info/1891",
+        "https://fishmapia.com/place/5056/%D0%A7%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%A2%D0%B0%D1%88%D0%BB%D1%8B%D0%BA_%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://uk.wikipedia.org/wiki/%D0%A7%D0%BE%D1%80%D0%BD%D0%B8%D0%B9_%D0%A2%D0%B0%D1%88%D0%BB%D0%B8%D0%BA"
+      ]
+    },
+    "chernorechenskoe-vodokhranylyshche": {
+      "description": "Чорноріченське водосховище — найбільший за об'ємом прісноводний водойм Криму, розташований у Байдарській долині поблизу Севастополя. Водосховище є стратегічним джерелом питної води для Севастополя та прилеглих населених пунктів, тому рибальство тут офіційно заборонено, берегова лінія огороджена і охороняється. За різними джерелами, у водоймі мешкають карась, короп, судак, окунь, лящ, товстолоб та білий амур.",
+      "fishSlugs": [
+        "karas",
+        "korop",
+        "sudak",
+        "okun",
+        "lyashch",
+        "tovstolob",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/%D0%A7%D0%B5%D1%80%D0%BD%D0%BE%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5.JPG",
+        "alt": "Чернореченское водохранилище — фото: 17Rising17, CC BY-SA 3.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://krymania.ru/chernorechenskoe-vodohranilishche/",
+        "https://of-crimea.ru/dostoprimechatelnosti/reki/chernorechenskoe-vodoxranilishhe.html",
+        "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%BD%D0%BE%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_(%D0%A1%D0%B5%D0%B2%D0%B0%D1%81%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C)",
+        "https://commons.wikimedia.org/wiki/Category:Chernorechensky_reservoir",
+        "https://commons.wikimedia.org/wiki/File:%D0%A7%D0%B5%D1%80%D0%BD%D0%BE%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5.JPG"
+      ]
+    },
+    "zel-noe": {
+      "description": "Зеленоярське водосховище — штучна прісноводна водойма наливного типу на Керченському півострові біля села Зелений Яр у Ленінському районі Криму. Збудоване у 1975 році, площа дзеркала води становить близько 51 га, максимальна глибина — 8 метрів. Водосховище є транзитним вузлом Північно-Кримського каналу та використовується для водопостачання населених пунктів Ленінського району й міста Керч, а також є популярним місцем рибальства.",
+      "fishSlugs": [
+        "okun",
+        "korop",
+        "karas",
+        "bilyi-amur",
+        "tovstolob",
+        "som"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://ru.wikipedia.org/wiki/%D0%97%D0%B5%D0%BB%D1%91%D0%BD%D0%BE%D1%8F%D1%80%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5",
+        "https://jalita.com/guidebook/river/reservoir_zelenoyarsk.shtml",
+        "https://krm.guidebook.ru/zeleniy-yar/places/zelenoyarskoe-vodohranilische.html"
+      ]
+    },
+    "krasnopavlivske-vodoskhovyshche": {
+      "description": "Краснопавлівське водосховище розташоване в Лозівському районі Харківської області, збудоване у 1984 році на трасі каналу Дніпро–Донбас. Площа водойми — 34,6 км², максимальна глибина — 20 м. Рибалки ловлять тут судака, щуку, білого амура та карася — як із берега, так і з човна.",
+      "fishSlugs": [
+        "sudak",
+        "shchuka",
+        "bilyi-amur",
+        "karas"
+      ],
+      "amenitySlugs": [],
+      "isPaid": true,
+      "priceNote": "~100–150 грн/доба (частина водойми)",
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%BF%D0%B0%D0%B2%D0%BB%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://www.057.ua/news/3972806/ribalka-u-harkivskij-oblasti-kudi-poihati-top-5-variantiv",
+        "https://suspilne.media/kharkiv/991347-na-harkivsini-nadzvicajna-situacia-tehnogennogo-harakteru-cerez-riven-vodi-u-krasnopavlivskomu-vodoshovisi/"
+      ]
+    },
+    "dobrotvirske-vodoskhovyshche": {
+      "description": "Добротвірське водосховище розташоване поблизу смт Добротвір Шептицького району на річці Західний Буг, збудоване у 1959 році для охолодження Добротвірської ТЕС. Площа водойми — 6,96 км², середня глибина — 2,13 м, максимальна — 4 м. Риболовля дозволена цілодобово та безкоштовно; скидний канал ТЕС підігріває воду і не замерзає навіть у сильні морози.",
+      "fishSlugs": [
+        "shchuka",
+        "korop",
+        "karas",
+        "okun",
+        "lyashch",
+        "som",
+        "plitka",
+        "tovstolob"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://goldfishnet.in.ua/map/place-info/416",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Dobrotvir_Reservoir2.jpg",
+        "alt": "Добротвірське водосховище — фото: Mykola Swarnyk, CC BY-SA 3.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D1%82%D0%B2%D1%96%D1%80%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://goldfishnet.in.ua/map/place-info/416",
+        "https://rivnefish.com/places/751/Dobrotvir",
+        "https://lv.darg.gov.ua/_u_dobrotvirsjke_0_0_0_619_1.html",
+        "https://commons.wikimedia.org/wiki/File:Dobrotvir_Reservoir2.jpg",
+        "https://www.wikidata.org/wiki/Q46981298"
+      ]
+    },
+    "sholokhivske-vodoskhovyshche": {
+      "description": "Шолоховське водосховище розташоване на річці Базавлук у межах Апостолівського та Нікопольського районів Дніпропетровської області; збудоване 1959 року для сезонного регулювання стоку. Площа водного дзеркала — 13,5 км², довжина — 17,2 км, максимальна глибина — 26 м. У водоймі водяться щука, лящ, краснопірка, плітка, карась; вздовж берегів облаштовані зони відпочинку.",
+      "fishSlugs": [
+        "shchuka",
+        "lyashch",
+        "krasnopirka",
+        "plitka",
+        "karas"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%A8%D0%BE%D0%BB%D0%BE%D1%85%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%A8%D0%BE%D0%BB%D0%BE%D1%85%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%94%D0%BD%D1%96%D0%BF%D1%80%D0%BE%D0%BF%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96"
+      ]
+    },
+    "myronivske-vodoskhovyshche": {
+      "description": "Миронівське водосховище розташоване на річці Лугань (басейн Сіверського Дінця) у Бахмутському районі Донецької області та є ставком-охолоджувачем Миронівської ТЕС. Площа водної поверхні становить 20,5 км², водосховище наповнене з 1953 року. Серед місцевих мешканців водойма відома як місце відпочинку та рибальства; на східному березі діє Миронівське рибне господарство.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%9C%D0%B8%D1%80%D0%BE%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9C%D0%B8%D1%80%D0%BE%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5"
+      ]
+    },
+    "khrinnykivske-vodoskhovyshche": {
+      "description": "Хрінниківське (Хрінницьке) водосховище створене у 1957 році на річці Стир на межі Волинської та Рівненської областей; площа — 18,3 км², середня глибина — 2 м, максимальна — 6 м. У водосховищі налічується близько 28 видів риб, серед яких щука, окунь, лящ, сом, короп, лин, краснопірка та судак. Любительська риболовля є безкоштовною, на берегах діють туристичні бази з прокатом човнів та ночівлею.",
+      "fishSlugs": [
+        "shchuka",
+        "okun",
+        "lyashch",
+        "som",
+        "korop",
+        "lyn",
+        "krasnopirka",
+        "sudak",
+        "plitka"
+      ],
+      "amenitySlugs": [
+        "chovny",
+        "nochivlia"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://rivnefish.com/places/685/khrinniki",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/%D0%A5%D1%80%D1%96%D0%BD%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5_01.jpg",
+        "alt": "Хрінниківське водосховище — фото: Шульгач Юрій, CC BY-SA 4.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%A5%D1%80%D1%96%D0%BD%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://rivnefish.com/places/685/khrinniki",
+        "https://goldfishnet.in.ua/places/475",
+        "https://ukr-day.com/hrinnitsa-reservoir-beauty-in-use/",
+        "https://commons.wikimedia.org/wiki/Category:Khrinnyky_(reservoir)"
+      ]
+    },
+    "karabutivske-vodoskhovyshche": {
+      "description": "Карабутівське водосховище (інша назва — водосховище Ромен) є найбільшим водосховищем Сумської області, споруджене у 1982 році на річці Ромен у Конотопському районі поблизу сіл Карабутове та Нехаївка. Площа водного дзеркала становить 502 га, довжина греблі — 340 м, повний об'єм — 13,0 млн м³. Іхтіофауна представлена переважно карасем сріблястим, а також коропом, пліткою та окунем.",
+      "fishSlugs": [
+        "karas",
+        "korop",
+        "plitka",
+        "okun"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D0%B0%D0%B1%D1%83%D1%82%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/VdshRomen.jpg",
+        "alt": "Карабутівське водосховище — фото: Tarasssst, CC BY-SA 4.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D0%B0%D0%B1%D1%83%D1%82%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://commons.wikimedia.org/wiki/File:VdshRomen.jpg"
+      ]
+    },
+    "tsukernia": {
+      "description": "Озеро Цукерня розташоване біля села Якушинці Вінницького району, за 1 км від Вінниці, поруч з трасою М12/Е50. Площа водойми — 7,9 га, середня глибина — 2 м. Водойма є платною й добре відома серед карпятників: тут мешкають карп (зокрема великоваговий), білий амур, товстолоб, сом, карась, судак, щука та окунь.",
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur",
+        "tovstolob",
+        "som",
+        "karas",
+        "sudak",
+        "shchuka",
+        "okun"
+      ],
+      "amenitySlugs": [
+        "parkovka"
+      ],
+      "isPaid": true,
+      "priceNote": "~700 грн/виїзд (хижак)",
+      "phone": "+380675060752",
+      "website": "https://carpanglers.com.ua/lakes/ozero-tsukernya-vinnytsya/",
+      "photo": null,
+      "sources": [
+        "https://rivnefish.com/places/691",
+        "https://fishmapia.com/uk/place/742/%D0%A6%D1%83%D0%BA%D0%B5%D1%80%D0%BD%D1%8F",
+        "https://carpanglers.com.ua/lakes/ozero-tsukernya-vinnytsya/",
+        "https://www.facebook.com/ZUKERNYA/"
+      ]
+    },
+    "zhuravlivske-vodoskhovyshche": {
+      "description": "Журавлівське водосховище розташоване в межах Журавлівського гідропарку в Харкові, на річці Харків. У водосховищі водяться карась, щука, окунь та зрідка короп. Риболовля є безкоштовною, у гідропарку також доступний прокат човнів та катамаранів.",
+      "fishSlugs": [
+        "karas",
+        "shchuka",
+        "okun",
+        "korop"
+      ],
+      "amenitySlugs": [
+        "chovny"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://goldfishnet.in.ua/places/1285",
+      "photo": null,
+      "sources": [
+        "https://goldfishnet.in.ua/places/1285",
+        "https://kharkiv-day.com/zhuravlivsky-hydropark/",
+        "https://uk.wikipedia.org/wiki/%D0%96%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%B3%D1%96%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA",
+        "https://kharkiv.name/uk/prekrasnyj-zhuravlivskyj-gidropark"
+      ]
+    },
+    "verkhnia-vodoima-dnistrovskoi-haes": {
+      "description": "Верхня водойма Дністровської ГАЕС — штучний резервуар площею близько 220–255 га, розташований на плато приблизно на 150 м вище рівня Дністра поблизу Новодністровська в Чернівецькій області. Водойма є складовою найбільшої гідроакумулюючої електростанції Європи і використовується виключно для акумулювання енергії. З листопада 2025 року рішенням Ради оборони Чернівецької області у зоні 3 км від гідроспоруд заборонено будь-яке рибальство та навігацію.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://acc.cv.ua/news/chernivtsi/poblizu-dnistrovskoyi-ges-ta-gaes-zaboronili-navigaciyu-ta-ribalstvo-rishennya-radi-oboroni-bukovini-116072",
+        "https://acc.cv.ua/news/ukraine-plus/energiya-dnistra-ta-gigantske-shtuchne-ozero-yak-pracyue-dnistrovska-gaes-longrid-47988/",
+        "https://en.wikipedia.org/wiki/Dniester_Pumped_Storage_Power_Station",
+        "https://uk.wikipedia.org/wiki/%D0%94%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B0_%D0%93%D0%90%D0%95%D0%A1"
+      ]
+    },
+    "frontovoe-vodokhranylyshche": {
+      "description": "Фронтове водосховище — друге за величиною наливне водосховище Криму, розташоване у Ленінському районі поблизу села Фронтове. Заповнюється з Північнокримського каналу та слугує для водопостачання Керчі й Феодосійської курортної зони. Риболовля тут є результативною: у вилові трапляються карась, короп, окунь, щука та судак.",
+      "fishSlugs": [
+        "karas",
+        "korop",
+        "okun",
+        "shchuka",
+        "sudak"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://krymania.ru/frontovoe-vodohranilische-v-krymu/",
+        "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%BE%D0%BD%D1%82%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5",
+        "https://jalita.com/guidebook/river/reservoir_front.shtml"
+      ]
+    },
+    "orilka": {
+      "description": "Орільське водосховище — руслове водосховище на річці Орілька в Лозівському районі Харківської області, споруджене у 1981 році як транзитне водосховище каналу Дніпро–Донбас. Площа водойми становить 7,5 км², об'єм — 17 млн м³, середня глибина — 2 метри. Водосховище використовується для водопостачання та рибного господарства; слугує нерестилищем для ляща, коропа та судака.",
+      "fishSlugs": [
+        "lyashch",
+        "korop",
+        "sudak"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%9E%D1%80%D1%96%D0%BB%D1%8C%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9E%D1%80%D1%96%D0%BB%D1%8C%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://uk.wikipedia.org/wiki/%D0%9E%D1%80%D1%96%D0%BB%D1%8C%D0%BA%D0%B0_(%D1%80%D1%96%D1%87%D0%BA%D0%B0)",
+        "https://www.wikidata.org/wiki/Q4336153"
+      ]
+    },
+    "berezivske-vodoskhovyshche": {
+      "description": "Березівське водосховище площею 92 га розташоване в Долинському районі Кіровоградської області поблизу с. Березівка. Максимальна глибина сягає 12 м, дно місцями закоряжене, а значна протяжність берегової лінії забезпечує різноманітні умови для риболовлі. Водойма доступна цілодобово, рибалка безкоштовна, є під'їзд асфальтованою дорогою та місце для стоянки.",
+      "fishSlugs": [
+        "karas",
+        "korop",
+        "okun",
+        "sazan",
+        "sudak",
+        "tovstolob"
+      ],
+      "amenitySlugs": [
+        "parkovka"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://rivnefish.com/places/995",
+      "photo": null,
+      "sources": [
+        "https://rivnefish.com/places/995",
+        "https://map.fishergo.com.ua/kirovogradskaya-oblast/114-rybalka-na-vodokhranilishche-v-s-berjozovka-kirovogradskoj-oblasti.html",
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%9A%D1%96%D1%80%D0%BE%D0%B2%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96"
+      ]
+    },
+    "sutyske-vodoskhovyshche": {
+      "description": "Сутиське водосховище площею близько 380 гектарів розташоване поблизу села Ворошилівка Вінницького району Вінницької області. Водойма перебуває в оренді та регулярно зариблюється — щорічно сюди вселяють близько 400 тисяч екземплярів риби, зокрема коропа, товстолоба, карася сріблястого та білого амура. Зариблення здійснюється під наглядом Вінницького рибоохоронного патруля.",
+      "fishSlugs": [
+        "korop",
+        "tovstolob",
+        "karas",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://suspilne.media/vinnytsia/79278-u-vodoshovise-na-vinniccini-vipustili-ribu/",
+        "https://vinnitsa.info/article/v-sutys-ke-vodoskhovyshche-vypustyly-mayzhe-dvi-z-polovynoyu-tonny-tovstoloba-foto",
+        "https://www.vinnitsa.info/news/na-vinnychchyni-u-sutys-ke-vodoskhovyshche-vypustyly-mayzhe-2-tonny-koropa-ta-karasya.html",
+        "https://vitatv.com.ua/oblast/u-sutyske-vodoskhovyshche-u-voroshylivtsi-0",
+        "https://vn.darg.gov.ua/_u_sutisjke_vodoshovishche_0_0_0_2511_1.html"
+      ]
+    },
+    "truskavetske-vodoskhovyshche": {
+      "description": "Трускавецьке водосховище (ставок Солониця) — штучна водойма площею 0,45 км², створена у 1962 році на річці Солониця поблизу міста Трускавець у курортній зоні. Водосховище перебуває на балансі ТзОВ «Трускавецьводоканал» і використовується як джерело питної води для міста, тому купання та риболовля офіційно заборонені. У воді мешкають карась, короп, окунь та плітка, а на берегах можна побачити диких лебедів.",
+      "fishSlugs": [
+        "karas",
+        "korop",
+        "okun",
+        "plitka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://tru.city/solonitsa/",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%A2%D1%80%D1%83%D1%81%D0%BA%D0%B0%D0%B2%D0%B5%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://tru.city/solonitsa/",
+        "https://goldfishnet.in.ua/places/3411"
+      ]
+    },
+    "stavok-okholodzhuvach-zaporizkoi-aes": {
+      "description": "Ставок-охолоджувач Запорізької АЕС — штучна водойма площею 8,2 км² поблизу Енергодара, створена для охолодження циркуляційної води реакторів станції. Водойма населена рибою (лящ, короп, плітка, краснопірка, товстолоб, білий амур, судак, сом та інші), що була завезена для біомеліоративних цілей — очищення конденсаторних трубок від водоростей. Ставок є об'єктом критичної інфраструктури з обмеженим доступом; любительська риболовля тут не здійснюється.",
+      "fishSlugs": [
+        "lyashch",
+        "korop",
+        "plitka",
+        "krasnopirka",
+        "tovstolob",
+        "bilyi-amur",
+        "sudak",
+        "som"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kernkraftwerk_Saporischschja.JPG",
+        "alt": "Ставок-охолоджувач Запорізької АЕС — фото: Ralf1969, CC BY-SA 3.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://racurs.ua/ua/n176327-rf-provokuie-ekokatastrofu-na-zaes-tepla-voda-ne-potraplyaie-u-stavok-oholodjuvach.html",
+        "https://cyberleninka.ru/article/n/ichthyofauna-of-the-zaporizhia-nuclear-power-plant-cooling-pond-enerhodar-ukraine-and-its-biomeliorative-significance",
+        "https://www.researchgate.net/publication/324363447_Ichthyofauna_of_the_Zaporizhia_Nuclear_Power_Plant_cooling_pond_Enerhodar_Ukraine_and_its_biomeliorative_significance",
+        "https://commons.wikimedia.org/wiki/File:Kernkraftwerk_Saporischschja.JPG"
+      ]
+    },
+    "mohylivskyi-kar-ier": {
+      "description": "Могилівський кар'єр (відомий як «Голубе озеро» або «Вінницькі Гаваї») — затоплений гранітний кар'єр поблизу с. Могилівка Жмеринського району, приблизно за 24–30 км від Вінниці. Водойма приваблює прозорою блакитно-смарагдовою водою, і риболовля тут дозволена. Вхід на територію платний; є пляжі, альтанки з мангалами, парковка, туалети та кафе.",
+      "fishSlugs": [],
+      "amenitySlugs": [
+        "altanky",
+        "parkovka",
+        "kafe",
+        "tualet",
+        "chovny"
+      ],
+      "isPaid": true,
+      "priceNote": "~20 грн/особа (пішки), ~70 грн/авто",
+      "phone": null,
+      "website": "https://funtime.com.ua/nature/mohylivskyi",
+      "photo": null,
+      "sources": [
+        "https://blog.blablacar.com.ua/mohylivskyi-karier/",
+        "https://funtime.com.ua/nature/mohylivskyi",
+        "https://33kanal.com/news/98782.html",
+        "https://misto.vn.ua/oblast/majzhe-more-6-zatoplenix-karyeriv-na-vinnichchini-foto/"
+      ]
+    },
+    "novobavarske-vodoskhovyshche": {
+      "description": "Ново-Баварське водосховище розташоване на річці Уда на околиці Харкова між районом Нова Баварія та колишнім селом Григорівка. Водойму збудовано у 1967 році для відпочинку під назвою «Жовтневе», тоді ж відкрито однойменний гідропарк (нині — гідропарк «Удянський»). Площа водного дзеркала становить 0,353 км², довжина — до 2,3 км, максимальна глибина — 5 м; місцеві рибалки практикують тут зимову рибалку з льоду.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%9D%D0%BE%D0%B2%D0%BE-%D0%91%D0%B0%D0%B2%D0%B0%D1%80%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/%D0%93%D1%80%D0%B5%D0%B1%D0%BB%D1%8F_%D0%9D%D0%BE%D0%B2%D0%BE-%D0%91%D0%B0%D0%B2%D0%B0%D1%80%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0..jpg",
+        "alt": "Новобаварське водосховище — фото: Turisst, CC BY-SA 4.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9D%D0%BE%D0%B2%D0%BE-%D0%91%D0%B0%D0%B2%D0%B0%D1%80%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://commons.wikimedia.org/wiki/File:%D0%93%D1%80%D0%B5%D0%B1%D0%BB%D1%8F_%D0%9D%D0%BE%D0%B2%D0%BE-%D0%91%D0%B0%D0%B2%D0%B0%D1%80%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0..jpg",
+        "https://commons.wikimedia.org/wiki/File:%D0%A0%D0%B8%D0%B1%D0%B0%D0%BB%D0%BA%D0%B8_%D0%BD%D0%B0_%D0%B1%D0%B5%D1%80%D0%B5%D0%B7%D0%BD%D0%B5%D0%B2%D1%96%D0%B9_%D0%BA%D1%80%D0%B8%D0%B7%D1%96_%D0%9D%D0%BE%D0%B2%D0%BE-%D0%91%D0%B0%D0%B2%D0%B0%D1%80%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0.jpg"
+      ]
+    },
+    "trav-ianske-vodoskhovyshche": {
+      "description": "Трав'янське водосховище — канальний водойм на річці Харків у Харківському районі, збудований у 1972 році як частина системи резервного водопостачання міста Харків. Площа водосховища становить близько 592 га, максимальна глибина — 9 м, дно піщане з ракушняком. Серед рибалок популярне місце завдяки різноманіттю риби; найкраще ловити з дамби донними та поплавковими снастями.",
+      "fishSlugs": [
+        "okun",
+        "shchuka",
+        "krasnopirka",
+        "som",
+        "sudak",
+        "korop",
+        "lyashch"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://rivnefish.com/places/960",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%A2%D1%80%D0%B0%D0%B2'%D1%8F%D0%BD%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://rivnefish.com/places/960",
+        "https://map.fishergo.com.ua/kharkovskaya-oblast/278-travyanskoe-vodokhranilishche-v-kharkovskoj-oblasti.html"
+      ]
+    },
+    "mlynivske-vodoskhovyshche": {
+      "description": "Млинівське водосховище — водойма руслового типу на річці Іква в Дубенському районі Рівненської області, створене у 1953 році для роботи Млинівської ГЕС. Площа водойми становить близько 288–440 га, довжина — 7 км, максимальна ширина — 600 м, глибина сягає 8 м. Риболовля безкоштовна і доступна цілодобово; серед риби тут трапляються лящ, окунь, щука, карась, краснопірка, плітка, лин, сом та інші види.",
+      "fishSlugs": [
+        "lyashch",
+        "okun",
+        "shchuka",
+        "karas",
+        "krasnopirka",
+        "plitka",
+        "lyn",
+        "som",
+        "korop",
+        "tovstolob",
+        "bilyi-amur",
+        "holoven"
+      ],
+      "amenitySlugs": [
+        "chovny",
+        "parkovka"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://rivnefish.com/places/377/mliniv",
+      "photo": null,
+      "sources": [
+        "https://rivnefish.com/places/377/mliniv",
+        "https://goldfishnet.in.ua/places/757",
+        "https://uk.wikipedia.org/wiki/%D0%9C%D0%BB%D0%B8%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://map.fishergo.com.ua/rovenskaya-oblast/266-rybalka-na-mlynovskom-vodokhranilishche-v-rovenskoj-oblasti.html"
+      ]
+    },
+    "vodoskhovyshche-turiia": {
+      "description": "Ковельське водосховище на річці Турія розташоване в місті Ковель Волинської області, має площу близько 54 га та прямокутну форму розміром приблизно 1 × 0,3 км, глибина здебільшого 2–2,5 м. Водосховище використовується для регулювання поверхневого стоку та масового відпочинку населення, а його береги на 70–80% доступні для риболовлі. Тут водяться плітка, окунь, лящ, карась, короп, щука та лин, а сама водойма використовується для проведення рибальських змагань.",
+      "fishSlugs": [
+        "plitka",
+        "okun",
+        "lyashch",
+        "karas",
+        "korop",
+        "shchuka",
+        "lyn"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://kowel.rayon.in.ua/news/148467-spetsialisti-nazvali-prichini-masovoyi-zagibeli-ribi-u-kovelskomu-vodoshovishchi",
+        "https://rybalka.lutsk.ua/frsvo66=chempionat-volyni-vodoshovysche-r-turiya",
+        "https://rivnefish.com/places/646/turiya",
+        "https://uk.wikipedia.org/wiki/Водосховища_Волинської_області"
+      ]
+    },
+    "kanivske-vodoskhovyshche-2": {
+      "description": "Канівське водосховище — наймолодше у каскаді дніпровських водосховищ, утворене у 1974–1976 роках, площею близько 6750 га з довжиною берегової лінії понад 123 км. Водойма розташована на межі Черкаської та Київської областей і є безкоштовною для любительської риболовлі. Тут мешкають щука, судак, лящ, короп, сом, окунь, жерех, плітка та лин.",
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "lyashch",
+        "korop",
+        "som",
+        "okun",
+        "zherekh",
+        "plitka",
+        "lyn"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://ua.fishermap.org/lake/kanivske-vodosxovishhe/",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Rzhischev2.jpg",
+        "alt": "Канівське водосховище — фото: Awry (Wikimedia Commons), CC BY-SA 3.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://goldfishnet.in.ua/places/1216",
+        "https://ua.fishermap.org/lake/kanivske-vodosxovishhe/",
+        "https://ck.ridna.ua/2015/09/04/kanivske-vodoshovysche-rozdilyat-za-zonamy-dlya-rybalok/",
+        "https://commons.wikimedia.org/wiki/Category:Kaniv_Reservoir",
+        "https://commons.wikimedia.org/wiki/File:Rzhischev2.jpg"
+      ]
+    },
+    "ivanivske-vodoskhovyshche-2": {
+      "description": "Іванівське водосховище розташоване в Шевченківському районі Харківської області на річці Гусинка — лівій притоці Великого Бурлука. Збудоване у 1974 році, площа дзеркала — 1,35 км², загальний об'єм — 2,6 млн м³, середня глибина — близько 1,9 м. Призначення водосховища — зрошення, риборозведення та рекреація.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%86%D0%B2%D0%B0%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%86%D0%B2%D0%B0%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%A5%D0%B0%D1%80%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96",
+        "https://uk.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D1%96%D1%8F:%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%A5%D0%B0%D1%80%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96"
+      ]
+    },
+    "trushkivske-vodoskhovyshche": {
+      "description": "Трушківське водосховище (Білоцерківське верхнє) розташоване на річці Рось біля села Трушки Білоцерківського району, приблизно за 10 км на південний захід від Білої Церкви. Площа водойми становить близько 538 га, довжина — 19,3 км. Водосховище регулярно зариблюється: у ньому водяться короп, карась, судак, товстолоб та білий амур.",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "sudak",
+        "tovstolob",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://rovrrosi.gov.ua/verhne-bilocerkivske-vodoshovische.html",
+      "photo": null,
+      "sources": [
+        "https://rovrrosi.gov.ua/verhne-bilocerkivske-vodoshovische.html",
+        "https://kv.darg.gov.ua/_bilocerkivsjke_verhnje_0_0_0_3663_1.html",
+        "https://mykyivregion.com.ua/news/bilocerkivske-vodosxovishhe-zaribili-neobxidnoyu-kilkistyu-vodnix-bioresursiv-foto",
+        "https://uk.wikipedia.org/wiki/%D0%A2%D1%80%D1%83%D1%88%D0%BA%D0%B8"
+      ]
+    },
+    "andriivske-vodoskhovyshche": {
+      "description": "Андріївське водосховище розташоване поблизу села Андріївка Ужгородського району Закарпатської області — утворене перекриттям річки Стара. Водойма вважається однією з найдоступніших для рибалки в Ужгородщині: тут ловлять карася, окуня та плітку. Попри безкоштовний доступ, водойма потерпає від забруднення — місцеві активісти регулярно проводять прибирання.",
+      "fishSlugs": [
+        "karas",
+        "okun",
+        "plitka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://pershij.com.ua/lovysia-rybko-de-na-zakarpatti-porybalyty-pochatkivtsiam/",
+        "https://rybolov.dp.ua/fishing-spots/Andrashovske-Ozero",
+        "https://zakarpattya.net.ua/News/107111-Andriivske-ozero-mozhe-zatopyty-try-sela",
+        "https://www.karpaty.info/ua/uk/zk/ug/andriyivka/",
+        "https://uk.wikipedia.org/wiki/%D0%90%D0%BD%D0%B4%D1%80%D1%96%D1%97%D0%B2%D0%BA%D0%B0_(%D0%A3%D0%B6%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD)"
+      ]
+    },
+    "uniatytske-vodoskhovyshche": {
+      "description": "Унятицьке водосховище розташоване поблизу села Унятичі Дрогобицького району Львівської області, споруджене у 1972 році на річці Бар (басейн Дністра). Середня глибина — 5 м, максимальна — 10 м, площа дзеркала — 1,23 км², загальна ємність — 9,59 млн м³. Водойма є платним об'єктом любительського рибальства; під час нерестової заборони риболовля дозволена лише вздовж греблі.",
+      "fishSlugs": [
+        "bilyi-amur",
+        "karas",
+        "korop",
+        "okun",
+        "shchuka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://rybolov.org.ua/organization/32",
+      "photo": null,
+      "sources": [
+        "https://rybolov.org.ua/organization/32",
+        "https://uk.wikipedia.org/wiki/%D0%A3%D0%BD%D1%8F%D1%82%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://deplv.gov.ua/vodoshovyshha/",
+        "https://varianty.lviv.ua/publikatsiyi/na-lvivshchyni-sklaly-perelik-vodoim-de-mozhna-lovyty-rybu-v-nerestovyi-period"
+      ]
+    },
+    "zahorskoe-vodokhranylyshche": {
+      "description": "Загорське водосховище розташоване у Бахчисарайському районі Криму та збудоване у 1975 році для водопостачання Ялти. Це режимний об'єкт із санітарно-захисною зоною — вільний доступ закритий, встановлено шлагбауми та охорона. Купання, риболовля та засмічення на водосховищі заборонені.",
+      "fishSlugs": [
+        "okun",
+        "krasnopirka",
+        "karas",
+        "tovstolob",
+        "korop",
+        "plitka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://krymania.ru/zagorskoe-vodohranilishche/",
+      "photo": null,
+      "sources": [
+        "https://krymania.ru/zagorskoe-vodohranilishche/",
+        "https://of-crimea.ru/dostoprimechatelnosti/reki/zagorskoe-vodoxranilishhe.html",
+        "https://crimeaz.ru/vodoemy-kryma/256-zagorskoe-vodokhranilishche.html",
+        "https://jalita.com/guidebook/river/reservoir_zagorsk.shtml"
+      ]
+    },
+    "voinivske-vodoskhovyshche": {
+      "description": "Войнівське водосховище розташоване на річці Інгулець у Приютівській громаді Кіровоградської області. У 2021 році місцевий підприємець організував зариблення водойми — у водосховище випустили близько 500 тисяч мальків білого амура, товстолоба та коропа з Солов'ївського рибопитомника. Водосховище є публічною водоймою, проте фіксувалися випадки незаконного вилову риби.",
+      "fishSlugs": [
+        "bilyi-amur",
+        "tovstolob",
+        "korop"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://cbn.com.ua/2021/08/13/u-vodoshovyshhe-na-kirovogradshhyni-vypustyly-pivmiljona-malka-video/",
+        "https://pryiutivka-community.gov.ua/news/1648200974/",
+        "https://alexcity.com.ua/u-vojnivske-vodoshovishhe-zapustili-pivmiljona-malka/",
+        "https://t.me/s/suspilnekropyvnytskyi?before=8156"
+      ]
+    },
+    "truskavetske-ozero": {
+      "description": "Трускавецьке водосховище (ставок Солониця) — штучна водойма канального типу, споруджена 1962 року на річці Солониця біля міста Трускавець. Водосховище є джерелом питного водопостачання міста, перебуває в управлінні ТзОВ «Трускавецьводоканал»; купання офіційно заборонено, рибалка обмежена. У водоймі мешкають карась, короп, окунь та плітка.",
+      "fishSlugs": [
+        "karas",
+        "korop",
+        "okun",
+        "plitka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://tru.city/solonitsa/",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/%D0%92%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_%28%D0%A2%D1%80%D1%83%D1%81%D0%BA%D0%B0%D0%B2%D0%B5%D1%86%29_03.jpg",
+        "alt": "Трускавецьке Озеро — фото: Volodymyr 789, CC BY-SA 4.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%A2%D1%80%D1%83%D1%81%D0%BA%D0%B0%D0%B2%D0%B5%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://tru.city/solonitsa/",
+        "https://goldfishnet.in.ua/places/3411",
+        "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_%28%D0%A2%D1%80%D1%83%D1%81%D0%BA%D0%B0%D0%B2%D0%B5%D1%86%29_03.jpg"
+      ]
+    },
+    "kresovske-vodoskhovyshche": {
+      "description": "Кресівське (Кресовське) водосховище розташоване на річці Саксагань у межах Кривого Рогу (Покровський та Тернівський райони). Збудоване у 1929 році у зв'язку з будівництвом Криворізької районної електростанції (КРЕС), площа дзеркала — 2,1 км², середня глибина — 1,8 м. Вода водосховища придатна лише для технічних цілей через значне забруднення, тому рибальство тут практично відсутнє.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%9A%D1%80%D0%B5%D1%81%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/%D0%9A%D1%80%D0%B5%D1%81%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.jpg",
+        "alt": "Кресовське водосховище — фото: Artemco, CC BY-SA 4.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9A%D1%80%D0%B5%D1%81%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://kryvyi-rih.name/uk/articles-644-6-vodoshovyshh-kryvogo-rogu",
+        "https://www.openstreetmap.org/relation/2147543"
+      ]
+    },
+    "baraboiske-vodoskhovyshche": {
+      "description": "Барабойське водосховище — невелике руслове водосховище на річці Барабой площею близько 42 га та максимальною глибиною 3 м, розташоване в Одеському районі Одеської області поблизу міста Теплодар. Водосховище збудовано у 1976 році й використовується для зрошення, рибальства та відпочинку. На березі є пляжна зона, рибалка платна.",
+      "fishSlugs": [
+        "karas"
+      ],
+      "amenitySlugs": [
+        "tualet"
+      ],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://goldfishnet.in.ua/places/3509",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Baraboy_Reservoir_1.png",
+        "alt": "Барабойське водосховище — фото: Yuriy Kvach (Ykvach), CC BY-SA 4.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%91%D0%B0%D1%80%D0%B0%D0%B1%D0%BE%D0%B9%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://goldfishnet.in.ua/places/3509",
+        "https://commons.wikimedia.org/wiki/Category:Baraboy_Reservoir",
+        "https://commons.wikimedia.org/wiki/File:Baraboy_Reservoir_1.png"
+      ]
+    },
+    "lesnoe-ozero": {
+      "description": "Лісове озеро (також відоме як «Кучки») розташоване поблизу села Родне у Севастопольському районі Криму та функціонує як платний риболовний комплекс. У водоймі водяться короп, карась, білий амур, товстолоб, сазан та осетер. На об'єкті доступна цілодобова рибалка, оренда альтанок для барбекю, намети та інший відпочинковий інвентар.",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "bilyi-amur",
+        "tovstolob",
+        "sazan",
+        "osetr"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia"
+      ],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": "+7 (978) 791-98-99",
+      "website": "https://ribalkaseas.orgs.biz",
+      "photo": null,
+      "sources": [
+        "https://ribalkaseas.orgs.biz/",
+        "https://krymania.ru/platnaya-ryibalka-v-kryimu-luchshie-ozera/"
+      ]
+    },
+    "kutuzovskoe-vodokhranylyshche": {
+      "description": "Кутузовське водосховище розташоване поблизу села Нижня Кутузовка на висоті близько 850 м над рівнем моря, за 10 км від Алушти. Збудоване у 1985 році на річці Демерджі для зрошення сільськогосподарських угідь, водосховище має площу дзеркала 9,38 га, максимальну глибину 29 м і середню глибину 11,8 м. Рибальство тут малоперспективне через сезонне пересихання водойми в літні місяці — водосховище наповнюється переважно восени та під час весняних паводків.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://krymania.ru/kutuzovskoe-ozero-v-krymu/",
+        "https://goodhotels.ru/kutuzovskoe-vodohranilishche-ozero-pod-sklonami-demerdzhi-kutuzovskoe-ozero/",
+        "https://jalita.com/guidebook/river/reservoir_kutuzov.shtml"
+      ]
+    },
+    "lozovenkivske-vodoskhovyshche": {
+      "description": "Лозовеньківське водосховище — руслове водосховище на річці Лозовенька (ліва притока Лопані) у Харківському районі Харківської області, збудоване у 1932 році. Площа водного дзеркала становить 100 га, довжина — 3 км, максимальна глибина — 9,5 м. У водосховищі розводиться риба, водойма перебуває в оренді.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%9B%D0%BE%D0%B7%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/%D0%9B%D0%BE%D0%B7%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C%D0%BA%D0%B0_-_panoramio.jpg",
+        "alt": "Лозовеньківське водосховище — фото: razorolog (via Panoramio), CC BY 3.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9B%D0%BE%D0%B7%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://commons.wikimedia.org/wiki/File:%D0%9B%D0%BE%D0%B7%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C%D0%BA%D0%B0_-_panoramio.jpg"
+      ]
+    },
+    "ternivske-vodoskhovyshche": {
+      "description": "Тернівське водосховище розташоване на річці Синюха біля села Тернівка Новоархангельського району Кіровоградської області, площа водойми становить близько 50 га, максимальна глибина — 6 м. Водосховище утворене греблею Тернівської ГЕС і відоме чистою водою та мальовничими гранітними берегами. Місце вільне для відвідування, придатне для риболовлі цілодобово.",
+      "fishSlugs": [
+        "sudak",
+        "shchuka",
+        "tovstolob",
+        "som",
+        "karas",
+        "korop"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://goldfishnet.in.ua/places/1907",
+      "photo": null,
+      "sources": [
+        "https://goldfishnet.in.ua/places/1907",
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%9A%D1%96%D1%80%D0%BE%D0%B2%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96",
+        "https://uk.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D0%BD%D1%96%D0%B2%D0%BA%D0%B0_(%D0%93%D0%BE%D0%BB%D0%BE%D0%B2%D0%B0%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD)"
+      ]
+    },
+    "khmelnytske-vodoskhovyshche": {
+      "description": "Хмельницьке водосховище — руслове водосховище в верхів'ї річки Південний Буг у межах міста Хмельницького, у яке впадає річка Плоска. Споруджувалось починаючи з 1947 року одночасно зі створенням міського парку. Площа водного дзеркала становить 140 га, об'єм — 5 млн м³, максимальна глибина — 7,1 м.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%A5%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%A5%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://rivnefish.com/places/485/pivdennyj-buh-hmelnytskyj",
+        "https://map.fishergo.com.ua/khmelnitskaya.html"
+      ]
+    },
+    "konstantynovskoe-ozero": {
+      "description": "Константиновське озеро розташоване в Перовському сільському поселенні Сімферопольського району, за 7 км від Сімферополя, біля села Константинівка. Водойма функціонує як платний рибальський клуб, де можна ловити короп, сазан, товстолоб, білий амур, плітку та окуня з денним лімітом вилову до 4 кг. На озері є безкоштовне паркування, електрика та прокат снастей; заклад працює з вівторка по неділю.",
+      "fishSlugs": [
+        "korop",
+        "sazan",
+        "tovstolob",
+        "bilyi-amur",
+        "plitka",
+        "okun"
+      ],
+      "amenitySlugs": [
+        "parkovka",
+        "elektryka",
+        "prokat-snastei"
+      ],
+      "isPaid": true,
+      "priceNote": "~800–1300 руб/доба (денна/добова)",
+      "phone": "+7 (978) 135-93-24",
+      "website": "https://rybalka-simf.orgs.biz/",
+      "photo": null,
+      "sources": [
+        "https://rybalka-simf.orgs.biz/",
+        "https://cr.ayle.ru/v-simferopole/758619-rybalka-v-konstantinovke-simferopolskiy-rayon/",
+        "https://simferopol.spravker.ru/ohotnichi-i-rybolovnye-magaziny/rybalka-v-konstantinovke-simferopolskii-raion.htm"
+      ]
+    },
+    "lutuhynske-vodoskhovyshche": {
+      "description": "Лутугинське водосховище — наливне водосховище площею 51 га на річці Суха, розташоване у східній частині міста Лутугине Луганської області. Водойму заповнили у 1989 році, основне її призначення — водопостачання міста та зрошення. Довжина водосховища з півночі на південь становить 1,85 км.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/Лутугинське_водосховище",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/Лутугинське_водосховище",
+        "https://ua.fishermap.org/region/luganska-oblast/"
+      ]
+    },
+    "ai-efym": {
+      "description": "Ай-Ефим — невелике штучне озеро у Криму, розташоване на висоті 380 м над рівнем моря між курортними селищами Партеніт та Утьос. Водойма живиться підземними джерелами, тому вода тут холодна; навесні рівень води найвищий, а влітку озеро значно міліє. З риби тут водяться щука, сазан та окунь, найкращий клів — навесні (квітень–травень) та восени.",
+      "fishSlugs": [
+        "shchuka",
+        "sazan",
+        "okun"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://gotonature.ru/183-rybalka-na-ozere-ay-efim.html",
+        "https://gotonature.ru/184-ozero-ay-efim.html",
+        "https://crimeaz.ru/vodoemy-kryma/250-ozero-aj-efim.html",
+        "https://allcrimea.net/mesta/ozero-aiy-efim/"
+      ]
+    },
+    "partyzanskoe-vodokhranylyshche": {
+      "description": "Партизанське водосховище — найглибший штучний водоймище Криму (максимальна глибина понад 40 м), збудований у 1966 році на річці Альма для водопостачання Сімферополя. Водосховище площею близько 225 га відоме серед рибалок різноманіттям риби, зокрема форель, голавль та озерний лосось. Рибна ловля тут є поширеною, хоча офіційно водойма має статус питного водопостачання.",
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "okun",
+        "korop",
+        "karas",
+        "lyashch",
+        "bilyi-amur",
+        "tovstolob",
+        "forel",
+        "holoven"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/%D0%9F%D0%B0%D1%80%D1%82%D0%B8%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_-_panoramio_-_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%A1%D0%BA%D0%BB%D1%8F%D1%80%D0%B5%D0%BD%D0%BA%D0%BE.jpg",
+        "alt": "Партизанское водохранилище — фото: Дмитрий Скляренко, CC BY 3.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://krymania.ru/partizanskoe-samoe-glubokoe-vodohranilishhe-v-kryimu/",
+        "https://of-crimea.ru/dostoprimechatelnosti/reki/partizanskoe-vodoxranilishhe.html",
+        "https://qirim.su/partizanskoe-vodohranilishhe/",
+        "https://region82.su/partizanskoe-vodohranilishhe/",
+        "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%82%D0%B8%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5",
+        "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%B0%D1%80%D1%82%D0%B8%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_-_panoramio_-_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%A1%D0%BA%D0%BB%D1%8F%D1%80%D0%B5%D0%BD%D0%BA%D0%BE.jpg"
+      ]
+    },
+    "tereble-ritske-vodoskhovyshche": {
+      "description": "Теребле-Ріцьке (Вільшанське) водосховище розташоване у долині річки Теребля в Хустському районі Закарпатської області, створене у 1955 році для потреб однойменної ГЕС. Водойма завдовжки понад 10 км та площею близько 80 га отримала народну назву «Закарпатське море». Водосховище є популярним місцем для рибалки — тут трапляються голавль, форель та інша річкова риба, хоча рівень води суттєво коливається залежно від сезону.",
+      "fishSlugs": [
+        "forel",
+        "holoven"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://karpatium.com.ua/vodni-resursy/vilshanske-vodoskhovyshche",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Tereblya_dam.jpg",
+        "alt": "Теребле-Ріцьке водосховище — фото: VargaA, CC BY-SA 4.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://karpatium.com.ua/vodni-resursy/vilshanske-vodoskhovyshche",
+        "https://uk.wikipedia.org/wiki/%D0%92%D1%96%D0%BB%D1%8C%D1%88%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://zruchno.travel/ObjectEntity/ObjectEntity?lang=ua&idCrm=d3f6febf-6368-1b0e-e757-58dbcae4d637",
+        "https://svitkarpat.org/local/zakarpats-ke-more-mal-ovnyche-vodoskhovyshche-vil-shany",
+        "https://commons.wikimedia.org/wiki/File:Tereblya_dam.jpg"
+      ]
+    },
+    "fynaros-i": {
+      "description": "Фінарос I — штучне озеро (водосховище) у Бахчисарайському районі Криму, розташоване поблизу Загорського водосховища біля села Верхоріччя, на висоті близько 340 м над рівнем моря серед соснових та дубових лісів. Водойма управляється ДАУ РК «Бахчисарайське лісове господарство» і є платною рекреаційною зоною з облаштованими рибальськими містками. У воді водяться коропи, щука, білий амур, карась і товстолоб; рибалять як із берега, так і з човнів.",
+      "fishSlugs": [
+        "korop",
+        "shchuka",
+        "bilyi-amur",
+        "karas",
+        "tovstolob"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "chovny",
+        "parkovka"
+      ],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://bahleshoz.ru/uslugi/rekreaciya-finaros/",
+      "photo": null,
+      "sources": [
+        "https://bahleshoz.ru/uslugi/rekreaciya-finaros/",
+        "https://bike-crimea.com/blog/2012/ozero-finaros/",
+        "https://ru.wikipedia.org/wiki/%D0%A4%D0%B8%D0%BD%D0%B0%D1%80%D0%BE%D1%81",
+        "https://go.crimea.ua/4940.htm"
+      ]
+    },
+    "dnistrovske-vodoskhovyshche-2": {
+      "description": "Дністровське водосховище розташоване на річці Дністер і частково охоплює Хмельницьку область — зокрема Кам'янець-Подільський район. У водосховищі водиться понад 45 видів риби, серед яких лящ, судак, короп, щука, сом, карась, окунь, плітка, жерех та інші. Більшість берегових місць для рибалки є безкоштовними та доступними цілодобово.",
+      "fishSlugs": [
+        "lyashch",
+        "sudak",
+        "korop",
+        "shchuka",
+        "som",
+        "karas",
+        "okun",
+        "plitka",
+        "zherekh",
+        "krasnopirka",
+        "lyn",
+        "holoven"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://goldfishnet.in.ua/map/place-info/41",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/%D0%94%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.JPG",
+        "alt": "Дністровське водосховище — фото: Michaila vnuk, CC BY-SA 4.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%94%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://goldfishnet.in.ua/map/place-info/41",
+        "https://goldfishnet.in.ua/places/?river=dnister",
+        "https://chnv.darg.gov.ua/_ihtiofauna_richki_dnister_ta_0_0_0_535_1.html",
+        "https://commons.wikimedia.org/wiki/File:%D0%94%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.JPG"
+      ]
+    },
+    "bam": {
+      "description": "На Кіровоградщині відоме водосховище «БАМ» біля Нової Праги (Олександрійський район) площею близько 32 га та глибиною до 4 метрів. Водойма відзначається численними корчами на дні й містить такі види риб, як короп, карась, білий амур, щука, товстолобик, сом та окунь. Серед рибалок цінуються великі екземпляри білого амура (до 10 кг) та коропа від 1,5 кг.",
+      "fishSlugs": [
+        "korop",
+        "karas",
+        "bilyi-amur",
+        "shchuka",
+        "tovstolob",
+        "som",
+        "okun"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://fishmapia.com/en/place/1778/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F_%D0%9F%D1%80%D0%B0%D0%B3%D0%B0_%D0%91%D0%90%D0%9C",
+      "photo": null,
+      "sources": [
+        "https://fishmapia.com/en/place/1778/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F_%D0%9F%D1%80%D0%B0%D0%B3%D0%B0_%D0%91%D0%90%D0%9C",
+        "https://fishmapia.com/place/882/%D0%A1%D0%BE%D1%84%D0%B8%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%91%D0%90%D0%9C",
+        "https://fishmapia.com/en/places/172/%D0%9A%D0%B8%D1%80%D0%BE%D0%B2%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C"
+      ]
+    },
+    "velyshche": {
+      "description": "Озеро Велище (також відоме як Велимче) розташоване біля села Соловичі Турійського району, за 5 км від Турійська та приблизно 300 м від траси Ковель–Львів. Водойма невелика (5–22 га), але доволі глибока — до 13,5 м, з піщаним дном і очеретовими зарослями. Популярне місце відпочинку та рибалки: в озері водяться короп, білий амур, карась, щука та окунь.",
+      "fishSlugs": [
+        "korop",
+        "bilyi-amur",
+        "karas",
+        "shchuka",
+        "okun"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "chovny",
+        "kafe"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": "+380 67 325 47 15",
+      "website": "https://westua.net/rybalka-na-ozeri-velyshhe-velymche-v-seli-solovychi/",
+      "photo": null,
+      "sources": [
+        "https://westua.net/rybalka-na-ozeri-velyshhe-velymche-v-seli-solovychi/",
+        "https://rivnefish.com/places/1146",
+        "https://vodres.gov.ua/node/1980"
+      ]
+    },
+    "orilske-vodoskhovyshche": {
+      "description": "Орільське водосховище — руслове водосховище площею 7,5 км² на річці Орілька в Лозівському районі Харківської області, споруджене у 1981 році як транзитний вузол каналу Дніпро–Донбас. Середня глибина становить близько 2 метри. Водосховище є важливим місцем нересту та нагулу ляща, коропа та судака.",
+      "fishSlugs": [
+        "lyashch",
+        "korop",
+        "sudak"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%9E%D1%80%D1%96%D0%BB%D1%8C%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9E%D1%80%D1%96%D0%BB%D1%8C%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://commons.wikimedia.org/wiki/Special:Search?search=Orilske+reservoir&ns6=1"
+      ]
+    },
+    "kleban-bytske-vodoskhovyshche": {
+      "description": "Клебан-Бицьке водосховище — штучна водойма площею 6,5 км² у Костянтинівському районі Донецької області, споруджена на річці Клебан-Бик у 1950 році. Водосховище входить до складу Регіонального ландшафтного парку «Клебан-Бик» і налічує понад 25 видів риб. Аматорська риболовля дозволена лише у визначених місцях і лише в певні сезони, поза ними вона вважається браконьєрством.",
+      "fishSlugs": [
+        "lyashch",
+        "shchuka",
+        "plitka",
+        "korop",
+        "tovstolob",
+        "karas",
+        "holoven",
+        "krasnopirka",
+        "sudak",
+        "som",
+        "okun",
+        "lyn",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B5%D0%B1%D0%B0%D0%BD-%D0%91%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://esu.com.ua/article-7773",
+        "https://map.fishergo.com.ua/donetskaya-oblast/1074-rybalka-na-vodokhranilishche-kleban-byk-v-donetskoj-oblasti.html"
+      ]
+    },
+    "tuchne-ozero": {
+      "description": "Тучне озеро — заплавне озеро в Камінь-Каширському районі Волинської області, розташоване за 4 км на північ від села Ветли. Водойма оточена лісами та знаходиться приблизно за 2 км від кордону з Білоруссю, тому добратися до неї легковим автомобілем практично неможливо. У озері водяться лящ, карась, окунь, плітка, щука та раки.",
+      "fishSlugs": [
+        "lyashch",
+        "karas",
+        "okun",
+        "plitka",
+        "shchuka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://vodres.gov.ua/node/1464",
+      "photo": null,
+      "sources": [
+        "https://vodres.gov.ua/node/1464",
+        "https://www.volynpost.com/news/224176-nazvaly-9-ozer-na-volyni-vid-vidviduvannia-iakyh-treba-utrymatysia",
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%B5%D1%82%D0%BB%D0%B8"
+      ]
+    },
+    "dombrovskyi-kar-ier": {
+      "description": "Домбровський кар'єр — затоплена соляна шахта у місті Калуш Івано-Франківської області, відома також як «Калуське море». Основне озеро має надзвичайно високу солоність і непридатне для риби, однак у прісноводному обвідному каналі навколо кар'єру місцеві жителі займаються рибальством. Водойма є також популярним туристичним об'єктом регіону.",
+      "fishSlugs": [
+        "karas"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://uk.wikipedia.org/wiki/%D0%94%D0%BE%D0%BC%D0%B1%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D1%80'%D1%94%D1%80",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Dombrowski_mine_Kalush.jpg/1280px-Dombrowski_mine_Kalush.jpg",
+        "alt": "Домбровський кар'єр — фото: Wikimedia Commons, CC BY-SA 4.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%94%D0%BE%D0%BC%D0%B1%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D1%80'%D1%94%D1%80",
+        "https://www.youtube.com/watch?v=pclWLS1as24",
+        "https://kalush-travel.com/karavaning-turyzm/",
+        "https://suspilne.media/134166-na-mezi-ekokatastrofi-dombrovskij-karer-moze-zabrudniti-prisni-ricki-frankivsini/"
+      ]
+    },
+    "okholodzhuvalna-vodoima": {
+      "description": "Охолоджувальна водойма (став-охолоджувач) Зміївської ТЕС, відома також як озеро Лиман, розташована у Зміївському районі Харківської області та має площу 12,5 км² і об'єм 53,1 млн м³. Водойма створена 1960 року шляхом реконструкції природного озера Лиман і використовується для охолодження оборотної води електростанції, а також для риборозведення — тут функціонує рибгосп «Лиманський». У водойму регулярно вселяють молодь коропа, товстолоба, білого амура та щуки.",
+      "fishSlugs": [
+        "korop",
+        "tovstolob",
+        "bilyi-amur",
+        "shchuka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Zmiiv_thermal_power_plant_%282007%29.jpg",
+        "alt": "Охолоджувальна водойма — фото: Maksim Sidorov (Maksa), CC BY 3.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D0%B2-%D0%BE%D1%85%D0%BE%D0%BB%D0%BE%D0%B4%D0%B6%D1%83%D0%B2%D0%B0%D1%87_%D0%97%D0%BC%D1%96%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%A2%D0%95%D0%A1",
+        "https://suspilne.media/kharkiv/1010783-u-vodojmu-oholodzuvac-zmiivskoi-tes-zaselili-ribu/",
+        "https://khr.darg.gov.ua/_vodojma_oholodzhuvach_0_0_0_1914_1.html",
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%A5%D0%B0%D1%80%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96",
+        "https://commons.wikimedia.org/wiki/File:Zmiiv_thermal_power_plant_(2007).jpg"
+      ]
+    },
+    "urochyshche-try-stavky": {
+      "description": "Урочище «Три ставки» розташоване поблизу села Городківка у Вінницькій області. Три ставки, що живляться підземними джерелами, тривалий час були популярним місцем відпочинку та рибалки для місцевих жителів. Водойми потерпають від замулення та заростання очеретом — місцеві жителі ініціювали відновлення урочища.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "http://vinnitsaok.com.ua/archives/961827"
+      ]
+    },
+    "chornobaivske-vodoskhovyshche": {
+      "description": "Чорнобаївське водосховище розташоване на річці Ірклій у Чорнобаївській громаді Золотоніського району Черкаської області. Водойма перебуває у відданні місцевої громади, яка проводить заходи з відновлення рибних запасів — зокрема, було випущено майже 1 900 екземплярів дволітки коропа.",
+      "fishSlugs": [
+        "korop"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://novadoba.com.ua/452801-majzhe-2-tysyachi-novyh-rybyn-zaselyly-v-chornobayivske-vodoshovyshhe.html",
+        "https://18000.com.ua/strichka-novin/na-zolotonishhini-vipustili-majzhe-dvi-tisyachi-koropiv-u-vodosxovishhe",
+        "https://uk.wikipedia.org/wiki/%D0%86%D1%80%D0%BA%D0%BB%D1%96%D0%B9_(%D0%BF%D1%80%D0%B8%D1%82%D0%BE%D0%BA%D0%B0_%D0%94%D0%BD%D1%96%D0%BF%D1%80%D0%B0)"
+      ]
+    },
+    "lebiazhe": {
+      "description": "Лебяже озеро — платна рибальська водойма у Бахчисарайському районі АР Крим, розташована біля села Плотинне серед невисоких гір та лісу. На водоймі обладнано 11 альтанок та 4 будиночки для ночівлі, а ставок зарибнений кількома видами риб вагою від 0,2 до 6 кг. Серед підтверджених уловів — короп та карась.",
+      "fishSlugs": [
+        "korop",
+        "karas"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "kafe",
+        "parkovka"
+      ],
+      "isPaid": true,
+      "priceNote": "~1500 ₽/особу (до 3 кг), котедж ~7500 ₽/ніч",
+      "phone": "+7 (978) 941-52-58",
+      "website": "https://www.lebyajye-ozero.ru/",
+      "photo": null,
+      "sources": [
+        "https://www.lebyajye-ozero.ru/",
+        "https://yandex.com/maps/org/lebyazhye_ozero/65276963881/"
+      ]
+    },
+    "symferopolskoe-vodokhranylyshche": {
+      "description": "Симферопольське водосховище — штучна водойма на річці Салгір поблизу Сімферополя, збудована у 1956 році. Площа водойми становить близько 317 га, максимальна глибина — до 38 м; з 1961 року водосховище використовується як джерело питного водопостачання міста. Любительська риболовля дозволена лише з берега в певні сезони, у водоймі водяться щука, судак, короп, карась, лящ, окунь, плітка та товстолоб.",
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "korop",
+        "karas",
+        "lyashch",
+        "okun",
+        "plitka",
+        "tovstolob"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Simferopol_Reservoir.jpg",
+        "alt": "Симферопольское водохранилище — фото: Водник (Russian Wikipedia), CC BY-SA 2.5 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://krymania.ru/simferopolskoe-vodohranilishche/",
+        "https://of-crimea.ru/dostoprimechatelnosti/reki/simferopolskoe-vodoxranilishhe.html",
+        "https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BC%D1%84%D0%B5%D1%80%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5",
+        "https://commons.wikimedia.org/wiki/File:Simferopol_Reservoir.jpg"
+      ]
+    },
+    "khrinnykivske-vodoskhovyshche-2": {
+      "description": "Хрінниківське (Хрінницьке) водосховище — найбільша штучна водойма Рівненської та Волинської областей, створена у 1957 році на річці Стир площею близько 1830 га та глибиною від 2 до 6 метрів. У водоймі мешкає близько 28 видів риб із 8 родин, зокрема щука, окунь, лящ, сом, короп, карась, краснопірка та товстолоб. Любительське рибальство безкоштовне, навколо водосховища розташовані бази відпочинку з можливістю оренди човнів та ночівлі.",
+      "fishSlugs": [
+        "shchuka",
+        "okun",
+        "lyashch",
+        "plitka",
+        "krasnopirka",
+        "som",
+        "korop",
+        "karas",
+        "lyn",
+        "tovstolob",
+        "bilyi-amur",
+        "sudak"
+      ],
+      "amenitySlugs": [
+        "chovny",
+        "nochivlia"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://rivnefish.com/places/685/khrinniki",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/%D0%A5%D1%80%D1%96%D0%BD%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.jpg",
+        "alt": "Хрінниківське водосховище — фото: Skype87, CC BY-SA 4.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%A5%D1%80%D1%96%D0%BD%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://rivnefish.com/places/685/khrinniki",
+        "https://goldfishnet.in.ua/places/475",
+        "https://zdolbyniv.rv.ua/2024/01/hrinnytske-vodoshovyshhe/",
+        "https://commons.wikimedia.org/wiki/Category:Khrinnyky_(reservoir)",
+        "https://commons.wikimedia.org/wiki/File:%D0%A5%D1%80%D1%96%D0%BD%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.jpg"
+      ]
+    },
+    "hrushevskoe-ozero": {
+      "description": "Грушевське озеро — штучний водойм поблизу Сімферополя (с. Клинівка), що входить до складу бази відпочинку і спеціально зарибнений форелью, короп, білим амуром, карасем та плоткою. Платна рибалка організована цілодобово: вартість до 3 вудок на добу становить 1 500 рублів, перші 5 кг улову включено в ціну. На території є альтанки, котеджі для ночівлі, кафе та прокат човнів.",
+      "fishSlugs": [
+        "forel",
+        "korop",
+        "bilyi-amur",
+        "karas",
+        "plitka"
+      ],
+      "amenitySlugs": [
+        "altanky",
+        "nochivlia",
+        "chovny",
+        "kafe"
+      ],
+      "isPaid": true,
+      "priceNote": "~1200–1500 руб/доба (до 3 вудок)",
+      "phone": "+7 978 724 84 66",
+      "website": "https://grushevoe.ru/",
+      "photo": null,
+      "sources": [
+        "https://grushevoe.ru/",
+        "https://grushevoe.ru/rybalka/",
+        "https://www.putevka.com/krym/simferopol/sight/grushevoe-ozero",
+        "https://azovsky.ru/ozera-kryma/grushevoe-ozero-v-krymu/"
+      ]
+    },
+    "balanovskoe-vodokhranylyshche": {
+      "description": "Балановське водосховище — штучна водойма на річці Зуя поблизу села Баланово в Білогірському районі Криму, створена у 1974 році для зрошення сільськогосподарських угідь. Площа дзеркала — близько 41 га, максимальна глибина сягає 28 м. Водосховище вважається одним із найкращих місць для рибалки на півострові: тут водяться щука, судак, короп, окунь, плітка, білий амур та інші види; рибальство безкоштовне, дозволяється лише з берега.",
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "korop",
+        "okun",
+        "plitka",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": [
+        "nochivlia"
+      ],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://qirim.su/balanovskoe-vodohranilishhe/",
+      "photo": null,
+      "sources": [
+        "https://krymania.ru/balanovskoe-vodohranilishhe-otlichnyie-usloviya-dlya-otdyiha-i-ryibalki-v-kryimu/",
+        "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BB%D0%B0%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5",
+        "https://qirim.su/balanovskoe-vodohranilishhe/"
+      ]
+    },
+    "iubyleinoe": {
+      "description": "Водосховище Юбілейне (також відоме як Бірюзове озеро) розташоване поблизу села Запрудне Алуштинського району на висоті близько 600 м над рівнем моря. Водойма була створена у 1975 році як об'єкт водопостачання і живиться джерелом Уркуту-Чокрак. Місцеві рибалки та туристи приїжджають сюди на відпочинок та риболовлю, хоча відомостей про великі улови немає.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://krymania.ru/biryuzovoe-ozero-krym/",
+        "https://waterresources.ru/vodohranilische/biryuzovoe-ozero-krym/",
+        "https://crimeapass.com/katalog-obektov/alushta/biryuzovoe-ozero-vodokhranilishche-yubileynoe/"
+      ]
+    },
+    "kanivske-vodoskhovyshche": {
+      "description": "Канівське водосховище — наймолодше у Дніпровському каскаді, створене в 1974–1976 роках; площа поверхні становить 675 км², довжина — близько 123 км, максимальна глибина — 21 м. У водосховищі водяться щука, судак, лящ, окунь, жерех, короп, плітка, сом та лин. Рибальство на водоймі є безкоштовним; Держрибагентство використовує Канівське водосховище в межах Київської області як пілотну зону для розподілу акваторії між любительським, спортивним і промисловим ловом.",
+      "fishSlugs": [
+        "shchuka",
+        "sudak",
+        "lyashch",
+        "okun",
+        "zherekh",
+        "korop",
+        "plitka",
+        "som",
+        "lyn"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://ua.fishermap.org/lake/kanivske-vodosxovishhe/",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/%D0%9A%D0%B0%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5_%D1%83_%D0%BD%D0%B5%D1%81%D0%BF%D0%BE%D0%BA%D1%96%D0%B9%D0%BD%D1%83_%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D1%83.jpg",
+        "alt": "Канівське водосховище — фото: Sipko Ewgeny, CC BY-SA 4.0 (Wikimedia Commons)"
+      },
+      "sources": [
+        "https://ua.fishermap.org/lake/kanivske-vodosxovishhe/",
+        "https://goldfishnet.in.ua/places/1216",
+        "https://uk.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://kv.darg.gov.ua/_kanivsjke_vodoshovishche_0_0_0_3092_1.html",
+        "https://commons.wikimedia.org/wiki/Category:Kaniv_Reservoir"
+      ]
+    },
+    "biliakivske-vodoskhovyshche": {
+      "description": "Біляківське водосховище площею 262 га розташоване біля с. Біляки Семенівського району Полтавської області. Водойма відома рибним багатством — тут водяться плітка, краснопірка, карась та окунь. На березі діє база відпочинку з прилеглим островом площею 5 га.",
+      "fishSlugs": [
+        "plitka",
+        "krasnopirka",
+        "karas",
+        "okun"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://semenivka.com.ua/рибалка/202-ласкаво-просимо-до-бази-відпочинку-на-біляківському-водосховищі",
+      "photo": null,
+      "sources": [
+        "https://semenivka.com.ua/рибалка/202-ласкаво-просимо-до-бази-відпочинку-на-біляківському-водосховищі",
+        "https://map.fishergo.com.ua/poltavskaya-oblast.html",
+        "https://goldfishnet.in.ua/places/?region=polt"
+      ]
+    },
+    "orikhove-ozero": {
+      "description": "Оріхове озеро розташоване на півночі Ковельського (колишнього Ратнівського) району Волинської області, площею 5,5 км², завдовжки 3,9 км та завширшки 2,1 км, з максимальною глибиною до 3,6 м. Дно вкрите шаром сапропелю, береги низькі. Озеро є частиною Оріхівського гідрологічного заказника і використовується для любительської риболовлі.",
+      "fishSlugs": [
+        "shchuka",
+        "korop",
+        "karas",
+        "okun",
+        "lyn",
+        "lyashch",
+        "plitka",
+        "krasnopirka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": "https://goldfishnet.in.ua/places/3090",
+      "photo": null,
+      "sources": [
+        "https://goldfishnet.in.ua/places/3090",
+        "https://goldfishnet.in.ua/map/place-info/3090",
+        "https://uk.wikipedia.org/wiki/%D0%9E%D1%80%D1%96%D1%85%D0%BE%D0%B2%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_(%D0%A0%D0%B0%D1%82%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD)"
+      ]
+    },
+    "loshchinivske-vodoskhovyshche": {
+      "description": "Лощинівське водосховище розташоване в Ізмаїльському районі Одеської області та є головним джерелом зрошення сільськогосподарських угідь Ізмаїльщини. Водосховище поповнюється з озера Катлабух через насосну станцію та Ізмаїльський транспортний канал. Рівень води у водосховищі щороку потребує своєчасного поповнення для запобігання засоленню ґрунтів.",
+      "fishSlugs": [],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://bessarabiainform.com/2024/03/holovne-dzherelo-zroshennya-zemel-izmailschyny-loschynivske-vodoshovysche-milie/",
+        "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0_%D0%9E%D0%B4%D0%B5%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96"
+      ]
+    },
+    "novoulianovskoe-vodokhranylyshche": {
+      "description": "Новоульяновське водосховище розташоване у Бахчисарайському районі АР Крим, поблизу однойменного села, в долині потоку Отарчик — притоки річки Бельбек. Збудоване у 1960-х роках земляною греблею заввишки близько 10 м, завдовжки понад 1 км та завширшки близько 200 м, із максимальною глибиною до 20 м; через карстові вапняки вода має характерний бірюзовий відтінок. Рибалять переважно з південного берега; серед виловленої риби згадуються короп, судак та плітка.",
+      "fishSlugs": [
+        "sazan",
+        "sudak",
+        "plitka"
+      ],
+      "amenitySlugs": [],
+      "isPaid": false,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://www.shukach.com/ru/node/66084",
+        "https://smorodina.com/objects/novoulyanovskoe-vodohranilische",
+        "https://www.liveinternet.ru/users/4768613/post427655743/",
+        "https://tripmir.com/articles/931/novoulyanovskoe_vodohranilische.html"
+      ]
+    },
+    "chekur-ly": {
+      "description": "Чекур-Елі (також відоме як Чокур-Елі, Чекурелі) — проточне озеро у Сімферопольському районі Криму, розташоване на річці Західний Булганак, за 18 км на захід від Сімферополя. Водойма має підковоподібну форму завдовжки близько 1,4 км і завширшки 180 м, глибина сягає 3–7 м. Водойма здана в оренду приватному підприємцю та функціонує як платне місце для риболовлі з річним дозволом і добовими зборами.",
+      "fishSlugs": [
+        "okun",
+        "sudak",
+        "plitka",
+        "karas",
+        "korop",
+        "som",
+        "tovstolob",
+        "bilyi-amur"
+      ],
+      "amenitySlugs": [
+        "altanky"
+      ],
+      "isPaid": true,
+      "priceNote": null,
+      "phone": null,
+      "website": null,
+      "photo": null,
+      "sources": [
+        "https://catcher.fish/enciklopedia/vodoemy/ufo/chokur-e-li-ozero/",
+        "https://krymania.ru/ozero-chekurelli-v-simferopolskom-rayone/",
+        "https://fishmapia.com/en/place/2074/%D0%A7%D0%BE%D0%BA%D1%83%D1%80_%D0%AD%D0%BB%D0%B8"
+      ]
+    },
+    "muromske-vodoskhovyshche": {
+      "description": "Муромське водосховище — руслове водосховище на річці Муромі (ліва притока р. Харків) у Харківському районі, створене у 1978 році площею 408 га та об'ємом 14 млн м³. Водойма використовується для зрошення та риборозведення, управляється приватним підприємством «АТОС-КРХ». Рибалка платна: берегова ловля та зимова рибалка дозволені за окрему плату.",
+      "fishSlugs": [
+        "shchuka",
+        "karas",
+        "korop",
+        "sudak",
+        "okun",
+        "tovstolob",
+        "bilyi-amur",
+        "lyashch",
+        "plitka",
+        "krasnopirka",
+        "lyn"
+      ],
+      "amenitySlugs": [],
+      "isPaid": true,
+      "priceNote": "~40 грн/доба (берег), ~80 грн/доба (човен) — застарілі дані",
+      "phone": null,
+      "website": "https://goldfishnet.in.ua/places/3418",
+      "photo": null,
+      "sources": [
+        "https://uk.wikipedia.org/wiki/%D0%9C%D1%83%D1%80%D0%BE%D0%BC%D1%81%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5",
+        "https://goldfishnet.in.ua/places/3418",
+        "https://karpela.com/ru/places/1112/",
+        "https://rivnefish.com/places/955"
       ]
     }
   }

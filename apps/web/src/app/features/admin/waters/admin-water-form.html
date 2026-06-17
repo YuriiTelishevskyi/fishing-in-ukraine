@@ -1,29 +1,25 @@
 <p-toast />
 
 <div class="awf">
-  <!-- Sticky action bar -->
-  <div class="awf__action-bar">
-    <div class="awf__action-bar-left">
-      <a routerLink="/admin/waters" class="awf__back">← До списку</a>
-      <div class="awf__title-block">
-        @if (id && water()) {
-          <h1 class="awf__title">{{ water()!.name }}</h1>
-          <p-tag
-            [severity]="statusSeverity(water()!.status)"
-            [value]="statusLabel(water()!.status)"
-          />
-          <small class="awf__slug">{{ water()!.slug }}</small>
-        } @else {
-          <h1 class="awf__title">Нова водойма</h1>
-        }
-      </div>
-    </div>
-    <div class="awf__action-bar-btns">
+  <!-- Sticky page header with primary actions -->
+  <div class="awf__header-bar">
+    <app-admin-page-header
+      [title]="id && water() ? water()!.name : 'Нова водойма'"
+      [subtitle]="id ? 'Редагування водойми' : 'Заповніть поля та збережіть'"
+    >
+      @if (id && water()) {
+        <p-tag
+          [severity]="statusSeverity(water()!.status)"
+          [value]="statusLabel(water()!.status)"
+        />
+        <small class="awf__slug">{{ water()!.slug }}</small>
+      }
       @if (id) {
         @if (currentStatus === 'PUBLISHED') {
           <p-button
             label="У чернетку"
             severity="secondary"
+            icon="pi pi-eye-slash"
             [loading]="statusUpdating()"
             (onClick)="toggleStatus()"
           />
@@ -31,18 +27,26 @@
           <p-button
             label="Опублікувати"
             severity="success"
+            icon="pi pi-globe"
             [loading]="statusUpdating()"
             (onClick)="toggleStatus()"
           />
         }
       }
       <p-button
+        label="← До списку"
+        severity="secondary"
+        [text]="true"
+        routerLink="/admin/waters"
+      />
+      <p-button
         label="Зберегти"
         severity="primary"
+        icon="pi pi-check"
         [loading]="saving()"
         (onClick)="submit()"
       />
-    </div>
+    </app-admin-page-header>
   </div>
 
   <!-- Form -->

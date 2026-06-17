@@ -9,6 +9,7 @@ import { Tag } from 'primeng/tag';
 import { Toast } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { AdminApiService, AdminArticle } from '../core/admin-api.service';
+import { AdminPageHeader } from '../shared/admin-page-header';
 
 @Component({
   selector: 'app-admin-article-form',
@@ -20,6 +21,7 @@ import { AdminApiService, AdminArticle } from '../core/admin-api.service';
     ButtonModule,
     Tag,
     Toast,
+    AdminPageHeader,
   ],
   providers: [MessageService],
   templateUrl: './admin-article-form.html',

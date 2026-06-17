@@ -1,29 +1,25 @@
 <p-toast />
 
 <div class="aaf">
-  <!-- Sticky action bar -->
-  <div class="aaf__action-bar">
-    <div class="aaf__action-bar-left">
-      <a routerLink="/admin/articles" class="aaf__back">← До списку</a>
-      <div class="aaf__title-block">
-        @if (id && article()) {
-          <h1 class="aaf__title">{{ article()!.title }}</h1>
-          <p-tag
-            [severity]="statusSeverity(article()!.status)"
-            [value]="statusLabel(article()!.status)"
-          />
-          <small class="aaf__slug">{{ article()!.slug }}</small>
-        } @else {
-          <h1 class="aaf__title">Нова стаття</h1>
-        }
-      </div>
-    </div>
-    <div class="aaf__action-bar-btns">
+  <!-- Sticky page header with primary actions -->
+  <div class="aaf__header-bar">
+    <app-admin-page-header
+      [title]="id && article() ? article()!.title : 'Нова стаття'"
+      [subtitle]="id ? 'Редагування статті' : 'Заповніть поля та збережіть'"
+    >
+      @if (id && article()) {
+        <p-tag
+          [severity]="statusSeverity(article()!.status)"
+          [value]="statusLabel(article()!.status)"
+        />
+        <small class="aaf__slug">{{ article()!.slug }}</small>
+      }
       @if (id) {
         @if (currentStatus === 'PUBLISHED') {
           <p-button
             label="У чернетку"
             severity="secondary"
+            icon="pi pi-eye-slash"
             [loading]="statusUpdating()"
             (onClick)="toggleStatus()"
           />
@@ -31,18 +27,26 @@
           <p-button
             label="Опублікувати"
             severity="success"
+            icon="pi pi-globe"
             [loading]="statusUpdating()"
             (onClick)="toggleStatus()"
           />
         }
       }
       <p-button
+        label="← До списку"
+        severity="secondary"
+        [text]="true"
+        routerLink="/admin/articles"
+      />
+      <p-button
         label="Зберегти"
         severity="primary"
+        icon="pi pi-check"
         [loading]="saving()"
         (onClick)="submit()"
       />
-    </div>
+    </app-admin-page-header>
   </div>
 
   <!-- Form -->

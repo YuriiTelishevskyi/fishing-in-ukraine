@@ -19,6 +19,7 @@ import { Toast } from 'primeng/toast';
 import { ConfirmDialog } from 'primeng/confirmdialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AdminApiService } from '../core/admin-api.service';
+import { AdminPageHeader } from '../shared/admin-page-header';
 import { ApiService } from '../../../core/api.service';
 import { createMapPin } from '../../../shared/map-pin';
 import { GeoResult, geocodePlaces } from '../../../shared/geocode';
@@ -50,6 +51,7 @@ interface WaterTypeOption {
     Tag,
     Toast,
     ConfirmDialog,
+    AdminPageHeader,
   ],
   providers: [MessageService, ConfirmationService],
   templateUrl: './admin-water-form.html',

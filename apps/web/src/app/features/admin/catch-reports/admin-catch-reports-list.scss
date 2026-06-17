@@ -99,6 +99,13 @@
     white-space: nowrap;
     flex-wrap: nowrap;
     justify-content: flex-end;
+    // `display:flex` on a <td> drops out of table column sizing, so without a
+    // fixed width the cell shrinks to its content — rows with 2 vs 3 buttons then
+    // get different widths and the rightmost (delete) button no longer lines up
+    // across rows. Pin the width to the column (th is 9rem) so flex-end aligns to
+    // one consistent right edge in every row.
+    width: 9rem;
+    box-sizing: border-box;
   }
 
   // ── Friendly empty state ──────────────────────────────────────────────────

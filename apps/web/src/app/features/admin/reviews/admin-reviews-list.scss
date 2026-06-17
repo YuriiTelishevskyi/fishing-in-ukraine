@@ -32,6 +32,7 @@
   // ── Table cells ───────────────────────────────────────────────────────────
   &__th-actions {
     text-align: right;
+    width: 9rem;
   }
 
   &__water-name {
@@ -63,10 +64,15 @@
 
   &__actions {
     display: flex;
+    align-items: center;
     gap: 6px;
     white-space: nowrap;
     flex-wrap: nowrap;
     justify-content: flex-end;
+    // Pin to the column width so the rightmost button aligns across rows
+    // (a display:flex <td> otherwise shrinks to content → uneven right edge).
+    width: 9rem;
+    box-sizing: border-box;
   }
 
   // ── Friendly empty state ──────────────────────────────────────────────────

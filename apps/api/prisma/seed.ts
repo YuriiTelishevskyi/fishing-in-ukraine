@@ -696,10 +696,11 @@ interface RegionWater {
   priceNoteEn: string | null;
   fishSlugs: string[];
   amenitySlugs: string[];
+  verified?: boolean;
 }
 
-async function seedRegionWaters() {
-  const raw = readFileSync(join(__dirname, 'data', 'regions-waters.json'), 'utf8');
+async function seedRegionWaters(fileName = 'regions-waters.json', label = 'Region waters') {
+  const raw = readFileSync(join(__dirname, 'data', fileName), 'utf8');
   const data = JSON.parse(raw) as { waters: RegionWater[] };
 
   const regions = await prisma.region.findMany();
@@ -754,7 +755,7 @@ async function seedRegionWaters() {
       priceNote: w.priceNote ?? null,
       priceNoteEn: w.priceNoteEn ?? null,
       status: 'PUBLISHED' as const,
-      verified: true,
+      verified: w.verified ?? true,
       isPremium: false,
       riverId: null,
     };
@@ -776,7 +777,7 @@ async function seedRegionWaters() {
     count++;
   }
 
-  console.log(`Region waters seeded: ${count}.`);
+  console.log(`${label} seeded: ${count}.`);
 }
 
 interface RealArticle {
@@ -1047,6 +1048,9 @@ async function main() {
   await seedRealWaters();
   // Always-on base data: 87 verified waters across 22 other oblasts.
   await seedRegionWaters();
+  // Always-on base data: ~1.7k named waters auto-imported from OpenStreetMap
+  // (verified:false — stub entries to enrich via admin/community over time).
+  await seedRegionWaters('osm-waters.json', 'OSM waters');
   // Always-on base data: real bilingual blog articles.
   await seedRealArticles();
   if (process.env.SEED_DEMO === '1') {

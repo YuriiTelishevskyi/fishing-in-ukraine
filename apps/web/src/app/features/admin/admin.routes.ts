@@ -1,5 +1,6 @@
+import { inject, provideEnvironmentInitializer } from '@angular/core';
 import { Routes } from '@angular/router';
-import { providePrimeNG } from 'primeng/config';
+import { providePrimeNG, PrimeNG } from 'primeng/config';
 import { definePreset } from '@primeuix/themes';
 import Aura from '@primeuix/themes/aura';
 
@@ -28,13 +29,37 @@ const FishMapPreset = definePreset(Aura, {
   },
 });
 
+const ADMIN_PRIME_NG_THEME = {
+  theme: { preset: FishMapPreset, options: { darkModeSelector: false } },
+  ripple: true,
+};
+
 export const ADMIN_ROUTES: Routes = [
   {
     path: '',
     providers: [
-      providePrimeNG({
-        theme: { preset: FishMapPreset, options: { darkModeSelector: false } },
-        ripple: true,
+      // PrimeNG's theme config lives here (lazy) so the heavy `@primeuix/themes/aura`
+      // preset stays in the admin chunk and never enters the public initial bundle.
+      //
+      // ROOT CAUSE FIX: `providePrimeNG()` internally registers the theme via
+      // `provideAppInitializer`, but Angular only runs app initializers from the ROOT
+      // injector — never from a lazily-created route injector. So inside this lazy
+      // route the theme config was never applied: the root `PrimeNG` (ThemeProvider,
+      // providedIn:'root') singleton's `theme` signal stayed `undefined`, its effect
+      // never called `loadCommonTheme()`, and the design-token CSS variables
+      // (`--p-toggleswitch-*`, `--p-button-*`, overlay tokens, …) were never injected.
+      // The component *styled* CSS (which references those `var(--p-…)`) still injected
+      // on ngOnInit, so it rendered unstyled: toggleswitch collapsed to ~6px, select/
+      // multiselect overlays were transparent, severity buttons rendered flat.
+      //
+      // An *environment* initializer (unlike app initializers) DOES run when this lazy
+      // route's environment injector is created. We use it to apply the theme config
+      // to the root `PrimeNG` singleton, which fires its effect → `loadCommonTheme()`
+      // injects the token variables → component styles resolve correctly. This keeps
+      // the public bundle unchanged while fully fixing the styling.
+      providePrimeNG(ADMIN_PRIME_NG_THEME),
+      provideEnvironmentInitializer(() => {
+        inject(PrimeNG).setConfig(ADMIN_PRIME_NG_THEME);
       }),
     ],
     children: [

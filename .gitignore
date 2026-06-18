@@ -28,3 +28,4 @@ npm-debug.log*
 # Generated enrichment batch scripts (embed transient data; regenerate from osm-waters.json)
 scripts/enrich-batch*.wf.js
 scripts/verify-photos.wf.js
+scripts/sweep-ru-names.wf.js

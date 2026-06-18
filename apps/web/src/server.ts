@@ -5,12 +5,42 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express from 'express';
+import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
+// Old→new water-slug 301 map (de-russification migration). Generated into
+// public/slug-redirects.json, copied to the browser dist at build time.
+let slugRedirects: Record<string, string> = {};
+try {
+  slugRedirects = JSON.parse(readFileSync(join(browserDistFolder, 'slug-redirects.json'), 'utf8'));
+} catch {
+  // no redirect map present — fine
+}
+
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+
+/**
+ * 301-redirect renamed water URLs to their new (Ukrainian) slug, preserving SEO.
+ * uk: /vodoymy/:region/:slug   ·   en: /en/waters/:region/:slug
+ */
+app.use((req, res, next) => {
+  const segs = req.path.split('/').filter(Boolean);
+  let i = -1;
+  if (segs[0] === 'vodoymy' && segs.length === 3) i = 2;
+  else if (segs[0] === 'en' && segs[1] === 'waters' && segs.length === 4) i = 3;
+  if (i >= 0) {
+    const to = slugRedirects[decodeURIComponent(segs[i])];
+    if (to) {
+      segs[i] = to;
+      const q = req.originalUrl.indexOf('?');
+      return res.redirect(301, '/' + segs.join('/') + (q >= 0 ? req.originalUrl.slice(q) : ''));
+    }
+  }
+  next();
+});
 
 /**
  * Example Express Rest API endpoints can be defined here.

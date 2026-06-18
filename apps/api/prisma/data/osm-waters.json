@@ -384,9 +384,9 @@
   {
    "slug": "pavlovskyi-stav",
    "regionSlug": "vinnytska-oblast",
-   "name": "Павловский став",
+   "name": "Павловський став",
    "nameEn": "Pavlovskyi stav",
-   "description": "Павловский став — озеро у Вінницькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "description": "Павловський став — озеро у Вінницькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
    "descriptionEn": "Pavlovskyi stav is a lake in Vinnytsia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.95257,
@@ -876,12 +876,12 @@
    "source": "osm"
   },
   {
-   "slug": "kolkhozne-ozero",
+   "slug": "kolhospne-ozero",
    "regionSlug": "vinnytska-oblast",
-   "name": "Колхозне озеро",
-   "nameEn": "Kolkhozne ozero",
-   "description": "Колхозне озеро — озеро у Вінницькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Kolkhozne ozero is a lake in Vinnytsia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Колгоспне озеро",
+   "nameEn": "Kolhospne ozero",
+   "description": "Колгоспне озеро — озеро у Вінницькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Kolhospne ozero is a lake in Vinnytsia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.97404,
    "lng": 27.8854,
@@ -1332,12 +1332,12 @@
    "source": "osm"
   },
   {
-   "slug": "ozero-velykhove-vozera-vialikhava",
+   "slug": "ozero-velykhove",
    "regionSlug": "volynska-oblast",
-   "name": "озеро Велихове / возера Вяліхава",
-   "nameEn": "ozero Velykhove / vozera Vialikhava",
-   "description": "озеро Велихове / возера Вяліхава — озеро у Волинській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "ozero Velykhove / vozera Vialikhava is a lake in Volyn Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "озеро Велихове",
+   "nameEn": "ozero Velykhove",
+   "description": "озеро Велихове — озеро у Волинській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "ozero Velykhove is a lake in Volyn Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 51.71792,
    "lng": 24.27142,
@@ -1522,12 +1522,12 @@
    "source": "osm"
   },
   {
-   "slug": "ozero-skoran-vozera-skoran",
+   "slug": "ozero-skoran",
    "regionSlug": "volynska-oblast",
-   "name": "озеро Скорань - возера Скорань",
-   "nameEn": "ozero Skoran - vozera Skoran",
-   "description": "озеро Скорань - возера Скорань — озеро у Волинській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "ozero Skoran - vozera Skoran is a lake in Volyn Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "озеро Скорань",
+   "nameEn": "ozero Skoran",
+   "description": "озеро Скорань — озеро у Волинській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "ozero Skoran is a lake in Volyn Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 51.92253,
    "lng": 25.49799,
@@ -3916,12 +3916,12 @@
    "source": "osm"
   },
   {
-   "slug": "pystolet",
+   "slug": "pistolet",
    "regionSlug": "donetska-oblast",
-   "name": "Пистолет",
-   "nameEn": "Pystolet",
-   "description": "Пистолет — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Pystolet is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Пістолет",
+   "nameEn": "Pistolet",
+   "description": "Пістолет — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Pistolet is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.32364,
    "lng": 37.93863,
@@ -3935,12 +3935,12 @@
    "source": "osm"
   },
   {
-   "slug": "haharyna",
+   "slug": "haharina",
    "regionSlug": "donetska-oblast",
-   "name": "Гагарина",
-   "nameEn": "Haharyna",
-   "description": "Гагарина — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Haharyna is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Гагаріна",
+   "nameEn": "Haharina",
+   "description": "Гагаріна — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Haharina is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.3514,
    "lng": 37.94347,
@@ -4068,12 +4068,12 @@
    "source": "osm"
   },
   {
-   "slug": "vtoraia-shakhta",
+   "slug": "druha-shakhta",
    "regionSlug": "donetska-oblast",
-   "name": "Вторая Шахта",
-   "nameEn": "Vtoraia Shakhta",
-   "description": "Вторая Шахта — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Vtoraia Shakhta is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Друга шахта",
+   "nameEn": "Druha shakhta",
+   "description": "Друга шахта — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Druha shakhta is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.1995,
    "lng": 37.30819,
@@ -4125,12 +4125,12 @@
    "source": "osm"
   },
   {
-   "slug": "olkhivske-vodoskhovyshche",
+   "slug": "vilkhivske-vodoskhovyshche",
    "regionSlug": "donetska-oblast",
-   "name": "Ольхівське водосховище",
-   "nameEn": "Olkhivske vodoskhovyshche",
-   "description": "Ольхівське водосховище — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Olkhivske vodoskhovyshche is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Вільхівське водосховище",
+   "nameEn": "Vilkhivske vodoskhovyshche",
+   "description": "Вільхівське водосховище — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Vilkhivske vodoskhovyshche is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.07427,
    "lng": 38.31212,
@@ -4144,12 +4144,12 @@
    "source": "osm"
   },
   {
-   "slug": "tarelka",
+   "slug": "tarilka",
    "regionSlug": "donetska-oblast",
-   "name": "Тарелка",
-   "nameEn": "Tarelka",
-   "description": "Тарелка — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Tarelka is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Тарілка",
+   "nameEn": "Tarilka",
+   "description": "Тарілка — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Tarilka is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.02636,
    "lng": 38.28561,
@@ -4486,12 +4486,12 @@
    "source": "osm"
   },
   {
-   "slug": "stavok-kroshka",
+   "slug": "stavok-krykhta",
    "regionSlug": "donetska-oblast",
-   "name": "ставок Крошка",
-   "nameEn": "stavok Kroshka",
-   "description": "ставок Крошка — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "stavok Kroshka is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Ставок Крихта",
+   "nameEn": "Stavok Krykhta",
+   "description": "Ставок Крихта — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Stavok Krykhta is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 47.85231,
    "lng": 37.01655,
@@ -4505,12 +4505,12 @@
    "source": "osm"
   },
   {
-   "slug": "stavok-vtoroi-katlavan",
+   "slug": "stavok-druhyi-katlavan",
    "regionSlug": "donetska-oblast",
-   "name": "ставок Второй катлаван",
-   "nameEn": "stavok Vtoroi katlavan",
-   "description": "ставок Второй катлаван — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "stavok Vtoroi katlavan is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Ставок Другий катлаван",
+   "nameEn": "Stavok Druhyi katlavan",
+   "description": "Ставок Другий катлаван — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Stavok Druhyi katlavan is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 47.85115,
    "lng": 37.02027,
@@ -4524,12 +4524,12 @@
    "source": "osm"
   },
   {
-   "slug": "stavok-tretyi-katlavan",
+   "slug": "stavok-tretii-katlavan",
    "regionSlug": "donetska-oblast",
-   "name": "ставок Третий катлаван",
-   "nameEn": "stavok Tretyi katlavan",
-   "description": "ставок Третий катлаван — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "stavok Tretyi katlavan is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Ставок Третій катлаван",
+   "nameEn": "Stavok Tretii katlavan",
+   "description": "Ставок Третій катлаван — водосховище у Донецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Stavok Tretii katlavan is a reservoir in Donetsk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 47.84906,
    "lng": 37.02614,
@@ -4961,7 +4961,7 @@
    "source": "osm"
   },
   {
-   "slug": "nyzhnyi-stavok",
+   "slug": "nyzhnii-stavok-2",
    "regionSlug": "donetska-oblast",
    "name": "Нижній ставок",
    "nameEn": "Nyzhnii stavok",
@@ -5037,12 +5037,12 @@
    "source": "osm"
   },
   {
-   "slug": "ochystka-vody",
+   "slug": "ochysna-vodoima",
    "regionSlug": "zhytomyrska-oblast",
-   "name": "Очистка води",
-   "nameEn": "Ochystka vody",
-   "description": "Очистка води — водосховище у Житомирській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Ochystka vody is a reservoir in Zhytomyr Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Очисна водойма",
+   "nameEn": "Ochysna vodoima",
+   "description": "Очисна водойма — водосховище у Житомирській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Ochysna vodoima is a reservoir in Zhytomyr Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 49.88155,
    "lng": 28.57106,
@@ -5455,12 +5455,12 @@
    "source": "osm"
   },
   {
-   "slug": "pryazhevo-lake",
+   "slug": "ozero-priazheve",
    "regionSlug": "zhytomyrska-oblast",
-   "name": "Озеро Пряжево",
-   "nameEn": "Ozero Priazhevo",
-   "description": "Озеро Пряжево — озеро у Житомирській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Ozero Priazhevo is a lake in Zhytomyr Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Озеро Пряжеве",
+   "nameEn": "Ozero Priazheve",
+   "description": "Озеро Пряжеве — озеро у Житомирській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Ozero Priazheve is a lake in Zhytomyr Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 50.18363,
    "lng": 28.70558,
@@ -5683,12 +5683,12 @@
    "source": "osm"
   },
   {
-   "slug": "1-i-silikatnyi-kar-ier",
+   "slug": "1-y-sylikatnyi-karier",
    "regionSlug": "zhytomyrska-oblast",
-   "name": "1-й Сілікатний кар'єр",
-   "nameEn": "1-y Silikatnyi karier",
-   "description": "1-й Сілікатний кар'єр — озеро у Житомирській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "1-y Silikatnyi karier is a lake in Zhytomyr Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "1-й Силікатний кар'єр",
+   "nameEn": "1-y Sylikatnyi karier",
+   "description": "1-й Силікатний кар'єр — озеро у Житомирській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "1-y Sylikatnyi karier is a lake in Zhytomyr Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 50.23268,
    "lng": 28.71609,
@@ -5987,12 +5987,12 @@
    "source": "osm"
   },
   {
-   "slug": "milieishyi",
+   "slug": "naimilishyi",
    "regionSlug": "zhytomyrska-oblast",
-   "name": "Мілєйший",
-   "nameEn": "Milieishyi",
-   "description": "Мілєйший — озеро у Житомирській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Milieishyi is a lake in Zhytomyr Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Найміліший",
+   "nameEn": "Naimilishyi",
+   "description": "Найміліший — озеро у Житомирській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Naimilishyi is a lake in Zhytomyr Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 49.96793,
    "lng": 28.43698,
@@ -6424,7 +6424,7 @@
    "source": "osm"
   },
   {
-   "slug": "t-bla",
+   "slug": "tabla",
    "regionSlug": "zakarpatska-oblast",
    "name": "Табла",
    "nameEn": "Tabla",
@@ -6443,12 +6443,12 @@
    "source": "osm"
   },
   {
-   "slug": "peschanka",
+   "slug": "pishchanka-2",
    "regionSlug": "zakarpatska-oblast",
-   "name": "Песчанка",
-   "nameEn": "Peschanka",
-   "description": "Песчанка — озеро у Закарпатській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Peschanka is a lake in Zakarpattia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Піщанка",
+   "nameEn": "Pishchanka",
+   "description": "Піщанка — озеро у Закарпатській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Pishchanka is a lake in Zakarpattia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.2028,
    "lng": 22.61726,
@@ -6652,12 +6652,12 @@
    "source": "osm"
   },
   {
-   "slug": "stikolne-ozero",
+   "slug": "skliane-ozero",
    "regionSlug": "zakarpatska-oblast",
-   "name": "Стікольне озеро",
-   "nameEn": "Stikolne ozero",
-   "description": "Стікольне озеро — озеро у Закарпатській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Stikolne ozero is a lake in Zakarpattia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Скляне озеро",
+   "nameEn": "Skliane ozero",
+   "description": "Скляне озеро — озеро у Закарпатській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Skliane ozero is a lake in Zakarpattia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.55412,
    "lng": 22.99068,
@@ -6785,7 +6785,7 @@
    "source": "osm"
   },
   {
-   "slug": "szike-t",
+   "slug": "ozero-sike",
    "regionSlug": "zakarpatska-oblast",
    "name": "Озеро Сіке",
    "nameEn": "Ozero Sike",
@@ -6861,12 +6861,12 @@
    "source": "osm"
   },
   {
-   "slug": "ozertso",
+   "slug": "ozertse-3",
    "regionSlug": "zakarpatska-oblast",
-   "name": "Озерцо",
-   "nameEn": "Ozertso",
-   "description": "Озерцо — озеро у Закарпатській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Ozertso is a lake in Zakarpattia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Озерце",
+   "nameEn": "Ozertse",
+   "description": "Озерце — озеро у Закарпатській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Ozertse is a lake in Zakarpattia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.43399,
    "lng": 23.80247,
@@ -6880,12 +6880,12 @@
    "source": "osm"
   },
   {
-   "slug": "ozero-medvedytsi",
+   "slug": "ozero-vedmedytsi",
    "regionSlug": "zakarpatska-oblast",
-   "name": "Озеро Медведиці",
-   "nameEn": "Ozero Medvedytsi",
-   "description": "Озеро Медведиці — озеро у Закарпатській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Ozero Medvedytsi is a lake in Zakarpattia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Озеро Ведмедиці",
+   "nameEn": "Ozero Vedmedytsi",
+   "description": "Озеро Ведмедиці — озеро у Закарпатській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Ozero Vedmedytsi is a lake in Zakarpattia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.09966,
    "lng": 24.5709,
@@ -7279,7 +7279,7 @@
    "source": "osm"
   },
   {
-   "slug": "homokb-nya",
+   "slug": "ozero-homokbania",
    "regionSlug": "zakarpatska-oblast",
    "name": "Озеро Гомокбаня",
    "nameEn": "Ozero Homokbania",
@@ -7336,7 +7336,7 @@
    "source": "osm"
   },
   {
-   "slug": "guti-kis-halast",
+   "slug": "stavok-huti",
    "regionSlug": "zakarpatska-oblast",
    "name": "Ставок Гуті",
    "nameEn": "Stavok Huti",
@@ -7393,7 +7393,7 @@
    "source": "osm"
   },
   {
-   "slug": "b-nyat",
+   "slug": "ozero-baniato",
    "regionSlug": "zakarpatska-oblast",
    "name": "Озеро Баньято",
    "nameEn": "Ozero Baniato",
@@ -7469,12 +7469,12 @@
    "source": "osm"
   },
   {
-   "slug": "kirpichka",
+   "slug": "tsehlynka",
    "regionSlug": "zakarpatska-oblast",
-   "name": "Кірпічка",
-   "nameEn": "Kirpichka",
-   "description": "Кірпічка — став у Закарпатській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Kirpichka is a pond in Zakarpattia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Цеглинка",
+   "nameEn": "Tsehlynka",
+   "description": "Цеглинка — став у Закарпатській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Tsehlynka is a pond in Zakarpattia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.60977,
    "lng": 22.28624,
@@ -7735,12 +7735,12 @@
    "source": "osm"
   },
   {
-   "slug": "hyhantivskyi-stavok",
+   "slug": "hihantivskyi-stavok",
    "regionSlug": "zaporizka-oblast",
-   "name": "Гигантівський ставок",
-   "nameEn": "Hyhantivskyi stavok",
-   "description": "Гигантівський ставок — водосховище у Запорізькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Hyhantivskyi stavok is a reservoir in Zaporizhzhia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Гігантівський ставок",
+   "nameEn": "Hihantivskyi stavok",
+   "description": "Гігантівський ставок — водосховище у Запорізькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Hihantivskyi stavok is a reservoir in Zaporizhzhia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 46.76086,
    "lng": 35.64474,
@@ -7756,9 +7756,9 @@
   {
    "slug": "piatyi-stavok",
    "regionSlug": "zaporizka-oblast",
-   "name": "Пятий ставок",
+   "name": "П'ятий ставок",
    "nameEn": "Piatyi stavok",
-   "description": "Пятий ставок — водосховище у Запорізькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "description": "П'ятий ставок — водосховище у Запорізькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
    "descriptionEn": "Piatyi stavok is a reservoir in Zaporizhzhia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 47.42207,
@@ -8286,12 +8286,12 @@
    "source": "osm"
   },
   {
-   "slug": "krasnopor-lyman",
+   "slug": "krasnopir-lyman",
    "regionSlug": "zaporizka-oblast",
-   "name": "Краснопьор лиман",
-   "nameEn": "Krasnopor lyman",
-   "description": "Краснопьор лиман — озеро у Запорізькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Krasnopor lyman is a lake in Zaporizhzhia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Краснопір лиман",
+   "nameEn": "Krasnopir lyman",
+   "description": "Краснопір лиман — озеро у Запорізькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Krasnopir lyman is a lake in Zaporizhzhia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 46.75853,
    "lng": 36.85575,
@@ -8533,12 +8533,12 @@
    "source": "osm"
   },
   {
-   "slug": "malyi-bezymenskyi",
+   "slug": "malyi-bezimenskyi",
    "regionSlug": "zaporizka-oblast",
-   "name": "Малий Безименський",
-   "nameEn": "Malyi Bezymenskyi",
-   "description": "Малий Безименський — став у Запорізькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Malyi Bezymenskyi is a pond in Zaporizhzhia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Малий Безіменський",
+   "nameEn": "Malyi Bezimenskyi",
+   "description": "Малий Безіменський — став у Запорізькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Malyi Bezimenskyi is a pond in Zaporizhzhia Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 47.07897,
    "lng": 36.82481,
@@ -9521,7 +9521,7 @@
    "source": "osm"
   },
   {
-   "slug": "jezioro-woronica",
+   "slug": "ozero-voronitsa",
    "regionSlug": "ivano-frankivska-oblast",
    "name": "Озеро Вороніца",
    "nameEn": "Ozero Voronitsa",
@@ -9540,7 +9540,7 @@
    "source": "osm"
   },
   {
-   "slug": "jezioro-simlin",
+   "slug": "ozero-simlin",
    "regionSlug": "ivano-frankivska-oblast",
    "name": "Озеро Сімлін",
    "nameEn": "Ozero Simlin",
@@ -10148,12 +10148,12 @@
    "source": "osm"
   },
   {
-   "slug": "podpiatytsa",
+   "slug": "pidpiatytsia",
    "regionSlug": "kyivska-oblast",
-   "name": "Подпятица",
-   "nameEn": "Podpiatytsa",
-   "description": "Подпятица — озеро у Київській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Podpiatytsa is a lake in Kyiv Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Підп'ятиця",
+   "nameEn": "Pidpiatytsia",
+   "description": "Підп'ятиця — озеро у Київській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Pidpiatytsia is a lake in Kyiv Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 51.24435,
    "lng": 30.31912,
@@ -10167,7 +10167,7 @@
    "source": "osm"
   },
   {
-   "slug": "nyzhnyi-hliadyn",
+   "slug": "nyzhnii-hliadyn",
    "regionSlug": "kyivska-oblast",
    "name": "Нижній Глядин",
    "nameEn": "Nyzhnii Hliadyn",
@@ -10340,9 +10340,9 @@
   {
    "slug": "tetiivske-ozero",
    "regionSlug": "kyivska-oblast",
-   "name": "Тетіївьске озеро",
+   "name": "Тетіївське озеро",
    "nameEn": "Tetiivske ozero",
-   "description": "Тетіївьске озеро — озеро у Київській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "description": "Тетіївське озеро — озеро у Київській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
    "descriptionEn": "Tetiivske ozero is a lake in Kyiv Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 49.36554,
@@ -11706,12 +11706,12 @@
    "source": "osm"
   },
   {
-   "slug": "bokova-vodoskhovyshche",
+   "slug": "bokove-vodoskhovyshche",
    "regionSlug": "kirovohradska-oblast",
-   "name": "Бокова водосховище",
-   "nameEn": "Bokova vodoskhovyshche",
-   "description": "Бокова водосховище — водосховище у Кіровоградській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Bokova vodoskhovyshche is a reservoir in Kirovohrad Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Бокове водосховище",
+   "nameEn": "Bokove vodoskhovyshche",
+   "description": "Бокове водосховище — водосховище у Кіровоградській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Bokove vodoskhovyshche is a reservoir in Kirovohrad Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.18412,
    "lng": 33.08992,
@@ -12637,7 +12637,7 @@
    "source": "osm"
   },
   {
-   "slug": "krasnodonskyi-karer",
+   "slug": "krasnodonskyi-karier",
    "regionSlug": "luhanska-oblast",
    "name": "Краснодонський кар’єр",
    "nameEn": "Krasnodonskyi karier",
@@ -12884,12 +12884,12 @@
    "source": "osm"
   },
   {
-   "slug": "ozero-zelenenkoe",
+   "slug": "ozero-zelenenke",
    "regionSlug": "luhanska-oblast",
-   "name": "Озеро \"Зелененькое\"",
-   "nameEn": "Ozero \"Zelenenkoe\"",
-   "description": "Озеро \"Зелененькое\" — озеро у Луганській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Ozero \"Zelenenkoe\" is a lake in Luhansk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Озеро \"Зелененьке\"",
+   "nameEn": "Ozero \"Zelenenke\"",
+   "description": "Озеро \"Зелененьке\" — озеро у Луганській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Ozero \"Zelenenke\" is a lake in Luhansk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.71632,
    "lng": 39.51316,
@@ -13017,12 +13017,12 @@
    "source": "osm"
   },
   {
-   "slug": "hlukhoi-eryk",
+   "slug": "hlukhyi-yeryk",
    "regionSlug": "luhanska-oblast",
-   "name": "Глухой Ерик",
-   "nameEn": "Hlukhoi Eryk",
-   "description": "Глухой Ерик — озеро у Луганській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Hlukhoi Eryk is a lake in Luhansk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Глухий Єрик",
+   "nameEn": "Hlukhyi Yeryk",
+   "description": "Глухий Єрик — озеро у Луганській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Hlukhyi Yeryk is a lake in Luhansk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.70815,
    "lng": 39.18693,
@@ -13321,7 +13321,7 @@
    "source": "osm"
   },
   {
-   "slug": "tsap",
+   "slug": "tsapy",
    "regionSlug": "luhanska-oblast",
    "name": "Цапи",
    "nameEn": "Tsapy",
@@ -13416,7 +13416,7 @@
    "source": "osm"
   },
   {
-   "slug": "pavlivskyi-stav-pavlovskyi-r-bnyk",
+   "slug": "pavlivskyi-stav",
    "regionSlug": "luhanska-oblast",
    "name": "Павлівський став",
    "nameEn": "Pavlivskyi stav",
@@ -13473,12 +13473,12 @@
    "source": "osm"
   },
   {
-   "slug": "zavodskoi-stav",
+   "slug": "zavodskyi-stav-3",
    "regionSlug": "luhanska-oblast",
-   "name": "Заводской став",
-   "nameEn": "Zavodskoi stav",
-   "description": "Заводской став — озеро у Луганській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Zavodskoi stav is a lake in Luhansk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Заводський став",
+   "nameEn": "Zavodskyi stav",
+   "description": "Заводський став — озеро у Луганській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Zavodskyi stav is a lake in Luhansk Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.29364,
    "lng": 38.91372,
@@ -14100,12 +14100,12 @@
    "source": "osm"
   },
   {
-   "slug": "kirpichka-2",
+   "slug": "tsehlynka-2",
    "regionSlug": "lvivska-oblast",
-   "name": "Кірпічка",
-   "nameEn": "Kirpichka",
-   "description": "Кірпічка — озеро у Львівській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Kirpichka is a lake in Lviv Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Цеглинка",
+   "nameEn": "Tsehlynka",
+   "description": "Цеглинка — озеро у Львівській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Tsehlynka is a lake in Lviv Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 49.81006,
    "lng": 24.01436,
@@ -15753,12 +15753,12 @@
    "source": "osm"
   },
   {
-   "slug": "kolkhoznyi",
+   "slug": "kolhospnyi",
    "regionSlug": "mykolaivska-oblast",
-   "name": "Колхозний",
-   "nameEn": "Kolkhoznyi",
-   "description": "Колхозний — став у Миколаївській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Kolkhoznyi is a pond in Mykolaiv Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Колгоспний",
+   "nameEn": "Kolhospnyi",
+   "description": "Колгоспний — став у Миколаївській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Kolhospnyi is a pond in Mykolaiv Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 47.84352,
    "lng": 31.57476,
@@ -16437,7 +16437,7 @@
    "source": "osm"
   },
   {
-   "slug": "lacul-de-acumulare-cuciurgan-kuchurhanske-vodoskhovyshche",
+   "slug": "kuchurhanske-vodoskhovyshche-2",
    "regionSlug": "odeska-oblast",
    "name": "Кучурганське водосховище",
    "nameEn": "Cuciurgan Reservoir",
@@ -17102,12 +17102,12 @@
    "source": "osm"
   },
   {
-   "slug": "oz-kayro",
+   "slug": "oz-kairo",
    "regionSlug": "odeska-oblast",
-   "name": "Оз. Каиро",
-   "nameEn": "Oz. Kayro",
-   "description": "Оз. Каиро — озеро у Одеській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Oz. Kayro is a lake in Odesa Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Оз. Каїро",
+   "nameEn": "Oz. Kairo",
+   "description": "Оз. Каїро — озеро у Одеській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Oz. Kairo is a lake in Odesa Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 46.49652,
    "lng": 30.02218,
@@ -17159,12 +17159,12 @@
    "source": "osm"
   },
   {
-   "slug": "oz-zhukovo",
+   "slug": "oz-zhukove",
    "regionSlug": "odeska-oblast",
-   "name": "Оз. Жуково",
-   "nameEn": "Oz. Zhukovo",
-   "description": "Оз. Жуково — озеро у Одеській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Oz. Zhukovo is a lake in Odesa Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Оз. Жукове",
+   "nameEn": "Oz. Zhukove",
+   "description": "Оз. Жукове — озеро у Одеській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Oz. Zhukove is a lake in Odesa Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 46.45803,
    "lng": 30.09219,
@@ -17957,12 +17957,12 @@
    "source": "osm"
   },
   {
-   "slug": "borysovo",
+   "slug": "borysove",
    "regionSlug": "poltavska-oblast",
-   "name": "Борисово",
-   "nameEn": "Borysovo",
-   "description": "Борисово — озеро у Полтавській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Borysovo is a lake in Poltava Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Борисове",
+   "nameEn": "Borysove",
+   "description": "Борисове — озеро у Полтавській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Borysove is a lake in Poltava Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 50.07848,
    "lng": 34.06823,
@@ -18280,12 +18280,12 @@
    "source": "osm"
   },
   {
-   "slug": "kyrpychnyi-stavok",
+   "slug": "tsehlianyi-stavok",
    "regionSlug": "poltavska-oblast",
-   "name": "Кирпичний ставок",
-   "nameEn": "Kyrpychnyi stavok",
-   "description": "Кирпичний ставок — озеро у Полтавській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Kyrpychnyi stavok is a lake in Poltava Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Цегляний ставок",
+   "nameEn": "Tsehlianyi stavok",
+   "description": "Цегляний ставок — озеро у Полтавській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Tsehlianyi stavok is a lake in Poltava Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 50.38877,
    "lng": 33.49672,
@@ -18508,12 +18508,12 @@
    "source": "osm"
   },
   {
-   "slug": "sribna-plotva",
+   "slug": "sribna-plitka",
    "regionSlug": "poltavska-oblast",
-   "name": "Срібна плотва",
-   "nameEn": "Sribna plotva",
-   "description": "Срібна плотва — озеро у Полтавській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Sribna plotva is a lake in Poltava Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Срібна плітка",
+   "nameEn": "Sribna plitka",
+   "description": "Срібна плітка — озеро у Полтавській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Sribna plitka is a lake in Poltava Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 49.58212,
    "lng": 34.10343,
@@ -19173,12 +19173,12 @@
    "source": "osm"
   },
   {
-   "slug": "starytsa",
+   "slug": "starytsia-2",
    "regionSlug": "rivnenska-oblast",
-   "name": "Старица",
-   "nameEn": "Starytsa",
-   "description": "Старица — озеро у Рівненській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Starytsa is a lake in Rivne Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Стариця",
+   "nameEn": "Starytsia",
+   "description": "Стариця — озеро у Рівненській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Starytsia is a lake in Rivne Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 51.24561,
    "lng": 25.94963,
@@ -20807,12 +20807,12 @@
    "source": "osm"
   },
   {
-   "slug": "ozero-sazhalka",
+   "slug": "ozero-sazhavka",
    "regionSlug": "sumska-oblast",
-   "name": "Озеро Сажалка",
-   "nameEn": "Sazhalka lake",
-   "description": "Озеро Сажалка — озеро у Сумській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Sazhalka lake is a lake in Sumy Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Озеро Сажавка",
+   "nameEn": "Ozero Sazhavka",
+   "description": "Озеро Сажавка — озеро у Сумській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Ozero Sazhavka is a lake in Sumy Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 50.4767,
    "lng": 34.95552,
@@ -21206,12 +21206,12 @@
    "source": "osm"
   },
   {
-   "slug": "plotina",
+   "slug": "hreblia",
    "regionSlug": "ternopilska-oblast",
-   "name": "Плотіна",
-   "nameEn": "Plotina",
-   "description": "Плотіна — озеро у Тернопільській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Plotina is a lake in Ternopil Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Гребля",
+   "nameEn": "Hreblia",
+   "description": "Гребля — озеро у Тернопільській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Hreblia is a lake in Ternopil Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 49.45237,
    "lng": 25.12759,
@@ -22194,7 +22194,7 @@
    "source": "osm"
   },
   {
-   "slug": "gnyle-ozero",
+   "slug": "hnyle-ozero",
    "regionSlug": "ternopilska-oblast",
    "name": "Гниле озеро",
    "nameEn": "Hnyle ozero",
@@ -22232,12 +22232,12 @@
    "source": "osm"
   },
   {
-   "slug": "vurbovetske-voskhovyshche-stav",
+   "slug": "vurbovetske-vodoskhovyshche-stav",
    "regionSlug": "ternopilska-oblast",
-   "name": "Вурбовецьке восховище(став)",
-   "nameEn": "Vurbovetske voskhovyshche(stav)",
-   "description": "Вурбовецьке восховище(став) — став у Тернопільській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Vurbovetske voskhovyshche(stav) is a pond in Ternopil Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Вурбовецьке водосховище (став)",
+   "nameEn": "Vurbovetske vodoskhovyshche (stav)",
+   "description": "Вурбовецьке водосховище (став) — став у Тернопільській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Vurbovetske vodoskhovyshche (stav) is a pond in Ternopil Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 49.15548,
    "lng": 25.56308,
@@ -23106,12 +23106,12 @@
    "source": "osm"
   },
   {
-   "slug": "ozero-peschynka",
+   "slug": "ozero-pishchynka",
    "regionSlug": "kharkivska-oblast",
-   "name": "Озеро Песчинка",
-   "nameEn": "Ozero Peschynka",
-   "description": "Озеро Песчинка — озеро у Харківській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Ozero Peschynka is a lake in Kharkiv Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Озеро Піщинка",
+   "nameEn": "Ozero Pishchynka",
+   "description": "Озеро Піщинка — озеро у Харківській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Ozero Pishchynka is a lake in Kharkiv Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 49.96128,
    "lng": 36.16155,
@@ -23999,7 +23999,7 @@
    "source": "osm"
   },
   {
-   "slug": "hlubokyi-lyman",
+   "slug": "hlybokyi-lyman",
    "regionSlug": "khersonska-oblast",
    "name": "Глибокий лиман",
    "nameEn": "Hlubokyi Lyman",
@@ -24018,12 +24018,12 @@
    "source": "osm"
   },
   {
-   "slug": "raskopanka",
+   "slug": "rozkopanka",
    "regionSlug": "khersonska-oblast",
-   "name": "Раскопанка",
-   "nameEn": "Raskopanka",
-   "description": "Раскопанка — озеро у Херсонській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Raskopanka is a lake in Kherson Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Розкопанка",
+   "nameEn": "Rozkopanka",
+   "description": "Розкопанка — озеро у Херсонській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Rozkopanka is a lake in Kherson Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 46.65057,
    "lng": 32.73053,
@@ -24094,12 +24094,12 @@
    "source": "osm"
   },
   {
-   "slug": "holuboe-ozero",
+   "slug": "blakytne-ozero-3",
    "regionSlug": "khersonska-oblast",
-   "name": "Голубое озеро",
-   "nameEn": "Holuboe ozero",
-   "description": "Голубое озеро — озеро у Херсонській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Holuboe ozero is a lake in Kherson Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Блакитне озеро",
+   "nameEn": "Blakytne ozero",
+   "description": "Блакитне озеро — озеро у Херсонській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Blakytne ozero is a lake in Kherson Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 46.59488,
    "lng": 32.88825,
@@ -24132,12 +24132,12 @@
    "source": "osm"
   },
   {
-   "slug": "oz-chertovoe",
+   "slug": "oz-chortove",
    "regionSlug": "khersonska-oblast",
-   "name": "Оз. Чертовое",
-   "nameEn": "Oz. Chertovoe",
-   "description": "Оз. Чертовое — озеро у Херсонській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Oz. Chertovoe is a lake in Kherson Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Оз. Чортове",
+   "nameEn": "Oz. Chortove",
+   "description": "Оз. Чортове — озеро у Херсонській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Oz. Chortove is a lake in Kherson Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 46.75731,
    "lng": 33.11219,
@@ -24189,12 +24189,12 @@
    "source": "osm"
   },
   {
-   "slug": "oz-pyvnyv",
+   "slug": "oz-pyvniv",
    "regionSlug": "khersonska-oblast",
-   "name": "Оз.Пивнив",
-   "nameEn": "Oz.Pyvnyv",
-   "description": "Оз.Пивнив — озеро у Херсонській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Oz.Pyvnyv is a lake in Kherson Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Оз. Пивнів",
+   "nameEn": "Oz. Pyvniv",
+   "description": "Оз. Пивнів — озеро у Херсонській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Oz. Pyvniv is a lake in Kherson Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 46.42529,
    "lng": 32.23948,
@@ -24379,7 +24379,7 @@
    "source": "osm"
   },
   {
-   "slug": "ozero-kruhlyk-nyzhnyi",
+   "slug": "ozero-kruhlyk-nyzhnii",
    "regionSlug": "khersonska-oblast",
    "name": "Озеро Круглик Нижній",
    "nameEn": "Kruhle Nyzhnie Lake",
@@ -24778,12 +24778,12 @@
    "source": "osm"
   },
   {
-   "slug": "oz-nykolyno",
+   "slug": "oz-mykolyne",
    "regionSlug": "khersonska-oblast",
-   "name": "Оз.Николино",
-   "nameEn": "Oz.Nykolyno",
-   "description": "Оз.Николино — озеро у Херсонській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Oz.Nykolyno is a lake in Kherson Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Оз. Миколине",
+   "nameEn": "Oz. Mykolyne",
+   "description": "Оз. Миколине — озеро у Херсонській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Oz. Mykolyne is a lake in Kherson Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 46.50181,
    "lng": 31.85825,
@@ -25519,12 +25519,12 @@
    "source": "osm"
   },
   {
-   "slug": "syneevo-ozero",
+   "slug": "synieve-ozero",
    "regionSlug": "khmelnytska-oblast",
-   "name": "Синеево озеро",
-   "nameEn": "Syneevo ozero",
-   "description": "Синеево озеро — озеро у Хмельницькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Syneevo ozero is a lake in Khmelnytskyi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Синєве озеро",
+   "nameEn": "Synieve ozero",
+   "description": "Синєве озеро — озеро у Хмельницькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Synieve ozero is a lake in Khmelnytskyi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 49.40509,
    "lng": 27.74083,
@@ -25728,12 +25728,12 @@
    "source": "osm"
   },
   {
-   "slug": "torfiannyk",
+   "slug": "torfianyk",
    "regionSlug": "khmelnytska-oblast",
-   "name": "Торфянник",
-   "nameEn": "Torfiannyk",
-   "description": "Торфянник — озеро у Хмельницькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Torfiannyk is a lake in Khmelnytskyi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Торф'яник",
+   "nameEn": "Torfianyk",
+   "description": "Торф'яник — озеро у Хмельницькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Torfianyk is a lake in Khmelnytskyi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 49.4363,
    "lng": 27.44454,
@@ -25747,12 +25747,12 @@
    "source": "osm"
   },
   {
-   "slug": "terebezhy",
+   "slug": "terebezhi",
    "regionSlug": "khmelnytska-oblast",
-   "name": "Теребежи",
-   "nameEn": "Terebezhy",
-   "description": "Теребежи — озеро у Хмельницькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Terebezhy is a lake in Khmelnytskyi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Теребежі",
+   "nameEn": "Terebezhi",
+   "description": "Теребежі — озеро у Хмельницькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Terebezhi is a lake in Khmelnytskyi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 50.23453,
    "lng": 26.81616,
@@ -25842,7 +25842,7 @@
    "source": "osm"
   },
   {
-   "slug": "ctavok-na-kozatskom-khutore",
+   "slug": "stavok-na-kozatskomu-khutori",
    "regionSlug": "khmelnytska-oblast",
    "name": "Ставок на Козацькому хуторі",
    "nameEn": "Stavok na Kozatskomu khutori",
@@ -27212,9 +27212,9 @@
   {
    "slug": "torfiane-ozero",
    "regionSlug": "cherkaska-oblast",
-   "name": "Торфяне озеро",
+   "name": "Торф'яне озеро",
    "nameEn": "Torfiane ozero",
-   "description": "Торфяне озеро — озеро у Черкаській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "description": "Торф'яне озеро — озеро у Черкаській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
    "descriptionEn": "Torfiane ozero is a lake in Cherkasy Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.99861,
@@ -27326,10 +27326,10 @@
   {
    "slug": "la-gradine",
    "regionSlug": "chernivetska-oblast",
-   "name": "Ла ґрадіне",
-   "nameEn": "La gradine",
-   "description": "Ла ґрадіне — водосховище у Чернівецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "La gradine is a reservoir in Chernivtsi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Ла Ґрадіне",
+   "nameEn": "La Gradine",
+   "description": "Ла Ґрадіне — водосховище у Чернівецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "La Gradine is a reservoir in Chernivtsi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.24108,
    "lng": 26.51267,
@@ -27343,12 +27343,12 @@
    "source": "osm"
   },
   {
-   "slug": "stavok-chiel-marie-kostychany",
+   "slug": "stavok-chel-mare-kostychany",
    "regionSlug": "chernivetska-oblast",
-   "name": "ставок «Чєл Марє» Костичани",
-   "nameEn": "stavok «Chiel Marie» Kostychany",
-   "description": "ставок «Чєл Марє» Костичани — водосховище у Чернівецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "stavok «Chiel Marie» Kostychany is a reservoir in Chernivtsi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Ставок «Чел Маре» Костичани",
+   "nameEn": "Stavok «Chel Mare» Kostychany",
+   "description": "Ставок «Чел Маре» Костичани — водосховище у Чернівецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Stavok «Chel Mare» Kostychany is a reservoir in Chernivtsi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.27105,
    "lng": 26.48394,
@@ -27666,12 +27666,12 @@
    "source": "osm"
   },
   {
-   "slug": "stav-kak-na-pokrovku",
+   "slug": "stav-yak-na-pokrovku",
    "regionSlug": "chernivetska-oblast",
-   "name": "Став как на Покровку",
-   "nameEn": "Stav kak na Pokrovku",
-   "description": "Став как на Покровку — озеро у Чернівецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Stav kak na Pokrovku is a lake in Chernivtsi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Став як на Покровку",
+   "nameEn": "Stav yak na Pokrovku",
+   "description": "Став як на Покровку — озеро у Чернівецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Stav yak na Pokrovku is a lake in Chernivtsi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.5245,
    "lng": 27.11434,
@@ -27951,7 +27951,7 @@
    "source": "osm"
   },
   {
-   "slug": "iazul-de-la-livad",
+   "slug": "stavok-lyvada",
    "regionSlug": "chernivetska-oblast",
    "name": "Ставок Ливада",
    "nameEn": "Stavok Lyvada",
@@ -27972,10 +27972,10 @@
   {
    "slug": "la-brihade",
    "regionSlug": "chernivetska-oblast",
-   "name": "Ла брігаде",
-   "nameEn": "La brihade",
-   "description": "Ла брігаде — озеро у Чернівецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "La brihade is a lake in Chernivtsi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Ла Брігаде",
+   "nameEn": "La Brihade",
+   "description": "Ла Брігаде — озеро у Чернівецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "La Brihade is a lake in Chernivtsi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.24861,
    "lng": 26.48761,
@@ -28426,12 +28426,12 @@
    "source": "osm"
   },
   {
-   "slug": "iazul-lui-mitru-lupoi",
+   "slug": "stavok-mitru-lupoia",
    "regionSlug": "chernivetska-oblast",
-   "name": "Язул луй Мітру Лупой",
-   "nameEn": "Yazul lui Mitru Lupoi",
-   "description": "Язул луй Мітру Лупой — став у Чернівецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Yazul lui Mitru Lupoi is a pond in Chernivtsi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Ставок Мітру Лупоя",
+   "nameEn": "Stavok Mitru Lupoia",
+   "description": "Ставок Мітру Лупоя — став у Чернівецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Stavok Mitru Lupoia is a pond in Chernivtsi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.27103,
    "lng": 26.48813,
@@ -28445,12 +28445,12 @@
    "source": "osm"
   },
   {
-   "slug": "balta-popiei",
+   "slug": "stavok-popeia",
    "regionSlug": "chernivetska-oblast",
-   "name": "Балта попєй",
-   "nameEn": "Balta popiei",
-   "description": "Балта попєй — став у Чернівецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Balta popiei is a pond in Chernivtsi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Ставок Попея",
+   "nameEn": "Stavok Popeia",
+   "description": "Ставок Попея — став у Чернівецькій області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Stavok Popeia is a pond in Chernivtsi Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 48.23632,
    "lng": 26.46691,
@@ -28844,12 +28844,12 @@
    "source": "osm"
   },
   {
-   "slug": "borovoe",
+   "slug": "borove",
    "regionSlug": "chernihivska-oblast",
-   "name": "Боровое",
-   "nameEn": "Borovoe",
-   "description": "Боровое — озеро у Чернігівській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Borovoe is a lake in Chernihiv Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Борове",
+   "nameEn": "Borove",
+   "description": "Борове — озеро у Чернігівській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Borove is a lake in Chernihiv Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 51.62051,
    "lng": 30.57338,
@@ -28865,9 +28865,9 @@
   {
    "slug": "trostenets",
    "regionSlug": "chernihivska-oblast",
-   "name": "Тростенец",
+   "name": "Тростенець",
    "nameEn": "Trostenets",
-   "description": "Тростенец — озеро у Чернігівській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "description": "Тростенець — озеро у Чернігівській області. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
    "descriptionEn": "Trostenets is a lake in Chernihiv Oblast, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 51.61368,
@@ -30991,7 +30991,7 @@
    "source": "osm"
   },
   {
-   "slug": "novoulianovskoe-vodokhranylyshche",
+   "slug": "novoulianivske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Новоульянівське водосховище",
    "nameEn": "Novoulianivske vodoskhovyshche",
@@ -31010,12 +31010,12 @@
    "source": "osm"
   },
   {
-   "slug": "okhotnyche-ozero",
+   "slug": "myslyvske-ozero",
    "regionSlug": "avtonomna-respublika-krym",
-   "name": "Охотничье озеро",
-   "nameEn": "Okhotnyche ozero",
-   "description": "Охотничье озеро — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Okhotnyche ozero is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Мисливське озеро",
+   "nameEn": "Myslyvske ozero",
+   "description": "Мисливське озеро — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Myslyvske ozero is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.65567,
    "lng": 34.00807,
@@ -31029,7 +31029,7 @@
    "source": "osm"
   },
   {
-   "slug": "zelen-i-kordon",
+   "slug": "zelenyi-kordon",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Зелений кордон",
    "nameEn": "Zelenyi kordon",
@@ -31048,7 +31048,7 @@
    "source": "osm"
   },
   {
-   "slug": "ptashkynskoe-vodokhranylyshche",
+   "slug": "ptashkynske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Пташкинське водосховище",
    "nameEn": "Ptashkynske vodoskhovyshche",
@@ -31067,7 +31067,7 @@
    "source": "osm"
   },
   {
-   "slug": "chekur-ly",
+   "slug": "chekur-eli",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Чекур-Елі",
    "nameEn": "Chekur-Eli",
@@ -31086,7 +31086,7 @@
    "source": "osm"
   },
   {
-   "slug": "nyzhnyi-anatrovskyi-prud",
+   "slug": "nyzhnii-anatrivskyi-stav",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Нижній Анатрівський став",
    "nameEn": "Nyzhnii Anatrivskyi stav",
@@ -31124,7 +31124,7 @@
    "source": "osm"
   },
   {
-   "slug": "holuboi-prud",
+   "slug": "blakytnyi-stav",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Блакитний став",
    "nameEn": "Blakytnyi stav",
@@ -31143,7 +31143,7 @@
    "source": "osm"
   },
   {
-   "slug": "protiazhnoi-prud",
+   "slug": "protiazhnyi-stav",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Протяжний став",
    "nameEn": "Protiazhnyi stav",
@@ -31181,7 +31181,7 @@
    "source": "osm"
   },
   {
-   "slug": "fylyppovskyi-prud",
+   "slug": "filippivskyi-stav",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Філіппівський став",
    "nameEn": "Filippivskyi stav",
@@ -31200,12 +31200,12 @@
    "source": "osm"
   },
   {
-   "slug": "vtoroi-stavok",
+   "slug": "druhyi-stavok-3",
    "regionSlug": "avtonomna-respublika-krym",
-   "name": "Второй ставок",
-   "nameEn": "Vtoroi stavok",
-   "description": "Второй ставок — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Vtoroi stavok is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Другий ставок",
+   "nameEn": "Druhyi stavok",
+   "description": "Другий ставок — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Druhyi stavok is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.88644,
    "lng": 34.07222,
@@ -31219,7 +31219,7 @@
    "source": "osm"
   },
   {
-   "slug": "stavok-ymurts",
+   "slug": "stavok-imurtsy",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Ставок Імурци",
    "nameEn": "Stavok Imurtsy",
@@ -31238,12 +31238,12 @@
    "source": "osm"
   },
   {
-   "slug": "konstantynovskoe-ozero",
+   "slug": "kostiantynivske-ozero",
    "regionSlug": "avtonomna-respublika-krym",
-   "name": "Константиновское озеро",
-   "nameEn": "Konstantynovskoe ozero",
-   "description": "Константиновское озеро — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Konstantynovskoe ozero is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Костянтинівське озеро",
+   "nameEn": "Kostiantynivske ozero",
+   "description": "Костянтинівське озеро — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Kostiantynivske ozero is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.84273,
    "lng": 34.11148,
@@ -31257,12 +31257,12 @@
    "source": "osm"
   },
   {
-   "slug": "konstantynovskoe",
+   "slug": "kostiantynivske",
    "regionSlug": "avtonomna-respublika-krym",
-   "name": "Константиновское",
-   "nameEn": "Konstantynovskoe",
-   "description": "Константиновское — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Konstantynovskoe is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Костянтинівське",
+   "nameEn": "Kostiantynivske",
+   "description": "Костянтинівське — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Kostiantynivske is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.8566,
    "lng": 34.12215,
@@ -31276,12 +31276,12 @@
    "source": "osm"
   },
   {
-   "slug": "professorskoe-ozero",
+   "slug": "profesorske-ozero",
    "regionSlug": "avtonomna-respublika-krym",
-   "name": "Профессорское озеро",
-   "nameEn": "Professorskoe ozero",
-   "description": "Профессорское озеро — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Professorskoe ozero is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Професорське озеро",
+   "nameEn": "Profesorske ozero",
+   "description": "Професорське озеро — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Profesorske ozero is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.90816,
    "lng": 34.15022,
@@ -31295,12 +31295,12 @@
    "source": "osm"
   },
   {
-   "slug": "hrushevoe-ozero",
+   "slug": "hrusheve-ozero",
    "regionSlug": "avtonomna-respublika-krym",
-   "name": "Грушевое озеро",
-   "nameEn": "Hrushevoe ozero",
-   "description": "Грушевое озеро — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Hrushevoe ozero is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Грушеве озеро",
+   "nameEn": "Hrusheve ozero",
+   "description": "Грушеве озеро — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Hrusheve ozero is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.85449,
    "lng": 34.14443,
@@ -31352,7 +31352,7 @@
    "source": "osm"
   },
   {
-   "slug": "nov-i-stavok",
+   "slug": "novyi-stavok-3",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Новий ставок",
    "nameEn": "Novyi stavok",
@@ -31390,7 +31390,7 @@
    "source": "osm"
   },
   {
-   "slug": "novos-lovskyi-stavok",
+   "slug": "novosolovskyi-stavok",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Новосьоловський ставок",
    "nameEn": "Novosolovskyi stavok",
@@ -31409,12 +31409,12 @@
    "source": "osm"
   },
   {
-   "slug": "fylatovskaia-zasukha",
+   "slug": "filativska-zasukha",
    "regionSlug": "avtonomna-respublika-krym",
-   "name": "Филатовская Засуха",
-   "nameEn": "Fylatovskaia Zasukha",
-   "description": "Филатовская Засуха — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Fylatovskaia Zasukha is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Філатівська Засуха",
+   "nameEn": "Filativska Zasukha",
+   "description": "Філатівська Засуха — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Filativska Zasukha is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 46.10241,
    "lng": 33.81834,
@@ -31447,12 +31447,12 @@
    "source": "osm"
   },
   {
-   "slug": "aksymentev-iar-1",
+   "slug": "aksymentiv-yar-1",
    "regionSlug": "avtonomna-respublika-krym",
-   "name": "Аксиментьев яр-1",
-   "nameEn": "Aksymentev yar-1",
-   "description": "Аксиментьев яр-1 — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Aksymentev yar-1 is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Аксиментів яр-1",
+   "nameEn": "Aksymentiv yar-1",
+   "description": "Аксиментів яр-1 — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Aksymentiv yar-1 is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.76697,
    "lng": 34.01496,
@@ -31466,7 +31466,7 @@
    "source": "osm"
   },
   {
-   "slug": "ammonytov-i",
+   "slug": "amonitovyi",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Амонітовий",
    "nameEn": "Amonitovyi",
@@ -31485,7 +31485,7 @@
    "source": "osm"
   },
   {
-   "slug": "fynaros-i",
+   "slug": "finaros-i",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Фінарос I",
    "nameEn": "Finaros I",
@@ -31504,7 +31504,7 @@
    "source": "osm"
   },
   {
-   "slug": "fynaros-ii",
+   "slug": "finaros-ii",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Фінарос II",
    "nameEn": "Finaros II",
@@ -31523,7 +31523,7 @@
    "source": "osm"
   },
   {
-   "slug": "synapskoe-vodokhranylyshche",
+   "slug": "synapske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Синапське водосховище",
    "nameEn": "Synapske vodoskhovyshche",
@@ -31542,12 +31542,12 @@
    "source": "osm"
   },
   {
-   "slug": "ai-efym",
+   "slug": "ai-yefym",
    "regionSlug": "avtonomna-respublika-krym",
-   "name": "Ай-Ефим",
-   "nameEn": "Ai-Efym",
-   "description": "Ай-Ефим — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Ai-Efym is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Ай-Єфим",
+   "nameEn": "Ai-Yefym",
+   "description": "Ай-Єфим — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Ai-Yefym is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.60191,
    "lng": 34.34227,
@@ -31561,12 +31561,12 @@
    "source": "osm"
   },
   {
-   "slug": "iubyleinoe",
+   "slug": "yuvileine",
    "regionSlug": "avtonomna-respublika-krym",
-   "name": "Юбилейное",
-   "nameEn": "Yubileinoe lake",
-   "description": "Юбилейное — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Yubileinoe lake is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Ювілейне",
+   "nameEn": "Yuvileine",
+   "description": "Ювілейне — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Yuvileine is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.59944,
    "lng": 34.30621,
@@ -31580,7 +31580,7 @@
    "source": "osm"
   },
   {
-   "slug": "kruhloe-rovnoe",
+   "slug": "kruhle-rivne",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Кругле (Рівне)",
    "nameEn": "Kruhle (Rivne)",
@@ -31618,7 +31618,7 @@
    "source": "osm"
   },
   {
-   "slug": "bel-i-domyk",
+   "slug": "bilyi-domyk",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Білий домик",
    "nameEn": "Bilyi domyk",
@@ -31656,7 +31656,7 @@
    "source": "osm"
   },
   {
-   "slug": "krasnolesckoe-vodokhranylyshche",
+   "slug": "krasnoliske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Красноліське водосховище",
    "nameEn": "Krasnoliske vodoskhovyshche",
@@ -31675,7 +31675,7 @@
    "source": "osm"
   },
   {
-   "slug": "lesnoe-ozero",
+   "slug": "lisove-ozero-4",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Лісове озеро",
    "nameEn": "Lisove ozero",
@@ -31732,7 +31732,7 @@
    "source": "osm"
   },
   {
-   "slug": "lhovskoe-vodokhranylyshche",
+   "slug": "lhivske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Льгівське водосховище",
    "nameEn": "Lhivske vodoskhovyshche",
@@ -31751,7 +31751,7 @@
    "source": "osm"
   },
   {
-   "slug": "chern-i-vod",
+   "slug": "chorni-vody",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Чорні Води",
    "nameEn": "Chorni Vody",
@@ -31770,7 +31770,7 @@
    "source": "osm"
   },
   {
-   "slug": "ozero-s-platnoi-r-balkoi",
+   "slug": "ozero-z-platnoiu-rybolovleiu",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Озеро з платною риболовлею",
    "nameEn": "Ozero z platnoiu rybolovleiu",
@@ -31789,12 +31789,12 @@
    "source": "osm"
   },
   {
-   "slug": "lebiazhe",
+   "slug": "lebediache",
    "regionSlug": "avtonomna-respublika-krym",
-   "name": "Лебяжье",
-   "nameEn": "Lebiazhe",
-   "description": "Лебяжье — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Lebiazhe is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Лебедяче",
+   "nameEn": "Lebediache",
+   "description": "Лебедяче — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Lebediache is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.57672,
    "lng": 33.95772,
@@ -31808,7 +31808,7 @@
    "source": "osm"
   },
   {
-   "slug": "sokolskoe-vodokhranylyshche",
+   "slug": "sokolske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Сокольське водосховище",
    "nameEn": "Sokolske vodoskhovyshche",
@@ -31846,7 +31846,7 @@
    "source": "osm"
   },
   {
-   "slug": "verkhnemohabynskoe-vodokhranylyshche",
+   "slug": "verkhnomohabinske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Верхньомогабінське водосховище",
    "nameEn": "Verkhnomohabinske vodoskhovyshche",
@@ -31865,7 +31865,7 @@
    "source": "osm"
   },
   {
-   "slug": "nyzhnemahobynskoe-vodokhranylyshche",
+   "slug": "nyzhnomahobinske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Нижньомагобінське водосховище",
    "nameEn": "Nyzhnomahobinske vodoskhovyshche",
@@ -31884,7 +31884,7 @@
    "source": "osm"
   },
   {
-   "slug": "b-vshee-vodokhranylyshche",
+   "slug": "kolyshnie-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Колишнє водосховище",
    "nameEn": "Kolyshnie vodoskhovyshche",
@@ -31922,7 +31922,7 @@
    "source": "osm"
   },
   {
-   "slug": "lahuna-vodokhranylyshcha",
+   "slug": "lahuna-vodoskhovyshcha",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Лагуна водосховища",
    "nameEn": "Lahuna vodoskhovyshcha",
@@ -31941,7 +31941,7 @@
    "source": "osm"
   },
   {
-   "slug": "yzobylnenskoe-vodokhranylyshche",
+   "slug": "izobilnenske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Ізобільненське водосховище",
    "nameEn": "Izobilnenske vodoskhovyshche",
@@ -31960,7 +31960,7 @@
    "source": "osm"
   },
   {
-   "slug": "partyzanskoe-vodokhranylyshche",
+   "slug": "partyzanske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Партизанське водосховище",
    "nameEn": "Partyzanske vodoskhovyshche",
@@ -31979,7 +31979,7 @@
    "source": "osm"
   },
   {
-   "slug": "almynskoe-vodokhranylyshche",
+   "slug": "alminske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Альмінське водосховище",
    "nameEn": "Alminske vodoskhovyshche",
@@ -31998,7 +31998,7 @@
    "source": "osm"
   },
   {
-   "slug": "belohorskoe-vodokhranylyshche",
+   "slug": "bilohirske-vodoskhovyshche-2",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Білогірське водосховище",
    "nameEn": "Belogorsk Reservoir",
@@ -32017,7 +32017,7 @@
    "source": "osm"
   },
   {
-   "slug": "balanovskoe-vodokhranylyshche",
+   "slug": "balanivske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Баланівське водосховище",
    "nameEn": "Balanivske vodoskhovyshche",
@@ -32036,7 +32036,7 @@
    "source": "osm"
   },
   {
-   "slug": "symferopolskoe-vodokhranylyshche",
+   "slug": "simferopolske-vodoskhovyshche-2",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Сімферопольське водосховище",
    "nameEn": "Simferopol Reservoir",
@@ -32055,7 +32055,7 @@
    "source": "osm"
   },
   {
-   "slug": "aianskoe-vodokhranylyshche",
+   "slug": "aianske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Аянське водосховище",
    "nameEn": "Aianske vodoskhovyshche",
@@ -32074,7 +32074,7 @@
    "source": "osm"
   },
   {
-   "slug": "starokr-mskoe-vodokhranylyshche",
+   "slug": "starokrymske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Старокримське водосховище",
    "nameEn": "Starokrymskoye Reservoir",
@@ -32093,7 +32093,7 @@
    "source": "osm"
   },
   {
-   "slug": "kutuzovskoe-vodokhranylyshche",
+   "slug": "kutuzovske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Кутузовське водосховище",
    "nameEn": "Kutuzovske vodoskhovyshche",
@@ -32112,7 +32112,7 @@
    "source": "osm"
   },
   {
-   "slug": "zel-noe",
+   "slug": "zelene",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Зелене",
    "nameEn": "Zelene",
@@ -32131,7 +32131,7 @@
    "source": "osm"
   },
   {
-   "slug": "zahorskoe-vodokhranylyshche",
+   "slug": "zahorske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Загорське водосховище",
    "nameEn": "Zahorske vodoskhovyshche",
@@ -32150,7 +32150,7 @@
    "source": "osm"
   },
   {
-   "slug": "astanynskoe-vodokhranylyshche",
+   "slug": "astaninske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Астанінське водосховище",
    "nameEn": "Astaninske vodoskhovyshche",
@@ -32169,7 +32169,7 @@
    "source": "osm"
   },
   {
-   "slug": "frontovoe-vodokhranylyshche",
+   "slug": "frontove-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Фронтове водосховище",
    "nameEn": "Frontove vodoskhovyshche",
@@ -32188,12 +32188,12 @@
    "source": "osm"
   },
   {
-   "slug": "hrushevskoe-ozero",
+   "slug": "hrusheve-ozero-2",
    "regionSlug": "avtonomna-respublika-krym",
-   "name": "Грушевское озеро",
-   "nameEn": "Hrushevskoe ozero",
-   "description": "Грушевское озеро — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Hrushevskoe ozero is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Грушеве озеро",
+   "nameEn": "Hrusheve ozero",
+   "description": "Грушеве озеро — водосховище у Автономній Республіці Крим. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Hrusheve ozero is a reservoir in Autonomous Republic of Crimea, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 45.00899,
    "lng": 34.97353,
@@ -32207,7 +32207,7 @@
    "source": "osm"
   },
   {
-   "slug": "schastlyvenskoe-vodokhranylyshche",
+   "slug": "shchaslyvenske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Щасливенське водосховище",
    "nameEn": "Shchaslyvenske vodoskhovyshche",
@@ -32226,7 +32226,7 @@
    "source": "osm"
   },
   {
-   "slug": "mezhhornoe-vodokhranylyshche",
+   "slug": "mizhhirne-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Міжгірне водосховище",
    "nameEn": "Mexhgornoye Reservoir",
@@ -32245,7 +32245,7 @@
    "source": "osm"
   },
   {
-   "slug": "horlynskoe-vodokhranylyshche",
+   "slug": "horlynske-vodoskhovyshche",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Горлинське водосховище",
    "nameEn": "Horlynske vodoskhovyshche",
@@ -32264,7 +32264,7 @@
    "source": "osm"
   },
   {
-   "slug": "taihanskoe-vodokhranylyshche",
+   "slug": "taihanske-vodoskhovyshche-2",
    "regionSlug": "avtonomna-respublika-krym",
    "name": "Тайганське водосховище",
    "nameEn": "Taygansk Reservoir",
@@ -32283,12 +32283,12 @@
    "source": "osm"
   },
   {
-   "slug": "ozero-verkhnee",
+   "slug": "ozero-verkhnie",
    "regionSlug": "sevastopol",
-   "name": "озеро Верхнее",
-   "nameEn": "ozero Verkhnee",
-   "description": "озеро Верхнее — водосховище у м. Севастополі. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "ozero Verkhnee is a reservoir in Sevastopol, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "озеро Верхнє",
+   "nameEn": "ozero Verkhnie",
+   "description": "озеро Верхнє — водосховище у м. Севастополі. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "ozero Verkhnie is a reservoir in Sevastopol, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.51876,
    "lng": 33.84174,
@@ -32302,12 +32302,12 @@
    "source": "osm"
   },
   {
-   "slug": "ozero-mulovskoe",
+   "slug": "ozero-mulovske",
    "regionSlug": "sevastopol",
-   "name": "озеро Муловское",
-   "nameEn": "ozero Mulovskoe",
-   "description": "озеро Муловское — водосховище у м. Севастополі. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "ozero Mulovskoe is a reservoir in Sevastopol, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "озеро Муловське",
+   "nameEn": "ozero Mulovske",
+   "description": "озеро Муловське — водосховище у м. Севастополі. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "ozero Mulovske is a reservoir in Sevastopol, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.52636,
    "lng": 33.8182,
@@ -32321,7 +32321,7 @@
    "source": "osm"
   },
   {
-   "slug": "chernorechenskoe-vodokhranylyshche",
+   "slug": "chornorichenske-vodoskhovyshche-2",
    "regionSlug": "sevastopol",
    "name": "Чорноріченське водосховище",
    "nameEn": "Chernorechenskoye Reservoir",
@@ -32340,12 +32340,12 @@
    "source": "osm"
   },
   {
-   "slug": "pyrohovskoe",
+   "slug": "pyrohivske",
    "regionSlug": "sevastopol",
-   "name": "Пироговское",
-   "nameEn": "Pyrohovskoe",
-   "description": "Пироговское — озеро у м. Севастополі. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Pyrohovskoe is a lake in Sevastopol, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Пирогівське",
+   "nameEn": "Pyrohivske",
+   "description": "Пирогівське — озеро у м. Севастополі. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Pyrohivske is a lake in Sevastopol, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.68416,
    "lng": 33.7383,
@@ -32359,12 +32359,12 @@
    "source": "osm"
   },
   {
-   "slug": "hasfortovskoe-ozero",
+   "slug": "hasfortovske-ozero",
    "regionSlug": "sevastopol",
-   "name": "Гасфортовское озеро",
-   "nameEn": "Hasfortovskoe ozero",
-   "description": "Гасфортовское озеро — озеро у м. Севастополі. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Hasfortovskoe ozero is a lake in Sevastopol, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Гасфортовське озеро",
+   "nameEn": "Hasfortovske ozero",
+   "description": "Гасфортовське озеро — озеро у м. Севастополі. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Hasfortovske ozero is a lake in Sevastopol, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.52673,
    "lng": 33.6788,
@@ -32378,7 +32378,7 @@
    "source": "osm"
   },
   {
-   "slug": "vodokhranylyshche-kyrpychnoho-zavoda",
+   "slug": "vodoskhovyshche-tsehelnoho-zavodu",
    "regionSlug": "sevastopol",
    "name": "Водосховище цегельного заводу",
    "nameEn": "Vodoskhovyshche tsehelnoho zavodu",
@@ -32397,7 +32397,7 @@
    "source": "osm"
   },
   {
-   "slug": "novaia-plotyna",
+   "slug": "nova-hreblia",
    "regionSlug": "sevastopol",
    "name": "Нова гребля",
    "nameEn": "Nova hreblia",
@@ -32473,12 +32473,12 @@
    "source": "osm"
   },
   {
-   "slug": "nyzhnee-ozero",
+   "slug": "nyzhnie-ozero-2",
    "regionSlug": "sevastopol",
-   "name": "Нижнее Озеро",
-   "nameEn": "Nyzhnee Ozero",
-   "description": "Нижнее Озеро — озеро у м. Севастополі. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Nyzhnee Ozero is a lake in Sevastopol, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Нижнє Озеро",
+   "nameEn": "Nyzhnie Ozero",
+   "description": "Нижнє Озеро — озеро у м. Севастополі. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Nyzhnie Ozero is a lake in Sevastopol, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.50767,
    "lng": 33.81138,
@@ -32492,12 +32492,12 @@
    "source": "osm"
   },
   {
-   "slug": "uzuzhynskoe",
+   "slug": "uzuzhynske",
    "regionSlug": "sevastopol",
-   "name": "Узужинское",
-   "nameEn": "Uzuzhynskoe",
-   "description": "Узужинское — озеро у м. Севастополі. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Uzuzhynskoe is a lake in Sevastopol, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Узужинське",
+   "nameEn": "Uzuzhynske",
+   "description": "Узужинське — озеро у м. Севастополі. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Uzuzhynske is a lake in Sevastopol, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.47599,
    "lng": 33.88129,
@@ -32511,12 +32511,12 @@
    "source": "osm"
   },
   {
-   "slug": "podhornoe",
+   "slug": "pidhirne",
    "regionSlug": "sevastopol",
-   "name": "Подгорное",
-   "nameEn": "Podhornoe",
-   "description": "Подгорное — озеро у м. Севастополі. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
-   "descriptionEn": "Podhornoe is a lake in Sevastopol, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
+   "name": "Підгірне",
+   "nameEn": "Pidhirne",
+   "description": "Підгірне — озеро у м. Севастополі. Дані з OpenStreetMap; уточнюйте умови риболовлі на місці.",
+   "descriptionEn": "Pidhirne is a lake in Sevastopol, Ukraine. Data from OpenStreetMap; check fishing conditions locally.",
    "district": null,
    "lat": 44.457,
    "lng": 33.83313,
@@ -32549,7 +32549,7 @@
    "source": "osm"
   },
   {
-   "slug": "lesnoe",
+   "slug": "lisove-2",
    "regionSlug": "sevastopol",
    "name": "Лісове",
    "nameEn": "Lisove",
@@ -32568,7 +32568,7 @@
    "source": "osm"
   },
   {
-   "slug": "toropov-prud",
+   "slug": "toropiv-stav",
    "regionSlug": "sevastopol",
    "name": "Торопів став",
    "nameEn": "Toropiv stav",
@@ -32587,7 +32587,7 @@
    "source": "osm"
   },
   {
-   "slug": "prud-koniushnia",
+   "slug": "stav-koniushnia",
    "regionSlug": "sevastopol",
    "name": "Став Конюшня",
    "nameEn": "Stav Koniushnia",
@@ -32606,7 +32606,7 @@
    "source": "osm"
   },
   {
-   "slug": "kamenyst-i",
+   "slug": "kamianystyi",
    "regionSlug": "sevastopol",
    "name": "Кам’янистий",
    "nameEn": "Kamianystyi",
@@ -32625,7 +32625,7 @@
    "source": "osm"
   },
   {
-   "slug": "lesnoi",
+   "slug": "lisovyi",
    "regionSlug": "sevastopol",
    "name": "Лісовий",
    "nameEn": "Lisovyi",
@@ -32644,7 +32644,7 @@
    "source": "osm"
   },
   {
-   "slug": "staraia-plotyna",
+   "slug": "stara-hreblia",
    "regionSlug": "sevastopol",
    "name": "Стара гребля",
    "nameEn": "Stara hreblia",

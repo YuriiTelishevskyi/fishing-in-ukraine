@@ -41,6 +41,17 @@
               <div class="gallery__overlay">
                 <span class="gallery__region">📍 {{ w.regionName }}</span>
               </div>
+              @if (w.media[active()].author || w.media[active()].license) {
+                <span class="gallery__credit">
+                  @if (w.media[active()].sourceUrl) {
+                    <a [href]="w.media[active()].sourceUrl" target="_blank" rel="noopener nofollow">
+                      📷 {{ w.media[active()].author || w.media[active()].license }}@if (w.media[active()].author && w.media[active()].license) { · {{ w.media[active()].license }} }
+                    </a>
+                  } @else {
+                    📷 {{ w.media[active()].author || w.media[active()].license }}@if (w.media[active()].author && w.media[active()].license) { · {{ w.media[active()].license }} }
+                  }
+                </span>
+              }
             </div>
             @if (w.media.length > 1) {
               <div class="gallery__thumbs">

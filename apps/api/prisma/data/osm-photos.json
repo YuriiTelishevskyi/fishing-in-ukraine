@@ -1,0 +1,929 @@
+{
+  "_note": "Geo-harvested photos (Wikimedia Commons / Wikidata), matched by coordinates and LLM-verified. CC-licensed; attribution in author/license/sourceUrl. Generated, do not hand-edit.",
+  "photos": {
+    "karlivskyi-stavok": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/%D0%9A%D0%B0%D1%80%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D1%82%D0%B0%D0%B2%D0%BE%D0%BA_-_panoramio.jpg",
+      "alt": "Карлівський ставок",
+      "author": "maxsov",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D1%80%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D1%82%D0%B0%D0%B2%D0%BE%D0%BA_-_panoramio.jpg"
+    },
+    "hrushevoe-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/%D0%93%D1%80%D1%83%D1%88%D0%B5%D0%B2%D0%BE%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%281%29.jpg",
+      "alt": "Грушевое озеро",
+      "author": "Legioner2016",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%93%D1%80%D1%83%D1%88%D0%B5%D0%B2%D0%BE%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_(1).jpg"
+    },
+    "hnylusha-2": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%93%D0%BD%D0%B8%D0%BB%D1%83%D1%88%D0%B0_01.JPG",
+      "alt": "Гнилуша",
+      "author": "Сарапулов",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%93%D0%BD%D0%B8%D0%BB%D1%83%D1%88%D0%B0_01.JPG"
+    },
+    "mertve-ozero-4": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/%D0%A0%D0%9B%D0%9F_%D0%9C%D0%B0%D0%BB%D1%8C%D0%BE%D0%B2%D0%B0%D0%BD%D0%BA%D0%B0._%D0%9F%D0%BE%D0%BB%D0%BE%D0%BD%D1%81%D1%8C%D0%BA%D0%B5_%D0%BB-%D0%B2%D0%BE_%28%D0%9C%D0%B5%D1%80%D1%82%D0%B2%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE%29._%D0%9A%D1%80%D0%B8%D0%B6%D0%B5%D0%BD%D1%8C._2017-07-30.jpg",
+      "alt": "Мертве озеро",
+      "author": "Olexandr Ghryb",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A0%D0%9B%D0%9F_%D0%9C%D0%B0%D0%BB%D1%8C%D0%BE%D0%B2%D0%B0%D0%BD%D0%BA%D0%B0._%D0%9F%D0%BE%D0%BB%D0%BE%D0%BD%D1%81%D1%8C%D0%BA%D0%B5_%D0%BB-%D0%B2%D0%BE_(%D0%9C%D0%B5%D1%80%D1%82%D0%B2%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE)._%D0%9A%D1%80%D0%B8%D0%B6%D0%B5%D0%BD%D1%8C._2017-07-30.jpg"
+    },
+    "sofiivske-vodoskhovyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Sofiyivskiy_reservoir.jpg",
+      "alt": "Софіївське водосховище",
+      "author": "Ветер",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sofiyivskiy_reservoir.jpg"
+    },
+    "barvinok": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%91%D0%B0%D1%80%D0%B2%D1%96%D0%BD%D0%BE%D0%BA_2014-04-27_00-58.jpg",
+      "alt": "Барвінок",
+      "author": "User:Анастасія93",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%91%D0%B0%D1%80%D0%B2%D1%96%D0%BD%D0%BE%D0%BA_2014-04-27_00-58.jpg"
+    },
+    "malosmilianskyi-kar-ier": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/%D0%9C%D0%B0%D0%BB%D0%BE%D1%81%D0%BC%D1%96%D0%BB%D1%8F%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D1%80%27%D1%94%D1%80.jpg",
+      "alt": "Малосмілянський кар'єр",
+      "author": "Ілона Москаленко",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D0%BB%D0%BE%D1%81%D0%BC%D1%96%D0%BB%D1%8F%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D1%80'%D1%94%D1%80.jpg"
+    },
+    "solonets-tuzly": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/%D0%9D%D0%B0_%D0%BE%D0%B7%D0%B5%D1%80%D1%96_%D0%A1%D0%BE%D0%BB%D0%BE%D0%BD%D0%B5%D1%86%D1%8C-%D0%A2%D1%83%D0%B7%D0%BB%D0%B8.JPG",
+      "alt": "Солонець Тузли",
+      "author": "Mezinov Alexey Viktorovich",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0_%D0%BE%D0%B7%D0%B5%D1%80%D1%96_%D0%A1%D0%BE%D0%BB%D0%BE%D0%BD%D0%B5%D1%86%D1%8C-%D0%A2%D1%83%D0%B7%D0%BB%D0%B8.JPG"
+    },
+    "redkyne-ozero-ministerske": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%A0%D0%B5%D0%B4%D1%8C%D0%BA%D0%B8%D0%BD%D0%B5_02.jpg",
+      "alt": "Редькине озеро (Міністерське)",
+      "author": "Юровский Александр",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%A0%D0%B5%D0%B4%D1%8C%D0%BA%D0%B8%D0%BD%D0%B5_02.jpg"
+    },
+    "ozero-synie": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Blue_lake_in_Kiev.jpg",
+      "alt": "озеро Синє",
+      "author": "Skaerman",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blue_lake_in_Kiev.jpg"
+    },
+    "rezervuar-kyivskoi-haes": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/%D0%92%D0%B5%D1%80%D1%85%D0%BD%D1%96%D0%B9_%D0%B1%D0%B0%D1%81%D0%B5%D0%B9%D0%BD_%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%93%D0%90%D0%95%D0%A1.jpg",
+      "alt": "Резервуар Київської ГАЕС",
+      "author": "Shmyhora",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B5%D1%80%D1%85%D0%BD%D1%96%D0%B9_%D0%B1%D0%B0%D1%81%D0%B5%D0%B9%D0%BD_%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%93%D0%90%D0%95%D0%A1.jpg"
+    },
+    "skoropadske-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/%D0%A1%D0%BA%D0%BE%D1%80%D0%BE%D0%BF%D0%B0%D0%B4%D1%81%D1%8C%D0%BA%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D1%83_%D0%93%D0%BB%D1%83%D1%85%D0%BE%D0%B2%D1%96_%28%D0%92%D0%B8%D0%B3%D0%BB%D1%8F%D0%B4_1%29.jpg",
+      "alt": "Скоропадське озеро",
+      "author": "Сіверян",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%BA%D0%BE%D1%80%D0%BE%D0%BF%D0%B0%D0%B4%D1%81%D1%8C%D0%BA%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D1%83_%D0%93%D0%BB%D1%83%D1%85%D0%BE%D0%B2%D1%96_(%D0%92%D0%B8%D0%B3%D0%BB%D1%8F%D0%B4_1).jpg"
+    },
+    "lisove": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/%D0%9B%D1%96%D1%81%D0%BE%D0%B2%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D1%83_%D0%B2%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D1%96_-_panoramio.jpg",
+      "alt": "Лісове",
+      "author": "StrickMasja",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9B%D1%96%D1%81%D0%BE%D0%B2%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D1%83_%D0%B2%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D1%96_-_panoramio.jpg"
+    },
+    "taihanskoe-vodokhranylyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/%D0%A2%D0%B0%D0%B9%D0%B3%D0%B0%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8C_2016.jpg",
+      "alt": "Тайганское водохранилище",
+      "author": "Пользователь Kievlyanin Dikiy",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A2%D0%B0%D0%B9%D0%B3%D0%B0%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8C_2016.jpg"
+    },
+    "buchak-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%91%D1%83%D1%87%D0%B0%D0%BA_01.JPG",
+      "alt": "Бучак озеро",
+      "author": "A1",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%91%D1%83%D1%87%D0%B0%D0%BA_01.JPG"
+    },
+    "kunihunda": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/%D0%A1%D0%BE%D0%BB%D0%B5%D0%BD%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%9A%D1%83%D0%BD%D1%96%D0%B3%D1%83%D0%BD%D0%B4%D0%B0.jpg",
+      "alt": "Кунігунда",
+      "author": "Nataliia Madzhara",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%BE%D0%BB%D0%B5%D0%BD%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%9A%D1%83%D0%BD%D1%96%D0%B3%D1%83%D0%BD%D0%B4%D0%B0.jpg"
+    },
+    "verkhnie-vyhurivske": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/%D0%A2%D1%80%D0%BE%D1%94%D1%89%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D1%96_%D0%BB%D1%83%D0%BA%D0%B8%2C_%D0%92%D0%B5%D1%80%D1%85%D0%BD%D1%94_%D0%92%D0%B8%D0%B3%D1%83%D1%80%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE%2C_%D0%9A%D0%B8%D1%97%D0%B2_03.jpg",
+      "alt": "Верхнє Вигурівське",
+      "author": "Kiyanka",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A2%D1%80%D0%BE%D1%94%D1%89%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D1%96_%D0%BB%D1%83%D0%BA%D0%B8%2C_%D0%92%D0%B5%D1%80%D1%85%D0%BD%D1%94_%D0%92%D0%B8%D0%B3%D1%83%D1%80%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE%2C_%D0%9A%D0%B8%D1%97%D0%B2_03.jpg"
+    },
+    "rosokhan": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%A0%D0%BE%D1%81%D0%BE%D1%85%D0%B0%D0%BD.jpg",
+      "alt": "Росохан",
+      "author": "Halja1306",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%A0%D0%BE%D1%81%D0%BE%D1%85%D0%B0%D0%BD.jpg"
+    },
+    "vytok-r-borzhava": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%BD%D0%B0_%D0%BF%D0%BE%D0%BB%D0%BE%D0%BD%D0%B8%D0%BD%D1%96_%D0%91%D0%BE%D1%80%D0%B6%D0%B0%D0%B2%D0%B0_2.jpg",
+      "alt": "Виток р. Боржава",
+      "author": "Габріел Гаврилович Гуштан",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%BD%D0%B0_%D0%BF%D0%BE%D0%BB%D0%BE%D0%BD%D0%B8%D0%BD%D1%96_%D0%91%D0%BE%D1%80%D0%B6%D0%B0%D0%B2%D0%B0_2.jpg"
+    },
+    "zalozetskyi-stav": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/%D0%97%D0%B0%D0%BB%D0%BE%D0%B7%D0%B5%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D1%81%D1%82%D0%B0%D0%B2_01.jpg",
+      "alt": "Залозецький став",
+      "author": "Map hobby",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%97%D0%B0%D0%BB%D0%BE%D0%B7%D0%B5%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D1%81%D1%82%D0%B0%D0%B2_01.jpg"
+    },
+    "rohozianske-vodoskhovyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D0%B1%D1%80%D0%BE%D1%81_%D0%A0%D0%BE%D0%B3%D0%BE%D0%B7%D1%8F%D0%BD%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B2%D0%B4%D1%85%D1%80.jpg",
+      "alt": "Рогозянське водосховище",
+      "author": "Turisst",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D0%B1%D1%80%D0%BE%D1%81_%D0%A0%D0%BE%D0%B3%D0%BE%D0%B7%D1%8F%D0%BD%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B2%D0%B4%D1%85%D1%80.jpg"
+    },
+    "ozertse": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/be/%D0%9E%D0%B7%D1%96%D1%80%D1%86%D0%B51.jpg",
+      "alt": "Озерце",
+      "author": "Yurii-mr",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D1%96%D1%80%D1%86%D0%B51.jpg"
+    },
+    "starokr-mskoe-vodokhranylyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/%D0%A1%D1%82%D0%B0%D1%80%D0%BE%D0%BA%D1%80%D1%8B%D0%BC%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5.jpg",
+      "alt": "Старокрымское водохранилище",
+      "author": "http://wikimapia.org/#lang=ru&amp;lat=45.018214&amp;lon=35.123978&amp;z=14&amp;m=b&amp;show=/user/393666",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A1%D1%82%D0%B0%D1%80%D0%BE%D0%BA%D1%80%D1%8B%D0%BC%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5.jpg"
+    },
+    "isakivske-vodoskhovyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/%D0%98%D1%81%D0%B0%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%B4%D1%85%D1%80.jpg",
+      "alt": "Ісаківське водосховище",
+      "author": "w:ru:Владимир Рар (talk | contribs)",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%98%D1%81%D0%B0%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%B4%D1%85%D1%80.jpg"
+    },
+    "hlyboke-ozero-2": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%93%D0%BB%D0%B8%D0%B1%D0%BE%D0%BA%D0%B5_%D0%BD%D0%B0_%D0%A2%D1%80%D1%83%D1%85%D0%B0%D0%BD%D0%BE%D0%B2%D0%BE%D0%BC%D1%83_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%96.jpg",
+      "alt": "Глибоке озеро",
+      "author": "Alexey laa",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%93%D0%BB%D0%B8%D0%B1%D0%BE%D0%BA%D0%B5_%D0%BD%D0%B0_%D0%A2%D1%80%D1%83%D1%85%D0%B0%D0%BD%D0%BE%D0%B2%D0%BE%D0%BC%D1%83_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%96.jpg"
+    },
+    "osoha": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Osoga_Wimlja_01.jpg",
+      "alt": "Осога",
+      "author": "DoroshenkoE",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Osoga_Wimlja_01.jpg"
+    },
+    "fynaros-ii": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Finaros_1.JPG",
+      "alt": "Финарос II",
+      "author": "Kosun",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Finaros_1.JPG"
+    },
+    "vorozheske-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%92%D0%BE%D1%80%D0%BE%D0%B6%D0%B5%D1%81%D1%8C%D0%BA%D0%B5_%D1%82%D0%B0_%D0%A1%D0%B2%D0%B8%D0%B4%D0%BE%D0%B2%D0%B5%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D1%85%D1%80%D0%B5%D0%B1%D0%B5%D1%82.jpg",
+      "alt": "Ворожеське озеро",
+      "author": "Nata Mostova",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%92%D0%BE%D1%80%D0%BE%D0%B6%D0%B5%D1%81%D1%8C%D0%BA%D0%B5_%D1%82%D0%B0_%D0%A1%D0%B2%D0%B8%D0%B4%D0%BE%D0%B2%D0%B5%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D1%85%D1%80%D0%B5%D0%B1%D0%B5%D1%82.jpg"
+    },
+    "khoma": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Zazymya_Khoma_lake12.JPG",
+      "alt": "Хома",
+      "author": "Аимаина хикари",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zazymya_Khoma_lake12.JPG"
+    },
+    "pershe-pohorile-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Kherson%2C_%22Stebleevsky%22_Lyman%2C_one_of_the_channels_of_the_lake_%22Pogoreloe-Pervoe%22_-_panoramio.jpg",
+      "alt": "Перше Погоріле озеро",
+      "author": "7777777kz",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kherson%2C_%22Stebleevsky%22_Lyman%2C_one_of_the_channels_of_the_lake_%22Pogoreloe-Pervoe%22_-_panoramio.jpg"
+    },
+    "oz-malynivka": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%9C%D0%B0%D0%BB%D0%B8%D0%BD%D1%96%D0%B2%D0%BA%D0%B0%2C_%D0%BC._%D0%9A%D0%B8%D1%97%D0%B2_04.jpg",
+      "alt": "оз. Малинівка",
+      "author": "Kiyanka",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%9C%D0%B0%D0%BB%D0%B8%D0%BD%D1%96%D0%B2%D0%BA%D0%B0%2C_%D0%BC._%D0%9A%D0%B8%D1%97%D0%B2_04.jpg"
+    },
+    "vyshenske-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/%D0%92%D0%B8%D1%88%D0%B5%D0%BD%D1%81%D1%8C%D0%BA%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%B2%D0%BB%D1%96%D1%82%D0%BA%D1%83.jpg",
+      "alt": "Вишенське озеро",
+      "author": "Andriimoroz0405",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D1%88%D0%B5%D0%BD%D1%81%D1%8C%D0%BA%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%B2%D0%BB%D1%96%D1%82%D0%BA%D1%83.jpg"
+    },
+    "sudivske-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/-%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%A1%D1%83%D0%B4%D0%B5%D0%B2%D1%81%D1%8C%D0%BA%D0%B5.jpg",
+      "alt": "Судівське озеро",
+      "author": "Igorpysh",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:-%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%A1%D1%83%D0%B4%D0%B5%D0%B2%D1%81%D1%8C%D0%BA%D0%B5.jpg"
+    },
+    "pohorile-ozero-2": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Lake_Pohorile.jpg",
+      "alt": "Погоріле озеро",
+      "author": "Yuriy Kvach",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lake_Pohorile.jpg"
+    },
+    "lhovskoe-vodokhranylyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/%D0%9B%D1%8C%D0%B3%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_1.jpg",
+      "alt": "Льговское водохранилище",
+      "author": "Kosun",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9B%D1%8C%D0%B3%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_1.jpg"
+    },
+    "cheremoshne-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Lyshnivka_Manevytskyi_Volynska-Cheremskyi_strict_nature_reserve-Cheremske_lake_panorama.jpg",
+      "alt": "Черемошне озеро",
+      "author": "Viacheslav Galievskyi",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lyshnivka_Manevytskyi_Volynska-Cheremskyi_strict_nature_reserve-Cheremske_lake_panorama.jpg"
+    },
+    "krasnodonskyi-karer": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%BE%D0%BD_%D1%81%D0%BE_%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D1%8B_%D0%BA%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0_-_panoramio.jpg",
+      "alt": "\"Краснодонский карьер\"",
+      "author": "TurboMакс",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%BE%D0%BD_%D1%81%D0%BE_%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D1%8B_%D0%BA%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0_-_panoramio.jpg"
+    },
+    "povurske-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Povorsk_Kovelskyi_Volynska-Ozero_Povorske_nature_reserve-western_shore_of_the_lake-1.jpg",
+      "alt": "Повурське озеро",
+      "author": "Viacheslav Galievskyi",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Povorsk_Kovelskyi_Volynska-Ozero_Povorske_nature_reserve-western_shore_of_the_lake-1.jpg"
+    },
+    "pashala": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Pashala_2.jpg",
+      "alt": "Пашала",
+      "author": "http://wikimapia.org/#lang=ru&amp;lat=44.836152&amp;lon=34.638176&amp;z=12&amp;m=b&amp;show=/user/1805675/",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pashala_2.jpg"
+    },
+    "donetske-more": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/%D0%98%D1%8E%D0%BD%D1%8C_2009_-_panoramio.jpg",
+      "alt": "Донецьке море",
+      "author": "Валерий Дед",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%98%D1%8E%D0%BD%D1%8C_2009_-_panoramio.jpg"
+    },
+    "molodizhnyi": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/%D0%A1%D1%82%D0%B0%D0%B2%D0%BE%D0%BA_%22%D0%9C%D0%BE%D0%BB%D0%BE%D0%B4%D1%96%D0%B6%D0%BA%D0%B0%22_%D1%83_%D0%B3%D1%80%D1%83%D0%B4%D0%BD%D1%96.jpg",
+      "alt": "Молодіжний",
+      "author": "SergiyGud",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A1%D1%82%D0%B0%D0%B2%D0%BE%D0%BA_%22%D0%9C%D0%BE%D0%BB%D0%BE%D0%B4%D1%96%D0%B6%D0%BA%D0%B0%22_%D1%83_%D0%B3%D1%80%D1%83%D0%B4%D0%BD%D1%96.jpg"
+    },
+    "apshynets": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%90%D0%BF%D1%88%D0%B8%D0%BD%D0%B5%D1%86%D1%8C.jpg",
+      "alt": "Апшинець",
+      "author": "Wereskowa",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%90%D0%BF%D1%88%D0%B8%D0%BD%D0%B5%D1%86%D1%8C.jpg"
+    },
+    "prybabyne-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/%D0%91%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_-_panoramio.jpg",
+      "alt": "Прибабине озеро",
+      "author": "StrickMasja",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_-_panoramio.jpg"
+    },
+    "zhukivskyi-stav": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/%D0%A1%D1%82%D0%B0%D0%B2_%D0%B1%D1%96%D0%BB%D1%8F_%D1%81%D0%B5%D0%BB%D0%B0_%D0%96%D1%83%D0%BA%D1%96%D0%B2.jpg",
+      "alt": "Жуківський став",
+      "author": "Петро Грушко",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A1%D1%82%D0%B0%D0%B2_%D0%B1%D1%96%D0%BB%D1%8F_%D1%81%D0%B5%D0%BB%D0%B0_%D0%96%D1%83%D0%BA%D1%96%D0%B2.jpg"
+    },
+    "trostne-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Karasyn_Kamin-Kashyrskyi_Volynska-Trosne_lake-panorama-1.jpg",
+      "alt": "Тростне озеро",
+      "author": "Viacheslav Galievskyi",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Karasyn_Kamin-Kashyrskyi_Volynska-Trosne_lake-panorama-1.jpg"
+    },
+    "pilnooleksynetskyi-stav": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/%D0%9F%D1%96%D0%BB%D1%8C%D0%BD%D0%BE%D0%BE%D0%BB%D0%B5%D0%BA%D1%81%D0%B8%D0%BD%D0%B5%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D1%81%D1%82%D0%B0%D0%B2_%D1%83_%D1%82%D1%80%D0%B0%D0%B2%D0%BD%D1%96.jpg",
+      "alt": "Пільноолексинецький став",
+      "author": "ЯдвигаВереск",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9F%D1%96%D0%BB%D1%8C%D0%BD%D0%BE%D0%BE%D0%BB%D0%B5%D0%BA%D1%81%D0%B8%D0%BD%D0%B5%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D1%81%D1%82%D0%B0%D0%B2_%D1%83_%D1%82%D1%80%D0%B0%D0%B2%D0%BD%D1%96.jpg"
+    },
+    "tarnorudske-vodoskhovyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%A2%D0%B0%D1%80%D0%BD%D0%BE%D1%80%D1%83%D0%B4%D1%83.jpg",
+      "alt": "Тарнорудське водосховище",
+      "author": "Mayherav",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%A2%D0%B0%D1%80%D0%BD%D0%BE%D1%80%D1%83%D0%B4%D1%83.jpg"
+    },
+    "port-ochakiv": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/%D0%9E%D0%B4%D0%B8%D0%BD_%D1%96%D0%B7_%D0%BE%D1%87%D0%B0%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D1%85_%D0%BF%D1%80%D0%B8%D1%87%D0%B0%D0%BB%D1%96%D0%B2.jpg",
+      "alt": "Порт Очаків",
+      "author": "Г.Онкович",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B4%D0%B8%D0%BD_%D1%96%D0%B7_%D0%BE%D1%87%D0%B0%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D1%85_%D0%BF%D1%80%D0%B8%D1%87%D0%B0%D0%BB%D1%96%D0%B2.jpg"
+    },
+    "kanivske-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/%D0%9A%D1%80%D0%B0%D1%94%D0%B2%D0%B8%D0%B4_%D0%9A%D0%B0%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0.jpg",
+      "alt": "Канівське озеро",
+      "author": "Anna Kuzemko",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D1%80%D0%B0%D1%94%D0%B2%D0%B8%D0%B4_%D0%9A%D0%B0%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B0.jpg"
+    },
+    "jezioro-woronica": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Woronica_Bysz%C3%B3w_A52_B40_%28Z_9_K_XXXII%291925.jpg",
+      "alt": "Jezioro Woronica",
+      "author": "Unknown authorUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Woronica_Bysz%C3%B3w_A52_B40_(Z_9_K_XXXII)1925.jpg"
+    },
+    "ozero-im-durova": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/%D0%9E%D0%B7._%D0%94%D1%83%D1%80%D0%BE%D0%B2%D0%B0_-_panoramio.jpg",
+      "alt": "озеро ім. Дурова",
+      "author": "Кирилл Фомин",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7._%D0%94%D1%83%D1%80%D0%BE%D0%B2%D0%B0_-_panoramio.jpg"
+    },
+    "muzychnyi-fontan": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/%D0%A4%D0%BE%D0%BD%D1%82%D0%B0%D0%BD_%D1%82%D0%B0_%D1%8F%D0%BB%D0%B8%D0%BD%D0%B0.jpg",
+      "alt": "Музичний фонтан",
+      "author": "Natalia Parkhomenko",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D0%BD%D1%82%D0%B0%D0%BD_%D1%82%D0%B0_%D1%8F%D0%BB%D0%B8%D0%BD%D0%B0.jpg"
+    },
+    "bilka": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Kyiv_Bile_Lake_on_Nyvka_River_1.jpg",
+      "alt": "Білка",
+      "author": "von_Blitz",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kyiv_Bile_Lake_on_Nyvka_River_1.jpg"
+    },
+    "lapuha": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/7%D0%B4%D0%B6%D0%B5%D1%80%D0%B5%D0%BB_03.jpg",
+      "alt": "Лапуга",
+      "author": "Max Zubov",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:7%D0%B4%D0%B6%D0%B5%D1%80%D0%B5%D0%BB_03.jpg"
+    },
+    "zaryvakha": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Zaryvakha_76_full.jpg",
+      "alt": "Зариваха",
+      "author": "antikrot",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zaryvakha_76_full.jpg"
+    },
+    "berezhyste-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Sushybaba_Turiiskyi_Volynska-Ozerianskyi_nature_reserve-Berezhyste_lake-4.jpg",
+      "alt": "Бережисте озеро",
+      "author": "Viacheslav Galievskyi",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sushybaba_Turiiskyi_Volynska-Ozerianskyi_nature_reserve-Berezhyste_lake-4.jpg"
+    },
+    "maricheika": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/%D0%91%D1%96%D0%BB%D1%8F_%D0%BE.%D0%9C%D0%B0%D1%80%D1%96%D1%87%D0%B5%D0%B9%D0%BA%D0%B0.jpg",
+      "alt": "Марічейка",
+      "author": "Zysko serhii",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%91%D1%96%D0%BB%D1%8F_%D0%BE.%D0%9C%D0%B0%D1%80%D1%96%D1%87%D0%B5%D0%B9%D0%BA%D0%B0.jpg"
+    },
+    "artsklady": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%B1%D1%96%D0%BB%D1%8F_%D0%B0%D1%80%D1%82%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D1%96%D0%B2_04.jpg",
+      "alt": "Артсклади",
+      "author": "Oleh Kushch",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%B1%D1%96%D0%BB%D1%8F_%D0%B0%D1%80%D1%82%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D1%96%D0%B2_04.jpg"
+    },
+    "nyzhnii-telbin": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Nyzhniy_Telbin_lake_99_full.jpg",
+      "alt": "Нижній Тельбін",
+      "author": "ArtemKo",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nyzhniy_Telbin_lake_99_full.jpg"
+    },
+    "kryvave-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/%D0%A0%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BD%D0%B8_%D1%96_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D0%B2%D0%B5.jpg",
+      "alt": "Криваве озеро",
+      "author": "Misha Reme",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A0%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BD%D0%B8_%D1%96_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D0%B2%D0%B5.jpg"
+    },
+    "bezdonne-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Abyssal_lake_-_panoramio_%284%29.jpg",
+      "alt": "Бездонне озеро",
+      "author": "veetaleey",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abyssal_lake_-_panoramio_(4).jpg"
+    },
+    "verkhnie-ozero-2": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/%D0%92%D0%B5%D1%80%D1%85%D0%BD%D0%B8%D0%B9_%D0%BF%D1%80%D1%83%D0%B4_%D0%B2_%D0%9A%D1%80%D1%83%D0%B3%D0%BB%D0%B8%D0%BA%D0%B5_-_Upper_pond_in_Kruhlyk_-_panoramio.jpg",
+      "alt": "Верхнє озеро",
+      "author": "Matvey Andreyev",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B5%D1%80%D1%85%D0%BD%D0%B8%D0%B9_%D0%BF%D1%80%D1%83%D0%B4_%D0%B2_%D0%9A%D1%80%D1%83%D0%B3%D0%BB%D0%B8%D0%BA%D0%B5_-_Upper_pond_in_Kruhlyk_-_panoramio.jpg"
+    },
+    "ozero-voronkivske": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%B8_DSCF0909.jpg",
+      "alt": "озеро Воронківське",
+      "author": "Petruniak",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%B8_DSCF0909.jpg"
+    },
+    "kalchytske-vodoskhovyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/%D0%9A%D0%B0%D0%BB%D1%8C%D1%87%D0%B8%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BD%D0%B8%D0%BA%2C_%D0%9A%D0%B0%D0%BB%D1%8C%D1%87%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5%2C_%D0%9D%D1%96%D0%BA%D0%BE%D0%BB%D1%8C%D1%81%D1%8C%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%80-%D0%BD%2C_%D0%B1%D1%96%D0%BB%D1%8F_%D1%81%D0%B5%D0%BB%D0%B0_%D0%A8%D0%B5%D0%B2%D1%87%D0%B5%D0%BD%D0%BA%D0%BE.jpg",
+      "alt": "Кальчицьке водосховище",
+      "author": "Петро Халява",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D0%BB%D1%8C%D1%87%D0%B8%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BD%D0%B8%D0%BA%2C_%D0%9A%D0%B0%D0%BB%D1%8C%D1%87%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5%2C_%D0%9D%D1%96%D0%BA%D0%BE%D0%BB%D1%8C%D1%81%D1%8C%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%80-%D0%BD%2C_%D0%B1%D1%96%D0%BB%D1%8F_%D1%81%D0%B5%D0%BB%D0%B0_%D0%A8%D0%B5%D0%B2%D1%87%D0%B5%D0%BD%D0%BA%D0%BE.jpg"
+    },
+    "tseleben": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Zastavne_Ivanychivskyi_Volynska-Zastavnenskyi_nature_reserve-Tselebne_lake_from_east.jpg",
+      "alt": "Целебень",
+      "author": "Viacheslav Galievskyi",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zastavne_Ivanychivskyi_Volynska-Zastavnenskyi_nature_reserve-Tselebne_lake_from_east.jpg"
+    },
+    "okhotnyche-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_-_panoramio_%287%29.jpg",
+      "alt": "Охотничье озеро",
+      "author": "Дмитрий Cкляренко",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_-_panoramio_(7).jpg"
+    },
+    "sribnyi-kil": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Sribnyi_Kil_31_full.jpg",
+      "alt": "Срібний Кіл",
+      "author": "ArtemKo",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sribnyi_Kil_31_full.jpg"
+    },
+    "babychev-stavok": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Babychiv_Pond.jpg",
+      "alt": "Бабичев ставок",
+      "author": "Svetlov Artem",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Babychiv_Pond.jpg"
+    },
+    "zhuravlyne": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Zhuravlyne_ozero.jpg",
+      "alt": "Журавлине",
+      "author": "Medoffer",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zhuravlyne_ozero.jpg"
+    },
+    "shmankivskyi-stav": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/%D0%A8%D0%BC%D0%B0%D0%BD%D1%8C%D0%BA%D1%96%D0%B2%D1%86%D1%96_-_%D0%A1%D1%82%D0%B0%D0%B2_-_1.jpg",
+      "alt": "Шманьківський став",
+      "author": "Максим Огородник",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A8%D0%BC%D0%B0%D0%BD%D1%8C%D0%BA%D1%96%D0%B2%D1%86%D1%96_-_%D0%A1%D1%82%D0%B0%D0%B2_-_1.jpg"
+    },
+    "zuievske-vodoskhovyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/%D0%9D%D0%B0_%D0%97%D1%83%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%BC_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5.jpg",
+      "alt": "Зуєвське водосховище",
+      "author": "Анатолий и Людмила Гришаковы",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0_%D0%97%D1%83%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%BC_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5.jpg"
+    },
+    "moshne": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Sylne_Liubomlskyi_Volynska-Moshne_nature_reserve-view_of_the_eastern_shore_of_the_lake.jpg",
+      "alt": "Мошне",
+      "author": "Viacheslav Galievskyi",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sylne_Liubomlskyi_Volynska-Moshne_nature_reserve-view_of_the_eastern_shore_of_the_lake.jpg"
+    },
+    "sychavskyi-stav": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Sychavka_pond.JPG",
+      "alt": "Сичавський став",
+      "author": "Minami Himemiya",
+      "license": "CC BY-SA 2.5",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sychavka_pond.JPG"
+    },
+    "zahorskoe-vodokhranylyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Urmek_1.jpg",
+      "alt": "Загорское водохранилище",
+      "author": "kaevi",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Urmek_1.jpg"
+    },
+    "berizka": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/%D0%9D%D0%B0_%D0%B1%D0%B5%D1%80%D0%B5%D0%B7%D1%96_%D0%BE%D0%B7%D0%B5%D1%80%D0%B0_%D0%91%D0%B5%D1%80%D1%96%D0%B7%D0%BA%D0%B0_01.jpg",
+      "alt": "Берізка",
+      "author": "Sergij Pylypenko",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0_%D0%B1%D0%B5%D1%80%D0%B5%D0%B7%D1%96_%D0%BE%D0%B7%D0%B5%D1%80%D0%B0_%D0%91%D0%B5%D1%80%D1%96%D0%B7%D0%BA%D0%B0_01.jpg"
+    },
+    "pidvolochyske-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/%D0%9F%D1%96%D0%B4%D0%B2%D0%BE%D0%BB%D0%BE%D1%87%D0%B8%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%81%D1%82%D0%B0%D0%B2.jpg",
+      "alt": "Підволочиське озеро",
+      "author": "ЯдвигаВереск",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9F%D1%96%D0%B4%D0%B2%D0%BE%D0%BB%D0%BE%D1%87%D0%B8%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%81%D1%82%D0%B0%D0%B2.jpg"
+    },
+    "kar-ier-5": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/%D0%93%D0%BE%D0%BB%D0%BE%D0%B2%D1%87%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D1%80%D1%94%D1%80.jpg",
+      "alt": "Кар'єр",
+      "author": "Zysko serhii",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%93%D0%BE%D0%BB%D0%BE%D0%B2%D1%87%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D1%80%D1%94%D1%80.jpg"
+    },
+    "arshytsia": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%90%D1%80%D1%88%D0%B8%D1%86%D1%8F.jpg",
+      "alt": "Аршиця",
+      "author": "Seencleyr",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%90%D1%80%D1%88%D0%B8%D1%86%D1%8F.jpg"
+    },
+    "ruslachyne-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/%D0%A0%D1%83%D1%81%D0%B0%D0%BB%D0%BE%D1%87%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_-_%D0%B2%D0%BE%D0%BD%D0%BE_%D0%B6_%D0%B2%D1%96%D0%B4%D1%81%D1%82%D1%96%D0%B9%D0%BD%D0%B8%D0%BA_%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%97_%D1%84%D0%BE%D1%80%D1%82%D0%B0_03.jpg",
+      "alt": "Руслачине озеро",
+      "author": "Сарапулов",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A0%D1%83%D1%81%D0%B0%D0%BB%D0%BE%D1%87%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_-_%D0%B2%D0%BE%D0%BD%D0%BE_%D0%B6_%D0%B2%D1%96%D0%B4%D1%81%D1%82%D1%96%D0%B9%D0%BD%D0%B8%D0%BA_%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%97_%D1%84%D0%BE%D1%80%D1%82%D0%B0_03.jpg"
+    },
+    "novomalynskyi-stav": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/%D0%9D%D0%BE%D0%B2%D0%BE%D0%BC%D0%B0%D0%BB%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%81%D1%82%D0%B0%D0%B2.jpg",
+      "alt": "Новомалинський став",
+      "author": "Hryniuk",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%BE%D0%B2%D0%BE%D0%BC%D0%B0%D0%BB%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%81%D1%82%D0%B0%D0%B2.jpg"
+    },
+    "zaplavne": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%97%D0%B0%D0%BF%D0%BB%D0%B0%D0%B2%D0%BD%D0%B5%2C_%D0%91%D0%BE%D1%80%D1%82%D0%BD%D0%B8%D1%87%D1%96_01.jpg",
+      "alt": "Заплавне",
+      "author": "Kiyanka",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%97%D0%B0%D0%BF%D0%BB%D0%B0%D0%B2%D0%BD%D0%B5%2C_%D0%91%D0%BE%D1%80%D1%82%D0%BD%D0%B8%D1%87%D1%96_01.jpg"
+    },
+    "ozero-sitochne": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%A1%D1%96%D1%82%D0%BE%D1%87%D0%BD%D0%B5.jpg",
+      "alt": "Озеро Сіточне",
+      "author": "Михайло Кулішов",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%A1%D1%96%D1%82%D0%BE%D1%87%D0%BD%D0%B5.jpg"
+    },
+    "senivske-solene-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/%D0%A1%D0%B5%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D1%81%D0%BE%D0%BB%D0%B5%D0%BD%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_02.jpg",
+      "alt": "Сенівське солене озеро",
+      "author": "Gudyma s",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B5%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D1%81%D0%BE%D0%BB%D0%B5%D0%BD%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_02.jpg"
+    },
+    "verkhnii-stavok": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/%D0%92%D0%B5%D1%80%D1%85%D0%BD%D0%B8%D0%B9_%D0%BF%D1%80%D1%83%D0%B4_-_The_upper_pond_-_panoramio.jpg",
+      "alt": "Верхній ставок",
+      "author": "Matvey Andreyev",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B5%D1%80%D1%85%D0%BD%D0%B8%D0%B9_%D0%BF%D1%80%D1%83%D0%B4_-_The_upper_pond_-_panoramio.jpg"
+    },
+    "sviate-ozero-2": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/%D0%9E%D1%81%D1%82%D1%80%D1%96%D0%B2_%D0%B7_%D1%85%D1%80%D0%B5%D1%81%D1%82%D0%BE%D0%BC_%D0%BD%D0%B0_%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%BC%D1%83_%D0%BE%D0%B7%D0%B5%D1%80%D1%96.jpg",
+      "alt": "Святе озеро",
+      "author": "Olha Mikushynska",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D1%81%D1%82%D1%80%D1%96%D0%B2_%D0%B7_%D1%85%D1%80%D0%B5%D1%81%D1%82%D0%BE%D0%BC_%D0%BD%D0%B0_%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%BC%D1%83_%D0%BE%D0%B7%D0%B5%D1%80%D1%96.jpg"
+    },
+    "shaianske-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%A8%D0%B0%D1%8F%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%B8_%D0%B3%D0%BE%D1%80%D1%8B_%D0%B8%D0%B7_%D0%BE%D1%82%D0%B5%D0%BB%D1%8F_%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D0%B4%D0%B0%D1%82%D1%8C_-_panoramio.jpg",
+      "alt": "Шаянське озеро",
+      "author": "Сергей Марцынюк",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%A8%D0%B0%D1%8F%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%B8_%D0%B3%D0%BE%D1%80%D1%8B_%D0%B8%D0%B7_%D0%BE%D1%82%D0%B5%D0%BB%D1%8F_%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D0%B4%D0%B0%D1%82%D1%8C_-_panoramio.jpg"
+    },
+    "bobrove": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Bobrove%28beaver%29_Lake2.jpg",
+      "alt": "Боброве",
+      "author": "NikolaSkuridin",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bobrove(beaver)_Lake2.jpg"
+    },
+    "ielysiivskyi-kar-ier": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/%D0%9F%D0%B0%D0%BC%27%D1%8F%D1%82%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B8_%D0%B3%D0%B5%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D0%B0_%C2%AB%D0%84%D0%BB%D0%B8%D1%81%D1%94%D0%B9%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BF%D1%96%D0%B3%D0%BC%D0%B0%D1%82%D1%96%D1%82%D0%BE%D0%B2%D0%B8%D0%B9_%D0%BA%D0%B0%D1%80%27%D1%94%D1%80%C2%BB%2C_%D0%9F%D1%80%D0%B8%D0%BC%D0%BE%D1%80%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%80-%D0%BD%2C_%D1%81%D0%B5%D0%BB%D0%BE_%D0%84%D0%BB%D1%96%D1%81%D1%94%D1%97%D0%B2%D0%BA%D0%B0.jpg",
+      "alt": "Єлисіївський кар'єр",
+      "author": "Lubov aleks",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%B0%D0%BC'%D1%8F%D1%82%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B8_%D0%B3%D0%B5%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D0%B0_%C2%AB%D0%84%D0%BB%D0%B8%D1%81%D1%94%D0%B9%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BF%D1%96%D0%B3%D0%BC%D0%B0%D1%82%D1%96%D1%82%D0%BE%D0%B2%D0%B8%D0%B9_%D0%BA%D0%B0%D1%80'%D1%94%D1%80%C2%BB%2C_%D0%9F%D1%80%D0%B8%D0%BC%D0%BE%D1%80%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%80-%D0%BD%2C_%D1%81%D0%B5%D0%BB%D0%BE_%D0%84%D0%BB%D1%96%D1%81%D1%94%D1%97%D0%B2%D0%BA%D0%B0.jpg"
+    },
+    "oz-nevydymka": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/%D0%91%D0%B5%D0%B7%D1%96%D0%BC%D0%B5%D0%BD%D0%BD%D0%B5_N48.1125_E24.5712_-_%D0%BD%D0%B0%D0%B1%D0%BB%D0%B8%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F2_2016_%28d%29.jpg",
+      "alt": "Оз. Невидимка",
+      "author": "DPishniak",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%B5%D0%B7%D1%96%D0%BC%D0%B5%D0%BD%D0%BD%D0%B5_N48.1125_E24.5712_-_%D0%BD%D0%B0%D0%B1%D0%BB%D0%B8%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F2_2016_(d).jpg"
+    },
+    "kleban-bytske-vodoskhovyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/%D0%9A%D0%BB%D0%B5%D0%B1%D0%B0%D0%BD-%D0%91%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.jpg",
+      "alt": "Клебан-Бицьке водосховище",
+      "author": "Артемка",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BB%D0%B5%D0%B1%D0%B0%D0%BD-%D0%91%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.jpg"
+    },
+    "velyke-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Ovlochyn_Turiiskyi-reserve_Lake_Big-view_of_the_eastern_shore_of_the_lake.jpg",
+      "alt": "Велике озеро",
+      "author": "Viacheslav Galievskyi",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ovlochyn_Turiiskyi-reserve_Lake_Big-view_of_the_eastern_shore_of_the_lake.jpg"
+    },
+    "serednii-stavok": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/%D0%94%D0%B0%D0%BC%D0%B1%D0%B0_%D0%A1%D1%80%D0%B5%D0%B4%D0%BD%D0%B5%D0%B3%D0%BE_%D0%BF%D1%80%D1%83%D0%B4%D0%B0_-_Middle_pond_dam_-_panoramio.jpg",
+      "alt": "Середній ставок",
+      "author": "Matvey Andreyev",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B0%D0%BC%D0%B1%D0%B0_%D0%A1%D1%80%D0%B5%D0%B4%D0%BD%D0%B5%D0%B3%D0%BE_%D0%BF%D1%80%D1%83%D0%B4%D0%B0_-_Middle_pond_dam_-_panoramio.jpg"
+    },
+    "pavlivske-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/%D0%9F%D0%B0%D0%B2%D0%BB%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE.jpg",
+      "alt": "Павлівське озеро",
+      "author": "Сіверян",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%B0%D0%B2%D0%BB%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE.jpg"
+    },
+    "bezdonne": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%91%D0%B5%D0%B7%D0%B4%D0%BE%D0%BD%D0%BD%D0%B5_2009.01.09.jpg",
+      "alt": "Бездонне",
+      "author": "Площанський Петро",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%91%D0%B5%D0%B7%D0%B4%D0%BE%D0%BD%D0%BD%D0%B5_2009.01.09.jpg"
+    },
+    "kahachske-vodoskhovyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/%D0%9C%D1%96%D1%81%D1%82%D0%BE%D0%BA._%D0%9A%D0%B0%D0%B3%D0%B0%D1%87.jpg",
+      "alt": "Кагачське водосховище",
+      "author": "Anticop",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9C%D1%96%D1%81%D1%82%D0%BE%D0%BA._%D0%9A%D0%B0%D0%B3%D0%B0%D1%87.jpg"
+    },
+    "raiduzhne-ozero-radunka": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Radunka_lake_north_2021_09_30.jpg",
+      "alt": "Райдужне озеро (Радунка)",
+      "author": "Pusf.smbd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Radunka_lake_north_2021_09_30.jpg"
+    },
+    "nyzhnemahobynskoe-vodokhranylyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/%D0%9D%D0%B8%D0%B6%D0%BD%D0%B5%D0%BC%D0%BE%D0%B3%D0%B0%D0%B1%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%282%29.jpg",
+      "alt": "Нижнемагобинское водохранилище",
+      "author": "Legioner2016",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B8%D0%B6%D0%BD%D0%B5%D0%BC%D0%BE%D0%B3%D0%B0%D0%B1%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_(2).jpg"
+    },
+    "velyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Velyshche_lake_07.jpg",
+      "alt": "Велище",
+      "author": "Tomasz Bladyniec",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Velyshche_lake_07.jpg"
+    },
+    "solonets-2": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/%D0%9E%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BD%D0%B8%D0%BA_%D0%B7_%D0%B2%D0%B8%D1%81%D0%BE%D1%82%D0%B8_%D0%BF%D1%96%D1%81%D0%BB%D1%8F_%D0%B7%D0%B0%D1%85%D0%BE%D0%B4%D1%83_%D1%81%D0%BE%D0%BD%D1%86%D1%8F.jpg",
+      "alt": "Солонець",
+      "author": "Oleg Marchuk",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BD%D0%B8%D0%BA_%D0%B7_%D0%B2%D0%B8%D1%81%D0%BE%D1%82%D0%B8_%D0%BF%D1%96%D1%81%D0%BB%D1%8F_%D0%B7%D0%B0%D1%85%D0%BE%D0%B4%D1%83_%D1%81%D0%BE%D0%BD%D1%86%D1%8F.jpg"
+    },
+    "velykoburlutske-vodoskhovyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Velykyi_Burluk_Reservoir_near_Holubivka_by_Venzz_09.jpg",
+      "alt": "Великобурлуцьке водосховище",
+      "author": "Venzz",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Velykyi_Burluk_Reservoir_near_Holubivka_by_Venzz_09.jpg"
+    },
+    "sukhovilske-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Sukhovolia_Lake34970376.jpg",
+      "alt": "Суховільське озеро",
+      "author": "Дмитрий Ванькевич",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sukhovolia_Lake34970376.jpg"
+    },
+    "sokolivskyi-kar-ier": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D1%80%27%D1%94%D1%80_01.jpg",
+      "alt": "Соколівський кар'єр",
+      "author": "Perohanych",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D1%80'%D1%94%D1%80_01.jpg"
+    },
+    "kholodne-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/%D0%A5%D0%BE%D0%BB%D0%BE%D0%B4%D0%BD%D0%B5_-_%D0%B1%D0%B5%D1%80%D0%B5%D0%B3%D0%BE%D0%B2%D0%B0_%D0%BB%D1%96%D0%BD%D1%96%D1%8F_2016_%28d%29.jpg",
+      "alt": "Холодне озеро",
+      "author": "DPishniak",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A5%D0%BE%D0%BB%D0%BE%D0%B4%D0%BD%D0%B5_-_%D0%B1%D0%B5%D1%80%D0%B5%D0%B3%D0%BE%D0%B2%D0%B0_%D0%BB%D1%96%D0%BD%D1%96%D1%8F_2016_(d).jpg"
+    },
+    "tserkovnyi-stav": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D0%BD%D0%B8%D0%B9_%D1%81%D1%82%D0%B0%D0%B2_%D0%91%D0%BE%D1%8F%D1%80%D0%BA%D0%B0.jpg",
+      "alt": "Церковний став",
+      "author": "Користувач:IgorTurzh",
+      "license": "Attribution",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D0%BD%D0%B8%D0%B9_%D1%81%D1%82%D0%B0%D0%B2_%D0%91%D0%BE%D1%8F%D1%80%D0%BA%D0%B0.jpg"
+    },
+    "tarnorudske-vodoskhovyshche-2": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%A2%D0%B0%D1%80%D0%BD%D0%BE%D1%80%D1%83%D0%B4%D1%83.jpg",
+      "alt": "Тарнорудське водосховище",
+      "author": "Mayherav",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%A2%D0%B0%D1%80%D0%BD%D0%BE%D1%80%D1%83%D0%B4%D1%83.jpg"
+    },
+    "trav-ianske-vodoskhovyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/After_the_Rain_-_panoramio.jpg",
+      "alt": "Трав’янське водосховище",
+      "author": "tarosys",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:After_the_Rain_-_panoramio.jpg"
+    },
+    "yzobylnenskoe-vodokhranylyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/%D0%86%D0%B7%D0%BE%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.JPG",
+      "alt": "Изобильненское водохранилище",
+      "author": "В.С.Білецький",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%86%D0%B7%D0%BE%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%81%D1%85%D0%BE%D0%B2%D0%B8%D1%89%D0%B5.JPG"
+    },
+    "cherepashynetskyi-kar-ier": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Quarry_in_Cherepashyntsi_2021_G15.jpg",
+      "alt": "Черепашинецький кар'єр",
+      "author": "George Chernilevsky",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quarry_in_Cherepashyntsi_2021_G15.jpg"
+    },
+    "starobeshivske-vodoskhovyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Donetsk_Starobeshevskaya_GRES.jpg",
+      "alt": "Старобешівське водосховище",
+      "author": "Александр Ильин",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Donetsk_Starobeshevskaya_GRES.jpg"
+    },
+    "druhe-pohorile-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Kherson%2C_%22Stebleevsky%22_Lyman%2C_a_view_of_the_lake_%22Pogoreloe-Vtoroe%22_-_panoramio.jpg",
+      "alt": "Друге Погоріле озеро",
+      "author": "7777777kz",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kherson%2C_%22Stebleevsky%22_Lyman%2C_a_view_of_the_lake_%22Pogoreloe-Vtoroe%22_-_panoramio.jpg"
+    },
+    "berezhanskyi-stav": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/%D0%A3%D1%80%D0%BE%D1%87%D0%B8%D1%89%D0%B5_%C2%AB%D0%9A%D0%B0%D1%88%D1%82%D0%B0%D0%BB%D1%96%D0%B2%D0%BA%D0%B0%C2%BB._%D0%91%D0%B5%D1%80%D0%B5%D0%B6%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%81%D1%82%D0%B0%D0%B2.jpg",
+      "alt": "Бережанський став",
+      "author": "Педагог Світлана",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A3%D1%80%D0%BE%D1%87%D0%B8%D1%89%D0%B5_%C2%AB%D0%9A%D0%B0%D1%88%D1%82%D0%B0%D0%BB%D1%96%D0%B2%D0%BA%D0%B0%C2%BB._%D0%91%D0%B5%D1%80%D0%B5%D0%B6%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%81%D1%82%D0%B0%D0%B2.jpg"
+    },
+    "toropov-prud": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Ukraine%2C_Sevastopol%2C_%D0%A1%D0%B5%D0%B2%D0%B0%D1%81%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C_-_%D0%A2%D0%BE%D1%80%D0%BE%D0%BF%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_WMID2924094.jpg",
+      "alt": "Торопов пруд",
+      "author": "kaevi",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ukraine%2C_Sevastopol%2C_%D0%A1%D0%B5%D0%B2%D0%B0%D1%81%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C_-_%D0%A2%D0%BE%D1%80%D0%BE%D0%BF%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_WMID2924094.jpg"
+    },
+    "ozero-molodosti": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Unidentified_insect_top_view_at_the_beach_of_the_Molodosti_lake_near_Bukovel.jpg",
+      "alt": "Озеро Молодості",
+      "author": "Роман Рябенко",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Unidentified_insect_top_view_at_the_beach_of_the_Molodosti_lake_near_Bukovel.jpg"
+    },
+    "kleshnia-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/%D0%9A%D0%BB%D0%B5%D1%88%D0%BD%D1%8F_%D0%B2_%D0%BC%D0%B0%D0%B5_-_panoramio.jpg",
+      "alt": "Клешня озеро",
+      "author": "adoloro",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BB%D0%B5%D1%88%D0%BD%D1%8F_%D0%B2_%D0%BC%D0%B0%D0%B5_-_panoramio.jpg"
+    },
+    "orikhove-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Zhorany_Kovelskyi_Volynska-Zhorany_Lakes_Reserve-Orikhivske_lake-panorama.jpg",
+      "alt": "Оріхове озеро",
+      "author": "Viacheslav Galievskyi",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zhorany_Kovelskyi_Volynska-Zhorany_Lakes_Reserve-Orikhivske_lake-panorama.jpg"
+    },
+    "hidrolohichnyi-zakaznyk-mistsevoho-znachennia-vodohrai": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/%D0%92%D0%BE%D0%B4%D0%BE%D0%B3%D1%80%D0%B0%D0%B9_22.jpg",
+      "alt": "Гідрологічний заказник місцевого значення \"Водограй\"",
+      "author": "Luda.slominska",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%B4%D0%BE%D0%B3%D1%80%D0%B0%D0%B9_22.jpg"
+    },
+    "fynaros-i": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Finaros_1.JPG",
+      "alt": "Финарос I",
+      "author": "Kosun",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Finaros_1.JPG"
+    },
+    "volochyske-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/%D0%92%D0%BE%D0%BB%D0%BE%D1%87%D0%B8%D1%81%D1%8C%D0%BA%D0%B5_%D0%BC%D1%96%D1%81%D1%8C%D0%BA%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_.jpg",
+      "alt": "Волочиське озеро",
+      "author": "Maksymiuk",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%BB%D0%BE%D1%87%D0%B8%D1%81%D1%8C%D0%BA%D0%B5_%D0%BC%D1%96%D1%81%D1%8C%D0%BA%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_.jpg"
+    },
+    "podzemnaia-baza-podvodn-kh-lodok": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Balaclava_bay.jpg",
+      "alt": "Подземная база подводных лодок",
+      "author": "VascoPlanet (tm) Crimea photos by Vyacheslav Argenberg",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Balaclava_bay.jpg"
+    },
+    "zhuravlyne-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/%D0%94%D0%B7%D0%B5%D1%80%D0%BA%D0%B0%D0%BB%D0%BE_%D0%96%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BE%D0%B7%D0%B5%D1%80%D0%B0.jpg",
+      "alt": "Журавлине озеро",
+      "author": "Oleksii Rulov",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B7%D0%B5%D1%80%D0%BA%D0%B0%D0%BB%D0%BE_%D0%96%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BE%D0%B7%D0%B5%D1%80%D0%B0.jpg"
+    },
+    "kyrsha": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/2021._%D0%94%D0%BE%D0%BD%D0%B5%D1%86%D0%BA_IMG_20210615_055230.jpg",
+      "alt": "Кирша",
+      "author": "Andrey Butko",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2021._%D0%94%D0%BE%D0%BD%D0%B5%D1%86%D0%BA_IMG_20210615_055230.jpg"
+    },
+    "sviatyi": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Dolsk_Turiiskyi_Volynska-reserve_Holy_lake-view_of_the_eastern_shore_of_the_lake-2.jpg",
+      "alt": "Святий",
+      "author": "Viacheslav Galievskyi",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dolsk_Turiiskyi_Volynska-reserve_Holy_lake-view_of_the_eastern_shore_of_the_lake-2.jpg"
+    },
+    "didovo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/OZERO-DIDOVO_-_panoramio.jpg",
+      "alt": "Дідово",
+      "author": "albijo",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:OZERO-DIDOVO_-_panoramio.jpg"
+    },
+    "frontovoe-vodokhranylyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/%D0%A4%D1%80%D0%BE%D0%BD%D1%82%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5.jpg",
+      "alt": "Фронтовое водохранилище",
+      "author": "Пользователь motoshaman",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A4%D1%80%D0%BE%D0%BD%D1%82%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5.jpg"
+    },
+    "hrebnyi-kanal-2": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/%D0%93%D1%80%D0%B5%D0%B1%D0%BD%D0%B8%D0%B9_%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%2C_%D1%81%D0%B5%D0%BB%D0%BE_%D0%9F%D1%80%D0%B8%D0%BB%D0%B8%D0%BC%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B5.jpg",
+      "alt": "Гребний канал",
+      "author": "Юлія Слободянюк",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%93%D1%80%D0%B5%D0%B1%D0%BD%D0%B8%D0%B9_%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%2C_%D1%81%D0%B5%D0%BB%D0%BE_%D0%9F%D1%80%D0%B8%D0%BB%D0%B8%D0%BC%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B5.jpg"
+    },
+    "oz-omyt": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/%D0%9E%D0%BC%D0%B8%D1%82.jpg",
+      "alt": "Оз. Омит",
+      "author": "Роман Плащинський",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%BC%D0%B8%D1%82.jpg"
+    },
+    "bilozerskyi-lyman": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/%D0%91%D0%B5%D0%BB%D0%BE%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%BB%D0%B8%D0%BC%D0%B0%D0%BD_%D0%BB%D0%B5%D1%82%D0%BE%D0%BC_2006_%D0%B3._-_panoramio.jpg",
+      "alt": "Білозерський лиман",
+      "author": "Руслан Селезнёв",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%B5%D0%BB%D0%BE%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%BB%D0%B8%D0%BC%D0%B0%D0%BD_%D0%BB%D0%B5%D1%82%D0%BE%D0%BC_2006_%D0%B3._-_panoramio.jpg"
+    },
+    "ozero-breskul": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Breckul_%28ozero%29.jpg",
+      "alt": "Озеро Брескул",
+      "author": "MSha at Ukrainian Wikipedia",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Breckul_(ozero).jpg"
+    },
+    "balanovskoe-vodokhranylyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Balanovo%28Crimea%29-WaterStorage.JPG",
+      "alt": "Балановское водохранилище",
+      "author": "SergeyAliev",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Balanovo(Crimea)-WaterStorage.JPG"
+    },
+    "kholopychivske-ozero": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Kholopychi_Lokachynskyi_Volynska-Kholopychivskyi_zakaznyk-lake-6.jpg",
+      "alt": "Холопичівське озеро",
+      "author": "Viacheslav Galievskyi",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kholopychi_Lokachynskyi_Volynska-Kholopychivskyi_zakaznyk-lake-6.jpg"
+    },
+    "olkhivske-vodoskhovyshche": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/%D0%9E%D0%BB%D1%8C%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_2.jpg",
+      "alt": "Ольхівське водосховище",
+      "author": "Zugr",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%BB%D1%8C%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_2.jpg"
+    },
+    "malyi-apshynets": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/%D0%9C%D0%B0%D0%BB%D0%B8%D0%B9_%D0%90%D0%BF%D1%88%D0%B8%D0%BD%D0%B5%D1%86%D1%8C.jpg",
+      "alt": "Малий Апшинець",
+      "author": "АСивуля",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D0%BB%D0%B8%D0%B9_%D0%90%D0%BF%D1%88%D0%B8%D0%BD%D0%B5%D1%86%D1%8C.jpg"
+    }
+  }
+}

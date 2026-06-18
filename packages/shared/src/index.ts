@@ -47,6 +47,10 @@ export interface MediaDto {
   urlFull: string;
   alt: string | null;
   sortOrder: number;
+  // Attribution for externally-sourced photos (CC-BY-SA etc.); null for own uploads.
+  author: string | null;
+  license: string | null;
+  sourceUrl: string | null;
 }
 
 export interface WaterListItemDto {

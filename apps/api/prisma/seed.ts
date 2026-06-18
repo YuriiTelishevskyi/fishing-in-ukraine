@@ -713,6 +713,16 @@ interface WaterEnrichment {
   photo?: { url: string; alt?: string } | null;
 }
 
+// Geo-harvested photo overlay (prisma/data/osm-photos.json): Wikimedia/Wikidata images
+// matched to a water by coordinates and LLM-verified. Carries CC attribution.
+interface GeoPhoto {
+  url: string;
+  alt?: string;
+  author?: string | null;
+  license?: string | null;
+  sourceUrl?: string | null;
+}
+
 // Deterministic, no-fabrication fallback for un-enriched OSM stubs (verified=false):
 // the species you'd TYPICALLY expect in this kind of Ukrainian water. NOT confirmed
 // for the specific water — the UI shows an "орієнтовно / не підтверджено" disclaimer
@@ -765,6 +775,7 @@ async function seedRegionWaters(
   fileName = 'regions-waters.json',
   label = 'Region waters',
   enrichmentFile?: string,
+  photosFile?: string,
 ) {
   const raw = readFileSync(join(__dirname, 'data', fileName), 'utf8');
   const data = JSON.parse(raw) as { waters: RegionWater[] };
@@ -774,6 +785,19 @@ async function seedRegionWaters(
     const eraw = readFileSync(join(__dirname, 'data', enrichmentFile), 'utf8');
     const edata = JSON.parse(eraw) as { enrichment: Record<string, WaterEnrichment> };
     for (const [slug, e] of Object.entries(edata.enrichment)) enrichmentBySlug.set(slug, e);
+  }
+
+  // Optional geo-harvested photo overlay (Wikimedia/Wikidata, CC-licensed, LLM-verified).
+  // Attaches a photo to waters that have none from enrichment, WITHOUT touching verified/fish.
+  const photoBySlug = new Map<string, GeoPhoto>();
+  if (photosFile) {
+    try {
+      const praw = readFileSync(join(__dirname, 'data', photosFile), 'utf8');
+      const pdata = JSON.parse(praw) as { photos: Record<string, GeoPhoto> };
+      for (const [slug, p] of Object.entries(pdata.photos)) photoBySlug.set(slug, p);
+    } catch {
+      // file optional — skip silently if not generated yet
+    }
   }
 
   const regions = await prisma.region.findMany();
@@ -856,12 +880,16 @@ async function seedRegionWaters(
       riverId: null,
     };
 
-    // Only manage media when enrichment carries a CC photo, so re-seeds don't wipe
-    // admin/community-uploaded images on un-enriched waters.
-    const photoUrl = e?.photo?.url?.trim();
-    const mediaWrite = photoUrl
-      ? { deleteMany: {}, create: [{ url: photoUrl, alt: e?.photo?.alt ?? w.name, sortOrder: 0 }] }
-      : undefined;
+    // Only manage media when we have an external photo (enrichment CC photo first, then
+    // geo-harvested), so re-seeds don't wipe admin/community-uploaded images on waters
+    // that have none. Enrichment photo wins; geo photo fills the gap with attribution.
+    const ePhotoUrl = e?.photo?.url?.trim();
+    const gPhoto = photoBySlug.get(w.slug);
+    const mediaCreate = ePhotoUrl
+      ? [{ url: ePhotoUrl, alt: e?.photo?.alt ?? w.name, sortOrder: 0, author: null, license: null, sourceUrl: null }]
+      : gPhoto?.url
+        ? [{ url: gPhoto.url, alt: gPhoto.alt ?? w.name, sortOrder: 0, author: gPhoto.author ?? null, license: gPhoto.license ?? null, sourceUrl: gPhoto.sourceUrl ?? null }]
+        : null;
 
     await prisma.water.upsert({
       where: { slug: w.slug },
@@ -869,14 +897,14 @@ async function seedRegionWaters(
         ...scalar,
         fish: { deleteMany: {}, create: fishIds.map((fishId) => ({ fishId })) },
         amenities: { deleteMany: {}, create: amenityIds.map((amenityId) => ({ amenityId })) },
-        ...(mediaWrite ? { media: mediaWrite } : {}),
+        ...(mediaCreate ? { media: { deleteMany: {}, create: mediaCreate } } : {}),
       },
       create: {
         slug: w.slug,
         ...scalar,
         fish: { create: fishIds.map((fishId) => ({ fishId })) },
         amenities: { create: amenityIds.map((amenityId) => ({ amenityId })) },
-        ...(photoUrl ? { media: { create: [{ url: photoUrl, alt: e?.photo?.alt ?? w.name, sortOrder: 0 }] } } : {}),
+        ...(mediaCreate ? { media: { create: mediaCreate } } : {}),
       },
     });
     count++;
@@ -1157,7 +1185,7 @@ async function main() {
   // Always-on base data: ~1.7k named waters auto-imported from OpenStreetMap
   // (verified:false stubs), with an open-web enrichment overlay applied by slug
   // (original descriptions, fish, prices/phones, CC photos) where found.
-  await seedRegionWaters('osm-waters.json', 'OSM waters', 'osm-enrichment.json');
+  await seedRegionWaters('osm-waters.json', 'OSM waters', 'osm-enrichment.json', 'osm-photos.json');
   // Always-on base data: real bilingual blog articles.
   await seedRealArticles();
   if (process.env.SEED_DEMO === '1') {

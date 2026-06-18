@@ -67,6 +67,9 @@ export function toMediaDto(m: Media): MediaDto {
     urlThumb: variant(m.url, 'thumb'),
     alt: m.alt,
     sortOrder: m.sortOrder,
+    author: m.author,
+    license: m.license,
+    sourceUrl: m.sourceUrl,
   };
 }
 
